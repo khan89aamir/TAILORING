@@ -70,11 +70,11 @@ namespace TAILORING.Masters
             int a = 0;
             if (i == 0)
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "PhoneNo='" + txtCustomerMobileNo.Text.Trim() + "'");
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text.Trim() + "'");
             }
             else
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "PhoneNo='" + txtCustomerMobileNo.Text + "' AND CustomerID !=" + i);
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text + "' AND CustomerID !=" + i);
             }
             if (a > 0)
             {
@@ -126,8 +126,8 @@ namespace TAILORING.Masters
                     {
                         ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAddress.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("PhoneNo", SqlDbType.NVarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.NVarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.VarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbCustomerActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
@@ -187,8 +187,8 @@ namespace TAILORING.Masters
                         ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAddress.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("PhoneNo", SqlDbType.NVarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.NVarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.VarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbCustomerActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
@@ -375,7 +375,7 @@ namespace TAILORING.Masters
             }
 
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("PhoneNo", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -452,7 +452,7 @@ namespace TAILORING.Masters
                 return;
             }
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("PhoneNo", SqlDbType.NVarChar, txtSearchByMobileNo.Text, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtSearchByMobileNo.Text, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
             if (ObjUtil.ValidateDataSet(ds))
             {

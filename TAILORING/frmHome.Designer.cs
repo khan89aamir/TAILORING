@@ -58,6 +58,7 @@
             this.lblLicensedTo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -364,6 +365,17 @@
             this.label2.Text = "Registration Info :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.BackColor = System.Drawing.Color.White;
+            this.lblCompanyName.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(525, 134);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(227, 28);
+            this.lblCompanyName.TabIndex = 28;
+            this.lblCompanyName.Text = "Smart Tailor Solution";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -371,6 +383,7 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 506);
+            this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLogOut);
@@ -432,5 +445,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.Label lblCompanyName;
     }
 }

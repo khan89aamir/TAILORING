@@ -307,7 +307,7 @@ namespace TAILORING.Masters
 
         private void BindUserDetails()
         {
-            DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[UserManagement] WHERE EmployeeID=" + EmployeeID);
+            DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK) WHERE EmployeeID=" + EmployeeID);
             if (ObjUtil.ValidateTable(dt))
             {
                 txtUsername.Text = dt.Rows[0]["UserName"].ToString();

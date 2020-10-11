@@ -27,8 +27,7 @@ namespace TAILORING.Masters
         private void ClearAll()
         {
             txtProductName.Clear();
-            txtProductArabicName.Clear();
-            cmbCategory.SelectedIndex = -1;
+            
             cmbActiveStatus.SelectedIndex = -1;
             txtProductName.Focus();
             PicProductMaster.Image = null;
@@ -42,12 +41,7 @@ namespace TAILORING.Masters
                 txtProductName.Focus();
                 return false;
             }
-            else if (ObjUtil.IsControlTextEmpty(cmbCategory))
-            {
-                clsUtility.ShowInfoMessage("Select Department for " + txtProductName.Text, clsUtility.strProjectTitle);
-                cmbCategory.Focus();
-                return false;
-            }
+            
             else if (ObjUtil.IsControlTextEmpty(cmbActiveStatus))
             {
                 clsUtility.ShowInfoMessage("Select Active Status.", clsUtility.strProjectTitle);
@@ -112,8 +106,7 @@ namespace TAILORING.Masters
                     if (DuplicateUser(0))
                     {
                         ObjDAL.SetColumnData("ProductName", SqlDbType.NVarChar, txtProductName.Text.Trim());
-                        ObjDAL.SetColumnData("ProductArabicName", SqlDbType.NVarChar, txtProductArabicName.Text.Trim());
-                        ObjDAL.SetColumnData("CategoryID", SqlDbType.Int, cmbCategory.SelectedValue);
+                        
                         ObjDAL.SetColumnData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0);
                         ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test Admin else user
 
@@ -170,8 +163,7 @@ namespace TAILORING.Masters
                     if (DuplicateUser(ID))
                     {
                         ObjDAL.UpdateColumnData("ProductName", SqlDbType.NVarChar, txtProductName.Text.Trim());
-                        ObjDAL.UpdateColumnData("ProductArabicName", SqlDbType.NVarChar, txtProductArabicName.Text.Trim());
-                        ObjDAL.UpdateColumnData("CategoryID", SqlDbType.Int, cmbCategory.SelectedValue);
+                       
                         ObjDAL.UpdateColumnData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0);
                         ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test
                         ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -263,8 +255,7 @@ namespace TAILORING.Masters
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ProductID"].Value);
                     txtProductName.Text = dataGridView1.SelectedRows[0].Cells["ItemName"].Value.ToString();
-                    txtProductArabicName.Text = dataGridView1.SelectedRows[0].Cells["Arabic Name"].Value.ToString();
-                    cmbCategory.SelectedValue = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["CategoryID"].Value);
+                    
                     cmbActiveStatus.SelectedItem = dataGridView1.SelectedRows[0].Cells["ActiveStatus"].Value.ToString();
 
                     PicProductMaster.Image = GetProductPhoto(ID);

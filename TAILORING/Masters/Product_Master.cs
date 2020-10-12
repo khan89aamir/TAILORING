@@ -45,39 +45,53 @@ namespace TAILORING.Masters
                 txtGarmentName.Focus();
                 return false;
             }
-            return true;
-        }
 
-        private bool DuplicateUser(int i)
-        {
-            int a = 0;
-            if (i == 0)
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Validate_Product");
+            if (ObjUtil.ValidateDataSet(ds))
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "GarmentName='" + txtGarmentName.Text.Trim() + "'");
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    int flag = Convert.ToInt32(dt.Rows[0]["Flag"]);
+                    string msg = string.Empty;
+                    if (flag <= 0)
+                    {
+                        msg = dt.Rows[0]["Msg"].ToString();
+                        clsUtility.ShowInfoMessage(msg, clsUtility.strProjectTitle);
+                        if (flag == 0)
+                            txtGarmentCode.Focus();
+                        else
+                            txtGarmentName.Focus();
+
+                        ObjDAL.ResetData();
+                        return false;
+                    }
+                }
+                ObjDAL.ResetData();
             }
-            else
-            {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "GarmentName='" + txtGarmentName.Text + "' AND ProductID !=" + i);
-            }
-            if (a > 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
 
         private void LoadData()
         {
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-            DataTable dt = null;
-            dt = ObjDAL.ExecuteSelectStatement("EXEC " + clsUtility.DBName + ".dbo.Get_Product_Master '0' ");
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
 
-            if (ObjUtil.ValidateTable(dt))
+            if (ObjUtil.ValidateDataSet(ds))
             {
-                dataGridView1.DataSource = dt;
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                }
             }
             else
             {
@@ -99,31 +113,23 @@ namespace TAILORING.Masters
             {
                 if (Validateform())
                 {
-                    if (DuplicateUser(0))
-                    {
-                        ObjDAL.SetColumnData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim());
-                        ObjDAL.SetColumnData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim());
-                        ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test Admin else user
+                    ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
-                        if (ObjDAL.InsertData(clsUtility.DBName + ".dbo.ProductMaster", true) > 0)
-                        {
-                            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                            clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
-                            ClearAll();
-                            LoadData();
-                            grpProduct.Enabled = false;
-                        }
-                        else
-                        {
-                            clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
-                            ObjDAL.ResetData();
-                        }
+                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Product");
+                    if (b)
+                    {
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
+                        clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                        ClearAll();
+                        LoadData();
+                        grpProduct.Enabled = false;
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
+                        clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
                         ObjDAL.ResetData();
-                        txtGarmentName.Focus();
                     }
                 }
             }
@@ -139,8 +145,8 @@ namespace TAILORING.Masters
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
                 grpProduct.Enabled = true;
-                txtGarmentName.Focus();
-                txtGarmentName.SelectionStart = txtGarmentName.MaxLength;
+                txtGarmentCode.Focus();
+                txtGarmentCode.SelectionStart = txtGarmentCode.MaxLength;
             }
             else
             {
@@ -154,32 +160,26 @@ namespace TAILORING.Masters
             {
                 if (Validateform())
                 {
-                    if (DuplicateUser(ID))
+                    ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Update_Product");
+                    if (b)
                     {
-                        ObjDAL.UpdateColumnData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim());
-                        ObjDAL.UpdateColumnData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim());
-                        ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate);
 
-                        if (ObjDAL.UpdateData(clsUtility.DBName + ".dbo.ProductMaster", "ProductID = " + ID + "") > 0)
-                        {
-                            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate);
-
-                            clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is Updated", clsUtility.strProjectTitle);
-                            LoadData();
-                            ClearAll();
-                            grpProduct.Enabled = false;
-                        }
-                        else
-                        {
-                            clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is not Updated", clsUtility.strProjectTitle);
-                        }
-                        ObjDAL.ResetData();
+                        clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is Updated", clsUtility.strProjectTitle);
+                        LoadData();
+                        ClearAll();
+                        grpProduct.Enabled = false;
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
-                        txtGarmentName.Focus();
+                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is not Updated", clsUtility.strProjectTitle);
                     }
+                    ObjDAL.ResetData();
                 }
             }
             else
@@ -195,9 +195,11 @@ namespace TAILORING.Masters
                 DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtGarmentName.Text + "' Garment ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (d == DialogResult.Yes)
                 {
-                    if (ObjDAL.DeleteData(clsUtility.DBName + ".dbo.ProductMaster", "ProductID = " + ID + "") > 0)
+                    ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
+                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Product");
+                    if (b)
                     {
-                        clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Product is deleted  ", clsUtility.strProjectTitle);
+                        clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
                         grpProduct.Enabled = false;
@@ -205,7 +207,7 @@ namespace TAILORING.Masters
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Product is not deleted  ", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is not deleted  ", clsUtility.strProjectTitle);
                         ObjDAL.ResetData();
                     }
                 }
@@ -245,11 +247,11 @@ namespace TAILORING.Masters
                 try
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
-                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ProductID"].Value);
+                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentID"].Value);
                     txtGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
-                    txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString(); 
+                    txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString();
                     grpProduct.Enabled = false;
-                    txtGarmentName.Focus();
+                    txtGarmentCode.Focus();
                 }
                 catch (Exception ex)
                 {
@@ -274,7 +276,7 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dataGridView1.RowHeadersVisible = false; // set it to false if not needed
 
-            //LoadData();
+            LoadData();
 
             grpProduct.Focus();
         }
@@ -311,7 +313,7 @@ namespace TAILORING.Masters
             {
                 txtSearchByGarment.Enabled = false;
                 txtSearchByGarment.Clear();
-                //LoadData();
+                LoadData();
             }
         }
 
@@ -323,7 +325,7 @@ namespace TAILORING.Masters
                 return;
             }
             ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtSearchByGarment.Text.Trim(), clsConnection_DAL.ParamType.Input);
-            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.Get_Product_Master");
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Product");
             if (ds != null && ds.Tables.Count > 0)
             {
                 DataTable dt = ds.Tables[0];
@@ -346,18 +348,27 @@ namespace TAILORING.Masters
         {
             ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-            dataGridView1.Columns["ProductID"].Visible = false;
-            // dataGridView1.Columns["Photo"].Visible = false;
+            dataGridView1.Columns["GarmentID"].Visible = false;
             lblTotalRecords.Text = "Total Records : " + dataGridView1.Rows.Count;
         }
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = ObjUtil.IsString(e);
-            if (e.Handled == true)
+            if (e.Handled)
             {
                 clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
                 txtGarmentName.Focus();
+            }
+        }
+
+        private void txtGarmentCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Only Charactors or Number...", clsUtility.strProjectTitle);
+                txtGarmentCode.Focus();
             }
         }
     }

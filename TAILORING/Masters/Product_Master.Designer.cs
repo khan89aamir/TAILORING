@@ -180,6 +180,9 @@
             this.txtGarmentCode.Name = "txtGarmentCode";
             this.txtGarmentCode.Size = new System.Drawing.Size(206, 25);
             this.txtGarmentCode.TabIndex = 0;
+            this.txtGarmentCode.Enter += new System.EventHandler(this.txtProductName_Enter);
+            this.txtGarmentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarmentCode_KeyPress);
+            this.txtGarmentCode.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // label3
             // 
@@ -285,7 +288,7 @@
             this.txtSearchByGarment.BackColor = System.Drawing.Color.White;
             this.txtSearchByGarment.Enabled = false;
             this.txtSearchByGarment.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchByGarment.Location = new System.Drawing.Point(138, 19);
+            this.txtSearchByGarment.Location = new System.Drawing.Point(142, 19);
             this.txtSearchByGarment.MaxLength = 100;
             this.txtSearchByGarment.Name = "txtSearchByGarment";
             this.txtSearchByGarment.Size = new System.Drawing.Size(206, 25);

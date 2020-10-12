@@ -165,7 +165,7 @@ namespace TAILORING.Masters
 
             ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, EmployeeID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("EmployeeCode", SqlDbType.NVarChar, txtEmployeeCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Validate_Employee");
             if (ObjUtil.ValidateDataSet(ds))
@@ -184,8 +184,10 @@ namespace TAILORING.Masters
                         else
                             txtMobileNo.Focus();
 
+                        ObjDAL.ResetData();
                         return false;
                     }
+                    ObjDAL.ResetData();
                 }
             }
 

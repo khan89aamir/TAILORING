@@ -26,26 +26,23 @@ namespace TAILORING.Masters
         Image B_Enter = TAILORING.Properties.Resources.B_on;
         private void ClearAll()
         {
-            txtProductName.Clear();
-            
-            cmbActiveStatus.SelectedIndex = -1;
-            txtProductName.Focus();
-            PicProductMaster.Image = null;
+            txtGarmentCode.Clear();
+            txtGarmentName.Clear();
+            txtGarmentCode.Focus();
         }
 
         private bool Validateform()
         {
-            if (ObjUtil.IsControlTextEmpty(txtProductName))
+            if (ObjUtil.IsControlTextEmpty(txtGarmentCode))
             {
-                clsUtility.ShowInfoMessage("Enter Product Name           ", clsUtility.strProjectTitle);
-                txtProductName.Focus();
+                clsUtility.ShowInfoMessage("Enter Garment Code           ", clsUtility.strProjectTitle);
+                txtGarmentCode.Focus();
                 return false;
             }
-            
-            else if (ObjUtil.IsControlTextEmpty(cmbActiveStatus))
+            else if (ObjUtil.IsControlTextEmpty(txtGarmentName))
             {
-                clsUtility.ShowInfoMessage("Select Active Status.", clsUtility.strProjectTitle);
-                cmbActiveStatus.Focus();
+                clsUtility.ShowInfoMessage("Enter Garment Name           ", clsUtility.strProjectTitle);
+                txtGarmentName.Focus();
                 return false;
             }
             return true;
@@ -56,11 +53,11 @@ namespace TAILORING.Masters
             int a = 0;
             if (i == 0)
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "ProductName='" + txtProductName.Text.Trim() + "'");
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "GarmentName='" + txtGarmentName.Text.Trim() + "'");
             }
             else
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "ProductName='" + txtProductName.Text + "' AND ProductID !=" + i);
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.ProductMaster", "GarmentName='" + txtGarmentName.Text + "' AND ProductID !=" + i);
             }
             if (a > 0)
             {
@@ -76,7 +73,7 @@ namespace TAILORING.Masters
         {
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             DataTable dt = null;
-            dt = ObjDAL.ExecuteSelectStatement("EXEC " + clsUtility.DBName + ".dbo.Get_Product_Master '0',0 ");
+            dt = ObjDAL.ExecuteSelectStatement("EXEC " + clsUtility.DBName + ".dbo.Get_Product_Master '0' ");
 
             if (ObjUtil.ValidateTable(dt))
             {
@@ -93,8 +90,7 @@ namespace TAILORING.Masters
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
             grpProduct.Enabled = true;
-            grpPhoto.Enabled = true;
-            txtProductName.Focus();
+            txtGarmentCode.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -105,30 +101,29 @@ namespace TAILORING.Masters
                 {
                     if (DuplicateUser(0))
                     {
-                        ObjDAL.SetColumnData("ProductName", SqlDbType.NVarChar, txtProductName.Text.Trim());
-                        
-                        ObjDAL.SetColumnData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0);
+                        ObjDAL.SetColumnData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim());
+                        ObjDAL.SetColumnData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim());
                         ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test Admin else user
 
                         if (ObjDAL.InsertData(clsUtility.DBName + ".dbo.ProductMaster", true) > 0)
                         {
                             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                            clsUtility.ShowInfoMessage("Product Name : '" + txtProductName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                            clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                             ClearAll();
                             LoadData();
                             grpProduct.Enabled = false;
                         }
                         else
                         {
-                            clsUtility.ShowInfoMessage("Product Name : '" + txtProductName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+                            clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
                             ObjDAL.ResetData();
                         }
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtProductName.Text + "' Product is already exist..", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
                         ObjDAL.ResetData();
-                        txtProductName.Focus();
+                        txtGarmentName.Focus();
                     }
                 }
             }
@@ -144,9 +139,8 @@ namespace TAILORING.Masters
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
                 grpProduct.Enabled = true;
-                grpPhoto.Enabled = true;
-                txtProductName.Focus();
-                txtProductName.SelectionStart = txtProductName.MaxLength;
+                txtGarmentName.Focus();
+                txtGarmentName.SelectionStart = txtGarmentName.MaxLength;
             }
             else
             {
@@ -162,31 +156,29 @@ namespace TAILORING.Masters
                 {
                     if (DuplicateUser(ID))
                     {
-                        ObjDAL.UpdateColumnData("ProductName", SqlDbType.NVarChar, txtProductName.Text.Trim());
-                       
-                        ObjDAL.UpdateColumnData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0);
+                        ObjDAL.UpdateColumnData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim());
+                        ObjDAL.UpdateColumnData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim());
                         ObjDAL.UpdateColumnData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID); //if LoginID=0 then Test
-                        ObjDAL.UpdateColumnData("UpdatedOn", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
                         if (ObjDAL.UpdateData(clsUtility.DBName + ".dbo.ProductMaster", "ProductID = " + ID + "") > 0)
                         {
                             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate);
 
-                            clsUtility.ShowInfoMessage("'" + txtProductName.Text + "' Product is Updated", clsUtility.strProjectTitle);
+                            clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is Updated", clsUtility.strProjectTitle);
                             LoadData();
                             ClearAll();
                             grpProduct.Enabled = false;
                         }
                         else
                         {
-                            clsUtility.ShowErrorMessage("'" + txtProductName.Text + "' Product is not Updated", clsUtility.strProjectTitle);
+                            clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is not Updated", clsUtility.strProjectTitle);
                         }
                         ObjDAL.ResetData();
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtProductName.Text + "' Product is already exist..", clsUtility.strProjectTitle);
-                        txtProductName.Focus();
+                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
+                        txtGarmentName.Focus();
                     }
                 }
             }
@@ -200,12 +192,12 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Product_Master, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
-                DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtProductName.Text + "' Product ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtGarmentName.Text + "' Garment ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (d == DialogResult.Yes)
                 {
                     if (ObjDAL.DeleteData(clsUtility.DBName + ".dbo.ProductMaster", "ProductID = " + ID + "") > 0)
                     {
-                        clsUtility.ShowInfoMessage("'" + txtProductName.Text + "' Product is deleted  ", clsUtility.strProjectTitle);
+                        clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Product is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
                         grpProduct.Enabled = false;
@@ -213,7 +205,7 @@ namespace TAILORING.Masters
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtProductName.Text + "' Product is not deleted  ", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("'" + txtGarmentName.Text + "' Product is not deleted  ", clsUtility.strProjectTitle);
                         ObjDAL.ResetData();
                     }
                 }
@@ -254,27 +246,15 @@ namespace TAILORING.Masters
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ProductID"].Value);
-                    txtProductName.Text = dataGridView1.SelectedRows[0].Cells["ItemName"].Value.ToString();
-                    
-                    cmbActiveStatus.SelectedItem = dataGridView1.SelectedRows[0].Cells["ActiveStatus"].Value.ToString();
-
-                    PicProductMaster.Image = GetProductPhoto(ID);
+                    txtGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
+                    txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString(); 
                     grpProduct.Enabled = false;
-                    txtProductName.Focus();
+                    txtGarmentName.Focus();
                 }
                 catch (Exception ex)
                 {
                     clsUtility.ShowErrorMessage(ex.ToString(), clsUtility.strProjectTitle);
                 }
-            }
-        }
-
-        private void txtProductName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Down)
-            {
-                cmbActiveStatus.Focus();
-                return;
             }
         }
 
@@ -315,13 +295,13 @@ namespace TAILORING.Masters
         {
             if (rdSearchByProduct.Checked)
             {
-                txtSearchByProduct.Enabled = true;
-                txtSearchByProduct.Focus();
+                txtSearchByGarment.Enabled = true;
+                txtSearchByGarment.Focus();
             }
             else
             {
-                txtSearchByProduct.Enabled = false;
-                txtSearchByProduct.Clear();
+                txtSearchByGarment.Enabled = false;
+                txtSearchByGarment.Clear();
             }
         }
 
@@ -329,23 +309,20 @@ namespace TAILORING.Masters
         {
             if (rdShowAll.Checked)
             {
-                txtSearchByProduct.Enabled = false;
-                cmbSearchByCategory.Enabled = false;
-                txtSearchByProduct.Clear();
-                cmbSearchByCategory.SelectedIndex = -1;
-                LoadData();
+                txtSearchByGarment.Enabled = false;
+                txtSearchByGarment.Clear();
+                //LoadData();
             }
         }
 
         private void txtSearchByProduct_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchByProduct.Text.Trim().Length == 0)
+            if (txtSearchByGarment.Text.Trim().Length == 0)
             {
                 LoadData();
                 return;
             }
-            ObjDAL.SetStoreProcedureData("ProductName", SqlDbType.NVarChar, txtSearchByProduct.Text.Trim(), clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("CategoryId", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtSearchByGarment.Text.Trim(), clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.Get_Product_Master");
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -370,111 +347,17 @@ namespace TAILORING.Masters
             ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["ProductID"].Visible = false;
-            dataGridView1.Columns["CategoryID"].Visible = false;
             // dataGridView1.Columns["Photo"].Visible = false;
             lblTotalRecords.Text = "Total Records : " + dataGridView1.Rows.Count;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                PicProductMaster.Image = Image.FromFile(openFileDialog.FileName);
-            }
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            PicProductMaster.Image = null;
-        }
-
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //e.Handled = ObjUtil.IsString(e);
-            //if (e.Handled == true)
-            //{
-            //    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-            //    txtProductName.Focus();
-            //}
-        }
-
-        private Image GetProductPhoto(int SubProductID)
-        {
-            Image imgProduct = null;
-            ObjDAL.SetStoreProcedureData("SubProductID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("ProductID", SqlDbType.Int, SubProductID, clsConnection_DAL.ParamType.Input);
-            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_ProductPhoto");
-            if (ds != null && ds.Tables.Count > 0)
+            e.Handled = ObjUtil.IsString(e);
+            if (e.Handled == true)
             {
-                DataTable dt = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dt))
-                {
-                    if (Convert.ToInt32(dt.Rows[0]["Flag"]) == 1)
-                    {
-                        string img = dt.Rows[0]["ImgName"].ToString();
-                        if (System.IO.File.Exists(img))
-                        {
-                            imgProduct = Image.FromFile(img);
-                        }
-                        else
-                        {
-                            imgProduct = TAILORING.Properties.Resources.NoImage;
-                        }
-                    }
-                    else
-                    {
-                        imgProduct = TAILORING.Properties.Resources.NoImage;
-                        //clsUtility.ShowInfoMessage("Image file for the selected product doesn't exist.", clsUtility.strProjectTitle);
-                    }
-                }
-            }
-            ObjDAL.ResetData();
-            return imgProduct;
-        }
-
-        private void cmbSearchByCategory_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (cmbSearchByCategory.SelectedIndex == -1)
-            {
-                LoadData();
-                return;
-            }
-            //DataTable dt = ObjDAL.ExecuteSelectStatement("EXEC " + clsUtility.DBName + ".dbo.Get_Product_Master '" + cmbSearchByCategory.SelectedValue + "'");
-            ObjDAL.SetStoreProcedureData("ProductName", SqlDbType.NVarChar, 0, clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("CategoryId", SqlDbType.Int, cmbSearchByCategory.SelectedValue, clsConnection_DAL.ParamType.Input);
-            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.Get_Product_Master");
-            if (ds != null && ds.Tables.Count > 0)
-            {
-                DataTable dt = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dt))
-                {
-                    dataGridView1.DataSource = dt;
-                }
-                else
-                {
-                    dataGridView1.DataSource = null;
-                }
-                ObjDAL.ResetData();
-            }
-            else
-            {
-                dataGridView1.DataSource = null;
-            }
-        }
-
-        private void rdSearchByCategory_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdSearchByCategory.Checked)
-            {
-                cmbSearchByCategory.Enabled = true;
-                cmbSearchByCategory.Focus();
-            }
-            else
-            {
-                cmbSearchByCategory.Enabled = false;
-                cmbSearchByCategory.SelectedIndex = -1;
+                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                txtGarmentName.Focus();
             }
         }
     }

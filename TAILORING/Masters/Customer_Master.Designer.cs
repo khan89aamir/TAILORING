@@ -35,17 +35,13 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpCustomer = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCustomerEmailID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmbCustomerActiveStatus = new System.Windows.Forms.ComboBox();
             this.txtCustomerMobileNo = new System.Windows.Forms.TextBox();
             this.txtCustomerAddress = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.lblActiveStatusOfCustomer = new System.Windows.Forms.Label();
             this.lblCustomerPhoneNo = new System.Windows.Forms.Label();
             this.lblCustomerAddress = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
@@ -73,7 +69,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(363, 59);
+            this.btnUpdate.Location = new System.Drawing.Point(381, 59);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(71, 25);
             this.btnUpdate.TabIndex = 5;
@@ -89,7 +85,7 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(527, 59);
+            this.btnCancel.Location = new System.Drawing.Point(545, 59);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 25);
             this.btnCancel.TabIndex = 7;
@@ -105,7 +101,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(445, 59);
+            this.btnDelete.Location = new System.Drawing.Point(463, 59);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(71, 25);
             this.btnDelete.TabIndex = 6;
@@ -121,7 +117,7 @@
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(283, 59);
+            this.btnEdit.Location = new System.Drawing.Point(301, 59);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(71, 25);
             this.btnEdit.TabIndex = 3;
@@ -137,7 +133,7 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(201, 59);
+            this.btnSave.Location = new System.Drawing.Point(219, 59);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(71, 25);
             this.btnSave.TabIndex = 2;
@@ -153,7 +149,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(112, 59);
+            this.btnAdd.Location = new System.Drawing.Point(130, 59);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 25);
             this.btnAdd.TabIndex = 1;
@@ -166,17 +162,13 @@
             // grpCustomer
             // 
             this.grpCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.grpCustomer.Controls.Add(this.label3);
             this.grpCustomer.Controls.Add(this.txtCustomerEmailID);
             this.grpCustomer.Controls.Add(this.label4);
-            this.grpCustomer.Controls.Add(this.label2);
             this.grpCustomer.Controls.Add(this.label1);
             this.grpCustomer.Controls.Add(this.label8);
-            this.grpCustomer.Controls.Add(this.cmbCustomerActiveStatus);
             this.grpCustomer.Controls.Add(this.txtCustomerMobileNo);
             this.grpCustomer.Controls.Add(this.txtCustomerAddress);
             this.grpCustomer.Controls.Add(this.txtCustomerName);
-            this.grpCustomer.Controls.Add(this.lblActiveStatusOfCustomer);
             this.grpCustomer.Controls.Add(this.lblCustomerPhoneNo);
             this.grpCustomer.Controls.Add(this.lblCustomerAddress);
             this.grpCustomer.Controls.Add(this.lblCustomerName);
@@ -189,18 +181,6 @@
             this.grpCustomer.TabIndex = 0;
             this.grpCustomer.TabStop = false;
             this.grpCustomer.Text = "Customer Details";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(720, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 17);
-            this.label3.TabIndex = 287;
-            this.label3.Text = "*";
             // 
             // txtCustomerEmailID
             // 
@@ -226,18 +206,6 @@
             this.label4.TabIndex = 286;
             this.label4.Text = "Email ID :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(720, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 17);
-            this.label2.TabIndex = 284;
-            this.label2.Text = "*";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -262,20 +230,6 @@
             this.label8.TabIndex = 282;
             this.label8.Text = "*";
             // 
-            // cmbCustomerActiveStatus
-            // 
-            this.cmbCustomerActiveStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCustomerActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCustomerActiveStatus.FormattingEnabled = true;
-            this.cmbCustomerActiveStatus.Items.AddRange(new object[] {
-            "Active",
-            "InActive"});
-            this.cmbCustomerActiveStatus.Location = new System.Drawing.Point(477, 105);
-            this.cmbCustomerActiveStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbCustomerActiveStatus.Name = "cmbCustomerActiveStatus";
-            this.cmbCustomerActiveStatus.Size = new System.Drawing.Size(240, 25);
-            this.cmbCustomerActiveStatus.TabIndex = 4;
-            // 
             // txtCustomerMobileNo
             // 
             this.txtCustomerMobileNo.BackColor = System.Drawing.Color.White;
@@ -294,7 +248,7 @@
             // 
             this.txtCustomerAddress.BackColor = System.Drawing.Color.White;
             this.txtCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerAddress.Location = new System.Drawing.Point(477, 22);
+            this.txtCustomerAddress.Location = new System.Drawing.Point(468, 41);
             this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerAddress.MaxLength = 500;
             this.txtCustomerAddress.Multiline = true;
@@ -319,17 +273,6 @@
             this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             this.txtCustomerName.Leave += new System.EventHandler(this.txtCustomerName_Leave);
             // 
-            // lblActiveStatusOfCustomer
-            // 
-            this.lblActiveStatusOfCustomer.AutoSize = true;
-            this.lblActiveStatusOfCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblActiveStatusOfCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveStatusOfCustomer.Location = new System.Drawing.Point(376, 109);
-            this.lblActiveStatusOfCustomer.Name = "lblActiveStatusOfCustomer";
-            this.lblActiveStatusOfCustomer.Size = new System.Drawing.Size(94, 17);
-            this.lblActiveStatusOfCustomer.TabIndex = 190;
-            this.lblActiveStatusOfCustomer.Text = "Active Status :";
-            // 
             // lblCustomerPhoneNo
             // 
             this.lblCustomerPhoneNo.AutoSize = true;
@@ -345,7 +288,7 @@
             // 
             this.lblCustomerAddress.AutoSize = true;
             this.lblCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.lblCustomerAddress.Location = new System.Drawing.Point(386, 29);
+            this.lblCustomerAddress.Location = new System.Drawing.Point(386, 48);
             this.lblCustomerAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerAddress.Name = "lblCustomerAddress";
             this.lblCustomerAddress.Size = new System.Drawing.Size(64, 17);
@@ -572,24 +515,20 @@
         private System.Windows.Forms.Label lblCustomerPhoneNo;
         private System.Windows.Forms.Label lblCustomerAddress;
         private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.Label lblActiveStatusOfCustomer;
         private System.Windows.Forms.TextBox txtCustomerMobileNo;
         private System.Windows.Forms.TextBox txtCustomerAddress;
         private System.Windows.Forms.TextBox txtCustomerName;
-        private System.Windows.Forms.ComboBox cmbCustomerActiveStatus;
         private System.Windows.Forms.RadioButton rdShowAllOfCustomer;
         private System.Windows.Forms.RadioButton rdSearchByCustomerName;
         private System.Windows.Forms.TextBox txtSearchByCustomerName;
         private System.Windows.Forms.DataGridView dgvCustomerMaster;
         private System.Windows.Forms.Label lblTotalRecords;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSearchByMobileNo;
         private System.Windows.Forms.RadioButton rdSearchByCustomerMobileNo;
         private System.Windows.Forms.TextBox txtCustomerEmailID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
     }
 }

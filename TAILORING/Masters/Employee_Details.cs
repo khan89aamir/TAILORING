@@ -104,10 +104,11 @@ namespace TAILORING.Masters
         }
         private void CreateNewUser(int EmployeeID)
         {
+            bool b = cmbEmployeeType.SelectedIndex == 0 ? true : false;
             ObjDAL.SetColumnData("UserName", SqlDbType.NVarChar, txtUsername.Text.Trim());
             ObjDAL.SetColumnData("Password", SqlDbType.NVarChar, ObjUtil.Encrypt(txtPass.Text.Trim(), true));
             ObjDAL.SetColumnData("EmailID", SqlDbType.NVarChar, txtEmail.Text.Trim());
-            ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, false);
+            ObjDAL.SetColumnData("IsAdmin", SqlDbType.Bit, b);
             ObjDAL.SetColumnData("IsBlock", SqlDbType.Bit, false);
             ObjDAL.SetColumnData("EmployeeID", SqlDbType.Int, EmployeeID);
 
@@ -134,21 +135,24 @@ namespace TAILORING.Masters
                 txtEmployeeCode.Focus();
                 return false;
             }
-
             else if (ObjUtil.IsControlTextEmpty(txtName))
             {
                 clsUtility.ShowInfoMessage("Please Enter Employee Name.", clsUtility.strProjectTitle);
                 txtName.Focus();
                 return false;
             }
-
             else if (ObjUtil.IsControlTextEmpty(txtMobileNo))
             {
                 clsUtility.ShowInfoMessage("Please Enter Employee Mobile No.", clsUtility.strProjectTitle);
                 txtMobileNo.Focus();
                 return false;
             }
-
+            else if (ObjUtil.IsControlTextEmpty(cmbEmployeeType))
+            {
+                clsUtility.ShowInfoMessage("Please Enter Employee Mobile No.", clsUtility.strProjectTitle);
+                txtMobileNo.Focus();
+                return false;
+            }
             else if (radFemale.Checked == false && radMale.Checked == false)
             {
                 clsUtility.ShowInfoMessage("Please Select Gender.", clsUtility.strProjectTitle);
@@ -156,16 +160,33 @@ namespace TAILORING.Masters
                 radMale.Checked = false;
                 radFemale.Checked = false;
 
-
                 return false;
             }
 
-            int result = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.EmployeeDetails WITH(NOLOCK) WHERE EmployeeCode='" + txtEmployeeCode.Text + "' AND EMPID<>" + EmployeeID);
-            if (result > 0)
+            ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, EmployeeID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("EmployeeCode", SqlDbType.NVarChar, txtEmployeeCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo, clsConnection_DAL.ParamType.Input);
+
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Validate_Employee");
+            if (ObjUtil.ValidateDataSet(ds))
             {
-                clsUtility.ShowInfoMessage("The Employee already exist with the given employee code. Please Enter different employee code.", clsUtility.strProjectTitle);
-                txtEmployeeCode.Focus();
-                return false;
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    int flag = Convert.ToInt32(dt.Rows[0]["Flag"]);
+                    string msg = string.Empty;
+                    if (flag <= 0)
+                    {
+                        msg = dt.Rows[0]["Msg"].ToString();
+                        clsUtility.ShowInfoMessage(msg, clsUtility.strProjectTitle);
+                        if (flag == 0)
+                            txtEmployeeCode.Focus();
+                        else
+                            txtMobileNo.Focus();
+
+                        return false;
+                    }
+                }
             }
 
             if (txtUsername.Text.Trim().Length > 0) // if user name is entered
@@ -211,6 +232,7 @@ namespace TAILORING.Masters
                 ObjDAL.SetStoreProcedureData("DOB", SqlDbType.DateTime, null, clsConnection_DAL.ParamType.Input);
             }
             ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("EmployeeType", SqlDbType.Int, cmbEmployeeType.SelectedIndex, clsConnection_DAL.ParamType.Input);
 
             if (PicEmployee.Image != null)
             {
@@ -450,10 +472,11 @@ namespace TAILORING.Masters
 
         private void UpdateUserDetails()
         {
+            bool b = cmbEmployeeType.SelectedIndex == 0 ? true : false;
             ObjDAL.UpdateColumnData("UserName", SqlDbType.NVarChar, txtUsername.Text.Trim());
             ObjDAL.UpdateColumnData("Password", SqlDbType.NVarChar, ObjUtil.Encrypt(txtPass.Text.Trim(), true));
             ObjDAL.UpdateColumnData("EmailID", SqlDbType.NVarChar, txtEmail.Text.Trim());
-            //ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, false); 
+            ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, b); 
             //if user is blocked then if his details will update from this form then could be auto unblock
 
             //ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, false);

@@ -31,7 +31,6 @@ namespace TAILORING.Masters
             txtCustomerAddress.Clear();
             txtCustomerMobileNo.Clear();
             txtCustomerEmailID.Clear();
-            cmbCustomerActiveStatus.SelectedIndex = -1;
 
             txtCustomerName.Focus();
         }
@@ -50,18 +49,12 @@ namespace TAILORING.Masters
                 txtCustomerMobileNo.Focus();
                 return false;
             }
-            else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
-            {
-                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
-                txtCustomerAddress.Focus();
-                return false;
-            }
-            else if (ObjUtil.IsControlTextEmpty(cmbCustomerActiveStatus))
-            {
-                clsUtility.ShowInfoMessage("Select Active Status.", clsUtility.strProjectTitle);
-                cmbCustomerActiveStatus.Focus();
-                return false;
-            }
+            //else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
+            //{
+            //    clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+            //    txtCustomerAddress.Focus();
+            //    return false;
+            //}
             return true;
         }
 
@@ -128,7 +121,6 @@ namespace TAILORING.Masters
                         ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAddress.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.VarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbCustomerActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
                         bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
@@ -189,7 +181,6 @@ namespace TAILORING.Masters
                         ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAddress.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("EmailID", SqlDbType.VarChar, txtCustomerEmailID.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbCustomerActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
                         bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Update_Customer");
@@ -288,7 +279,6 @@ namespace TAILORING.Masters
                     txtCustomerAddress.Text = dgvCustomerMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCustomerMobileNo.Text = dgvCustomerMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCustomerEmailID.Text = dgvCustomerMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    cmbCustomerActiveStatus.SelectedItem = dgvCustomerMaster.SelectedRows[0].Cells["ActiveStatus"].Value.ToString();
                     grpCustomer.Enabled = false;
                     txtCustomerName.Focus();
                 }

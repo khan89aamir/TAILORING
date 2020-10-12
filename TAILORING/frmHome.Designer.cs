@@ -260,7 +260,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(358, 194);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(608, 146);
+            this.pictureBox2.Size = new System.Drawing.Size(608, 202);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
@@ -367,12 +367,13 @@
             // 
             // lblCompanyName
             // 
+            this.lblCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.BackColor = System.Drawing.Color.White;
-            this.lblCompanyName.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(525, 134);
+            this.lblCompanyName.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompanyName.Font = new System.Drawing.Font("Times New Roman", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(673, 352);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(227, 28);
+            this.lblCompanyName.Size = new System.Drawing.Size(276, 33);
             this.lblCompanyName.TabIndex = 28;
             this.lblCompanyName.Text = "Smart Tailor Solution";
             // 

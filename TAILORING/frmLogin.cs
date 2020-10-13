@@ -20,7 +20,6 @@ namespace TAILORING
         }
         clsUtility objUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
-        clsThreadTask ObjThread = new clsThreadTask();
 
         byte count = 0;
         bool Isexit = true;
@@ -44,11 +43,11 @@ namespace TAILORING
             {
                 try
                 {
-                    DataTable dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.UserManagement", "UserID,UserName,Password,IsAdmin", "UserName='" + txtUserName.Text.Trim() + "' AND Password='" + objUtil.Encrypt(txtPassword.Text, true) + "' and ISNULL(Isblock,0)=0", "UserID DESC");
+                    DataTable dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.UserManagement", "UserID,EmployeeID,UserName,Password,IsAdmin", "UserName='" + txtUserName.Text.Trim() + "' AND Password='" + objUtil.Encrypt(txtPassword.Text, true) + "'", "UserID DESC");
                     //int a = ObjDAL.ExecuteScalarInt("select Count(*) From CyberCafeManagement.dbo.login where UserName='" + txtUserName.Text.Trim() + "' and Password='" + txtPassword.Text.Trim() + "'");                 
-                    if (dt != null && dt.Rows.Count > 0)
+                    if (objUtil.ValidateTable(dt))
                     {
-                        clsUtility.LoginID = Convert.ToInt32(dt.Rows[0]["UserID"]);
+                        clsUtility.LoginID = Convert.ToInt32(dt.Rows[0]["EmployeeID"]);
                         clsUtility.IsAdmin = Convert.ToBoolean(dt.Rows[0]["IsAdmin"]);
                         return true;
                     }
@@ -99,7 +98,7 @@ namespace TAILORING
                 else
                 {
                     Isexit = true;
-                    clsUtility.ShowErrorMessage("Invalid User name or Password. or User " + txtUserName.Text.Trim() + " is blocked", clsUtility.strProjectTitle);
+                    clsUtility.ShowErrorMessage("Invalid User name or Password. or User " + txtUserName.Text.Trim() + " is InActive", clsUtility.strProjectTitle);
                     txtPassword.Clear();
                     txtPassword.Focus();
                 }
@@ -138,7 +137,7 @@ namespace TAILORING
             ObjDAL.SetColumnData("UserIPAddress", SqlDbType.VarChar, UserIPAddress);
             ObjDAL.SetColumnData("UserMacAddress", SqlDbType.VarChar, UserMacAddress);
 
-            return (ObjDAL.InsertData(clsUtility.DBName + ".dbo.Login_History", true));            
+            return (ObjDAL.InsertData(clsUtility.DBName + ".dbo.Login_History", true));
         }
 
         private void GetUserIPMacAddress()

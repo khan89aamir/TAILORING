@@ -37,6 +37,9 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.PicEmployee = new System.Windows.Forms.PictureBox();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmbActiveStatus = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbEmployeeType = new System.Windows.Forms.ComboBox();
@@ -77,9 +80,6 @@
             this.txtSearchByEmpName = new System.Windows.Forms.TextBox();
             this.rdShowAllOfEmp = new System.Windows.Forms.RadioButton();
             this.rdSearchByEmpName = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.lblTotalRecords.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
@@ -196,7 +196,7 @@
             this.grpEmployee.BackColor = System.Drawing.Color.Transparent;
             this.grpEmployee.Controls.Add(this.label16);
             this.grpEmployee.Controls.Add(this.label15);
-            this.grpEmployee.Controls.Add(this.comboBox1);
+            this.grpEmployee.Controls.Add(this.cmbActiveStatus);
             this.grpEmployee.Controls.Add(this.label14);
             this.grpEmployee.Controls.Add(this.label13);
             this.grpEmployee.Controls.Add(this.cmbEmployeeType);
@@ -225,6 +225,41 @@
             this.grpEmployee.TabIndex = 0;
             this.grpEmployee.TabStop = false;
             this.grpEmployee.Text = "Employee Details";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label16.Location = new System.Drawing.Point(342, 250);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(15, 17);
+            this.label16.TabIndex = 245;
+            this.label16.Text = "*";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label15.Location = new System.Drawing.Point(19, 248);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(94, 17);
+            this.label15.TabIndex = 244;
+            this.label15.Text = "Active Status :";
+            // 
+            // cmbActiveStatus
+            // 
+            this.cmbActiveStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbActiveStatus.FormattingEnabled = true;
+            this.cmbActiveStatus.Items.AddRange(new object[] {
+            "Active",
+            "InActive"});
+            this.cmbActiveStatus.Location = new System.Drawing.Point(133, 250);
+            this.cmbActiveStatus.Name = "cmbActiveStatus";
+            this.cmbActiveStatus.Size = new System.Drawing.Size(206, 25);
+            this.cmbActiveStatus.TabIndex = 5;
             // 
             // label14
             // 
@@ -320,7 +355,7 @@
             this.grpGender.Name = "grpGender";
             this.grpGender.Padding = new System.Windows.Forms.Padding(2);
             this.grpGender.Size = new System.Drawing.Size(206, 53);
-            this.grpGender.TabIndex = 6;
+            this.grpGender.TabIndex = 7;
             this.grpGender.TabStop = false;
             this.grpGender.Text = "Gender";
             // 
@@ -332,7 +367,7 @@
             this.radMale.Location = new System.Drawing.Point(19, 20);
             this.radMale.Name = "radMale";
             this.radMale.Size = new System.Drawing.Size(56, 21);
-            this.radMale.TabIndex = 7;
+            this.radMale.TabIndex = 8;
             this.radMale.TabStop = true;
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = false;
@@ -345,7 +380,7 @@
             this.radFemale.Location = new System.Drawing.Point(127, 20);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(69, 21);
-            this.radFemale.TabIndex = 8;
+            this.radFemale.TabIndex = 9;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = false;
@@ -388,7 +423,7 @@
             this.groupBox3.Location = new System.Drawing.Point(361, 142);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(365, 134);
-            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Login Details";
             // 
@@ -400,7 +435,7 @@
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(206, 25);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 13;
             this.txtEmail.Enter += new System.EventHandler(this.txtEmployeeCode_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmployeeCode_Leave);
             // 
@@ -434,7 +469,7 @@
             this.txtPass.Location = new System.Drawing.Point(112, 65);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(206, 25);
-            this.txtPass.TabIndex = 10;
+            this.txtPass.TabIndex = 12;
             this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.Enter += new System.EventHandler(this.txtEmployeeCode_Enter);
             this.txtPass.Leave += new System.EventHandler(this.txtEmployeeCode_Leave);
@@ -468,7 +503,7 @@
             this.txtUsername.Location = new System.Drawing.Point(112, 24);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(206, 25);
-            this.txtUsername.TabIndex = 9;
+            this.txtUsername.TabIndex = 11;
             this.txtUsername.Enter += new System.EventHandler(this.txtEmployeeCode_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtEmployeeCode_Leave);
             // 
@@ -511,7 +546,7 @@
             this.txtAdd.Multiline = true;
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(240, 49);
-            this.txtAdd.TabIndex = 5;
+            this.txtAdd.TabIndex = 6;
             this.txtAdd.Enter += new System.EventHandler(this.txtEmployeeCode_Enter);
             this.txtAdd.Leave += new System.EventHandler(this.txtEmployeeCode_Leave);
             // 
@@ -745,41 +780,6 @@
             this.rdSearchByEmpName.UseVisualStyleBackColor = true;
             this.rdSearchByEmpName.CheckedChanged += new System.EventHandler(this.rdSearchByEmpName_CheckedChanged);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label15.Location = new System.Drawing.Point(19, 248);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(94, 17);
-            this.label15.TabIndex = 244;
-            this.label15.Text = "Active Status :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Active",
-            "InActive"});
-            this.comboBox1.Location = new System.Drawing.Point(133, 250);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 25);
-            this.comboBox1.TabIndex = 243;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(342, 250);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(15, 17);
-            this.label16.TabIndex = 245;
-            this.label16.Text = "*";
-            // 
             // Employee_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,7 +876,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbEmployeeType;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbActiveStatus;
         private System.Windows.Forms.Label label16;
     }
 }

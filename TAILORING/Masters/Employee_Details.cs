@@ -92,6 +92,7 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Employee_Details, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
             {
+                EmployeeID = 0;
                 if (ValidateEmployee())
                 {
                     SaveEmployee();
@@ -149,8 +150,14 @@ namespace TAILORING.Masters
             }
             else if (ObjUtil.IsControlTextEmpty(cmbEmployeeType))
             {
-                clsUtility.ShowInfoMessage("Please Enter Employee Mobile No.", clsUtility.strProjectTitle);
-                txtMobileNo.Focus();
+                clsUtility.ShowInfoMessage("Please Select Employee Type.", clsUtility.strProjectTitle);
+                cmbEmployeeType.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(cmbActiveStatus))
+            {
+                clsUtility.ShowInfoMessage("Please Select Active Status.", clsUtility.strProjectTitle);
+                cmbActiveStatus.Focus();
                 return false;
             }
             else if (radFemale.Checked == false && radMale.Checked == false)
@@ -166,6 +173,7 @@ namespace TAILORING.Masters
             ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, EmployeeID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("EmployeeCode", SqlDbType.NVarChar, txtEmployeeCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Validate_Employee");
             if (ObjUtil.ValidateDataSet(ds))
@@ -179,16 +187,16 @@ namespace TAILORING.Masters
                     {
                         msg = dt.Rows[0]["Msg"].ToString();
                         clsUtility.ShowInfoMessage(msg, clsUtility.strProjectTitle);
-                        if (flag == 0)
+                        if (flag == 0 || flag == -2)
                             txtEmployeeCode.Focus();
-                        else
+                        else if(flag == -1)
                             txtMobileNo.Focus();
 
                         ObjDAL.ResetData();
                         return false;
                     }
                     ObjDAL.ResetData();
-                }
+                } 
             }
 
             if (txtUsername.Text.Trim().Length > 0) // if user name is entered
@@ -216,7 +224,7 @@ namespace TAILORING.Masters
             ObjDAL.SetStoreProcedureData("EmployeeCode", SqlDbType.NVarChar, txtEmployeeCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtName.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo.Text, clsConnection_DAL.ParamType.Input);
-
+            ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
             if (radMale.Checked)
             {
                 ObjDAL.SetStoreProcedureData("Gender", SqlDbType.Bit, true, clsConnection_DAL.ParamType.Input);
@@ -271,6 +279,7 @@ namespace TAILORING.Masters
 
         private void LoadData()
         {
+            ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, clsUtility.IsAdmin == true ? 0 : clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Employee");
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -417,7 +426,7 @@ namespace TAILORING.Masters
             ObjDAL.SetStoreProcedureData("EmployeeCode", SqlDbType.NVarChar, txtEmployeeCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtName.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtMobileNo.Text, clsConnection_DAL.ParamType.Input);
-
+            ObjDAL.SetStoreProcedureData("ActiveStatus", SqlDbType.Bit, cmbActiveStatus.SelectedItem.ToString() == "Active" ? 1 : 0, clsConnection_DAL.ParamType.Input);
             if (radMale.Checked)
             {
                 ObjDAL.SetStoreProcedureData("Gender", SqlDbType.Bit, true, clsConnection_DAL.ParamType.Input);
@@ -478,7 +487,7 @@ namespace TAILORING.Masters
             ObjDAL.UpdateColumnData("UserName", SqlDbType.NVarChar, txtUsername.Text.Trim());
             ObjDAL.UpdateColumnData("Password", SqlDbType.NVarChar, ObjUtil.Encrypt(txtPass.Text.Trim(), true));
             ObjDAL.UpdateColumnData("EmailID", SqlDbType.NVarChar, txtEmail.Text.Trim());
-            ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, b); 
+            ObjDAL.UpdateColumnData("IsAdmin", SqlDbType.Bit, b);
             //if user is blocked then if his details will update from this form then could be auto unblock
 
             //ObjDAL.UpdateColumnData("IsBlock", SqlDbType.Bit, false);
@@ -569,6 +578,7 @@ namespace TAILORING.Masters
                 return;
             }
 
+            ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, clsUtility.IsAdmin == true ? 0 : clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByEmpName.Text, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Employee");
@@ -597,6 +607,8 @@ namespace TAILORING.Masters
                 LoadData();
                 return;
             }
+
+            ObjDAL.SetStoreProcedureData("EMPID", SqlDbType.Int, clsUtility.IsAdmin == true ? 0 : clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.NVarChar, txtSearchByEmpMobileNo.Text, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Employee");

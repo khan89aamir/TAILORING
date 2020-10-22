@@ -35,6 +35,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpProduct = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbOrderType = new System.Windows.Forms.ComboBox();
+            this.txtRate = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtGarmentCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -156,6 +162,12 @@
             // grpProduct
             // 
             this.grpProduct.BackColor = System.Drawing.Color.Transparent;
+            this.grpProduct.Controls.Add(this.label14);
+            this.grpProduct.Controls.Add(this.label13);
+            this.grpProduct.Controls.Add(this.cmbOrderType);
+            this.grpProduct.Controls.Add(this.txtRate);
+            this.grpProduct.Controls.Add(this.label1);
+            this.grpProduct.Controls.Add(this.label4);
             this.grpProduct.Controls.Add(this.txtGarmentCode);
             this.grpProduct.Controls.Add(this.label3);
             this.grpProduct.Controls.Add(this.label2);
@@ -166,16 +178,87 @@
             this.grpProduct.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpProduct.Location = new System.Drawing.Point(19, 96);
             this.grpProduct.Name = "grpProduct";
-            this.grpProduct.Size = new System.Drawing.Size(745, 77);
+            this.grpProduct.Size = new System.Drawing.Size(745, 127);
             this.grpProduct.TabIndex = 0;
             this.grpProduct.TabStop = false;
             this.grpProduct.Text = "Product Details";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(714, 73);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 293;
+            this.label14.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label13.Location = new System.Drawing.Point(393, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 17);
+            this.label13.TabIndex = 292;
+            this.label13.Text = "Order Type :";
+            // 
+            // cmbOrderType
+            // 
+            this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrderType.FormattingEnabled = true;
+            this.cmbOrderType.Items.AddRange(new object[] {
+            "Normal",
+            "Urgent"});
+            this.cmbOrderType.Location = new System.Drawing.Point(507, 74);
+            this.cmbOrderType.Name = "cmbOrderType";
+            this.cmbOrderType.Size = new System.Drawing.Size(206, 25);
+            this.cmbOrderType.TabIndex = 291;
+            // 
+            // txtRate
+            // 
+            this.txtRate.BackColor = System.Drawing.Color.White;
+            this.txtRate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRate.Location = new System.Drawing.Point(133, 74);
+            this.txtRate.MaxLength = 100;
+            this.txtRate.Name = "txtRate";
+            this.txtRate.Size = new System.Drawing.Size(206, 25);
+            this.txtRate.TabIndex = 288;
+            this.txtRate.Enter += new System.EventHandler(this.txtProductName_Enter);
+            this.txtRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRate_KeyPress);
+            this.txtRate.Leave += new System.EventHandler(this.txtProductName_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(342, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 17);
+            this.label1.TabIndex = 290;
+            this.label1.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 17);
+            this.label4.TabIndex = 289;
+            this.label4.Text = "Rate :";
             // 
             // txtGarmentCode
             // 
             this.txtGarmentCode.BackColor = System.Drawing.Color.White;
             this.txtGarmentCode.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentCode.Location = new System.Drawing.Point(133, 24);
+            this.txtGarmentCode.Location = new System.Drawing.Point(133, 26);
             this.txtGarmentCode.MaxLength = 100;
             this.txtGarmentCode.Name = "txtGarmentCode";
             this.txtGarmentCode.Size = new System.Drawing.Size(206, 25);
@@ -234,7 +317,7 @@
             // 
             this.txtGarmentName.BackColor = System.Drawing.Color.White;
             this.txtGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentName.Location = new System.Drawing.Point(509, 24);
+            this.txtGarmentName.Location = new System.Drawing.Point(507, 26);
             this.txtGarmentName.MaxLength = 100;
             this.txtGarmentName.Name = "txtGarmentName";
             this.txtGarmentName.Size = new System.Drawing.Size(206, 25);
@@ -250,7 +333,7 @@
             this.groupBox1.Controls.Add(this.rdSearchByProduct);
             this.groupBox1.Controls.Add(this.txtSearchByGarment);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 189);
+            this.groupBox1.Location = new System.Drawing.Point(19, 246);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(745, 58);
             this.groupBox1.TabIndex = 8;
@@ -262,7 +345,7 @@
             this.rdShowAll.AutoSize = true;
             this.rdShowAll.Checked = true;
             this.rdShowAll.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdShowAll.Location = new System.Drawing.Point(509, 20);
+            this.rdShowAll.Location = new System.Drawing.Point(509, 22);
             this.rdShowAll.Name = "rdShowAll";
             this.rdShowAll.Size = new System.Drawing.Size(79, 21);
             this.rdShowAll.TabIndex = 13;
@@ -275,7 +358,7 @@
             // 
             this.rdSearchByProduct.AutoSize = true;
             this.rdSearchByProduct.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdSearchByProduct.Location = new System.Drawing.Point(13, 20);
+            this.rdSearchByProduct.Location = new System.Drawing.Point(13, 22);
             this.rdSearchByProduct.Name = "rdSearchByProduct";
             this.rdSearchByProduct.Size = new System.Drawing.Size(124, 21);
             this.rdSearchByProduct.TabIndex = 9;
@@ -288,7 +371,7 @@
             this.txtSearchByGarment.BackColor = System.Drawing.Color.White;
             this.txtSearchByGarment.Enabled = false;
             this.txtSearchByGarment.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchByGarment.Location = new System.Drawing.Point(142, 19);
+            this.txtSearchByGarment.Location = new System.Drawing.Point(142, 21);
             this.txtSearchByGarment.MaxLength = 100;
             this.txtSearchByGarment.Name = "txtSearchByGarment";
             this.txtSearchByGarment.Size = new System.Drawing.Size(206, 25);
@@ -303,7 +386,7 @@
             this.grpGridview.BackColor = System.Drawing.Color.Transparent;
             this.grpGridview.Controls.Add(this.dataGridView1);
             this.grpGridview.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGridview.Location = new System.Drawing.Point(20, 253);
+            this.grpGridview.Location = new System.Drawing.Point(20, 310);
             this.grpGridview.Name = "grpGridview";
             this.grpGridview.Size = new System.Drawing.Size(777, 239);
             this.grpGridview.TabIndex = 213;
@@ -353,7 +436,7 @@
             this.lblTotalRecords.AutoSize = true;
             this.lblTotalRecords.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalRecords.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRecords.Location = new System.Drawing.Point(22, 496);
+            this.lblTotalRecords.Location = new System.Drawing.Point(22, 553);
             this.lblTotalRecords.Name = "lblTotalRecords";
             this.lblTotalRecords.Size = new System.Drawing.Size(121, 17);
             this.lblTotalRecords.TabIndex = 217;
@@ -365,7 +448,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(809, 524);
+            this.ClientSize = new System.Drawing.Size(809, 573);
             this.Controls.Add(this.lblTotalRecords);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grpProduct);
@@ -420,5 +503,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGarmentCode;
+        private System.Windows.Forms.TextBox txtRate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbOrderType;
     }
 }

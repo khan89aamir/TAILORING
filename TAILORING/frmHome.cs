@@ -155,31 +155,37 @@ namespace TAILORING
 
         private void SalesInvoice_ToolStrip_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Sales_Invoice) || clsUtility.IsAdmin)
+            //if (clsFormRights.HasFormRight(clsFormRights.Forms.Sales_Invoice) || clsUtility.IsAdmin)
+            //{
+            bool b = ObjUtil.IsAlreadyOpen(typeof(Order.frmOrderManagement));
+            if (!b)
             {
-                
+                Order.frmOrderManagement Obj = new Order.frmOrderManagement();
+                Obj.Show();
             }
-            else
-            {
-                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
-            }
+            //}
+            //else
+            //{
+            //    clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+            //}
+
         }
 
         private void SalesBillDetails_ToolStrip_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Sales_Bill_Details) || clsUtility.IsAdmin)
-            {
-                //bool b = ObjUtil.IsAlreadyOpen(typeof(Sales.Sales_Bill_Details));
-                //if (!b)
-                //{
-                //    Sales.Sales_Bill_Details Obj = new Sales.Sales_Bill_Details();
-                //    Obj.Show();
-                //}
-            }
-            else
-            {
-                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
-            }
+            //if (clsFormRights.HasFormRight(clsFormRights.Forms.Sales_Bill_Details) || clsUtility.IsAdmin)
+            //{
+            //    //bool b = ObjUtil.IsAlreadyOpen(typeof(Sales.Sales_Bill_Details));
+            //    //if (!b)
+            //    //{
+            //    //    Sales.Sales_Bill_Details Obj = new Sales.Sales_Bill_Details();
+            //    //    Obj.Show();
+            //    //}
+            //}
+            //else
+            //{
+            //    clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+            //}
         }
 
         private void productMasterToolStripMenuItem_Click(object sender, EventArgs e)

@@ -164,7 +164,7 @@ namespace TAILORING.Order
 
                 //rd.Size = new System.Drawing.Size(56, 21);
                 rd.CheckedChanged += Rd_CheckedChanged;
-                rd.mouse
+                //rd.mouse
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
                 pic.BorderStyle = BorderStyle.FixedSingle;

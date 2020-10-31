@@ -38,7 +38,7 @@ namespace TAILORING.Others
                 AddControls(value);
             }
         }
-     
+
         public DataSet GetMeasurement()
         {
             DataSet ds = new DataSet();
@@ -55,8 +55,8 @@ namespace TAILORING.Others
                     Control[] ctr = flowLayoutPanel1.Controls[i].Controls[k].Controls.Find("txt", true);
 
                     // two lables are added in one panel .. one for name and other for mendatory
-                 IEnumerable<Label> Lable=   flowLayoutPanel1.Controls[i].Controls[k].Controls.OfType<Label>();
-                    if (Lable.Count()>1)
+                    IEnumerable<Label> Lable = flowLayoutPanel1.Controls[i].Controls[k].Controls.OfType<Label>();
+                    if (Lable.Count() > 1)
                     {
                         string curCol = Lable.ElementAt(1).Text;
 
@@ -85,7 +85,7 @@ namespace TAILORING.Others
         private void AddControls(DataTable dt)
         {
             flowLayoutPanel1.Controls.Clear();
-            if (dt==null)
+            if (dt == null)
             {
                 return;
             }
@@ -95,7 +95,6 @@ namespace TAILORING.Others
                 pnlContainer.BorderStyle = BorderStyle.FixedSingle;
                 pnlContainer.AutoScroll = true;
 
-          
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {
                     Panel panel = new Panel();
@@ -115,18 +114,18 @@ namespace TAILORING.Others
                         lblmendatory.ForeColor = Color.Red;
                         lblmendatory.BackColor = Color.Transparent;
                         lblmendatory.AutoSize = true;
-                        lblmendatory.Location= new Point(93+ txt.Width+1, 11);
+                        lblmendatory.Location = new Point(110 + txt.Width + 1, 11);
                         panel.Controls.Add(lblmendatory);
                     }
                     txt.Name = "txt";
                     txt.Font = new Font("Times New Roman", 11.2f, FontStyle.Regular);
-                    txt.Location = new Point(93, 13);
-                    panel.Size = new Size(panel.Width, panel.Height - 40);
+                    txt.Location = new Point(110, 13);
+                    panel.Size = new Size(panel.Width + 23, panel.Height - 60);
                     panel.Controls.Add(label);
                     panel.Controls.Add(txt);
                     panel.Location = new Point(0, 0);
-                   
-                    pnlContainer.Size = new Size(panel.Width + 25, flowLayoutPanel1.Height);
+
+                    pnlContainer.Size = new Size(panel.Width + 55, flowLayoutPanel1.Height);
                     pnlContainer.Controls.Add(panel);
                     flowLayoutPanel1.Controls.Add(pnlContainer);
                 }

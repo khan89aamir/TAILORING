@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using CoreApp;
@@ -35,11 +36,23 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtGarmentList))
             {
-                //dtGarmentList.Columns.Remove("");
-
-                dtGarmentList.Columns.Add("Measurement");
-                dtGarmentList.Columns.Add("Style");
+                if (!dtGarmentList.Columns.Contains("Measurement"))
+                {
+                    dtGarmentList.Columns.Add("Measurement");
+                    dtGarmentList.Columns.Add("Style");
+                }
                 dataGridView1.DataSource = dtGarmentList;
+
+                SKUList.Items.Clear();
+                for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+                {
+                    SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
+
+                    dataGridView1.Columns["Measurement"].DefaultCellStyle.BackColor = Color.Red;
+                    dataGridView1.Columns["Style"].DefaultCellStyle.BackColor = Color.Red;
+                }
+                SKUList.Items[0].Selected = true;
+                GetDefaultSelectSKU();
             }
             else
             {
@@ -74,6 +87,33 @@ namespace TAILORING.Order
             }
         }
 
+        private void AddGarmentStyleList()
+        {
+            for (int i = 0; i < dtStyle.Rows.Count; i++)
+            {
+                //Panel panel = new Panel();
+                Button btn = new Button();
+                //btn.Name = "btn";
+                btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
+                btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
+
+                btn.Click += StyleName_Click;
+                //panel.Cursor = Cursors.Hand;
+                //panel.Click += Panel_Click;
+                //panel.Controls.Add(btn);
+
+                //flowStyleName.Controls.Add(panel);
+                flowStyleName.Controls.Add(btn);
+            }
+        }
+
+        private void StyleName_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int StyleID = Convert.ToInt32(btn.Name);
+            GetGarmentStyleImages(GarmentID, StyleID);
+        }
+
         private void GetGarmentStyle(int GarmentID)
         {
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
@@ -83,51 +123,17 @@ namespace TAILORING.Order
                 dtStyle = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dtStyle))
                 {
-                    listBox1.Items.Clear();
-                    for (int i = 0; i < dtStyle.Rows.Count; i++)
-                    {
-                        listBox1.Items.Add(dtStyle.Rows[i]["StyleName"].ToString());
-                    }
+                    flowStyleName.Controls.Clear();
+                    AddGarmentStyleList();
                 }
                 else
                 {
-                    listBox1.DataSource = null;
+                    flowStyleName.Controls.Clear();
                 }
             }
             else
             {
-                listBox1.DataSource = null;
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-            {
-                return;
-            }
-
-            int column = dataGridView1.CurrentCell.ColumnIndex;
-            string headerText = dataGridView1.Columns[column].HeaderText;
-
-            GarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
-            if (headerText == "Measurement")
-            {
-                listBox1.Visible = false;
-                flowLayoutPanel1.Visible = false;
-                ctrlMeasurment1.Visible = true;
-                ctrlMeasurment1.ProductCount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
-                GetGarmentMasterMeasurement(GarmentID);
-            }
-            else if (headerText == "Style")
-            {
-                ctrlMeasurment1.Visible = false;
-                flowLayoutPanel1.Visible = true;
-                listBox1.Visible = true;
-                listBox1.Location = new Point(41, 195);
-                listBox1.Size = new Size(160, 361);
-
-                GetGarmentStyle(GarmentID);
+                //listBox1.DataSource = null;
             }
         }
 
@@ -138,7 +144,6 @@ namespace TAILORING.Order
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["GarmentCode"].Visible = false;
@@ -146,43 +151,66 @@ namespace TAILORING.Order
             dataGridView1.Columns["Rate"].Visible = false;
             dataGridView1.Columns["Total"].Visible = false;
             dataGridView1.Columns["Trim Amount"].Visible = false;
+
+            dataGridView1.ClearSelection();
+            dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
         }
 
         private void AddStyleImages()
         {
-            flowLayoutPanel1.Controls.Clear();
+            flowStyleImage.Controls.Clear();
             for (int i = 0; i < dtStyleImages.Rows.Count; i++)
             {
                 Panel panel = new Panel();
                 PictureBox pic = new PictureBox();
-                RadioButton rd = new RadioButton();
+                Label lbl = new Label();
+                panel.Name = "pnl";
 
-                rd.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
-                rd.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
-                rd.AutoSize = true;
-                rd.BackColor = Color.Transparent;
+                lbl.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
+                lbl.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
+                lbl.AutoSize = true;
+                lbl.BackColor = Color.Transparent;
+                lbl.Location = new Point(pic.Location.X, pic.Location.Y + 55);
 
-                //rd.Size = new System.Drawing.Size(56, 21);
-                rd.CheckedChanged += Rd_CheckedChanged;
-                //rd.mouse
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
+                pic.Click += Pic_Click;
                 pic.BorderStyle = BorderStyle.FixedSingle;
 
-                rd.Location = new Point(pic.Location.X, pic.Location.Y + 55);
-                
+                panel.Cursor = Cursors.Hand;
+                panel.Click += Panel_Click;
                 panel.Controls.Add(pic);
-                panel.Controls.Add(rd);
+                panel.Controls.Add(lbl);
 
-                flowLayoutPanel1.Controls.Add(panel);
+                flowStyleImage.Controls.Add(panel);
             }
         }
 
-        private void Rd_CheckedChanged(object sender, EventArgs e)
+        private void Pic_Click(object sender, EventArgs e)
         {
-            RadioButton rd = (RadioButton)sender;
-            label1.Text = rd.Name;
-            label1.Text = rd.Checked+" "+ rd.Text;
+            Control[] ctrl = flowStyleImage.Controls.Find("pnl", false);
+            for (int i = 0; i < ctrl.Length; i++)
+            {
+                ctrl[i].BackColor = Color.Transparent;
+            }
+
+            PictureBox p = (PictureBox)sender;
+            p.Parent.BackColor = Color.LightGray;
+
+        }
+
+        private void Panel_Click(object sender, EventArgs e)
+        {
+            Control[] ctrl = flowStyleImage.Controls.Find("pnl", false);
+            for (int i = 0; i < ctrl.Length; i++)
+            {
+                ctrl[i].BackColor = Color.Transparent;
+            }
+
+            Panel p = (Panel)sender;
+            p.BackColor = Color.LightGray;
         }
 
         private void GetGarmentStyleImages(int GarmentID, int StyleID)
@@ -200,17 +228,38 @@ namespace TAILORING.Order
                 }
                 else
                 {
-                    flowLayoutPanel1.Controls.Clear();
+                    flowStyleImage.Controls.Clear();
                 }
             }
         }
 
-        private void listBox1_MouseClick(object sender, MouseEventArgs e)
+        private void SKUList_MouseClick(object sender, MouseEventArgs e)
         {
-            DataRow[] drow = dtStyle.Select("StyleName='" + listBox1.SelectedItem.ToString() + "'");
+            lblSKUName.Text = "SKU Selected : " + SKUList.SelectedItems[0].Text.ToString();
+            DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
             if (drow.Length > 0)
             {
-                GetGarmentStyleImages(GarmentID, Convert.ToInt32(drow[0]["StyleID"]));
+                GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+
+                ctrlMeasurment1.ProductCount = 1;
+                GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+
+                GetGarmentStyle(GarmentID);// Garment Style
+            }
+        }
+
+        private void GetDefaultSelectSKU()
+        {
+            lblSKUName.Text = "SKU Selected : " + SKUList.Items[0].Text;
+            DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.Items[0].Text + "'");
+            if (drow.Length > 0)
+            {
+                GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+
+                ctrlMeasurment1.ProductCount = 1;
+                GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+
+                GetGarmentStyle(GarmentID);// Garment Style
             }
         }
     }

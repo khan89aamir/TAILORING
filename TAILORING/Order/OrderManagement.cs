@@ -213,20 +213,47 @@ namespace TAILORING.Order
             lnkAddItem.Enabled = true;
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void AddDefaultRow()
         {
-            decimal trim = (txtTrimsAmount.Text.Length > 0 ? Convert.ToDecimal(txtTrimsAmount.Text) : 0);
-
             DataRow dRow = dtOrder.NewRow();
-            dRow["GarmentID"] = cmbGarmentName.SelectedValue;
-            dRow["GarmentName"] = cmbGarmentName.Text;
-            dRow["Trim Amount"] = trim;
-            dRow["Rate"] = txtRate.Text;
-            dRow["QTY"] = NumericQTY.Value;
-            dRow["Total"] = trim + (NumericQTY.Value * Convert.ToDecimal(txtRate.Text));
+            dRow["GarmentID"] = 1;
+            dRow["GarmentName"] = "Shirt";
+            dRow["Trim Amount"] = 0;
+            dRow["Rate"] = 100;
+            dRow["QTY"] = 1;
+            dRow["Total"] = 0 + (1 * 100);
+
+            dtOrder.Rows.Add(dRow);
+            
+
+            dRow = dtOrder.NewRow();
+            dRow["GarmentID"] = 1002;
+            dRow["GarmentName"] = "Trouser";
+            dRow["Trim Amount"] = 0;
+            dRow["Rate"] = 100;
+            dRow["QTY"] = 2;
+            dRow["Total"] = 0 + (2 * 100);
 
             dtOrder.Rows.Add(dRow);
             dtOrder.AcceptChanges();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //decimal trim = (txtTrimsAmount.Text.Length > 0 ? Convert.ToDecimal(txtTrimsAmount.Text) : 0);
+
+            //DataRow dRow = dtOrder.NewRow();
+            //dRow["GarmentID"] = cmbGarmentName.SelectedValue;
+            //dRow["GarmentName"] = cmbGarmentName.Text;
+            //dRow["Trim Amount"] = trim;
+            //dRow["Rate"] = txtRate.Text;
+            //dRow["QTY"] = NumericQTY.Value;
+            //dRow["Total"] = trim + (NumericQTY.Value * Convert.ToDecimal(txtRate.Text));
+
+            //dtOrder.Rows.Add(dRow);
+            //dtOrder.AcceptChanges();
+
+            AddDefaultRow();
             dataGridView1.DataSource = dtOrder;
         }
 

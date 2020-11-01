@@ -29,7 +29,8 @@ namespace TAILORING.Order
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             InitItemTable();
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            btnMeasurement.BackgroundImage = B_Leave;
+            btnSave.BackgroundImage = B_Leave;
         }
 
         private void InitItemTable()
@@ -41,7 +42,7 @@ namespace TAILORING.Order
             dtOrder.Columns.Add("QTY", typeof(int));
             dtOrder.Columns.Add("Rate", typeof(double));
             dtOrder.Columns.Add("Total", typeof(double));
-
+            dtOrder.Columns.Add("Photo");
             //dtPurchaseInvoice.Columns.Add("Delete");
 
             //DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
@@ -195,7 +196,16 @@ namespace TAILORING.Order
             ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
+            dataGridView1.Columns["Photo"].Visible = false;
 
+            if (dataGridView1.Columns.Contains("Measurement"))
+            {
+                dataGridView1.Columns["Measurement"].Visible = false;
+            }
+            if (dataGridView1.Columns.Contains("Style"))
+            {
+                dataGridView1.Columns["Style"].Visible = false;
+            }
             CalcTotalAmount();
         }
 
@@ -221,6 +231,7 @@ namespace TAILORING.Order
             dRow["Trim Amount"] = 0;
             dRow["Rate"] = 100;
             dRow["QTY"] = 1;
+            dRow["Photo"] = @"C:\Tailoring Images\Generic\Shirt generic 1.jpeg";
             dRow["Total"] = 0 + (1 * 100);
 
             dtOrder.Rows.Add(dRow);
@@ -232,6 +243,7 @@ namespace TAILORING.Order
             dRow["Trim Amount"] = 0;
             dRow["Rate"] = 100;
             dRow["QTY"] = 2;
+            dRow["Photo"] = @"C:\Tailoring Images\Generic\Trouser Generic 1.gif";
             dRow["Total"] = 0 + (2 * 100);
 
             dtOrder.Rows.Add(dRow);
@@ -255,6 +267,7 @@ namespace TAILORING.Order
 
             AddDefaultRow();
             dataGridView1.DataSource = dtOrder;
+            ClearAll();
         }
 
         private void CalcTotalAmount()
@@ -265,11 +278,20 @@ namespace TAILORING.Order
             double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
             txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
         }
+
         private void btnMeasurement_Click(object sender, EventArgs e)
         {
-            Order.frmMeasurement Obj = new Order.frmMeasurement();
-            Obj.dtGarmentList = dtOrder;
-            Obj.ShowDialog();
+            if (ObjUtil.ValidateTable(dtOrder))
+            {
+                Order.frmMeasurement Obj = new Order.frmMeasurement();
+                Obj.dtGarmentList = dtOrder;
+                Obj.ShowDialog();
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("Please Enter some Garments");
+                cmbGarmentName.Focus();
+            }
         }
 
         private void txtAdvancePaid_TextChanged(object sender, EventArgs e)
@@ -285,6 +307,27 @@ namespace TAILORING.Order
                 }
             }
             CalcTotalAmount();
+        }
+
+        private void ClearAll()
+        {
+            cmbGarmentName.SelectedIndex = -1;
+            txtRate.Text = "0.00";
+            NumericQTY.Value = 1;
+            txtTrimsAmount.Text = "0";
+            cmbGarmentName.Focus();
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Enter;
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Leave;
         }
     }
 }

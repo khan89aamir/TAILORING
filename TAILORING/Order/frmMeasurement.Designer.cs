@@ -31,7 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnStyleSave = new System.Windows.Forms.Button();
             this.flowStyleImage = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSKUName = new System.Windows.Forms.Label();
             this.flowStyleName = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,6 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SKUList = new System.Windows.Forms.ListView();
+            this.btnMeasureSave = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cmbStyleQTY = new System.Windows.Forms.ComboBox();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -56,6 +59,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.RowTemplate.Height = 32;
             this.dataGridView1.Size = new System.Drawing.Size(366, 133);
             this.dataGridView1.TabIndex = 322;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
@@ -85,26 +89,27 @@
             this.label12.Text = "Measurement & Style";
             this.label12.UseMnemonic = false;
             // 
-            // btnSave
+            // btnStyleSave
             // 
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(863, 189);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 27);
-            this.btnSave.TabIndex = 336;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnStyleSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStyleSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStyleSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStyleSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStyleSave.Location = new System.Drawing.Point(863, 189);
+            this.btnStyleSave.Name = "btnStyleSave";
+            this.btnStyleSave.Size = new System.Drawing.Size(85, 27);
+            this.btnStyleSave.TabIndex = 336;
+            this.btnStyleSave.Text = "Save";
+            this.btnStyleSave.UseVisualStyleBackColor = true;
+            this.btnStyleSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
+            this.btnStyleSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
             // 
             // flowStyleImage
             // 
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
-            this.flowStyleImage.Location = new System.Drawing.Point(530, 323);
+            this.flowStyleImage.Location = new System.Drawing.Point(482, 329);
             this.flowStyleImage.Name = "flowStyleImage";
-            this.flowStyleImage.Size = new System.Drawing.Size(473, 289);
+            this.flowStyleImage.Size = new System.Drawing.Size(521, 336);
             this.flowStyleImage.TabIndex = 338;
             // 
             // lblSKUName
@@ -121,9 +126,9 @@
             // flowStyleName
             // 
             this.flowStyleName.BackColor = System.Drawing.Color.White;
-            this.flowStyleName.Location = new System.Drawing.Point(530, 225);
+            this.flowStyleName.Location = new System.Drawing.Point(482, 252);
             this.flowStyleName.Name = "flowStyleName";
-            this.flowStyleName.Size = new System.Drawing.Size(473, 92);
+            this.flowStyleName.Size = new System.Drawing.Size(521, 71);
             this.flowStyleName.TabIndex = 339;
             // 
             // label1
@@ -142,7 +147,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(723, 196);
+            this.label2.Location = new System.Drawing.Point(628, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 342;
@@ -164,19 +169,59 @@
             this.SKUList.HideSelection = false;
             this.SKUList.Location = new System.Drawing.Point(15, 49);
             this.SKUList.Name = "SKUList";
-            this.SKUList.Size = new System.Drawing.Size(332, 133);
+            this.SKUList.Size = new System.Drawing.Size(378, 133);
             this.SKUList.TabIndex = 344;
             this.SKUList.UseCompatibleStateImageBehavior = false;
             this.SKUList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SKUList_MouseClick);
+            // 
+            // btnMeasureSave
+            // 
+            this.btnMeasureSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMeasureSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMeasureSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMeasureSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMeasureSave.Location = new System.Drawing.Point(308, 189);
+            this.btnMeasureSave.Name = "btnMeasureSave";
+            this.btnMeasureSave.Size = new System.Drawing.Size(85, 27);
+            this.btnMeasureSave.TabIndex = 345;
+            this.btnMeasureSave.Text = "Save";
+            this.btnMeasureSave.UseVisualStyleBackColor = true;
+            this.btnMeasureSave.Click += new System.EventHandler(this.btnMeasureSave_Click);
+            this.btnMeasureSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
+            this.btnMeasureSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(678, 225);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(182, 21);
+            this.checkBox1.TabIndex = 346;
+            this.checkBox1.Text = "Copy style as per previous";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // cmbStyleQTY
+            // 
+            this.cmbStyleQTY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStyleQTY.FormattingEnabled = true;
+            this.cmbStyleQTY.Location = new System.Drawing.Point(678, 193);
+            this.cmbStyleQTY.Name = "cmbStyleQTY";
+            this.cmbStyleQTY.Size = new System.Drawing.Size(121, 25);
+            this.cmbStyleQTY.TabIndex = 347;
+            this.cmbStyleQTY.SelectionChangeCommitted += new System.EventHandler(this.cmbStyleQTY_SelectionChangeCommitted);
             // 
             // ctrlMeasurment1
             // 
             this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
             this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(15, 218);
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(15, 224);
             this.ctrlMeasurment1.Name = "ctrlMeasurment1";
             this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(344, 394);
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(344, 441);
             this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmMeasurement
@@ -185,7 +230,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1015, 624);
+            this.ClientSize = new System.Drawing.Size(1015, 667);
+            this.Controls.Add(this.cmbStyleQTY);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btnMeasureSave);
             this.Controls.Add(this.SKUList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -193,7 +241,7 @@
             this.Controls.Add(this.flowStyleName);
             this.Controls.Add(this.lblSKUName);
             this.Controls.Add(this.flowStyleImage);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnStyleSave);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ctrlMeasurment1);
@@ -218,7 +266,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnStyleSave;
         private System.Windows.Forms.FlowLayoutPanel flowStyleImage;
         private System.Windows.Forms.Label lblSKUName;
         private System.Windows.Forms.FlowLayoutPanel flowStyleName;
@@ -226,5 +274,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView SKUList;
+        private System.Windows.Forms.Button btnMeasureSave;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cmbStyleQTY;
     }
 }

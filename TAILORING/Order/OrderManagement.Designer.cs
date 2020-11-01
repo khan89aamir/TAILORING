@@ -250,6 +250,7 @@
             // cmbGarmentName
             // 
             this.cmbGarmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.FormattingEnabled = true;
             this.cmbGarmentName.Items.AddRange(new object[] {
             "Normal",
@@ -354,6 +355,7 @@
             // 
             this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrderType.Enabled = false;
+            this.cmbOrderType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrderType.FormattingEnabled = true;
             this.cmbOrderType.Items.AddRange(new object[] {
             "Normal",
@@ -361,7 +363,7 @@
             this.cmbOrderType.Location = new System.Drawing.Point(156, 196);
             this.cmbOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbOrderType.Name = "cmbOrderType";
-            this.cmbOrderType.Size = new System.Drawing.Size(207, 22);
+            this.cmbOrderType.Size = new System.Drawing.Size(207, 25);
             this.cmbOrderType.TabIndex = 317;
             this.cmbOrderType.SelectionChangeCommitted += new System.EventHandler(this.cmbOrderType_SelectionChangeCommitted);
             // 
@@ -480,6 +482,8 @@
             this.btnSave.TabIndex = 336;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // btnMeasurement
             // 
@@ -494,6 +498,8 @@
             this.btnMeasurement.Text = "Measurement";
             this.btnMeasurement.UseVisualStyleBackColor = true;
             this.btnMeasurement.Click += new System.EventHandler(this.btnMeasurement_Click);
+            this.btnMeasurement.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnMeasurement.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // frmOrderManagement
             // 

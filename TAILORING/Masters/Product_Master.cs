@@ -366,6 +366,7 @@ namespace TAILORING.Masters
             ObjUtil.SetRowNumber(dataGridView1);
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
+            dataGridView1.Columns["Photo"].Visible = false;
             lblTotalRecords.Text = "Total Records : " + dataGridView1.Rows.Count;
         }
 

@@ -65,10 +65,11 @@ namespace TAILORING.Order
                     SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
 
                     dataGridView1.Rows[i].Cells["Measurement"].Value = Pending;
-                    dataGridView1.Rows[i].Cells["Style"].Value = Done;
+                    dataGridView1.Rows[i].Cells["Style"].Value = Pending;
 
                     imageList.Images.Add(img);
-                    imageList.ImageSize = new Size(48, 56);
+                    //imageList.ImageSize = new Size(48, 56);
+                    imageList.ImageSize = new Size(111, 96);
                     SKUList.View = System.Windows.Forms.View.LargeIcon;
                     SKUList.LargeImageList = imageList;
 
@@ -121,8 +122,10 @@ namespace TAILORING.Order
 
                         lstMendatory.Add(dtMasterMeasurement.Rows[i]["MeasurementName"].ToString());
                     }
+
                     ctrlMeasurment1.SetMendatoryList(lstMendatory);
-                    ctrlMeasurment1.DataSource = dtMeasurement;
+                    DataTable dt = GetEnteredGarmentMeasurement(dtMeasurement);
+                    ctrlMeasurment1.DataSource = dt;
                 }
             }
         }
@@ -136,6 +139,7 @@ namespace TAILORING.Order
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
+                btn.FlatStyle = FlatStyle.Popup;
                 btn.Click += btnStyleName_Click;
                 //panel.Cursor = Cursors.Hand;
                 //panel.Click += Panel_Click;
@@ -149,7 +153,7 @@ namespace TAILORING.Order
         private int GetSelectedStyleImage(int pGarmentID, int pStyleID)
         {
             int StyleImgID = 0;
-            DataRow[] drow = dtTempStyle.Select("GarmentID=" + pGarmentID + " AND StyleID=" + pStyleID);
+            DataRow[] drow = dtTempStyle.Select("GarmentID=" + pGarmentID + " AND StyleID=" + pStyleID + " AND QTY=" + cmbStyleQTY.Text);
             if (drow.Length > 0)
             {
                 StyleImgID = Convert.ToInt32(drow[0]["StyleImageID"].ToString());
@@ -160,6 +164,8 @@ namespace TAILORING.Order
         private void btnStyleName_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            btn.FlatAppearance.BorderColor = Color.Red;
+            btn.FlatAppearance.BorderSize = 2;
             //btn.BackgroundImage = B_Enter;
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
@@ -181,10 +187,6 @@ namespace TAILORING.Order
                 {
                     flowStyleName.Controls.Clear();
                 }
-            }
-            else
-            {
-                //listBox1.DataSource = null;
             }
         }
 
@@ -250,7 +252,7 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempStyle))
             {
-                DataRow[] dr = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID<>" + p.Name);
+                DataRow[] dr = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID<>" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
                 if (dr.Length > 0)
                 {
                     dr[0].Delete();
@@ -268,13 +270,64 @@ namespace TAILORING.Order
             dtTempStyle.AcceptChanges();
         }
 
-        private void Pic_Click(object sender, EventArgs e)
+        private DataTable GetEnteredGarmentMeasurement(DataTable dtMeasurement)
+        {
+            if (ObjUtil.ValidateTable(dtTempMeasurement))
+            {
+                DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
+                if (dr.Length > 0)
+                {
+                    if (dtMeasurement.Rows.Count == 0)
+                    {
+                        DataRow drow = dtMeasurement.NewRow();
+                        dtMeasurement.Rows.Add(drow);
+                        dtMeasurement.AcceptChanges();
+                    }
+                    for (int i = 0; i < dtMeasurement.Columns.Count; i++)
+                    {
+                        dtMeasurement.Rows[0][i] = dr[i]["MeasurementValue"].ToString() == "0" ? "" : dr[i]["MeasurementValue"];
+                    }
+                }
+            }
+            return dtMeasurement;
+        }
+
+        private void CopyPreviousGarmentStyle()
+        {
+            int qty = Convert.ToInt32(cmbStyleQTY.Text);
+            if (ObjUtil.ValidateTable(dtTempStyle))
+            {
+                DataRow[] dr = dtTempStyle.Select("GarmentID=" + GarmentID + " AND QTY=" + (qty - 1));
+                for (int i = 0; i < dr.Length; i++)
+                {
+                    DataRow drow = dtTempStyle.NewRow();
+                    drow["CustomerID"] = dr[i]["CustomerID"];
+                    drow["GarmentID"] = dr[i]["GarmentID"];
+                    drow["StyleID"] = dr[i]["StyleID"];
+                    drow["StyleImageID"] = dr[i]["StyleImageID"];
+                    drow["QTY"] = cmbStyleQTY.Text;
+
+                    dtTempStyle.Rows.Add(drow);
+                }
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("There is no Data to copy.");
+                checkBox1.Checked = false;
+            }
+        }
+
+        private void ClearSyleImageSelection()
         {
             Control[] ctrl = flowStyleImage.Controls.Find("pnl", false);
             for (int i = 0; i < ctrl.Length; i++)
             {
                 ctrl[i].BackColor = Color.Transparent;
             }
+        }
+        private void Pic_Click(object sender, EventArgs e)
+        {
+            ClearSyleImageSelection();
 
             PictureBox p = (PictureBox)sender;
             p.Parent.BackColor = Color.LightGray;
@@ -304,6 +357,8 @@ namespace TAILORING.Order
 
         private void SKUList_MouseClick(object sender, MouseEventArgs e)
         {
+            //SaveddtMeasurement(); // Auto Saved Garment Measurement value
+
             lblSKUName.Text = "SKU Selected : " + SKUList.SelectedItems[0].Text.ToString();
             DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
             if (drow.Length > 0)
@@ -318,15 +373,6 @@ namespace TAILORING.Order
                 GetGarmentStyle(GarmentID);// Garment Style
                 AddStyleQTY(QTY);
                 checkBox1.Enabled = false;
-                //if (QTY > 1)
-                //{
-                //    checkBox1.Enabled = true;
-                //}
-                //else
-                //{
-                //    checkBox1.Checked = false;
-                //    checkBox1.Enabled = false;
-                //}
             }
         }
 
@@ -355,14 +401,6 @@ namespace TAILORING.Order
                 GetGarmentStyle(GarmentID);// Garment Style
                 AddStyleQTY(QTY);
                 checkBox1.Enabled = false;
-                //if (QTY > 1)
-                //{
-                //    checkBox1.Enabled = true;
-                //}
-                //else
-                //{
-                //    checkBox1.Enabled = false;
-                //}
             }
         }
 
@@ -378,9 +416,53 @@ namespace TAILORING.Order
             btn.BackgroundImage = B_Leave;
         }
 
+        private void ResetdtMeasurement()
+        {
+            if (ObjUtil.ValidateTable(dtTempMeasurement))
+            {
+                DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
+                if (dr.Length > 0)
+                {
+                    dr[0].Delete();
+                    dtTempMeasurement.AcceptChanges();
+                }
+            }
+        }
+
         private void btnMeasureSave_Click(object sender, EventArgs e)
         {
             DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt1 = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt1))
+                {
+                    ResetdtMeasurement();
+                    for (int i = 0; i < dt1.Columns.Count; i++)
+                    {
+                        DataRow drow = dtTempMeasurement.NewRow();
+                        drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
+                        drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
+                        drow["GarmentID"] = GarmentID;
+                        drow["CustomerID"] = 1;
+                        dtTempMeasurement.Rows.Add(drow);
+                    }
+                    dtTempMeasurement.AcceptChanges();
+                }
+                else
+                {
+                    clsUtility.ShowInfoMessage("Please Enter Measurement for Garment.");
+                    return;
+                }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                CopyPreviousGarmentStyle();
+            }
         }
 
         private void cmbStyleQTY_SelectionChangeCommitted(object sender, EventArgs e)
@@ -394,6 +476,36 @@ namespace TAILORING.Order
             {
                 checkBox1.Checked = false;
                 checkBox1.Enabled = false;
+            }
+            flowStyleImage.Controls.Clear();
+        }
+
+        private void lnkAddItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmBodyPosture obj = new frmBodyPosture();
+            obj.ShowDialog();
+        }
+
+        private void SaveddtMeasurement()
+        {
+            DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt1 = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt1))
+                {
+                    ResetdtMeasurement();
+                    for (int i = 0; i < dt1.Columns.Count; i++)
+                    {
+                        DataRow drow = dtTempMeasurement.NewRow();
+                        drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
+                        drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
+                        drow["GarmentID"] = GarmentID;
+                        drow["CustomerID"] = 1;
+                        dtTempMeasurement.Rows.Add(drow);
+                    }
+                    dtTempMeasurement.AcceptChanges();
+                }
             }
         }
     }

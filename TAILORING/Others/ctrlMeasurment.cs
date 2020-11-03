@@ -21,6 +21,8 @@ namespace TAILORING.Others
         DataTable dttemp;
         FlowLayoutPanel pnlContainer;
 
+        CoreApp.clsUtility ObjUtil = new CoreApp.clsUtility();
+
         public void SetMendatoryList(List<string> lst)
         {
             lstMendatoryColumn = lst;
@@ -62,7 +64,7 @@ namespace TAILORING.Others
 
                         if (lstMendatoryColumn.Contains(curCol) && ctr[0].Text.Trim().Length == 0)
                         {
-                            MessageBox.Show("Please fill all the mendtory fields");
+                            MessageBox.Show("Please fill all the mandatory fields");
                             return null;
                         }
                         else
@@ -120,6 +122,10 @@ namespace TAILORING.Others
                     txt.Name = "txt";
                     txt.Font = new Font("Times New Roman", 11.2f, FontStyle.Regular);
                     txt.Location = new Point(110, 13);
+                    
+                    if (ObjUtil.ValidateTable(dt))
+                        txt.Text = dt.Rows[0][label.Text].ToString();
+
                     panel.Size = new Size(panel.Width + 23, panel.Height - 60);
                     panel.Controls.Add(label);
                     panel.Controls.Add(txt);

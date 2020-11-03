@@ -122,6 +122,12 @@
     <Compile Include="Masters\Product_Master.Designer.cs">
       <DependentUpon>Product_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\frmBodyPosture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmBodyPosture.Designer.cs">
+      <DependentUpon>frmBodyPosture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\frmMeasurement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\Product_Master.resx">
       <DependentUpon>Product_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmBodyPosture.resx">
+      <DependentUpon>frmBodyPosture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmMeasurement.resx">
       <DependentUpon>frmMeasurement.cs</DependentUpon>

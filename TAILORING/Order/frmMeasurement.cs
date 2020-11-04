@@ -78,6 +78,9 @@ namespace TAILORING.Order
                 SKUList.Font = new Font("Times New Roman", 10, FontStyle.Bold);
                 SKUList.Items[0].Selected = true;
                 GetDefaultSelectSKU();
+
+                BindStichType();
+                BindFitType();
             }
             else
             {
@@ -101,6 +104,38 @@ namespace TAILORING.Order
             dtTempStyle.Columns.Add("StyleID", typeof(int));
             dtTempStyle.Columns.Add("StyleImageID", typeof(int));
             dtTempStyle.Columns.Add("QTY", typeof(int));
+        }
+
+        private void BindStichType()
+        {
+            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_StichType");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    cmbStichType.DataSource = dt;
+                    cmbStichType.DisplayMember = "StichTypeName";
+                    cmbStichType.ValueMember = "StichTypeID";
+                }
+            }
+        }
+
+        private void BindFitType()
+        {
+            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_FitType");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    cmbFitType.DataSource = dt;
+                    cmbFitType.DisplayMember = "FitTypeName";
+                    cmbFitType.ValueMember = "FitTypeID";
+                }
+            }
         }
 
         private void GetGarmentMasterMeasurement(int GarmentID)

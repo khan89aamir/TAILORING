@@ -30,7 +30,13 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.grpStmouch = new System.Windows.Forms.GroupBox();
+            this.grpShoulder = new System.Windows.Forms.GroupBox();
+            this.flowStmouch = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowShoulder = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
+            this.grpStmouch.SuspendLayout();
+            this.grpShoulder.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -57,6 +63,44 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Body Posture";
             // 
+            // grpStmouch
+            // 
+            this.grpStmouch.BackColor = System.Drawing.Color.Transparent;
+            this.grpStmouch.Controls.Add(this.flowStmouch);
+            this.grpStmouch.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpStmouch.Location = new System.Drawing.Point(38, 57);
+            this.grpStmouch.Name = "grpStmouch";
+            this.grpStmouch.Size = new System.Drawing.Size(750, 185);
+            this.grpStmouch.TabIndex = 317;
+            this.grpStmouch.TabStop = false;
+            this.grpStmouch.Text = "Stmouch";
+            // 
+            // grpShoulder
+            // 
+            this.grpShoulder.BackColor = System.Drawing.Color.Transparent;
+            this.grpShoulder.Controls.Add(this.flowShoulder);
+            this.grpShoulder.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpShoulder.Location = new System.Drawing.Point(38, 254);
+            this.grpShoulder.Name = "grpShoulder";
+            this.grpShoulder.Size = new System.Drawing.Size(750, 185);
+            this.grpShoulder.TabIndex = 318;
+            this.grpShoulder.TabStop = false;
+            this.grpShoulder.Text = "Shoulder";
+            // 
+            // flowStmouch
+            // 
+            this.flowStmouch.Location = new System.Drawing.Point(17, 20);
+            this.flowStmouch.Name = "flowStmouch";
+            this.flowStmouch.Size = new System.Drawing.Size(716, 159);
+            this.flowStmouch.TabIndex = 0;
+            // 
+            // flowShoulder
+            // 
+            this.flowShoulder.Location = new System.Drawing.Point(16, 20);
+            this.flowShoulder.Name = "flowShoulder";
+            this.flowShoulder.Size = new System.Drawing.Size(716, 159);
+            this.flowShoulder.TabIndex = 1;
+            // 
             // frmBodyPosture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -64,6 +108,8 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpShoulder);
+            this.Controls.Add(this.grpStmouch);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -71,8 +117,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Body Posture";
+            this.Load += new System.EventHandler(this.frmBodyPosture_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.grpStmouch.ResumeLayout(false);
+            this.grpShoulder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -81,5 +130,9 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox grpStmouch;
+        private System.Windows.Forms.FlowLayoutPanel flowStmouch;
+        private System.Windows.Forms.GroupBox grpShoulder;
+        private System.Windows.Forms.FlowLayoutPanel flowShoulder;
     }
 }

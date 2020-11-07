@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.ServiceProcess;
+using TAILORING.Order;
+
 [assembly: SuppressIldasm]
 namespace TAILORING
 {
@@ -64,6 +66,7 @@ namespace TAILORING
                 Application.SetCompatibleTextRenderingDefault(false);
                 //Application.Run(new SplashWindow());
                 Application.Run(new frmHome());
+                //Application.Run(new frmBodyPosture());
             }
         }
     }

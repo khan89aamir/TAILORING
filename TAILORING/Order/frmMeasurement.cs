@@ -263,7 +263,14 @@ namespace TAILORING.Order
                 panel.Cursor = Cursors.Hand;
 
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
-                pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
+                if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
+                {
+                    pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
+                }
+                else
+                {
+                    pic.Image = TAILORING.Properties.Resources.NoImage;
+                }
                 pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
                 pic.Size = new Size(panel.Width - 40, panel.Height - 20);
                 pic.Click += Pic_Click;
@@ -303,6 +310,25 @@ namespace TAILORING.Order
 
             dtTempStyle.Rows.Add(drow);
             dtTempStyle.AcceptChanges();
+
+            ChangeMeasurementStyleStatus('S',GarmentID);
+        }
+
+        private void ChangeMeasurementStyleStatus(char ps,int garmentid)
+        {
+            DataRow[] dr = dtGarmentList.Select("GarmentID=" + garmentid);
+            if (dr.Length > 0)
+            {
+                if (ps == 'S')
+                {
+                    dr[0]["Style"] = Done;
+                }
+                else
+                {
+                    dr[0]["Measurement"] = Done;
+                }
+            }
+            dtGarmentList.AcceptChanges();
         }
 
         private DataTable GetEnteredGarmentMeasurement(DataTable dtMeasurement)
@@ -344,6 +370,7 @@ namespace TAILORING.Order
 
                     dtTempStyle.Rows.Add(drow);
                 }
+                ChangeMeasurementStyleStatus('S', GarmentID);
             }
             else
             {
@@ -483,6 +510,7 @@ namespace TAILORING.Order
                         dtTempMeasurement.Rows.Add(drow);
                     }
                     dtTempMeasurement.AcceptChanges();
+                    ChangeMeasurementStyleStatus('M', GarmentID);
                 }
                 else
                 {
@@ -518,6 +546,7 @@ namespace TAILORING.Order
         private void lnkAddItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmBodyPosture obj = new frmBodyPosture();
+            obj.GarmentID = this.GarmentID;
             obj.ShowDialog();
         }
 
@@ -540,6 +569,7 @@ namespace TAILORING.Order
                         dtTempMeasurement.Rows.Add(drow);
                     }
                     dtTempMeasurement.AcceptChanges();
+                    ChangeMeasurementStyleStatus('M', GarmentID);
                 }
             }
         }

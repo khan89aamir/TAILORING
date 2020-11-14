@@ -42,14 +42,14 @@
             this.cmbStyleQTY = new System.Windows.Forms.ComboBox();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.grpStyle = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbFitType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbStichType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbFitType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -105,11 +105,11 @@
             // 
             this.lblSKUName.AutoSize = true;
             this.lblSKUName.BackColor = System.Drawing.Color.Transparent;
-            this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSKUName.ForeColor = System.Drawing.Color.White;
             this.lblSKUName.Location = new System.Drawing.Point(650, 12);
             this.lblSKUName.Name = "lblSKUName";
-            this.lblSKUName.Size = new System.Drawing.Size(86, 19);
+            this.lblSKUName.Size = new System.Drawing.Size(88, 19);
             this.lblSKUName.TabIndex = 339;
             this.lblSKUName.Text = "SKU Name";
             // 
@@ -130,6 +130,7 @@
             // 
             // flowStyleImage
             // 
+            this.flowStyleImage.AutoScroll = true;
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
             this.flowStyleImage.Location = new System.Drawing.Point(10, 203);
             this.flowStyleImage.Name = "flowStyleImage";
@@ -138,6 +139,7 @@
             // 
             // flowStyleName
             // 
+            this.flowStyleName.AutoScroll = true;
             this.flowStyleName.BackColor = System.Drawing.Color.White;
             this.flowStyleName.Location = new System.Drawing.Point(10, 126);
             this.flowStyleName.Name = "flowStyleName";
@@ -239,6 +241,48 @@
             this.grpStyle.TabStop = false;
             this.grpStyle.Text = "Style :";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(290, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 350;
+            this.label3.Text = "Fit Type";
+            // 
+            // cmbFitType
+            // 
+            this.cmbFitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFitType.FormattingEnabled = true;
+            this.cmbFitType.Location = new System.Drawing.Point(379, 91);
+            this.cmbFitType.Name = "cmbFitType";
+            this.cmbFitType.Size = new System.Drawing.Size(150, 25);
+            this.cmbFitType.TabIndex = 351;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.TabIndex = 348;
+            this.label1.Text = "Stich Type";
+            // 
+            // cmbStichType
+            // 
+            this.cmbStichType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStichType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStichType.FormattingEnabled = true;
+            this.cmbStichType.Location = new System.Drawing.Point(106, 91);
+            this.cmbStichType.Name = "cmbStichType";
+            this.cmbStichType.Size = new System.Drawing.Size(150, 25);
+            this.cmbStichType.TabIndex = 349;
+            // 
             // grpMeasurement
             // 
             this.grpMeasurement.BackColor = System.Drawing.Color.Transparent;
@@ -288,52 +332,12 @@
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
-            this.label1.TabIndex = 348;
-            this.label1.Text = "Stich Type";
-            // 
-            // cmbStichType
-            // 
-            this.cmbStichType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStichType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStichType.FormattingEnabled = true;
-            this.cmbStichType.Location = new System.Drawing.Point(106, 91);
-            this.cmbStichType.Name = "cmbStichType";
-            this.cmbStichType.Size = new System.Drawing.Size(150, 25);
-            this.cmbStichType.TabIndex = 349;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(290, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 350;
-            this.label3.Text = "Fit Type";
-            // 
-            // cmbFitType
-            // 
-            this.cmbFitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFitType.FormattingEnabled = true;
-            this.cmbFitType.Location = new System.Drawing.Point(379, 91);
-            this.cmbFitType.Name = "cmbFitType";
-            this.cmbFitType.Size = new System.Drawing.Size(150, 25);
-            this.cmbFitType.TabIndex = 351;
-            // 
             // frmMeasurement
             // 
+            this.AcceptButton = this.btnMeasureSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1021, 712);

@@ -26,6 +26,12 @@ namespace TAILORING.Order
         DataTable dtOrder = new DataTable();
         DataTable dtDefaultOrder = new DataTable();
 
+        DataSet dsMeasure = new DataSet();
+
+        int CustomerID = 0;
+        int OrderID = 0;
+        string InvoiceNo = string.Empty;
+
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             InitItemTable();
@@ -226,18 +232,20 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
+
+            dRow["GarmentCode"] = "sh12";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
             dRow["Trim Amount"] = 0;
             dRow["Rate"] = 100;
             dRow["QTY"] = 1;
-            dRow["Photo"] = @"C:\Tailoring Images\Generic\Shirt generic 1.jpeg";
+            dRow["Photo"] = @"C:\Tailoring Images\Generic\Shirt generic 1.png";
             dRow["Total"] = 0 + (1 * 100);
 
             dtOrder.Rows.Add(dRow);
-            
 
             dRow = dtOrder.NewRow();
+            dRow["GarmentCode"] = "th01";
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
             dRow["Trim Amount"] = 0;
@@ -285,10 +293,14 @@ namespace TAILORING.Order
             {
                 Order.frmMeasurement Obj = new Order.frmMeasurement();
                 Obj.dtGarmentList = dtOrder;
+                Obj.dsMeasure = this.dsMeasure;
                 Obj.ShowDialog();
+
+                btnSave.Enabled = true;
             }
             else
             {
+                btnSave.Enabled = false;
                 clsUtility.ShowInfoMessage("Please Enter some Garments");
                 cmbGarmentName.Focus();
             }
@@ -328,6 +340,93 @@ namespace TAILORING.Order
         {
             Button btn = (Button)sender;
             btn.BackgroundImage = B_Leave;
+        }
+
+        private void txtSearchByCustomerName_Enter(object sender, EventArgs e)
+        {
+            ObjUtil.SetTextHighlightColor(sender);
+        }
+
+        private void txtSearchByCustomerName_Leave(object sender, EventArgs e)
+        {
+            ObjUtil.SetTextHighlightColor(sender, Color.White);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ObjUtil.ValidateDataSet(dsMeasure))
+            {
+                if (ObjUtil.ValidateTable(dtOrder))
+                {
+                    object qty = dtOrder.Compute("SUM(QTY)", string.Empty);
+                    OrderID = SavedSalesOrder(Convert.ToInt32(qty));
+                    if (OrderID > 0)
+                    {
+                        bool b = SavedSalesOrderDetails();
+                        if (b)
+                        {
+                            clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
+                            ClearAll();
+                        }
+                        else
+                        {
+                            clsUtility.ShowInfoMessage("Invoice is not Generated.");
+                        }
+                    }
+                }
+            }
+        }
+
+        private int SavedSalesOrder(int pQTY)
+        {
+            InvoiceNo = GenerateInvoiceNumber();
+
+            ObjDAL.SetColumnData("CustomerID", SqlDbType.Int, txtCustomerID.Text);
+            ObjDAL.SetColumnData("OrderNo", SqlDbType.VarChar, InvoiceNo);
+            ObjDAL.SetColumnData("OrderDate", SqlDbType.Date, dtpBookingDate.Value.ToString("yyyy-MM-dd"));
+            ObjDAL.SetColumnData("TrailDate", SqlDbType.Date, dtpTrailDate.Value.ToString("yyyy-MM-dd"));
+            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtAmtToBePaid.Text);
+            ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
+            ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID);
+
+            int a = ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblSalesOrder", true);
+            ObjDAL.ResetData();
+
+            return a;
+        }
+
+        private void DeleteSalesOrder()
+        {
+            ObjDAL.DeleteData(clsUtility.DBName + ".dbo.tblSalesOrder", "SalesOrderID=" + OrderID);
+        }
+
+        private string GenerateInvoiceNumber()
+        {
+            string Invoice = "INV-";
+            int InvID = ObjDAL.ExecuteScalarInt("SELECT NEXT VALUE FOR " + clsUtility.DBName + ".[dbo].Seq_Invoice");
+
+            return Invoice + InvID;
+        }
+
+        private bool SavedSalesOrderDetails()
+        {
+            bool b = false;
+            for (int i = 0; i < dtOrder.Rows.Count; i++)
+            {
+                ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID, clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("QTY", SqlDbType.Int, dt.Rows[i]["QTY"], clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, dt.Rows[i]["Rate"], clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("Total", SqlDbType.Decimal, dt.Rows[i]["Total"], clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+                b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
+            }
+            if (!b)
+            {
+                DeleteSalesOrder();
+            }
+            return b;
         }
     }
 }

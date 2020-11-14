@@ -25,13 +25,14 @@ namespace TAILORING.Order
         DataTable dtShoulder = new DataTable();
 
         DataTable dtPosture = new DataTable();
+        public DataTable dtTempPosture = new DataTable();
 
-        public int GarmentID = 1;
+        public int GarmentID = 0;
 
         private void frmBodyPosture_Load(object sender, EventArgs e)
         {
             //AddShoulderPosture();
-
+            //InitTempdtPosture();
             GetBodyPostureDetails();
         }
 
@@ -55,7 +56,6 @@ namespace TAILORING.Order
 
         private void BindBodyPostures(DataTable dt, DataTable dt1)
         {
-
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 GroupBox grp = new GroupBox();
@@ -107,22 +107,41 @@ namespace TAILORING.Order
                         pic.Name = dr[j]["BodyPostureMappingID"].ToString();
                         pic.Size = new Size(panel.Width - 40, panel.Height - 20);
                         pic.Location = new Point(pic.Location.X, pic.Location.Y + 5);
-                        //pic.Click += Pic_Click;
                         pic.BorderStyle = BorderStyle.None;
 
                         panel.Controls.Add(pic);
                         panel.Controls.Add(lbl);
 
                         pnlContainer.Controls.Add(panel);
+
+                        bool b = GetSelectedPostureImage(Convert.ToInt32(pic.Name));
+                        if (b)
+                        {
+                            pic.Parent.BackColor = Color.LightGray;
+                        }
                     }
                 }
                 flowLayoutPanel1.Controls.Add(grp);
             }
         }
 
-        private void ClearBodyPostureImgSelection()
+        private bool GetSelectedPostureImage(int pBodyPostureMappingID)
         {
-            Control[] ctrl = flowLayoutPanel1.Controls.Find("pnl", true);
+            bool b = false;
+            if (ObjUtil.ValidateTable(dtTempPosture))
+            {
+                DataRow[] dr = dtTempPosture.Select("BodyPostureMappingID=" + pBodyPostureMappingID);
+                if (dr.Length > 0)
+                {
+                    b = true;
+                }
+            }
+            return b;
+        }
+
+        private void ClearBodyPostureImgSelection(Control flowctrl)
+        {
+             Control[] ctrl = flowctrl.Controls.Find("pnl", true);
             for (int i = 0; i < ctrl.Length; i++)
             {
                 ctrl[i].BackColor = Color.Transparent;
@@ -131,51 +150,48 @@ namespace TAILORING.Order
 
         private void Pic_Click(object sender, EventArgs e)
         {
-            ClearBodyPostureImgSelection();
-
             PictureBox p = (PictureBox)sender;
+
+            ClearBodyPostureImgSelection(p.Parent.Parent);
+
             p.Parent.BackColor = Color.LightGray;
+            AddTempdtPosture(p);
         }
 
-        private void AddStmouchPosture()
+        private void AddTempdtPosture(PictureBox p)
         {
-            //flowStmouch.Controls.Clear();
-            for (int i = 0; i < dtStmouch.Rows.Count; i++)
+            int BodyPostureID = 0;
+            if (ObjUtil.ValidateTable(dtPosture))
             {
-                Panel panel = new Panel();
-                PictureBox pic = new PictureBox();
-                Label lbl = new Label();
-                panel.Name = "pnl";
-
-                lbl.Name = dtStmouch.Rows[i]["StyleImageID"].ToString();
-                lbl.Text = dtStmouch.Rows[i]["ImageName"].ToString();
-                lbl.AutoSize = true;
-                lbl.BackColor = Color.Transparent;
-                lbl.Location = new Point(pic.Location.X + 15, pic.Location.Y + 80);
-                lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
-
-                panel.Size = new Size(160, 100);
-                panel.Cursor = Cursors.Hand;
-
-                pic.SizeMode = PictureBoxSizeMode.Zoom;
-                pic.Image = Image.FromFile(dtStmouch.Rows[i]["ImagePath"].ToString());
-                pic.Name = dtStmouch.Rows[i]["StyleImageID"].ToString();
-                pic.Size = new Size(panel.Width - 40, panel.Height - 20);
-                //pic.Click += Pic_Click;
-                pic.BorderStyle = BorderStyle.None;
-
-                panel.Controls.Add(pic);
-                panel.Controls.Add(lbl);
-
-                //flowStmouch.Controls.Add(panel);
-
-                //int a = GetSelectedStyleImage(GarmentID, StyleID);
-                //if (pic.Name == a.ToString())
-                //{
-                //    //pic.BackColor = Color.LightGray;
-                //    pic.Parent.BackColor = Color.LightGray;
-                //}
+                DataRow[] dr = dtPosture.Select("BodyPostureMappingID=" + p.Name);
+                if (dr.Length > 0)
+                {
+                    BodyPostureID = Convert.ToInt32(dr[0]["BodyPostureID"]);
+                }
             }
+
+            if (ObjUtil.ValidateTable(dtTempPosture))
+            {
+                DataRow[] dr = dtTempPosture.Select("BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
+                if (dr.Length > 0)
+                {
+                    dr[0].Delete();
+                    dtTempPosture.AcceptChanges();
+                }
+            }
+            DataRow drow = dtTempPosture.NewRow();
+            drow["BodyPostureMappingID"] = p.Name;
+            drow["BodyPostureID"] = BodyPostureID;
+            drow["GarmentID"] = GarmentID;
+
+            dtTempPosture.Rows.Add(drow);
+            dtTempPosture.AcceptChanges();
         }
+
+        //private void InitTempdtPosture()
+        //{
+        //      dtTempPosture.Columns.Add("BodyPostureID", typeof(int));
+        //      dtTempPosture.Columns.Add("BodyPostureMappingID", typeof(int));
+        //}
     }
 }

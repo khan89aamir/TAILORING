@@ -52,6 +52,7 @@ namespace TAILORING.Order
 
             dsMeasure.Tables.Add(dtTempStyle);
             dsMeasure.Tables[1].TableName = "Style";
+
             dsMeasure.Tables.Add(dtTempPosture);
             dsMeasure.Tables[2].TableName = "BodyPosture";
 
@@ -251,6 +252,7 @@ namespace TAILORING.Order
         {
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
+            dataGridView1.Columns["FabricCode"].Visible = false;
             dataGridView1.Columns["GarmentCode"].Visible = false;
             dataGridView1.Columns["QTY"].Visible = false;
             dataGridView1.Columns["Rate"].Visible = false;

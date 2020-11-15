@@ -21,9 +21,6 @@ namespace TAILORING.Order
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        DataTable dtStmouch = new DataTable();
-        DataTable dtShoulder = new DataTable();
-
         DataTable dtPosture = new DataTable();
         public DataTable dtTempPosture = new DataTable();
 
@@ -31,8 +28,6 @@ namespace TAILORING.Order
 
         private void frmBodyPosture_Load(object sender, EventArgs e)
         {
-            //AddShoulderPosture();
-            //InitTempdtPosture();
             GetBodyPostureDetails();
         }
 
@@ -187,11 +182,5 @@ namespace TAILORING.Order
             dtTempPosture.Rows.Add(drow);
             dtTempPosture.AcceptChanges();
         }
-
-        //private void InitTempdtPosture()
-        //{
-        //      dtTempPosture.Columns.Add("BodyPostureID", typeof(int));
-        //      dtTempPosture.Columns.Add("BodyPostureMappingID", typeof(int));
-        //}
     }
 }

@@ -22,11 +22,16 @@ namespace TAILORING.Order
 
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
+        
+        DataTable dt = null;
 
         DataTable dtOrder = new DataTable();
-        DataTable dtDefaultOrder = new DataTable();
+        DataTable dtOrderDetails = new DataTable();
 
         DataSet dsMeasure = new DataSet();
+        DataTable dtMeasurement = new DataTable();
+        DataTable dtStyle = new DataTable();
+        DataTable dtBodyPosture = new DataTable();
 
         int CustomerID = 0;
         int OrderID = 0;
@@ -34,14 +39,21 @@ namespace TAILORING.Order
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
-            InitItemTable();
             btnMeasurement.BackgroundImage = B_Leave;
             btnSave.BackgroundImage = B_Leave;
+
+            InitItemTable();
+            InitOrderDetailsTable(); //Order Details
+            InitMeasurementTable(); //Measurement
+            InitStyleTable(); //Style
+            InitBodyPostureTable(); //BodyPosture
         }
 
         private void InitItemTable()
         {
+            //Gridview
             dtOrder.Columns.Add("GarmentID");
+            dtOrder.Columns.Add("FabricCode");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
             dtOrder.Columns.Add("Trim Amount");
@@ -49,7 +61,7 @@ namespace TAILORING.Order
             dtOrder.Columns.Add("Rate", typeof(double));
             dtOrder.Columns.Add("Total", typeof(double));
             dtOrder.Columns.Add("Photo");
-            //dtPurchaseInvoice.Columns.Add("Delete");
+            //dtOrder.Columns.Add("Delete");
 
             //DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
             //ColDelete.DataPropertyName = "Delete";
@@ -59,22 +71,61 @@ namespace TAILORING.Order
             //ColDelete.UseColumnTextForButtonValue = true;
 
             dtOrder.AcceptChanges();
-            //dataGridView1.DataSource = dtOrder;
 
+            //dataGridView1.DataSource = dtOrder;
             //dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             //ColDelete});
         }
+        private void InitOrderDetailsTable()
+        {
+            dtOrderDetails.Columns.Add("SalesOrderID");
+            dtOrderDetails.Columns.Add("GarmentID");
+            dtOrderDetails.Columns.Add("TrimAmount");
+            dtOrderDetails.Columns.Add("QTY", typeof(int));
+            dtOrderDetails.Columns.Add("Rate", typeof(double));
+            dtOrderDetails.Columns.Add("Total", typeof(double));
+            dtOrderDetails.Columns.Add("CreatedBy", typeof(int));
 
-        DataTable dt = null;
+            dtOrderDetails.AcceptChanges();
+        }
+
+        private void InitMeasurementTable()
+        {
+            dtMeasurement.Columns.Add("SalesOrderID");
+            dtMeasurement.Columns.Add("GarmentID");
+            dtMeasurement.Columns.Add("MeasurementID");
+            dtMeasurement.Columns.Add("MeasurementValue", typeof(double));
+            dtMeasurement.Columns.Add("CreatedBy", typeof(int));
+
+            dtMeasurement.AcceptChanges();
+        }
+
+        private void InitStyleTable()
+        {
+            dtStyle.Columns.Add("SalesOrderID");
+            dtStyle.Columns.Add("GarmentID");
+            dtStyle.Columns.Add("StyleID");
+            dtStyle.Columns.Add("StyleImageID");
+            dtStyle.Columns.Add("CreatedBy", typeof(int));
+
+            dtStyle.AcceptChanges();
+        }
+
+        private void InitBodyPostureTable()
+        {
+            dtBodyPosture.Columns.Add("SalesOrderID");
+            dtBodyPosture.Columns.Add("GarmentID");
+            dtBodyPosture.Columns.Add("BodyPostureID");
+            dtBodyPosture.Columns.Add("BodyPostureMappingID");
+            dtBodyPosture.Columns.Add("CreatedBy", typeof(int));
+
+            dtBodyPosture.AcceptChanges();
+        }
+
         private void FillGarmentData()
         {
             dt = null;
-            //DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
-
-            //if (ObjUtil.ValidateDataSet(ds))
-            //{
             dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblProductMaster", "GarmentID,GarmentName,Rate", "OrderType=" + cmbOrderType.SelectedIndex, "GarmentName ASC");
-            //DataTable dt = ds.Tables[0];
             if (ObjUtil.ValidateTable(dt))
             {
                 cmbGarmentName.DataSource = dt;
@@ -85,11 +136,7 @@ namespace TAILORING.Order
             {
                 cmbGarmentName.DataSource = null;
             }
-            //}
-            //else
-            //{
-            //    cmbGarmentName.DataSource = null;
-            //}
+
             cmbGarmentName.SelectedIndex = -1;
         }
         private void rdSearchByCustomerName_CheckedChanged(object sender, EventArgs e)
@@ -232,7 +279,7 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
-
+            dRow["FabricCode"] = "sh12";
             dRow["GarmentCode"] = "sh12";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
@@ -245,6 +292,7 @@ namespace TAILORING.Order
             dtOrder.Rows.Add(dRow);
 
             dRow = dtOrder.NewRow();
+            dRow["FabricCode"] = "sh12";
             dRow["GarmentCode"] = "th01";
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
@@ -275,13 +323,14 @@ namespace TAILORING.Order
 
             AddDefaultRow();
             dataGridView1.DataSource = dtOrder;
-            ClearAll();
+            ResetGarmentDetails();
         }
 
         private void CalcTotalAmount()
         {
             object total = dtOrder.Compute("SUM(Total)", string.Empty);
             txtTailoringAmount.Text = total.ToString();
+            txtGrossAmt.Text= total.ToString();
 
             double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
             txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
@@ -321,13 +370,34 @@ namespace TAILORING.Order
             CalcTotalAmount();
         }
 
-        private void ClearAll()
+        private void ResetGarmentDetails()
         {
             cmbGarmentName.SelectedIndex = -1;
             txtRate.Text = "0.00";
             NumericQTY.Value = 1;
             txtTrimsAmount.Text = "0";
-            cmbGarmentName.Focus();
+            txtFabricCode.Text = "";
+            txtFabricCode.Focus();
+        }
+
+        private void ClearAll()
+        {
+            txtGrossAmt.Text = "0";
+            txtAdvancePaid.Text = "0";
+            txtAmtToBePaid.Text = "0";
+            txtTailoringAmount.Text = "0";
+            txtCustomerID.Text = "0";
+            InvoiceNo = string.Empty;
+
+            dsMeasure.Tables.Clear();
+            dtOrder.Rows.Clear();
+            dtOrderDetails.Rows.Clear();
+            dtMeasurement.Rows.Clear();
+            dtStyle.Rows.Clear();
+            dtBodyPosture.Rows.Clear();
+
+            OrderID = 0;
+            CustomerID = 0;
         }
 
         private void btnSave_MouseEnter(object sender, EventArgs e)
@@ -354,9 +424,9 @@ namespace TAILORING.Order
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ObjUtil.ValidateDataSet(dsMeasure))
+            if (ObjUtil.ValidateTable(dtOrder))
             {
-                if (ObjUtil.ValidateTable(dtOrder))
+                if (ObjUtil.ValidateDataSet(dsMeasure))
                 {
                     object qty = dtOrder.Compute("SUM(QTY)", string.Empty);
                     OrderID = SavedSalesOrder(Convert.ToInt32(qty));
@@ -367,6 +437,7 @@ namespace TAILORING.Order
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
                             ClearAll();
+                            dataGridView1.DataSource = null;
                         }
                         else
                         {
@@ -374,6 +445,18 @@ namespace TAILORING.Order
                         }
                     }
                 }
+                else
+                {
+                    btnSave.Enabled = false;
+                    clsUtility.ShowInfoMessage("Please Enter some Garments");
+                    cmbGarmentName.Focus();
+                }
+            }
+            else
+            {
+                btnSave.Enabled = false;
+                clsUtility.ShowInfoMessage("Please Enter some Garments");
+                cmbGarmentName.Focus();
             }
         }
 
@@ -385,6 +468,7 @@ namespace TAILORING.Order
             ObjDAL.SetColumnData("OrderNo", SqlDbType.VarChar, InvoiceNo);
             ObjDAL.SetColumnData("OrderDate", SqlDbType.Date, dtpBookingDate.Value.ToString("yyyy-MM-dd"));
             ObjDAL.SetColumnData("TrailDate", SqlDbType.Date, dtpTrailDate.Value.ToString("yyyy-MM-dd"));
+            ObjDAL.SetColumnData("AdvanceAmount", SqlDbType.Decimal, txtAdvancePaid.Text.Length == 0 ? "0" : txtAdvancePaid.Text);
             ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtAmtToBePaid.Text);
             ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
             ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID);
@@ -411,22 +495,105 @@ namespace TAILORING.Order
         private bool SavedSalesOrderDetails()
         {
             bool b = false;
-            for (int i = 0; i < dtOrder.Rows.Count; i++)
+            for (int i = 0; i < dtOrder.Rows.Count; i++) //Sales Details
             {
-                ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID, clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("QTY", SqlDbType.Int, dt.Rows[i]["QTY"], clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, dt.Rows[i]["Rate"], clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("Total", SqlDbType.Decimal, dt.Rows[i]["Total"], clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+                DataRow drow = dtOrderDetails.NewRow();
+                drow["SalesOrderID"] = OrderID;
+                drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
+                drow["TrimAmount"] = dtOrder.Rows[i]["Trim Amount"];
+                drow["QTY"] = dtOrder.Rows[i]["QTY"];
+                drow["Rate"] = dtOrder.Rows[i]["Rate"];
+                drow["Total"] = dtOrder.Rows[i]["Total"];
+                drow["CreatedBy"] = clsUtility.LoginID;
 
-                b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
+                dtOrderDetails.Rows.Add(drow);
+
+                #region Commented Row wise insert
+                //ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID, clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dtOrder.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("TrimAmount", SqlDbType.Decimal, dtOrder.Rows[i]["Trim Amount"], clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("QTY", SqlDbType.Int, dtOrder.Rows[i]["QTY"], clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, dtOrder.Rows[i]["Rate"], clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("Total", SqlDbType.Decimal, dtOrder.Rows[i]["Total"], clsConnection_DAL.ParamType.Input);
+                //ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+                //b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
+                #endregion
             }
+            dtOrderDetails.AcceptChanges();
+
+            FillMeasurementData();
+            FillStyleData();
+            FillBodyPostureData();
+
+            ObjDAL.SetStoreProcedureData("dtSalesOrderDetails", SqlDbType.Structured, dtOrderDetails, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("dtMeasurement", SqlDbType.Structured, dtMeasurement, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("dtStyle", SqlDbType.Structured, dtStyle, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("dtBodyPosture", SqlDbType.Structured, dtBodyPosture, clsConnection_DAL.ParamType.Input);
+
+            b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
             if (!b)
             {
                 DeleteSalesOrder();
             }
             return b;
+        }
+
+        private void FillMeasurementData()
+        {
+            DataTable dttempMeasure = dsMeasure.Tables[0];
+            for (int i = 0; i < dttempMeasure.Rows.Count; i++)
+            {
+                //dtMeasurement = dttempMeasure.Copy();
+
+                DataRow drow = dtMeasurement.NewRow();
+                drow["SalesOrderID"] = OrderID;
+                drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
+                drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
+                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];
+                drow["CreatedBy"] = clsUtility.LoginID;
+
+                dtMeasurement.Rows.Add(drow);
+            }
+            dtMeasurement.AcceptChanges();
+        }
+
+        private void FillStyleData()
+        {
+            DataTable dttempStyle = dsMeasure.Tables[1];
+            for (int i = 0; i < dttempStyle.Rows.Count; i++)
+            {
+                //dtStyle = dttempStyle.Copy();
+
+                DataRow drow = dtStyle.NewRow();
+                drow["SalesOrderID"] = OrderID;
+                drow["GarmentID"] = dttempStyle.Rows[i]["GarmentID"];
+                drow["StyleID"] = dttempStyle.Rows[i]["StyleID"];
+                drow["StyleImageID"] = dttempStyle.Rows[i]["StyleImageID"];
+                drow["CreatedBy"] = clsUtility.LoginID;
+
+                dtStyle.Rows.Add(drow);
+            }
+            dtStyle.AcceptChanges();
+        }
+
+        private void FillBodyPostureData()
+        {
+            DataTable dttempPosture = dsMeasure.Tables[2];
+            for (int i = 0; i < dttempPosture.Rows.Count; i++)
+            {
+                //dtBodyPosture = dttempPosture.Copy();
+
+                DataRow drow = dtBodyPosture.NewRow();
+                drow["SalesOrderID"] = OrderID;
+                drow["GarmentID"] = dttempPosture.Rows[i]["GarmentID"];
+                drow["BodyPostureID"] = dttempPosture.Rows[i]["BodyPostureID"];
+                drow["BodyPostureMappingID"] = dttempPosture.Rows[i]["BodyPostureMappingID"];
+                drow["CreatedBy"] = clsUtility.LoginID;
+
+                dtBodyPosture.Rows.Add(drow);
+            }
+            dtBodyPosture.AcceptChanges();
         }
     }
 }

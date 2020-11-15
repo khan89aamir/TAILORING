@@ -69,6 +69,8 @@
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtGrossAmt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).BeginInit();
             this.grpNewOrder.SuspendLayout();
             this.grpCustomerSearch.SuspendLayout();
@@ -120,6 +122,7 @@
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(41, 25);
             this.txtCustomerID.TabIndex = 314;
+            this.txtCustomerID.Text = "1";
             this.txtCustomerID.Visible = false;
             // 
             // lnkAddItem
@@ -139,7 +142,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label7.Location = new System.Drawing.Point(725, 596);
+            this.label7.Location = new System.Drawing.Point(725, 626);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 17);
             this.label7.TabIndex = 329;
@@ -150,7 +153,7 @@
             this.txtAmtToBePaid.BackColor = System.Drawing.Color.White;
             this.txtAmtToBePaid.Enabled = false;
             this.txtAmtToBePaid.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtAmtToBePaid.Location = new System.Drawing.Point(899, 592);
+            this.txtAmtToBePaid.Location = new System.Drawing.Point(899, 622);
             this.txtAmtToBePaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAmtToBePaid.Name = "txtAmtToBePaid";
             this.txtAmtToBePaid.Size = new System.Drawing.Size(153, 25);
@@ -535,9 +538,9 @@
             this.btnMeasurement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeasurement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMeasurement.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMeasurement.Location = new System.Drawing.Point(891, 8);
+            this.btnMeasurement.Location = new System.Drawing.Point(870, 8);
             this.btnMeasurement.Name = "btnMeasurement";
-            this.btnMeasurement.Size = new System.Drawing.Size(76, 25);
+            this.btnMeasurement.Size = new System.Drawing.Size(97, 25);
             this.btnMeasurement.TabIndex = 335;
             this.btnMeasurement.Text = "Measurement";
             this.btnMeasurement.UseVisualStyleBackColor = true;
@@ -597,6 +600,29 @@
             this.panel5.Size = new System.Drawing.Size(1067, 40);
             this.panel5.TabIndex = 341;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label16.Location = new System.Drawing.Point(725, 592);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 17);
+            this.label16.TabIndex = 343;
+            this.label16.Text = "Gross Amount  :";
+            // 
+            // txtGrossAmt
+            // 
+            this.txtGrossAmt.BackColor = System.Drawing.Color.White;
+            this.txtGrossAmt.Enabled = false;
+            this.txtGrossAmt.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtGrossAmt.Location = new System.Drawing.Point(899, 588);
+            this.txtGrossAmt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGrossAmt.Name = "txtGrossAmt";
+            this.txtGrossAmt.Size = new System.Drawing.Size(153, 25);
+            this.txtGrossAmt.TabIndex = 342;
+            this.txtGrossAmt.Text = "0";
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -604,6 +630,8 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 693);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtGrossAmt);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.label15);
@@ -692,5 +720,7 @@
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtGrossAmt;
     }
 }

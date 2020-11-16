@@ -46,7 +46,7 @@ namespace TAILORING.Order
         {
             btnMeasureSave.BackgroundImage = B_Leave;
             btnStyleSave.BackgroundImage = B_Leave;
-            
+
             dsMeasure.Tables.Add(dtTempMeasurement);
             dsMeasure.Tables[0].TableName = "Measurement";
 
@@ -259,6 +259,8 @@ namespace TAILORING.Order
             dataGridView1.Columns["Total"].Visible = false;
             dataGridView1.Columns["Trim Amount"].Visible = false;
             dataGridView1.Columns["Photo"].Visible = false;
+            dataGridView1.Columns["StichTypeID"].Visible = false;
+            dataGridView1.Columns["FitTypeID"].Visible = false;
 
             dataGridView1.ClearSelection();
             dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
@@ -286,7 +288,7 @@ namespace TAILORING.Order
                 panel.Size = new Size(160, 100);
                 panel.Cursor = Cursors.Hand;
 
-                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
                 if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
                 {
                     pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
@@ -468,7 +470,7 @@ namespace TAILORING.Order
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
-                ctrlMeasurment1.ProductCount = 2;
+                ctrlMeasurment1.ProductCount = 1;
                 GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
 
                 GetGarmentStyle(GarmentID);// Garment Style
@@ -496,7 +498,7 @@ namespace TAILORING.Order
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
-                ctrlMeasurment1.ProductCount = 2;
+                ctrlMeasurment1.ProductCount = 1;
                 GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
 
                 AddStyleQTY(QTY);
@@ -589,6 +591,32 @@ namespace TAILORING.Order
             obj.GarmentID = this.GarmentID;
             obj.dtTempPosture = this.dtTempPosture;
             obj.ShowDialog();
+        }
+
+        private void cmbStichType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (ObjUtil.ValidateTable(dtGarmentList))
+            {
+                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0)
+                {
+                    drow[0]["StichTypeID"] = cmbStichType.SelectedValue;
+                    dtGarmentList.AcceptChanges();
+                }
+            }
+        }
+
+        private void cmbFitType_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (ObjUtil.ValidateTable(dtGarmentList))
+            {
+                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0)
+                {
+                    drow[0]["FitTypeID"] = cmbFitType.SelectedValue;
+                    dtGarmentList.AcceptChanges();
+                }
+            }
         }
 
         private void SaveddtMeasurement()

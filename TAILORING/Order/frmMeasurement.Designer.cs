@@ -261,6 +261,7 @@
             this.cmbFitType.Name = "cmbFitType";
             this.cmbFitType.Size = new System.Drawing.Size(150, 25);
             this.cmbFitType.TabIndex = 351;
+            this.cmbFitType.SelectionChangeCommitted += new System.EventHandler(this.cmbFitType_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -282,6 +283,7 @@
             this.cmbStichType.Name = "cmbStichType";
             this.cmbStichType.Size = new System.Drawing.Size(150, 25);
             this.cmbStichType.TabIndex = 349;
+            this.cmbStichType.SelectionChangeCommitted += new System.EventHandler(this.cmbStichType_SelectionChangeCommitted);
             // 
             // grpMeasurement
             // 

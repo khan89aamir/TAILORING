@@ -53,6 +53,8 @@ namespace TAILORING.Order
         {
             //Gridview
             dtOrder.Columns.Add("GarmentID");
+            dtOrder.Columns.Add("StichTypeID");
+            dtOrder.Columns.Add("FitTypeID");
             dtOrder.Columns.Add("FabricCode");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
@@ -79,6 +81,8 @@ namespace TAILORING.Order
         private void InitOrderDetailsTable()
         {
             dtOrderDetails.Columns.Add("SalesOrderID");
+            dtOrderDetails.Columns.Add("StichTypeID", typeof(int));
+            dtOrderDetails.Columns.Add("FitTypeID", typeof(int));
             dtOrderDetails.Columns.Add("GarmentID");
             dtOrderDetails.Columns.Add("TrimAmount");
             dtOrderDetails.Columns.Add("QTY", typeof(int));
@@ -259,6 +263,14 @@ namespace TAILORING.Order
             {
                 dataGridView1.Columns["Style"].Visible = false;
             }
+            //if (dataGridView1.Columns.Contains("StichTypeID"))
+            //{
+                dataGridView1.Columns["StichTypeID"].Visible = false;
+            //}
+            //if (dataGridView1.Columns.Contains("FitTypeID"))
+            //{
+                dataGridView1.Columns["FitTypeID"].Visible = false;
+            //}
             CalcTotalAmount();
         }
 
@@ -499,6 +511,8 @@ namespace TAILORING.Order
             {
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["StichTypeID"] = dtOrder.Rows[i]["StichTypeID"];
+                drow["FitTypeID"] = dtOrder.Rows[i]["FitTypeID"];
                 drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
                 drow["TrimAmount"] = dtOrder.Rows[i]["Trim Amount"];
                 drow["QTY"] = dtOrder.Rows[i]["QTY"];

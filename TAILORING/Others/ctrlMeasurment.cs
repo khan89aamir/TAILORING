@@ -44,7 +44,9 @@ namespace TAILORING.Others
         public DataSet GetMeasurement()
         {
             DataSet ds = new DataSet();
-            DataTable dtRetun = dttemp;
+            DataTable dtRetun = null;
+            dtRetun = dttemp;
+            dtRetun.Rows.Clear();
             DataRow dRow = dtRetun.NewRow();
             //for (int j = 0; j < ProductCount; j++)
             //{
@@ -97,6 +99,7 @@ namespace TAILORING.Others
             //dtRetun.Rows.Add(dRow);
             //dtRetun.AcceptChanges();
             //ds.Tables.Add(dtRetun);
+
             return ds;
         }
 

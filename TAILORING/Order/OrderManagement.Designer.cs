@@ -71,6 +71,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.txtGrossAmt = new System.Windows.Forms.TextBox();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).BeginInit();
             this.grpNewOrder.SuspendLayout();
             this.grpCustomerSearch.SuspendLayout();
@@ -319,7 +321,7 @@
             this.grpNewOrder.Size = new System.Drawing.Size(1037, 86);
             this.grpNewOrder.TabIndex = 320;
             this.grpNewOrder.TabStop = false;
-            this.grpNewOrder.Text = "Order";
+            this.grpNewOrder.Text = "Order Details";
             // 
             // label9
             // 
@@ -563,7 +565,7 @@
             // 
             this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(856, 193);
+            this.dtpTrailDate.Location = new System.Drawing.Point(860, 193);
             this.dtpTrailDate.Name = "dtpTrailDate";
             this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
             this.dtpTrailDate.TabIndex = 338;
@@ -623,6 +625,26 @@
             this.txtGrossAmt.TabIndex = 342;
             this.txtGrossAmt.Text = "0";
             // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(860, 225);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
+            this.dtpDeliveryDate.TabIndex = 345;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label17.Location = new System.Drawing.Point(756, 228);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 17);
+            this.label17.TabIndex = 344;
+            this.label17.Text = "Delivery Date :";
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -630,6 +652,8 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 693);
+            this.Controls.Add(this.dtpDeliveryDate);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtGrossAmt);
             this.Controls.Add(this.panel5);
@@ -722,5 +746,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtGrossAmt;
+        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
+        private System.Windows.Forms.Label label17;
     }
 }

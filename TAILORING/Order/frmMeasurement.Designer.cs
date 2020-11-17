@@ -50,6 +50,8 @@
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -85,7 +87,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1021, 40);
+            this.panel2.Size = new System.Drawing.Size(1004, 40);
             this.panel2.TabIndex = 323;
             // 
             // label12
@@ -171,6 +173,7 @@
             // 
             this.btnMeasureSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMeasureSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMeasureSave.Enabled = false;
             this.btnMeasureSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMeasureSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeasureSave.Location = new System.Drawing.Point(328, 29);
@@ -223,6 +226,8 @@
             // grpStyle
             // 
             this.grpStyle.BackColor = System.Drawing.Color.Transparent;
+            this.grpStyle.Controls.Add(this.label4);
+            this.grpStyle.Controls.Add(this.label14);
             this.grpStyle.Controls.Add(this.label3);
             this.grpStyle.Controls.Add(this.cmbFitType);
             this.grpStyle.Controls.Add(this.label1);
@@ -248,16 +253,16 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(290, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 350;
-            this.label3.Text = "Fit Type";
+            this.label3.Text = "Fit Type :";
             // 
             // cmbFitType
             // 
             this.cmbFitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFitType.FormattingEnabled = true;
-            this.cmbFitType.Location = new System.Drawing.Point(379, 91);
+            this.cmbFitType.Location = new System.Drawing.Point(369, 91);
             this.cmbFitType.Name = "cmbFitType";
             this.cmbFitType.Size = new System.Drawing.Size(150, 25);
             this.cmbFitType.TabIndex = 351;
@@ -270,9 +275,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 348;
-            this.label1.Text = "Stich Type";
+            this.label1.Text = "Stich Type :";
             // 
             // cmbStichType
             // 
@@ -334,6 +339,30 @@
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(258, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 352;
+            this.label14.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(522, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 17);
+            this.label4.TabIndex = 353;
+            this.label4.Text = "*";
+            // 
             // frmMeasurement
             // 
             this.AcceptButton = this.btnMeasureSave;
@@ -342,7 +371,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1021, 712);
+            this.ClientSize = new System.Drawing.Size(1021, 701);
             this.Controls.Add(this.grpSKUList);
             this.Controls.Add(this.grpMeasurement);
             this.Controls.Add(this.grpStyle);
@@ -392,5 +421,7 @@
         private System.Windows.Forms.ComboBox cmbFitType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbStichType;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label14;
     }
 }

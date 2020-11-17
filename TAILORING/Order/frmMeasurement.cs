@@ -44,22 +44,32 @@ namespace TAILORING.Order
 
         private void frmMeasurement_Load(object sender, EventArgs e)
         {
+            HorizontalScroll.Maximum = 0;
+
             btnMeasureSave.BackgroundImage = B_Leave;
             btnStyleSave.BackgroundImage = B_Leave;
 
-            dsMeasure.Tables.Add(dtTempMeasurement);
-            dsMeasure.Tables[0].TableName = "Measurement";
+            if (!ObjUtil.ValidateDataSet(dsMeasure))
+            {
+                dsMeasure.Tables.Add(dtTempMeasurement);
+                dsMeasure.Tables[0].TableName = "Measurement";
 
-            dsMeasure.Tables.Add(dtTempStyle);
-            dsMeasure.Tables[1].TableName = "Style";
+                dsMeasure.Tables.Add(dtTempStyle);
+                dsMeasure.Tables[1].TableName = "Style";
 
-            dsMeasure.Tables.Add(dtTempPosture);
-            dsMeasure.Tables[2].TableName = "BodyPosture";
+                dsMeasure.Tables.Add(dtTempPosture);
+                dsMeasure.Tables[2].TableName = "BodyPosture";
 
-            InitTempdtMeasurement();
-            InitTempdtStyle();
-            InitTempdtPosture();
-
+                InitTempdtMeasurement();
+                InitTempdtStyle();
+                InitTempdtPosture();
+            }
+            else
+            {
+                dtTempMeasurement = dsMeasure.Tables[0];
+                dtTempStyle = dsMeasure.Tables[1];
+                dtTempPosture = dsMeasure.Tables[2];
+            }
             if (ObjUtil.ValidateTable(dtGarmentList))
             {
                 if (!dtGarmentList.Columns.Contains("Measurement"))
@@ -136,6 +146,11 @@ namespace TAILORING.Order
                     cmbStichType.DisplayMember = "StichTypeName";
                     cmbStichType.ValueMember = "StichTypeID";
                 }
+                else
+                {
+                    cmbStichType.DataSource = null;
+                }
+                cmbStichType.SelectedIndex = -1;
             }
         }
 
@@ -152,6 +167,11 @@ namespace TAILORING.Order
                     cmbFitType.DisplayMember = "FitTypeName";
                     cmbFitType.ValueMember = "FitTypeID";
                 }
+                else
+                {
+                    cmbFitType.DataSource = null;
+                }
+                cmbFitType.SelectedIndex = -1;
             }
         }
 
@@ -458,9 +478,41 @@ namespace TAILORING.Order
             }
         }
 
+        private void GetStichFitType()
+        {
+            if (ObjUtil.ValidateTable(dtGarmentList))
+            {
+                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0)
+                {
+                    if (drow[0]["StichTypeID"] != DBNull.Value)
+                    {
+                        cmbStichType.SelectedValue = drow[0]["StichTypeID"];
+                    }
+                    else
+                    {
+                        cmbStichType.SelectedIndex = -1;
+                    }
+                    if (drow[0]["FitTypeID"] != DBNull.Value)
+                    {
+                        cmbFitType.SelectedValue = drow[0]["FitTypeID"];
+                    }
+                    else
+                    {
+                        cmbFitType.SelectedIndex = -1;
+                    }
+                }
+            }
+            else
+            {
+                cmbStichType.SelectedIndex = -1;
+                cmbFitType.SelectedIndex = -1;
+            }
+        }
+
         private void SKUList_MouseClick(object sender, MouseEventArgs e)
         {
-            //SaveddtMeasurement(); // Auto Saved Garment Measurement value
+            SaveddtMeasurement(); // Auto Saved Garment Measurement value
 
             lblSKUName.Text = "SKU Selected : " + SKUList.SelectedItems[0].Text.ToString();
             DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
@@ -476,6 +528,8 @@ namespace TAILORING.Order
                 GetGarmentStyle(GarmentID);// Garment Style
                 AddStyleQTY(QTY);
                 checkBox1.Enabled = false;
+
+                GetStichFitType();
             }
         }
 
@@ -528,7 +582,10 @@ namespace TAILORING.Order
                 DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
                 if (dr.Length > 0)
                 {
-                    dr[0].Delete();
+                    for (int i = 0; i < dr.Length; i++)
+                    {
+                        dr[i].Delete();
+                    }
                     dtTempMeasurement.AcceptChanges();
                 }
             }

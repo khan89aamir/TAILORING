@@ -182,5 +182,10 @@ namespace TAILORING.Order
             dtTempPosture.Rows.Add(drow);
             dtTempPosture.AcceptChanges();
         }
+
+        private void btnPostureSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

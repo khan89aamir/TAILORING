@@ -20,6 +20,9 @@ namespace TAILORING.Order
 
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+        
+        Image B_Leave = TAILORING.Properties.Resources.B_click;
+        Image B_Enter = TAILORING.Properties.Resources.B_on;
 
         DataTable dtPosture = new DataTable();
         public DataTable dtTempPosture = new DataTable();
@@ -28,6 +31,7 @@ namespace TAILORING.Order
 
         private void frmBodyPosture_Load(object sender, EventArgs e)
         {
+            btnPostureSave.BackgroundImage = B_Leave;
             GetBodyPostureDetails();
         }
 
@@ -186,6 +190,18 @@ namespace TAILORING.Order
         private void btnPostureSave_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPostureSave_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Enter;
+        }
+
+        private void btnPostureSave_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackgroundImage = B_Leave;
         }
     }
 }

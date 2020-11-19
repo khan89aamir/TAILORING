@@ -42,6 +42,8 @@
             this.cmbStyleQTY = new System.Windows.Forms.ComboBox();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.grpStyle = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbFitType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -64,6 +64,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 19);
@@ -246,6 +248,30 @@
             this.grpStyle.TabStop = false;
             this.grpStyle.Text = "Style :";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(522, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 17);
+            this.label4.TabIndex = 353;
+            this.label4.Text = "*";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(258, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 352;
+            this.label14.Text = "*";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -338,30 +364,6 @@
             this.grpSKUList.TabIndex = 351;
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(258, 91);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 17);
-            this.label14.TabIndex = 352;
-            this.label14.Text = "*";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(522, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 17);
-            this.label4.TabIndex = 353;
-            this.label4.Text = "*";
             // 
             // frmMeasurement
             // 

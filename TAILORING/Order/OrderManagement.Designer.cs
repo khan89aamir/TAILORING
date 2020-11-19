@@ -238,6 +238,7 @@
             this.txtAdvancePaid.TabIndex = 326;
             this.txtAdvancePaid.Text = "0";
             this.txtAdvancePaid.TextChanged += new System.EventHandler(this.txtAdvancePaid_TextChanged);
+            this.txtAdvancePaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdvancePaid_KeyPress);
             // 
             // label4
             // 
@@ -345,6 +346,7 @@
             this.txtFabricCode.Size = new System.Drawing.Size(96, 25);
             this.txtFabricCode.TabIndex = 328;
             this.txtFabricCode.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtFabricCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFabricCode_KeyPress);
             this.txtFabricCode.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // label5
@@ -422,6 +424,7 @@
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByMobileNo.TabIndex = 4;
             this.txtSearchByMobileNo.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtSearchByMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
             this.txtSearchByMobileNo.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // rdSearchByCustomerMobileNo
@@ -449,6 +452,7 @@
             this.txtSearchByCustomerName.TabIndex = 1;
             this.txtSearchByCustomerName.TextChanged += new System.EventHandler(this.txtSearchByCustomerName_TextChanged);
             this.txtSearchByCustomerName.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByCustomerName_KeyPress);
             this.txtSearchByCustomerName.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // rdSearchByCustomerName
@@ -496,6 +500,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(19, 366);
@@ -504,7 +510,12 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(1035, 209);
             this.dataGridView1.TabIndex = 321;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
             // panel2
             // 

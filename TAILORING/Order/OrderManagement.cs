@@ -22,7 +22,7 @@ namespace TAILORING.Order
 
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
-        
+
         DataTable dt = null;
 
         DataTable dtOrder = new DataTable();
@@ -265,13 +265,26 @@ namespace TAILORING.Order
             }
             //if (dataGridView1.Columns.Contains("StichTypeID"))
             //{
-                dataGridView1.Columns["StichTypeID"].Visible = false;
+            dataGridView1.Columns["StichTypeID"].Visible = false;
             //}
             //if (dataGridView1.Columns.Contains("FitTypeID"))
             //{
-                dataGridView1.Columns["FitTypeID"].Visible = false;
+            dataGridView1.Columns["FitTypeID"].Visible = false;
             //}
             CalcTotalAmount();
+
+            if (dataGridView1.Columns.Contains("ColDelete"))
+            {
+                dataGridView1.Columns.Remove("ColDelete");
+            }
+            DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
+            ColDelete.DataPropertyName = "Delete";
+            ColDelete.HeaderText = "Delete";
+            ColDelete.Name = "ColDelete";
+            ColDelete.Text = "Delete";
+            ColDelete.UseColumnTextForButtonValue = true;
+            //dataGridView1.Columns.Add(ColDelete);
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
         }
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
@@ -340,9 +353,17 @@ namespace TAILORING.Order
 
         private void CalcTotalAmount()
         {
-            object total = dtOrder.Compute("SUM(Total)", string.Empty);
+            object total = 0;
+            if (ObjUtil.ValidateTable(dtOrder))
+            {
+                total = dtOrder.Compute("SUM(Total)", string.Empty);
+            }
+            else
+            {
+                txtAdvancePaid.Text = "0";
+            }
             txtTailoringAmount.Text = total.ToString();
-            txtGrossAmt.Text= total.ToString();
+            txtGrossAmt.Text = total.ToString();
 
             double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
             txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
@@ -608,6 +629,170 @@ namespace TAILORING.Order
                 dtBodyPosture.Rows.Add(drow);
             }
             dtBodyPosture.AcceptChanges();
+        }
+
+        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            dataGridView1.Columns[e.Column.Index].ReadOnly = true;
+            if (dataGridView1.Columns.Contains("QTY"))
+            {
+                dataGridView1.Columns["QTY"].ReadOnly = false;
+            }
+            if (dataGridView1.Columns.Contains("Trim Amount"))
+            {
+                dataGridView1.Columns["Trim Amount"].ReadOnly = false;
+            }
+        }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            e.Cancel = false;
+            int column = dataGridView1.CurrentCell.ColumnIndex;
+            string headerText = dataGridView1.Columns[column].HeaderText;
+            if (headerText == "QTY")
+            {
+                if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
+                {
+                    clsUtility.ShowInfoMessage("Enter QTY..");
+                    e.Cancel = true;
+                }
+                else if (Convert.ToInt32(e.FormattedValue) == 0)
+                {
+                    clsUtility.ShowInfoMessage("Enter Valid QTY..");
+                    e.Cancel = true;
+                }
+                return;
+            }
+            //else if (headerText == "Trim Amount")
+            //{
+            //    if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
+            //    {
+            //        clsUtility.ShowInfoMessage("Enter Trim Amount..");
+            //        e.Cancel = true;
+            //    }
+            //    else if (Convert.ToDecimal(e.FormattedValue) == 0)
+            //    {
+            //        clsUtility.ShowInfoMessage("Enter Trim Amount..");
+            //        e.Cancel = true;
+            //    }
+            //    return;
+            //}
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            int column = dataGridView1.CurrentCell.ColumnIndex;
+            string headerText = dataGridView1.Columns[column].HeaderText;
+
+            if (headerText == "Trim Amount")
+            {
+                e.Control.KeyPress += Decimal_Control_KeyPress;
+            }
+            else if (headerText == "QTY")
+            {
+                e.Control.KeyPress += Int_Control_KeyPress;
+            }
+        }
+
+        private void Int_Control_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //string k = e.KeyChar.ToString();
+            //TextBox txt = (TextBox)sender;
+            e.Handled = ObjUtil.IsNumeric(e);
+        }
+
+        private void Decimal_Control_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //string k = e.KeyChar.ToString();
+            TextBox txt = (TextBox)sender;
+            e.Handled = ObjUtil.IsDecimal(txt, e);
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "QTY" || dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount")
+                {
+                    int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
+                    double trimamt = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Trim Amount"].Value);
+                    double Rate = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value);
+                    double Total = (QTY * Rate) + trimamt;
+
+                    dataGridView1.Rows[e.RowIndex].Cells["Total"].Value = Math.Round(Total).ToString();
+
+                    CalcTotalAmount();
+                }
+            }
+        }
+
+        private void txtSearchByCustomerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsString(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Customer Name...", clsUtility.strProjectTitle);
+                txtSearchByCustomerName.Focus();
+            }
+        }
+
+        private void txtFabricCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Fabric Code...", clsUtility.strProjectTitle);
+                txtFabricCode.Focus();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView1.Rows.Count > 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "ColDelete")
+                {
+                    int pSalesOrderDetailsID = 0;
+                    //pSalesOrderDetailsID = dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value == DBNull.Value
+                    //    ? 0 : Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value);
+
+                    DialogResult d = MessageBox.Show("Are you sure want to delete ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (d == DialogResult.Yes)
+                    {
+                        int a = 0;
+                        DataTable dt = (DataTable)dataGridView1.DataSource;
+
+                        //if (pSalesOrderDetailsID > 0)
+                        //{
+                        //    a = ObjDAL.DeleteData(clsUtility.DBName + ".[dbo].[tblSalesOrderDetails]", "SalesOrderDetailsID=" + pSalesOrderDetailsID);
+                        //}
+                        if (a > 0 || pSalesOrderDetailsID == 0)
+                        {
+                            dt.Rows[e.RowIndex].Delete();
+                            dt.AcceptChanges();
+                        }
+                        else
+                        {
+                            clsUtility.ShowInfoMessage("Unable to delete Garment Name. " + dataGridView1.Rows[e.RowIndex].Cells["GarmentName"].Value, clsUtility.strProjectTitle);
+                        }
+                        dataGridView1.DataSource = dt;
+                        CalcTotalAmount();
+                        txtFabricCode.Focus();
+                    }
+
+                }
+            }
+        }
+
+        private void txtAdvancePaid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            e.Handled = ObjUtil.IsDecimal(txt, e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Advance Amount...", clsUtility.strProjectTitle);
+                txtAdvancePaid.Focus();
+            }
         }
     }
 }

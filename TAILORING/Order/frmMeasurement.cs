@@ -287,7 +287,7 @@ namespace TAILORING.Order
             dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
         }
-
+        int pX = 3, pY = 3;
         private void AddStyleImages()
         {
             flowStyleImage.Controls.Clear();
@@ -305,7 +305,7 @@ namespace TAILORING.Order
                 //lbl.Location = new Point(pic.Location.X + 17, pic.Location.Y + 80);
                 //lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
 
-                panel.Size = new Size(160, 100);
+                panel.Size = new Size(140, 130);
                 panel.Cursor = Cursors.Hand;
 
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -318,10 +318,13 @@ namespace TAILORING.Order
                     pic.Image = TAILORING.Properties.Resources.NoImage;
                 }
                 pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
-                pic.Size = new Size(panel.Width - 40, panel.Height - 20);
+                pic.Size = new Size(panel.Width - 5, panel.Height - 5);
                 pic.Click += Pic_Click;
                 pic.BorderStyle = BorderStyle.None;
 
+                //panel.Location = new Point(pX,pY);
+                //label2.Text = "X: " + panel.Location.X + " Y: " + panel.Location.Y;
+                //pX += 145;
                 panel.Controls.Add(pic);
                 //panel.Controls.Add(lbl);
 
@@ -449,6 +452,8 @@ namespace TAILORING.Order
 
             PictureBox p = (PictureBox)sender;
             p.Parent.BackColor = Color.LightGray;
+
+            label2.Text = "Pic X: " + p.Parent.Location.X + " Y: " + p.Parent.Location.Y;
 
             AddTempdtStyle(p);
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);

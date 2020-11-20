@@ -322,9 +322,6 @@ namespace TAILORING.Order
                 pic.Click += Pic_Click;
                 pic.BorderStyle = BorderStyle.None;
 
-                //panel.Location = new Point(pX,pY);
-                //label2.Text = "X: " + panel.Location.X + " Y: " + panel.Location.Y;
-                //pX += 145;
                 panel.Controls.Add(pic);
                 //panel.Controls.Add(lbl);
 
@@ -452,8 +449,6 @@ namespace TAILORING.Order
 
             PictureBox p = (PictureBox)sender;
             p.Parent.BackColor = Color.LightGray;
-
-            label2.Text = "Pic X: " + p.Parent.Location.X + " Y: " + p.Parent.Location.Y;
 
             AddTempdtStyle(p);
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);

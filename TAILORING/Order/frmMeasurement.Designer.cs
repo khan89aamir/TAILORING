@@ -50,8 +50,10 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -83,6 +85,8 @@
             // 
             this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.lblSKUName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -111,7 +115,7 @@
             this.lblSKUName.BackColor = System.Drawing.Color.Transparent;
             this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSKUName.ForeColor = System.Drawing.Color.White;
-            this.lblSKUName.Location = new System.Drawing.Point(650, 12);
+            this.lblSKUName.Location = new System.Drawing.Point(401, 11);
             this.lblSKUName.Name = "lblSKUName";
             this.lblSKUName.Size = new System.Drawing.Size(88, 19);
             this.lblSKUName.TabIndex = 339;
@@ -129,6 +133,7 @@
             this.btnStyleSave.TabIndex = 336;
             this.btnStyleSave.Text = "Save";
             this.btnStyleSave.UseVisualStyleBackColor = true;
+            this.btnStyleSave.Visible = false;
             this.btnStyleSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
             this.btnStyleSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
             // 
@@ -184,6 +189,7 @@
             this.btnMeasureSave.TabIndex = 345;
             this.btnMeasureSave.Text = "Save";
             this.btnMeasureSave.UseVisualStyleBackColor = true;
+            this.btnMeasureSave.Visible = false;
             this.btnMeasureSave.Click += new System.EventHandler(this.btnMeasureSave_Click);
             this.btnMeasureSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
             this.btnMeasureSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
@@ -342,17 +348,6 @@
             this.lnkAddItem.Text = "Body Posture";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
             // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 25);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
-            this.ctrlMeasurment1.TabIndex = 0;
-            // 
             // grpSKUList
             // 
             this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
@@ -364,6 +359,43 @@
             this.grpSKUList.TabIndex = 351;
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 25);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
+            this.ctrlMeasurment1.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(813, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 27);
+            this.btnSave.TabIndex = 354;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(904, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 27);
+            this.btnCancel.TabIndex = 355;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // frmMeasurement
             // 
@@ -425,5 +457,7 @@
         private System.Windows.Forms.ComboBox cmbStichType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -168,19 +168,18 @@ namespace TAILORING
             //{
             //    clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
             //}
-
         }
 
         private void SalesBillDetails_ToolStrip_Click(object sender, EventArgs e)
         {
-            //if (clsFormRights.HasFormRight(clsFormRights.Forms.Sales_Bill_Details) || clsUtility.IsAdmin)
+            //if (clsFormRights.HasFormRight(clsFormRights.Forms.frmOrderDetails) || clsUtility.IsAdmin)
             //{
-            //    //bool b = ObjUtil.IsAlreadyOpen(typeof(Sales.Sales_Bill_Details));
-            //    //if (!b)
-            //    //{
-            //    //    Sales.Sales_Bill_Details Obj = new Sales.Sales_Bill_Details();
-            //    //    Obj.Show();
-            //    //}
+            bool b = ObjUtil.IsAlreadyOpen(typeof(Order.frmOrderList));
+            if (!b)
+            {
+                Order.frmOrderList Obj = new Order.frmOrderList();
+                Obj.Show();
+            }
             //}
             //else
             //{

@@ -324,7 +324,7 @@ namespace TAILORING.Order
             dRow["Trim Amount"] = 0;
             dRow["Rate"] = 100;
             dRow["QTY"] = 2;
-            dRow["Photo"] = @"C:\Tailoring Images\Generic\Trouser Generic 1.gif";
+            dRow["Photo"] = @"C:\Tailoring Images\Generic\Trouser Generic 1.png";
             dRow["Total"] = 0 + (2 * 100);
 
             dtOrder.Rows.Add(dRow);

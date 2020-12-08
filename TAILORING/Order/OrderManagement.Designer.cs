@@ -200,6 +200,7 @@
             // 
             // NumericQTY
             // 
+            this.NumericQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumericQTY.Location = new System.Drawing.Point(625, 32);
             this.NumericQTY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NumericQTY.Minimum = new decimal(new int[] {

@@ -116,6 +116,12 @@
     <Compile Include="Masters\Employee_Details.Designer.cs">
       <DependentUpon>Employee_Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masters\frmCompanyMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmCompanyMaster.Designer.cs">
+      <DependentUpon>frmCompanyMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masters\Product_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,18 @@
     </Compile>
     <Compile Include="Order\frmMeasurement.Designer.cs">
       <DependentUpon>frmMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\frmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmOrderDetails.Designer.cs">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\OrderManagement.cs">
       <SubType>Form</SubType>
@@ -170,6 +188,9 @@
     <EmbeddedResource Include="Masters\Employee_Details.resx">
       <DependentUpon>Employee_Details.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmCompanyMaster.resx">
+      <DependentUpon>frmCompanyMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Masters\Product_Master.resx">
       <DependentUpon>Product_Master.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmMeasurement.resx">
       <DependentUpon>frmMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmOrderDetails.resx">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\OrderManagement.resx">
       <DependentUpon>OrderManagement.cs</DependentUpon>

@@ -49,6 +49,9 @@ namespace TAILORING.Order
             btnMeasureSave.BackgroundImage = B_Leave;
             btnStyleSave.BackgroundImage = B_Leave;
 
+            btnSave.BackgroundImage = B_Leave;
+            btnCancel.BackgroundImage = B_Leave;
+
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
                 dsMeasure.Tables.Add(dtTempMeasurement);

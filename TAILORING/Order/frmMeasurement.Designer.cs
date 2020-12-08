@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.lblSKUName = new System.Windows.Forms.Label();
             this.btnStyleSave = new System.Windows.Forms.Button();
@@ -50,10 +52,8 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.grpSKUList = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -95,6 +95,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1004, 40);
             this.panel2.TabIndex = 323;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(904, 9);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 23);
+            this.btnCancel.TabIndex = 355;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
+            this.btnCancel.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(813, 9);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 23);
+            this.btnSave.TabIndex = 354;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
             // 
             // label12
             // 
@@ -160,7 +190,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 25);
+            this.label2.Location = new System.Drawing.Point(11, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 17);
             this.label2.TabIndex = 342;
@@ -200,7 +230,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(203, 54);
+            this.checkBox1.Location = new System.Drawing.Point(155, 54);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 346;
@@ -213,9 +243,9 @@
             this.cmbStyleQTY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.FormattingEnabled = true;
-            this.cmbStyleQTY.Location = new System.Drawing.Point(203, 22);
+            this.cmbStyleQTY.Location = new System.Drawing.Point(155, 22);
             this.cmbStyleQTY.Name = "cmbStyleQTY";
-            this.cmbStyleQTY.Size = new System.Drawing.Size(121, 25);
+            this.cmbStyleQTY.Size = new System.Drawing.Size(101, 25);
             this.cmbStyleQTY.TabIndex = 347;
             this.cmbStyleQTY.SelectionChangeCommitted += new System.EventHandler(this.cmbStyleQTY_SelectionChangeCommitted);
             // 
@@ -348,18 +378,6 @@
             this.lnkAddItem.Text = "Body Posture";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
             // 
-            // grpSKUList
-            // 
-            this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
-            this.grpSKUList.Controls.Add(this.SKUList);
-            this.grpSKUList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUList.Location = new System.Drawing.Point(8, 42);
-            this.grpSKUList.Name = "grpSKUList";
-            this.grpSKUList.Size = new System.Drawing.Size(636, 163);
-            this.grpSKUList.TabIndex = 351;
-            this.grpSKUList.TabStop = false;
-            this.grpSKUList.Text = "Selected SKUs :";
-            // 
             // ctrlMeasurment1
             // 
             this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
@@ -371,31 +389,17 @@
             this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
             this.ctrlMeasurment1.TabIndex = 0;
             // 
-            // btnSave
+            // grpSKUList
             // 
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(813, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 27);
-            this.btnSave.TabIndex = 354;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(904, 4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 27);
-            this.btnCancel.TabIndex = 355;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
+            this.grpSKUList.Controls.Add(this.SKUList);
+            this.grpSKUList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSKUList.Location = new System.Drawing.Point(8, 42);
+            this.grpSKUList.Name = "grpSKUList";
+            this.grpSKUList.Size = new System.Drawing.Size(636, 163);
+            this.grpSKUList.TabIndex = 351;
+            this.grpSKUList.TabStop = false;
+            this.grpSKUList.Text = "Selected SKUs :";
             // 
             // frmMeasurement
             // 

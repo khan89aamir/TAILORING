@@ -103,6 +103,19 @@ namespace TAILORING.Masters
                 txtCompanyAddress.Focus();
                 return false;
             }
+            else if (chkDefaultCompany.Checked)
+            {
+                int a = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,0)=1");
+                if (a > 0 && ID == 0)
+                {
+                    clsUtility.ShowInfoMessage("Already Default Company is presnet..");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             return true;
         }
 

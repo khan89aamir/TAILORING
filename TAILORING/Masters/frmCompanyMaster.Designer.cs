@@ -46,6 +46,9 @@ namespace TAILORING.Masters
             this.rdShowAllOfCustomer = new System.Windows.Forms.RadioButton();
             this.rdSearchByCompanyName = new System.Windows.Forms.RadioButton();
             this.grpCompany = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chkDefaultCompany = new System.Windows.Forms.CheckBox();
             this.txtCompanyEmailID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,9 +60,6 @@ namespace TAILORING.Masters
             this.lblCustomerAddress = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblTotalRecords = new System.Windows.Forms.Label();
-            this.chkDefaultCompany = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpCustomerGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanyMaster)).BeginInit();
@@ -69,7 +69,7 @@ namespace TAILORING.Masters
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
+            this.panel1.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -233,6 +233,8 @@ namespace TAILORING.Masters
             this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(184, 25);
             this.txtSearchByMobileNo.TabIndex = 4;
+            this.txtSearchByMobileNo.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtSearchByMobileNo.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // rdSearchByCustomerMobileNo
             // 
@@ -256,6 +258,8 @@ namespace TAILORING.Masters
             this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
             this.txtSearchByCustomerName.Size = new System.Drawing.Size(184, 25);
             this.txtSearchByCustomerName.TabIndex = 1;
+            this.txtSearchByCustomerName.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtSearchByCustomerName.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // rdShowAllOfCustomer
             // 
@@ -309,6 +313,41 @@ namespace TAILORING.Masters
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "Company Details";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(344, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 17);
+            this.label3.TabIndex = 289;
+            this.label3.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(711, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 17);
+            this.label2.TabIndex = 288;
+            this.label2.Text = "*";
+            // 
+            // chkDefaultCompany
+            // 
+            this.chkDefaultCompany.AutoSize = true;
+            this.chkDefaultCompany.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDefaultCompany.Location = new System.Drawing.Point(468, 105);
+            this.chkDefaultCompany.Name = "chkDefaultCompany";
+            this.chkDefaultCompany.Size = new System.Drawing.Size(146, 21);
+            this.chkDefaultCompany.TabIndex = 287;
+            this.chkDefaultCompany.Text = "Is Default Company";
+            this.chkDefaultCompany.UseVisualStyleBackColor = true;
+            // 
             // txtCompanyEmailID
             // 
             this.txtCompanyEmailID.BackColor = System.Drawing.Color.White;
@@ -319,6 +358,8 @@ namespace TAILORING.Masters
             this.txtCompanyEmailID.Name = "txtCompanyEmailID";
             this.txtCompanyEmailID.Size = new System.Drawing.Size(240, 25);
             this.txtCompanyEmailID.TabIndex = 2;
+            this.txtCompanyEmailID.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtCompanyEmailID.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // label4
             // 
@@ -365,6 +406,8 @@ namespace TAILORING.Masters
             this.txtCompanyMobileNo.Name = "txtCompanyMobileNo";
             this.txtCompanyMobileNo.Size = new System.Drawing.Size(240, 25);
             this.txtCompanyMobileNo.TabIndex = 1;
+            this.txtCompanyMobileNo.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtCompanyMobileNo.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // txtCompanyAddress
             // 
@@ -377,6 +420,8 @@ namespace TAILORING.Masters
             this.txtCompanyAddress.Name = "txtCompanyAddress";
             this.txtCompanyAddress.Size = new System.Drawing.Size(240, 65);
             this.txtCompanyAddress.TabIndex = 3;
+            this.txtCompanyAddress.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtCompanyAddress.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // txtCompanyName
             // 
@@ -435,46 +480,11 @@ namespace TAILORING.Masters
             this.lblTotalRecords.TabIndex = 222;
             this.lblTotalRecords.Text = "Total Records : 0";
             // 
-            // chkDefaultCompany
-            // 
-            this.chkDefaultCompany.AutoSize = true;
-            this.chkDefaultCompany.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDefaultCompany.Location = new System.Drawing.Point(468, 105);
-            this.chkDefaultCompany.Name = "chkDefaultCompany";
-            this.chkDefaultCompany.Size = new System.Drawing.Size(146, 21);
-            this.chkDefaultCompany.TabIndex = 287;
-            this.chkDefaultCompany.Text = "Is Default Company";
-            this.chkDefaultCompany.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(711, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 17);
-            this.label2.TabIndex = 288;
-            this.label2.Text = "*";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(344, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 17);
-            this.label3.TabIndex = 289;
-            this.label3.Text = "*";
-            // 
             // frmCompanyMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 569);
             this.Controls.Add(this.lblTotalRecords);

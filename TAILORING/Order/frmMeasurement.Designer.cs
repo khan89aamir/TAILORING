@@ -83,7 +83,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
+            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnSave);
@@ -407,7 +407,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1021, 701);
             this.Controls.Add(this.grpSKUList);

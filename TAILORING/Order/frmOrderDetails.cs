@@ -53,7 +53,10 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
-            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.ColumnHeader);
+            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
+            
+            dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
+            dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
         }
     }
 }

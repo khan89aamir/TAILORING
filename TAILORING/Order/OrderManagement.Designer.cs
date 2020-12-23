@@ -130,6 +130,7 @@
             // lnkAddItem
             // 
             this.lnkAddItem.AutoSize = true;
+            this.lnkAddItem.BackColor = System.Drawing.Color.Transparent;
             this.lnkAddItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkAddItem.Location = new System.Drawing.Point(956, 335);
             this.lnkAddItem.Name = "lnkAddItem";
@@ -520,7 +521,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
+            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.label12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -661,7 +662,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 693);
             this.Controls.Add(this.dtpDeliveryDate);

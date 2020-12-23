@@ -47,6 +47,9 @@ namespace TAILORING.Order
             InitMeasurementTable(); //Measurement
             InitStyleTable(); //Style
             InitBodyPostureTable(); //BodyPosture
+
+            dtpTrailDate.Value.AddDays(4);
+            dtpDeliveryDate.Value.AddDays(5);
         }
 
         private void InitItemTable()

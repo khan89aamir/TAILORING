@@ -55,7 +55,7 @@ namespace TAILORING
                 lblRegistrationDate.Text = "NA";
             }
 
-            object company = ObjDAL.ExecuteScalar("SELECT CompanyName FROM " + clsUtility.DBName + ".[dbo].[CompanyMaster] WITH(NOLOCK)");
+            object company = ObjDAL.ExecuteScalar("SELECT CompanyName FROM " + clsUtility.DBName + ".[dbo].[CompanyMaster] WITH(NOLOCK) WHERE ISNULL(IsDefault,0)=1");
             if (company != null)
             {
                 lblLicensedTo.Text = company.ToString();
@@ -304,6 +304,23 @@ namespace TAILORING
         private void f1CashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SalesInvoice_ToolStrip_Click(null, null);
+        }
+
+        private void companyManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmCompanyMaster) || clsUtility.IsAdmin)
+            {
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Masters.frmCompanyMaster));
+                if (!b)
+                {
+                    Masters.frmCompanyMaster Obj = new Masters.frmCompanyMaster();
+                    Obj.Show();
+                }
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+            }
         }
     }
 }

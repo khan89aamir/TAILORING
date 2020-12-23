@@ -53,7 +53,7 @@ namespace TAILORING.Order
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
+            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.label12);
             this.panel2.Name = "panel2";
@@ -188,7 +188,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvOrderDetails);

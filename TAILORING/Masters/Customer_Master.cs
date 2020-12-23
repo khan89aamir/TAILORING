@@ -390,6 +390,8 @@ namespace TAILORING.Masters
             ObjUtil.SetRowNumber(dgvCustomerMaster);
             ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvCustomerMaster.Columns["CustomerID"].Visible = false;
+            dgvCustomerMaster.Columns["LastChange"].Visible = false;
+
             lblTotalRecords.Text = "Total Records : " + dgvCustomerMaster.Rows.Count;
         }
 

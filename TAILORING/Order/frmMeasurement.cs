@@ -290,7 +290,7 @@ namespace TAILORING.Order
             dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
         }
-        int pX = 3, pY = 3;
+
         private void AddStyleImages()
         {
             flowStyleImage.Controls.Clear();

@@ -7,6 +7,7 @@
             Customer_Master = 11,
             Product_Master = 13,
             Employee_Details = 14,
+            frmCompanyMaster=15,
             Sales_Bill_Details = 23,
             Sales_Invoice = 24,
             frmSalesReport = 25,

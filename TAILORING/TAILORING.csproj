@@ -51,6 +51,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo 1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreApp, Version=3.0.0.9, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.11\lib\CoreApp.dll</HintPath>
@@ -260,6 +263,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logo 1.ico" />
+    <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

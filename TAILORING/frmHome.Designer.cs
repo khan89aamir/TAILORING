@@ -37,6 +37,7 @@
             this.EmployeeDetails_ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.productMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomerMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrderManagementPartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalesInvoice_ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.SalesBillDetails_ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,6 @@
             this.lblLicensedTo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblCompanyName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -118,7 +118,8 @@
             this.mobilePartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EmployeeDetails_ToolStrip,
             this.productMasterToolStripMenuItem,
-            this.CustomerMasterToolStripMenuItem});
+            this.CustomerMasterToolStripMenuItem,
+            this.companyManagementToolStripMenuItem});
             this.mobilePartsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mobilePartsToolStripMenuItem.Image")));
             this.mobilePartsToolStripMenuItem.Name = "mobilePartsToolStripMenuItem";
             this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(90, 36);
@@ -145,6 +146,13 @@
             this.CustomerMasterToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.CustomerMasterToolStripMenuItem.Text = "Customer Managament";
             this.CustomerMasterToolStripMenuItem.Click += new System.EventHandler(this.CustomerMasterToolStripMenuItem_Click);
+            // 
+            // companyManagementToolStripMenuItem
+            // 
+            this.companyManagementToolStripMenuItem.Name = "companyManagementToolStripMenuItem";
+            this.companyManagementToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.companyManagementToolStripMenuItem.Text = "Company Management";
+            this.companyManagementToolStripMenuItem.Click += new System.EventHandler(this.companyManagementToolStripMenuItem_Click);
             // 
             // OrderManagementPartsToolStripMenuItem
             // 
@@ -365,26 +373,13 @@
             this.label2.Text = "Registration Info :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // lblCompanyName
-            // 
-            this.lblCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCompanyName.Font = new System.Drawing.Font("Times New Roman", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(673, 352);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(276, 33);
-            this.lblCompanyName.TabIndex = 28;
-            this.lblCompanyName.Text = "Smart Tailor Solution";
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 506);
-            this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLogOut);
@@ -446,6 +441,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
-        private System.Windows.Forms.Label lblCompanyName;
+        private System.Windows.Forms.ToolStripMenuItem companyManagementToolStripMenuItem;
     }
 }

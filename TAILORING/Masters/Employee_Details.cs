@@ -308,6 +308,7 @@ namespace TAILORING.Masters
             ObjUtil.SetDataGridProperty(dgvEmployee, DataGridViewAutoSizeColumnsMode.Fill);
             dgvEmployee.Columns["Photo"].Visible = false;
             dgvEmployee.Columns["EmpID"].Visible = false;
+            dgvEmployee.Columns["LastChange"].Visible = false;
             lblTotalRecords.Text = "Total Records : " + dgvEmployee.Rows.Count;
         }
 

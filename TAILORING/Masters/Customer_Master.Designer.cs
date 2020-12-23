@@ -439,7 +439,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::TAILORING.Properties.Resources.titlebg;
+            this.panel1.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -465,7 +465,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back;
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 569);
             this.Controls.Add(this.lblTotalRecords);

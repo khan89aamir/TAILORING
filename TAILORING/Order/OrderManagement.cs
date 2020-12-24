@@ -132,9 +132,12 @@ namespace TAILORING.Order
         private void FillGarmentData()
         {
             dt = null;
-            dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblProductMaster", "GarmentID,GarmentName,Rate", "OrderType=" + cmbOrderType.SelectedIndex, "GarmentName ASC");
-            if (ObjUtil.ValidateTable(dt))
+            //dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblProductMaster", "GarmentID,GarmentName,Rate", "OrderType=" + cmbOrderType.SelectedIndex, "GarmentName ASC");
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbOrderType.SelectedIndex, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product_Rate");
+            if (ObjUtil.ValidateDataSet(ds))
             {
+                dt = ds.Tables[0];
                 cmbGarmentName.DataSource = dt;
                 cmbGarmentName.DisplayMember = "GarmentName";
                 cmbGarmentName.ValueMember = "GarmentID";

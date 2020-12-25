@@ -591,7 +591,7 @@ namespace TAILORING.Order
                 drow["SalesOrderID"] = OrderID;
                 drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
                 drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
-                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];
+                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];  
                 drow["CreatedBy"] = clsUtility.LoginID;
 
                 dtMeasurement.Rows.Add(drow);

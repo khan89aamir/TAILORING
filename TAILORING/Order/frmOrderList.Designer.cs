@@ -163,10 +163,10 @@ namespace TAILORING.Order
             this.dgvOrderDetails.AllowUserToDeleteRows = false;
             this.dgvOrderDetails.AllowUserToResizeColumns = false;
             this.dgvOrderDetails.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.dgvOrderDetails, "dgvOrderDetails");
             this.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dgvOrderDetails, "dgvOrderDetails");
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
             this.dgvOrderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellClick);

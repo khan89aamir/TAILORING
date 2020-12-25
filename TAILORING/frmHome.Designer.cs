@@ -74,64 +74,64 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
-            this.picCompany = new System.Windows.Forms.PictureBox();
-            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
-            this.lblCompany = new System.Windows.Forms.Label();
-            this.lblEmployee = new System.Windows.Forms.Label();
-            this.picEmployee = new System.Windows.Forms.PictureBox();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.picProduct = new System.Windows.Forms.PictureBox();
-            this.lblCustomer = new System.Windows.Forms.Label();
-            this.picCustomer = new System.Windows.Forms.PictureBox();
             this.ribbonHost5 = new System.Windows.Forms.RibbonHost();
+            this.picCompany = new System.Windows.Forms.PictureBox();
             this.ribbonHost6 = new System.Windows.Forms.RibbonHost();
+            this.lblCompany = new System.Windows.Forms.Label();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost7 = new System.Windows.Forms.RibbonHost();
+            this.picEmployee = new System.Windows.Forms.PictureBox();
             this.ribbonHost8 = new System.Windows.Forms.RibbonHost();
+            this.lblEmployee = new System.Windows.Forms.Label();
+            this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost9 = new System.Windows.Forms.RibbonHost();
+            this.picCustomer = new System.Windows.Forms.PictureBox();
             this.ribbonHost10 = new System.Windows.Forms.RibbonHost();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost11 = new System.Windows.Forms.RibbonHost();
+            this.picProduct = new System.Windows.Forms.PictureBox();
             this.ribbonHost12 = new System.Windows.Forms.RibbonHost();
-            this.lblNewOrder = new System.Windows.Forms.Label();
-            this.picNewOrder = new System.Windows.Forms.PictureBox();
-            this.lblOrderList = new System.Windows.Forms.Label();
-            this.picOrderList = new System.Windows.Forms.PictureBox();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost13 = new System.Windows.Forms.RibbonHost();
+            this.picNewOrder = new System.Windows.Forms.PictureBox();
             this.ribbonHost14 = new System.Windows.Forms.RibbonHost();
+            this.lblNewOrder = new System.Windows.Forms.Label();
+            this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost15 = new System.Windows.Forms.RibbonHost();
+            this.picOrderList = new System.Windows.Forms.PictureBox();
             this.ribbonHost16 = new System.Windows.Forms.RibbonHost();
+            this.lblOrderList = new System.Windows.Forms.Label();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
-            this.lblDashbaord = new System.Windows.Forms.Label();
-            this.picDashBoard = new System.Windows.Forms.PictureBox();
             this.ribbonHost17 = new System.Windows.Forms.RibbonHost();
+            this.picDashBoard = new System.Windows.Forms.PictureBox();
             this.ribbonHost18 = new System.Windows.Forms.RibbonHost();
+            this.lblDashbaord = new System.Windows.Forms.Label();
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
-            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
-            this.lblReport = new System.Windows.Forms.Label();
-            this.picReport = new System.Windows.Forms.PictureBox();
             this.ribbonHost19 = new System.Windows.Forms.RibbonHost();
+            this.picReport = new System.Windows.Forms.PictureBox();
             this.ribbonHost20 = new System.Windows.Forms.RibbonHost();
+            this.lblReport = new System.Windows.Forms.Label();
+            this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost21 = new System.Windows.Forms.RibbonHost();
+            this.picbackrestore = new System.Windows.Forms.PictureBox();
             this.ribbonHost22 = new System.Windows.Forms.RibbonHost();
             this.lblbackrestore = new System.Windows.Forms.Label();
-            this.picbackrestore = new System.Windows.Forms.PictureBox();
+            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost23 = new System.Windows.Forms.RibbonHost();
-            this.ribbonHost24 = new System.Windows.Forms.RibbonHost();
             this.picSetting = new System.Windows.Forms.PictureBox();
+            this.ribbonHost24 = new System.Windows.Forms.RibbonHost();
             this.lblSetting = new System.Windows.Forms.Label();
-            this.picHelp = new System.Windows.Forms.PictureBox();
+            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel14 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
+            this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -142,8 +142,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).BeginInit();
@@ -180,10 +180,9 @@
             this.userCreationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userCreationToolStripMenuItem1,
             this.userRightsManagementToolStripMenuItem});
-            this.userCreationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("userCreationToolStripMenuItem.Image")));
             this.userCreationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.userCreationToolStripMenuItem.Name = "userCreationToolStripMenuItem";
-            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(164, 36);
+            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(132, 36);
             this.userCreationToolStripMenuItem.Text = "User Management";
             this.userCreationToolStripMenuItem.ToolTipText = "User Creation";
             // 
@@ -208,9 +207,8 @@
             this.productMasterToolStripMenuItem,
             this.CustomerMasterToolStripMenuItem,
             this.companyManagementToolStripMenuItem});
-            this.mobilePartsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mobilePartsToolStripMenuItem.Image")));
             this.mobilePartsToolStripMenuItem.Name = "mobilePartsToolStripMenuItem";
-            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(90, 36);
+            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(70, 36);
             this.mobilePartsToolStripMenuItem.Text = "Masters";
             this.mobilePartsToolStripMenuItem.ToolTipText = "Mobile Parts";
             // 
@@ -247,9 +245,8 @@
             this.OrderManagementPartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SalesInvoice_ToolStrip,
             this.SalesBillDetails_ToolStrip});
-            this.OrderManagementPartsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OrderManagementPartsToolStripMenuItem.Image")));
             this.OrderManagementPartsToolStripMenuItem.Name = "OrderManagementPartsToolStripMenuItem";
-            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(160, 36);
+            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(140, 36);
             this.OrderManagementPartsToolStripMenuItem.Text = "Order Management";
             this.OrderManagementPartsToolStripMenuItem.ToolTipText = "Hardware Parts";
             // 
@@ -257,22 +254,21 @@
             // 
             this.SalesInvoice_ToolStrip.Name = "SalesInvoice_ToolStrip";
             this.SalesInvoice_ToolStrip.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.SalesInvoice_ToolStrip.Size = new System.Drawing.Size(180, 24);
+            this.SalesInvoice_ToolStrip.Size = new System.Drawing.Size(175, 24);
             this.SalesInvoice_ToolStrip.Text = "New Order";
             this.SalesInvoice_ToolStrip.Click += new System.EventHandler(this.SalesInvoice_ToolStrip_Click);
             // 
             // SalesBillDetails_ToolStrip
             // 
             this.SalesBillDetails_ToolStrip.Name = "SalesBillDetails_ToolStrip";
-            this.SalesBillDetails_ToolStrip.Size = new System.Drawing.Size(180, 24);
+            this.SalesBillDetails_ToolStrip.Size = new System.Drawing.Size(175, 24);
             this.SalesBillDetails_ToolStrip.Text = "Order Details";
             this.SalesBillDetails_ToolStrip.Click += new System.EventHandler(this.SalesBillDetails_ToolStrip_Click);
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dashboardToolStripMenuItem.Image")));
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(108, 36);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(88, 36);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -281,16 +277,15 @@
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SalesReport_ToolStrip,
             this.testToolStripMenuItem});
-            this.reportsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportsToolStripMenuItem.Image")));
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 36);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(69, 36);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.ToolTipText = "Reports";
             // 
             // SalesReport_ToolStrip
             // 
             this.SalesReport_ToolStrip.Name = "SalesReport_ToolStrip";
-            this.SalesReport_ToolStrip.Size = new System.Drawing.Size(180, 24);
+            this.SalesReport_ToolStrip.Size = new System.Drawing.Size(161, 24);
             this.SalesReport_ToolStrip.Text = "Order Report";
             this.SalesReport_ToolStrip.ToolTipText = "Monthly Sales Report";
             this.SalesReport_ToolStrip.Click += new System.EventHandler(this.SalesReport_ToolStrip_Click);
@@ -298,14 +293,13 @@
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.testToolStripMenuItem.Text = "Test";
             // 
             // otherArtsToolStripMenuItem
             // 
-            this.otherArtsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("otherArtsToolStripMenuItem.Image")));
             this.otherArtsToolStripMenuItem.Name = "otherArtsToolStripMenuItem";
-            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
             this.otherArtsToolStripMenuItem.Text = " Backup/Restore";
             this.otherArtsToolStripMenuItem.ToolTipText = "Other Parts";
             this.otherArtsToolStripMenuItem.Click += new System.EventHandler(this.otherArtsToolStripMenuItem_Click);
@@ -313,17 +307,15 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Transparent;
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(88, 36);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(68, 36);
             this.toolStripMenuItem2.Text = "Settings";
             this.toolStripMenuItem2.ToolTipText = "Settings";
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem.Image")));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(70, 36);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 36);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // statusStrip1
@@ -614,6 +606,12 @@
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Text = "Company Master";
             // 
+            // ribbonHost5
+            // 
+            this.ribbonHost5.HostedControl = this.picCompany;
+            this.ribbonHost5.Name = "ribbonHost5";
+            this.ribbonHost5.Text = " ";
+            // 
             // picCompany
             // 
             this.picCompany.BackColor = System.Drawing.Color.Transparent;
@@ -627,26 +625,11 @@
             this.picCompany.TabStop = false;
             this.picCompany.Click += new System.EventHandler(this.companyManagementToolStripMenuItem_Click);
             // 
-            // ribbonPanel5
+            // ribbonHost6
             // 
-            this.ribbonPanel5.Items.Add(this.ribbonHost7);
-            this.ribbonPanel5.Items.Add(this.ribbonHost8);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "Employee Master";
-            // 
-            // ribbonPanel6
-            // 
-            this.ribbonPanel6.Items.Add(this.ribbonHost9);
-            this.ribbonPanel6.Items.Add(this.ribbonHost10);
-            this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Text = "Customer Master";
-            // 
-            // ribbonPanel7
-            // 
-            this.ribbonPanel7.Items.Add(this.ribbonHost11);
-            this.ribbonPanel7.Items.Add(this.ribbonHost12);
-            this.ribbonPanel7.Name = "ribbonPanel7";
-            this.ribbonPanel7.Text = "Product Master";
+            this.ribbonHost6.HostedControl = this.lblCompany;
+            this.ribbonHost6.Name = "ribbonHost6";
+            this.ribbonHost6.Text = " ";
             // 
             // lblCompany
             // 
@@ -659,16 +642,18 @@
             this.lblCompany.TabIndex = 37;
             this.lblCompany.Text = "Company Master";
             // 
-            // lblEmployee
+            // ribbonPanel5
             // 
-            this.lblEmployee.AutoSize = true;
-            this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployee.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(265, 200);
-            this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(100, 15);
-            this.lblEmployee.TabIndex = 39;
-            this.lblEmployee.Text = "Employee Master";
+            this.ribbonPanel5.Items.Add(this.ribbonHost7);
+            this.ribbonPanel5.Items.Add(this.ribbonHost8);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Text = "Employee Master";
+            // 
+            // ribbonHost7
+            // 
+            this.ribbonHost7.HostedControl = this.picEmployee;
+            this.ribbonHost7.Name = "ribbonHost7";
+            this.ribbonHost7.Text = " ";
             // 
             // picEmployee
             // 
@@ -683,40 +668,35 @@
             this.picEmployee.TabStop = false;
             this.picEmployee.Click += new System.EventHandler(this.EmployeeDetails_ToolStrip_Click);
             // 
-            // lblProduct
+            // ribbonHost8
             // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblProduct.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(253, 250);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(90, 15);
-            this.lblProduct.TabIndex = 41;
-            this.lblProduct.Text = "Product Master";
+            this.ribbonHost8.HostedControl = this.lblEmployee;
+            this.ribbonHost8.Name = "ribbonHost8";
+            this.ribbonHost8.Text = " ";
             // 
-            // picProduct
+            // lblEmployee
             // 
-            this.picProduct.BackColor = System.Drawing.Color.Transparent;
-            this.picProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picProduct.Image = ((System.Drawing.Image)(resources.GetObject("picProduct.Image")));
-            this.picProduct.Location = new System.Drawing.Point(161, 232);
-            this.picProduct.Name = "picProduct";
-            this.picProduct.Size = new System.Drawing.Size(93, 44);
-            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProduct.TabIndex = 40;
-            this.picProduct.TabStop = false;
-            this.picProduct.Click += new System.EventHandler(this.productMasterToolStripMenuItem_Click);
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployee.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.Location = new System.Drawing.Point(265, 200);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(100, 15);
+            this.lblEmployee.TabIndex = 39;
+            this.lblEmployee.Text = "Employee Master";
             // 
-            // lblCustomer
+            // ribbonPanel6
             // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(253, 298);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(99, 15);
-            this.lblCustomer.TabIndex = 43;
-            this.lblCustomer.Text = "Customer Master";
+            this.ribbonPanel6.Items.Add(this.ribbonHost9);
+            this.ribbonPanel6.Items.Add(this.ribbonHost10);
+            this.ribbonPanel6.Name = "ribbonPanel6";
+            this.ribbonPanel6.Text = "Customer Master";
+            // 
+            // ribbonHost9
+            // 
+            this.ribbonHost9.HostedControl = this.picCustomer;
+            this.ribbonHost9.Name = "ribbonHost9";
+            this.ribbonHost9.Text = " ";
             // 
             // picCustomer
             // 
@@ -731,41 +711,29 @@
             this.picCustomer.TabStop = false;
             this.picCustomer.Click += new System.EventHandler(this.CustomerMasterToolStripMenuItem_Click);
             // 
-            // ribbonHost5
-            // 
-            this.ribbonHost5.HostedControl = this.picCompany;
-            this.ribbonHost5.Name = "ribbonHost5";
-            this.ribbonHost5.Text = " ";
-            // 
-            // ribbonHost6
-            // 
-            this.ribbonHost6.HostedControl = this.lblCompany;
-            this.ribbonHost6.Name = "ribbonHost6";
-            this.ribbonHost6.Text = " ";
-            // 
-            // ribbonHost7
-            // 
-            this.ribbonHost7.HostedControl = this.picEmployee;
-            this.ribbonHost7.Name = "ribbonHost7";
-            this.ribbonHost7.Text = " ";
-            // 
-            // ribbonHost8
-            // 
-            this.ribbonHost8.HostedControl = this.lblEmployee;
-            this.ribbonHost8.Name = "ribbonHost8";
-            this.ribbonHost8.Text = " ";
-            // 
-            // ribbonHost9
-            // 
-            this.ribbonHost9.HostedControl = this.picCustomer;
-            this.ribbonHost9.Name = "ribbonHost9";
-            this.ribbonHost9.Text = " ";
-            // 
             // ribbonHost10
             // 
             this.ribbonHost10.HostedControl = this.lblCustomer;
             this.ribbonHost10.Name = "ribbonHost10";
             this.ribbonHost10.Text = " ";
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(253, 298);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(99, 15);
+            this.lblCustomer.TabIndex = 43;
+            this.lblCustomer.Text = "Customer Master";
+            // 
+            // ribbonPanel7
+            // 
+            this.ribbonPanel7.Items.Add(this.ribbonHost11);
+            this.ribbonPanel7.Items.Add(this.ribbonHost12);
+            this.ribbonPanel7.Name = "ribbonPanel7";
+            this.ribbonPanel7.Text = "Product Master";
             // 
             // ribbonHost11
             // 
@@ -773,59 +741,35 @@
             this.ribbonHost11.Name = "ribbonHost11";
             this.ribbonHost11.Text = " ";
             // 
+            // picProduct
+            // 
+            this.picProduct.BackColor = System.Drawing.Color.Transparent;
+            this.picProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picProduct.Image = ((System.Drawing.Image)(resources.GetObject("picProduct.Image")));
+            this.picProduct.Location = new System.Drawing.Point(161, 232);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(93, 44);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct.TabIndex = 40;
+            this.picProduct.TabStop = false;
+            this.picProduct.Click += new System.EventHandler(this.productMasterToolStripMenuItem_Click);
+            // 
             // ribbonHost12
             // 
             this.ribbonHost12.HostedControl = this.lblProduct;
             this.ribbonHost12.Name = "ribbonHost12";
             this.ribbonHost12.Text = " ";
             // 
-            // lblNewOrder
+            // lblProduct
             // 
-            this.lblNewOrder.AutoSize = true;
-            this.lblNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewOrder.Location = new System.Drawing.Point(7, 390);
-            this.lblNewOrder.Name = "lblNewOrder";
-            this.lblNewOrder.Size = new System.Drawing.Size(64, 15);
-            this.lblNewOrder.TabIndex = 45;
-            this.lblNewOrder.Text = "New Order";
-            // 
-            // picNewOrder
-            // 
-            this.picNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.picNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("picNewOrder.Image")));
-            this.picNewOrder.Location = new System.Drawing.Point(10, 343);
-            this.picNewOrder.Name = "picNewOrder";
-            this.picNewOrder.Size = new System.Drawing.Size(59, 44);
-            this.picNewOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNewOrder.TabIndex = 44;
-            this.picNewOrder.TabStop = false;
-            this.picNewOrder.Click += new System.EventHandler(this.SalesInvoice_ToolStrip_Click);
-            // 
-            // lblOrderList
-            // 
-            this.lblOrderList.AutoSize = true;
-            this.lblOrderList.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrderList.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderList.Location = new System.Drawing.Point(138, 360);
-            this.lblOrderList.Name = "lblOrderList";
-            this.lblOrderList.Size = new System.Drawing.Size(66, 15);
-            this.lblOrderList.TabIndex = 47;
-            this.lblOrderList.Text = "  Order List";
-            // 
-            // picOrderList
-            // 
-            this.picOrderList.BackColor = System.Drawing.Color.Transparent;
-            this.picOrderList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picOrderList.Image = ((System.Drawing.Image)(resources.GetObject("picOrderList.Image")));
-            this.picOrderList.Location = new System.Drawing.Point(77, 343);
-            this.picOrderList.Name = "picOrderList";
-            this.picOrderList.Size = new System.Drawing.Size(82, 44);
-            this.picOrderList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picOrderList.TabIndex = 46;
-            this.picOrderList.TabStop = false;
-            this.picOrderList.Click += new System.EventHandler(this.SalesBillDetails_ToolStrip_Click);
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lblProduct.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(253, 250);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(90, 15);
+            this.lblProduct.TabIndex = 41;
+            this.lblProduct.Text = "Product Master";
             // 
             // ribbonTab3
             // 
@@ -841,18 +785,24 @@
             this.ribbonPanel8.Name = "ribbonPanel8";
             this.ribbonPanel8.Text = "       New Order        .";
             // 
-            // ribbonPanel9
-            // 
-            this.ribbonPanel9.Items.Add(this.ribbonHost15);
-            this.ribbonPanel9.Items.Add(this.ribbonHost16);
-            this.ribbonPanel9.Name = "ribbonPanel9";
-            this.ribbonPanel9.Text = "      Order List        .";
-            // 
             // ribbonHost13
             // 
             this.ribbonHost13.HostedControl = this.picNewOrder;
             this.ribbonHost13.Name = "ribbonHost13";
             this.ribbonHost13.Text = " ";
+            // 
+            // picNewOrder
+            // 
+            this.picNewOrder.BackColor = System.Drawing.Color.Transparent;
+            this.picNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("picNewOrder.Image")));
+            this.picNewOrder.Location = new System.Drawing.Point(10, 343);
+            this.picNewOrder.Name = "picNewOrder";
+            this.picNewOrder.Size = new System.Drawing.Size(59, 44);
+            this.picNewOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNewOrder.TabIndex = 44;
+            this.picNewOrder.TabStop = false;
+            this.picNewOrder.Click += new System.EventHandler(this.SalesInvoice_ToolStrip_Click);
             // 
             // ribbonHost14
             // 
@@ -860,17 +810,59 @@
             this.ribbonHost14.Name = "ribbonHost14";
             this.ribbonHost14.Text = " ";
             // 
+            // lblNewOrder
+            // 
+            this.lblNewOrder.AutoSize = true;
+            this.lblNewOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewOrder.Location = new System.Drawing.Point(7, 390);
+            this.lblNewOrder.Name = "lblNewOrder";
+            this.lblNewOrder.Size = new System.Drawing.Size(64, 15);
+            this.lblNewOrder.TabIndex = 45;
+            this.lblNewOrder.Text = "New Order";
+            // 
+            // ribbonPanel9
+            // 
+            this.ribbonPanel9.Items.Add(this.ribbonHost15);
+            this.ribbonPanel9.Items.Add(this.ribbonHost16);
+            this.ribbonPanel9.Name = "ribbonPanel9";
+            this.ribbonPanel9.Text = "      Order List        .";
+            // 
             // ribbonHost15
             // 
             this.ribbonHost15.HostedControl = this.picOrderList;
             this.ribbonHost15.Name = "ribbonHost15";
             this.ribbonHost15.Text = " ";
             // 
+            // picOrderList
+            // 
+            this.picOrderList.BackColor = System.Drawing.Color.Transparent;
+            this.picOrderList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picOrderList.Image = ((System.Drawing.Image)(resources.GetObject("picOrderList.Image")));
+            this.picOrderList.Location = new System.Drawing.Point(77, 343);
+            this.picOrderList.Name = "picOrderList";
+            this.picOrderList.Size = new System.Drawing.Size(82, 44);
+            this.picOrderList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOrderList.TabIndex = 46;
+            this.picOrderList.TabStop = false;
+            this.picOrderList.Click += new System.EventHandler(this.SalesBillDetails_ToolStrip_Click);
+            // 
             // ribbonHost16
             // 
             this.ribbonHost16.HostedControl = this.lblOrderList;
             this.ribbonHost16.Name = "ribbonHost16";
             this.ribbonHost16.Text = " ";
+            // 
+            // lblOrderList
+            // 
+            this.lblOrderList.AutoSize = true;
+            this.lblOrderList.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrderList.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderList.Location = new System.Drawing.Point(138, 360);
+            this.lblOrderList.Name = "lblOrderList";
+            this.lblOrderList.Size = new System.Drawing.Size(66, 15);
+            this.lblOrderList.TabIndex = 47;
+            this.lblOrderList.Text = "  Order List";
             // 
             // ribbonTab4
             // 
@@ -885,16 +877,11 @@
             this.ribbonPanel10.Name = "ribbonPanel10";
             this.ribbonPanel10.Text = "      Dashboard     .";
             // 
-            // lblDashbaord
+            // ribbonHost17
             // 
-            this.lblDashbaord.AutoSize = true;
-            this.lblDashbaord.BackColor = System.Drawing.Color.Transparent;
-            this.lblDashbaord.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashbaord.Location = new System.Drawing.Point(265, 360);
-            this.lblDashbaord.Name = "lblDashbaord";
-            this.lblDashbaord.Size = new System.Drawing.Size(66, 15);
-            this.lblDashbaord.TabIndex = 49;
-            this.lblDashbaord.Text = "Dashboard";
+            this.ribbonHost17.HostedControl = this.picDashBoard;
+            this.ribbonHost17.Name = "ribbonHost17";
+            this.ribbonHost17.Text = " ";
             // 
             // picDashBoard
             // 
@@ -909,17 +896,22 @@
             this.picDashBoard.TabStop = false;
             this.picDashBoard.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
-            // ribbonHost17
-            // 
-            this.ribbonHost17.HostedControl = this.picDashBoard;
-            this.ribbonHost17.Name = "ribbonHost17";
-            this.ribbonHost17.Text = " ";
-            // 
             // ribbonHost18
             // 
             this.ribbonHost18.HostedControl = this.lblDashbaord;
             this.ribbonHost18.Name = "ribbonHost18";
             this.ribbonHost18.Text = " ";
+            // 
+            // lblDashbaord
+            // 
+            this.lblDashbaord.AutoSize = true;
+            this.lblDashbaord.BackColor = System.Drawing.Color.Transparent;
+            this.lblDashbaord.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashbaord.Location = new System.Drawing.Point(265, 360);
+            this.lblDashbaord.Name = "lblDashbaord";
+            this.lblDashbaord.Size = new System.Drawing.Size(66, 15);
+            this.lblDashbaord.TabIndex = 49;
+            this.lblDashbaord.Text = "Dashboard";
             // 
             // ribbonTab5
             // 
@@ -934,41 +926,11 @@
             this.ribbonPanel11.Name = "ribbonPanel11";
             this.ribbonPanel11.Text = "    Order Report      .";
             // 
-            // ribbonTab6
+            // ribbonHost19
             // 
-            this.ribbonTab6.Name = "ribbonTab6";
-            this.ribbonTab6.Panels.Add(this.ribbonPanel12);
-            this.ribbonTab6.Text = "Backup/Restore";
-            // 
-            // ribbonTab7
-            // 
-            this.ribbonTab7.Name = "ribbonTab7";
-            this.ribbonTab7.Panels.Add(this.ribbonPanel13);
-            this.ribbonTab7.Text = "Settings";
-            // 
-            // ribbonTab8
-            // 
-            this.ribbonTab8.Name = "ribbonTab8";
-            this.ribbonTab8.Panels.Add(this.ribbonPanel14);
-            this.ribbonTab8.Text = "Help";
-            // 
-            // ribbonPanel12
-            // 
-            this.ribbonPanel12.Items.Add(this.ribbonHost21);
-            this.ribbonPanel12.Items.Add(this.ribbonHost22);
-            this.ribbonPanel12.Name = "ribbonPanel12";
-            this.ribbonPanel12.Text = "Backup and Restore     .";
-            // 
-            // lblReport
-            // 
-            this.lblReport.AutoSize = true;
-            this.lblReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReport.Location = new System.Drawing.Point(9, 473);
-            this.lblReport.Name = "lblReport";
-            this.lblReport.Size = new System.Drawing.Size(76, 15);
-            this.lblReport.TabIndex = 51;
-            this.lblReport.Text = "Order Report";
+            this.ribbonHost19.HostedControl = this.picReport;
+            this.ribbonHost19.Name = "ribbonHost19";
+            this.ribbonHost19.Text = " ";
             // 
             // picReport
             // 
@@ -983,23 +945,54 @@
             this.picReport.TabStop = false;
             this.picReport.Click += new System.EventHandler(this.SalesReport_ToolStrip_Click);
             // 
-            // ribbonHost19
-            // 
-            this.ribbonHost19.HostedControl = this.picReport;
-            this.ribbonHost19.Name = "ribbonHost19";
-            this.ribbonHost19.Text = " ";
-            // 
             // ribbonHost20
             // 
             this.ribbonHost20.HostedControl = this.lblReport;
             this.ribbonHost20.Name = "ribbonHost20";
             this.ribbonHost20.Text = " ";
             // 
+            // lblReport
+            // 
+            this.lblReport.AutoSize = true;
+            this.lblReport.BackColor = System.Drawing.Color.Transparent;
+            this.lblReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReport.Location = new System.Drawing.Point(9, 473);
+            this.lblReport.Name = "lblReport";
+            this.lblReport.Size = new System.Drawing.Size(76, 15);
+            this.lblReport.TabIndex = 51;
+            this.lblReport.Text = "Order Report";
+            // 
+            // ribbonTab6
+            // 
+            this.ribbonTab6.Name = "ribbonTab6";
+            this.ribbonTab6.Panels.Add(this.ribbonPanel12);
+            this.ribbonTab6.Text = "Backup/Restore";
+            // 
+            // ribbonPanel12
+            // 
+            this.ribbonPanel12.Items.Add(this.ribbonHost21);
+            this.ribbonPanel12.Items.Add(this.ribbonHost22);
+            this.ribbonPanel12.Name = "ribbonPanel12";
+            this.ribbonPanel12.Text = "Backup and Restore     .";
+            // 
             // ribbonHost21
             // 
             this.ribbonHost21.HostedControl = this.picbackrestore;
             this.ribbonHost21.Name = "ribbonHost21";
             this.ribbonHost21.Text = " ";
+            // 
+            // picbackrestore
+            // 
+            this.picbackrestore.BackColor = System.Drawing.Color.Transparent;
+            this.picbackrestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picbackrestore.Image = ((System.Drawing.Image)(resources.GetObject("picbackrestore.Image")));
+            this.picbackrestore.Location = new System.Drawing.Point(113, 426);
+            this.picbackrestore.Name = "picbackrestore";
+            this.picbackrestore.Size = new System.Drawing.Size(94, 44);
+            this.picbackrestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbackrestore.TabIndex = 52;
+            this.picbackrestore.TabStop = false;
+            this.picbackrestore.Click += new System.EventHandler(this.otherArtsToolStripMenuItem_Click);
             // 
             // ribbonHost22
             // 
@@ -1018,18 +1011,11 @@
             this.lblbackrestore.TabIndex = 53;
             this.lblbackrestore.Text = "Backup / Restore";
             // 
-            // picbackrestore
+            // ribbonTab7
             // 
-            this.picbackrestore.BackColor = System.Drawing.Color.Transparent;
-            this.picbackrestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbackrestore.Image = ((System.Drawing.Image)(resources.GetObject("picbackrestore.Image")));
-            this.picbackrestore.Location = new System.Drawing.Point(113, 426);
-            this.picbackrestore.Name = "picbackrestore";
-            this.picbackrestore.Size = new System.Drawing.Size(94, 44);
-            this.picbackrestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picbackrestore.TabIndex = 52;
-            this.picbackrestore.TabStop = false;
-            this.picbackrestore.Click += new System.EventHandler(this.otherArtsToolStripMenuItem_Click);
+            this.ribbonTab7.Name = "ribbonTab7";
+            this.ribbonTab7.Panels.Add(this.ribbonPanel13);
+            this.ribbonTab7.Text = "Settings";
             // 
             // ribbonPanel13
             // 
@@ -1044,12 +1030,6 @@
             this.ribbonHost23.Name = "ribbonHost23";
             this.ribbonHost23.Text = " ";
             // 
-            // ribbonHost24
-            // 
-            this.ribbonHost24.HostedControl = this.lblSetting;
-            this.ribbonHost24.Name = "ribbonHost24";
-            this.ribbonHost24.Text = " ";
-            // 
             // picSetting
             // 
             this.picSetting.BackColor = System.Drawing.Color.Transparent;
@@ -1062,6 +1042,12 @@
             this.picSetting.TabIndex = 54;
             this.picSetting.TabStop = false;
             // 
+            // ribbonHost24
+            // 
+            this.ribbonHost24.HostedControl = this.lblSetting;
+            this.ribbonHost24.Name = "ribbonHost24";
+            this.ribbonHost24.Text = " ";
+            // 
             // lblSetting
             // 
             this.lblSetting.AutoSize = true;
@@ -1073,17 +1059,11 @@
             this.lblSetting.TabIndex = 55;
             this.lblSetting.Text = "   Settings";
             // 
-            // picHelp
+            // ribbonTab8
             // 
-            this.picHelp.BackColor = System.Drawing.Color.Transparent;
-            this.picHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picHelp.Image = ((System.Drawing.Image)(resources.GetObject("picHelp.Image")));
-            this.picHelp.Location = new System.Drawing.Point(306, 426);
-            this.picHelp.Name = "picHelp";
-            this.picHelp.Size = new System.Drawing.Size(59, 44);
-            this.picHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHelp.TabIndex = 56;
-            this.picHelp.TabStop = false;
+            this.ribbonTab8.Name = "ribbonTab8";
+            this.ribbonTab8.Panels.Add(this.ribbonPanel14);
+            this.ribbonTab8.Text = "Help";
             // 
             // ribbonPanel14
             // 
@@ -1098,8 +1078,21 @@
             this.ribbonHost25.Name = "ribbonHost25";
             this.ribbonHost25.Text = " ";
             // 
+            // picHelp
+            // 
+            this.picHelp.BackColor = System.Drawing.Color.Transparent;
+            this.picHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picHelp.Image = ((System.Drawing.Image)(resources.GetObject("picHelp.Image")));
+            this.picHelp.Location = new System.Drawing.Point(306, 426);
+            this.picHelp.Name = "picHelp";
+            this.picHelp.Size = new System.Drawing.Size(59, 44);
+            this.picHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHelp.TabIndex = 56;
+            this.picHelp.TabStop = false;
+            // 
             // ribbonHost26
             // 
+            this.ribbonHost26.HostedControl = null;
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
             // 
@@ -1107,7 +1100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 622);
             this.Controls.Add(this.picHelp);
@@ -1165,8 +1158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).EndInit();

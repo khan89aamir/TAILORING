@@ -52,8 +52,8 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -93,16 +93,17 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1004, 40);
+            this.panel2.Size = new System.Drawing.Size(1011, 40);
             this.panel2.TabIndex = 323;
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(904, 9);
+            this.btnCancel.Location = new System.Drawing.Point(911, 9);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 23);
             this.btnCancel.TabIndex = 355;
@@ -113,11 +114,12 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(813, 9);
+            this.btnSave.Location = new System.Drawing.Point(820, 9);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 23);
             this.btnSave.TabIndex = 354;
@@ -251,10 +253,11 @@
             // 
             // grpSKUStatus
             // 
+            this.grpSKUStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpSKUStatus.BackColor = System.Drawing.Color.Transparent;
             this.grpSKUStatus.Controls.Add(this.dataGridView1);
             this.grpSKUStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUStatus.Location = new System.Drawing.Point(650, 42);
+            this.grpSKUStatus.Location = new System.Drawing.Point(655, 42);
             this.grpSKUStatus.Name = "grpSKUStatus";
             this.grpSKUStatus.Size = new System.Drawing.Size(353, 173);
             this.grpSKUStatus.TabIndex = 348;
@@ -263,6 +266,7 @@
             // 
             // grpStyle
             // 
+            this.grpStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpStyle.BackColor = System.Drawing.Color.Transparent;
             this.grpStyle.Controls.Add(this.label4);
             this.grpStyle.Controls.Add(this.label14);
@@ -277,7 +281,7 @@
             this.grpStyle.Controls.Add(this.checkBox1);
             this.grpStyle.Controls.Add(this.flowStyleName);
             this.grpStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpStyle.Location = new System.Drawing.Point(465, 215);
+            this.grpStyle.Location = new System.Drawing.Point(455, 215);
             this.grpStyle.Name = "grpStyle";
             this.grpStyle.Size = new System.Drawing.Size(538, 496);
             this.grpStyle.TabIndex = 349;
@@ -378,17 +382,6 @@
             this.lnkAddItem.Text = "Body Posture";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
             // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 25);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
-            this.ctrlMeasurment1.TabIndex = 0;
-            // 
             // grpSKUList
             // 
             this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
@@ -401,6 +394,17 @@
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
             // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 25);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
+            this.ctrlMeasurment1.TabIndex = 0;
+            // 
             // frmMeasurement
             // 
             this.AcceptButton = this.btnMeasureSave;
@@ -409,7 +413,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1021, 701);
+            this.ClientSize = new System.Drawing.Size(1028, 701);
             this.Controls.Add(this.grpSKUList);
             this.Controls.Add(this.grpMeasurement);
             this.Controls.Add(this.grpStyle);

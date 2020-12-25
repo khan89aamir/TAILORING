@@ -225,12 +225,8 @@ namespace TAILORING
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmSalesReport) || clsUtility.IsAdmin)
             {
-                //bool b = ObjUtil.IsAlreadyOpen(typeof(Report.frmSalesReport));
-                //if (!b)
-                //{
-                //    Report.frmSalesReport frmSalesReport = new Report.frmSalesReport();
-                //    frmSalesReport.Show();
-                //}
+                Report.Forms.frmBill frmBill = new Report.Forms.frmBill();
+                frmBill.Show();
             }
             else
             {

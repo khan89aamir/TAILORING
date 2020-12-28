@@ -200,6 +200,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Report\Dataset\dsReportData.cs">
+      <DependentUpon>dsReportData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Dataset\dsReportData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\Forms\frmBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +270,7 @@
       <DependentUpon>frmBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RDLC\CustomerReceipt.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\Report1.rdlc" />
     <EmbeddedResource Include="SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +287,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Report\Dataset\dsReportData.xsc">
+      <DependentUpon>dsReportData.xsd</DependentUpon>
+    </None>
+    <None Include="Report\Dataset\dsReportData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\Dataset\dsReportData.xss">
+      <DependentUpon>dsReportData.xsd</DependentUpon>
+    </None>
     <None Include="Resources\b_click.png" />
   </ItemGroup>
   <ItemGroup>
@@ -325,8 +345,6 @@
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Report\Dataset\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

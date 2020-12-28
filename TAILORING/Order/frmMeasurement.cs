@@ -274,6 +274,11 @@ namespace TAILORING.Order
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            
+            dataGridView1.Columns["ServiceID"].Visible = false;
+            dataGridView1.Columns["Service"].Visible = false;
+            dataGridView1.Columns["TrailDate"].Visible = false;
+            dataGridView1.Columns["DeliveryDate"].Visible = false;
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["FabricCode"].Visible = false;
             dataGridView1.Columns["GarmentCode"].Visible = false;

@@ -47,7 +47,7 @@ namespace TAILORING.Order
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 40);
+            this.panel2.Size = new System.Drawing.Size(1099, 40);
             this.panel2.TabIndex = 317;
             // 
             // label12
@@ -93,13 +93,16 @@ namespace TAILORING.Order
             this.dgvOrderDetails.AllowUserToDeleteRows = false;
             this.dgvOrderDetails.AllowUserToResizeColumns = false;
             this.dgvOrderDetails.AllowUserToResizeRows = false;
+            this.dgvOrderDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrderDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Location = new System.Drawing.Point(11, 91);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(960, 341);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 341);
             this.dgvOrderDetails.TabIndex = 321;
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
@@ -109,7 +112,7 @@ namespace TAILORING.Order
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(981, 440);
+            this.ClientSize = new System.Drawing.Size(1099, 440);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvOrderDetails);

@@ -61,7 +61,11 @@ namespace TAILORING.Order
             dtOrder.Columns.Add("FabricCode");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
+            dtOrder.Columns.Add("Service");
+            dtOrder.Columns.Add("TrailDate");
+            dtOrder.Columns.Add("DeliveryDate");
             dtOrder.Columns.Add("Trim Amount");
+            dtOrder.Columns.Add("ServiceID", typeof(int));
             dtOrder.Columns.Add("QTY", typeof(int));
             dtOrder.Columns.Add("Rate", typeof(double));
             dtOrder.Columns.Add("Total", typeof(double));
@@ -87,6 +91,9 @@ namespace TAILORING.Order
             dtOrderDetails.Columns.Add("StichTypeID", typeof(int));
             dtOrderDetails.Columns.Add("FitTypeID", typeof(int));
             dtOrderDetails.Columns.Add("GarmentID");
+            dtOrderDetails.Columns.Add("Service", typeof(int));
+            dtOrderDetails.Columns.Add("TrailDate");
+            dtOrderDetails.Columns.Add("DeliveryDate");
             dtOrderDetails.Columns.Add("TrimAmount");
             dtOrderDetails.Columns.Add("QTY", typeof(int));
             dtOrderDetails.Columns.Add("Rate", typeof(double));
@@ -195,13 +202,13 @@ namespace TAILORING.Order
 
                         if (ObjUtil.GetDataPopup() != null && ObjUtil.GetDataPopup().DataSource != null)
                         {
-                            ObjUtil.GetDataPopup().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                            ObjUtil.GetDataPopup().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
                             if (ObjUtil.GetDataPopup().ColumnCount > 0)
                             {
                                 ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
                                 ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
-                                ObjUtil.SetDataPopupSize(350, 0);
+                                ObjUtil.SetDataPopupSize(278, 0);
                             }
                         }
                         ObjUtil.GetDataPopup().CellClick += frmOrderManagement_CellClick;
@@ -260,7 +267,10 @@ namespace TAILORING.Order
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["Photo"].Visible = false;
-
+            if (dataGridView1.Columns.Contains("ServiceID"))
+            {
+                dataGridView1.Columns["ServiceID"].Visible = false;
+            }
             if (dataGridView1.Columns.Contains("Measurement"))
             {
                 dataGridView1.Columns["Measurement"].Visible = false;
@@ -316,6 +326,10 @@ namespace TAILORING.Order
             dRow["GarmentName"] = "Shirt";
             dRow["Trim Amount"] = 0;
             dRow["Rate"] = 100;
+            dRow["Service"] = "Urgent";
+            dRow["TrailDate"] = "2020-12-26";
+            dRow["DeliveryDate"] = "2020-12-28";
+            dRow["ServiceID"] = 1;
             dRow["QTY"] = 1;
             dRow["Photo"] = @"C:\Tailoring Images\Generic\Shirt generic 1.png";
             dRow["Total"] = 0 + (1 * 100);
@@ -328,7 +342,11 @@ namespace TAILORING.Order
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
             dRow["Trim Amount"] = 0;
-            dRow["Rate"] = 100;
+            dRow["Rate"] = 150;
+            dRow["Service"] = "Normal";
+            dRow["TrailDate"] = "2020-12-27";
+            dRow["DeliveryDate"] = "2020-12-29";
+            dRow["ServiceID"] = 0;
             dRow["QTY"] = 2;
             dRow["Photo"] = @"C:\Tailoring Images\Generic\Trouser Generic 1.png";
             dRow["Total"] = 0 + (2 * 100);
@@ -360,19 +378,23 @@ namespace TAILORING.Order
         private void CalcTotalAmount()
         {
             object total = 0;
-            if (ObjUtil.ValidateTable(dtOrder))
+            try
             {
-                total = dtOrder.Compute("SUM(Total)", string.Empty);
-            }
-            else
-            {
-                txtAdvancePaid.Text = "0";
-            }
-            txtTailoringAmount.Text = total.ToString();
-            txtGrossAmt.Text = total.ToString();
+                if (ObjUtil.ValidateTable(dtOrder) && ObjUtil.ValidateTable((DataTable)dataGridView1.DataSource))
+                {
+                    total = dtOrder.Compute("SUM(Total)", string.Empty);
+                }
+                else
+                {
+                    txtAdvancePaid.Text = "0";
+                }
+                txtTailoringAmount.Text = total.ToString();
+                txtGrossAmt.Text = total.ToString();
 
-            double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
-            txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
+                double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
+                txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
+            }
+            catch { }
         }
 
         private void btnMeasurement_Click(object sender, EventArgs e)
@@ -541,6 +563,9 @@ namespace TAILORING.Order
                 drow["StichTypeID"] = dtOrder.Rows[i]["StichTypeID"];
                 drow["FitTypeID"] = dtOrder.Rows[i]["FitTypeID"];
                 drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
+                drow["Service"] = dtOrder.Rows[i]["ServiceID"];
+                drow["TrailDate"] = Convert.ToDateTime(dtOrder.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd");
+                drow["DeliveryDate"] = Convert.ToDateTime(dtOrder.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
                 drow["TrimAmount"] = dtOrder.Rows[i]["Trim Amount"];
                 drow["QTY"] = dtOrder.Rows[i]["QTY"];
                 drow["Rate"] = dtOrder.Rows[i]["Rate"];
@@ -754,7 +779,7 @@ namespace TAILORING.Order
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex >= 0 && dataGridView1.Rows.Count > 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "ColDelete")
                 {
@@ -785,7 +810,6 @@ namespace TAILORING.Order
                         CalcTotalAmount();
                         txtFabricCode.Focus();
                     }
-
                 }
             }
         }

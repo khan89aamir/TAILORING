@@ -41,6 +41,8 @@ namespace TAILORING.Order
         {
             btnMeasurement.BackgroundImage = B_Leave;
             btnSave.BackgroundImage = B_Leave;
+            btnSaveCustomer.BackgroundImage = B_Leave;
+            btnNewCustomer.BackgroundImage = B_Leave;
 
             InitItemTable();
             InitOrderDetailsTable(); //Order Details
@@ -168,6 +170,8 @@ namespace TAILORING.Order
             {
                 txtSearchByCustomerName.Enabled = false;
                 txtSearchByCustomerName.Clear();
+
+                ClearCustomerFields(false);
             }
         }
 
@@ -182,6 +186,8 @@ namespace TAILORING.Order
             {
                 txtSearchByMobileNo.Enabled = false;
                 txtSearchByMobileNo.Clear();
+
+                ClearCustomerFields(false);
             }
         }
 
@@ -239,6 +245,13 @@ namespace TAILORING.Order
                 txtSearchByCustomerName.Focus();
                 txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                 txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+
+                btnMeasurement.Enabled = true;
+            }
+            else
+            {
+                btnMeasurement.Enabled = false;
             }
             cmbOrderType.Enabled = true;
         }
@@ -267,6 +280,13 @@ namespace TAILORING.Order
                 {
                     txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                     txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                    txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+                    
+                    btnMeasurement.Enabled = true;
+                }
+                else
+                {
+                    btnMeasurement.Enabled = false;
                 }
             }
         }
@@ -281,6 +301,13 @@ namespace TAILORING.Order
                 txtSearchByMobileNo.Focus();
                 txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                 txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+
+                btnMeasurement.Enabled = true;
+            }
+            else
+            {
+                btnMeasurement.Enabled = false;
             }
             cmbOrderType.Enabled = true;
         }
@@ -917,6 +944,7 @@ namespace TAILORING.Order
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             ClearCustomerFields(true);
+            txtCustomerName.Focus();
         }
 
         private void btnSaveCustomer_Click(object sender, EventArgs e)
@@ -929,28 +957,41 @@ namespace TAILORING.Order
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
             {
-                if (DuplicateUser(0))
+                if (ValidateForm())
                 {
-                    ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
-
-                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
-                    if (b)
+                    if (DuplicateUser(0))
                     {
-                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                        ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int,0,clsConnection_DAL.ParamType.Output);
+
+                        bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
+                        if (b)
+                        {
+                            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..");
+
+                            DataTable dtout = ObjDAL.GetOutputParmData();
+                            if (ObjUtil.ValidateTable(dtout))
+                            {
+                                CustomerID = Convert.ToInt32(dt.Rows[0][1]);
+                                txtCustomerID.Text = CustomerID.ToString();
+                                lnkAddItem.Enabled = true;
+                                btnMeasurement.Enabled = true;
+                            }
+                        }
+                        else
+                        {
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..");
+                        }
                     }
                     else
                     {
-                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..");
+                        txtCustomerName.Focus();
                     }
-                }
-                else
-                {
-                    clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..", clsUtility.strProjectTitle);
-                    txtCustomerName.Focus();
                 }
                 ObjDAL.ResetData();
             }
@@ -958,6 +999,29 @@ namespace TAILORING.Order
             {
                 clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
+        }
+
+        private bool ValidateForm()
+        {
+            if (ObjUtil.IsControlTextEmpty(txtCustomerName))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Name       ", clsUtility.strProjectTitle);
+                txtCustomerName.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerMobileNo))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Mobile No.      ", clsUtility.strProjectTitle);
+                txtCustomerMobileNo.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerAdd))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+                txtCustomerAdd.Focus();
+                return false;
+            }
+            return true;
         }
 
         private bool DuplicateUser(int i)
@@ -983,15 +1047,15 @@ namespace TAILORING.Order
 
         private void ClearCustomerFields(bool b)
         {
-            txtCustomerName.Clear();
-            txtCustomerMobileNo.Clear();
-            txtCustomerAdd.Clear();
-            txtCustomerName.Focus();
-
+            if (b == false)
+            {
+                txtCustomerName.Clear();
+                txtCustomerMobileNo.Clear();
+                txtCustomerAdd.Clear();
+            }
             txtCustomerName.Enabled = b;
             txtCustomerMobileNo.Enabled = b;
             txtCustomerAdd.Enabled = b;
-            txtCustomerName.Enabled = b;
             btnSaveCustomer.Enabled = b;
         }
     }

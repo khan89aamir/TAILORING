@@ -49,12 +49,12 @@ namespace TAILORING.Masters
                 txtCustomerMobileNo.Focus();
                 return false;
             }
-            //else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
-            //{
-            //    clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
-            //    txtCustomerAddress.Focus();
-            //    return false;
-            //}
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+                txtCustomerAddress.Focus();
+                return false;
+            }
             return true;
         }
 

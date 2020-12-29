@@ -112,7 +112,7 @@
             this.txtCustomerID.BackColor = System.Drawing.Color.White;
             this.txtCustomerID.Enabled = false;
             this.txtCustomerID.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtCustomerID.Location = new System.Drawing.Point(1096, 46);
+            this.txtCustomerID.Location = new System.Drawing.Point(1091, 46);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(41, 25);
@@ -266,9 +266,6 @@
             this.cmbGarmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.FormattingEnabled = true;
-            this.cmbGarmentName.Items.AddRange(new object[] {
-            "Normal",
-            "Urgent"});
             this.cmbGarmentName.Location = new System.Drawing.Point(350, 32);
             this.cmbGarmentName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGarmentName.Name = "cmbGarmentName";
@@ -369,7 +366,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(363, 198);
+            this.label14.Location = new System.Drawing.Point(337, 198);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 319;
@@ -380,7 +377,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 196);
+            this.label13.Location = new System.Drawing.Point(72, 196);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 19);
             this.label13.TabIndex = 318;
@@ -395,7 +392,7 @@
             this.cmbOrderType.Items.AddRange(new object[] {
             "Normal",
             "Urgent"});
-            this.cmbOrderType.Location = new System.Drawing.Point(156, 198);
+            this.cmbOrderType.Location = new System.Drawing.Point(137, 198);
             this.cmbOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbOrderType.Name = "cmbOrderType";
             this.cmbOrderType.Size = new System.Drawing.Size(198, 25);
@@ -407,8 +404,9 @@
             this.txtSearchByMobileNo.BackColor = System.Drawing.Color.White;
             this.txtSearchByMobileNo.Enabled = false;
             this.txtSearchByMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtSearchByMobileNo.Location = new System.Drawing.Point(558, 78);
+            this.txtSearchByMobileNo.Location = new System.Drawing.Point(632, 70);
             this.txtSearchByMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchByMobileNo.MaxLength = 10;
             this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByMobileNo.TabIndex = 4;
@@ -422,7 +420,7 @@
             this.rdSearchByCustomerMobileNo.AutoSize = true;
             this.rdSearchByCustomerMobileNo.BackColor = System.Drawing.Color.Transparent;
             this.rdSearchByCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(455, 80);
+            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(529, 72);
             this.rdSearchByCustomerMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdSearchByCustomerMobileNo.Name = "rdSearchByCustomerMobileNo";
             this.rdSearchByCustomerMobileNo.Size = new System.Drawing.Size(101, 23);
@@ -436,8 +434,9 @@
             this.txtSearchByCustomerName.BackColor = System.Drawing.Color.White;
             this.txtSearchByCustomerName.Enabled = false;
             this.txtSearchByCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtSearchByCustomerName.Location = new System.Drawing.Point(175, 78);
+            this.txtSearchByCustomerName.Location = new System.Drawing.Point(249, 70);
             this.txtSearchByCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchByCustomerName.MaxLength = 50;
             this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
             this.txtSearchByCustomerName.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByCustomerName.TabIndex = 1;
@@ -451,7 +450,7 @@
             this.rdSearchByCustomerName.AutoSize = true;
             this.rdSearchByCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.rdSearchByCustomerName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdSearchByCustomerName.Location = new System.Drawing.Point(37, 80);
+            this.rdSearchByCustomerName.Location = new System.Drawing.Point(111, 72);
             this.rdSearchByCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdSearchByCustomerName.Name = "rdSearchByCustomerName";
             this.rdSearchByCustomerName.Size = new System.Drawing.Size(134, 23);
@@ -556,7 +555,7 @@
             // 
             this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(920, 195);
+            this.dtpTrailDate.Location = new System.Drawing.Point(897, 195);
             this.dtpTrailDate.Name = "dtpTrailDate";
             this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
             this.dtpTrailDate.TabIndex = 338;
@@ -566,7 +565,7 @@
             this.dtpBookingDate.Enabled = false;
             this.dtpBookingDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBookingDate.Location = new System.Drawing.Point(572, 195);
+            this.dtpBookingDate.Location = new System.Drawing.Point(520, 192);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(121, 25);
             this.dtpBookingDate.TabIndex = 340;
@@ -576,7 +575,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(452, 198);
+            this.label15.Location = new System.Drawing.Point(418, 196);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 19);
             this.label15.TabIndex = 339;
@@ -601,7 +600,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(798, 591);
+            this.label16.Location = new System.Drawing.Point(825, 596);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 19);
             this.label16.TabIndex = 343;
@@ -613,7 +612,7 @@
             this.txtGrossAmt.BackColor = System.Drawing.Color.White;
             this.txtGrossAmt.Enabled = false;
             this.txtGrossAmt.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtGrossAmt.Location = new System.Drawing.Point(972, 587);
+            this.txtGrossAmt.Location = new System.Drawing.Point(972, 592);
             this.txtGrossAmt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGrossAmt.Name = "txtGrossAmt";
             this.txtGrossAmt.Size = new System.Drawing.Size(153, 25);
@@ -624,7 +623,7 @@
             // 
             this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(920, 227);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(897, 227);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
             this.dtpDeliveryDate.TabIndex = 345;
@@ -634,7 +633,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(816, 230);
+            this.label17.Location = new System.Drawing.Point(792, 231);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 19);
             this.label17.TabIndex = 344;
@@ -645,7 +644,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(22, 52);
+            this.label18.Location = new System.Drawing.Point(96, 44);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 19);
             this.label18.TabIndex = 330;
@@ -658,7 +657,7 @@
             this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(787, 77);
+            this.btnNewCustomer.Location = new System.Drawing.Point(861, 69);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(111, 25);
             this.btnNewCustomer.TabIndex = 346;
@@ -673,6 +672,7 @@
             this.btnSaveCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveCustomer.Enabled = false;
             this.btnSaveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveCustomer.Location = new System.Drawing.Point(1009, 156);
@@ -696,6 +696,8 @@
             this.txtCustomerAdd.Name = "txtCustomerAdd";
             this.txtCustomerAdd.Size = new System.Drawing.Size(223, 41);
             this.txtCustomerAdd.TabIndex = 348;
+            this.txtCustomerAdd.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtCustomerAdd.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // txtCustomerName
             // 
@@ -704,9 +706,13 @@
             this.txtCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.txtCustomerName.Location = new System.Drawing.Point(137, 126);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustomerName.MaxLength = 50;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(223, 25);
             this.txtCustomerName.TabIndex = 349;
+            this.txtCustomerName.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByCustomerName_KeyPress);
+            this.txtCustomerName.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // txtCustomerMobileNo
             // 
@@ -715,9 +721,13 @@
             this.txtCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.txtCustomerMobileNo.Location = new System.Drawing.Point(897, 126);
             this.txtCustomerMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustomerMobileNo.MaxLength = 10;
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
             this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtCustomerMobileNo.TabIndex = 350;
+            this.txtCustomerMobileNo.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
+            this.txtCustomerMobileNo.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // label19
             // 

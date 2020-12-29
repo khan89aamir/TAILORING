@@ -56,6 +56,7 @@
             this.lblTotalRecords = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpCustomer.SuspendLayout();
             this.grpCustomerSearch.SuspendLayout();
             this.grpCustomerGridview.SuspendLayout();
@@ -170,6 +171,7 @@
             this.grpCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.grpCustomer.Controls.Add(this.label2);
             this.grpCustomer.Controls.Add(this.txtCustomerEmailID);
             this.grpCustomer.Controls.Add(this.label4);
             this.grpCustomer.Controls.Add(this.label1);
@@ -477,6 +479,18 @@
             this.label12.TabIndex = 83;
             this.label12.Text = "Customer Management";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(711, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 17);
+            this.label2.TabIndex = 287;
+            this.label2.Text = "*";
+            // 
             // Customer_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,5 +560,6 @@
         private System.Windows.Forms.RadioButton rdSearchByCustomerMobileNo;
         private System.Windows.Forms.TextBox txtCustomerEmailID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

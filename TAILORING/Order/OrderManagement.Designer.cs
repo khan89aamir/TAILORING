@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label10 = new System.Windows.Forms.Label();
-            this.lblCustomerName = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
@@ -45,7 +44,6 @@
             this.txtTailoringAmount = new System.Windows.Forms.TextBox();
             this.cmbGarmentName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCustomerAdd = new System.Windows.Forms.Label();
             this.grpNewOrder = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFabricCode = new System.Windows.Forms.TextBox();
@@ -73,6 +71,12 @@
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
+            this.btnSaveCustomer = new System.Windows.Forms.Button();
+            this.txtCustomerAdd = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.txtCustomerMobileNo = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).BeginInit();
             this.grpNewOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,29 +89,18 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(459, 149);
+            this.label10.Location = new System.Drawing.Point(389, 127);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 19);
             this.label10.TabIndex = 333;
             this.label10.Text = "Customer Address :";
-            // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerName.Location = new System.Drawing.Point(176, 149);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(32, 19);
-            this.lblCustomerName.TabIndex = 332;
-            this.lblCustomerName.Text = "NA";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(39, 149);
+            this.label8.Location = new System.Drawing.Point(17, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 19);
             this.label8.TabIndex = 331;
@@ -119,7 +112,7 @@
             this.txtCustomerID.BackColor = System.Drawing.Color.White;
             this.txtCustomerID.Enabled = false;
             this.txtCustomerID.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtCustomerID.Location = new System.Drawing.Point(1081, 142);
+            this.txtCustomerID.Location = new System.Drawing.Point(1096, 46);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(41, 25);
@@ -294,17 +287,6 @@
             this.label1.TabIndex = 296;
             this.label1.Text = "Garment Name :";
             // 
-            // lblCustomerAdd
-            // 
-            this.lblCustomerAdd.AutoSize = true;
-            this.lblCustomerAdd.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerAdd.Location = new System.Drawing.Point(595, 149);
-            this.lblCustomerAdd.Name = "lblCustomerAdd";
-            this.lblCustomerAdd.Size = new System.Drawing.Size(32, 19);
-            this.lblCustomerAdd.TabIndex = 334;
-            this.lblCustomerAdd.Text = "NA";
-            // 
             // grpNewOrder
             // 
             this.grpNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -322,7 +304,7 @@
             this.grpNewOrder.Controls.Add(this.label1);
             this.grpNewOrder.Enabled = false;
             this.grpNewOrder.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
-            this.grpNewOrder.Location = new System.Drawing.Point(15, 247);
+            this.grpNewOrder.Location = new System.Drawing.Point(15, 248);
             this.grpNewOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpNewOrder.Name = "grpNewOrder";
             this.grpNewOrder.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -387,7 +369,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(363, 197);
+            this.label14.Location = new System.Drawing.Point(363, 198);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 319;
@@ -398,7 +380,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 195);
+            this.label13.Location = new System.Drawing.Point(39, 196);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 19);
             this.label13.TabIndex = 318;
@@ -413,7 +395,7 @@
             this.cmbOrderType.Items.AddRange(new object[] {
             "Normal",
             "Urgent"});
-            this.cmbOrderType.Location = new System.Drawing.Point(156, 197);
+            this.cmbOrderType.Location = new System.Drawing.Point(156, 198);
             this.cmbOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbOrderType.Name = "cmbOrderType";
             this.cmbOrderType.Size = new System.Drawing.Size(198, 25);
@@ -425,11 +407,12 @@
             this.txtSearchByMobileNo.BackColor = System.Drawing.Color.White;
             this.txtSearchByMobileNo.Enabled = false;
             this.txtSearchByMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtSearchByMobileNo.Location = new System.Drawing.Point(642, 82);
+            this.txtSearchByMobileNo.Location = new System.Drawing.Point(558, 78);
             this.txtSearchByMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByMobileNo.TabIndex = 4;
+            this.txtSearchByMobileNo.TextChanged += new System.EventHandler(this.txtSearchByMobileNo_TextChanged);
             this.txtSearchByMobileNo.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtSearchByMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
             this.txtSearchByMobileNo.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
@@ -439,7 +422,7 @@
             this.rdSearchByCustomerMobileNo.AutoSize = true;
             this.rdSearchByCustomerMobileNo.BackColor = System.Drawing.Color.Transparent;
             this.rdSearchByCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(539, 84);
+            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(455, 80);
             this.rdSearchByCustomerMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdSearchByCustomerMobileNo.Name = "rdSearchByCustomerMobileNo";
             this.rdSearchByCustomerMobileNo.Size = new System.Drawing.Size(101, 23);
@@ -453,7 +436,7 @@
             this.txtSearchByCustomerName.BackColor = System.Drawing.Color.White;
             this.txtSearchByCustomerName.Enabled = false;
             this.txtSearchByCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtSearchByCustomerName.Location = new System.Drawing.Point(214, 82);
+            this.txtSearchByCustomerName.Location = new System.Drawing.Point(175, 78);
             this.txtSearchByCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
             this.txtSearchByCustomerName.Size = new System.Drawing.Size(223, 25);
@@ -468,7 +451,7 @@
             this.rdSearchByCustomerName.AutoSize = true;
             this.rdSearchByCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.rdSearchByCustomerName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdSearchByCustomerName.Location = new System.Drawing.Point(76, 84);
+            this.rdSearchByCustomerName.Location = new System.Drawing.Point(37, 80);
             this.rdSearchByCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdSearchByCustomerName.Name = "rdSearchByCustomerName";
             this.rdSearchByCustomerName.Size = new System.Drawing.Size(134, 23);
@@ -563,7 +546,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(816, 197);
+            this.label11.Location = new System.Drawing.Point(816, 198);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 19);
             this.label11.TabIndex = 337;
@@ -573,7 +556,7 @@
             // 
             this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(920, 194);
+            this.dtpTrailDate.Location = new System.Drawing.Point(920, 195);
             this.dtpTrailDate.Name = "dtpTrailDate";
             this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
             this.dtpTrailDate.TabIndex = 338;
@@ -583,7 +566,7 @@
             this.dtpBookingDate.Enabled = false;
             this.dtpBookingDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBookingDate.Location = new System.Drawing.Point(572, 194);
+            this.dtpBookingDate.Location = new System.Drawing.Point(572, 195);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(121, 25);
             this.dtpBookingDate.TabIndex = 340;
@@ -593,7 +576,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(452, 197);
+            this.label15.Location = new System.Drawing.Point(452, 198);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 19);
             this.label15.TabIndex = 339;
@@ -641,7 +624,7 @@
             // 
             this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(920, 226);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(920, 227);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
             this.dtpDeliveryDate.TabIndex = 345;
@@ -651,7 +634,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(816, 229);
+            this.label17.Location = new System.Drawing.Point(816, 230);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 19);
             this.label17.TabIndex = 344;
@@ -662,11 +645,90 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(39, 55);
+            this.label18.Location = new System.Drawing.Point(22, 52);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 19);
             this.label18.TabIndex = 330;
             this.label18.Text = "Search By";
+            // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCustomer.Location = new System.Drawing.Point(787, 77);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(111, 25);
+            this.btnNewCustomer.TabIndex = 346;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            this.btnNewCustomer.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnNewCustomer.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            // 
+            // btnSaveCustomer
+            // 
+            this.btnSaveCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSaveCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveCustomer.Location = new System.Drawing.Point(1009, 156);
+            this.btnSaveCustomer.Name = "btnSaveCustomer";
+            this.btnSaveCustomer.Size = new System.Drawing.Size(111, 25);
+            this.btnSaveCustomer.TabIndex = 347;
+            this.btnSaveCustomer.Text = "Save Customer";
+            this.btnSaveCustomer.UseVisualStyleBackColor = true;
+            this.btnSaveCustomer.Click += new System.EventHandler(this.btnSaveCustomer_Click);
+            this.btnSaveCustomer.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSaveCustomer.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            // 
+            // txtCustomerAdd
+            // 
+            this.txtCustomerAdd.BackColor = System.Drawing.Color.White;
+            this.txtCustomerAdd.Enabled = false;
+            this.txtCustomerAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtCustomerAdd.Location = new System.Drawing.Point(520, 118);
+            this.txtCustomerAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustomerAdd.Multiline = true;
+            this.txtCustomerAdd.Name = "txtCustomerAdd";
+            this.txtCustomerAdd.Size = new System.Drawing.Size(223, 41);
+            this.txtCustomerAdd.TabIndex = 348;
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.BackColor = System.Drawing.Color.White;
+            this.txtCustomerName.Enabled = false;
+            this.txtCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtCustomerName.Location = new System.Drawing.Point(137, 126);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(223, 25);
+            this.txtCustomerName.TabIndex = 349;
+            // 
+            // txtCustomerMobileNo
+            // 
+            this.txtCustomerMobileNo.BackColor = System.Drawing.Color.White;
+            this.txtCustomerMobileNo.Enabled = false;
+            this.txtCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtCustomerMobileNo.Location = new System.Drawing.Point(897, 126);
+            this.txtCustomerMobileNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
+            this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 25);
+            this.txtCustomerMobileNo.TabIndex = 350;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(749, 127);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(142, 19);
+            this.label19.TabIndex = 351;
+            this.label19.Text = "Customer MobileNo :";
             // 
             // frmOrderManagement
             // 
@@ -675,6 +737,12 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtCustomerMobileNo);
+            this.Controls.Add(this.txtCustomerName);
+            this.Controls.Add(this.txtCustomerAdd);
+            this.Controls.Add(this.btnSaveCustomer);
+            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtSearchByMobileNo);
             this.Controls.Add(this.rdSearchByCustomerName);
@@ -690,7 +758,6 @@
             this.Controls.Add(this.dtpTrailDate);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.lnkAddItem);
@@ -700,7 +767,6 @@
             this.Controls.Add(this.txtAdvancePaid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTailoringAmount);
-            this.Controls.Add(this.lblCustomerAdd);
             this.Controls.Add(this.grpNewOrder);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -729,7 +795,6 @@
         #endregion
 
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.LinkLabel lnkAddItem;
@@ -745,7 +810,6 @@
         private System.Windows.Forms.TextBox txtTailoringAmount;
         private System.Windows.Forms.ComboBox cmbGarmentName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCustomerAdd;
         private System.Windows.Forms.GroupBox grpNewOrder;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -773,5 +837,11 @@
         private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Button btnSaveCustomer;
+        private System.Windows.Forms.TextBox txtCustomerAdd;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.TextBox txtCustomerMobileNo;
+        private System.Windows.Forms.Label label19;
     }
 }

@@ -119,6 +119,7 @@ namespace TAILORING.Order
             dtStyle.Columns.Add("SalesOrderID");
             dtStyle.Columns.Add("GarmentID");
             dtStyle.Columns.Add("StyleID");
+            dtStyle.Columns.Add("QTY");
             dtStyle.Columns.Add("StyleImageID");
             dtStyle.Columns.Add("CreatedBy", typeof(int));
 
@@ -190,6 +191,7 @@ namespace TAILORING.Order
             {
                 ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
                 ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
                 DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
                 if (ObjUtil.ValidateDataSet(ds))
                 {
@@ -231,12 +233,12 @@ namespace TAILORING.Order
         {
             DataGridView dgv = (DataGridView)sender;
             DataTable dt = (DataTable)dgv.DataSource;
-            if (dt != null && dt.Rows.Count > 0)
+            if (ObjUtil.ValidateTable(dt))
             {
                 txtSearchByCustomerName.SelectionStart = txtSearchByCustomerName.MaxLength;
                 txtSearchByCustomerName.Focus();
-                lblCustomerName.Text = dt.Rows[0]["Name"].ToString();
-                lblCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
+                txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
             }
             cmbOrderType.Enabled = true;
         }
@@ -247,7 +249,49 @@ namespace TAILORING.Order
             {
                 txtSearchByCustomerName.SelectionStart = txtSearchByCustomerName.MaxLength;
                 txtSearchByCustomerName.Focus();
+                SearchByCustomerID();
+            }
+            cmbOrderType.Enabled = true;
+        }
 
+        private void SearchByCustomerID()
+        {
+            ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, txtCustomerID.Text, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
+                    txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                }
+            }
+        }
+
+        private void frmOrderManagement_Mobile_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            DataTable dt = (DataTable)dgv.DataSource;
+            if (ObjUtil.ValidateTable(dt))
+            {
+                txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
+                txtSearchByMobileNo.Focus();
+                txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
+                txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+            }
+            cmbOrderType.Enabled = true;
+        }
+
+        private void frmOrderManagement_Mobile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
+                txtSearchByMobileNo.Focus();
+                SearchByCustomerID();
                 //lblCustomerName.Text = dgv.Rows[0].Cells["Name"].ToString();
                 //lblCustomerAdd.Text = dgv.Rows[0].Cells["Address"].ToString();
             }
@@ -324,15 +368,15 @@ namespace TAILORING.Order
             dRow["GarmentCode"] = "sh12";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
-            dRow["Trim Amount"] = 0;
+            dRow["Trim Amount"] = 10;
             dRow["Rate"] = 100;
             dRow["Service"] = "Urgent";
             dRow["TrailDate"] = "2020-12-26";
             dRow["DeliveryDate"] = "2020-12-28";
             dRow["ServiceID"] = 1;
-            dRow["QTY"] = 1;
+            dRow["QTY"] = 3;
             dRow["Photo"] = @"C:\Tailoring Images\Generic\Shirt generic 1.png";
-            dRow["Total"] = 0 + (1 * 100);
+            dRow["Total"] = 0 + (3 * 100);
 
             dtOrder.Rows.Add(dRow);
 
@@ -341,7 +385,7 @@ namespace TAILORING.Order
             dRow["GarmentCode"] = "th01";
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
-            dRow["Trim Amount"] = 0;
+            dRow["Trim Amount"] = 20;
             dRow["Rate"] = 150;
             dRow["Service"] = "Normal";
             dRow["TrailDate"] = "2020-12-27";
@@ -635,6 +679,7 @@ namespace TAILORING.Order
                 drow["SalesOrderID"] = OrderID;
                 drow["GarmentID"] = dttempStyle.Rows[i]["GarmentID"];
                 drow["StyleID"] = dttempStyle.Rows[i]["StyleID"];
+                drow["QTY"] = dttempStyle.Rows[i]["QTY"];
                 drow["StyleImageID"] = dttempStyle.Rows[i]["StyleImageID"];
                 drow["CreatedBy"] = clsUtility.LoginID;
 
@@ -823,6 +868,131 @@ namespace TAILORING.Order
                 clsUtility.ShowInfoMessage("Enter Valid Advance Amount...", clsUtility.strProjectTitle);
                 txtAdvancePaid.Focus();
             }
+        }
+
+        private void txtSearchByMobileNo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearchByMobileNo.Text.Length > 0)
+            {
+                ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtSearchByMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
+                DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
+                if (ObjUtil.ValidateDataSet(ds))
+                {
+                    DataTable dt = ds.Tables[0];
+                    if (ObjUtil.ValidateTable(dt))
+                    {
+                        ObjUtil.SetControlData(txtSearchByMobileNo, "MobileNo");
+                        ObjUtil.SetControlData(txtCustomerID, "CustomerID");
+                        ObjUtil.ShowDataPopup(dt, txtSearchByMobileNo, this, this);
+
+                        if (ObjUtil.GetDataPopup() != null && ObjUtil.GetDataPopup().DataSource != null)
+                        {
+                            ObjUtil.GetDataPopup().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+                            if (ObjUtil.GetDataPopup().ColumnCount > 0)
+                            {
+                                ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
+                                ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
+                                ObjUtil.SetDataPopupSize(278, 0);
+                            }
+                        }
+                        ObjUtil.GetDataPopup().CellClick += frmOrderManagement_Mobile_CellClick;
+                        ObjUtil.GetDataPopup().KeyDown += frmOrderManagement_Mobile_KeyDown;
+                    }
+                    else
+                    {
+                        ObjUtil.CloseAutoExtender();
+                    }
+                }
+            }
+            else
+            {
+                txtCustomerID.Clear();
+                ObjUtil.CloseAutoExtender();
+            }
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            ClearCustomerFields(true);
+        }
+
+        private void btnSaveCustomer_Click(object sender, EventArgs e)
+        {
+            SaveCustomer();
+            ClearCustomerFields(false);
+        }
+
+        private void SaveCustomer()
+        {
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
+            {
+                if (DuplicateUser(0))
+                {
+                    ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
+                    if (b)
+                    {
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
+                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                    }
+                    else
+                    {
+                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+                    }
+                }
+                else
+                {
+                    clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..", clsUtility.strProjectTitle);
+                    txtCustomerName.Focus();
+                }
+                ObjDAL.ResetData();
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task");
+            }
+        }
+
+        private bool DuplicateUser(int i)
+        {
+            int a = 0;
+            if (i == 0)
+            {
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text.Trim() + "'");
+            }
+            else
+            {
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text + "' AND CustomerID !=" + i);
+            }
+            if (a > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void ClearCustomerFields(bool b)
+        {
+            txtCustomerName.Clear();
+            txtCustomerMobileNo.Clear();
+            txtCustomerAdd.Clear();
+            txtCustomerName.Focus();
+
+            txtCustomerName.Enabled = b;
+            txtCustomerMobileNo.Enabled = b;
+            txtCustomerAdd.Enabled = b;
+            txtCustomerName.Enabled = b;
+            btnSaveCustomer.Enabled = b;
         }
     }
 }

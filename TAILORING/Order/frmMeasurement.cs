@@ -684,6 +684,11 @@ namespace TAILORING.Order
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void SaveddtMeasurement()
         {
             DataSet ds = ctrlMeasurment1.GetMeasurement();

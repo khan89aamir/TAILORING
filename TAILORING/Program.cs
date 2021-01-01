@@ -66,8 +66,7 @@ namespace TAILORING
                 Application.SetCompatibleTextRenderingDefault(false);
                 //Application.Run(new SplashWindow());
                 Application.Run(new frmHome());
-                Application.Run(new Report.Forms.frmBill());
-                //Application.Run(new frmBodyPosture());
+                //Application.Run(new Report.Forms.frmBill());
             }
         }
     }

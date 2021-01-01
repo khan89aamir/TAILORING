@@ -93,6 +93,11 @@
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.ribbonHost12 = new System.Windows.Forms.RibbonHost();
             this.lblProduct = new System.Windows.Forms.Label();
+            this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
+            this.rbGSTIcon = new System.Windows.Forms.RibbonHost();
+            this.picGST = new System.Windows.Forms.PictureBox();
+            this.rbGSTText = new System.Windows.Forms.RibbonHost();
+            this.lblGST = new System.Windows.Forms.Label();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost13 = new System.Windows.Forms.RibbonHost();
@@ -144,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).BeginInit();
@@ -170,7 +176,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1289, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1289, 29);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -182,7 +188,7 @@
             this.userRightsManagementToolStripMenuItem});
             this.userCreationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.userCreationToolStripMenuItem.Name = "userCreationToolStripMenuItem";
-            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(132, 36);
+            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(132, 23);
             this.userCreationToolStripMenuItem.Text = "User Management";
             this.userCreationToolStripMenuItem.ToolTipText = "User Creation";
             // 
@@ -208,7 +214,7 @@
             this.CustomerMasterToolStripMenuItem,
             this.companyManagementToolStripMenuItem});
             this.mobilePartsToolStripMenuItem.Name = "mobilePartsToolStripMenuItem";
-            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(70, 36);
+            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.mobilePartsToolStripMenuItem.Text = "Masters";
             this.mobilePartsToolStripMenuItem.ToolTipText = "Mobile Parts";
             // 
@@ -246,7 +252,7 @@
             this.SalesInvoice_ToolStrip,
             this.SalesBillDetails_ToolStrip});
             this.OrderManagementPartsToolStripMenuItem.Name = "OrderManagementPartsToolStripMenuItem";
-            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(140, 36);
+            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(140, 23);
             this.OrderManagementPartsToolStripMenuItem.Text = "Order Management";
             this.OrderManagementPartsToolStripMenuItem.ToolTipText = "Hardware Parts";
             // 
@@ -268,7 +274,7 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(88, 36);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(88, 23);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -278,7 +284,7 @@
             this.SalesReport_ToolStrip,
             this.testToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(69, 36);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.ToolTipText = "Reports";
             // 
@@ -299,7 +305,7 @@
             // otherArtsToolStripMenuItem
             // 
             this.otherArtsToolStripMenuItem.Name = "otherArtsToolStripMenuItem";
-            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
+            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(123, 23);
             this.otherArtsToolStripMenuItem.Text = " Backup/Restore";
             this.otherArtsToolStripMenuItem.ToolTipText = "Other Parts";
             this.otherArtsToolStripMenuItem.Click += new System.EventHandler(this.otherArtsToolStripMenuItem_Click);
@@ -308,14 +314,14 @@
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Transparent;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(68, 36);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(68, 23);
             this.toolStripMenuItem2.Text = "Settings";
             this.toolStripMenuItem2.ToolTipText = "Settings";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 36);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // statusStrip1
@@ -594,6 +600,7 @@
             this.ribbonTab2.Panels.Add(this.ribbonPanel5);
             this.ribbonTab2.Panels.Add(this.ribbonPanel6);
             this.ribbonTab2.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel15);
             this.ribbonTab2.Text = "Masters";
             // 
             // ribbonPanel4
@@ -767,6 +774,47 @@
             this.lblProduct.Size = new System.Drawing.Size(90, 15);
             this.lblProduct.TabIndex = 41;
             this.lblProduct.Text = "Product Master";
+            // 
+            // ribbonPanel15
+            // 
+            this.ribbonPanel15.Items.Add(this.rbGSTIcon);
+            this.ribbonPanel15.Items.Add(this.rbGSTText);
+            this.ribbonPanel15.Name = "ribbonPanel15";
+            this.ribbonPanel15.Text = "GST";
+            // 
+            // rbGSTIcon
+            // 
+            this.rbGSTIcon.HostedControl = this.picGST;
+            this.rbGSTIcon.Name = "rbGSTIcon";
+            // 
+            // picGST
+            // 
+            this.picGST.BackColor = System.Drawing.Color.Transparent;
+            this.picGST.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picGST.Image = ((System.Drawing.Image)(resources.GetObject("picGST.Image")));
+            this.picGST.Location = new System.Drawing.Point(485, 185);
+            this.picGST.Name = "picGST";
+            this.picGST.Size = new System.Drawing.Size(59, 44);
+            this.picGST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGST.TabIndex = 58;
+            this.picGST.TabStop = false;
+            this.picGST.Click += new System.EventHandler(this.picGST_Click);
+            // 
+            // rbGSTText
+            // 
+            this.rbGSTText.HostedControl = this.lblGST;
+            this.rbGSTText.Name = "rbGSTText";
+            // 
+            // lblGST
+            // 
+            this.lblGST.AutoSize = true;
+            this.lblGST.BackColor = System.Drawing.Color.Transparent;
+            this.lblGST.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGST.Location = new System.Drawing.Point(538, 200);
+            this.lblGST.Name = "lblGST";
+            this.lblGST.Size = new System.Drawing.Size(112, 15);
+            this.lblGST.TabIndex = 57;
+            this.lblGST.Text = "   GST Management";
             // 
             // ribbonTab3
             // 
@@ -1100,6 +1148,8 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 622);
+            this.Controls.Add(this.picGST);
+            this.Controls.Add(this.lblGST);
             this.Controls.Add(this.picHelp);
             this.Controls.Add(this.lblSetting);
             this.Controls.Add(this.picSetting);
@@ -1157,6 +1207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).EndInit();
@@ -1276,5 +1327,10 @@
         private System.Windows.Forms.PictureBox picHelp;
         private System.Windows.Forms.RibbonHost ribbonHost26;
         private System.Windows.Forms.Label lblSetting;
+        private System.Windows.Forms.RibbonPanel ribbonPanel15;
+        private System.Windows.Forms.RibbonHost rbGSTIcon;
+        private System.Windows.Forms.PictureBox picGST;
+        private System.Windows.Forms.RibbonHost rbGSTText;
+        private System.Windows.Forms.Label lblGST;
     }
 }

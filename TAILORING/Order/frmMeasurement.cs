@@ -216,7 +216,7 @@ namespace TAILORING.Order
                 btn.Cursor = Cursors.Hand;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-
+                btn.AutoSize = true;
                 btn.Click += btnStyleName_Click;
 
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
@@ -275,13 +275,13 @@ namespace TAILORING.Order
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-            
+
+            dataGridView1.Columns["GarmentName"].HeaderText= "Garment";
             dataGridView1.Columns["ServiceID"].Visible = false;
             dataGridView1.Columns["Service"].Visible = false;
             dataGridView1.Columns["TrailDate"].Visible = false;
             dataGridView1.Columns["DeliveryDate"].Visible = false;
             dataGridView1.Columns["GarmentID"].Visible = false;
-            dataGridView1.Columns["FabricCode"].Visible = false;
             dataGridView1.Columns["GarmentCode"].Visible = false;
             dataGridView1.Columns["QTY"].Visible = false;
             dataGridView1.Columns["Rate"].Visible = false;
@@ -411,7 +411,8 @@ namespace TAILORING.Order
             int qty = Convert.ToInt32(cmbStyleQTY.Text);
             if (ObjUtil.ValidateTable(dtTempStyle))
             {
-                DataRow[] dr = dtTempStyle.Select("GarmentID=" + GarmentID + " AND QTY=" + (qty - 1));
+                //DataRow[] dr = dtTempStyle.Select("GarmentID=" + GarmentID + " AND QTY=" + (qty - 1));
+                DataRow[] dr = dtTempStyle.Select("GarmentID=" + GarmentID + " AND QTY = 1");
                 for (int i = 0; i < dr.Length; i++)
                 {
                     DataRow drow = dtTempStyle.NewRow();

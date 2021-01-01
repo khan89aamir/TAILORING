@@ -431,7 +431,7 @@ namespace TAILORING.Masters
             e.Handled = ObjUtil.IsNumeric(e);
             if (e.Handled == true)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
                 txt.Focus();
             }
         }

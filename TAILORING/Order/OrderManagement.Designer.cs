@@ -43,6 +43,10 @@
             this.grpNewOrder = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrimsAmount = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpTrailDate = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbOrderType = new System.Windows.Forms.ComboBox();
@@ -55,15 +59,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnMeasurement = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtpTrailDate = new System.Windows.Forms.DateTimePicker();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.txtGrossAmt = new System.Windows.Forms.TextBox();
-            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.btnSaveCustomer = new System.Windows.Forms.Button();
@@ -71,6 +71,10 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerMobileNo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.lblCGST = new System.Windows.Forms.Label();
+            this.txtCGST = new System.Windows.Forms.TextBox();
+            this.lblSGST = new System.Windows.Forms.Label();
+            this.txtSGST = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).BeginInit();
             this.grpNewOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -182,6 +186,7 @@
             0,
             0,
             0});
+            this.NumericQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
             // 
             // label4
             // 
@@ -283,6 +288,48 @@
             this.txtTrimsAmount.Text = "0";
             this.txtTrimsAmount.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtTrimsAmount.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(897, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 19);
+            this.label11.TabIndex = 337;
+            this.label11.Text = "Trail Date :";
+            // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(978, 49);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
+            this.dtpDeliveryDate.TabIndex = 345;
+            // 
+            // dtpTrailDate
+            // 
+            this.dtpTrailDate.Checked = false;
+            this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTrailDate.Location = new System.Drawing.Point(978, 17);
+            this.dtpTrailDate.Name = "dtpTrailDate";
+            this.dtpTrailDate.ShowCheckBox = true;
+            this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
+            this.dtpTrailDate.TabIndex = 338;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(873, 53);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(99, 19);
+            this.label17.TabIndex = 344;
+            this.label17.Text = "Delivery Date :";
             // 
             // label14
             // 
@@ -464,27 +511,6 @@
             this.btnMeasurement.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
             this.btnMeasurement.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(897, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 19);
-            this.label11.TabIndex = 337;
-            this.label11.Text = "Trail Date :";
-            // 
-            // dtpTrailDate
-            // 
-            this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(978, 17);
-            this.dtpTrailDate.Name = "dtpTrailDate";
-            this.dtpTrailDate.ShowCheckBox = true;
-            this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
-            this.dtpTrailDate.TabIndex = 338;
-            // 
             // dtpBookingDate
             // 
             this.dtpBookingDate.Enabled = false;
@@ -543,26 +569,6 @@
             this.txtGrossAmt.Size = new System.Drawing.Size(153, 25);
             this.txtGrossAmt.TabIndex = 342;
             this.txtGrossAmt.Text = "0";
-            // 
-            // dtpDeliveryDate
-            // 
-            this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(978, 49);
-            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
-            this.dtpDeliveryDate.TabIndex = 345;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(873, 53);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(99, 19);
-            this.label17.TabIndex = 344;
-            this.label17.Text = "Delivery Date :";
             // 
             // label18
             // 
@@ -665,6 +671,52 @@
             this.label19.TabIndex = 351;
             this.label19.Text = "Customer MobileNo :";
             // 
+            // lblCGST
+            // 
+            this.lblCGST.AutoSize = true;
+            this.lblCGST.BackColor = System.Drawing.Color.Transparent;
+            this.lblCGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCGST.Location = new System.Drawing.Point(443, 596);
+            this.lblCGST.Name = "lblCGST";
+            this.lblCGST.Size = new System.Drawing.Size(49, 19);
+            this.lblCGST.TabIndex = 353;
+            this.lblCGST.Text = "CGST";
+            // 
+            // txtCGST
+            // 
+            this.txtCGST.BackColor = System.Drawing.Color.White;
+            this.txtCGST.Enabled = false;
+            this.txtCGST.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtCGST.Location = new System.Drawing.Point(536, 592);
+            this.txtCGST.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCGST.Name = "txtCGST";
+            this.txtCGST.Size = new System.Drawing.Size(59, 25);
+            this.txtCGST.TabIndex = 352;
+            this.txtCGST.Text = "0";
+            // 
+            // lblSGST
+            // 
+            this.lblSGST.AutoSize = true;
+            this.lblSGST.BackColor = System.Drawing.Color.Transparent;
+            this.lblSGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSGST.Location = new System.Drawing.Point(628, 596);
+            this.lblSGST.Name = "lblSGST";
+            this.lblSGST.Size = new System.Drawing.Size(47, 19);
+            this.lblSGST.TabIndex = 355;
+            this.lblSGST.Text = "SGST";
+            // 
+            // txtSGST
+            // 
+            this.txtSGST.BackColor = System.Drawing.Color.White;
+            this.txtSGST.Enabled = false;
+            this.txtSGST.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.txtSGST.Location = new System.Drawing.Point(721, 592);
+            this.txtSGST.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSGST.Name = "txtSGST";
+            this.txtSGST.Size = new System.Drawing.Size(59, 25);
+            this.txtSGST.TabIndex = 354;
+            this.txtSGST.Text = "0";
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -672,6 +724,10 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.lblSGST);
+            this.Controls.Add(this.txtSGST);
+            this.Controls.Add(this.lblCGST);
+            this.Controls.Add(this.txtCGST);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.txtCustomerMobileNo);
             this.Controls.Add(this.txtCustomerName);
@@ -764,5 +820,9 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.TextBox txtCustomerMobileNo;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCGST;
+        private System.Windows.Forms.TextBox txtCGST;
+        private System.Windows.Forms.Label lblSGST;
+        private System.Windows.Forms.TextBox txtSGST;
     }
 }

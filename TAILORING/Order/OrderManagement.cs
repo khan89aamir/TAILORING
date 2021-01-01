@@ -49,6 +49,7 @@ namespace TAILORING.Order
             InitMeasurementTable(); //Measurement
             InitStyleTable(); //Style
             InitBodyPostureTable(); //BodyPosture
+            FillGSTData();// Load CGST,SGST
 
             dtpTrailDate.Value.AddDays(4);
             dtpDeliveryDate.Value.AddDays(5);
@@ -60,7 +61,6 @@ namespace TAILORING.Order
             dtOrder.Columns.Add("GarmentID");
             dtOrder.Columns.Add("StichTypeID");
             dtOrder.Columns.Add("FitTypeID");
-            dtOrder.Columns.Add("FabricCode");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
             dtOrder.Columns.Add("Service");
@@ -159,6 +159,26 @@ namespace TAILORING.Order
 
             cmbGarmentName.SelectedIndex = -1;
         }
+        double CGST = 0, SGST = 0;
+        private void FillGSTData()
+        {
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GSTData");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    CGST = Math.Round(Convert.ToDouble(dt.Rows[0]["CGST"]), 1);
+                    SGST = Math.Round(Convert.ToDouble(dt.Rows[0]["SGST"]), 1);
+
+                    lblCGST.Text = lblCGST.Text + " (" + CGST + ") :";
+                    lblSGST.Text = lblSGST.Text + " (" + SGST + ") :";
+                }
+                txtCGST.Text = "0";
+                txtSGST.Text = "0";
+            }
+        }
+
         private void rdSearchByCustomerName_CheckedChanged(object sender, EventArgs e)
         {
             if (rdSearchByCustomerName.Checked)
@@ -281,7 +301,7 @@ namespace TAILORING.Order
                     txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                     txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
                     txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
-                    
+
                     btnMeasurement.Enabled = true;
                 }
                 else
@@ -395,7 +415,6 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
-            dRow["GarmentCode"] = "sh12";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
             dRow["Trim Amount"] = 10;
@@ -411,7 +430,6 @@ namespace TAILORING.Order
             dtOrder.Rows.Add(dRow);
 
             dRow = dtOrder.NewRow();
-            dRow["FabricCode"] = "sh12";
             dRow["GarmentCode"] = "th01";
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
@@ -452,15 +470,19 @@ namespace TAILORING.Order
         private void CalcTotalAmount()
         {
             object total = 0;
+            double pCGST = 0, pSGST = 0, GrossAmt = 0;
             try
             {
                 if (ObjUtil.ValidateTable(dtOrder) && ObjUtil.ValidateTable((DataTable)dataGridView1.DataSource))
                 {
                     total = dtOrder.Compute("SUM(Total)", string.Empty);
                 }
-                
+
                 txtTailoringAmount.Text = total.ToString();
-                txtGrossAmt.Text = total.ToString();
+                pCGST = CGST * 0.01;
+                pSGST = SGST * 0.01;
+                GrossAmt = Convert.ToDouble(total) + ((Convert.ToDouble(total) * pCGST) + (Convert.ToDouble(total) * pSGST));
+                txtGrossAmt.Text = GrossAmt.ToString();
             }
             catch { }
         }
@@ -484,11 +506,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void txtAdvancePaid_TextChanged(object sender, EventArgs e)
-        {
-            CalcTotalAmount();
-        }
-
         private void ResetGarmentDetails()
         {
             cmbGarmentName.SelectedIndex = -1;
@@ -501,6 +518,8 @@ namespace TAILORING.Order
         {
             txtGrossAmt.Text = "0";
             txtTailoringAmount.Text = "0";
+            txtCGST.Text = "0";
+            txtSGST.Text = "0";
             txtCustomerID.Text = "0";
             InvoiceNo = string.Empty;
 
@@ -927,7 +946,7 @@ namespace TAILORING.Order
                         ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
                         ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int,0,clsConnection_DAL.ParamType.Output);
+                        ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Output);
 
                         bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
                         if (b)

@@ -94,7 +94,8 @@ namespace TAILORING.Order
 
                     imageList.Images.Add(img);
                     //imageList.ImageSize = new Size(48, 56);
-                    imageList.ImageSize = new Size(111, 96);
+                    //imageList.ImageSize = new Size(111, 96);
+                    imageList.ImageSize = new Size(111, 200);
                     SKUList.View = System.Windows.Forms.View.LargeIcon;
                     SKUList.LargeImageList = imageList;
 

@@ -32,21 +32,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtAmtToBePaid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.NumericQTY = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAdvancePaid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTailoringAmount = new System.Windows.Forms.TextBox();
             this.cmbGarmentName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpNewOrder = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtFabricCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrimsAmount = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -134,37 +128,12 @@
             this.lnkAddItem.Text = "+ Add Item";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(798, 625);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 19);
-            this.label7.TabIndex = 329;
-            this.label7.Text = "Amount to be Paid  :";
-            // 
-            // txtAmtToBePaid
-            // 
-            this.txtAmtToBePaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAmtToBePaid.BackColor = System.Drawing.Color.White;
-            this.txtAmtToBePaid.Enabled = false;
-            this.txtAmtToBePaid.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtAmtToBePaid.Location = new System.Drawing.Point(972, 621);
-            this.txtAmtToBePaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAmtToBePaid.Name = "txtAmtToBePaid";
-            this.txtAmtToBePaid.Size = new System.Drawing.Size(153, 25);
-            this.txtAmtToBePaid.TabIndex = 328;
-            this.txtAmtToBePaid.Text = "0";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(712, 35);
+            this.label3.Location = new System.Drawing.Point(530, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 298;
@@ -175,7 +144,7 @@
             this.txtRate.BackColor = System.Drawing.Color.White;
             this.txtRate.Enabled = false;
             this.txtRate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtRate.Location = new System.Drawing.Point(765, 32);
+            this.txtRate.Location = new System.Drawing.Point(583, 35);
             this.txtRate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(64, 25);
@@ -189,7 +158,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(565, 35);
+            this.label2.Location = new System.Drawing.Point(384, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 299;
@@ -198,7 +167,7 @@
             // NumericQTY
             // 
             this.NumericQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumericQTY.Location = new System.Drawing.Point(625, 32);
+            this.NumericQTY.Location = new System.Drawing.Point(444, 35);
             this.NumericQTY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NumericQTY.Minimum = new decimal(new int[] {
             1,
@@ -213,30 +182,6 @@
             0,
             0,
             0});
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(384, 596);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 19);
-            this.label6.TabIndex = 327;
-            this.label6.Text = "Advance Paid :";
-            // 
-            // txtAdvancePaid
-            // 
-            this.txtAdvancePaid.BackColor = System.Drawing.Color.White;
-            this.txtAdvancePaid.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtAdvancePaid.Location = new System.Drawing.Point(527, 592);
-            this.txtAdvancePaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAdvancePaid.Name = "txtAdvancePaid";
-            this.txtAdvancePaid.Size = new System.Drawing.Size(153, 25);
-            this.txtAdvancePaid.TabIndex = 326;
-            this.txtAdvancePaid.Text = "0";
-            this.txtAdvancePaid.TextChanged += new System.EventHandler(this.txtAdvancePaid_TextChanged);
-            this.txtAdvancePaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdvancePaid_KeyPress);
             // 
             // label4
             // 
@@ -263,10 +208,12 @@
             // 
             // cmbGarmentName
             // 
+            this.cmbGarmentName.DropDownHeight = 306;
             this.cmbGarmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.FormattingEnabled = true;
-            this.cmbGarmentName.Location = new System.Drawing.Point(350, 32);
+            this.cmbGarmentName.IntegralHeight = false;
+            this.cmbGarmentName.Location = new System.Drawing.Point(147, 35);
             this.cmbGarmentName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGarmentName.Name = "cmbGarmentName";
             this.cmbGarmentName.Size = new System.Drawing.Size(198, 25);
@@ -278,7 +225,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(234, 35);
+            this.label1.Location = new System.Drawing.Point(31, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 19);
             this.label1.TabIndex = 296;
@@ -289,8 +236,6 @@
             this.grpNewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.grpNewOrder.Controls.Add(this.label9);
-            this.grpNewOrder.Controls.Add(this.txtFabricCode);
             this.grpNewOrder.Controls.Add(this.label5);
             this.grpNewOrder.Controls.Add(this.txtTrimsAmount);
             this.grpNewOrder.Controls.Add(this.label3);
@@ -299,6 +244,10 @@
             this.grpNewOrder.Controls.Add(this.NumericQTY);
             this.grpNewOrder.Controls.Add(this.cmbGarmentName);
             this.grpNewOrder.Controls.Add(this.label1);
+            this.grpNewOrder.Controls.Add(this.label11);
+            this.grpNewOrder.Controls.Add(this.dtpDeliveryDate);
+            this.grpNewOrder.Controls.Add(this.dtpTrailDate);
+            this.grpNewOrder.Controls.Add(this.label17);
             this.grpNewOrder.Enabled = false;
             this.grpNewOrder.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold);
             this.grpNewOrder.Location = new System.Drawing.Point(15, 248);
@@ -310,37 +259,12 @@
             this.grpNewOrder.TabStop = false;
             this.grpNewOrder.Text = "Order Details";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 19);
-            this.label9.TabIndex = 329;
-            this.label9.Text = "Fabric Code :";
-            // 
-            // txtFabricCode
-            // 
-            this.txtFabricCode.BackColor = System.Drawing.Color.White;
-            this.txtFabricCode.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtFabricCode.Location = new System.Drawing.Point(122, 31);
-            this.txtFabricCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFabricCode.MaxLength = 10;
-            this.txtFabricCode.Name = "txtFabricCode";
-            this.txtFabricCode.Size = new System.Drawing.Size(96, 25);
-            this.txtFabricCode.TabIndex = 328;
-            this.txtFabricCode.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
-            this.txtFabricCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFabricCode_KeyPress);
-            this.txtFabricCode.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(852, 35);
+            this.label5.Location = new System.Drawing.Point(674, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
             this.label5.TabIndex = 327;
@@ -350,7 +274,7 @@
             // 
             this.txtTrimsAmount.BackColor = System.Drawing.Color.White;
             this.txtTrimsAmount.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtTrimsAmount.Location = new System.Drawing.Point(958, 31);
+            this.txtTrimsAmount.Location = new System.Drawing.Point(780, 35);
             this.txtTrimsAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTrimsAmount.MaxLength = 10;
             this.txtTrimsAmount.Name = "txtTrimsAmount";
@@ -545,7 +469,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(816, 198);
+            this.label11.Location = new System.Drawing.Point(897, 20);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 19);
             this.label11.TabIndex = 337;
@@ -555,8 +479,9 @@
             // 
             this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(897, 195);
+            this.dtpTrailDate.Location = new System.Drawing.Point(978, 17);
             this.dtpTrailDate.Name = "dtpTrailDate";
+            this.dtpTrailDate.ShowCheckBox = true;
             this.dtpTrailDate.Size = new System.Drawing.Size(121, 25);
             this.dtpTrailDate.TabIndex = 338;
             // 
@@ -623,7 +548,7 @@
             // 
             this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(897, 227);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(978, 49);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(121, 25);
             this.dtpDeliveryDate.TabIndex = 345;
@@ -633,7 +558,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(792, 231);
+            this.label17.Location = new System.Drawing.Point(873, 53);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 19);
             this.label17.TabIndex = 344;
@@ -756,25 +681,17 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtSearchByMobileNo);
             this.Controls.Add(this.rdSearchByCustomerName);
-            this.Controls.Add(this.dtpDeliveryDate);
             this.Controls.Add(this.rdSearchByCustomerMobileNo);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.txtSearchByCustomerName);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtGrossAmt);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.dtpTrailDate);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.lnkAddItem);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtAmtToBePaid);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtAdvancePaid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTailoringAmount);
             this.Controls.Add(this.grpNewOrder);
@@ -808,14 +725,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.LinkLabel lnkAddItem;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtAmtToBePaid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown NumericQTY;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAdvancePaid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTailoringAmount;
         private System.Windows.Forms.ComboBox cmbGarmentName;
@@ -835,8 +748,6 @@
         private System.Windows.Forms.TextBox txtTrimsAmount;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnMeasurement;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtFabricCode;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpTrailDate;
         private System.Windows.Forms.DateTimePicker dtpBookingDate;

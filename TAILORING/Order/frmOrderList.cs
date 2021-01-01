@@ -358,7 +358,7 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
-            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.ColumnHeader);
+            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
             dgvOrderDetails.Columns["CustomerID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
 
@@ -378,7 +378,7 @@ namespace TAILORING.Order
 
         private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex >= 0 && dgvOrderDetails.Rows.Count > 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 if (dgvOrderDetails.Columns[e.ColumnIndex].Name == "ColViewDetail")
                 {

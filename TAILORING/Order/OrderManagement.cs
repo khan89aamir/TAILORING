@@ -149,7 +149,7 @@ namespace TAILORING.Order
             {
                 dt = ds.Tables[0];
                 cmbGarmentName.DataSource = dt;
-                cmbGarmentName.DisplayMember = "GarmentName";
+                cmbGarmentName.DisplayMember = "GarmentCodeName";
                 cmbGarmentName.ValueMember = "GarmentID";
             }
             else
@@ -334,44 +334,48 @@ namespace TAILORING.Order
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-            dataGridView1.Columns["GarmentID"].Visible = false;
-            dataGridView1.Columns["Photo"].Visible = false;
-            if (dataGridView1.Columns.Contains("ServiceID"))
+            try
             {
-                dataGridView1.Columns["ServiceID"].Visible = false;
-            }
-            if (dataGridView1.Columns.Contains("Measurement"))
-            {
-                dataGridView1.Columns["Measurement"].Visible = false;
-            }
-            if (dataGridView1.Columns.Contains("Style"))
-            {
-                dataGridView1.Columns["Style"].Visible = false;
-            }
-            //if (dataGridView1.Columns.Contains("StichTypeID"))
-            //{
-            dataGridView1.Columns["StichTypeID"].Visible = false;
-            //}
-            //if (dataGridView1.Columns.Contains("FitTypeID"))
-            //{
-            dataGridView1.Columns["FitTypeID"].Visible = false;
-            //}
-            CalcTotalAmount();
+                ObjUtil.SetRowNumber(dataGridView1);
+                ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+                dataGridView1.Columns["GarmentID"].Visible = false;
+                dataGridView1.Columns["Photo"].Visible = false;
+                if (dataGridView1.Columns.Contains("ServiceID"))
+                {
+                    dataGridView1.Columns["ServiceID"].Visible = false;
+                }
+                if (dataGridView1.Columns.Contains("Measurement"))
+                {
+                    dataGridView1.Columns["Measurement"].Visible = false;
+                }
+                if (dataGridView1.Columns.Contains("Style"))
+                {
+                    dataGridView1.Columns["Style"].Visible = false;
+                }
+                //if (dataGridView1.Columns.Contains("StichTypeID"))
+                //{
+                dataGridView1.Columns["StichTypeID"].Visible = false;
+                //}
+                //if (dataGridView1.Columns.Contains("FitTypeID"))
+                //{
+                dataGridView1.Columns["FitTypeID"].Visible = false;
+                //}
+                CalcTotalAmount();
 
-            if (dataGridView1.Columns.Contains("ColDelete"))
-            {
-                dataGridView1.Columns.Remove("ColDelete");
+                if (dataGridView1.Columns.Contains("ColDelete"))
+                {
+                    dataGridView1.Columns.Remove("ColDelete");
+                }
+                DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
+                ColDelete.DataPropertyName = "Delete";
+                ColDelete.HeaderText = "Delete";
+                ColDelete.Name = "ColDelete";
+                ColDelete.Text = "Delete";
+                ColDelete.UseColumnTextForButtonValue = true;
+                //dataGridView1.Columns.Add(ColDelete);
+                dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
             }
-            DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
-            ColDelete.DataPropertyName = "Delete";
-            ColDelete.HeaderText = "Delete";
-            ColDelete.Name = "ColDelete";
-            ColDelete.Text = "Delete";
-            ColDelete.UseColumnTextForButtonValue = true;
-            //dataGridView1.Columns.Add(ColDelete);
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
+            catch { }
         }
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
@@ -391,7 +395,6 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
-            dRow["FabricCode"] = "sh12";
             dRow["GarmentCode"] = "sh12";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
@@ -455,15 +458,9 @@ namespace TAILORING.Order
                 {
                     total = dtOrder.Compute("SUM(Total)", string.Empty);
                 }
-                else
-                {
-                    txtAdvancePaid.Text = "0";
-                }
+                
                 txtTailoringAmount.Text = total.ToString();
                 txtGrossAmt.Text = total.ToString();
-
-                double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
-                txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
             }
             catch { }
         }
@@ -489,16 +486,6 @@ namespace TAILORING.Order
 
         private void txtAdvancePaid_TextChanged(object sender, EventArgs e)
         {
-            if (txtAdvancePaid.Text.Length > 0)
-            {
-                double total = txtTailoringAmount.Text.Length > 0 ? Convert.ToDouble(txtTailoringAmount.Text) : 0;
-                if (Convert.ToDouble(txtAdvancePaid.Text) > total)
-                {
-                    clsUtility.ShowInfoMessage("Advance payment can't be exceeded with Tailoring amount..");
-                    txtAdvancePaid.Text = "0";
-                    return;
-                }
-            }
             CalcTotalAmount();
         }
 
@@ -508,15 +495,11 @@ namespace TAILORING.Order
             txtRate.Text = "0.00";
             NumericQTY.Value = 1;
             txtTrimsAmount.Text = "0";
-            txtFabricCode.Text = "";
-            txtFabricCode.Focus();
         }
 
         private void ClearAll()
         {
             txtGrossAmt.Text = "0";
-            txtAdvancePaid.Text = "0";
-            txtAmtToBePaid.Text = "0";
             txtTailoringAmount.Text = "0";
             txtCustomerID.Text = "0";
             InvoiceNo = string.Empty;
@@ -600,9 +583,10 @@ namespace TAILORING.Order
             ObjDAL.SetColumnData("OrderNo", SqlDbType.VarChar, InvoiceNo);
             ObjDAL.SetColumnData("OrderDate", SqlDbType.Date, dtpBookingDate.Value.ToString("yyyy-MM-dd"));
             ObjDAL.SetColumnData("TrailDate", SqlDbType.Date, dtpTrailDate.Value.ToString("yyyy-MM-dd"));
-            ObjDAL.SetColumnData("AdvanceAmount", SqlDbType.Decimal, txtAdvancePaid.Text.Length == 0 ? "0" : txtAdvancePaid.Text);
-            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtAmtToBePaid.Text);
+            ObjDAL.SetColumnData("TotalAmount", SqlDbType.Decimal, txtGrossAmt.Text);
+            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtGrossAmt.Text);
             ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
+            ObjDAL.SetColumnData("OrderMode", SqlDbType.VarChar, "System");
             ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID);
 
             int a = ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblSalesOrder", true);
@@ -839,16 +823,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void txtFabricCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ObjUtil.IsAlphaNumeric(e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Valid Fabric Code...", clsUtility.strProjectTitle);
-                txtFabricCode.Focus();
-            }
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
@@ -880,20 +854,8 @@ namespace TAILORING.Order
                         }
                         dataGridView1.DataSource = dt;
                         CalcTotalAmount();
-                        txtFabricCode.Focus();
                     }
                 }
-            }
-        }
-
-        private void txtAdvancePaid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
-            e.Handled = ObjUtil.IsDecimal(txt, e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Valid Advance Amount...", clsUtility.strProjectTitle);
-                txtAdvancePaid.Focus();
             }
         }
 

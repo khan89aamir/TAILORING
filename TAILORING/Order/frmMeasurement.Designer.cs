@@ -52,8 +52,8 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
+            this.grpSKUList = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -208,7 +208,7 @@
             this.SKUList.HideSelection = false;
             this.SKUList.Location = new System.Drawing.Point(6, 21);
             this.SKUList.Name = "SKUList";
-            this.SKUList.Size = new System.Drawing.Size(624, 133);
+            this.SKUList.Size = new System.Drawing.Size(595, 133);
             this.SKUList.TabIndex = 344;
             this.SKUList.UseCompatibleStateImageBehavior = false;
             this.SKUList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SKUList_MouseClick);
@@ -264,7 +264,7 @@
             this.grpSKUStatus.BackColor = System.Drawing.Color.Transparent;
             this.grpSKUStatus.Controls.Add(this.dataGridView1);
             this.grpSKUStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUStatus.Location = new System.Drawing.Point(666, 42);
+            this.grpSKUStatus.Location = new System.Drawing.Point(656, 42);
             this.grpSKUStatus.Name = "grpSKUStatus";
             this.grpSKUStatus.Size = new System.Drawing.Size(353, 173);
             this.grpSKUStatus.TabIndex = 348;
@@ -288,7 +288,7 @@
             this.grpStyle.Controls.Add(this.checkBox1);
             this.grpStyle.Controls.Add(this.flowStyleName);
             this.grpStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpStyle.Location = new System.Drawing.Point(477, 215);
+            this.grpStyle.Location = new System.Drawing.Point(474, 215);
             this.grpStyle.Name = "grpStyle";
             this.grpStyle.Size = new System.Drawing.Size(538, 496);
             this.grpStyle.TabIndex = 349;
@@ -376,7 +376,7 @@
             this.grpMeasurement.Controls.Add(this.btnMeasureSave);
             this.grpMeasurement.Controls.Add(this.ctrlMeasurment1);
             this.grpMeasurement.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpMeasurement.Location = new System.Drawing.Point(8, 211);
+            this.grpMeasurement.Location = new System.Drawing.Point(10, 211);
             this.grpMeasurement.Name = "grpMeasurement";
             this.grpMeasurement.Size = new System.Drawing.Size(440, 496);
             this.grpMeasurement.TabIndex = 350;
@@ -395,18 +395,6 @@
             this.lnkAddItem.Text = "Body Posture";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
             // 
-            // grpSKUList
-            // 
-            this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
-            this.grpSKUList.Controls.Add(this.SKUList);
-            this.grpSKUList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUList.Location = new System.Drawing.Point(8, 42);
-            this.grpSKUList.Name = "grpSKUList";
-            this.grpSKUList.Size = new System.Drawing.Size(636, 163);
-            this.grpSKUList.TabIndex = 351;
-            this.grpSKUList.TabStop = false;
-            this.grpSKUList.Text = "Selected SKUs :";
-            // 
             // ctrlMeasurment1
             // 
             this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
@@ -417,6 +405,18 @@
             this.ctrlMeasurment1.ProductCount = 0;
             this.ctrlMeasurment1.Size = new System.Drawing.Size(310, 464);
             this.ctrlMeasurment1.TabIndex = 0;
+            // 
+            // grpSKUList
+            // 
+            this.grpSKUList.BackColor = System.Drawing.Color.Transparent;
+            this.grpSKUList.Controls.Add(this.SKUList);
+            this.grpSKUList.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSKUList.Location = new System.Drawing.Point(8, 42);
+            this.grpSKUList.Name = "grpSKUList";
+            this.grpSKUList.Size = new System.Drawing.Size(607, 163);
+            this.grpSKUList.TabIndex = 351;
+            this.grpSKUList.TabStop = false;
+            this.grpSKUList.Text = "Selected SKUs :";
             // 
             // frmMeasurement
             // 

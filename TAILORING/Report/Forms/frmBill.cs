@@ -65,7 +65,7 @@ namespace TAILORING.Report.Forms
             }
 
             DataTable dtCustomer = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] where CustomerID=" + CustomerID);
-            if (dtCustomer.Rows.Count > 0)
+            if (dtCustomer!=null && dtCustomer.Rows.Count > 0)
             {
                 strCustomerName = dtCustomer.Rows[0]["Name"].ToString();
                 strCustomerMobile = dtCustomer.Rows[0]["MobileNo"].ToString();

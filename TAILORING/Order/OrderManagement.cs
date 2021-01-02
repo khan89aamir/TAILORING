@@ -931,7 +931,6 @@ namespace TAILORING.Order
         private void btnSaveCustomer_Click(object sender, EventArgs e)
         {
             SaveCustomer();
-            ClearCustomerFields(false);
         }
 
         private void SaveCustomer()
@@ -962,6 +961,7 @@ namespace TAILORING.Order
                                 lnkAddItem.Enabled = true;
                                 btnMeasurement.Enabled = true;
                             }
+                            ClearCustomerFields(false);
                         }
                         else
                         {

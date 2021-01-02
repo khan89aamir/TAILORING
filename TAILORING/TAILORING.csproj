@@ -181,6 +181,12 @@
     <Compile Include="Order\frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\frmViewMeasurementStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmViewMeasurementStyle.Designer.cs">
+      <DependentUpon>frmViewMeasurementStyle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\OrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmOrderList.resx">
       <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmViewMeasurementStyle.resx">
+      <DependentUpon>frmViewMeasurementStyle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\OrderManagement.resx">
       <DependentUpon>OrderManagement.cs</DependentUpon>

@@ -51,9 +51,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -179,7 +179,7 @@
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
             this.flowStyleImage.Location = new System.Drawing.Point(21, 187);
             this.flowStyleImage.Name = "flowStyleImage";
-            this.flowStyleImage.Size = new System.Drawing.Size(742, 247);
+            this.flowStyleImage.Size = new System.Drawing.Size(742, 221);
             this.flowStyleImage.TabIndex = 338;
             // 
             // flowStyleName
@@ -290,7 +290,7 @@
             this.grpStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpStyle.Location = new System.Drawing.Point(225, 269);
             this.grpStyle.Name = "grpStyle";
-            this.grpStyle.Size = new System.Drawing.Size(787, 414);
+            this.grpStyle.Size = new System.Drawing.Size(787, 420);
             this.grpStyle.TabIndex = 349;
             this.grpStyle.TabStop = false;
             this.grpStyle.Text = "Style :";
@@ -377,6 +377,19 @@
             this.grpMeasurement.TabStop = false;
             this.grpMeasurement.Text = "Measurement :";
             // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
+            // 
             // lnkAddItem
             // 
             this.lnkAddItem.AutoSize = true;
@@ -402,25 +415,13 @@
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
             // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
-            // 
             // frmMeasurement
             // 
             this.AcceptButton = this.btnMeasureSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 701);

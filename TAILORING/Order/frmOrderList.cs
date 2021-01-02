@@ -366,6 +366,10 @@ namespace TAILORING.Order
             {
                 dgvOrderDetails.Columns.Remove("ColViewDetail");
             }
+            if (dgvOrderDetails.Columns.Contains("ColViewMeasure"))
+            {
+                dgvOrderDetails.Columns.Remove("ColViewMeasure");
+            }
             DataGridViewButtonColumn ColViewDetail = new DataGridViewButtonColumn();
             ColViewDetail.DataPropertyName = "ViewDetail";
             ColViewDetail.HeaderText = "ViewDetail";
@@ -374,6 +378,15 @@ namespace TAILORING.Order
             ColViewDetail.UseColumnTextForButtonValue = true;
             //dgvOrderDetails.Columns.Add(ColViewDetail);
             dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColViewDetail });
+
+            DataGridViewButtonColumn ColViewMeasure = new DataGridViewButtonColumn();
+            ColViewMeasure.DataPropertyName = "ViewMeasure";
+            ColViewMeasure.HeaderText = "ViewMeasure";
+            ColViewMeasure.Name = "ColViewMeasure";
+            ColViewMeasure.Text = "ViewMeasure";
+            ColViewMeasure.UseColumnTextForButtonValue = true;
+            //dgvOrderDetails.Columns.Add(ColViewMeasure);
+            dgvOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColViewMeasure });
         }
 
         private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -388,6 +401,16 @@ namespace TAILORING.Order
 
                     frmOrderDetails Obj = new frmOrderDetails();
                     Obj.SalesOrderID = pSalesOrderID;
+                    Obj.ShowDialog();
+                }
+                else if (dgvOrderDetails.Columns[e.ColumnIndex].Name == "ColViewMeasure")
+                {
+                    int pSalesOrderID = 0;
+                    pSalesOrderID = dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value == DBNull.Value
+                        ? 0 : Convert.ToInt32(dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value);
+
+                    frmViewMeasurementStyle Obj = new frmViewMeasurementStyle();
+                    Obj.pOrderID = pSalesOrderID;
                     Obj.ShowDialog();
                 }
             }

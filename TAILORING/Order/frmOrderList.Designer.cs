@@ -46,6 +46,8 @@ namespace TAILORING.Order
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.lblCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtCustomerOrderNo = new System.Windows.Forms.TextBox();
+            this.radByOrderNo = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
@@ -69,6 +71,8 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtCustomerOrderNo);
+            this.groupBox1.Controls.Add(this.radByOrderNo);
             this.groupBox1.Controls.Add(this.txtCustomerID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpToDate);
@@ -184,6 +188,20 @@ namespace TAILORING.Order
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Name = "label4";
             // 
+            // txtCustomerOrderNo
+            // 
+            this.txtCustomerOrderNo.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txtCustomerOrderNo, "txtCustomerOrderNo");
+            this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
+            this.txtCustomerOrderNo.Enter += new System.EventHandler(this.txtCustomerName_Enter);
+            this.txtCustomerOrderNo.Leave += new System.EventHandler(this.txtCustomerName_Leave);
+            // 
+            // radByOrderNo
+            // 
+            resources.ApplyResources(this.radByOrderNo, "radByOrderNo");
+            this.radByOrderNo.Name = "radByOrderNo";
+            this.radByOrderNo.UseVisualStyleBackColor = true;
+            // 
             // frmOrderList
             // 
             resources.ApplyResources(this, "$this");
@@ -227,5 +245,7 @@ namespace TAILORING.Order
         private System.Windows.Forms.DataGridView dgvOrderDetails;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCustomerOrderNo;
+        private System.Windows.Forms.RadioButton radByOrderNo;
     }
 }

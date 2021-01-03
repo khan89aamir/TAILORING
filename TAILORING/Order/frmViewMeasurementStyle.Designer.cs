@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grpSKUList = new System.Windows.Forms.GroupBox();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
+            this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -51,7 +51,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
-            this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblOrderNo = new System.Windows.Forms.Label();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList.SuspendLayout();
             this.grpMeasurement.SuspendLayout();
             this.grpStyle.SuspendLayout();
@@ -72,18 +73,16 @@
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
             // 
-            // ctrlMeasurment1
+            // flowGarmentList
             // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowGarmentList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
+            this.flowGarmentList.AutoScroll = true;
+            this.flowGarmentList.BackColor = System.Drawing.Color.White;
+            this.flowGarmentList.Location = new System.Drawing.Point(6, 21);
+            this.flowGarmentList.Name = "flowGarmentList";
+            this.flowGarmentList.Size = new System.Drawing.Size(185, 620);
+            this.flowGarmentList.TabIndex = 340;
             // 
             // grpMeasurement
             // 
@@ -220,6 +219,7 @@
             this.cmbStyleQTY.Name = "cmbStyleQTY";
             this.cmbStyleQTY.Size = new System.Drawing.Size(65, 25);
             this.cmbStyleQTY.TabIndex = 347;
+            this.cmbStyleQTY.SelectionChangeCommitted += new System.EventHandler(this.cmbStyleQTY_SelectionChangeCommitted);
             // 
             // checkBox1
             // 
@@ -256,6 +256,7 @@
             this.lnkAddItem.TabIndex = 353;
             this.lnkAddItem.TabStop = true;
             this.lnkAddItem.Text = "Body Posture";
+            this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
             // 
             // btnCancel
             // 
@@ -334,15 +335,16 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 19);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 32;
-            this.dataGridView1.Size = new System.Drawing.Size(302, 147);
+            this.dataGridView1.Size = new System.Drawing.Size(310, 147);
             this.dataGridView1.TabIndex = 322;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // grpSKUStatus
             // 
@@ -350,23 +352,38 @@
             this.grpSKUStatus.BackColor = System.Drawing.Color.Transparent;
             this.grpSKUStatus.Controls.Add(this.dataGridView1);
             this.grpSKUStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUStatus.Location = new System.Drawing.Point(703, 67);
+            this.grpSKUStatus.Location = new System.Drawing.Point(699, 61);
             this.grpSKUStatus.Name = "grpSKUStatus";
-            this.grpSKUStatus.Size = new System.Drawing.Size(327, 173);
+            this.grpSKUStatus.Size = new System.Drawing.Size(334, 173);
             this.grpSKUStatus.TabIndex = 355;
             this.grpSKUStatus.TabStop = false;
             this.grpSKUStatus.Text = "SKU Status :";
             // 
-            // flowGarmentList
+            // lblOrderNo
             // 
-            this.flowGarmentList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblOrderNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNo.ForeColor = System.Drawing.Color.Black;
+            this.lblOrderNo.Location = new System.Drawing.Point(850, 45);
+            this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(76, 19);
+            this.lblOrderNo.TabIndex = 356;
+            this.lblOrderNo.Text = "OrderNo";
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowGarmentList.AutoScroll = true;
-            this.flowGarmentList.BackColor = System.Drawing.Color.White;
-            this.flowGarmentList.Location = new System.Drawing.Point(6, 21);
-            this.flowGarmentList.Name = "flowGarmentList";
-            this.flowGarmentList.Size = new System.Drawing.Size(185, 620);
-            this.flowGarmentList.TabIndex = 340;
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmViewMeasurementStyle
             // 
@@ -375,6 +392,7 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 701);
+            this.Controls.Add(this.lblOrderNo);
             this.Controls.Add(this.grpSKUList);
             this.Controls.Add(this.grpMeasurement);
             this.Controls.Add(this.grpStyle);
@@ -426,5 +444,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox grpSKUStatus;
         private System.Windows.Forms.FlowLayoutPanel flowGarmentList;
+        private System.Windows.Forms.Label lblOrderNo;
     }
 }

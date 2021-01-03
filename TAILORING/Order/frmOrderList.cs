@@ -406,11 +406,14 @@ namespace TAILORING.Order
                 else if (dgvOrderDetails.Columns[e.ColumnIndex].Name == "ColViewMeasure")
                 {
                     int pSalesOrderID = 0;
+                    string pOrderNo = "NA";
                     pSalesOrderID = dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value == DBNull.Value
                         ? 0 : Convert.ToInt32(dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value);
+                    pOrderNo = dgvOrderDetails.Rows[e.RowIndex].Cells["OrderNo"].Value.ToString();
 
                     frmViewMeasurementStyle Obj = new frmViewMeasurementStyle();
                     Obj.pOrderID = pSalesOrderID;
+                    Obj.OrderNo = pOrderNo;
                     Obj.ShowDialog();
                 }
             }

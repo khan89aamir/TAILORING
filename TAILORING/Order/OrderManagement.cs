@@ -35,6 +35,7 @@ namespace TAILORING.Order
 
         int CustomerID = 0;
         int OrderID = 0;
+        double CGST = 0, SGST = 0;
         string InvoiceNo = string.Empty;
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
@@ -159,7 +160,7 @@ namespace TAILORING.Order
 
             cmbGarmentName.SelectedIndex = -1;
         }
-        double CGST = 0, SGST = 0;
+
         private void FillGSTData()
         {
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GSTData");
@@ -171,8 +172,8 @@ namespace TAILORING.Order
                     CGST = Math.Round(Convert.ToDouble(dt.Rows[0]["CGST"]), 1);
                     SGST = Math.Round(Convert.ToDouble(dt.Rows[0]["SGST"]), 1);
 
-                    lblCGST.Text = lblCGST.Text + " (" + CGST + ") :";
-                    lblSGST.Text = lblSGST.Text + " (" + SGST + ") :";
+                    lblCGST.Text = lblCGST.Text + " (" + CGST + "%) :";
+                    lblSGST.Text = lblSGST.Text + " (" + SGST + "%) :";
                 }
                 txtCGST.Text = "0";
                 txtSGST.Text = "0";
@@ -415,6 +416,7 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
+            dRow["GarmentCode"] = "sh01";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
             dRow["Trim Amount"] = 10;
@@ -479,9 +481,13 @@ namespace TAILORING.Order
                 }
 
                 txtTailoringAmount.Text = total.ToString();
-                pCGST = CGST * 0.01;
-                pSGST = SGST * 0.01;
-                GrossAmt = Convert.ToDouble(total) + ((Convert.ToDouble(total) * pCGST) + (Convert.ToDouble(total) * pSGST));
+                pCGST = Convert.ToDouble(total) * CGST * 0.01;
+                pSGST = Convert.ToDouble(total) * SGST * 0.01;
+
+                txtCGST.Text = pCGST.ToString();
+                txtSGST.Text = pSGST.ToString();
+
+                GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
                 txtGrossAmt.Text = GrossAmt.ToString();
             }
             catch { }

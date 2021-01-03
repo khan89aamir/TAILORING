@@ -650,6 +650,7 @@ namespace TAILORING.Order
                 checkBox1.Enabled = false;
             }
             flowStyleImage.Controls.Clear();
+            GetGarmentStyle(GarmentID);// Garment Style
         }
 
         private void lnkAddItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

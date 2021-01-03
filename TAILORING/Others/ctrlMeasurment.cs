@@ -18,6 +18,8 @@ namespace TAILORING.Others
 
         List<string> lstMendatoryColumn;
         public int ProductCount { get; set; }
+        public bool IsEditable { get; set; }
+
         DataTable dttemp;
         //FlowLayoutPanel pnlContainer;
 
@@ -138,6 +140,8 @@ namespace TAILORING.Others
                 txt.Location = new Point(110, 13);
                 txt.Enter += txtName_Enter;
                 txt.Leave += txtName_Leave;
+                txt.Enabled = IsEditable;
+                txt.BackColor = Color.White;
 
                 if (ObjUtil.ValidateTable(dt))
                     txt.Text = dt.Rows[0][label.Text].ToString();

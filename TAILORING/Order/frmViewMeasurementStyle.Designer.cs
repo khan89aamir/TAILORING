@@ -31,6 +31,7 @@
             this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.lblOrderNo = new System.Windows.Forms.Label();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList.SuspendLayout();
             this.grpMeasurement.SuspendLayout();
             this.grpStyle.SuspendLayout();
@@ -97,6 +97,20 @@
             this.grpMeasurement.TabIndex = 357;
             this.grpMeasurement.TabStop = false;
             this.grpMeasurement.Text = "Measurement :";
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // label4
             // 
@@ -285,6 +299,7 @@
             this.btnSave.TabIndex = 354;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label12
             // 
@@ -371,19 +386,6 @@
             this.lblOrderNo.Size = new System.Drawing.Size(76, 19);
             this.lblOrderNo.TabIndex = 356;
             this.lblOrderNo.Text = "OrderNo";
-            // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmViewMeasurementStyle
             // 

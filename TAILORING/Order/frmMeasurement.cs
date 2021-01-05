@@ -223,7 +223,7 @@ namespace TAILORING.Order
 
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 if (a > 0)
-                    btn.BackColor = Color.FromArgb(17, 241, 41);
+                    btn.BackColor = Color.FromArgb(17, 241, 41);//17, 241, 41
                 else
                     btn.BackColor = Color.LightGray;
 
@@ -422,7 +422,6 @@ namespace TAILORING.Order
                     drow["StyleID"] = dr[i]["StyleID"];
                     drow["StyleImageID"] = dr[i]["StyleImageID"];
                     drow["QTY"] = cmbStyleQTY.Text;
-
                     dtTempStyle.Rows.Add(drow);
                 }
                 ChangeMeasurementStyleStatus('S', GarmentID);
@@ -724,16 +723,20 @@ namespace TAILORING.Order
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        DataRow[] drow = dtTempStyle.Select("GarmentID=" + dt.Rows[i]["GarmentID"]);
-                        if (drow.Length == 0)
+                        for (int j = 1; j <= cmbStyleQTY.Items.Count; j++)
                         {
-                            b = false;
-                            clsUtility.ShowInfoMessage("Please Select Style for Garment");
-                            break;
-                        }
-                        else
-                        {
-                            b = true;
+                            DataRow[] drow = dtTempStyle.Select("GarmentID=" + dt.Rows[i]["GarmentID"] + " AND QTY=" + j);
+                            if (drow.Length == 0)
+                            {
+                                b = false;
+                                clsUtility.ShowInfoMessage("Please Select Style for All QTY");
+                                return b;
+                                //break;
+                            }
+                            else
+                            {
+                                b = true;
+                            }
                         }
                     }
                 }

@@ -289,6 +289,7 @@
             this.txtTrimsAmount.TabIndex = 326;
             this.txtTrimsAmount.Text = "0";
             this.txtTrimsAmount.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
+            this.txtTrimsAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Decimal_Control_KeyPress);
             this.txtTrimsAmount.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // label11

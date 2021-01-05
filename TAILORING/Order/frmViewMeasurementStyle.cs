@@ -579,6 +579,12 @@ namespace TAILORING.Order
             GetGarmentStyle(GarmentID);// Garment Style
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //Update Code
+        }
+
         private void ChangeMeasurementStyleStatus()//char ps, int garmentid
         {
             for (int i = 0; i < dtGarmentList.Rows.Count; i++)

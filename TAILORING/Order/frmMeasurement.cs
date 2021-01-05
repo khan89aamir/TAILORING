@@ -44,7 +44,8 @@ namespace TAILORING.Order
 
         private void frmMeasurement_Load(object sender, EventArgs e)
         {
-            HorizontalScroll.Maximum = 0;
+            //HorizontalScroll.Maximum = 0;
+            ctrlMeasurment1.IsEditable = true;
 
             btnMeasureSave.BackgroundImage = B_Leave;
             btnStyleSave.BackgroundImage = B_Leave;
@@ -89,8 +90,9 @@ namespace TAILORING.Order
 
                     SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
 
-                    dataGridView1.Rows[i].Cells["Measurement"].Value = Pending;
-                    dataGridView1.Rows[i].Cells["Style"].Value = Pending;
+                    dataGridView1.Rows[i].Cells["Measurement"].Value = dataGridView1.Rows[i].Cells["Measurement"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Measurement"].Value;
+
+                    dataGridView1.Rows[i].Cells["Style"].Value = dataGridView1.Rows[i].Cells["Style"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Style"].Value;
 
                     imageList.Images.Add(img);
                     //imageList.ImageSize = new Size(48, 56);
@@ -276,7 +278,7 @@ namespace TAILORING.Order
         {
             ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
-            dataGridView1.Columns["GarmentName"].HeaderText= "Garment";
+            dataGridView1.Columns["GarmentName"].HeaderText = "Garment";
             dataGridView1.Columns["ServiceID"].Visible = false;
             dataGridView1.Columns["Service"].Visible = false;
             dataGridView1.Columns["TrailDate"].Visible = false;
@@ -524,7 +526,7 @@ namespace TAILORING.Order
         {
             SaveddtMeasurement(); // Auto Saved Garment Measurement value
 
-            lblSKUName.Text = "SKU Selected : " + SKUList.SelectedItems[0].Text.ToString();
+            lblSKUName.Text = SKUList.SelectedItems[0].Text.ToString();
             DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
             if (drow.Length > 0)
             {
@@ -555,7 +557,7 @@ namespace TAILORING.Order
 
         private void GetDefaultSelectSKU()
         {
-            lblSKUName.Text = "SKU Selected : " + SKUList.Items[0].Text;
+            lblSKUName.Text = SKUList.Items[0].Text;
             DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.Items[0].Text + "'");
             if (drow.Length > 0)
             {
@@ -603,6 +605,10 @@ namespace TAILORING.Order
 
         private void btnMeasureSave_Click(object sender, EventArgs e)
         {
+            SaveMeasurement();
+        }
+        private void SaveMeasurement()
+        {
             DataSet ds = ctrlMeasurment1.GetMeasurement();
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -628,7 +634,6 @@ namespace TAILORING.Order
                 }
             }
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -687,9 +692,60 @@ namespace TAILORING.Order
             }
         }
 
+        private bool ValidateGarmentStyle()
+        {
+            bool b = false;
+            DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (!ObjUtil.ValidateDataSet(ds))
+            { }
+            else if (ObjUtil.ValidateDataSet(ds))
+            {
+                SaveMeasurement();
+                DataTable dt = dtTempMeasurement.DefaultView.ToTable(true, "GarmentID");
+                if (dt.Rows.Count != dtGarmentList.Rows.Count)
+                {
+                    clsUtility.ShowInfoMessage("Please Fill All Garments Measurement..");
+                }
+                else if (ObjUtil.IsControlTextEmpty(cmbStichType))
+                {
+                    clsUtility.ShowInfoMessage("Please Select StichType..");
+                    cmbStichType.Focus();
+                }
+                else if (ObjUtil.IsControlTextEmpty(cmbFitType))
+                {
+                    clsUtility.ShowInfoMessage("Please Select FitType..");
+                    cmbFitType.Focus();
+                }
+                else if (!ObjUtil.ValidateTable(dtTempStyle))
+                {
+                    clsUtility.ShowInfoMessage("Please Select Styles for Garments..");
+                }
+                else if (ObjUtil.ValidateTable(dtTempStyle))
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        DataRow[] drow = dtTempStyle.Select("GarmentID=" + dt.Rows[i]["GarmentID"]);
+                        if (drow.Length == 0)
+                        {
+                            b = false;
+                            clsUtility.ShowInfoMessage("Please Select Style for Garment");
+                            break;
+                        }
+                        else
+                        {
+                            b = true;
+                        }
+                    }
+                }
+            }
+            return b;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (ValidateGarmentStyle())
+            {
+                this.Close();
+            }
         }
 
         private void SaveddtMeasurement()

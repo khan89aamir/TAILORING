@@ -47,7 +47,7 @@ namespace TAILORING.Others
         {
             DataSet ds = new DataSet();
             DataTable dtRetun = null;
-            dtRetun = dttemp;
+            dtRetun = dttemp.Copy();
             dtRetun.Rows.Clear();
             DataRow dRow = dtRetun.NewRow();
             //for (int j = 0; j < ProductCount; j++)
@@ -77,7 +77,7 @@ namespace TAILORING.Others
 
                     if (lstMendatoryColumn.Contains(curCol) && ctr[0].Text.Trim().Length == 0)
                     {
-                        MessageBox.Show("Please fill all the mandatory fields");
+                        CoreApp.clsUtility.ShowInfoMessage("Please fill all the mandatory fields");
                         return null;
                     }
                     else

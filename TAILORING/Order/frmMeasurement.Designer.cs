@@ -54,6 +54,7 @@
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.grpSKUList = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.grpSKUStatus.SuspendLayout();
@@ -86,6 +87,7 @@
             // 
             this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.label12);
@@ -149,7 +151,7 @@
             this.lblSKUName.BackColor = System.Drawing.Color.Transparent;
             this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSKUName.ForeColor = System.Drawing.Color.White;
-            this.lblSKUName.Location = new System.Drawing.Point(401, 11);
+            this.lblSKUName.Location = new System.Drawing.Point(429, 11);
             this.lblSKUName.Name = "lblSKUName";
             this.lblSKUName.Size = new System.Drawing.Size(88, 19);
             this.lblSKUName.TabIndex = 339;
@@ -383,6 +385,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
             this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.IsEditable = false;
             this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
             this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlMeasurment1.Name = "ctrlMeasurment1";
@@ -414,6 +417,18 @@
             this.grpSKUList.TabIndex = 351;
             this.grpSKUList.TabStop = false;
             this.grpSKUList.Text = "Selected SKUs :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(314, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 19);
+            this.label5.TabIndex = 356;
+            this.label5.Text = "SKU Selected :";
             // 
             // frmMeasurement
             // 
@@ -480,5 +495,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label5;
     }
 }

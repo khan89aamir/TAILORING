@@ -23,7 +23,7 @@ namespace TAILORING.Order
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
 
-        DataTable dt = null;
+        DataTable dtGarment = null;
 
         DataTable dtOrder = new DataTable();
         DataTable dtOrderDetails = new DataTable();
@@ -37,6 +37,7 @@ namespace TAILORING.Order
         int OrderID = 0;
         double CGST = 0, SGST = 0;
         string InvoiceNo = string.Empty;
+        string GarmentName = string.Empty;
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
@@ -142,14 +143,14 @@ namespace TAILORING.Order
 
         private void FillGarmentData()
         {
-            dt = null;
+            dtGarment = null;
             //dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblProductMaster", "GarmentID,GarmentName,Rate", "OrderType=" + cmbOrderType.SelectedIndex, "GarmentName ASC");
             ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbOrderType.SelectedIndex, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product_Rate");
             if (ObjUtil.ValidateDataSet(ds))
             {
-                dt = ds.Tables[0];
-                cmbGarmentName.DataSource = dt;
+                dtGarment = ds.Tables[0];
+                cmbGarmentName.DataSource = dtGarment;
                 cmbGarmentName.DisplayMember = "GarmentCodeName";
                 cmbGarmentName.ValueMember = "GarmentID";
             }
@@ -340,8 +341,6 @@ namespace TAILORING.Order
                 txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
                 txtSearchByMobileNo.Focus();
                 SearchByCustomerID();
-                //lblCustomerName.Text = dgv.Rows[0].Cells["Name"].ToString();
-                //lblCustomerAdd.Text = dgv.Rows[0].Cells["Address"].ToString();
             }
             cmbOrderType.Enabled = true;
         }
@@ -401,10 +400,11 @@ namespace TAILORING.Order
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataRow[] drow = dt.Select("GarmentID=" + cmbGarmentName.SelectedValue);
+            DataRow[] drow = dtGarment.Select("GarmentID=" + cmbGarmentName.SelectedValue);
             if (drow.Length > 0)
             {
                 txtRate.Text = drow[0]["Rate"].ToString();
+                GarmentName = drow[0]["GarmentName"].ToString();
             }
             else
             {
@@ -455,7 +455,7 @@ namespace TAILORING.Order
 
             //DataRow dRow = dtOrder.NewRow();
             //dRow["GarmentID"] = cmbGarmentName.SelectedValue;
-            //dRow["GarmentName"] = cmbGarmentName.Text;
+            //dRow["GarmentName"] = GarmentName;
             //dRow["Trim Amount"] = trim;
             //dRow["Rate"] = txtRate.Text;
             //dRow["QTY"] = NumericQTY.Value;
@@ -931,6 +931,10 @@ namespace TAILORING.Order
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             ClearCustomerFields(true);
+            rdSearchByCustomerMobileNo.Checked = false;
+            rdSearchByCustomerName.Checked = false;
+            rdSearchByCustomerOrderNo.Checked = false;
+
             txtCustomerName.Focus();
         }
 
@@ -962,7 +966,7 @@ namespace TAILORING.Order
                             DataTable dtout = ObjDAL.GetOutputParmData();
                             if (ObjUtil.ValidateTable(dtout))
                             {
-                                CustomerID = Convert.ToInt32(dt.Rows[0][1]);
+                                CustomerID = Convert.ToInt32(dtGarment.Rows[0][1]);
                                 txtCustomerID.Text = CustomerID.ToString();
                                 lnkAddItem.Enabled = true;
                                 btnMeasurement.Enabled = true;

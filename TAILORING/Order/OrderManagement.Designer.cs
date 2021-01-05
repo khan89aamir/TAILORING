@@ -679,7 +679,7 @@
             this.lblCGST.AutoSize = true;
             this.lblCGST.BackColor = System.Drawing.Color.Transparent;
             this.lblCGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCGST.Location = new System.Drawing.Point(443, 596);
+            this.lblCGST.Location = new System.Drawing.Point(438, 596);
             this.lblCGST.Name = "lblCGST";
             this.lblCGST.Size = new System.Drawing.Size(49, 19);
             this.lblCGST.TabIndex = 353;
@@ -702,7 +702,7 @@
             this.lblSGST.AutoSize = true;
             this.lblSGST.BackColor = System.Drawing.Color.Transparent;
             this.lblSGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSGST.Location = new System.Drawing.Point(628, 596);
+            this.lblSGST.Location = new System.Drawing.Point(623, 596);
             this.lblSGST.Name = "lblSGST";
             this.lblSGST.Size = new System.Drawing.Size(47, 19);
             this.lblSGST.TabIndex = 355;

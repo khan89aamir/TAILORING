@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Masters
 {
-    public partial class Customer_Master : Form
+    public partial class Customer_Master : KryptonForm
     {
         public Customer_Master()
         {
@@ -105,7 +106,7 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpCustomer.Enabled = true;
+            //grpCustomer.Enabled = true;
             txtCustomerName.Focus();
         }
 
@@ -131,7 +132,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                             ClearAll();
                             LoadData();
-                            grpCustomer.Enabled = false;
+                            //grpCustomer.Enabled = false;
                         }
                         else
                         {
@@ -158,7 +159,7 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpCustomer.Enabled = true;
+                //grpCustomer.Enabled = true;
                 txtCustomerName.Focus();
                 txtCustomerName.SelectionStart = txtCustomerName.MaxLength;
             }
@@ -192,7 +193,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is Updated", clsUtility.strProjectTitle);
                             LoadData();
                             ClearAll();
-                            grpCustomer.Enabled = false;
+                            //grpCustomer.Enabled = false;
                         }
                         else
                         {
@@ -227,7 +228,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpCustomer.Enabled = false;
+                        //grpCustomer.Enabled = false;
                         //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, clsUtility.IsAdmin);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
@@ -253,7 +254,7 @@ namespace TAILORING.Masters
                 LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpCustomer.Enabled = false;
+                //grpCustomer.Enabled = false;
             }
         }
 
@@ -279,7 +280,7 @@ namespace TAILORING.Masters
                     txtCustomerAddress.Text = dgvCustomerMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCustomerMobileNo.Text = dgvCustomerMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCustomerEmailID.Text = dgvCustomerMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    grpCustomer.Enabled = false;
+                    //grpCustomer.Enabled = false;
                     txtCustomerName.Focus();
                 }
                 catch { }
@@ -294,17 +295,21 @@ namespace TAILORING.Masters
                 return;
             }
         }
-
+        public int GlowAmount { get; set; }
+        public int GlowFeather { get; set; }
         private void Customer_Master_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+           
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            btnUpdate.Font = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 14.3f,FontStyle.Bold);
+            //btnAdd.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnUpdate.BackgroundImage = B_Leave;
+            //btnDelete.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
+
+           // ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvCustomerMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -313,7 +318,7 @@ namespace TAILORING.Masters
 
             LoadData();
 
-            grpCustomer.Enabled = false;
+            //grpCustomer.Enabled = false;
         }
 
         private void btnAdd_MouseEnter(object sender, EventArgs e)
@@ -388,11 +393,15 @@ namespace TAILORING.Masters
         private void dgvCustomerMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvCustomerMaster);
-            ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
+           // ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvCustomerMaster.Columns["CustomerID"].Visible = false;
             dgvCustomerMaster.Columns["LastChange"].Visible = false;
-
-            lblTotalRecords.Text = "Total Records : " + dgvCustomerMaster.Rows.Count;
+           
+            
+            dgvCustomerMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomerMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            kryptonHeaderGroup1.ValuesPrimary.Heading= "Total Records : " + dgvCustomerMaster.Rows.Count;
+            
         }
 
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
@@ -462,6 +471,11 @@ namespace TAILORING.Masters
             {
                 dgvCustomerMaster.DataSource = null;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

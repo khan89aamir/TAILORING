@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Masters
 {
-    public partial class frmGSTMaster : Form
+    public partial class frmGSTMaster : KryptonForm
     {
         public frmGSTMaster()
         {
@@ -27,14 +28,14 @@ namespace TAILORING.Masters
         double CGST = 0, SGST = 0;
         private void frmGSTMaster_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+            //btnAdd.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnDelete.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnEdit, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvGSTMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -293,11 +294,14 @@ namespace TAILORING.Masters
         private void dgvGSTMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvGSTMaster);
-            ObjUtil.SetDataGridProperty(dgvGSTMaster, DataGridViewAutoSizeColumnsMode.Fill);
+          //  ObjUtil.SetDataGridProperty(dgvGSTMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvGSTMaster.Columns["GSTID"].Visible = false;
             dgvGSTMaster.Columns["LastChange"].Visible = false;
 
-            lblTotalRecords.Text = "Total Records : " + dgvGSTMaster.Rows.Count;
+            dgvGSTMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvGSTMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            kryptonHeaderGroup1.ValuesSecondary.Heading = "Total Records : " + dgvGSTMaster.Rows.Count;
+            
         }
 
         private void txtCGST_TextChanged(object sender, EventArgs e)

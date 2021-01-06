@@ -116,20 +116,22 @@ namespace TAILORING.Order
             flowGarmentList.Controls.Clear();
             for (int i = 0; i < dtGarmentList.Rows.Count; i++)
             {
-                Panel panel = new Panel();
+                //Panel panel = new Panel();
+                FlowLayoutPanel panel = new FlowLayoutPanel();
+
                 PictureBox pic = new PictureBox();
                 Label lbl = new Label();
 
                 panel.Name = "pnl";
-                panel.Size = new Size(120, 220);
+                panel.Size = new Size(120, 200);
                 panel.Cursor = Cursors.Hand;
 
                 lbl.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
                 lbl.Text = dtGarmentList.Rows[i]["GarmentName"].ToString();
                 //lbl.AutoSize = true;
-                lbl.BackColor = Color.Red;
-                //lbl.Location = new Point(pic.Location.X, pic.Location.Y + 20);
+                //lbl.Location = new Point(pic.Location.X, pic.Size.Height+20);
                 lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                lbl.TextAlign = ContentAlignment.TopCenter;
 
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 if (System.IO.File.Exists(dtGarmentList.Rows[i]["Photo"].ToString()))
@@ -141,7 +143,7 @@ namespace TAILORING.Order
                     pic.Image = TAILORING.Properties.Resources.NoImage;
                 }
                 pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
-                pic.Size = new Size(111, 200);
+                pic.Size = new Size(panel.Size.Width-10, panel.Size.Height - 20);
                 pic.Click += Pic_GarmentList_Click;
                 pic.BorderStyle = BorderStyle.None;
 

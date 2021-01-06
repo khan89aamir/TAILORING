@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Masters
 {
-    public partial class Employee_Details : Form
+    public partial class Employee_Details : KryptonForm
     {
         public Employee_Details()
         {
@@ -40,29 +41,19 @@ namespace TAILORING.Masters
             dtpDOB.ShowCheckBox = true;
             dtpDOB.Checked = false;
 
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+            //btnAdd.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnUpdate.BackgroundImage = B_Leave;
+            //btnDelete.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadData();
         }
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
-        }
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAll();
@@ -287,29 +278,32 @@ namespace TAILORING.Masters
                 if (ObjUtil.ValidateTable(dataTable))
                 {
                     dgvEmployee.DataSource = dataTable;
-                    lblTotalRecords.Text = "Total Employee Count : " + dgvEmployee.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Employee Count : " + dgvEmployee.Rows.Count.ToString();
                 }
                 else
                 {
                     dgvEmployee.DataSource = null;
-                    lblTotalRecords.Text = "Total Employee Count : 0";
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Employee Count : 0";
                 }
             }
             else
             {
                 dgvEmployee.DataSource = null;
-                lblTotalRecords.Text = "Total Employee Count : 0";
+                grpCustomerGridview.ValuesSecondary.Heading = "Total Employee Count : 0";
             }
         }
 
         private void dgvEmployee_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvEmployee);
-            ObjUtil.SetDataGridProperty(dgvEmployee, DataGridViewAutoSizeColumnsMode.Fill);
+            //ObjUtil.SetDataGridProperty(dgvEmployee, DataGridViewAutoSizeColumnsMode.Fill);
             dgvEmployee.Columns["Photo"].Visible = false;
             dgvEmployee.Columns["EmpID"].Visible = false;
             dgvEmployee.Columns["LastChange"].Visible = false;
-            lblTotalRecords.Text = "Total Records : " + dgvEmployee.Rows.Count;
+
+            dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvEmployee.Rows.Count;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

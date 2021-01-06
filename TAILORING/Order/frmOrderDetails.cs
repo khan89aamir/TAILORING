@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmOrderDetails : Form
+    public partial class frmOrderDetails : KryptonForm
     {
         public frmOrderDetails()
         {
@@ -41,7 +42,7 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    lblCount.Text = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
@@ -53,8 +54,11 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
-            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
-            
+            //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
+
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
         }

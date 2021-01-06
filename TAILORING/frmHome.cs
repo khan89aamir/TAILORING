@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 //using TAILORING.Barcode;
 //using TAILORING.Settings;
 
 namespace TAILORING
 {
-    public partial class frmHome : Form
+    public partial class frmHome : KryptonForm
     {
         public frmHome()
         {

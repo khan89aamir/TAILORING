@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Masters
 {
-    public partial class frmCompanyMaster : Form
+    public partial class frmCompanyMaster : KryptonForm
     {
         public frmCompanyMaster()
         {
@@ -27,14 +28,14 @@ namespace TAILORING.Masters
 
         private void frmCompanyMaster_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+            //btnAdd.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnUpdate.BackgroundImage = B_Leave;
+            //btnDelete.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvCompanyMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -299,16 +300,6 @@ namespace TAILORING.Masters
             }
         }
 
-        private void txtCompanyName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtCompanyName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
-        }
-
         private void dgvCompanyMaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 || e.ColumnIndex >= 0)
@@ -327,6 +318,18 @@ namespace TAILORING.Masters
                 }
                 catch { }
             }
+        }
+
+        private void dgvCompanyMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ObjUtil.SetRowNumber(dgvCompanyMaster);
+            //ObjUtil.SetDataGridProperty(dgvCompanyMaster, DataGridViewAutoSizeColumnsMode.Fill);
+            dgvCompanyMaster.Columns["CompanyID"].Visible = false;
+            dgvCompanyMaster.Columns["DefaultValue"].Visible = false;
+            dgvCompanyMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCompanyMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvCompanyMaster.Rows.Count;
         }
     }
 }

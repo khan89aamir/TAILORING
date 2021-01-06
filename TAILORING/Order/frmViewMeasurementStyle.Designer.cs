@@ -31,7 +31,6 @@
             this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.lblOrderNo = new System.Windows.Forms.Label();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList.SuspendLayout();
             this.grpMeasurement.SuspendLayout();
             this.grpStyle.SuspendLayout();
@@ -93,24 +93,10 @@
             this.grpMeasurement.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpMeasurement.Location = new System.Drawing.Point(215, 61);
             this.grpMeasurement.Name = "grpMeasurement";
-            this.grpMeasurement.Size = new System.Drawing.Size(468, 165);
+            this.grpMeasurement.Size = new System.Drawing.Size(638, 165);
             this.grpMeasurement.TabIndex = 357;
             this.grpMeasurement.TabStop = false;
             this.grpMeasurement.Text = "Measurement :";
-            // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.IsEditable = false;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(451, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // label4
             // 
@@ -118,7 +104,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(766, 26);
+            this.label4.Location = new System.Drawing.Point(921, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 17);
             this.label4.TabIndex = 353;
@@ -130,7 +116,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(502, 26);
+            this.label14.Location = new System.Drawing.Point(669, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 352;
@@ -141,7 +127,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(534, 30);
+            this.label3.Location = new System.Drawing.Point(692, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 350;
@@ -152,7 +138,7 @@
             this.cmbFitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFitType.FormattingEnabled = true;
-            this.cmbFitType.Location = new System.Drawing.Point(613, 24);
+            this.cmbFitType.Location = new System.Drawing.Point(763, 24);
             this.cmbFitType.Name = "cmbFitType";
             this.cmbFitType.Size = new System.Drawing.Size(150, 25);
             this.cmbFitType.TabIndex = 351;
@@ -162,7 +148,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 30);
+            this.label1.Location = new System.Drawing.Point(426, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 348;
@@ -173,7 +159,7 @@
             this.cmbStichType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStichType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStichType.FormattingEnabled = true;
-            this.cmbStichType.Location = new System.Drawing.Point(350, 24);
+            this.cmbStichType.Location = new System.Drawing.Point(511, 24);
             this.cmbStichType.Name = "cmbStichType";
             this.cmbStichType.Size = new System.Drawing.Size(150, 25);
             this.cmbStichType.TabIndex = 349;
@@ -197,7 +183,7 @@
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
             this.flowStyleImage.Location = new System.Drawing.Point(21, 187);
             this.flowStyleImage.Name = "flowStyleImage";
-            this.flowStyleImage.Size = new System.Drawing.Size(742, 221);
+            this.flowStyleImage.Size = new System.Drawing.Size(912, 221);
             this.flowStyleImage.TabIndex = 338;
             // 
             // grpStyle
@@ -219,7 +205,7 @@
             this.grpStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpStyle.Location = new System.Drawing.Point(225, 275);
             this.grpStyle.Name = "grpStyle";
-            this.grpStyle.Size = new System.Drawing.Size(787, 420);
+            this.grpStyle.Size = new System.Drawing.Size(957, 420);
             this.grpStyle.TabIndex = 356;
             this.grpStyle.TabStop = false;
             this.grpStyle.Text = "Style :";
@@ -229,7 +215,7 @@
             this.cmbStyleQTY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.FormattingEnabled = true;
-            this.cmbStyleQTY.Location = new System.Drawing.Point(161, 24);
+            this.cmbStyleQTY.Location = new System.Drawing.Point(163, 24);
             this.cmbStyleQTY.Name = "cmbStyleQTY";
             this.cmbStyleQTY.Size = new System.Drawing.Size(65, 25);
             this.cmbStyleQTY.TabIndex = 347;
@@ -241,7 +227,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(160, 55);
+            this.checkBox1.Location = new System.Drawing.Point(236, 26);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 346;
@@ -256,7 +242,7 @@
             this.flowStyleName.BackColor = System.Drawing.Color.White;
             this.flowStyleName.Location = new System.Drawing.Point(21, 96);
             this.flowStyleName.Name = "flowStyleName";
-            this.flowStyleName.Size = new System.Drawing.Size(742, 84);
+            this.flowStyleName.Size = new System.Drawing.Size(912, 84);
             this.flowStyleName.TabIndex = 339;
             // 
             // lnkAddItem
@@ -279,7 +265,7 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(945, 9);
+            this.btnCancel.Location = new System.Drawing.Point(1115, 9);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 23);
             this.btnCancel.TabIndex = 355;
@@ -293,7 +279,7 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(854, 9);
+            this.btnSave.Location = new System.Drawing.Point(1024, 9);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 23);
             this.btnSave.TabIndex = 354;
@@ -338,7 +324,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1045, 40);
+            this.panel2.Size = new System.Drawing.Size(1215, 40);
             this.panel2.TabIndex = 352;
             // 
             // dataGridView1
@@ -367,7 +353,7 @@
             this.grpSKUStatus.BackColor = System.Drawing.Color.Transparent;
             this.grpSKUStatus.Controls.Add(this.dataGridView1);
             this.grpSKUStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSKUStatus.Location = new System.Drawing.Point(699, 61);
+            this.grpSKUStatus.Location = new System.Drawing.Point(869, 61);
             this.grpSKUStatus.Name = "grpSKUStatus";
             this.grpSKUStatus.Size = new System.Drawing.Size(334, 173);
             this.grpSKUStatus.TabIndex = 355;
@@ -381,11 +367,25 @@
             this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
             this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNo.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderNo.Location = new System.Drawing.Point(850, 45);
+            this.lblOrderNo.Location = new System.Drawing.Point(1020, 45);
             this.lblOrderNo.Name = "lblOrderNo";
             this.lblOrderNo.Size = new System.Drawing.Size(76, 19);
             this.lblOrderNo.TabIndex = 356;
             this.lblOrderNo.Text = "OrderNo";
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(621, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmViewMeasurementStyle
             // 
@@ -393,7 +393,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1045, 701);
+            this.ClientSize = new System.Drawing.Size(1215, 701);
             this.Controls.Add(this.lblOrderNo);
             this.Controls.Add(this.grpSKUList);
             this.Controls.Add(this.grpMeasurement);

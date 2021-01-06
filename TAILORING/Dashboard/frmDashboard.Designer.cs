@@ -46,8 +46,8 @@
             this.sPanel1 = new TAILORING.SPanel();
             this.sPanel2 = new TAILORING.SPanel();
             this.sPanel3 = new TAILORING.SPanel();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
             this.sPanel2.SuspendLayout();
@@ -268,17 +268,6 @@
             this.sPanel3.Size = new System.Drawing.Size(189, 261);
             this.sPanel3.TabIndex = 363;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(56, 77);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 17);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "INV-04";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -289,6 +278,17 @@
             this.label13.Size = new System.Drawing.Size(53, 17);
             this.label13.TabIndex = 4;
             this.label13.Text = "INV-06";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(56, 77);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 17);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "INV-04";
             // 
             // frmDashboard
             // 
@@ -313,7 +313,7 @@
             this.Name = "frmDashboard";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = "Dashboard";            
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.sPanel1.ResumeLayout(false);

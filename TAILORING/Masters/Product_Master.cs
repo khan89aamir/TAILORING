@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Masters
 {
-    public partial class Product_Master : Form
+    public partial class Product_Master : KryptonForm
     {
         public Product_Master()
         {
@@ -279,14 +280,14 @@ namespace TAILORING.Masters
 
         private void Product_Master_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+            //btnAdd.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnEdit.BackgroundImage = B_Leave;
+            //btnUpdate.BackgroundImage = B_Leave;
+            //btnDelete.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
 
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -364,12 +365,15 @@ namespace TAILORING.Masters
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["Photo"].Visible = false;
             dataGridView1.Columns["LastChange"].Visible = false;
 
-            lblTotalRecords.Text = "Total Records : " + dataGridView1.Rows.Count;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            grpGridview.ValuesSecondary.Heading = "Total Records : " + dataGridView1.Rows.Count;
         }
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)

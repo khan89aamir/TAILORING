@@ -115,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     <Compile Include="Masters\frmGSTMaster.Designer.cs">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="SPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SplashWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +242,9 @@
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
       <LastGenOutput>frmHome1.Designer.cs</LastGenOutput>

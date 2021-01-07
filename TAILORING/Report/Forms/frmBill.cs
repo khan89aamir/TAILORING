@@ -23,7 +23,7 @@ namespace TAILORING.Report.Forms
 
         private void frmBill_Load(object sender, EventArgs e)
         {
-            OrderID = "1";
+           // OrderID = "1";
             LoadData();
 
 

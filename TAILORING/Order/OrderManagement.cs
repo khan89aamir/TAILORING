@@ -23,7 +23,7 @@ namespace TAILORING.Order
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
 
-        DataTable dt = null;
+        DataTable dtGarment = null;
 
         DataTable dtOrder = new DataTable();
         DataTable dtOrderDetails = new DataTable();
@@ -35,18 +35,23 @@ namespace TAILORING.Order
 
         int CustomerID = 0;
         int OrderID = 0;
+        double CGST = 0, SGST = 0;
         string InvoiceNo = string.Empty;
+        string GarmentName = string.Empty;
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             btnMeasurement.BackgroundImage = B_Leave;
             btnSave.BackgroundImage = B_Leave;
+            btnSaveCustomer.BackgroundImage = B_Leave;
+            btnNewCustomer.BackgroundImage = B_Leave;
 
             InitItemTable();
             InitOrderDetailsTable(); //Order Details
             InitMeasurementTable(); //Measurement
             InitStyleTable(); //Style
             InitBodyPostureTable(); //BodyPosture
+            FillGSTData();// Load CGST,SGST
 
             dtpTrailDate.Value.AddDays(4);
             dtpDeliveryDate.Value.AddDays(5);
@@ -58,7 +63,6 @@ namespace TAILORING.Order
             dtOrder.Columns.Add("GarmentID");
             dtOrder.Columns.Add("StichTypeID");
             dtOrder.Columns.Add("FitTypeID");
-            dtOrder.Columns.Add("FabricCode");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
             dtOrder.Columns.Add("Service");
@@ -139,15 +143,15 @@ namespace TAILORING.Order
 
         private void FillGarmentData()
         {
-            dt = null;
+            dtGarment = null;
             //dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblProductMaster", "GarmentID,GarmentName,Rate", "OrderType=" + cmbOrderType.SelectedIndex, "GarmentName ASC");
             ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbOrderType.SelectedIndex, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product_Rate");
             if (ObjUtil.ValidateDataSet(ds))
             {
-                dt = ds.Tables[0];
-                cmbGarmentName.DataSource = dt;
-                cmbGarmentName.DisplayMember = "GarmentName";
+                dtGarment = ds.Tables[0];
+                cmbGarmentName.DataSource = dtGarment;
+                cmbGarmentName.DisplayMember = "GarmentCodeName";
                 cmbGarmentName.ValueMember = "GarmentID";
             }
             else
@@ -157,6 +161,26 @@ namespace TAILORING.Order
 
             cmbGarmentName.SelectedIndex = -1;
         }
+
+        private void FillGSTData()
+        {
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GSTData");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    CGST = Math.Round(Convert.ToDouble(dt.Rows[0]["CGST"]), 1);
+                    SGST = Math.Round(Convert.ToDouble(dt.Rows[0]["SGST"]), 1);
+
+                    lblCGST.Text = lblCGST.Text + " (" + CGST + "%) :";
+                    lblSGST.Text = lblSGST.Text + " (" + SGST + "%) :";
+                }
+                txtCGST.Text = "0";
+                txtSGST.Text = "0";
+            }
+        }
+
         private void rdSearchByCustomerName_CheckedChanged(object sender, EventArgs e)
         {
             if (rdSearchByCustomerName.Checked)
@@ -168,6 +192,8 @@ namespace TAILORING.Order
             {
                 txtSearchByCustomerName.Enabled = false;
                 txtSearchByCustomerName.Clear();
+
+                ClearCustomerFields(false);
             }
         }
 
@@ -182,6 +208,8 @@ namespace TAILORING.Order
             {
                 txtSearchByMobileNo.Enabled = false;
                 txtSearchByMobileNo.Clear();
+
+                ClearCustomerFields(false);
             }
         }
 
@@ -239,6 +267,13 @@ namespace TAILORING.Order
                 txtSearchByCustomerName.Focus();
                 txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                 txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+
+                btnMeasurement.Enabled = true;
+            }
+            else
+            {
+                btnMeasurement.Enabled = false;
             }
             cmbOrderType.Enabled = true;
         }
@@ -267,6 +302,13 @@ namespace TAILORING.Order
                 {
                     txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                     txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                    txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+
+                    btnMeasurement.Enabled = true;
+                }
+                else
+                {
+                    btnMeasurement.Enabled = false;
                 }
             }
         }
@@ -281,6 +323,13 @@ namespace TAILORING.Order
                 txtSearchByMobileNo.Focus();
                 txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
                 txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
+                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+
+                btnMeasurement.Enabled = true;
+            }
+            else
+            {
+                btnMeasurement.Enabled = false;
             }
             cmbOrderType.Enabled = true;
         }
@@ -292,8 +341,6 @@ namespace TAILORING.Order
                 txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
                 txtSearchByMobileNo.Focus();
                 SearchByCustomerID();
-                //lblCustomerName.Text = dgv.Rows[0].Cells["Name"].ToString();
-                //lblCustomerAdd.Text = dgv.Rows[0].Cells["Address"].ToString();
             }
             cmbOrderType.Enabled = true;
         }
@@ -307,52 +354,57 @@ namespace TAILORING.Order
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            ObjUtil.SetRowNumber(dataGridView1);
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
-            dataGridView1.Columns["GarmentID"].Visible = false;
-            dataGridView1.Columns["Photo"].Visible = false;
-            if (dataGridView1.Columns.Contains("ServiceID"))
+            try
             {
-                dataGridView1.Columns["ServiceID"].Visible = false;
-            }
-            if (dataGridView1.Columns.Contains("Measurement"))
-            {
-                dataGridView1.Columns["Measurement"].Visible = false;
-            }
-            if (dataGridView1.Columns.Contains("Style"))
-            {
-                dataGridView1.Columns["Style"].Visible = false;
-            }
-            //if (dataGridView1.Columns.Contains("StichTypeID"))
-            //{
-            dataGridView1.Columns["StichTypeID"].Visible = false;
-            //}
-            //if (dataGridView1.Columns.Contains("FitTypeID"))
-            //{
-            dataGridView1.Columns["FitTypeID"].Visible = false;
-            //}
-            CalcTotalAmount();
+                ObjUtil.SetRowNumber(dataGridView1);
+                ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+                dataGridView1.Columns["GarmentID"].Visible = false;
+                dataGridView1.Columns["Photo"].Visible = false;
+                if (dataGridView1.Columns.Contains("ServiceID"))
+                {
+                    dataGridView1.Columns["ServiceID"].Visible = false;
+                }
+                if (dataGridView1.Columns.Contains("Measurement"))
+                {
+                    dataGridView1.Columns["Measurement"].Visible = false;
+                }
+                if (dataGridView1.Columns.Contains("Style"))
+                {
+                    dataGridView1.Columns["Style"].Visible = false;
+                }
+                //if (dataGridView1.Columns.Contains("StichTypeID"))
+                //{
+                dataGridView1.Columns["StichTypeID"].Visible = false;
+                //}
+                //if (dataGridView1.Columns.Contains("FitTypeID"))
+                //{
+                dataGridView1.Columns["FitTypeID"].Visible = false;
+                //}
+                CalcTotalAmount();
 
-            if (dataGridView1.Columns.Contains("ColDelete"))
-            {
-                dataGridView1.Columns.Remove("ColDelete");
+                if (dataGridView1.Columns.Contains("ColDelete"))
+                {
+                    dataGridView1.Columns.Remove("ColDelete");
+                }
+                DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
+                ColDelete.DataPropertyName = "Delete";
+                ColDelete.HeaderText = "Delete";
+                ColDelete.Name = "ColDelete";
+                ColDelete.Text = "Delete";
+                ColDelete.UseColumnTextForButtonValue = true;
+                //dataGridView1.Columns.Add(ColDelete);
+                dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
             }
-            DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
-            ColDelete.DataPropertyName = "Delete";
-            ColDelete.HeaderText = "Delete";
-            ColDelete.Name = "ColDelete";
-            ColDelete.Text = "Delete";
-            ColDelete.UseColumnTextForButtonValue = true;
-            //dataGridView1.Columns.Add(ColDelete);
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
+            catch { }
         }
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataRow[] drow = dt.Select("GarmentID=" + cmbGarmentName.SelectedValue);
+            DataRow[] drow = dtGarment.Select("GarmentID=" + cmbGarmentName.SelectedValue);
             if (drow.Length > 0)
             {
                 txtRate.Text = drow[0]["Rate"].ToString();
+                GarmentName = drow[0]["GarmentName"].ToString();
             }
             else
             {
@@ -364,8 +416,7 @@ namespace TAILORING.Order
         private void AddDefaultRow()
         {
             DataRow dRow = dtOrder.NewRow();
-            dRow["FabricCode"] = "sh12";
-            dRow["GarmentCode"] = "sh12";
+            dRow["GarmentCode"] = "sh01";
             dRow["GarmentID"] = 1;
             dRow["GarmentName"] = "Shirt";
             dRow["Trim Amount"] = 10;
@@ -381,7 +432,6 @@ namespace TAILORING.Order
             dtOrder.Rows.Add(dRow);
 
             dRow = dtOrder.NewRow();
-            dRow["FabricCode"] = "sh12";
             dRow["GarmentCode"] = "th01";
             dRow["GarmentID"] = 1002;
             dRow["GarmentName"] = "Trouser";
@@ -405,7 +455,7 @@ namespace TAILORING.Order
 
             //DataRow dRow = dtOrder.NewRow();
             //dRow["GarmentID"] = cmbGarmentName.SelectedValue;
-            //dRow["GarmentName"] = cmbGarmentName.Text;
+            //dRow["GarmentName"] = GarmentName;
             //dRow["Trim Amount"] = trim;
             //dRow["Rate"] = txtRate.Text;
             //dRow["QTY"] = NumericQTY.Value;
@@ -422,21 +472,23 @@ namespace TAILORING.Order
         private void CalcTotalAmount()
         {
             object total = 0;
+            double pCGST = 0, pSGST = 0, GrossAmt = 0;
             try
             {
                 if (ObjUtil.ValidateTable(dtOrder) && ObjUtil.ValidateTable((DataTable)dataGridView1.DataSource))
                 {
                     total = dtOrder.Compute("SUM(Total)", string.Empty);
                 }
-                else
-                {
-                    txtAdvancePaid.Text = "0";
-                }
-                txtTailoringAmount.Text = total.ToString();
-                txtGrossAmt.Text = total.ToString();
 
-                double advancepaid = txtAdvancePaid.Text.Length > 0 ? Convert.ToDouble(txtAdvancePaid.Text) : 0;
-                txtAmtToBePaid.Text = (Convert.ToDouble(total) - advancepaid).ToString();
+                txtTailoringAmount.Text = total.ToString();
+                pCGST = Convert.ToDouble(total) * CGST * 0.01;
+                pSGST = Convert.ToDouble(total) * SGST * 0.01;
+
+                txtCGST.Text = pCGST.ToString();
+                txtSGST.Text = pSGST.ToString();
+
+                GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
+                txtGrossAmt.Text = GrossAmt.ToString();
             }
             catch { }
         }
@@ -460,37 +512,20 @@ namespace TAILORING.Order
             }
         }
 
-        private void txtAdvancePaid_TextChanged(object sender, EventArgs e)
-        {
-            if (txtAdvancePaid.Text.Length > 0)
-            {
-                double total = txtTailoringAmount.Text.Length > 0 ? Convert.ToDouble(txtTailoringAmount.Text) : 0;
-                if (Convert.ToDouble(txtAdvancePaid.Text) > total)
-                {
-                    clsUtility.ShowInfoMessage("Advance payment can't be exceeded with Tailoring amount..");
-                    txtAdvancePaid.Text = "0";
-                    return;
-                }
-            }
-            CalcTotalAmount();
-        }
-
         private void ResetGarmentDetails()
         {
             cmbGarmentName.SelectedIndex = -1;
             txtRate.Text = "0.00";
             NumericQTY.Value = 1;
             txtTrimsAmount.Text = "0";
-            txtFabricCode.Text = "";
-            txtFabricCode.Focus();
         }
 
         private void ClearAll()
         {
             txtGrossAmt.Text = "0";
-            txtAdvancePaid.Text = "0";
-            txtAmtToBePaid.Text = "0";
             txtTailoringAmount.Text = "0";
+            txtCGST.Text = "0";
+            txtSGST.Text = "0";
             txtCustomerID.Text = "0";
             InvoiceNo = string.Empty;
 
@@ -573,9 +608,10 @@ namespace TAILORING.Order
             ObjDAL.SetColumnData("OrderNo", SqlDbType.VarChar, InvoiceNo);
             ObjDAL.SetColumnData("OrderDate", SqlDbType.Date, dtpBookingDate.Value.ToString("yyyy-MM-dd"));
             ObjDAL.SetColumnData("TrailDate", SqlDbType.Date, dtpTrailDate.Value.ToString("yyyy-MM-dd"));
-            ObjDAL.SetColumnData("AdvanceAmount", SqlDbType.Decimal, txtAdvancePaid.Text.Length == 0 ? "0" : txtAdvancePaid.Text);
-            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtAmtToBePaid.Text);
+            ObjDAL.SetColumnData("TotalAmount", SqlDbType.Decimal, txtGrossAmt.Text);
+            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtGrossAmt.Text);
             ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
+            ObjDAL.SetColumnData("OrderMode", SqlDbType.VarChar, "System");
             ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID);
 
             int a = ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblSalesOrder", true);
@@ -812,16 +848,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void txtFabricCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ObjUtil.IsAlphaNumeric(e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Valid Fabric Code...", clsUtility.strProjectTitle);
-                txtFabricCode.Focus();
-            }
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
@@ -853,20 +879,8 @@ namespace TAILORING.Order
                         }
                         dataGridView1.DataSource = dt;
                         CalcTotalAmount();
-                        txtFabricCode.Focus();
                     }
                 }
-            }
-        }
-
-        private void txtAdvancePaid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox txt = (TextBox)sender;
-            e.Handled = ObjUtil.IsDecimal(txt, e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Valid Advance Amount...", clsUtility.strProjectTitle);
-                txtAdvancePaid.Focus();
             }
         }
 
@@ -917,40 +931,58 @@ namespace TAILORING.Order
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             ClearCustomerFields(true);
+            rdSearchByCustomerMobileNo.Checked = false;
+            rdSearchByCustomerName.Checked = false;
+            rdSearchByCustomerOrderNo.Checked = false;
+
+            txtCustomerName.Focus();
         }
 
         private void btnSaveCustomer_Click(object sender, EventArgs e)
         {
             SaveCustomer();
-            ClearCustomerFields(false);
         }
 
         private void SaveCustomer()
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
             {
-                if (DuplicateUser(0))
+                if (ValidateForm())
                 {
-                    ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
-
-                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
-                    if (b)
+                    if (DuplicateUser(0))
                     {
-                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                        ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+                        ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Output);
+
+                        bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
+                        if (b)
+                        {
+                            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..");
+
+                            DataTable dtout = ObjDAL.GetOutputParmData();
+                            if (ObjUtil.ValidateTable(dtout))
+                            {
+                                CustomerID = Convert.ToInt32(dtGarment.Rows[0][1]);
+                                txtCustomerID.Text = CustomerID.ToString();
+                                lnkAddItem.Enabled = true;
+                                btnMeasurement.Enabled = true;
+                            }
+                            ClearCustomerFields(false);
+                        }
+                        else
+                        {
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..");
+                        }
                     }
                     else
                     {
-                        clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..");
+                        txtCustomerName.Focus();
                     }
-                }
-                else
-                {
-                    clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..", clsUtility.strProjectTitle);
-                    txtCustomerName.Focus();
                 }
                 ObjDAL.ResetData();
             }
@@ -958,6 +990,29 @@ namespace TAILORING.Order
             {
                 clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
+        }
+
+        private bool ValidateForm()
+        {
+            if (ObjUtil.IsControlTextEmpty(txtCustomerName))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Name       ", clsUtility.strProjectTitle);
+                txtCustomerName.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerMobileNo))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Mobile No.      ", clsUtility.strProjectTitle);
+                txtCustomerMobileNo.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerAdd))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+                txtCustomerAdd.Focus();
+                return false;
+            }
+            return true;
         }
 
         private bool DuplicateUser(int i)
@@ -983,15 +1038,15 @@ namespace TAILORING.Order
 
         private void ClearCustomerFields(bool b)
         {
-            txtCustomerName.Clear();
-            txtCustomerMobileNo.Clear();
-            txtCustomerAdd.Clear();
-            txtCustomerName.Focus();
-
+            if (b == false)
+            {
+                txtCustomerName.Clear();
+                txtCustomerMobileNo.Clear();
+                txtCustomerAdd.Clear();
+            }
             txtCustomerName.Enabled = b;
             txtCustomerMobileNo.Enabled = b;
             txtCustomerAdd.Enabled = b;
-            txtCustomerName.Enabled = b;
             btnSaveCustomer.Enabled = b;
         }
     }

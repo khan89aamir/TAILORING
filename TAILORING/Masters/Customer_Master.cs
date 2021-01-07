@@ -50,12 +50,12 @@ namespace TAILORING.Masters
                 txtCustomerMobileNo.Focus();
                 return false;
             }
-            //else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
-            //{
-            //    clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
-            //    txtCustomerAddress.Focus();
-            //    return false;
-            //}
+            else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
+            {
+                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+                txtCustomerAddress.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -440,7 +440,7 @@ namespace TAILORING.Masters
             e.Handled = ObjUtil.IsNumeric(e);
             if (e.Handled == true)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
                 txt.Focus();
             }
         }

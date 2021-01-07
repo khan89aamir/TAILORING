@@ -8,6 +8,8 @@
             Product_Master = 13,
             Employee_Details = 14,
             frmCompanyMaster=15,
+            frmGSTMaster=12,
+            frmViewMeasurementStyle=13,
             Sales_Bill_Details = 23,
             Sales_Invoice = 24,
             frmSalesReport = 25,

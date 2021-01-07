@@ -189,6 +189,12 @@
     <Compile Include="Order\frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\frmViewMeasurementStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmViewMeasurementStyle.Designer.cs">
+      <DependentUpon>frmViewMeasurementStyle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\OrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,12 @@
     </Compile>
     <Compile Include="Report\Forms\frmBill.Designer.cs">
       <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmGSTMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmGSTMaster.Designer.cs">
+      <DependentUpon>frmGSTMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashWindow.cs">
       <SubType>Form</SubType>
@@ -263,6 +275,9 @@
     <EmbeddedResource Include="Order\frmOrderList.resx">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmViewMeasurementStyle.resx">
+      <DependentUpon>frmViewMeasurementStyle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Order\OrderManagement.resx">
       <DependentUpon>OrderManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RDLC\CustomerReceipt.rdlc" />
     <EmbeddedResource Include="Report\RDLC\Report1.rdlc" />
+    <EmbeddedResource Include="Masters\frmGSTMaster.resx">
+      <DependentUpon>frmGSTMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +371,8 @@
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Setting\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

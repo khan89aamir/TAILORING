@@ -70,7 +70,6 @@ namespace TAILORING
         {
             try
             {
-
                 clsUtility.DBName = "TAILORING_01";
                 //clsUtility.LoginID = 0;
                 //clsUtility.IsAdmin = false;
@@ -315,7 +314,24 @@ namespace TAILORING
             }
             else
             {
-                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("You have no rights to perform this task");
+            }
+        }
+
+        private void picGST_Click(object sender, EventArgs e)
+        {
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmGSTMaster) || clsUtility.IsAdmin)
+            {
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Masters.frmGSTMaster));
+                if (!b)
+                {
+                    Masters.frmGSTMaster Obj = new Masters.frmGSTMaster();
+                    Obj.Show();
+                }
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
         }
     }

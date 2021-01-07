@@ -18,6 +18,8 @@ namespace TAILORING.Others
 
         List<string> lstMendatoryColumn;
         public int ProductCount { get; set; }
+        public bool IsEditable { get; set; }
+
         DataTable dttemp;
         //FlowLayoutPanel pnlContainer;
 
@@ -45,7 +47,7 @@ namespace TAILORING.Others
         {
             DataSet ds = new DataSet();
             DataTable dtRetun = null;
-            dtRetun = dttemp;
+            dtRetun = dttemp.Copy();
             dtRetun.Rows.Clear();
             DataRow dRow = dtRetun.NewRow();
             //for (int j = 0; j < ProductCount; j++)
@@ -75,7 +77,7 @@ namespace TAILORING.Others
 
                     if (lstMendatoryColumn.Contains(curCol) && ctr[0].Text.Trim().Length == 0)
                     {
-                        MessageBox.Show("Please fill all the mandatory fields");
+                        CoreApp.clsUtility.ShowInfoMessage("Please fill all the mandatory fields");
                         return null;
                     }
                     else
@@ -138,6 +140,9 @@ namespace TAILORING.Others
                 txt.Location = new Point(110, 13);
                 txt.Enter += txtName_Enter;
                 txt.Leave += txtName_Leave;
+                txt.KeyPress += Decimal_Control_KeyPress;
+                txt.Enabled = IsEditable;
+                txt.BackColor = Color.White;
 
                 if (ObjUtil.ValidateTable(dt))
                     txt.Text = dt.Rows[0][label.Text].ToString();
@@ -149,6 +154,13 @@ namespace TAILORING.Others
 
                 flowLayoutPanel1.Controls.Add(panel);
             }
+        }
+
+        private void Decimal_Control_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //string k = e.KeyChar.ToString();
+            TextBox txt = (TextBox)sender;
+            e.Handled = ObjUtil.IsDecimal(txt, e);
         }
 
         private void txtName_Enter(object sender, EventArgs e)

@@ -335,5 +335,22 @@ namespace TAILORING
                 clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
         }
+
+        private void picProductRate_Click(object sender, EventArgs e)
+        {
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster) || clsUtility.IsAdmin)
+            {
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Masters.frmProductRateMaster));
+                if (!b)
+                {
+                    Masters.frmProductRateMaster Obj = new Masters.frmProductRateMaster();
+                    Obj.Show();
+                }
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task");
+            }
+        }
     }
 }

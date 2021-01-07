@@ -6,6 +6,7 @@
         {
             Customer_Master = 11,
             Product_Master = 13,
+            frmProductRateMaster=16,
             Employee_Details = 14,
             frmCompanyMaster=15,
             frmGSTMaster=12,

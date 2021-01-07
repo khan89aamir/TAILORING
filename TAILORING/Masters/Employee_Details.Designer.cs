@@ -270,7 +270,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(334, 226);
+            this.label16.Location = new System.Drawing.Point(332, 219);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 17);
             this.label16.TabIndex = 268;
@@ -291,14 +291,15 @@
             // 
             this.cmbActiveStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpEmployee.SetEffectType(this.cmbActiveStatus, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.cmbActiveStatus.FormattingEnabled = true;
             this.cmbActiveStatus.Items.AddRange(new object[] {
             "Active",
             "InActive"});
-            this.cmbActiveStatus.Location = new System.Drawing.Point(125, 226);
+            this.cmbActiveStatus.Location = new System.Drawing.Point(123, 219);
             this.cmbActiveStatus.Name = "cmbActiveStatus";
             this.grpEmployee.SetsGlowColor(this.cmbActiveStatus, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbActiveStatus.sGlowColor"))));
-            this.cmbActiveStatus.Size = new System.Drawing.Size(206, 21);
+            this.cmbActiveStatus.Size = new System.Drawing.Size(206, 25);
             this.cmbActiveStatus.TabIndex = 251;
             // 
             // label14
@@ -307,7 +308,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(332, 183);
+            this.label14.Location = new System.Drawing.Point(332, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 266;
@@ -328,14 +329,15 @@
             // 
             this.cmbEmployeeType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpEmployee.SetEffectType(this.cmbEmployeeType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbEmployeeType.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.cmbEmployeeType.FormattingEnabled = true;
             this.cmbEmployeeType.Items.AddRange(new object[] {
             "Admin",
             "Master"});
-            this.cmbEmployeeType.Location = new System.Drawing.Point(125, 183);
+            this.cmbEmployeeType.Location = new System.Drawing.Point(123, 179);
             this.cmbEmployeeType.Name = "cmbEmployeeType";
             this.grpEmployee.SetsGlowColor(this.cmbEmployeeType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbEmployeeType.sGlowColor"))));
-            this.cmbEmployeeType.Size = new System.Drawing.Size(206, 21);
+            this.cmbEmployeeType.Size = new System.Drawing.Size(206, 25);
             this.cmbEmployeeType.TabIndex = 250;
             // 
             // label5

@@ -48,7 +48,7 @@ namespace TAILORING.Masters
             //btnDelete.BackgroundImage = B_Leave;
             //btnCancel.BackgroundImage = B_Leave;
 
-            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadData();

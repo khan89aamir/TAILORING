@@ -46,12 +46,6 @@ namespace TAILORING.Masters
                 txtGarmentName.Focus();
                 return false;
             }
-            else if (ObjUtil.IsControlTextEmpty(txtRate))
-            {
-                clsUtility.ShowInfoMessage("Enter Rate for " + txtGarmentName, clsUtility.strProjectTitle);
-                txtRate.Focus();
-                return false;
-            }
             else if (ObjUtil.IsControlTextEmpty(cmbOrderType))
             {
                 clsUtility.ShowInfoMessage("Select Type of Order..", clsUtility.strProjectTitle);
@@ -127,8 +121,7 @@ namespace TAILORING.Masters
                 {
                     ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbOrderType.SelectedIndex, clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("GarmentType", SqlDbType.VarChar, cmbOrderType.SelectedItem.ToString(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Product");
@@ -177,8 +170,7 @@ namespace TAILORING.Masters
                     ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbOrderType.SelectedIndex, clsConnection_DAL.ParamType.Input);
+                    ObjDAL.SetStoreProcedureData("GarmentType", SqlDbType.VarChar, cmbOrderType.SelectedItem.ToString(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
 
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Update_Product");
@@ -246,16 +238,6 @@ namespace TAILORING.Masters
             }
         }
 
-        private void txtProductName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtProductName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
-        }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 || e.ColumnIndex >= 0)
@@ -266,8 +248,7 @@ namespace TAILORING.Masters
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentID"].Value);
                     txtGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
                     txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString();
-                    txtRate.Text = dataGridView1.SelectedRows[0].Cells["Rate"].Value.ToString();
-                    cmbOrderType.SelectedItem = dataGridView1.SelectedRows[0].Cells["OrderType"].Value.ToString();
+                    cmbOrderType.SelectedItem = dataGridView1.SelectedRows[0].Cells["GarmentType"].Value.ToString();
                     grpProduct.Enabled = false;
                     txtGarmentCode.Focus();
                 }
@@ -287,7 +268,7 @@ namespace TAILORING.Masters
             //btnDelete.BackgroundImage = B_Leave;
             //btnCancel.BackgroundImage = B_Leave;
 
-            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -297,18 +278,6 @@ namespace TAILORING.Masters
             LoadData();
 
             grpProduct.Focus();
-        }
-
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
 
         private void rdSearchByProduct_CheckedChanged(object sender, EventArgs e)
@@ -393,16 +362,6 @@ namespace TAILORING.Masters
             {
                 clsUtility.ShowInfoMessage("Enter Only Charactors or Number...", clsUtility.strProjectTitle);
                 txtGarmentCode.Focus();
-            }
-        }
-
-        private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ObjUtil.IsDecimal(txtRate, e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                txtRate.Focus();
             }
         }
     }

@@ -32,9 +32,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbOrderType = new System.Windows.Forms.ComboBox();
-            this.txtRate = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtGarmentCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,7 +79,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(703, 60);
+            this.label14.Location = new System.Drawing.Point(332, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 293;
@@ -93,78 +90,39 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label13.Location = new System.Drawing.Point(405, 64);
+            this.label13.Location = new System.Drawing.Point(14, 64);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 17);
+            this.label13.Size = new System.Drawing.Size(99, 17);
             this.label13.TabIndex = 292;
-            this.label13.Text = "Order Type :";
+            this.label13.Text = "Garment Type :";
             // 
             // cmbOrderType
             // 
             this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpProduct.SetEffectType(this.cmbOrderType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbOrderType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrderType.FormattingEnabled = true;
             this.cmbOrderType.Items.AddRange(new object[] {
-            "Normal",
-            "Urgent"});
-            this.cmbOrderType.Location = new System.Drawing.Point(496, 61);
+            "Top",
+            "Bottom"});
+            this.cmbOrderType.Location = new System.Drawing.Point(125, 64);
             this.cmbOrderType.Name = "cmbOrderType";
             this.grpProduct.SetsGlowColor(this.cmbOrderType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbOrderType.sGlowColor"))));
-            this.cmbOrderType.Size = new System.Drawing.Size(206, 21);
+            this.cmbOrderType.Size = new System.Drawing.Size(206, 25);
             this.cmbOrderType.TabIndex = 291;
-            // 
-            // txtRate
-            // 
-            this.txtRate.BackColor = System.Drawing.Color.White;
-            this.grpProduct.SetEffectType(this.txtRate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.txtRate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRate.Location = new System.Drawing.Point(122, 61);
-            this.txtRate.MaxLength = 100;
-            this.txtRate.Name = "txtRate";
-            this.grpProduct.SetsGlowColor(this.txtRate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtRate.sGlowColor"))));
-            this.txtRate.Size = new System.Drawing.Size(206, 25);
-            this.txtRate.TabIndex = 288;
-            this.txtRate.Enter += new System.EventHandler(this.txtProductName_Enter);
-            this.txtRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRate_KeyPress);
-            this.txtRate.Leave += new System.EventHandler(this.txtProductName_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(331, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 17);
-            this.label1.TabIndex = 290;
-            this.label1.Text = "*";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 17);
-            this.label4.TabIndex = 289;
-            this.label4.Text = "Rate :";
             // 
             // txtGarmentCode
             // 
             this.txtGarmentCode.BackColor = System.Drawing.Color.White;
             this.grpProduct.SetEffectType(this.txtGarmentCode, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtGarmentCode.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentCode.Location = new System.Drawing.Point(122, 13);
+            this.txtGarmentCode.Location = new System.Drawing.Point(125, 13);
             this.txtGarmentCode.MaxLength = 100;
             this.txtGarmentCode.Name = "txtGarmentCode";
             this.grpProduct.SetsGlowColor(this.txtGarmentCode, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtGarmentCode.sGlowColor"))));
             this.txtGarmentCode.Size = new System.Drawing.Size(206, 25);
             this.txtGarmentCode.TabIndex = 0;
-            this.txtGarmentCode.Enter += new System.EventHandler(this.txtProductName_Enter);
             this.txtGarmentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarmentCode_KeyPress);
-            this.txtGarmentCode.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // label3
             // 
@@ -172,7 +130,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(331, 11);
+            this.label3.Location = new System.Drawing.Point(333, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(15, 17);
             this.label3.TabIndex = 287;
@@ -184,7 +142,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(707, 10);
+            this.label2.Location = new System.Drawing.Point(696, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 17);
             this.label2.TabIndex = 285;
@@ -206,7 +164,7 @@
             this.lblProductName.AutoSize = true;
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductName.Location = new System.Drawing.Point(382, 17);
+            this.lblProductName.Location = new System.Drawing.Point(370, 17);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(106, 17);
             this.lblProductName.TabIndex = 187;
@@ -217,15 +175,13 @@
             this.txtGarmentName.BackColor = System.Drawing.Color.White;
             this.grpProduct.SetEffectType(this.txtGarmentName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentName.Location = new System.Drawing.Point(496, 13);
+            this.txtGarmentName.Location = new System.Drawing.Point(488, 13);
             this.txtGarmentName.MaxLength = 100;
             this.txtGarmentName.Name = "txtGarmentName";
             this.grpProduct.SetsGlowColor(this.txtGarmentName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtGarmentName.sGlowColor"))));
             this.txtGarmentName.Size = new System.Drawing.Size(206, 25);
             this.txtGarmentName.TabIndex = 1;
-            this.txtGarmentName.Enter += new System.EventHandler(this.txtProductName_Enter);
             this.txtGarmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
-            this.txtGarmentName.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // rdShowAll
             // 
@@ -270,9 +226,7 @@
             this.txtSearchByGarment.Size = new System.Drawing.Size(206, 25);
             this.txtSearchByGarment.TabIndex = 10;
             this.txtSearchByGarment.TextChanged += new System.EventHandler(this.txtSearchByProduct_TextChanged);
-            this.txtSearchByGarment.Enter += new System.EventHandler(this.txtProductName_Enter);
             this.txtSearchByGarment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
-            this.txtSearchByGarment.Leave += new System.EventHandler(this.txtProductName_Leave);
             // 
             // panel2
             // 
@@ -404,11 +358,8 @@
             this.grpProduct.Controls.Add(this.txtGarmentName);
             this.grpProduct.Controls.Add(this.cmbOrderType);
             this.grpProduct.Controls.Add(this.lblProductName);
-            this.grpProduct.Controls.Add(this.txtRate);
             this.grpProduct.Controls.Add(this.label2);
-            this.grpProduct.Controls.Add(this.label1);
             this.grpProduct.Controls.Add(this.label3);
-            this.grpProduct.Controls.Add(this.label4);
             this.grpProduct.Controls.Add(this.txtGarmentCode);
             this.grpProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpProduct.Enabled = false;
@@ -459,7 +410,8 @@
             // 
             // grpGridview
             // 
-            this.grpGridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpGridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGridview.Location = new System.Drawing.Point(32, 338);
             this.grpGridview.Name = "grpGridview";
@@ -551,9 +503,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGarmentCode;
-        private System.Windows.Forms.TextBox txtRate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbOrderType;

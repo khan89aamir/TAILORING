@@ -35,7 +35,7 @@ namespace TAILORING.Masters
             //btnDelete.BackgroundImage = B_Leave;
             //btnCancel.BackgroundImage = B_Leave;
 
-            //ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnEdit, btnDelete, btnCancel);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnEdit, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvGSTMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;

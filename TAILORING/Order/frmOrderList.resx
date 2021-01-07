@@ -178,553 +178,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
-  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="kryptonHeaderGroup1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Name" xml:space="preserve">
-    <value>txtCustomerOrderNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Name" xml:space="preserve">
-    <value>radByOrderNo</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Name" xml:space="preserve">
-    <value>txtCustomerID</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Name" xml:space="preserve">
-    <value>dtpToDate</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
-    <value>txtCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Name" xml:space="preserve">
-    <value>radByCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Name" xml:space="preserve">
-    <value>dtpFromDate</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Name" xml:space="preserve">
-    <value>radByCustomerName</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
-    <value>txtCustomerName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Name" xml:space="preserve">
-    <value>radByDate</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByDate.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Name" xml:space="preserve">
-    <value>rdShowAll</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt, style=Bold</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 55</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1130, 123</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>317</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Search By</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtCustomerID.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="txtCustomerID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>673, 71</value>
-  </data>
-  <data name="txtCustomerID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 25</value>
-  </data>
-  <data name="txtCustomerID.TabIndex" type="System.Int32, mscorlib">
-    <value>248</value>
-  </data>
-  <data name="txtCustomerID.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Name" xml:space="preserve">
-    <value>txtCustomerID</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 75</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 17</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>247</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>To : </value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="dtpToDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dtpToDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="dtpToDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 71</value>
-  </data>
-  <data name="dtpToDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 25</value>
-  </data>
-  <data name="dtpToDate.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Name" xml:space="preserve">
-    <value>dtpToDate</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtCustomerMobileNo.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerMobileNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="txtCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 27</value>
-  </data>
-  <data name="txtCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 25</value>
-  </data>
-  <data name="txtCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
-    <value>txtCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="radByCustomerMobileNo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radByCustomerMobileNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="radByCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 27</value>
-  </data>
-  <data name="radByCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 21</value>
-  </data>
-  <data name="radByCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="radByCustomerMobileNo.Text" xml:space="preserve">
-    <value>Mobile No. :</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Name" xml:space="preserve">
-    <value>radByCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="dtpFromDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="dtpFromDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="dtpFromDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 71</value>
-  </data>
-  <data name="dtpFromDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 25</value>
-  </data>
-  <data name="dtpFromDate.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Name" xml:space="preserve">
-    <value>dtpFromDate</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="radByCustomerName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radByCustomerName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="radByCustomerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 27</value>
-  </data>
-  <data name="radByCustomerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 21</value>
-  </data>
-  <data name="radByCustomerName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="radByCustomerName.Text" xml:space="preserve">
-    <value>Customer Name :</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Name" xml:space="preserve">
-    <value>radByCustomerName</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="txtCustomerName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="txtCustomerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 25</value>
-  </data>
-  <data name="txtCustomerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 25</value>
-  </data>
-  <data name="txtCustomerName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
-    <value>txtCustomerName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="radByDate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radByDate.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="radByDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 75</value>
-  </data>
-  <data name="radByDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 21</value>
-  </data>
-  <data name="radByDate.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="radByDate.Text" xml:space="preserve">
-    <value>From Date :</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Name" xml:space="preserve">
-    <value>radByDate</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByDate.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="rdShowAll.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdShowAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="rdShowAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 75</value>
-  </data>
-  <data name="rdShowAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 21</value>
-  </data>
-  <data name="rdShowAll.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="rdShowAll.Text" xml:space="preserve">
-    <value>Show All</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Name" xml:space="preserve">
-    <value>rdShowAll</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="dgvOrderDetails.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="dgvOrderDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 213</value>
-  </data>
-  <data name="dgvOrderDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1136, 250</value>
-  </data>
-  <data name="dgvOrderDetails.TabIndex" type="System.Int32, mscorlib">
-    <value>318</value>
-  </data>
-  <data name="&gt;&gt;dgvOrderDetails.Name" xml:space="preserve">
-    <value>dgvOrderDetails</value>
-  </data>
-  <data name="&gt;&gt;dgvOrderDetails.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvOrderDetails.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvOrderDetails.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCount.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="lblCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 191</value>
-  </data>
-  <data name="lblCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 17</value>
-  </data>
-  <data name="lblCount.TabIndex" type="System.Int32, mscorlib">
-    <value>320</value>
-  </data>
-  <data name="lblCount.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCount.Name" xml:space="preserve">
-    <value>lblCount</value>
-  </data>
-  <data name="&gt;&gt;lblCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCount.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblCount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 190</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>319</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Order Count :</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="kryptonHeaderGroup1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
   </data>
   <data name="txtCustomerOrderNo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -733,13 +193,21 @@
     <value>Times New Roman, 11.25pt</value>
   </data>
   <data name="txtCustomerOrderNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>901, 27</value>
+    <value>904, 16</value>
+  </data>
+  <data name="txtCustomerOrderNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
   </data>
   <data name="txtCustomerOrderNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 25</value>
   </data>
   <data name="txtCustomerOrderNo.TabIndex" type="System.Int32, mscorlib">
-    <value>250</value>
+    <value>262</value>
   </data>
   <data name="&gt;&gt;txtCustomerOrderNo.Name" xml:space="preserve">
     <value>txtCustomerOrderNo</value>
@@ -763,13 +231,21 @@
     <value>NoControl</value>
   </data>
   <data name="radByOrderNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>792, 27</value>
+    <value>795, 16</value>
+  </data>
+  <data name="radByOrderNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
   </data>
   <data name="radByOrderNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 21</value>
   </data>
   <data name="radByOrderNo.TabIndex" type="System.Int32, mscorlib">
-    <value>249</value>
+    <value>261</value>
   </data>
   <data name="radByOrderNo.Text" xml:space="preserve">
     <value>Order No. :</value>
@@ -785,6 +261,518 @@
   </data>
   <data name="&gt;&gt;radByOrderNo.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="txtCustomerID.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtCustomerID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="txtCustomerID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>676, 60</value>
+  </data>
+  <data name="txtCustomerID.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="txtCustomerID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="txtCustomerID.TabIndex" type="System.Int32, mscorlib">
+    <value>260</value>
+  </data>
+  <data name="txtCustomerID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerID.Name" xml:space="preserve">
+    <value>txtCustomerID</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerID.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerID.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 64</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 17</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>259</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>To : </value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dtpToDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dtpToDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="dtpToDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 60</value>
+  </data>
+  <data name="dtpToDate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="dtpToDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 25</value>
+  </data>
+  <data name="dtpToDate.TabIndex" type="System.Int32, mscorlib">
+    <value>258</value>
+  </data>
+  <data name="&gt;&gt;dtpToDate.Name" xml:space="preserve">
+    <value>dtpToDate</value>
+  </data>
+  <data name="&gt;&gt;dtpToDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpToDate.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;dtpToDate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtCustomerMobileNo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtCustomerMobileNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="txtCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>538, 16</value>
+  </data>
+  <data name="txtCustomerMobileNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="txtCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 25</value>
+  </data>
+  <data name="txtCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
+    <value>255</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
+    <value>txtCustomerMobileNo</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="radByCustomerMobileNo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radByCustomerMobileNo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="radByCustomerMobileNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radByCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 16</value>
+  </data>
+  <data name="radByCustomerMobileNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="radByCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 21</value>
+  </data>
+  <data name="radByCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
+    <value>254</value>
+  </data>
+  <data name="radByCustomerMobileNo.Text" xml:space="preserve">
+    <value>Mobile No. :</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerMobileNo.Name" xml:space="preserve">
+    <value>radByCustomerMobileNo</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerMobileNo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerMobileNo.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerMobileNo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="dtpFromDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dtpFromDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="dtpFromDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 60</value>
+  </data>
+  <data name="dtpFromDate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="dtpFromDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 25</value>
+  </data>
+  <data name="dtpFromDate.TabIndex" type="System.Int32, mscorlib">
+    <value>257</value>
+  </data>
+  <data name="&gt;&gt;dtpFromDate.Name" xml:space="preserve">
+    <value>dtpFromDate</value>
+  </data>
+  <data name="&gt;&gt;dtpFromDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFromDate.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;dtpFromDate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="radByCustomerName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radByCustomerName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="radByCustomerName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radByCustomerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 16</value>
+  </data>
+  <data name="radByCustomerName.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="radByCustomerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 21</value>
+  </data>
+  <data name="radByCustomerName.TabIndex" type="System.Int32, mscorlib">
+    <value>251</value>
+  </data>
+  <data name="radByCustomerName.Text" xml:space="preserve">
+    <value>Customer Name :</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerName.Name" xml:space="preserve">
+    <value>radByCustomerName</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;radByCustomerName.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtCustomerName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtCustomerName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="txtCustomerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 14</value>
+  </data>
+  <data name="txtCustomerName.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="txtCustomerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 25</value>
+  </data>
+  <data name="txtCustomerName.TabIndex" type="System.Int32, mscorlib">
+    <value>252</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
+    <value>txtCustomerName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="radByDate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radByDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="radByDate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radByDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 64</value>
+  </data>
+  <data name="radByDate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="radByDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 21</value>
+  </data>
+  <data name="radByDate.TabIndex" type="System.Int32, mscorlib">
+    <value>256</value>
+  </data>
+  <data name="radByDate.Text" xml:space="preserve">
+    <value>From Date :</value>
+  </data>
+  <data name="&gt;&gt;radByDate.Name" xml:space="preserve">
+    <value>radByDate</value>
+  </data>
+  <data name="&gt;&gt;radByDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radByDate.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;radByDate.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="rdShowAll.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdShowAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 11.25pt</value>
+  </data>
+  <data name="rdShowAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdShowAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 64</value>
+  </data>
+  <data name="rdShowAll.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="rdShowAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 21</value>
+  </data>
+  <data name="rdShowAll.TabIndex" type="System.Int32, mscorlib">
+    <value>253</value>
+  </data>
+  <data name="rdShowAll.Text" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="&gt;&gt;rdShowAll.Name" xml:space="preserve">
+    <value>rdShowAll</value>
+  </data>
+  <data name="&gt;&gt;rdShowAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdShowAll.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdShowAll.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1128, 98</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>kryptonHeaderGroup1.Panel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Name" xml:space="preserve">
+    <value>kryptonHeaderGroup1.Panel</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Parent" xml:space="preserve">
+    <value>kryptonHeaderGroup1</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="kryptonHeaderGroup1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1130, 123</value>
+  </data>
+  <data name="kryptonHeaderGroup1.TabIndex" type="System.Int32, mscorlib">
+    <value>330</value>
+  </data>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
+    <value>Search By</value>
+  </data>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5QEGDwMyevATgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGISURBVDhP
+        jVM9SwNBED0LC7GwsbEwRQrF7N6p3O5JIH5gZWNnYSFaCEGwEoTTxN2s4k9QVLC08jcIfpTBykptVARB
+        sFMRbfTtZRLOxMR78LjbeW/mZubunGbw83471/KY6+CVa3GIUFtFSQimxCwKfNdoxARJycCMnIoXyCgx
+        TFIyZFeyHUhcZ1peMC2W7Zmk/zFQ8HuQ/IT5iygwjR1s4/7eW/U6ydIazIiZePtVMuPnyNIanhGcleRB
+        nOhgHwVSZPkb9tUxHSy4Wu5wJQp2FJIagCUPeSoYpSOSQ78LbZbr2n7Bk42rg9CSmZGM9TIVDEJ7A58d
+        2xpuLv0wl8L1GowXqOdRn/G7sdg7e8ZomyggzyOxJPa4knNkrBHmE1fJPB60yIuyF55T0sp2ZMwSTFLg
+        y12TaSTc0LnKRxCfdMQrir17G6I/mt0CgbNIKMldzDdPpuZUwRKlVhDr4tN2gettzfybH+hwCymNPxbE
+        aBd2MXZRrpHperb8nLGocRR4gHGMQgngOD/i09srMnGF9AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Name" xml:space="preserve">
+    <value>kryptonHeaderGroup1</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpCustomerGridview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="grpCustomerGridview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 183</value>
+  </data>
+  <data name="dgvOrderDetails.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dgvOrderDetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dgvOrderDetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1127, 228</value>
+  </data>
+  <data name="dgvOrderDetails.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderDetails.Name" xml:space="preserve">
+    <value>dgvOrderDetails</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderDetails.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonDataGridView, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderDetails.Parent" xml:space="preserve">
+    <value>grpCustomerGridview.Panel</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderDetails.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Panel.Name" xml:space="preserve">
+    <value>grpCustomerGridview.Panel</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Panel.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Panel.Parent" xml:space="preserve">
+    <value>grpCustomerGridview</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpCustomerGridview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1129, 274</value>
+  </data>
+  <data name="grpCustomerGridview.TabIndex" type="System.Int32, mscorlib">
+    <value>331</value>
+  </data>
+  <data name="grpCustomerGridview.ValuesPrimary.Heading" xml:space="preserve">
+    <value>List Of Order</value>
+  </data>
+  <data name="grpCustomerGridview.ValuesSecondary.Heading" xml:space="preserve">
+    <value>Total Records : 0</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Name" xml:space="preserve">
+    <value>grpCustomerGridview</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpCustomerGridview.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

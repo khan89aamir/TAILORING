@@ -93,11 +93,13 @@
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.ribbonHost12 = new System.Windows.Forms.RibbonHost();
             this.lblProduct = new System.Windows.Forms.Label();
-            this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
-            this.rbGSTIcon = new System.Windows.Forms.RibbonHost();
             this.picGST = new System.Windows.Forms.PictureBox();
-            this.rbGSTText = new System.Windows.Forms.RibbonHost();
             this.lblGST = new System.Windows.Forms.Label();
+            this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
+            this.rbProductRatePic = new System.Windows.Forms.RibbonHost();
+            this.picProductRate = new System.Windows.Forms.PictureBox();
+            this.rbProductRate = new System.Windows.Forms.RibbonHost();
+            this.lblProductRate = new System.Windows.Forms.Label();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost13 = new System.Windows.Forms.RibbonHost();
@@ -138,6 +140,9 @@
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.rbGSTPic = new System.Windows.Forms.RibbonHost();
+            this.rbGST = new System.Windows.Forms.RibbonHost();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -150,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProductRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).BeginInit();
@@ -162,7 +168,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userCreationToolStripMenuItem,
@@ -176,7 +182,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1289, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1289, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -188,21 +194,21 @@
             this.userRightsManagementToolStripMenuItem});
             this.userCreationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.userCreationToolStripMenuItem.Name = "userCreationToolStripMenuItem";
-            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(132, 23);
+            this.userCreationToolStripMenuItem.Size = new System.Drawing.Size(116, 19);
             this.userCreationToolStripMenuItem.Text = "User Management";
             this.userCreationToolStripMenuItem.ToolTipText = "User Creation";
             // 
             // userCreationToolStripMenuItem1
             // 
             this.userCreationToolStripMenuItem1.Name = "userCreationToolStripMenuItem1";
-            this.userCreationToolStripMenuItem1.Size = new System.Drawing.Size(185, 24);
+            this.userCreationToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.userCreationToolStripMenuItem1.Text = "User Creation";
             this.userCreationToolStripMenuItem1.Click += new System.EventHandler(this.userCreationToolStripMenuItem1_Click);
             // 
             // userRightsManagementToolStripMenuItem
             // 
             this.userRightsManagementToolStripMenuItem.Name = "userRightsManagementToolStripMenuItem";
-            this.userRightsManagementToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.userRightsManagementToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.userRightsManagementToolStripMenuItem.Text = "User Form Rights";
             this.userRightsManagementToolStripMenuItem.Click += new System.EventHandler(this.userRightsManagementToolStripMenuItem_Click);
             // 
@@ -214,35 +220,35 @@
             this.CustomerMasterToolStripMenuItem,
             this.companyManagementToolStripMenuItem});
             this.mobilePartsToolStripMenuItem.Name = "mobilePartsToolStripMenuItem";
-            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
+            this.mobilePartsToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
             this.mobilePartsToolStripMenuItem.Text = "Masters";
             this.mobilePartsToolStripMenuItem.ToolTipText = "Mobile Parts";
             // 
             // EmployeeDetails_ToolStrip
             // 
             this.EmployeeDetails_ToolStrip.Name = "EmployeeDetails_ToolStrip";
-            this.EmployeeDetails_ToolStrip.Size = new System.Drawing.Size(220, 24);
+            this.EmployeeDetails_ToolStrip.Size = new System.Drawing.Size(200, 22);
             this.EmployeeDetails_ToolStrip.Text = "Employee Managament";
             this.EmployeeDetails_ToolStrip.Click += new System.EventHandler(this.EmployeeDetails_ToolStrip_Click);
             // 
             // productMasterToolStripMenuItem
             // 
             this.productMasterToolStripMenuItem.Name = "productMasterToolStripMenuItem";
-            this.productMasterToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.productMasterToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.productMasterToolStripMenuItem.Text = "Product Managament";
             this.productMasterToolStripMenuItem.Click += new System.EventHandler(this.productMasterToolStripMenuItem_Click);
             // 
             // CustomerMasterToolStripMenuItem
             // 
             this.CustomerMasterToolStripMenuItem.Name = "CustomerMasterToolStripMenuItem";
-            this.CustomerMasterToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.CustomerMasterToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.CustomerMasterToolStripMenuItem.Text = "Customer Managament";
             this.CustomerMasterToolStripMenuItem.Click += new System.EventHandler(this.CustomerMasterToolStripMenuItem_Click);
             // 
             // companyManagementToolStripMenuItem
             // 
             this.companyManagementToolStripMenuItem.Name = "companyManagementToolStripMenuItem";
-            this.companyManagementToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
+            this.companyManagementToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.companyManagementToolStripMenuItem.Text = "Company Management";
             this.companyManagementToolStripMenuItem.Click += new System.EventHandler(this.companyManagementToolStripMenuItem_Click);
             // 
@@ -252,7 +258,7 @@
             this.SalesInvoice_ToolStrip,
             this.SalesBillDetails_ToolStrip});
             this.OrderManagementPartsToolStripMenuItem.Name = "OrderManagementPartsToolStripMenuItem";
-            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(140, 23);
+            this.OrderManagementPartsToolStripMenuItem.Size = new System.Drawing.Size(123, 19);
             this.OrderManagementPartsToolStripMenuItem.Text = "Order Management";
             this.OrderManagementPartsToolStripMenuItem.ToolTipText = "Hardware Parts";
             // 
@@ -260,21 +266,21 @@
             // 
             this.SalesInvoice_ToolStrip.Name = "SalesInvoice_ToolStrip";
             this.SalesInvoice_ToolStrip.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.SalesInvoice_ToolStrip.Size = new System.Drawing.Size(175, 24);
+            this.SalesInvoice_ToolStrip.Size = new System.Drawing.Size(150, 22);
             this.SalesInvoice_ToolStrip.Text = "New Order";
             this.SalesInvoice_ToolStrip.Click += new System.EventHandler(this.SalesInvoice_ToolStrip_Click);
             // 
             // SalesBillDetails_ToolStrip
             // 
             this.SalesBillDetails_ToolStrip.Name = "SalesBillDetails_ToolStrip";
-            this.SalesBillDetails_ToolStrip.Size = new System.Drawing.Size(175, 24);
+            this.SalesBillDetails_ToolStrip.Size = new System.Drawing.Size(150, 22);
             this.SalesBillDetails_ToolStrip.Text = "Order Details";
             this.SalesBillDetails_ToolStrip.Click += new System.EventHandler(this.SalesBillDetails_ToolStrip_Click);
             // 
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(88, 23);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(76, 19);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -284,14 +290,14 @@
             this.SalesReport_ToolStrip,
             this.testToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 19);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.ToolTipText = "Reports";
             // 
             // SalesReport_ToolStrip
             // 
             this.SalesReport_ToolStrip.Name = "SalesReport_ToolStrip";
-            this.SalesReport_ToolStrip.Size = new System.Drawing.Size(161, 24);
+            this.SalesReport_ToolStrip.Size = new System.Drawing.Size(142, 22);
             this.SalesReport_ToolStrip.Text = "Order Report";
             this.SalesReport_ToolStrip.ToolTipText = "Monthly Sales Report";
             this.SalesReport_ToolStrip.Click += new System.EventHandler(this.SalesReport_ToolStrip_Click);
@@ -299,13 +305,13 @@
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.testToolStripMenuItem.Text = "Test";
             // 
             // otherArtsToolStripMenuItem
             // 
             this.otherArtsToolStripMenuItem.Name = "otherArtsToolStripMenuItem";
-            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(123, 23);
+            this.otherArtsToolStripMenuItem.Size = new System.Drawing.Size(105, 19);
             this.otherArtsToolStripMenuItem.Text = " Backup/Restore";
             this.otherArtsToolStripMenuItem.ToolTipText = "Other Parts";
             this.otherArtsToolStripMenuItem.Click += new System.EventHandler(this.otherArtsToolStripMenuItem_Click);
@@ -314,14 +320,14 @@
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Transparent;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(68, 23);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(61, 19);
             this.toolStripMenuItem2.Text = "Settings";
             this.toolStripMenuItem2.ToolTipText = "Settings";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // statusStrip1
@@ -600,7 +606,8 @@
             this.ribbonTab2.Panels.Add(this.ribbonPanel5);
             this.ribbonTab2.Panels.Add(this.ribbonPanel6);
             this.ribbonTab2.Panels.Add(this.ribbonPanel7);
-            this.ribbonTab2.Panels.Add(this.ribbonPanel15);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel16);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel3);
             this.ribbonTab2.Text = "Masters";
             // 
             // ribbonPanel4
@@ -775,18 +782,6 @@
             this.lblProduct.TabIndex = 41;
             this.lblProduct.Text = "Product Master";
             // 
-            // ribbonPanel15
-            // 
-            this.ribbonPanel15.Items.Add(this.rbGSTIcon);
-            this.ribbonPanel15.Items.Add(this.rbGSTText);
-            this.ribbonPanel15.Name = "ribbonPanel15";
-            this.ribbonPanel15.Text = "GST";
-            // 
-            // rbGSTIcon
-            // 
-            this.rbGSTIcon.HostedControl = this.picGST;
-            this.rbGSTIcon.Name = "rbGSTIcon";
-            // 
             // picGST
             // 
             this.picGST.BackColor = System.Drawing.Color.Transparent;
@@ -800,11 +795,6 @@
             this.picGST.TabStop = false;
             this.picGST.Click += new System.EventHandler(this.picGST_Click);
             // 
-            // rbGSTText
-            // 
-            this.rbGSTText.HostedControl = this.lblGST;
-            this.rbGSTText.Name = "rbGSTText";
-            // 
             // lblGST
             // 
             this.lblGST.AutoSize = true;
@@ -815,6 +805,47 @@
             this.lblGST.Size = new System.Drawing.Size(112, 15);
             this.lblGST.TabIndex = 57;
             this.lblGST.Text = "   GST Management";
+            // 
+            // ribbonPanel16
+            // 
+            this.ribbonPanel16.Items.Add(this.rbProductRatePic);
+            this.ribbonPanel16.Items.Add(this.rbProductRate);
+            this.ribbonPanel16.Name = "ribbonPanel16";
+            this.ribbonPanel16.Text = "Product Rate Master";
+            // 
+            // rbProductRatePic
+            // 
+            this.rbProductRatePic.HostedControl = this.picProductRate;
+            this.rbProductRatePic.Name = "rbProductRatePic";
+            // 
+            // picProductRate
+            // 
+            this.picProductRate.BackColor = System.Drawing.Color.Transparent;
+            this.picProductRate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picProductRate.Image = ((System.Drawing.Image)(resources.GetObject("picProductRate.Image")));
+            this.picProductRate.Location = new System.Drawing.Point(676, 190);
+            this.picProductRate.Name = "picProductRate";
+            this.picProductRate.Size = new System.Drawing.Size(93, 44);
+            this.picProductRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProductRate.TabIndex = 59;
+            this.picProductRate.TabStop = false;
+            this.picProductRate.Click += new System.EventHandler(this.picProductRate_Click);
+            // 
+            // rbProductRate
+            // 
+            this.rbProductRate.HostedControl = this.lblProductRate;
+            this.rbProductRate.Name = "rbProductRate";
+            // 
+            // lblProductRate
+            // 
+            this.lblProductRate.AutoSize = true;
+            this.lblProductRate.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductRate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductRate.Location = new System.Drawing.Point(768, 208);
+            this.lblProductRate.Name = "lblProductRate";
+            this.lblProductRate.Size = new System.Drawing.Size(117, 15);
+            this.lblProductRate.TabIndex = 60;
+            this.lblProductRate.Text = "Product Rate Master";
             // 
             // ribbonTab3
             // 
@@ -1141,6 +1172,23 @@
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
             // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Items.Add(this.rbGSTPic);
+            this.ribbonPanel3.Items.Add(this.rbGST);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Text = "GST Master";
+            // 
+            // rbGSTPic
+            // 
+            this.rbGSTPic.HostedControl = this.picGST;
+            this.rbGSTPic.Name = "rbGSTPic";
+            // 
+            // rbGST
+            // 
+            this.rbGST.HostedControl = this.lblGST;
+            this.rbGST.Name = "rbGST";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1148,6 +1196,8 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 622);
+            this.Controls.Add(this.lblProductRate);
+            this.Controls.Add(this.picProductRate);
             this.Controls.Add(this.picGST);
             this.Controls.Add(this.lblGST);
             this.Controls.Add(this.picHelp);
@@ -1208,6 +1258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProductRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).EndInit();
@@ -1261,7 +1312,7 @@
         private System.Windows.Forms.PictureBox picAddUser;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        //private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.RibbonHost ribbonHost3;
         private System.Windows.Forms.RibbonHost ribbonHost4;
@@ -1328,9 +1379,15 @@
         private System.Windows.Forms.RibbonHost ribbonHost26;
         private System.Windows.Forms.Label lblSetting;
         private System.Windows.Forms.RibbonPanel ribbonPanel15;
-        private System.Windows.Forms.RibbonHost rbGSTIcon;
         private System.Windows.Forms.PictureBox picGST;
-        private System.Windows.Forms.RibbonHost rbGSTText;
         private System.Windows.Forms.Label lblGST;
+        private System.Windows.Forms.RibbonPanel ribbonPanel16;
+        private System.Windows.Forms.Label lblProductRate;
+        private System.Windows.Forms.PictureBox picProductRate;
+        private System.Windows.Forms.RibbonHost rbProductRatePic;
+        private System.Windows.Forms.RibbonHost rbProductRate;
+        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        private System.Windows.Forms.RibbonHost rbGSTPic;
+        private System.Windows.Forms.RibbonHost rbGST;
     }
 }

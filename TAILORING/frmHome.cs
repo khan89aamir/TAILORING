@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 //using TAILORING.Barcode;
 //using TAILORING.Settings;
 
 namespace TAILORING
 {
-    public partial class frmHome : Form
+    public partial class frmHome : KryptonForm
     {
         public frmHome()
         {
@@ -326,6 +327,23 @@ namespace TAILORING
                 if (!b)
                 {
                     Masters.frmGSTMaster Obj = new Masters.frmGSTMaster();
+                    Obj.Show();
+                }
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task");
+            }
+        }
+
+        private void picProductRate_Click(object sender, EventArgs e)
+        {
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster) || clsUtility.IsAdmin)
+            {
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Masters.frmProductRateMaster));
+                if (!b)
+                {
+                    Masters.frmProductRateMaster Obj = new Masters.frmProductRateMaster();
                     Obj.Show();
                 }
             }

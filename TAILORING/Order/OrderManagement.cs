@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmOrderManagement : Form
+    public partial class frmOrderManagement : KryptonForm
     {
         public frmOrderManagement()
         {
@@ -193,7 +194,7 @@ namespace TAILORING.Order
                 txtSearchByCustomerName.Enabled = false;
                 txtSearchByCustomerName.Clear();
 
-                ClearCustomerFields(false);
+                ClearCustomerFields(true,false);
             }
         }
 
@@ -209,7 +210,7 @@ namespace TAILORING.Order
                 txtSearchByMobileNo.Enabled = false;
                 txtSearchByMobileNo.Clear();
 
-                ClearCustomerFields(false);
+                ClearCustomerFields(true,false);
             }
         }
 
@@ -930,7 +931,8 @@ namespace TAILORING.Order
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
-            ClearCustomerFields(true);
+            ClearCustomerFields(true,true);
+
             rdSearchByCustomerMobileNo.Checked = false;
             rdSearchByCustomerName.Checked = false;
             rdSearchByCustomerOrderNo.Checked = false;
@@ -971,7 +973,7 @@ namespace TAILORING.Order
                                 lnkAddItem.Enabled = true;
                                 btnMeasurement.Enabled = true;
                             }
-                            ClearCustomerFields(false);
+                            ClearCustomerFields(true,false);
                         }
                         else
                         {
@@ -1036,18 +1038,18 @@ namespace TAILORING.Order
             }
         }
 
-        private void ClearCustomerFields(bool b)
+        private void ClearCustomerFields(bool IsClear,bool IsEnable)
         {
-            if (b == false)
+            if (IsClear)
             {
                 txtCustomerName.Clear();
                 txtCustomerMobileNo.Clear();
                 txtCustomerAdd.Clear();
             }
-            txtCustomerName.Enabled = b;
-            txtCustomerMobileNo.Enabled = b;
-            txtCustomerAdd.Enabled = b;
-            btnSaveCustomer.Enabled = b;
+            txtCustomerName.Enabled = IsEnable;
+            txtCustomerMobileNo.Enabled = IsEnable;
+            txtCustomerAdd.Enabled = IsEnable;
+            btnSaveCustomer.Enabled = IsEnable;
         }
     }
 }

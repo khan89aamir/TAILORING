@@ -59,7 +59,8 @@
       <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="CoreApp, Version=3.0.0.9, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\CoreAppLib.1.0.12\lib\CoreApp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL Source Code\CoreApp\CoreApp\bin\x86\Release\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.12\lib\CoreSys.dll</HintPath>
@@ -123,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +165,12 @@
     </Compile>
     <Compile Include="Masters\frmCompanyMaster.Designer.cs">
       <DependentUpon>frmCompanyMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmProductRateMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmProductRateMaster.Designer.cs">
+      <DependentUpon>frmProductRateMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Masters\Product_Master.cs">
       <SubType>Form</SubType>
@@ -234,6 +247,9 @@
     <Compile Include="Masters\frmGSTMaster.Designer.cs">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="SPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SplashWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +257,9 @@
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
       <LastGenOutput>frmHome1.Designer.cs</LastGenOutput>
@@ -259,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmCompanyMaster.resx">
       <DependentUpon>frmCompanyMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmProductRateMaster.resx">
+      <DependentUpon>frmProductRateMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\Product_Master.resx">
       <DependentUpon>Product_Master.cs</DependentUpon>

@@ -117,4 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtTrimsAmount.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="txtRate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="cmbGarmentName.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="dtpDeliveryDate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <data name="dtpTrailDate.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5QEGDwMyevATgwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGISURBVDhP
+        jVM9SwNBED0LC7GwsbEwRQrF7N6p3O5JIH5gZWNnYSFaCEGwEoTTxN2s4k9QVLC08jcIfpTBykptVARB
+        sFMRbfTtZRLOxMR78LjbeW/mZubunGbw83471/KY6+CVa3GIUFtFSQimxCwKfNdoxARJycCMnIoXyCgx
+        TFIyZFeyHUhcZ1peMC2W7Zmk/zFQ8HuQ/IT5iygwjR1s4/7eW/U6ydIazIiZePtVMuPnyNIanhGcleRB
+        nOhgHwVSZPkb9tUxHSy4Wu5wJQp2FJIagCUPeSoYpSOSQ78LbZbr2n7Bk42rg9CSmZGM9TIVDEJ7A58d
+        2xpuLv0wl8L1GowXqOdRn/G7sdg7e8ZomyggzyOxJPa4knNkrBHmE1fJPB60yIuyF55T0sp2ZMwSTFLg
+        y12TaSTc0LnKRxCfdMQrir17G6I/mt0CgbNIKMldzDdPpuZUwRKlVhDr4tN2gettzfybH+hwCymNPxbE
+        aBd2MXZRrpHperb8nLGocRR4gHGMQgngOD/i09srMnGF9AAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

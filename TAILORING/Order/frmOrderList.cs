@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmOrderList : Form
+    public partial class frmOrderList : KryptonForm
     {
         public frmOrderList()
         {
@@ -19,8 +20,6 @@ namespace TAILORING.Order
 
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
-
-        int ID = 0;
 
         //Image B_Leave = TAILORING.Properties.Resources.B_click;
         //Image B_Enter = TAILORING.Properties.Resources.B_on;
@@ -33,16 +32,6 @@ namespace TAILORING.Order
 
             radByDate_CheckedChanged(sender, e);
             SearchByDates();
-        }
-
-        private void txtCustomerName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtCustomerName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
@@ -128,7 +117,7 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    lblCount.Text = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
@@ -151,7 +140,7 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    lblCount.Text = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
@@ -174,7 +163,7 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    lblCount.Text = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
@@ -202,7 +191,7 @@ namespace TAILORING.Order
                     //}
                     //catch { }
                     dgvOrderDetails.DataSource = dt;
-                    lblCount.Text = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
@@ -358,7 +347,7 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
-            ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
+            //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
             dgvOrderDetails.Columns["CustomerID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
 

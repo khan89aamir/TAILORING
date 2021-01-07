@@ -31,10 +31,13 @@ namespace TAILORING.Order
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
+            this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).BeginInit();
+            this.grpCustomerGridview.Panel.SuspendLayout();
+            this.grpCustomerGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,47 +66,37 @@ namespace TAILORING.Order
             this.label12.TabIndex = 82;
             this.label12.Text = "Order Details";
             // 
-            // lblCount
+            // grpCustomerGridview
             // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblCount.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.lblCount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCount.Location = new System.Drawing.Point(102, 69);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(15, 17);
-            this.lblCount.TabIndex = 323;
-            this.lblCount.Text = "0";
+            this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpCustomerGridview.Location = new System.Drawing.Point(9, 70);
+            this.grpCustomerGridview.Name = "grpCustomerGridview";
             // 
-            // label4
+            // grpCustomerGridview.Panel
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(10, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 322;
-            this.label4.Text = "Order Count :";
+            this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(1078, 305);
+            this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.TabIndex = 332;
+            this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
+            this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.kryptonHeaderGroup1_ValuesPrimary_Image;
+            this.grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
             // 
             // dgvOrderDetails
             // 
             this.dgvOrderDetails.AllowUserToAddRows = false;
             this.dgvOrderDetails.AllowUserToDeleteRows = false;
-            this.dgvOrderDetails.AllowUserToResizeColumns = false;
-            this.dgvOrderDetails.AllowUserToResizeRows = false;
-            this.dgvOrderDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOrderDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetails.Location = new System.Drawing.Point(11, 91);
+            this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 341);
-            this.dgvOrderDetails.TabIndex = 321;
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 259);
+            this.dgvOrderDetails.TabIndex = 0;
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
             // frmOrderDetails
@@ -112,10 +105,8 @@ namespace TAILORING.Order
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1099, 440);
-            this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dgvOrderDetails);
+            this.ClientSize = new System.Drawing.Size(1099, 399);
+            this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -126,9 +117,12 @@ namespace TAILORING.Order
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).EndInit();
+            this.grpCustomerGridview.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).EndInit();
+            this.grpCustomerGridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -136,8 +130,7 @@ namespace TAILORING.Order
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblCount;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvOrderDetails;
+        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpCustomerGridview;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvOrderDetails;
     }
 }

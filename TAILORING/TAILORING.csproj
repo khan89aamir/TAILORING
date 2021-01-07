@@ -292,7 +292,9 @@
     <EmbeddedResource Include="Report\Forms\frmBill.resx">
       <DependentUpon>frmBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\RDLC\CustomerReceipt.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\CustomerCopy.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\FactoryCopy.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\StoreCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\Report1.rdlc" />
     <EmbeddedResource Include="Masters\frmGSTMaster.resx">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>

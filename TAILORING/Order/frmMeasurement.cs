@@ -121,7 +121,7 @@ namespace TAILORING.Order
         {
             dtTempMeasurement.Columns.Add("GarmentID", typeof(int));
             dtTempMeasurement.Columns.Add("MeasurementID", typeof(int));
-            dtTempMeasurement.Columns.Add("MeasurementValue", typeof(int));
+            dtTempMeasurement.Columns.Add("MeasurementValue", typeof(double));
         }
 
         private void InitTempdtStyle()

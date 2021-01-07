@@ -554,7 +554,7 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtReportDatasetRow AdddtReportDatasetRow(string GarmentName, string StichTypeName, string FitTypeName, string Rate, string QTY, string Total, string Swatch, string Service, string TrailDate, string DeliveryDate) {
+            public dtReportDatasetRow AdddtReportDatasetRow(string GarmentName, string StichTypeName, string FitTypeName, string Rate, string QTY, string Total, string Swatch, string Service, System.DateTime TrailDate, System.DateTime DeliveryDate) {
                 dtReportDatasetRow rowdtReportDatasetRow = ((dtReportDatasetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GarmentName,
@@ -620,9 +620,9 @@ namespace TAILORING.Report.Dataset {
                 base.Columns.Add(this.columnSwatch);
                 this.columnService = new global::System.Data.DataColumn("Service", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnService);
-                this.columnTrailDate = new global::System.Data.DataColumn("TrailDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTrailDate = new global::System.Data.DataColumn("TrailDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTrailDate);
-                this.columnDeliveryDate = new global::System.Data.DataColumn("DeliveryDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDeliveryDate = new global::System.Data.DataColumn("DeliveryDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeliveryDate);
                 this.columnSwatch.DefaultValue = ((string)("<Swatch>"));
             }
@@ -762,8 +762,6 @@ namespace TAILORING.Report.Dataset {
             
             private global::System.Data.DataColumn columnTrimAmount;
             
-            private global::System.Data.DataColumn columnAdvanceAmount;
-            
             private global::System.Data.DataColumn columnTax;
             
             private global::System.Data.DataColumn columnTotalAmount;
@@ -814,14 +812,6 @@ namespace TAILORING.Report.Dataset {
             public global::System.Data.DataColumn TrimAmountColumn {
                 get {
                     return this.columnTrimAmount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AdvanceAmountColumn {
-                get {
-                    return this.columnAdvanceAmount;
                 }
             }
             
@@ -878,12 +868,11 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtTotalCalculationRow AdddtTotalCalculationRow(string OrderAmount, string TrimAmount, string AdvanceAmount, string Tax, string TotalAmount) {
+            public dtTotalCalculationRow AdddtTotalCalculationRow(string OrderAmount, string TrimAmount, string Tax, string TotalAmount) {
                 dtTotalCalculationRow rowdtTotalCalculationRow = ((dtTotalCalculationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderAmount,
                         TrimAmount,
-                        AdvanceAmount,
                         Tax,
                         TotalAmount};
                 rowdtTotalCalculationRow.ItemArray = columnValuesArray;
@@ -910,7 +899,6 @@ namespace TAILORING.Report.Dataset {
             internal void InitVars() {
                 this.columnOrderAmount = base.Columns["OrderAmount"];
                 this.columnTrimAmount = base.Columns["TrimAmount"];
-                this.columnAdvanceAmount = base.Columns["AdvanceAmount"];
                 this.columnTax = base.Columns["Tax"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
             }
@@ -922,8 +910,6 @@ namespace TAILORING.Report.Dataset {
                 base.Columns.Add(this.columnOrderAmount);
                 this.columnTrimAmount = new global::System.Data.DataColumn("TrimAmount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTrimAmount);
-                this.columnAdvanceAmount = new global::System.Data.DataColumn("AdvanceAmount", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAdvanceAmount);
                 this.columnTax = new global::System.Data.DataColumn("Tax", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTax);
                 this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1414,6 +1400,8 @@ namespace TAILORING.Report.Dataset {
             
             private global::System.Data.DataColumn columnProductID;
             
+            private global::System.Data.DataColumn columnSubOrderID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MeasurmentDataTable() {
@@ -1761,6 +1749,14 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SubOrderIDColumn {
+                get {
+                    return this.columnSubOrderID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1835,7 +1831,8 @@ namespace TAILORING.Report.Dataset {
                         string s8, 
                         string s9, 
                         string s10, 
-                        string ProductID) {
+                        string ProductID, 
+                        string SubOrderID) {
                 MeasurmentRow rowMeasurmentRow = ((MeasurmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Swatch,
@@ -1876,7 +1873,8 @@ namespace TAILORING.Report.Dataset {
                         s8,
                         s9,
                         s10,
-                        ProductID};
+                        ProductID,
+                        SubOrderID};
                 rowMeasurmentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMeasurmentRow);
                 return rowMeasurmentRow;
@@ -1938,6 +1936,7 @@ namespace TAILORING.Report.Dataset {
                 this.columns9 = base.Columns["s9"];
                 this.columns10 = base.Columns["s10"];
                 this.columnProductID = base.Columns["ProductID"];
+                this.columnSubOrderID = base.Columns["SubOrderID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2021,6 +2020,8 @@ namespace TAILORING.Report.Dataset {
                 base.Columns.Add(this.columns10);
                 this.columnProductID = new global::System.Data.DataColumn("ProductID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductID);
+                this.columnSubOrderID = new global::System.Data.DataColumn("SubOrderID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubOrderID);
                 this.columnSwatch.Caption = "Col1";
             }
             
@@ -2292,10 +2293,10 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TrailDate {
+            public System.DateTime TrailDate {
                 get {
                     try {
-                        return ((string)(this[this.tabledtReportDataset.TrailDateColumn]));
+                        return ((global::System.DateTime)(this[this.tabledtReportDataset.TrailDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TrailDate\' in table \'dtReportDataset\' is DBNull.", e);
@@ -2308,10 +2309,10 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeliveryDate {
+            public System.DateTime DeliveryDate {
                 get {
                     try {
-                        return ((string)(this[this.tabledtReportDataset.DeliveryDateColumn]));
+                        return ((global::System.DateTime)(this[this.tabledtReportDataset.DeliveryDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'DeliveryDate\' in table \'dtReportDataset\' is DBNull.", e);
@@ -2491,22 +2492,6 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string AdvanceAmount {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtTotalCalculation.AdvanceAmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdvanceAmount\' in table \'dtTotalCalculation\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtTotalCalculation.AdvanceAmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Tax {
                 get {
                     try {
@@ -2559,18 +2544,6 @@ namespace TAILORING.Report.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTrimAmountNull() {
                 this[this.tabledtTotalCalculation.TrimAmountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAdvanceAmountNull() {
-                return this.IsNull(this.tabledtTotalCalculation.AdvanceAmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAdvanceAmountNull() {
-                this[this.tabledtTotalCalculation.AdvanceAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3337,6 +3310,22 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SubOrderID {
+                get {
+                    try {
+                        return ((string)(this[this.tableMeasurment.SubOrderIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubOrderID\' in table \'Measurment\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMeasurment.SubOrderIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSwatchNull() {
                 return this.IsNull(this.tableMeasurment.SwatchColumn);
             }
@@ -3801,6 +3790,18 @@ namespace TAILORING.Report.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetProductIDNull() {
                 this[this.tableMeasurment.ProductIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSubOrderIDNull() {
+                return this.IsNull(this.tableMeasurment.SubOrderIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSubOrderIDNull() {
+                this[this.tableMeasurment.SubOrderIDColumn] = global::System.Convert.DBNull;
             }
         }
         

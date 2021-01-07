@@ -23,8 +23,8 @@
               <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
               <xs:element name="Swatch" msprop:Generator_ColumnVarNameInTable="columnSwatch" msprop:Generator_ColumnPropNameInRow="Swatch" msprop:Generator_ColumnPropNameInTable="SwatchColumn" msprop:Generator_UserColumnName="Swatch" type="xs:string" default="&lt;Swatch&gt;" minOccurs="0" />
               <xs:element name="Service" msprop:Generator_ColumnVarNameInTable="columnService" msprop:Generator_ColumnPropNameInRow="Service" msprop:Generator_ColumnPropNameInTable="ServiceColumn" msprop:Generator_UserColumnName="Service" type="xs:string" minOccurs="0" />
-              <xs:element name="TrailDate" msprop:Generator_ColumnVarNameInTable="columnTrailDate" msprop:Generator_ColumnPropNameInRow="TrailDate" msprop:Generator_ColumnPropNameInTable="TrailDateColumn" msprop:Generator_UserColumnName="TrailDate" type="xs:string" minOccurs="0" />
-              <xs:element name="DeliveryDate" msprop:Generator_ColumnVarNameInTable="columnDeliveryDate" msprop:Generator_ColumnPropNameInRow="DeliveryDate" msprop:Generator_ColumnPropNameInTable="DeliveryDateColumn" msprop:Generator_UserColumnName="DeliveryDate" type="xs:string" minOccurs="0" />
+              <xs:element name="TrailDate" msprop:Generator_ColumnVarNameInTable="columnTrailDate" msprop:Generator_ColumnPropNameInRow="TrailDate" msprop:Generator_ColumnPropNameInTable="TrailDateColumn" msprop:Generator_UserColumnName="TrailDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeliveryDate" msprop:Generator_ColumnVarNameInTable="columnDeliveryDate" msprop:Generator_ColumnPropNameInRow="DeliveryDate" msprop:Generator_ColumnPropNameInTable="DeliveryDateColumn" msprop:Generator_UserColumnName="DeliveryDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -33,7 +33,6 @@
             <xs:sequence>
               <xs:element name="OrderAmount" msprop:Generator_ColumnVarNameInTable="columnOrderAmount" msprop:Generator_ColumnPropNameInRow="OrderAmount" msprop:Generator_ColumnPropNameInTable="OrderAmountColumn" msprop:Generator_UserColumnName="OrderAmount" type="xs:string" minOccurs="0" />
               <xs:element name="TrimAmount" msprop:Generator_ColumnVarNameInTable="columnTrimAmount" msprop:Generator_ColumnPropNameInRow="TrimAmount" msprop:Generator_ColumnPropNameInTable="TrimAmountColumn" msprop:Generator_UserColumnName="TrimAmount" type="xs:string" minOccurs="0" />
-              <xs:element name="AdvanceAmount" msprop:Generator_ColumnVarNameInTable="columnAdvanceAmount" msprop:Generator_ColumnPropNameInRow="AdvanceAmount" msprop:Generator_ColumnPropNameInTable="AdvanceAmountColumn" msprop:Generator_UserColumnName="AdvanceAmount" type="xs:string" minOccurs="0" />
               <xs:element name="Tax" msprop:Generator_ColumnVarNameInTable="columnTax" msprop:Generator_ColumnPropNameInRow="Tax" msprop:Generator_ColumnPropNameInTable="TaxColumn" msprop:Generator_UserColumnName="Tax" type="xs:string" minOccurs="0" />
               <xs:element name="TotalAmount" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_UserColumnName="TotalAmount" type="xs:string" minOccurs="0" />
             </xs:sequence>
@@ -90,6 +89,7 @@
               <xs:element name="s9" msprop:Generator_ColumnVarNameInTable="columns9" msprop:Generator_ColumnPropNameInRow="s9" msprop:Generator_ColumnPropNameInTable="s9Column" msprop:Generator_UserColumnName="s9" type="xs:string" minOccurs="0" />
               <xs:element name="s10" msprop:Generator_ColumnVarNameInTable="columns10" msprop:Generator_ColumnPropNameInRow="s10" msprop:Generator_ColumnPropNameInTable="s10Column" msprop:Generator_UserColumnName="s10" type="xs:string" minOccurs="0" />
               <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:string" minOccurs="0" />
+              <xs:element name="SubOrderID" msprop:Generator_ColumnVarNameInTable="columnSubOrderID" msprop:Generator_ColumnPropNameInRow="SubOrderID" msprop:Generator_ColumnPropNameInTable="SubOrderIDColumn" msprop:Generator_UserColumnName="SubOrderID" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

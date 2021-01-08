@@ -268,9 +268,9 @@ namespace TAILORING.Order
             {
                 txtSearchByCustomerName.SelectionStart = txtSearchByCustomerName.MaxLength;
                 txtSearchByCustomerName.Focus();
-                txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
-                txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
-                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
+                txtCustomerName.Text = dt.Rows[e.RowIndex]["Name"].ToString();
+                txtCustomerAdd.Text = dt.Rows[e.RowIndex]["Address"].ToString();
+                txtCustomerMobileNo.Text = dt.Rows[e.RowIndex]["MobileNo"].ToString();
 
                 btnMeasurement.Enabled = true;
             }
@@ -983,7 +983,7 @@ namespace TAILORING.Order
                             DataTable dtout = ObjDAL.GetOutputParmData();
                             if (ObjUtil.ValidateTable(dtout))
                             {
-                                CustomerID = Convert.ToInt32(dtGarment.Rows[0][1]);
+                                CustomerID = Convert.ToInt32(dtout.Rows[0][1]);
                                 txtCustomerID.Text = CustomerID.ToString();
                                 btnAdd.Enabled = true;
                                 btnMeasurement.Enabled = true;

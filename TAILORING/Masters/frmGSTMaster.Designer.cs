@@ -328,7 +328,7 @@ namespace TAILORING.Masters
             this.kryptonHeaderGroup1.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.TabIndex = 327;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "GST Details";
-            this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.kryptonHeaderGroup1_ValuesPrimary_Image;
+            this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
             this.kryptonHeaderGroup1.ValuesSecondary.Heading = "Total Records : 0";
             // 
             // dgvGSTMaster

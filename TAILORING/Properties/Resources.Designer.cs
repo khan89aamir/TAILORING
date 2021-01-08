@@ -173,9 +173,29 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kryptonHeaderGroup1_ValuesPrimary_Image {
+        internal static System.Drawing.Bitmap Gridview_ValuesPrimary_Image {
             get {
-                object obj = ResourceManager.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image", resourceCulture);
+                object obj = ResourceManager.GetObject("Gridview.ValuesPrimary.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grpSearch_Values_Image {
+            get {
+                object obj = ResourceManager.GetObject("grpSearch.Values.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grpUserHeader_ValuesPrimary_Image {
+            get {
+                object obj = ResourceManager.GetObject("grpUserHeader.ValuesPrimary.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -804,7 +804,7 @@
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.TabIndex = 345;
             this.grpCustomerGridview.ValuesPrimary.Heading = "Employee List";
-            this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.kryptonHeaderGroup1_ValuesPrimary_Image;
+            this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
             this.grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
             // 
             // dgvEmployee

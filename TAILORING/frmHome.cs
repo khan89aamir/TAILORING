@@ -72,7 +72,7 @@ namespace TAILORING
             try
             {
                 clsUtility.DBName = "TAILORING_01";
-                //clsUtility.LoginID = 0;
+                clsUtility.LoginID = 0;
                 //clsUtility.IsAdmin = false;
                 clsUtility.IsAdmin = true;
                 clsUtility.strProjectTitle = "Smart Tailor Solution";
@@ -90,17 +90,6 @@ namespace TAILORING
                 DisplayRegistrationInfo();
             }
             catch { }
-        }
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
@@ -284,12 +273,12 @@ namespace TAILORING
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDashBoard) || clsUtility.IsAdmin)
             {
-                //bool b = ObjUtil.IsAlreadyOpen(typeof(Other_Forms.frmDashBoard));
-                //if (!b)
-                //{
-                //    Other_Forms.frmDashBoard frmDashBoard = new Other_Forms.frmDashBoard();
-                //    frmDashBoard.Show();
-                //}
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Dashboard.frmDashboard));
+                if (!b)
+                {
+                    Dashboard.frmDashboard frmDashBoard = new Dashboard.frmDashboard();
+                    frmDashBoard.Show();
+                }
             }
             else
             {

@@ -83,7 +83,7 @@ namespace TAILORING.Order
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.TabIndex = 332;
             this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
-            this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.kryptonHeaderGroup1_ValuesPrimary_Image;
+            this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
             this.grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
             // 
             // dgvOrderDetails

@@ -42,7 +42,7 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvCompanyMaster.RowHeadersVisible = false; // set it to false if not needed
 
-            //LoadData();
+            LoadData();
 
             grpCompany.Enabled = false;
         }
@@ -308,11 +308,11 @@ namespace TAILORING.Masters
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dgvCompanyMaster.SelectedRows[0].Cells["CompanyID"].Value);
-                    txtCompanyName.Text = dgvCompanyMaster.SelectedRows[0].Cells["Name"].Value.ToString();
+                    txtCompanyName.Text = dgvCompanyMaster.SelectedRows[0].Cells["CompanyName"].Value.ToString();
                     txtCompanyAddress.Text = dgvCompanyMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCompanyMobileNo.Text = dgvCompanyMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCompanyEmailID.Text = dgvCompanyMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    //chkDefaultCompany.Checked = Convert.ToBoolean(dgvCompanyMaster.SelectedRows[0].Cells["IsDefault"].Value);
+                    chkDefaultCompany.Checked = Convert.ToBoolean(dgvCompanyMaster.SelectedRows[0].Cells["DefaultValue"].Value);
                     grpCompany.Enabled = false;
                     txtCompanyName.Focus();
                 }

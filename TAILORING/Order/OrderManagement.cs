@@ -563,6 +563,13 @@ namespace TAILORING.Order
             ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
+        private void PrintOrder()
+        {
+            Report.Forms.frmBill Obj = new Report.Forms.frmBill();
+            Obj.OrderID = this.OrderID.ToString();
+            Obj.Show();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ObjUtil.ValidateTable(dtOrder))
@@ -577,8 +584,9 @@ namespace TAILORING.Order
                         if (b)
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
-                            ClearAll();
                             dataGridView1.DataSource = null;
+                            PrintOrder();
+                            ClearAll();
                         }
                         else
                         {

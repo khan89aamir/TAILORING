@@ -252,6 +252,18 @@
     <Compile Include="Masters\frmGSTMaster.Designer.cs">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Forms\frmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\frmCustomerDetails.Designer.cs">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Forms\frmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\frmOrderDetails.Designer.cs">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="SPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -321,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\frmBill.resx">
       <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\frmCustomerDetails.resx">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\frmOrderDetails.resx">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RDLC\CustomerCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\FactoryCopy.rdlc" />

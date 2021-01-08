@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using gGlowBox;
 
 namespace TAILORING.Others
 {
@@ -115,9 +116,13 @@ namespace TAILORING.Others
 
             for (int i = 0; i < dt.Columns.Count; i++)
             {
-                Panel panel = new Panel();
+                gGlowGroupBox panel = new gGlowBox.gGlowGroupBox();
+                
                 Label label = new Label();
                 TextBox txt = new TextBox();
+                
+                panel.GlowAmount = 20;
+                panel.GlowFeather = 50;
 
                 label.Location = new Point(13, 16);
                 label.Text = dt.Columns[i].ColumnName;
@@ -147,8 +152,9 @@ namespace TAILORING.Others
                 if (ObjUtil.ValidateTable(dt))
                     txt.Text = dt.Rows[0][label.Text].ToString();
 
-                panel.Size = new Size(panel.Width + 23, panel.Height - 60);
+                panel.Size = new Size(panel.Width + 23, panel.Height - 55);
                 panel.Controls.Add(label);
+                panel.SetGlowColor(txt, Color.FromArgb(130, 186, 204));
                 panel.Controls.Add(txt);
                 panel.Location = new Point(0, 0);
 

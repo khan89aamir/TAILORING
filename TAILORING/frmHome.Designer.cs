@@ -126,6 +126,14 @@
             this.picReport = new System.Windows.Forms.PictureBox();
             this.ribbonHost20 = new System.Windows.Forms.RibbonHost();
             this.lblReport = new System.Windows.Forms.Label();
+            this.ribbonPanel17 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonHost27 = new System.Windows.Forms.RibbonHost();
+            this.ribbonHost28 = new System.Windows.Forms.RibbonHost();
+            this.lblCustomerReport = new System.Windows.Forms.Label();
+            this.ribbonPanel18 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonHost29 = new System.Windows.Forms.RibbonHost();
+            this.lblSKUReport = new System.Windows.Forms.Label();
+            this.ribbonHost30 = new System.Windows.Forms.RibbonHost();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost21 = new System.Windows.Forms.RibbonHost();
@@ -143,6 +151,8 @@
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
+            this.Report2 = new System.Windows.Forms.PictureBox();
+            this.Report3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -163,6 +173,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -332,6 +344,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(208)))), ((int)(((byte)(232)))));
             this.statusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.statusStrip1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -373,9 +386,10 @@
             // 
             this.picLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.picLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picLogOut.BackgroundImage")));
             this.picLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogOut.Image = ((System.Drawing.Image)(resources.GetObject("picLogOut.Image")));
-            this.picLogOut.Location = new System.Drawing.Point(1206, 127);
+            this.picLogOut.Location = new System.Drawing.Point(1213, 40);
             this.picLogOut.Name = "picLogOut";
             this.picLogOut.Size = new System.Drawing.Size(48, 60);
             this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -389,12 +403,13 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1204, 190);
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(1212, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 18);
+            this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Logout";
+            this.label1.Text = "Log Out";
             this.label1.Click += new System.EventHandler(this.picLogOut_Click);
             // 
             // panel1
@@ -1010,6 +1025,8 @@
             // 
             this.ribbonTab5.Name = "ribbonTab5";
             this.ribbonTab5.Panels.Add(this.ribbonPanel11);
+            this.ribbonTab5.Panels.Add(this.ribbonPanel17);
+            this.ribbonTab5.Panels.Add(this.ribbonPanel18);
             this.ribbonTab5.Text = "Reports";
             // 
             // ribbonPanel11
@@ -1017,7 +1034,7 @@
             this.ribbonPanel11.Items.Add(this.ribbonHost19);
             this.ribbonPanel11.Items.Add(this.ribbonHost20);
             this.ribbonPanel11.Name = "ribbonPanel11";
-            this.ribbonPanel11.Text = "    Order Report      .";
+            this.ribbonPanel11.Text = "Order Details Report     .";
             // 
             // ribbonHost19
             // 
@@ -1030,7 +1047,7 @@
             this.picReport.BackColor = System.Drawing.Color.Transparent;
             this.picReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picReport.Image = ((System.Drawing.Image)(resources.GetObject("picReport.Image")));
-            this.picReport.Location = new System.Drawing.Point(12, 426);
+            this.picReport.Location = new System.Drawing.Point(843, 250);
             this.picReport.Name = "picReport";
             this.picReport.Size = new System.Drawing.Size(76, 44);
             this.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1049,11 +1066,71 @@
             this.lblReport.AutoSize = true;
             this.lblReport.BackColor = System.Drawing.Color.Transparent;
             this.lblReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReport.Location = new System.Drawing.Point(9, 473);
+            this.lblReport.Location = new System.Drawing.Point(840, 297);
             this.lblReport.Name = "lblReport";
             this.lblReport.Size = new System.Drawing.Size(76, 15);
             this.lblReport.TabIndex = 51;
             this.lblReport.Text = "Order Report";
+            // 
+            // ribbonPanel17
+            // 
+            this.ribbonPanel17.Items.Add(this.ribbonHost27);
+            this.ribbonPanel17.Items.Add(this.ribbonHost28);
+            this.ribbonPanel17.Name = "ribbonPanel17";
+            this.ribbonPanel17.Text = "Customer Details Report";
+            // 
+            // ribbonHost27
+            // 
+            this.ribbonHost27.HostedControl = this.Report2;
+            this.ribbonHost27.Name = "ribbonHost27";
+            this.ribbonHost27.Text = "";
+            // 
+            // ribbonHost28
+            // 
+            this.ribbonHost28.HostedControl = this.lblCustomerReport;
+            this.ribbonHost28.Name = "ribbonHost28";
+            this.ribbonHost28.Text = "";
+            // 
+            // lblCustomerReport
+            // 
+            this.lblCustomerReport.AutoSize = true;
+            this.lblCustomerReport.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomerReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerReport.Location = new System.Drawing.Point(840, 334);
+            this.lblCustomerReport.Name = "lblCustomerReport";
+            this.lblCustomerReport.Size = new System.Drawing.Size(97, 15);
+            this.lblCustomerReport.TabIndex = 62;
+            this.lblCustomerReport.Text = "Customer Report";
+            // 
+            // ribbonPanel18
+            // 
+            this.ribbonPanel18.Items.Add(this.ribbonHost29);
+            this.ribbonPanel18.Items.Add(this.ribbonHost30);
+            this.ribbonPanel18.Name = "ribbonPanel18";
+            this.ribbonPanel18.Text = "        SKU Report      .";
+            // 
+            // ribbonHost29
+            // 
+            this.ribbonHost29.HostedControl = this.Report3;
+            this.ribbonHost29.Name = "ribbonHost29";
+            this.ribbonHost29.Text = "";
+            // 
+            // lblSKUReport
+            // 
+            this.lblSKUReport.AutoSize = true;
+            this.lblSKUReport.BackColor = System.Drawing.Color.Transparent;
+            this.lblSKUReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSKUReport.Location = new System.Drawing.Point(840, 360);
+            this.lblSKUReport.Name = "lblSKUReport";
+            this.lblSKUReport.Size = new System.Drawing.Size(71, 15);
+            this.lblSKUReport.TabIndex = 63;
+            this.lblSKUReport.Text = "SKU Report";
+            // 
+            // ribbonHost30
+            // 
+            this.ribbonHost30.HostedControl = this.lblSKUReport;
+            this.ribbonHost30.Name = "ribbonHost30";
+            this.ribbonHost30.Text = "";
             // 
             // ribbonTab6
             // 
@@ -1189,6 +1266,30 @@
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
             // 
+            // Report2
+            // 
+            this.Report2.BackColor = System.Drawing.Color.Transparent;
+            this.Report2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report2.Image = ((System.Drawing.Image)(resources.GetObject("Report2.Image")));
+            this.Report2.Location = new System.Drawing.Point(959, 232);
+            this.Report2.Name = "Report2";
+            this.Report2.Size = new System.Drawing.Size(76, 44);
+            this.Report2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Report2.TabIndex = 64;
+            this.Report2.TabStop = false;
+            // 
+            // Report3
+            // 
+            this.Report3.BackColor = System.Drawing.Color.Transparent;
+            this.Report3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report3.Image = ((System.Drawing.Image)(resources.GetObject("Report3.Image")));
+            this.Report3.Location = new System.Drawing.Point(1076, 232);
+            this.Report3.Name = "Report3";
+            this.Report3.Size = new System.Drawing.Size(76, 44);
+            this.Report3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Report3.TabIndex = 65;
+            this.Report3.TabStop = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1196,6 +1297,12 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1289, 622);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.picLogOut);
+            this.Controls.Add(this.Report3);
+            this.Controls.Add(this.Report2);
+            this.Controls.Add(this.lblSKUReport);
+            this.Controls.Add(this.lblCustomerReport);
             this.Controls.Add(this.lblProductRate);
             this.Controls.Add(this.picProductRate);
             this.Controls.Add(this.picGST);
@@ -1227,8 +1334,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ribbon1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.picLogOut);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -1266,6 +1371,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1389,5 +1496,15 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonHost rbGSTPic;
         private System.Windows.Forms.RibbonHost rbGST;
+        private System.Windows.Forms.Label lblCustomerReport;
+        private System.Windows.Forms.RibbonPanel ribbonPanel17;
+        private System.Windows.Forms.RibbonHost ribbonHost27;
+        private System.Windows.Forms.RibbonHost ribbonHost28;
+        private System.Windows.Forms.RibbonPanel ribbonPanel18;
+        private System.Windows.Forms.Label lblSKUReport;
+        private System.Windows.Forms.RibbonHost ribbonHost29;
+        private System.Windows.Forms.RibbonHost ribbonHost30;
+        private System.Windows.Forms.PictureBox Report2;
+        private System.Windows.Forms.PictureBox Report3;
     }
 }

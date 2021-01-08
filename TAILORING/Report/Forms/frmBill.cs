@@ -34,7 +34,10 @@ namespace TAILORING.Report.Forms
             reportViewer1.LocalReport.EnableExternalImages = true;
             reportViewer2.LocalReport.EnableExternalImages = true;
             reportViewer3.LocalReport.EnableExternalImages = true;
-
+            if (OrderID.Trim().Length==0)
+            {
+                return;
+            }
 
             string strcomName = "";
             string parmGSTNo = "";
@@ -603,8 +606,8 @@ namespace TAILORING.Report.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             
-            reportViewer1.PrintDialog();
             reportViewer2.PrintDialog();
+            reportViewer1.PrintDialog();
             reportViewer3.PrintDialog();
         }
     }

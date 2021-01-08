@@ -299,7 +299,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(208)))), ((int)(((byte)(232)))));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Controls.Add(this.btnMeasurement);
             this.panel5.Controls.Add(this.btnSave);
@@ -313,11 +313,13 @@
             this.btnMeasurement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMeasurement.AutoSize = true;
             this.btnMeasurement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurement.Location = new System.Drawing.Point(927, 8);
+            this.btnMeasurement.Location = new System.Drawing.Point(927, 5);
             this.btnMeasurement.Name = "btnMeasurement";
             this.btnMeasurement.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnMeasurement.Size = new System.Drawing.Size(113, 25);
+            this.btnMeasurement.Size = new System.Drawing.Size(113, 30);
             this.btnMeasurement.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnMeasurement.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnMeasurement.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnMeasurement.TabIndex = 362;
             this.btnMeasurement.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnMeasurement.Values.Image")));
             this.btnMeasurement.Values.Text = "Measurement";
@@ -328,11 +330,13 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(1049, 8);
+            this.btnSave.Location = new System.Drawing.Point(1049, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnSave.Size = new System.Drawing.Size(76, 25);
+            this.btnSave.Size = new System.Drawing.Size(76, 28);
             this.btnSave.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnSave.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSave.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSave.TabIndex = 361;
             this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
             this.btnSave.Values.Text = "Save";
@@ -507,9 +511,15 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpNewOrder);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1107, 101);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 358;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Order Details";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
@@ -556,7 +566,7 @@
             this.txtTrimsAmount.BackColor = System.Drawing.Color.White;
             this.grpNewOrder.SetEffectType(this.txtTrimsAmount, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtTrimsAmount.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtTrimsAmount.Location = new System.Drawing.Point(774, 20);
+            this.txtTrimsAmount.Location = new System.Drawing.Point(774, 19);
             this.txtTrimsAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTrimsAmount.MaxLength = 10;
             this.txtTrimsAmount.Name = "txtTrimsAmount";
@@ -710,9 +720,14 @@
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
             this.grpGridview.Size = new System.Drawing.Size(1106, 221);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.TabIndex = 359;
             this.grpGridview.ValuesPrimary.Heading = "List Of Order Details";
             this.grpGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -746,6 +761,8 @@
             this.btnNewCustomer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnNewCustomer.Size = new System.Drawing.Size(122, 28);
             this.btnNewCustomer.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnNewCustomer.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnNewCustomer.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnNewCustomer.TabIndex = 358;
             this.btnNewCustomer.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
             this.btnNewCustomer.Values.Text = "New Customer";
@@ -762,6 +779,8 @@
             this.btnSaveCustomer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSaveCustomer.Size = new System.Drawing.Size(122, 28);
             this.btnSaveCustomer.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnSaveCustomer.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSaveCustomer.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSaveCustomer.TabIndex = 360;
             this.btnSaveCustomer.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
             this.btnSaveCustomer.Values.Text = "Save Customer";
@@ -778,6 +797,8 @@
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdd.Size = new System.Drawing.Size(87, 31);
             this.btnAdd.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnAdd.TabIndex = 361;
             this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
             this.btnAdd.Values.Text = "Add Item";

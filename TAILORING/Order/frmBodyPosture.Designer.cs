@@ -72,7 +72,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(208)))), ((int)(((byte)(232)))));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Controls.Add(this.btnPostureSave);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;

@@ -410,6 +410,7 @@
     <None Include="Resources\bulet.png" />
     <None Include="Resources\bulet - Copy.png" />
     <None Include="Resources\tick - Copy.png" />
+    <None Include="Resources\padlock.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

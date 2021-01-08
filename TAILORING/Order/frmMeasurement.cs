@@ -313,11 +313,11 @@ namespace TAILORING.Order
             dataGridView1.Columns["FitTypeID"].Visible = false;
 
             dataGridView1.ClearSelection();
-            dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
-            dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
+            //dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            //dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void AddStyleImages()

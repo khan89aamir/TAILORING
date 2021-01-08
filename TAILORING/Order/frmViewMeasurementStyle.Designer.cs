@@ -31,7 +31,6 @@
             this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.lblOrderNo = new System.Windows.Forms.Label();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.grpSKUList.SuspendLayout();
             this.grpMeasurement.SuspendLayout();
             this.grpStyle.SuspendLayout();
@@ -97,20 +97,6 @@
             this.grpMeasurement.TabIndex = 357;
             this.grpMeasurement.TabStop = false;
             this.grpMeasurement.Text = "Measurement :";
-            // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.IsEditable = false;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(621, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // label4
             // 
@@ -384,6 +370,20 @@
             this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
             this.btnSave.Values.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(621, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmViewMeasurementStyle
             // 

@@ -466,7 +466,7 @@ namespace TAILORING.Order
 
                 DataRow dRow = dtOrder.NewRow();
                 dRow["GarmentID"] = cmbGarmentName.SelectedValue;
-                dRow["GarmentCode"] = GarmentCode;
+                dRow["GarmentCode"] = GarmentCode.ToUpper();
                 dRow["GarmentName"] = GarmentName;
                 dRow["Trim Amount"] = trim;
                 dRow["ServiceID"] = cmbOrderType.SelectedIndex.ToString();

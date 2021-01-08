@@ -581,9 +581,17 @@ namespace TAILORING.Order
             GetGarmentStyle(GarmentID);// Garment Style
         }
 
+        private void PrintOrder()
+        {
+            Report.Forms.frmBill Obj = new Report.Forms.frmBill();
+            Obj.OrderID = "1005";
+            Obj.Show();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
+            PrintOrder();
+            //this.Close();
             //Update Code
         }
 

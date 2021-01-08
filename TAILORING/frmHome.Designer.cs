@@ -93,13 +93,16 @@
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.ribbonHost12 = new System.Windows.Forms.RibbonHost();
             this.lblProduct = new System.Windows.Forms.Label();
-            this.picGST = new System.Windows.Forms.PictureBox();
-            this.lblGST = new System.Windows.Forms.Label();
             this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
             this.rbProductRatePic = new System.Windows.Forms.RibbonHost();
             this.picProductRate = new System.Windows.Forms.PictureBox();
             this.rbProductRate = new System.Windows.Forms.RibbonHost();
             this.lblProductRate = new System.Windows.Forms.Label();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.rbGSTPic = new System.Windows.Forms.RibbonHost();
+            this.picGST = new System.Windows.Forms.PictureBox();
+            this.rbGST = new System.Windows.Forms.RibbonHost();
+            this.lblGST = new System.Windows.Forms.Label();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost13 = new System.Windows.Forms.RibbonHost();
@@ -140,9 +143,6 @@
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
-            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
-            this.rbGSTPic = new System.Windows.Forms.RibbonHost();
-            this.rbGST = new System.Windows.Forms.RibbonHost();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -154,8 +154,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProductRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).BeginInit();
@@ -782,30 +782,6 @@
             this.lblProduct.TabIndex = 41;
             this.lblProduct.Text = "Product Master";
             // 
-            // picGST
-            // 
-            this.picGST.BackColor = System.Drawing.Color.Transparent;
-            this.picGST.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picGST.Image = ((System.Drawing.Image)(resources.GetObject("picGST.Image")));
-            this.picGST.Location = new System.Drawing.Point(485, 185);
-            this.picGST.Name = "picGST";
-            this.picGST.Size = new System.Drawing.Size(59, 44);
-            this.picGST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picGST.TabIndex = 58;
-            this.picGST.TabStop = false;
-            this.picGST.Click += new System.EventHandler(this.picGST_Click);
-            // 
-            // lblGST
-            // 
-            this.lblGST.AutoSize = true;
-            this.lblGST.BackColor = System.Drawing.Color.Transparent;
-            this.lblGST.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGST.Location = new System.Drawing.Point(538, 200);
-            this.lblGST.Name = "lblGST";
-            this.lblGST.Size = new System.Drawing.Size(112, 15);
-            this.lblGST.TabIndex = 57;
-            this.lblGST.Text = "   GST Management";
-            // 
             // ribbonPanel16
             // 
             this.ribbonPanel16.Items.Add(this.rbProductRatePic);
@@ -846,6 +822,47 @@
             this.lblProductRate.Size = new System.Drawing.Size(117, 15);
             this.lblProductRate.TabIndex = 60;
             this.lblProductRate.Text = "Product Rate Master";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Items.Add(this.rbGSTPic);
+            this.ribbonPanel3.Items.Add(this.rbGST);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Text = "GST Master";
+            // 
+            // rbGSTPic
+            // 
+            this.rbGSTPic.HostedControl = this.picGST;
+            this.rbGSTPic.Name = "rbGSTPic";
+            // 
+            // picGST
+            // 
+            this.picGST.BackColor = System.Drawing.Color.Transparent;
+            this.picGST.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picGST.Image = ((System.Drawing.Image)(resources.GetObject("picGST.Image")));
+            this.picGST.Location = new System.Drawing.Point(489, 185);
+            this.picGST.Name = "picGST";
+            this.picGST.Size = new System.Drawing.Size(59, 44);
+            this.picGST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGST.TabIndex = 58;
+            this.picGST.TabStop = false;
+            this.picGST.Click += new System.EventHandler(this.picGST_Click);
+            // 
+            // rbGST
+            // 
+            this.rbGST.HostedControl = this.lblGST;
+            this.rbGST.Name = "rbGST";
+            // 
+            // lblGST
+            // 
+            this.lblGST.AutoSize = true;
+            this.lblGST.BackColor = System.Drawing.Color.Transparent;
+            this.lblGST.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGST.Location = new System.Drawing.Point(538, 200);
+            this.lblGST.Name = "lblGST";
+            this.lblGST.Size = new System.Drawing.Size(112, 15);
+            this.lblGST.TabIndex = 57;
+            this.lblGST.Text = "   GST Management";
             // 
             // ribbonTab3
             // 
@@ -1172,23 +1189,6 @@
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
             // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.Items.Add(this.rbGSTPic);
-            this.ribbonPanel3.Items.Add(this.rbGST);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Text = "GST Master";
-            // 
-            // rbGSTPic
-            // 
-            this.rbGSTPic.HostedControl = this.picGST;
-            this.rbGSTPic.Name = "rbGSTPic";
-            // 
-            // rbGST
-            // 
-            this.rbGST.HostedControl = this.lblGST;
-            this.rbGST.Name = "rbGST";
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1257,8 +1257,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProductRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).EndInit();

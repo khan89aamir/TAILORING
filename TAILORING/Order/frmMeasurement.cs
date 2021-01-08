@@ -7,11 +7,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmMeasurement : Form
+    public partial class frmMeasurement : KryptonForm
     {
         public frmMeasurement()
         {
@@ -212,13 +213,16 @@ namespace TAILORING.Order
         {
             for (int i = 0; i < dtStyle.Rows.Count; i++)
             {
-                Button btn = new Button();
+                //Button btn = new Button();
+                KryptonButton btn = new KryptonButton();
+                //btn.Font = new Font("Times New Roman", 11);
+                //btn.Size = new Size(78,34);
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.FlatAppearance.BorderSize = 0;
-                btn.AutoSize = true;
+                //btn.FlatStyle = FlatStyle.Flat;
+                //btn.FlatAppearance.BorderSize = 0;
+                //btn.AutoSize = true;
                 btn.Click += btnStyleName_Click;
 
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
@@ -245,8 +249,8 @@ namespace TAILORING.Order
         private void btnStyleName_Click(object sender, EventArgs e)
         {
             ClearSyleNameSelection();
-
-            Button btn = (Button)sender;
+            //Button btn = (Button)sender;
+            KryptonButton btn = (KryptonButton)sender;
 
             if (btn.BackColor != Color.FromArgb(17, 241, 41))
                 btn.BackColor = Color.FromArgb(0, 191, 255);
@@ -276,7 +280,7 @@ namespace TAILORING.Order
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
             dataGridView1.Columns["GarmentName"].HeaderText = "Garment";
             dataGridView1.Columns["ServiceID"].Visible = false;
@@ -296,6 +300,8 @@ namespace TAILORING.Order
             dataGridView1.ClearSelection();
             dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
             dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
         }
 

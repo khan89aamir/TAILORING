@@ -32,7 +32,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTailoringAmount = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -44,16 +43,14 @@
             this.rdSearchByCustomerName = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnMeasurement = new System.Windows.Forms.Button();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnMeasurement = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label16 = new System.Windows.Forms.Label();
             this.txtGrossAmt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnNewCustomer = new System.Windows.Forms.Button();
-            this.btnSaveCustomer = new System.Windows.Forms.Button();
             this.txtCustomerAdd = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtCustomerMobileNo = new System.Windows.Forms.TextBox();
@@ -80,6 +77,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.btnNewCustomer = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSaveCustomer = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
@@ -131,26 +131,12 @@
             this.txtCustomerID.Text = "1";
             this.txtCustomerID.Visible = false;
             // 
-            // lnkAddItem
-            // 
-            this.lnkAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lnkAddItem.AutoSize = true;
-            this.lnkAddItem.BackColor = System.Drawing.Color.Transparent;
-            this.lnkAddItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddItem.Location = new System.Drawing.Point(1026, 344);
-            this.lnkAddItem.Name = "lnkAddItem";
-            this.lnkAddItem.Size = new System.Drawing.Size(96, 21);
-            this.lnkAddItem.TabIndex = 330;
-            this.lnkAddItem.TabStop = true;
-            this.lnkAddItem.Text = "+ Add Item";
-            this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 612);
+            this.label4.Location = new System.Drawing.Point(11, 612);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 19);
             this.label4.TabIndex = 323;
@@ -159,12 +145,12 @@
             // txtTailoringAmount
             // 
             this.txtTailoringAmount.BackColor = System.Drawing.Color.White;
-            this.txtTailoringAmount.Enabled = false;
             this.txtTailoringAmount.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtTailoringAmount.Location = new System.Drawing.Point(194, 608);
+            this.txtTailoringAmount.Location = new System.Drawing.Point(146, 611);
             this.txtTailoringAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTailoringAmount.Name = "txtTailoringAmount";
-            this.txtTailoringAmount.Size = new System.Drawing.Size(153, 25);
+            this.txtTailoringAmount.ReadOnly = true;
+            this.txtTailoringAmount.Size = new System.Drawing.Size(119, 25);
             this.txtTailoringAmount.TabIndex = 322;
             this.txtTailoringAmount.Text = "0";
             // 
@@ -200,7 +186,7 @@
             this.cmbOrderType.Items.AddRange(new object[] {
             "Normal",
             "Urgent"});
-            this.cmbOrderType.Location = new System.Drawing.Point(146, 198);
+            this.cmbOrderType.Location = new System.Drawing.Point(146, 195);
             this.cmbOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbOrderType.Name = "cmbOrderType";
             this.cmbOrderType.Size = new System.Drawing.Size(198, 25);
@@ -219,9 +205,7 @@
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByMobileNo.TabIndex = 4;
             this.txtSearchByMobileNo.TextChanged += new System.EventHandler(this.txtSearchByMobileNo_TextChanged);
-            this.txtSearchByMobileNo.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtSearchByMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
-            this.txtSearchByMobileNo.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // rdSearchByCustomerMobileNo
             // 
@@ -249,9 +233,7 @@
             this.txtSearchByCustomerName.Size = new System.Drawing.Size(223, 25);
             this.txtSearchByCustomerName.TabIndex = 1;
             this.txtSearchByCustomerName.TextChanged += new System.EventHandler(this.txtSearchByCustomerName_TextChanged);
-            this.txtSearchByCustomerName.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByCustomerName_KeyPress);
-            this.txtSearchByCustomerName.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // rdSearchByCustomerName
             // 
@@ -292,40 +274,6 @@
             this.panel2.Size = new System.Drawing.Size(1137, 40);
             this.panel2.TabIndex = 315;
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(1049, 8);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(76, 25);
-            this.btnSave.TabIndex = 336;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            // 
-            // btnMeasurement
-            // 
-            this.btnMeasurement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMeasurement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMeasurement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMeasurement.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMeasurement.Location = new System.Drawing.Point(940, 8);
-            this.btnMeasurement.Name = "btnMeasurement";
-            this.btnMeasurement.Size = new System.Drawing.Size(97, 25);
-            this.btnMeasurement.TabIndex = 335;
-            this.btnMeasurement.Text = "Measurement";
-            this.btnMeasurement.UseVisualStyleBackColor = true;
-            this.btnMeasurement.Click += new System.EventHandler(this.btnMeasurement_Click);
-            this.btnMeasurement.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnMeasurement.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            // 
             // dtpBookingDate
             // 
             this.dtpBookingDate.Enabled = false;
@@ -360,13 +308,43 @@
             this.panel5.Size = new System.Drawing.Size(1137, 40);
             this.panel5.TabIndex = 341;
             // 
+            // btnMeasurement
+            // 
+            this.btnMeasurement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMeasurement.AutoSize = true;
+            this.btnMeasurement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMeasurement.Location = new System.Drawing.Point(927, 8);
+            this.btnMeasurement.Name = "btnMeasurement";
+            this.btnMeasurement.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnMeasurement.Size = new System.Drawing.Size(113, 25);
+            this.btnMeasurement.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnMeasurement.TabIndex = 362;
+            this.btnMeasurement.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnMeasurement.Values.Image")));
+            this.btnMeasurement.Values.Text = "Measurement";
+            this.btnMeasurement.Click += new System.EventHandler(this.btnMeasurement_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.AutoSize = true;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(1049, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnSave.Size = new System.Drawing.Size(76, 25);
+            this.btnSave.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnSave.TabIndex = 361;
+            this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
+            this.btnSave.Values.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(833, 612);
+            this.label16.Location = new System.Drawing.Point(858, 612);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 19);
             this.label16.TabIndex = 343;
@@ -376,12 +354,12 @@
             // 
             this.txtGrossAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGrossAmt.BackColor = System.Drawing.Color.White;
-            this.txtGrossAmt.Enabled = false;
             this.txtGrossAmt.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtGrossAmt.Location = new System.Drawing.Point(980, 608);
+            this.txtGrossAmt.Location = new System.Drawing.Point(1002, 609);
             this.txtGrossAmt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGrossAmt.Name = "txtGrossAmt";
-            this.txtGrossAmt.Size = new System.Drawing.Size(153, 25);
+            this.txtGrossAmt.ReadOnly = true;
+            this.txtGrossAmt.Size = new System.Drawing.Size(119, 25);
             this.txtGrossAmt.TabIndex = 342;
             this.txtGrossAmt.Text = "0";
             // 
@@ -396,41 +374,6 @@
             this.label18.TabIndex = 330;
             this.label18.Text = "Search By";
             // 
-            // btnNewCustomer
-            // 
-            this.btnNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomer.Location = new System.Drawing.Point(1013, 46);
-            this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.Size = new System.Drawing.Size(111, 25);
-            this.btnNewCustomer.TabIndex = 346;
-            this.btnNewCustomer.Text = "New Customer";
-            this.btnNewCustomer.UseVisualStyleBackColor = true;
-            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
-            this.btnNewCustomer.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnNewCustomer.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            // 
-            // btnSaveCustomer
-            // 
-            this.btnSaveCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveCustomer.Enabled = false;
-            this.btnSaveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSaveCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveCustomer.Location = new System.Drawing.Point(1014, 156);
-            this.btnSaveCustomer.Name = "btnSaveCustomer";
-            this.btnSaveCustomer.Size = new System.Drawing.Size(111, 25);
-            this.btnSaveCustomer.TabIndex = 347;
-            this.btnSaveCustomer.Text = "Save Customer";
-            this.btnSaveCustomer.UseVisualStyleBackColor = true;
-            this.btnSaveCustomer.Click += new System.EventHandler(this.btnSaveCustomer_Click);
-            this.btnSaveCustomer.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnSaveCustomer.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            // 
             // txtCustomerAdd
             // 
             this.txtCustomerAdd.BackColor = System.Drawing.Color.White;
@@ -442,8 +385,6 @@
             this.txtCustomerAdd.Name = "txtCustomerAdd";
             this.txtCustomerAdd.Size = new System.Drawing.Size(223, 41);
             this.txtCustomerAdd.TabIndex = 348;
-            this.txtCustomerAdd.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
-            this.txtCustomerAdd.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // txtCustomerName
             // 
@@ -456,9 +397,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(223, 25);
             this.txtCustomerName.TabIndex = 349;
-            this.txtCustomerName.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByCustomerName_KeyPress);
-            this.txtCustomerName.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // txtCustomerMobileNo
             // 
@@ -471,9 +410,7 @@
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
             this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 25);
             this.txtCustomerMobileNo.TabIndex = 350;
-            this.txtCustomerMobileNo.Enter += new System.EventHandler(this.txtSearchByCustomerName_Enter);
             this.txtCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
-            this.txtCustomerMobileNo.Leave += new System.EventHandler(this.txtSearchByCustomerName_Leave);
             // 
             // label19
             // 
@@ -491,7 +428,7 @@
             this.lblCGST.AutoSize = true;
             this.lblCGST.BackColor = System.Drawing.Color.Transparent;
             this.lblCGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCGST.Location = new System.Drawing.Point(446, 612);
+            this.lblCGST.Location = new System.Drawing.Point(385, 612);
             this.lblCGST.Name = "lblCGST";
             this.lblCGST.Size = new System.Drawing.Size(49, 19);
             this.lblCGST.TabIndex = 353;
@@ -500,11 +437,11 @@
             // txtCGST
             // 
             this.txtCGST.BackColor = System.Drawing.Color.White;
-            this.txtCGST.Enabled = false;
             this.txtCGST.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtCGST.Location = new System.Drawing.Point(544, 608);
+            this.txtCGST.Location = new System.Drawing.Point(495, 609);
             this.txtCGST.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCGST.Name = "txtCGST";
+            this.txtCGST.ReadOnly = true;
             this.txtCGST.Size = new System.Drawing.Size(59, 25);
             this.txtCGST.TabIndex = 352;
             this.txtCGST.Text = "0";
@@ -514,7 +451,7 @@
             this.lblSGST.AutoSize = true;
             this.lblSGST.BackColor = System.Drawing.Color.Transparent;
             this.lblSGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSGST.Location = new System.Drawing.Point(631, 612);
+            this.lblSGST.Location = new System.Drawing.Point(593, 612);
             this.lblSGST.Name = "lblSGST";
             this.lblSGST.Size = new System.Drawing.Size(47, 19);
             this.lblSGST.TabIndex = 355;
@@ -523,11 +460,11 @@
             // txtSGST
             // 
             this.txtSGST.BackColor = System.Drawing.Color.White;
-            this.txtSGST.Enabled = false;
             this.txtSGST.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtSGST.Location = new System.Drawing.Point(729, 608);
+            this.txtSGST.Location = new System.Drawing.Point(701, 609);
             this.txtSGST.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSGST.Name = "txtSGST";
+            this.txtSGST.ReadOnly = true;
             this.txtSGST.Size = new System.Drawing.Size(59, 25);
             this.txtSGST.TabIndex = 354;
             this.txtSGST.Text = "0";
@@ -562,7 +499,7 @@
             this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(15, 240);
+            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(15, 233);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
             // 
             // kryptonHeaderGroup1.Panel
@@ -570,15 +507,9 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpNewOrder);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1107, 101);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 358;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Order Details";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
@@ -599,6 +530,7 @@
             this.grpNewOrder.Controls.Add(this.dtpTrailDate);
             this.grpNewOrder.Controls.Add(this.label17);
             this.grpNewOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpNewOrder.Enabled = false;
             this.grpNewOrder.GlowAmount = 22;
             this.grpNewOrder.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.grpNewOrder.GlowFeather = 60;
@@ -778,14 +710,9 @@
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
             this.grpGridview.Size = new System.Drawing.Size(1106, 221);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.TabIndex = 359;
             this.grpGridview.ValuesPrimary.Heading = "List Of Order Details";
             this.grpGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -809,6 +736,53 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewCustomer.AutoSize = true;
+            this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewCustomer.Location = new System.Drawing.Point(1003, 43);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnNewCustomer.Size = new System.Drawing.Size(122, 28);
+            this.btnNewCustomer.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnNewCustomer.TabIndex = 358;
+            this.btnNewCustomer.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
+            this.btnNewCustomer.Values.Text = "New Customer";
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            // 
+            // btnSaveCustomer
+            // 
+            this.btnSaveCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveCustomer.AutoSize = true;
+            this.btnSaveCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveCustomer.Enabled = false;
+            this.btnSaveCustomer.Location = new System.Drawing.Point(1003, 156);
+            this.btnSaveCustomer.Name = "btnSaveCustomer";
+            this.btnSaveCustomer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnSaveCustomer.Size = new System.Drawing.Size(122, 28);
+            this.btnSaveCustomer.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnSaveCustomer.TabIndex = 360;
+            this.btnSaveCustomer.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
+            this.btnSaveCustomer.Values.Text = "Save Customer";
+            this.btnSaveCustomer.Click += new System.EventHandler(this.btnSaveCustomer_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Enabled = false;
+            this.btnAdd.Location = new System.Drawing.Point(1035, 337);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnAdd.Size = new System.Drawing.Size(87, 31);
+            this.btnAdd.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.TabIndex = 361;
+            this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
+            this.btnAdd.Values.Text = "Add Item";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -816,6 +790,9 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSaveCustomer);
+            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.grpGridview);
             this.Controls.Add(this.kryptonHeaderGroup1);
             this.Controls.Add(this.txtCustomerOrderNo);
@@ -828,8 +805,6 @@
             this.Controls.Add(this.txtCustomerMobileNo);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtCustomerAdd);
-            this.Controls.Add(this.btnSaveCustomer);
-            this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtSearchByMobileNo);
             this.Controls.Add(this.rdSearchByCustomerName);
@@ -842,7 +817,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.lnkAddItem);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTailoringAmount);
             this.Controls.Add(this.label14);
@@ -859,6 +833,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
@@ -881,7 +856,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.LinkLabel lnkAddItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTailoringAmount;
         private System.Windows.Forms.Label label14;
@@ -893,16 +867,12 @@
         private System.Windows.Forms.RadioButton rdSearchByCustomerName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnMeasurement;
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtGrossAmt;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.Button btnSaveCustomer;
         private System.Windows.Forms.TextBox txtCustomerAdd;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.TextBox txtCustomerMobileNo;
@@ -929,5 +899,10 @@
         private System.Windows.Forms.Label label17;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpGridview;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNewCustomer;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSaveCustomer;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnMeasurement;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
     }
 }

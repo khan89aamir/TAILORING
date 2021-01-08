@@ -289,7 +289,7 @@ namespace TAILORING.Masters
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpKrytonHeader.TabIndex = 326;
             this.grpKrytonHeader.ValuesPrimary.Heading = "GST Details";
-            this.grpKrytonHeader.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpKrytonHeader.ValuesPrimary.Image")));
+            this.grpKrytonHeader.ValuesPrimary.Image = null;
             // 
             // grpGST
             // 

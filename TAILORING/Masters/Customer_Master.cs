@@ -103,7 +103,7 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            //grpCustomer.Enabled = true;
+            grpCustomer.Enabled = true;
             txtCustomerName.Focus();
         }
 
@@ -129,7 +129,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                             ClearAll();
                             LoadData();
-                            //grpCustomer.Enabled = false;
+                            grpCustomer.Enabled = false;
                         }
                         else
                         {
@@ -156,7 +156,7 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                //grpCustomer.Enabled = true;
+                grpCustomer.Enabled = true;
                 txtCustomerName.Focus();
                 txtCustomerName.SelectionStart = txtCustomerName.MaxLength;
             }
@@ -190,7 +190,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is Updated", clsUtility.strProjectTitle);
                             LoadData();
                             ClearAll();
-                            //grpCustomer.Enabled = false;
+                            grpCustomer.Enabled = false;
                         }
                         else
                         {
@@ -225,7 +225,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        //grpCustomer.Enabled = false;
+                        grpCustomer.Enabled = false;
                         //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, clsUtility.IsAdmin);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
@@ -251,7 +251,7 @@ namespace TAILORING.Masters
                 LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                //grpCustomer.Enabled = false;
+                grpCustomer.Enabled = false;
             }
         }
 
@@ -267,7 +267,7 @@ namespace TAILORING.Masters
                     txtCustomerAddress.Text = dgvCustomerMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCustomerMobileNo.Text = dgvCustomerMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCustomerEmailID.Text = dgvCustomerMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    //grpCustomer.Enabled = false;
+                    grpCustomer.Enabled = false;
                     txtCustomerName.Focus();
                 }
                 catch { }

@@ -32,15 +32,39 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dataGridView1.RowHeadersVisible = false; // set it to false if not needed
 
-            LoadData();
+            LoadProductDate();
+            LoadProductRateData();
 
             grpProduct.Focus();
         }
 
-        private void LoadData()
+        private void LoadProductDate()
         {
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
-
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    cmbGarmentName.DataSource = dt;
+                    cmbGarmentName.DisplayMember = "GarmentName";
+                    cmbGarmentName.ValueMember = "GarmentID";
+                }
+                else
+                {
+                    cmbGarmentName.DataSource = null;
+                }
+            }
+            else
+            {
+                cmbGarmentName.DataSource = null;
+            }
+            cmbGarmentName.SelectedIndex = -1;
+        }
+        private void LoadProductRateData()
+        {
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, 2, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product_Rate");
             if (ObjUtil.ValidateDataSet(ds))
             {
                 DataTable dt = ds.Tables[0];
@@ -137,9 +161,45 @@ namespace TAILORING.Masters
             if (b)
             {
                 ClearAll();
-                LoadData();
+                LoadProductRateData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
                 grpProduct.Enabled = false;
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ObjUtil.SetRowNumber(dataGridView1);
+            //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            dataGridView1.Columns["GarmentID"].Visible = false;
+            dataGridView1.Columns["Photo"].Visible = false;
+            dataGridView1.Columns["LastChange"].Visible = false;
+            dataGridView1.Columns["GarmentCodeName"].Visible = false;
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            grpGridview.ValuesSecondary.Heading = "Total Records : " + dataGridView1.Rows.Count;
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 || e.ColumnIndex >= 0)
+            {
+                try
+                {
+                    ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
+                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentID"].Value);
+                    cmbGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
+                    txtRate.Text = dataGridView1.SelectedRows[0].Cells["Rate"].Value.ToString();
+                    cmbService.Text = dataGridView1.SelectedRows[0].Cells["OrderType"].Value.ToString();
+                    grpProduct.Enabled = false;
+                    cmbGarmentName.Focus();
+                }
+                catch (Exception ex)
+                {
+                    clsUtility.ShowErrorMessage(ex.ToString(), clsUtility.strProjectTitle);
+                }
             }
         }
     }

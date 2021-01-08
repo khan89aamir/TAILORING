@@ -327,7 +327,7 @@ namespace TAILORING.Masters
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.TabIndex = 329;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Search By";
-            this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
+            this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.grpSearch_Values_Image;
             // 
             // grpCustomerSearch
             // 
@@ -341,7 +341,6 @@ namespace TAILORING.Masters
             this.grpCustomerSearch.GlowAmount = 22;
             this.grpCustomerSearch.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.grpCustomerSearch.GlowFeather = 60;
-            this.grpCustomerSearch.GlowOn = true;
             this.grpCustomerSearch.Location = new System.Drawing.Point(0, 0);
             this.grpCustomerSearch.Name = "grpCustomerSearch";
             this.grpCustomerSearch.Size = new System.Drawing.Size(750, 61);

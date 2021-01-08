@@ -1378,7 +1378,7 @@
         private System.Windows.Forms.PictureBox picHelp;
         private System.Windows.Forms.RibbonHost ribbonHost26;
         private System.Windows.Forms.Label lblSetting;
-        private System.Windows.Forms.RibbonPanel ribbonPanel15;
+        //private System.Windows.Forms.RibbonPanel ribbonPanel15;
         private System.Windows.Forms.PictureBox picGST;
         private System.Windows.Forms.Label lblGST;
         private System.Windows.Forms.RibbonPanel ribbonPanel16;

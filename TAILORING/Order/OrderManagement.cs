@@ -38,14 +38,16 @@ namespace TAILORING.Order
         int OrderID = 0;
         double CGST = 0, SGST = 0;
         string InvoiceNo = string.Empty;
+        string GarmentCode = string.Empty;
         string GarmentName = string.Empty;
+        string strPhoto = string.Empty;
 
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
-            btnMeasurement.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnSaveCustomer.BackgroundImage = B_Leave;
-            btnNewCustomer.BackgroundImage = B_Leave;
+            //btnMeasurement.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnSaveCustomer.BackgroundImage = B_Leave;
+            //btnNewCustomer.BackgroundImage = B_Leave;
 
             InitItemTable();
             InitOrderDetailsTable(); //Order Details
@@ -351,6 +353,7 @@ namespace TAILORING.Order
             grpNewOrder.Enabled = true;
             cmbGarmentName.Focus();
             FillGarmentData();
+            btnAdd.Enabled = true;
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -358,7 +361,7 @@ namespace TAILORING.Order
             try
             {
                 ObjUtil.SetRowNumber(dataGridView1);
-                ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+                //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
                 dataGridView1.Columns["GarmentID"].Visible = false;
                 dataGridView1.Columns["Photo"].Visible = false;
                 if (dataGridView1.Columns.Contains("ServiceID"))
@@ -387,6 +390,9 @@ namespace TAILORING.Order
                 {
                     dataGridView1.Columns.Remove("ColDelete");
                 }
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
                 DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
                 ColDelete.DataPropertyName = "Delete";
                 ColDelete.HeaderText = "Delete";
@@ -406,12 +412,14 @@ namespace TAILORING.Order
             {
                 txtRate.Text = drow[0]["Rate"].ToString();
                 GarmentName = drow[0]["GarmentName"].ToString();
+                GarmentCode = drow[0]["GarmentCode"].ToString();
+                strPhoto = drow[0]["Photo"].ToString();
             }
             else
             {
                 txtRate.Text = "0";
             }
-            lnkAddItem.Enabled = true;
+            btnAdd.Enabled = true;
         }
 
         private void AddDefaultRow()
@@ -450,24 +458,43 @@ namespace TAILORING.Order
             dtOrder.AcceptChanges();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            //decimal trim = (txtTrimsAmount.Text.Length > 0 ? Convert.ToDecimal(txtTrimsAmount.Text) : 0);
+            if (cmbGarmentName.SelectedValue != null)
+            {
+                decimal trim = (txtTrimsAmount.Text.Length > 0 ? Convert.ToDecimal(txtTrimsAmount.Text) : 0);
 
-            //DataRow dRow = dtOrder.NewRow();
-            //dRow["GarmentID"] = cmbGarmentName.SelectedValue;
-            //dRow["GarmentName"] = GarmentName;
-            //dRow["Trim Amount"] = trim;
-            //dRow["Rate"] = txtRate.Text;
-            //dRow["QTY"] = NumericQTY.Value;
-            //dRow["Total"] = trim + (NumericQTY.Value * Convert.ToDecimal(txtRate.Text));
+                DataRow dRow = dtOrder.NewRow();
+                dRow["GarmentID"] = cmbGarmentName.SelectedValue;
+                dRow["GarmentCode"] = GarmentCode;
+                dRow["GarmentName"] = GarmentName;
+                dRow["Trim Amount"] = trim;
+                dRow["ServiceID"] = cmbOrderType.SelectedIndex.ToString();
+                dRow["Service"] = cmbOrderType.SelectedItem.ToString();
+                if (dtpTrailDate.Checked)
+                    dRow["TrailDate"] = dtpTrailDate.Value.ToString("yyyy-MM-dd");
+                else
+                    dRow["TrailDate"] = DBNull.Value;
+                
+                dRow["DeliveryDate"] = dtpDeliveryDate.Value.ToString("yyyy-MM-dd");
+                dRow["Photo"] = strPhoto;
+                dRow["Rate"] = txtRate.Text;
+                dRow["QTY"] = NumericQTY.Value;
+                dRow["Total"] = trim + (NumericQTY.Value * Convert.ToDecimal(txtRate.Text));
 
-            //dtOrder.Rows.Add(dRow);
-            //dtOrder.AcceptChanges();
+                dtOrder.Rows.Add(dRow);
+                dtOrder.AcceptChanges();
 
-            AddDefaultRow();
-            dataGridView1.DataSource = dtOrder;
-            ResetGarmentDetails();
+                //AddDefaultRow();
+                dataGridView1.DataSource = dtOrder;
+                ResetGarmentDetails();
+
+                btnAdd.Enabled = false;
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("Please Select Some Garments..");
+            }
         }
 
         private void CalcTotalAmount()
@@ -539,28 +566,6 @@ namespace TAILORING.Order
 
             OrderID = 0;
             CustomerID = 0;
-        }
-
-        private void btnSave_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnSave_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
-        }
-
-        private void txtSearchByCustomerName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtSearchByCustomerName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
         private void PrintOrder()
@@ -653,7 +658,9 @@ namespace TAILORING.Order
                 drow["FitTypeID"] = dtOrder.Rows[i]["FitTypeID"];
                 drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
                 drow["Service"] = dtOrder.Rows[i]["ServiceID"];
-                drow["TrailDate"] = Convert.ToDateTime(dtOrder.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd");
+
+                drow["TrailDate"] = dtOrder.Rows[i]["TrailDate"]!=DBNull.Value?Convert.ToDateTime(dtOrder.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd"): DBNull.Value.ToString();
+
                 drow["DeliveryDate"] = Convert.ToDateTime(dtOrder.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
                 drow["TrimAmount"] = dtOrder.Rows[i]["Trim Amount"];
                 drow["QTY"] = dtOrder.Rows[i]["QTY"];
@@ -978,7 +985,7 @@ namespace TAILORING.Order
                             {
                                 CustomerID = Convert.ToInt32(dtGarment.Rows[0][1]);
                                 txtCustomerID.Text = CustomerID.ToString();
-                                lnkAddItem.Enabled = true;
+                                btnAdd.Enabled = true;
                                 btnMeasurement.Enabled = true;
                             }
                             ClearCustomerFields(true,false);

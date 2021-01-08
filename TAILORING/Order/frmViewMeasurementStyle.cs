@@ -143,7 +143,7 @@ namespace TAILORING.Order
                     pic.Image = TAILORING.Properties.Resources.NoImage;
                 }
                 pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
-                pic.Size = new Size(panel.Size.Width-10, panel.Size.Height - 20);
+                pic.Size = new Size(panel.Size.Width - 10, panel.Size.Height - 20);
                 pic.Click += Pic_GarmentList_Click;
                 pic.BorderStyle = BorderStyle.None;
 
@@ -584,7 +584,7 @@ namespace TAILORING.Order
         private void PrintOrder()
         {
             Report.Forms.frmBill Obj = new Report.Forms.frmBill();
-            Obj.OrderID = "1005";
+            Obj.OrderID = pOrderID.ToString();
             Obj.Show();
         }
 

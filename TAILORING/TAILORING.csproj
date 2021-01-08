@@ -129,12 +129,6 @@
     <Compile Include="Dashboard\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,9 +259,6 @@
     <EmbeddedResource Include="Dashboard\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
       <LastGenOutput>frmHome1.Designer.cs</LastGenOutput>
@@ -374,9 +365,6 @@
     <None Include="Resources\titlebg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bulet.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\tick.png" />
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +388,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Logo 1.ico" />
+    <None Include="Resources\viewPassword.png" />
+    <None Include="Resources\bulet.png" />
+    <None Include="Resources\bulet - Copy.png" />
+    <None Include="Resources\tick - Copy.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

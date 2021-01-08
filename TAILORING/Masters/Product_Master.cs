@@ -25,10 +25,13 @@ namespace TAILORING.Masters
 
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
+
         private void ClearAll()
         {
             txtGarmentCode.Clear();
             txtGarmentName.Clear();
+            cmbOrderType.SelectedIndex = -1;
+
             txtGarmentCode.Focus();
         }
 

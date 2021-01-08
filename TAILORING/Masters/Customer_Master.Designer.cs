@@ -58,7 +58,7 @@
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.kryptonHeaderGroup3 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.gGlowGroupBox1 = new gGlowBox.gGlowGroupBox();
+            this.grpCustomer = new gGlowBox.gGlowGroupBox();
             this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
             this.kryptonHeaderGroup4 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.kryptonPanel3 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
@@ -74,7 +74,7 @@
             this.kryptonHeaderGroup3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
-            this.gGlowGroupBox1.SuspendLayout();
+            this.grpCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).BeginInit();
             this.kryptonHeaderGroup4.Panel.SuspendLayout();
@@ -86,13 +86,13 @@
             // txtCustomerEmailID
             // 
             this.txtCustomerEmailID.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.SetEffectType(this.txtCustomerEmailID, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.grpCustomer.SetEffectType(this.txtCustomerEmailID, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtCustomerEmailID.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerEmailID.Location = new System.Drawing.Point(114, 90);
             this.txtCustomerEmailID.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerEmailID.MaxLength = 100;
             this.txtCustomerEmailID.Name = "txtCustomerEmailID";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtCustomerEmailID, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerEmailID.sGlowColor"))));
+            this.grpCustomer.SetsGlowColor(this.txtCustomerEmailID, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerEmailID.sGlowColor"))));
             this.txtCustomerEmailID.Size = new System.Drawing.Size(240, 25);
             this.txtCustomerEmailID.TabIndex = 2;
             // 
@@ -135,13 +135,13 @@
             // txtCustomerMobileNo
             // 
             this.txtCustomerMobileNo.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.SetEffectType(this.txtCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.grpCustomer.SetEffectType(this.txtCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerMobileNo.Location = new System.Drawing.Point(114, 50);
             this.txtCustomerMobileNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerMobileNo.MaxLength = 10;
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerMobileNo.sGlowColor"))));
+            this.grpCustomer.SetsGlowColor(this.txtCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerMobileNo.sGlowColor"))));
             this.txtCustomerMobileNo.Size = new System.Drawing.Size(240, 25);
             this.txtCustomerMobileNo.TabIndex = 1;
             this.txtCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByMobileNo_KeyPress);
@@ -149,27 +149,27 @@
             // txtCustomerAddress
             // 
             this.txtCustomerAddress.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.SetEffectType(this.txtCustomerAddress, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.grpCustomer.SetEffectType(this.txtCustomerAddress, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerAddress.Location = new System.Drawing.Point(496, 12);
             this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerAddress.MaxLength = 500;
             this.txtCustomerAddress.Multiline = true;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtCustomerAddress, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerAddress.sGlowColor"))));
+            this.grpCustomer.SetsGlowColor(this.txtCustomerAddress, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerAddress.sGlowColor"))));
             this.txtCustomerAddress.Size = new System.Drawing.Size(240, 65);
             this.txtCustomerAddress.TabIndex = 3;
             // 
             // txtCustomerName
             // 
             this.txtCustomerName.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.SetEffectType(this.txtCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.grpCustomer.SetEffectType(this.txtCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.txtCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.Location = new System.Drawing.Point(114, 10);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomerName.MaxLength = 100;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtCustomerName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerName.sGlowColor"))));
+            this.grpCustomer.SetsGlowColor(this.txtCustomerName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtCustomerName.sGlowColor"))));
             this.txtCustomerName.Size = new System.Drawing.Size(240, 25);
             this.txtCustomerName.TabIndex = 0;
             this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
@@ -418,14 +418,9 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.dgvCustomerMaster);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(758, 233);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 288;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "List of Customer";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -442,56 +437,46 @@
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.kryptonPanel2);
             this.kryptonHeaderGroup3.Size = new System.Drawing.Size(754, 146);
             this.kryptonHeaderGroup3.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup3.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup3.TabIndex = 293;
             this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Customer Details";
             this.kryptonHeaderGroup3.ValuesPrimary.Image = global::TAILORING.Properties.Resources.grpUserHeader_ValuesPrimary_Image;
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.Controls.Add(this.gGlowGroupBox1);
+            this.kryptonPanel2.Controls.Add(this.grpCustomer);
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(752, 121);
             this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonPanel2.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel2.TabIndex = 0;
             // 
-            // gGlowGroupBox1
+            // grpCustomer
             // 
-            this.gGlowGroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gGlowGroupBox1.Controls.Add(this.txtCustomerAddress);
-            this.gGlowGroupBox1.Controls.Add(this.label4);
-            this.gGlowGroupBox1.Controls.Add(this.txtCustomerName);
-            this.gGlowGroupBox1.Controls.Add(this.lblCustomerAddress);
-            this.gGlowGroupBox1.Controls.Add(this.txtCustomerMobileNo);
-            this.gGlowGroupBox1.Controls.Add(this.txtCustomerEmailID);
-            this.gGlowGroupBox1.Controls.Add(this.label8);
-            this.gGlowGroupBox1.Controls.Add(this.lblCustomerPhoneNo);
-            this.gGlowGroupBox1.Controls.Add(this.label1);
-            this.gGlowGroupBox1.Controls.Add(this.lblCustomerName);
-            this.gGlowGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gGlowGroupBox1.GlowAmount = 30;
-            this.gGlowGroupBox1.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
-            this.gGlowGroupBox1.GlowFeather = 100;
-            this.gGlowGroupBox1.GlowOn = true;
-            this.gGlowGroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.gGlowGroupBox1.Name = "gGlowGroupBox1";
-            this.gGlowGroupBox1.Size = new System.Drawing.Size(752, 121);
-            this.gGlowGroupBox1.TabIndex = 287;
-            // 
-            // kryptonManager1
-            // 
-            this.kryptonManager1.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Office2010Blue;
+            this.grpCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.grpCustomer.Controls.Add(this.txtCustomerAddress);
+            this.grpCustomer.Controls.Add(this.label4);
+            this.grpCustomer.Controls.Add(this.txtCustomerName);
+            this.grpCustomer.Controls.Add(this.lblCustomerAddress);
+            this.grpCustomer.Controls.Add(this.txtCustomerMobileNo);
+            this.grpCustomer.Controls.Add(this.txtCustomerEmailID);
+            this.grpCustomer.Controls.Add(this.label8);
+            this.grpCustomer.Controls.Add(this.lblCustomerPhoneNo);
+            this.grpCustomer.Controls.Add(this.label1);
+            this.grpCustomer.Controls.Add(this.lblCustomerName);
+            this.grpCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpCustomer.Enabled = false;
+            this.grpCustomer.GlowAmount = 30;
+            this.grpCustomer.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
+            this.grpCustomer.GlowFeather = 100;
+            this.grpCustomer.GlowOn = true;
+            this.grpCustomer.Location = new System.Drawing.Point(0, 0);
+            this.grpCustomer.Name = "grpCustomer";
+            this.grpCustomer.Size = new System.Drawing.Size(752, 121);
+            this.grpCustomer.TabIndex = 287;
             // 
             // kryptonHeaderGroup4
             // 
@@ -504,12 +489,8 @@
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.kryptonPanel3);
             this.kryptonHeaderGroup4.Size = new System.Drawing.Size(759, 89);
             this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup4.TabIndex = 294;
             this.kryptonHeaderGroup4.ValuesPrimary.Heading = "Search ";
             this.kryptonHeaderGroup4.ValuesPrimary.Image = global::TAILORING.Properties.Resources.grpSearch_Values_Image;
@@ -526,7 +507,6 @@
             this.kryptonPanel3.Name = "kryptonPanel3";
             this.kryptonPanel3.Size = new System.Drawing.Size(757, 64);
             this.kryptonPanel3.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonPanel3.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel3.TabIndex = 0;
             // 
             // Customer_Master
@@ -568,8 +548,8 @@
             this.kryptonHeaderGroup3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
-            this.gGlowGroupBox1.ResumeLayout(false);
-            this.gGlowGroupBox1.PerformLayout();
+            this.grpCustomer.ResumeLayout(false);
+            this.grpCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
             this.kryptonHeaderGroup4.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).EndInit();
@@ -615,6 +595,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonManager kryptonManager1;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup4;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel3;
-        private gGlowBox.gGlowGroupBox gGlowGroupBox1;
+        private gGlowBox.gGlowGroupBox grpCustomer;
     }
 }

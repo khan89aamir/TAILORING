@@ -326,6 +326,7 @@ namespace TAILORING.Masters
             //ObjUtil.SetDataGridProperty(dgvCompanyMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvCompanyMaster.Columns["CompanyID"].Visible = false;
             dgvCompanyMaster.Columns["DefaultValue"].Visible = false;
+            dgvCompanyMaster.Columns["LastChange"].Visible = false;
             dgvCompanyMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCompanyMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 

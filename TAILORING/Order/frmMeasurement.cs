@@ -48,11 +48,10 @@ namespace TAILORING.Order
             //HorizontalScroll.Maximum = 0;
             ctrlMeasurment1.IsEditable = true;
 
-            btnMeasureSave.BackgroundImage = B_Leave;
-            btnStyleSave.BackgroundImage = B_Leave;
-
-            btnSave.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
+            //btnMeasureSave.BackgroundImage = B_Leave;
+            //btnStyleSave.BackgroundImage = B_Leave;
+            //btnSave.BackgroundImage = B_Leave;
+            //btnCancel.BackgroundImage = B_Leave;
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
@@ -98,7 +97,7 @@ namespace TAILORING.Order
                     imageList.Images.Add(img);
                     //imageList.ImageSize = new Size(48, 56);
                     //imageList.ImageSize = new Size(111, 96);
-                    imageList.ImageSize = new Size(110, 190);
+                    imageList.ImageSize = new Size(110, 200);
                     SKUList.View = System.Windows.Forms.View.LargeIcon;
                     SKUList.LargeImageList = imageList;
 
@@ -213,24 +212,34 @@ namespace TAILORING.Order
         {
             for (int i = 0; i < dtStyle.Rows.Count; i++)
             {
-                //Button btn = new Button();
-                KryptonButton btn = new KryptonButton();
+                Button btn = new Button();
+                //KryptonButton btn = new KryptonButton();
+                //btn.PaletteMode = PaletteMode.Office2007Blue;
                 //btn.Font = new Font("Times New Roman", 11);
-                //btn.Size = new Size(78,34);
+                
+                //btn.ForeColor = Color.White;//17, 241, 41
+
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
-                //btn.FlatStyle = FlatStyle.Flat;
-                //btn.FlatAppearance.BorderSize = 0;
-                //btn.AutoSize = true;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.AutoSize = true;
                 btn.Click += btnStyleName_Click;
 
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
+                //btn.StatePressed.Back.ColorStyle = PaletteColorStyle.Solid;
                 if (a > 0)
-                    btn.BackColor = Color.FromArgb(17, 241, 41);//17, 241, 41
+                {
+                    btn.BackColor = Color.FromArgb(78, 148, 132);//17, 241, 41
+                    btn.ForeColor = Color.White;//17, 241, 41
+                    //btn.StateNormal.Back.Color1 = Color.FromArgb(17, 241, 41);
+                }
                 else
+                {
                     btn.BackColor = Color.LightGray;
-
+                    //btn.StatePressed.Back.Color1 = Color.LightGray;
+                }
                 flowStyleName.Controls.Add(btn);
             }
         }
@@ -249,12 +258,18 @@ namespace TAILORING.Order
         private void btnStyleName_Click(object sender, EventArgs e)
         {
             ClearSyleNameSelection();
-            //Button btn = (Button)sender;
-            KryptonButton btn = (KryptonButton)sender;
+            Button btn = (Button)sender;
+            //KryptonButton btn = (KryptonButton)sender;
 
-            if (btn.BackColor != Color.FromArgb(17, 241, 41))
+            //if (btn.BackColor != Color.FromArgb(17, 241, 41))
+            //{
+            //    btn.BackColor = Color.FromArgb(0, 191, 255); // Blue
+            //}
+            if (btn.BackColor != Color.FromArgb(78, 148, 132))
+            {
+                btn.ForeColor = Color.White;//17, 241, 41
                 btn.BackColor = Color.FromArgb(0, 191, 255);
-
+            }
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
         }
@@ -452,11 +467,16 @@ namespace TAILORING.Order
         {
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
-                if (flowStyleName.Controls[i].BackColor != Color.FromArgb(17, 241, 41))// Green
+                if (flowStyleName.Controls[i].BackColor != Color.FromArgb(78, 148, 132))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
                     flowStyleName.Controls[i].BackColor = Color.LightGray;
                 }
+                //if (flowStyleName.Controls[i].BackColor != Color.FromArgb(17, 241, 41))// Green
+                //{
+                //    //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
+                //    flowStyleName.Controls[i].BackColor = Color.LightGray;
+                //}
             }
         }
 
@@ -471,7 +491,8 @@ namespace TAILORING.Order
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);
             for (int i = 0; i < ctr.Length; i++)
             {
-                ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                ctr[i].BackColor = Color.FromArgb(78, 148, 132);
             }
         }
 
@@ -663,7 +684,7 @@ namespace TAILORING.Order
             GetGarmentStyle(GarmentID);// Garment Style
         }
 
-        private void lnkAddItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnAddItem_Click(object sender, EventArgs e)
         {
             frmBodyPosture obj = new frmBodyPosture();
             obj.GarmentID = this.GarmentID;
@@ -727,11 +748,13 @@ namespace TAILORING.Order
                 }
                 else if (ObjUtil.ValidateTable(dtTempStyle))
                 {
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    for (int i = 0; i < dtGarmentList.Rows.Count; i++)
                     {
-                        for (int j = 1; j <= cmbStyleQTY.Items.Count; j++)
+                        int pQTY = 0;
+                        pQTY = Convert.ToInt32(dtGarmentList.Rows[i]["QTY"]);
+                        for (int j = 1; j <= pQTY; j++)
                         {
-                            DataRow[] drow = dtTempStyle.Select("GarmentID=" + dt.Rows[i]["GarmentID"] + " AND QTY=" + j);
+                            DataRow[] drow = dtTempStyle.Select("GarmentID=" + dtGarmentList.Rows[i]["GarmentID"] + " AND QTY=" + j);
                             if (drow.Length == 0)
                             {
                                 b = false;

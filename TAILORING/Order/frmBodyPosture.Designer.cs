@@ -31,8 +31,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPostureSave = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnPostureSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -70,22 +70,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 389);
             this.flowLayoutPanel1.TabIndex = 317;
             // 
-            // btnPostureSave
-            // 
-            this.btnPostureSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPostureSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPostureSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPostureSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPostureSave.Location = new System.Drawing.Point(703, 8);
-            this.btnPostureSave.Name = "btnPostureSave";
-            this.btnPostureSave.Size = new System.Drawing.Size(85, 27);
-            this.btnPostureSave.TabIndex = 346;
-            this.btnPostureSave.Text = "Save";
-            this.btnPostureSave.UseVisualStyleBackColor = true;
-            this.btnPostureSave.Click += new System.EventHandler(this.btnPostureSave_Click);
-            this.btnPostureSave.MouseEnter += new System.EventHandler(this.btnPostureSave_MouseEnter);
-            this.btnPostureSave.MouseLeave += new System.EventHandler(this.btnPostureSave_MouseLeave);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -96,6 +80,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(800, 40);
             this.panel5.TabIndex = 342;
+            // 
+            // btnPostureSave
+            // 
+            this.btnPostureSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPostureSave.AutoSize = true;
+            this.btnPostureSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPostureSave.Location = new System.Drawing.Point(710, 5);
+            this.btnPostureSave.Name = "btnPostureSave";
+            this.btnPostureSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnPostureSave.Size = new System.Drawing.Size(78, 28);
+            this.btnPostureSave.TabIndex = 358;
+            this.btnPostureSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
+            this.btnPostureSave.Values.Text = "Save";
+            this.btnPostureSave.Click += new System.EventHandler(this.btnPostureSave_Click);
             // 
             // frmBodyPosture
             // 
@@ -117,6 +115,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -126,7 +125,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnPostureSave;
         private System.Windows.Forms.Panel panel5;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnPostureSave;
     }
 }

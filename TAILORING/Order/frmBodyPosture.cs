@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmBodyPosture : Form
+    public partial class frmBodyPosture : KryptonForm
     {
         public frmBodyPosture()
         {
@@ -190,18 +191,6 @@ namespace TAILORING.Order
         private void btnPostureSave_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnPostureSave_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnPostureSave_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
     }
 }

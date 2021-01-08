@@ -128,12 +128,14 @@
             this.lblReport = new System.Windows.Forms.Label();
             this.ribbonPanel17 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost27 = new System.Windows.Forms.RibbonHost();
+            this.Report2 = new System.Windows.Forms.PictureBox();
             this.ribbonHost28 = new System.Windows.Forms.RibbonHost();
             this.lblCustomerReport = new System.Windows.Forms.Label();
             this.ribbonPanel18 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost29 = new System.Windows.Forms.RibbonHost();
-            this.lblSKUReport = new System.Windows.Forms.Label();
+            this.Report3 = new System.Windows.Forms.PictureBox();
             this.ribbonHost30 = new System.Windows.Forms.RibbonHost();
+            this.lblSKUReport = new System.Windows.Forms.Label();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonHost21 = new System.Windows.Forms.RibbonHost();
@@ -151,8 +153,6 @@
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
-            this.Report2 = new System.Windows.Forms.PictureBox();
-            this.Report3 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -170,11 +170,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -857,7 +857,7 @@
             this.picGST.Image = ((System.Drawing.Image)(resources.GetObject("picGST.Image")));
             this.picGST.Location = new System.Drawing.Point(489, 185);
             this.picGST.Name = "picGST";
-            this.picGST.Size = new System.Drawing.Size(59, 44);
+            this.picGST.Size = new System.Drawing.Size(84, 44);
             this.picGST.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGST.TabIndex = 58;
             this.picGST.TabStop = false;
@@ -1085,6 +1085,18 @@
             this.ribbonHost27.Name = "ribbonHost27";
             this.ribbonHost27.Text = "";
             // 
+            // Report2
+            // 
+            this.Report2.BackColor = System.Drawing.Color.Transparent;
+            this.Report2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report2.Image = ((System.Drawing.Image)(resources.GetObject("Report2.Image")));
+            this.Report2.Location = new System.Drawing.Point(959, 232);
+            this.Report2.Name = "Report2";
+            this.Report2.Size = new System.Drawing.Size(76, 44);
+            this.Report2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Report2.TabIndex = 64;
+            this.Report2.TabStop = false;
+            // 
             // ribbonHost28
             // 
             this.ribbonHost28.HostedControl = this.lblCustomerReport;
@@ -1115,6 +1127,24 @@
             this.ribbonHost29.Name = "ribbonHost29";
             this.ribbonHost29.Text = "";
             // 
+            // Report3
+            // 
+            this.Report3.BackColor = System.Drawing.Color.Transparent;
+            this.Report3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Report3.Image = ((System.Drawing.Image)(resources.GetObject("Report3.Image")));
+            this.Report3.Location = new System.Drawing.Point(1076, 232);
+            this.Report3.Name = "Report3";
+            this.Report3.Size = new System.Drawing.Size(76, 44);
+            this.Report3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Report3.TabIndex = 65;
+            this.Report3.TabStop = false;
+            // 
+            // ribbonHost30
+            // 
+            this.ribbonHost30.HostedControl = this.lblSKUReport;
+            this.ribbonHost30.Name = "ribbonHost30";
+            this.ribbonHost30.Text = "";
+            // 
             // lblSKUReport
             // 
             this.lblSKUReport.AutoSize = true;
@@ -1125,12 +1155,6 @@
             this.lblSKUReport.Size = new System.Drawing.Size(71, 15);
             this.lblSKUReport.TabIndex = 63;
             this.lblSKUReport.Text = "SKU Report";
-            // 
-            // ribbonHost30
-            // 
-            this.ribbonHost30.HostedControl = this.lblSKUReport;
-            this.ribbonHost30.Name = "ribbonHost30";
-            this.ribbonHost30.Text = "";
             // 
             // ribbonTab6
             // 
@@ -1266,30 +1290,6 @@
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
             // 
-            // Report2
-            // 
-            this.Report2.BackColor = System.Drawing.Color.Transparent;
-            this.Report2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Report2.Image = ((System.Drawing.Image)(resources.GetObject("Report2.Image")));
-            this.Report2.Location = new System.Drawing.Point(959, 232);
-            this.Report2.Name = "Report2";
-            this.Report2.Size = new System.Drawing.Size(76, 44);
-            this.Report2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Report2.TabIndex = 64;
-            this.Report2.TabStop = false;
-            // 
-            // Report3
-            // 
-            this.Report3.BackColor = System.Drawing.Color.Transparent;
-            this.Report3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Report3.Image = ((System.Drawing.Image)(resources.GetObject("Report3.Image")));
-            this.Report3.Location = new System.Drawing.Point(1076, 232);
-            this.Report3.Name = "Report3";
-            this.Report3.Size = new System.Drawing.Size(76, 44);
-            this.Report3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Report3.TabIndex = 65;
-            this.Report3.TabStop = false;
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1368,11 +1368,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDashBoard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Report3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

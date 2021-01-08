@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentFactory.Krypton.Toolkit;
 using CoreApp;
 
 namespace TAILORING.Order
 {
-    public partial class frmViewMeasurementStyle : Form
+    public partial class frmViewMeasurementStyle : KryptonForm
     {
         public frmViewMeasurementStyle()
         {
@@ -511,6 +512,7 @@ namespace TAILORING.Order
             dataGridView1.ClearSelection();
             dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
             dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Transparent;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
         }
 

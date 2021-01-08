@@ -130,7 +130,7 @@ namespace TAILORING.Order
             // radByOrderNo
             // 
             resources.ApplyResources(this.radByOrderNo, "radByOrderNo");
-            this.groupBox1.SetEffectType(this.radByOrderNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.groupBox1.SetEffectType(this.radByOrderNo, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
             this.radByOrderNo.Name = "radByOrderNo";
             this.groupBox1.SetsGlowColor(this.radByOrderNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByOrderNo.sGlowColor"))));
             this.radByOrderNo.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@ namespace TAILORING.Order
             // radByCustomerMobileNo
             // 
             resources.ApplyResources(this.radByCustomerMobileNo, "radByCustomerMobileNo");
-            this.groupBox1.SetEffectType(this.radByCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.groupBox1.SetEffectType(this.radByCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
             this.radByCustomerMobileNo.Name = "radByCustomerMobileNo";
             this.groupBox1.SetsGlowColor(this.radByCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByCustomerMobileNo.sGlowColor"))));
             this.radByCustomerMobileNo.UseVisualStyleBackColor = true;
@@ -189,7 +189,7 @@ namespace TAILORING.Order
             // radByCustomerName
             // 
             resources.ApplyResources(this.radByCustomerName, "radByCustomerName");
-            this.groupBox1.SetEffectType(this.radByCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.groupBox1.SetEffectType(this.radByCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
             this.radByCustomerName.Name = "radByCustomerName";
             this.groupBox1.SetsGlowColor(this.radByCustomerName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByCustomerName.sGlowColor"))));
             this.radByCustomerName.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.radByDate, "radByDate");
             this.radByDate.Checked = true;
-            this.groupBox1.SetEffectType(this.radByDate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.groupBox1.SetEffectType(this.radByDate, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
             this.radByDate.Name = "radByDate";
             this.groupBox1.SetsGlowColor(this.radByDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByDate.sGlowColor"))));
             this.radByDate.TabStop = true;
@@ -218,7 +218,7 @@ namespace TAILORING.Order
             // rdShowAll
             // 
             resources.ApplyResources(this.rdShowAll, "rdShowAll");
-            this.groupBox1.SetEffectType(this.rdShowAll, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.groupBox1.SetEffectType(this.rdShowAll, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
             this.rdShowAll.Name = "rdShowAll";
             this.groupBox1.SetsGlowColor(this.rdShowAll, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAll.sGlowColor"))));
             this.rdShowAll.UseVisualStyleBackColor = true;

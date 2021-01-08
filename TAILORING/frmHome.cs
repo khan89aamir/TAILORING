@@ -36,6 +36,7 @@ namespace TAILORING
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)
             {
                 DB_backupRestore.cs.frmDatabaseMaintenance Obj = new DB_backupRestore.cs.frmDatabaseMaintenance();
+                Obj.IsNew = true;
                 Obj.ShowDialog();
             }
             else
@@ -229,6 +230,7 @@ namespace TAILORING
             if (!b)
             {
                 UserManagement.frmUserManagement ObjUserManag = new UserManagement.frmUserManagement();
+                ObjUserManag.IsNew = true;
                 ObjUserManag.LoginStatus(clsUtility.LoginID, clsUtility.IsAdmin);
                 ObjUserManag.Show();
             }

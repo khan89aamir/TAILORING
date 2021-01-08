@@ -348,6 +348,10 @@ namespace TAILORING.Order
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
             //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
+
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgvOrderDetails.Columns["CustomerID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
 

@@ -56,11 +56,12 @@ namespace TAILORING.Order
             ObjUtil.SetRowNumber(dgvOrderDetails);
             //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
 
-            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
+
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }

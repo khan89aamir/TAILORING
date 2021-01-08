@@ -216,14 +216,14 @@ namespace TAILORING.Order
                 //KryptonButton btn = new KryptonButton();
                 //btn.PaletteMode = PaletteMode.Office2007Blue;
                 //btn.Font = new Font("Times New Roman", 11);
-                
+
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
                 //btn.ForeColor = Color.White;//17, 241, 41
 
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.FlatAppearance.BorderSize = 0;
                 btn.AutoSize = true;
                 btn.Click += btnStyleName_Click;
 

@@ -20,5 +20,17 @@ namespace TAILORING.Dashboard
 
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            label4.Text ="Date :  "+ DateTime.Now.ToShortDateString();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Order.frmOrderList Obj = new Order.frmOrderList();
+            Obj.txtCustomerOrderNo.Text = this.txtSearchByCustomerName.Text;
+            Obj.Show();
+        }
     }
 }

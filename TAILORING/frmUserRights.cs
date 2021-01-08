@@ -1,4 +1,5 @@
-﻿using CoreApp;
+﻿using ComponentFactory.Krypton.Toolkit;
+using CoreApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TAILORING
 {
-    public partial class frmUserRights : Form
+    public partial class frmUserRights : KryptonForm
     {
         public frmUserRights()
         {

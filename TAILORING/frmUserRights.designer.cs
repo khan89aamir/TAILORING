@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.dgvUserRIghts = new System.Windows.Forms.DataGridView();
+            this.dgvUserRIghts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.FormID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.View = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -47,119 +40,31 @@
             this.Other = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ParentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpUserGridview = new System.Windows.Forms.GroupBox();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.dgvUser =   new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.grpRights = new System.Windows.Forms.GroupBox();
             this.grpUserName = new System.Windows.Forms.GroupBox();
-            this.lblCategoryName = new System.Windows.Forms.Label();
+            this.gGlowBox1 = new gGlowBox.gGlowBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.lblCategoryName = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnUpdate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEdit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRIghts)).BeginInit();
             this.grpUserGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.grpRights.SuspendLayout();
             this.grpUserName.SuspendLayout();
+            this.gGlowBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(445, 52);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(71, 25);
-            this.btnUpdate.TabIndex = 114;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(599, 52);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(71, 25);
-            this.btnCancel.TabIndex = 116;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            this.btnCancel.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnCancel.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(522, 52);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(71, 25);
-            this.btnDelete.TabIndex = 115;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnDelete.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(368, 52);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(71, 25);
-            this.btnEdit.TabIndex = 113;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            this.btnEdit.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnEdit.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(291, 52);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(71, 25);
-            this.btnSave.TabIndex = 112;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(209, 52);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(76, 25);
-            this.btnAdd.TabIndex = 111;
-            this.btnAdd.Text = "Add New";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            this.btnAdd.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
-            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
             // 
             // panel2
             // 
@@ -169,7 +74,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(856, 40);
+            this.panel2.Size = new System.Drawing.Size(853, 40);
             this.panel2.TabIndex = 117;
             // 
             // label12
@@ -190,7 +95,6 @@
             this.dgvUserRIghts.AllowUserToDeleteRows = false;
             this.dgvUserRIghts.AllowUserToResizeRows = false;
             this.dgvUserRIghts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUserRIghts.BackgroundColor = System.Drawing.Color.White;
             this.dgvUserRIghts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserRIghts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FormID,
@@ -201,14 +105,6 @@
             this.Delete,
             this.Other,
             this.ParentID});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUserRIghts.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUserRIghts.Location = new System.Drawing.Point(6, 20);
             this.dgvUserRIghts.Name = "dgvUserRIghts";
             this.dgvUserRIghts.RowHeadersVisible = false;
@@ -311,7 +207,7 @@
             this.grpRights.Controls.Add(this.dgvUserRIghts);
             this.grpRights.Enabled = false;
             this.grpRights.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRights.Location = new System.Drawing.Point(243, 118);
+            this.grpRights.Location = new System.Drawing.Point(240, 118);
             this.grpRights.Name = "grpRights";
             this.grpRights.Size = new System.Drawing.Size(613, 470);
             this.grpRights.TabIndex = 194;
@@ -321,16 +217,35 @@
             // grpUserName
             // 
             this.grpUserName.BackColor = System.Drawing.Color.Transparent;
+            this.grpUserName.Controls.Add(this.gGlowBox1);
             this.grpUserName.Controls.Add(this.lblCategoryName);
-            this.grpUserName.Controls.Add(this.txtName);
             this.grpUserName.Enabled = false;
             this.grpUserName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUserName.Location = new System.Drawing.Point(6, 118);
             this.grpUserName.Name = "grpUserName";
-            this.grpUserName.Size = new System.Drawing.Size(219, 151);
+            this.grpUserName.Size = new System.Drawing.Size(234, 164);
             this.grpUserName.TabIndex = 194;
             this.grpUserName.TabStop = false;
             this.grpUserName.Text = "Select User :";
+            // 
+            // gGlowBox1
+            // 
+            this.gGlowBox1.Controls.Add(this.txtName);
+            this.gGlowBox1.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(139)))), ((int)(((byte)(97)))));
+            this.gGlowBox1.Location = new System.Drawing.Point(7, 42);
+            this.gGlowBox1.Name = "gGlowBox1";
+            this.gGlowBox1.Size = new System.Drawing.Size(221, 32);
+            this.gGlowBox1.TabIndex = 190;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(4, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(214, 25);
+            this.txtName.TabIndex = 188;
+            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
             // lblCategoryName
             // 
@@ -342,16 +257,6 @@
             this.lblCategoryName.Size = new System.Drawing.Size(84, 17);
             this.lblCategoryName.TabIndex = 189;
             this.lblCategoryName.Text = "User Name :";
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(9, 42);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(206, 25);
-            this.txtName.TabIndex = 188;
-            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
             // txtUserID
             // 
@@ -367,7 +272,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(128)))));
-            this.panel1.Location = new System.Drawing.Point(690, 91);
+            this.panel1.Location = new System.Drawing.Point(687, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(33, 28);
             this.panel1.TabIndex = 195;
@@ -376,7 +281,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(813, 91);
+            this.panel3.Location = new System.Drawing.Point(810, 91);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(33, 28);
             this.panel3.TabIndex = 196;
@@ -387,7 +292,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(587, 97);
+            this.label1.Location = new System.Drawing.Point(584, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 190;
@@ -399,11 +304,89 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(733, 97);
+            this.label2.Location = new System.Drawing.Point(730, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 197;
             this.label2.Text = "Sub Menu :";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(733, 46);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnCancel.Size = new System.Drawing.Size(78, 34);
+            this.btnCancel.TabIndex = 348;
+            this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
+            this.btnCancel.Values.Text = " Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Location = new System.Drawing.Point(638, 46);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnDelete.Size = new System.Drawing.Size(78, 34);
+            this.btnDelete.TabIndex = 347;
+            this.btnDelete.Values.Image = global::TAILORING.Properties.Resources.btnDelete_Values_Image;
+            this.btnDelete.Values.Text = " Delete ";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Location = new System.Drawing.Point(543, 46);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnUpdate.Size = new System.Drawing.Size(78, 34);
+            this.btnUpdate.TabIndex = 346;
+            this.btnUpdate.Values.Image = global::TAILORING.Properties.Resources.btnUpdate_Values_Image;
+            this.btnUpdate.Values.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Location = new System.Drawing.Point(448, 46);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnEdit.Size = new System.Drawing.Size(78, 34);
+            this.btnEdit.TabIndex = 345;
+            this.btnEdit.Values.Image = global::TAILORING.Properties.Resources.btnEdit_Values_Image;
+            this.btnEdit.Values.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = true;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(353, 46);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnSave.Size = new System.Drawing.Size(78, 34);
+            this.btnSave.TabIndex = 344;
+            this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
+            this.btnSave.Values.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Location = new System.Drawing.Point(258, 46);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnAdd.Size = new System.Drawing.Size(78, 34);
+            this.btnAdd.TabIndex = 343;
+            this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
+            this.btnAdd.Values.Text = "Add New";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmUserRights
             // 
@@ -411,7 +394,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(856, 600);
+            this.ClientSize = new System.Drawing.Size(853, 600);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
@@ -420,12 +409,6 @@
             this.Controls.Add(this.grpUserName);
             this.Controls.Add(this.grpRights);
             this.Controls.Add(this.grpUserGridview);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -442,22 +425,16 @@
             this.grpRights.ResumeLayout(false);
             this.grpUserName.ResumeLayout(false);
             this.grpUserName.PerformLayout();
+            this.gGlowBox1.ResumeLayout(false);
+            this.gGlowBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dgvUserRIghts;
         private System.Windows.Forms.GroupBox grpUserGridview;
         private System.Windows.Forms.DataGridView dgvUser;
         private System.Windows.Forms.GroupBox grpRights;
@@ -477,5 +454,13 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEdit;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
+        private gGlowBox.gGlowBox gGlowBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUserRIghts;
     }
 }

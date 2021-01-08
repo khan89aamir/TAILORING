@@ -9,10 +9,11 @@ using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using CoreApp;
 using System.IO;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace TAILORING
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : KryptonForm
     {
         public frmLogin()
         {

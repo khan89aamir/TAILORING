@@ -15,26 +15,36 @@ namespace TAILORING.Report.Forms
 {
     public partial class frmBill : KryptonForm
     {
-        CoreApp.clsConnection_DAL ObjCon = new CoreApp.clsConnection_DAL(true);
+        clsConnection_DAL ObjCon = new clsConnection_DAL(true);
+        clsUtility ObjUtil = new clsUtility();
+
         public frmBill()
         {
             InitializeComponent();
         }
 
+        DataTable dtMeasurment = new DataTable();
+        DataTable dtMeasurment2 = new DataTable();
+        DataTable dtStyle = new DataTable();
+
+        public string OrderID = "";
+        string OrderNo = "";
+
+        string imgName = "";
+        string strBase64 = "";
+        int inc = 0;
         private void frmBill_Load(object sender, EventArgs e)
         {
-           // OrderID = "1";
+            // OrderID = "1";
             LoadData();
-
-
         }
-        public string OrderID = "";
+
         private void LoadData()
         {
             reportViewer1.LocalReport.EnableExternalImages = true;
             reportViewer2.LocalReport.EnableExternalImages = true;
             reportViewer3.LocalReport.EnableExternalImages = true;
-            if (OrderID.Trim().Length==0)
+            if (OrderID.Trim().Length == 0)
             {
                 return;
             }
@@ -43,7 +53,6 @@ namespace TAILORING.Report.Forms
             string parmGSTNo = "";
             string storeAddress = "";
             string Orderdate = "";
-            string OrderNo = "";
             string strCustomerName = "";
             string strCustomerMobile = "";
             string CustomerID = "";
@@ -51,18 +60,18 @@ namespace TAILORING.Report.Forms
             string strCompMobile = "";
             string strCompEmail = "";
 
-             DataTable dtCompany= ObjCon.ExecuteSelectStatement("select * from "+clsUtility.DBName+ ".dbo.CompanyMaster");
-            if (dtCompany.Rows.Count>0)
+            DataTable dtCompany = ObjCon.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster");
+            if (ObjUtil.ValidateTable(dtCompany))
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
                 parmGSTNo = dtCompany.Rows[0]["GST"].ToString();
-                storeAddress= dtCompany.Rows[0]["Address"].ToString();
-                strCompMobile= dtCompany.Rows[0]["MobileNo"].ToString();
+                storeAddress = dtCompany.Rows[0]["Address"].ToString();
+                strCompMobile = dtCompany.Rows[0]["MobileNo"].ToString();
                 strCompEmail = dtCompany.Rows[0]["EmailID"].ToString();
             }
 
-            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("select * FROM "+ clsUtility.DBName+ ".[dbo].[tblSalesOrder] where SalesOrderID="+OrderID);
-            if (dtOrderMaster.Rows.Count>0)
+            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] where SalesOrderID=" + OrderID);
+            if (ObjUtil.ValidateTable(dtOrderMaster))
             {
                 Orderdate = dtOrderMaster.Rows[0]["OrderDate"].ToString();
                 OrderNo = dtOrderMaster.Rows[0]["OrderNo"].ToString();
@@ -70,25 +79,24 @@ namespace TAILORING.Report.Forms
             }
 
             DataTable dtCustomer = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] where CustomerID=" + CustomerID);
-            if (dtCustomer!=null && dtCustomer.Rows.Count > 0)
+            if (ObjUtil.ValidateTable(dtCustomer))
             {
                 strCustomerName = dtCustomer.Rows[0]["Name"].ToString();
                 strCustomerMobile = dtCustomer.Rows[0]["MobileNo"].ToString();
                 strCustomerAddress = dtCustomer.Rows[0]["Address"].ToString();
             }
-           // creating the parameter with the extact name as in the report.
+            // creating the parameter with the extact name as in the report.
             ReportParameter param1 = new ReportParameter("parmStoreName", strcomName, true);
             ReportParameter param2 = new ReportParameter("parmOrderDate", Convert.ToDateTime(Orderdate).Date.ToShortDateString(), true);
             ReportParameter param3 = new ReportParameter("parmOrderNo", OrderNo, true);
             ReportParameter param4 = new ReportParameter("parmCustomerName", strCustomerName, true);
             ReportParameter param5 = new ReportParameter("parmMobile", strCustomerMobile, true);
-            
+
             ReportParameter param6 = new ReportParameter("parmAddress", storeAddress, true);
             ReportParameter param7 = new ReportParameter("parmCustomerAddress", strCustomerAddress, true);
             ReportParameter param8 = new ReportParameter("parmGSTNo", parmGSTNo, true);
             ReportParameter param9 = new ReportParameter("parmCompanyMobile", strCompMobile, true);
             ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
-
 
 
             //ReportParameter parameterimg = new ReportParameter("ImagePath", ImageToBase64( @"C:\Test\MyImage.png"));
@@ -135,46 +143,36 @@ namespace TAILORING.Report.Forms
             reportViewer3.LocalReport.SetParameters(param10);
 
 
-
-
-
             ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
             DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get("SPR_Get_OrderDetails");
-            if (dataSet.Tables.Count > 0)
+            if (ObjUtil.ValidateDataSet(dataSet))
             {
                 ReportDataSource rds = new ReportDataSource("dsItemDetails", dataSet.Tables[0]);
-              
+
                 reportViewer1.LocalReport.DataSources.Add(rds);
                 reportViewer2.LocalReport.DataSources.Add(rds);
                 reportViewer3.LocalReport.DataSources.Add(rds);
             }
 
-            string strCalculation = "  select OrderAmount,(select SUM(t2.TrimAmount) from  [TAILORING_01].[dbo].[tblSalesOrderDetails] t2 " +
-                                   " where t2.SalesOrderID="+OrderID+" ) as TrimAmount, '0.00'as Tax,t1.TotalAmount " +
-                                   " FROM [TAILORING_01].[dbo].[tblSalesOrder] t1 where t1.SalesOrderID="+OrderID;
+            string strCalculation = "  select OrderAmount,(select SUM(t2.TrimAmount) from " + clsUtility.DBName + ".[dbo].[tblSalesOrderDetails] t2 " +
+                                   " where t2.SalesOrderID=" + OrderID + " ) as TrimAmount, '0.00'as Tax,t1.TotalAmount " +
+                                   " FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] t1 where t1.SalesOrderID=" + OrderID;
 
-        DataTable dtCalculation=    ObjCon.ExecuteSelectStatement(strCalculation);
-            if (dtCalculation.Rows.Count>0)
+            DataTable dtCalculation = ObjCon.ExecuteSelectStatement(strCalculation);
+            if (ObjUtil.ValidateTable(dtCalculation))
             {
                 ReportDataSource rds = new ReportDataSource("dsTotalCalculation", dtCalculation);
                 reportViewer1.LocalReport.DataSources.Add(rds);
                 reportViewer2.LocalReport.DataSources.Add(rds);
                 reportViewer3.LocalReport.DataSources.Add(rds);
-
-
             }
 
-          
-
             InitiMeasrument();
-           
 
             ReportDataSource rds2 = new ReportDataSource("dsMeasurment", dtMeasurment);
             reportViewer1.LocalReport.DataSources.Add(rds2);
             reportViewer2.LocalReport.DataSources.Add(rds2);
             reportViewer3.LocalReport.DataSources.Add(rds2);
-
-
 
 
             reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
@@ -191,9 +189,6 @@ namespace TAILORING.Report.Forms
             reportViewer3.ZoomMode = ZoomMode.Percent;
             reportViewer3.ZoomPercent = 100;
             this.reportViewer3.RefreshReport();
-
-          
-
         }
 
         private string ImageToBase64(string path)
@@ -211,10 +206,6 @@ namespace TAILORING.Report.Forms
                 }
             }
         }
-
-        DataTable dtMeasurment = new DataTable();
-        DataTable dtMeasurment2 = new DataTable();
-        DataTable dtStyle = new DataTable();
 
         private void InitMearumentStyleTable()
         {
@@ -271,17 +262,13 @@ namespace TAILORING.Report.Forms
             dtMeasurment.Columns.Add("s10");
             #endregion
 
-
-
         }
-        private string GenerateSubOrderNo(string SKUNo, string QTYNo, string TotalQTY, string OrderID)
+        private string GenerateSubOrderNo(string SKUNo, string QTYNo, string TotalQTY, string pOrderNo)
         {
-            string str = SKUNo + "-" + QTYNo + "/" + TotalQTY + "/" + "/" + OrderID;
+            string str = SKUNo + "-" + QTYNo + "/" + TotalQTY + "/" + "/" + pOrderNo;
             return str;
         }
-        string imgName = "";
-        string strBase64 = "";
-        int inc = 0;
+
         private void GenerateMeasument_Style_Record()
         {
             try
@@ -329,7 +316,6 @@ namespace TAILORING.Report.Forms
 
                 #endregion
 
-                 
                 ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
                 DataSet dsOrderDetails = ObjCon.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_OrderDetails");
                 if (dsOrderDetails.Tables.Count > 0)
@@ -337,7 +323,6 @@ namespace TAILORING.Report.Forms
                     DataTable dtOrderDetails = dsOrderDetails.Tables[0];
                     for (int i = 0; i < dtOrderDetails.Rows.Count; i++)
                     {
-
                         string GarmendID = dtOrderDetails.Rows[i]["GarmentID"].ToString();
                         int QTY = Convert.ToInt32(dtOrderDetails.Rows[i]["QTY"]);
                         ProductID = GarmendID;
@@ -348,9 +333,9 @@ namespace TAILORING.Report.Forms
                         Service = dtOrderDetails.Rows[i]["Service"].ToString();
                         Fit = dtOrderDetails.Rows[i]["FitTypeName"].ToString();
                         TrailDate = dtOrderDetails.Rows[i]["TrailDate"].ToString();
-                        if (TrailDate.Trim().Length!=0)
+                        if (TrailDate.Trim().Length != 0)
                         {
-                            TrailDate=Convert.ToDateTime(TrailDate).ToString("dd-MMMM-yyy");
+                            TrailDate = Convert.ToDateTime(TrailDate).ToString("dd-MMMM-yyy");
                         }
                         DeliveryDate = dtOrderDetails.Rows[i]["DeliveryDate"].ToString();
                         if (DeliveryDate.Trim().Length != 0)
@@ -358,15 +343,15 @@ namespace TAILORING.Report.Forms
                             DeliveryDate = Convert.ToDateTime(DeliveryDate).ToString("dd-MMMM-yyy");
                         }
                         DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("select * from vw_Garment_Measurment_rdlc where  SalesOrderID=" + OrderID + " and GarmentID=" + GarmendID);
-                        if (dtCustMeasument.Rows.Count > 0)
+                        if (ObjUtil.ValidateTable(dtCustMeasument))
                         {
                             for (int m = 0; m < dtCustMeasument.Rows.Count; m++)
                             {
-                                switch(m)
+                                switch (m)
                                 {
                                     case 0:
                                         mc1 = dtCustMeasument.Rows[m]["MeasurementName"].ToString();
-                                        mc1v= dtCustMeasument.Rows[m]["MeasurementValue"].ToString();
+                                        mc1v = dtCustMeasument.Rows[m]["MeasurementValue"].ToString();
                                         break;
                                     case 1:
                                         mc2 = dtCustMeasument.Rows[m]["MeasurementName"].ToString();
@@ -404,21 +389,19 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
-                       /// check for each style for each QTY
+                        /// check for each style for each QTY
                         for (int j = 1; j <= QTY; j++)
                         {
                             DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + j + " and SalesOrderID = " + OrderID);
-                            if (dtStyles.Rows.Count > 0)
+                            if (ObjUtil.ValidateTable(dtStyles))
                             {
-                              
-
                                 for (int s = 0; s < dtStyles.Rows.Count; s++)
                                 {
-                                    switch(s)
+                                    switch (s)
                                     {
                                         case 0:
-                                          
-                                           s1= ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString()); 
+
+                                            s1 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
                                             break;
                                         case 1:
 
@@ -451,26 +434,19 @@ namespace TAILORING.Report.Forms
 
                             // add product ID as unique so that you can see record in list view for each QTY sepratly
                             inc++;
-                            string subOrderNo = GenerateSubOrderNo(PU, j.ToString(), QTY.ToString(), OrderID);
+                            string subOrderNo = GenerateSubOrderNo(PU, j.ToString(), QTY.ToString(), OrderNo);
                             // add your 1st QTY into table
                             AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
                                 mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mc10, mc1v, mc2v, mc3v, mc4v, mc5v, mc6v, mc7v, mc8v,
-                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo); 
-                           
-                           
+                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo);
                         }
-
-
                     }
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-
 
             int count2 = dtMeasurment.Rows.Count;
         }
@@ -500,15 +476,14 @@ namespace TAILORING.Report.Forms
             // ImageToBase64(@"C:\Tailoring Images\Picture3.png"),
             //   ImageToBase64(@"C:\Tailoring Images\Turn up.png"), "NA", "NA", "NA", "NA", "NA", "NA");
         }
-  
 
         private void AddRowItem(string ProductID,
-                                string Swatch, 
-                                string PU, 
+                                string Swatch,
+                                string PU,
                                 string Garment,
                                 string Stitch,
                                 string Service,
-                                string Fit, 
+                                string Fit,
                                 string TrailDate,
                                 string DeliveryDate,
                                 string mc1,
@@ -543,11 +518,9 @@ namespace TAILORING.Report.Forms
                                 string s10,
                                 string SubOrderID
 
-
             )
         {
-
-            DataRow dRow=  dtMeasurment.NewRow();
+            DataRow dRow = dtMeasurment.NewRow();
 
             dRow["SubOrderID"] = SubOrderID;
             dRow["ProductID"] = ProductID;
@@ -590,29 +563,23 @@ namespace TAILORING.Report.Forms
             dRow["s9"] = s9;
             dRow["s10"] = s10;
 
-
             dtMeasurment.Rows.Add(dRow);
             dtMeasurment.AcceptChanges();
-
         }
-        private void AddRow2(string c1, string c2, string c3, string c4 )
+        private void AddRow2(string c1, string c2, string c3, string c4)
         {
-
             DataRow dRow = dtStyle.NewRow();
             dRow[0] = c1;
             dRow[1] = c2;
             dRow[2] = c3;
             dRow[3] = c4;
-        
 
             dtStyle.Rows.Add(dRow);
             dtStyle.AcceptChanges();
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
             reportViewer2.PrintDialog();
             reportViewer1.PrintDialog();
             reportViewer3.PrintDialog();

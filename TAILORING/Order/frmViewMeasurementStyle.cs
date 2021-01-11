@@ -42,13 +42,24 @@ namespace TAILORING.Order
         public string OrderNo = "NA";
         int GarmentID = 0, StyleID = 0;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void frmViewMeasurementStyle_Load(object sender, EventArgs e)
         {
-            btnSave.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
             lblOrderNo.Text = "Order No : " + OrderNo;
 
             IsAdmin();
+            
+            LoadTailoringTheme();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {

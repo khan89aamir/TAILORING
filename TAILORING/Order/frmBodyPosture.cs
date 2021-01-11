@@ -21,18 +21,24 @@ namespace TAILORING.Order
 
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
-        
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
 
         DataTable dtPosture = new DataTable();
         public DataTable dtTempPosture = new DataTable();
 
         public int GarmentID = 0;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+
+            btnPostureSave.PaletteMode = PaletteMode.SparklePurple;
+            btnPostureSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void frmBodyPosture_Load(object sender, EventArgs e)
         {
-            btnPostureSave.BackgroundImage = B_Leave;
+            LoadTailoringTheme();
+
             GetBodyPostureDetails();
         }
 

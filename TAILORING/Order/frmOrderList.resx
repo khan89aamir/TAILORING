@@ -186,40 +186,68 @@
   <data name="kryptonHeaderGroup1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 54</value>
   </data>
-  <data name="txtCustomerOrderNo.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerOrderNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
   <data name="txtCustomerOrderNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>904, 16</value>
-  </data>
-  <data name="txtCustomerOrderNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
-        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
-        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
-        AADNAAAACw==
-</value>
+    <value>896, 12</value>
   </data>
   <data name="txtCustomerOrderNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 25</value>
+    <value>213, 31</value>
   </data>
   <data name="txtCustomerOrderNo.TabIndex" type="System.Int32, mscorlib">
-    <value>262</value>
+    <value>382</value>
   </data>
   <data name="&gt;&gt;txtCustomerOrderNo.Name" xml:space="preserve">
     <value>txtCustomerOrderNo</value>
   </data>
   <data name="&gt;&gt;txtCustomerOrderNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;txtCustomerOrderNo.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txtCustomerOrderNo.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="txtCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>534, 12</value>
+  </data>
+  <data name="txtCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 31</value>
+  </data>
+  <data name="txtCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
+    <value>381</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
+    <value>txtCustomerMobileNo</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtCustomerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 12</value>
+  </data>
+  <data name="txtCustomerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 31</value>
+  </data>
+  <data name="txtCustomerName.TabIndex" type="System.Int32, mscorlib">
+    <value>380</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
+    <value>txtCustomerName</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="radByOrderNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -260,7 +288,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;radByOrderNo.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="txtCustomerID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -298,7 +326,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txtCustomerID.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -331,7 +359,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="dtpToDate.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -366,42 +394,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;dtpToDate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtCustomerMobileNo.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerMobileNo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="txtCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>538, 16</value>
-  </data>
-  <data name="txtCustomerMobileNo.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
-        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
-        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
-        AADNAAAACw==
-</value>
-  </data>
-  <data name="txtCustomerMobileNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 25</value>
-  </data>
-  <data name="txtCustomerMobileNo.TabIndex" type="System.Int32, mscorlib">
-    <value>255</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
-    <value>txtCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="radByCustomerMobileNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -442,7 +435,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;radByCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="dtpFromDate.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -477,7 +470,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;dtpFromDate.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="radByCustomerName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -518,41 +511,6 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;radByCustomerName.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="txtCustomerName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtCustomerName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 11.25pt</value>
-  </data>
-  <data name="txtCustomerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 14</value>
-  </data>
-  <data name="txtCustomerName.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
-        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
-        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
-        AADNAAAACw==
-</value>
-  </data>
-  <data name="txtCustomerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 25</value>
-  </data>
-  <data name="txtCustomerName.TabIndex" type="System.Int32, mscorlib">
-    <value>252</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
-    <value>txtCustomerName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="radByDate.AutoSize" type="System.Boolean, mscorlib">
@@ -682,6 +640,19 @@
   <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
     <value>Search By</value>
   </data>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5QELDCUwpwyXDwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE7SURBVDhP
+        lZO9SoNBEEW/IkFtbNR3UPyrLCSktxN8Ad9DfIBYapAg1oHYWQoqiIraKiKiWIimsBEsRGLheu7uDfqR
+        RMyBw2buzITdQLJehBBK2MAmfvrcwbJHusNAAasovvAS93yqFjUseiUPjc04EsIxTuA0LuMSzuERippX
+        fiAsp144wVHcjVUILZ+HWMT2l+SfQ6A3i0nU8gsuopZGcMxz46jnNOJiG4JnvMFh/MAFtzqgd4VNlwmC
+        dzzw56EY9oC+ftiWywTBA966/BPmrvHJZYJgG8Wso67Qn0L9BnVHCS2iOMdBxznIB/BUQzDvOEGwlvLI
+        BeZuQj2DZ2rCuuMEQSXlHdzhvk+hq29gwatdl3UTPWcL7/EVH7GOJa8lCFbxNxW3/gcLb2kv0t+yYEn/
+        PF1xxVEfZNk3xZHaOsH9RpMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="&gt;&gt;kryptonHeaderGroup1.Name" xml:space="preserve">
     <value>kryptonHeaderGroup1</value>
   </data>
@@ -744,6 +715,17 @@
   </data>
   <data name="grpCustomerGridview.ValuesPrimary.Heading" xml:space="preserve">
     <value>List Of Order</value>
+  </data>
+  <data name="grpCustomerGridview.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5QELDCYN1EmI3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACnSURBVDhP
+        3ZOxCQJBFERN7EATswtsQDtQMDQQtAoNxVybESMLULCFLUDhGnGd54dlzkgwkRt4MDt/mWA/28k5J+E6
+        i6l4vk8hPBkzV6KgDl90E4uwDZExc9X/UXAQJ2MthuJoGZ5sYxnsKViJnTETfbG1DN8TzPzusiWP+Ahf
+        dBHzsA2RXcMW3SmoxNgYiK4YWYYnY+Z3Kwp+XmMLtvDtd56Ij++c0wsOvby12MXaJQAAAABJRU5ErkJg
+        gg==
+</value>
   </data>
   <data name="grpCustomerGridview.ValuesSecondary.Heading" xml:space="preserve">
     <value>Total Records : 0</value>

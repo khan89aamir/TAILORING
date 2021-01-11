@@ -21,19 +21,35 @@ namespace TAILORING
         clsUtility ObjUtil = new clsUtility();
 
         DataTable dtUserRights = new DataTable();
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
+
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            btnAdd.PaletteMode = PaletteMode.SparklePurple;
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnEdit.PaletteMode = PaletteMode.SparklePurple;
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnUpdate.PaletteMode = PaletteMode.SparklePurple;
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnDelete.PaletteMode = PaletteMode.SparklePurple;
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void frmUserRights_Load(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = B_Leave;
-            btnSave.BackgroundImage = B_Leave;
-            btnEdit.BackgroundImage = B_Leave;
-            btnUpdate.BackgroundImage = B_Leave;
-            btnDelete.BackgroundImage = B_Leave;
-            btnCancel.BackgroundImage = B_Leave;
-
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
+
+            LoadTailoringTheme();
 
             InitRightTable();
             LoadRightGrid();
@@ -610,17 +626,6 @@ namespace TAILORING
                 ClearAll();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
             }
-        }
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
     }
 }

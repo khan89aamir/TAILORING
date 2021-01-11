@@ -26,6 +26,28 @@ namespace TAILORING.Masters
         Image B_Leave = TAILORING.Properties.Resources.B_click;
         Image B_Enter = TAILORING.Properties.Resources.B_on;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            btnAdd.PaletteMode = PaletteMode.SparklePurple;
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnEdit.PaletteMode = PaletteMode.SparklePurple;
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnUpdate.PaletteMode = PaletteMode.SparklePurple;
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnDelete.PaletteMode = PaletteMode.SparklePurple;
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void frmCompanyMaster_Load(object sender, EventArgs e)
         {
             //btnAdd.BackgroundImage = B_Leave;
@@ -41,6 +63,8 @@ namespace TAILORING.Masters
             dgvCompanyMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvCompanyMaster.RowHeadersVisible = false; // set it to false if not needed
+            
+            LoadTailoringTheme();
 
             LoadData();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRights));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvUserRIghts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -43,7 +44,6 @@
             this.dgvUser = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.grpRights = new System.Windows.Forms.GroupBox();
             this.grpUserName = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,6 +56,7 @@
             this.btnEdit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRIghts)).BeginInit();
             this.grpUserGridview.SuspendLayout();
@@ -224,16 +225,6 @@
             this.grpUserName.TabStop = false;
             this.grpUserName.Text = "Select User :";
             // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(14, 42);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(214, 25);
-            this.txtName.TabIndex = 188;
-            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
-            // 
             // lblCategoryName
             // 
             this.lblCategoryName.AutoSize = true;
@@ -306,7 +297,7 @@
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
             this.btnCancel.TabIndex = 348;
-            this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
+            this.btnCancel.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Values.Image")));
             this.btnCancel.Values.Text = " Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -319,7 +310,7 @@
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
             this.btnDelete.TabIndex = 347;
-            this.btnDelete.Values.Image = global::TAILORING.Properties.Resources.btnDelete_Values_Image;
+            this.btnDelete.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Values.Image")));
             this.btnDelete.Values.Text = " Delete ";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -332,7 +323,7 @@
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
             this.btnUpdate.TabIndex = 346;
-            this.btnUpdate.Values.Image = global::TAILORING.Properties.Resources.btnUpdate_Values_Image;
+            this.btnUpdate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Values.Image")));
             this.btnUpdate.Values.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -345,7 +336,7 @@
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
             this.btnEdit.TabIndex = 345;
-            this.btnEdit.Values.Image = global::TAILORING.Properties.Resources.btnEdit_Values_Image;
+            this.btnEdit.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Values.Image")));
             this.btnEdit.Values.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -358,7 +349,7 @@
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
             this.btnSave.TabIndex = 344;
-            this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
+            this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
             this.btnSave.Values.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -371,9 +362,28 @@
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdd.Size = new System.Drawing.Size(78, 34);
             this.btnAdd.TabIndex = 343;
-            this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
+            this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Add New";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(11, 50);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(214, 31);
+            this.txtName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtName.StateCommon.Border.Rounding = 10;
+            this.txtName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtName.StateNormal.Border.Rounding = 20;
+            this.txtName.TabIndex = 380;
+            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
             // frmUserRights
             // 
@@ -432,7 +442,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParentID;
         private System.Windows.Forms.GroupBox grpUserName;
         private System.Windows.Forms.Label lblCategoryName;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
@@ -446,5 +455,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUserRIghts;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUser;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtName;
     }
 }

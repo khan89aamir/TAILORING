@@ -28,6 +28,13 @@ namespace TAILORING
         String UserIPAddress = String.Empty;
         String UserMacAddress = String.Empty;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            btnLogin.PaletteMode = PaletteMode.SparklePurple;
+            btnLogin.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private bool ValidateLogin(string username, string password)
         {
             if (username.Equals("admin") && password.Equals("admin") && count <= 3)
@@ -169,6 +176,8 @@ namespace TAILORING
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            LoadTailoringTheme();
+
             txtUserName.Focus();
         }
     }

@@ -22,11 +22,19 @@ namespace TAILORING.Order
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
         public int SalesOrderID = 0;
+
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+        }
+
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
             dgvOrderDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvOrderDetails.RowHeadersVisible = false; // set it to false if not needed
+            
+            LoadTailoringTheme();
 
             LoadData();
         }

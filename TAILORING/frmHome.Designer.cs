@@ -491,7 +491,7 @@
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ribbon1.HideSingleTabIfTextEmpty = false;
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Location = new System.Drawing.Point(0, 25);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 

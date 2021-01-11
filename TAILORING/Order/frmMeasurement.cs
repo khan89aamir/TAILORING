@@ -22,9 +22,6 @@ namespace TAILORING.Order
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         Image Pending = TAILORING.Properties.Resources.bulet;
         Image Done = TAILORING.Properties.Resources.tick;
 
@@ -43,15 +40,23 @@ namespace TAILORING.Order
 
         int GarmentID = 0, StyleID = 0;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void frmMeasurement_Load(object sender, EventArgs e)
         {
             //HorizontalScroll.Maximum = 0;
             ctrlMeasurment1.IsEditable = true;
-
-            //btnMeasureSave.BackgroundImage = B_Leave;
-            //btnStyleSave.BackgroundImage = B_Leave;
-            //btnSave.BackgroundImage = B_Leave;
-            //btnCancel.BackgroundImage = B_Leave;
+            
+            LoadTailoringTheme();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
@@ -103,7 +108,7 @@ namespace TAILORING.Order
 
                     SKUList.Items[i].ImageIndex = i;
                 }
-                SKUList.Font = new Font("Times New Roman", 10, FontStyle.Bold);
+                SKUList.Font = new Font("Arial Narrow", 11, FontStyle.Bold);
                 SKUList.Items[0].Selected = true;
                 GetDefaultSelectSKU();
 
@@ -599,18 +604,6 @@ namespace TAILORING.Order
 
                 checkBox1.Enabled = false;
             }
-        }
-
-        private void btnMeasureSave_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnMeasureSave_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
         }
 
         private void ResetdtMeasurement()

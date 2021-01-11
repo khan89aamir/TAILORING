@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using gGlowBox;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace TAILORING.Others
 {
@@ -119,21 +120,23 @@ namespace TAILORING.Others
                 gGlowGroupBox panel = new gGlowBox.gGlowGroupBox();
                 
                 Label label = new Label();
-                TextBox txt = new TextBox();
-                
+
+                //TextBox txt = new TextBox();
+                KryptonTextBox txt = new KryptonTextBox();
+
                 panel.GlowAmount = 20;
                 panel.GlowFeather = 50;
 
                 label.Location = new Point(13, 16);
                 label.Text = dt.Columns[i].ColumnName;
-                label.Font = new Font("Times New Roman", 11.2f, FontStyle.Bold);
+                label.Font = new Font("Arial Narrow", 11.25f, FontStyle.Bold);
                 label.AutoSize = true;
 
                 if (lstMendatoryColumn.Contains(label.Text))
                 {
                     Label lblmendatory = new Label();
                     lblmendatory.Text = "*";
-                    lblmendatory.Font = new Font("Times New Roman", 11.2f, FontStyle.Bold);
+                    lblmendatory.Font = new Font("Arial Narrow", 11.25f, FontStyle.Bold);
                     lblmendatory.ForeColor = Color.Red;
                     lblmendatory.BackColor = Color.Transparent;
                     lblmendatory.AutoSize = true;
@@ -141,7 +144,7 @@ namespace TAILORING.Others
                     panel.Controls.Add(lblmendatory);
                 }
                 txt.Name = "txt";
-                txt.Font = new Font("Times New Roman", 11.2f, FontStyle.Regular);
+                txt.Font = new Font("Arial Narrow", 11.25f, FontStyle.Regular);
                 txt.Location = new Point(110, 13);
                 txt.Enter += txtName_Enter;
                 txt.Leave += txtName_Leave;
@@ -165,7 +168,8 @@ namespace TAILORING.Others
         private void Decimal_Control_KeyPress(object sender, KeyPressEventArgs e)
         {
             //string k = e.KeyChar.ToString();
-            TextBox txt = (TextBox)sender;
+            //TextBox txt = (TextBox)sender;
+            KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsDecimal(txt, e);
         }
 

@@ -24,11 +24,18 @@ namespace TAILORING.Order
         //Image B_Leave = TAILORING.Properties.Resources.B_click;
         //Image B_Enter = TAILORING.Properties.Resources.B_on;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+        }
+
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
             dgvOrderDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvOrderDetails.RowHeadersVisible = false; // set it to false if not needed
+
+            LoadTailoringTheme();
 
             radByDate_CheckedChanged(sender, e);
             SearchByDates();

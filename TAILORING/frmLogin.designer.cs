@@ -32,8 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
@@ -42,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.gGlowGroupBox1 = new gGlowBox.gGlowGroupBox();
             this.btnLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtUserName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtPassword = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -83,28 +83,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(103, 104);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtPassword
-            // 
-            this.gGlowGroupBox1.SetEffectType(this.txtPassword, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(98, 67);
-            this.txtPassword.Name = "txtPassword";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtPassword, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtPassword.sGlowColor"))));
-            this.txtPassword.Size = new System.Drawing.Size(201, 26);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.SetEffectType(this.txtUserName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(98, 13);
-            this.txtUserName.Name = "txtUserName";
-            this.gGlowGroupBox1.SetsGlowColor(this.txtUserName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("txtUserName.sGlowColor"))));
-            this.txtUserName.Size = new System.Drawing.Size(201, 26);
-            this.txtUserName.TabIndex = 0;
             // 
             // label1
             // 
@@ -164,7 +142,6 @@
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
             this.kryptonPanel1.Size = new System.Drawing.Size(363, 42);
             this.kryptonPanel1.StateCommon.Image = global::TAILORING.Properties.Resources.titlebg_green;
-            this.kryptonPanel1.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPanel1.TabIndex = 216;
             // 
             // label3
@@ -182,11 +159,11 @@
             // gGlowGroupBox1
             // 
             this.gGlowGroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gGlowGroupBox1.Controls.Add(this.txtPassword);
             this.gGlowGroupBox1.Controls.Add(this.txtUserName);
             this.gGlowGroupBox1.Controls.Add(this.label2);
             this.gGlowGroupBox1.Controls.Add(this.picIMGPass);
             this.gGlowGroupBox1.Controls.Add(this.label1);
-            this.gGlowGroupBox1.Controls.Add(this.txtPassword);
             this.gGlowGroupBox1.Controls.Add(this.label5);
             this.gGlowGroupBox1.Controls.Add(this.label4);
             this.gGlowGroupBox1.GlowAmount = 20;
@@ -206,12 +183,48 @@
             this.btnLogin.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnLogin.Size = new System.Drawing.Size(100, 36);
             this.btnLogin.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnLogin.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnLogin.TabIndex = 218;
             this.btnLogin.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Values.Image")));
             this.btnLogin.Values.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(98, 13);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(201, 31);
+            this.txtUserName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtUserName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtUserName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtUserName.StateCommon.Border.Rounding = 10;
+            this.txtUserName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtUserName.StateNormal.Border.Rounding = 20;
+            this.txtUserName.TabIndex = 380;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(98, 61);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(201, 31);
+            this.txtPassword.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtPassword.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtPassword.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtPassword.StateCommon.Border.Rounding = 10;
+            this.txtPassword.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtPassword.StateNormal.Border.Rounding = 20;
+            this.txtPassword.TabIndex = 381;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // frmLogin
             // 
@@ -252,8 +265,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkForgotPassword;
@@ -262,5 +273,7 @@
         private System.Windows.Forms.Label label3;
         private gGlowBox.gGlowGroupBox gGlowGroupBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLogin;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtPassword;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtUserName;
     }
 }

@@ -25,10 +25,17 @@ namespace TAILORING
         bool IsPath = false;
         byte i = 0; //for closing Registrationprocess if system datetime is changes
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+        }
+
         private void SplashWindow_Load(object sender, EventArgs e)
         {
             lblversion.Text = lblversion.Text + " " + Application.ProductVersion;
             clsUtility.strProjectTitle = "Inventory Management System";
+
+            LoadTailoringTheme();
 
             if (System.IO.Directory.Exists("AppConfig") && System.IO.File.Exists("AppConfig\\ServerConfig.sc"))
             {

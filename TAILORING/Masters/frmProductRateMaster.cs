@@ -23,6 +23,27 @@ namespace TAILORING.Masters
 
         int ID = 0;
 
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            btnAdd.PaletteMode = PaletteMode.SparklePurple;
+           btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnEdit.PaletteMode = PaletteMode.SparklePurple;
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnUpdate.PaletteMode = PaletteMode.SparklePurple;
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnDelete.PaletteMode = PaletteMode.SparklePurple;
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
         private void frmProductRateMaster_Load(object sender, EventArgs e)
         {
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
@@ -32,6 +53,8 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dataGridView1.RowHeadersVisible = false; // set it to false if not needed
 
+            LoadTailoringTheme();
+            
             LoadProductDate();
             LoadProductRateData();
 
@@ -112,6 +135,18 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
             {
+                if (ValidateForm())
+                {
+                    if (DuplicateUser(0))
+                    {
+                        SaveProductRateDetails();
+                    }
+                    else
+                    {
+                        clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
+                        cmbGarmentName.Focus();
+                    }
+                }
             }
             else
             {
@@ -137,6 +172,18 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
+                if (ValidateForm())
+                {
+                    if (DuplicateUser(ID))
+                    {
+                        UpdateProductRateDetails();
+                    }
+                    else
+                    {
+                        clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
+                        cmbGarmentName.Focus();
+                    }
+                }
             }
             else
             {
@@ -148,6 +195,25 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
+                DialogResult d = MessageBox.Show("Are you sure want to delete '" + cmbGarmentName.Text + "' Garment", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (d == DialogResult.Yes)
+                {
+                    ObjDAL.SetStoreProcedureData("GarmentRateID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
+                    bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Product_Rate");
+                    if (b)
+                    {
+                        clsUtility.ShowInfoMessage("'" + cmbGarmentName.Text + "' Garment is deleted  ", clsUtility.strProjectTitle);
+                        ClearAll();
+                        LoadProductDate();
+                        grpProduct.Enabled = false;
+                        ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
+                    }
+                    else
+                    {
+                        clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is not deleted  ", clsUtility.strProjectTitle);
+                        ObjDAL.ResetData();
+                    }
+                }
             }
             else
             {
@@ -201,6 +267,97 @@ namespace TAILORING.Masters
                     clsUtility.ShowErrorMessage(ex.ToString(), clsUtility.strProjectTitle);
                 }
             }
+        }
+
+        private bool ValidateForm()
+        {
+            if (ObjUtil.IsControlTextEmpty(cmbGarmentName))
+            {
+                clsUtility.ShowInfoMessage("Select Garment..       ", clsUtility.strProjectTitle);
+                cmbGarmentName.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(cmbService))
+            {
+                clsUtility.ShowInfoMessage("Select Service Type for " + cmbGarmentName.Text, clsUtility.strProjectTitle);
+                cmbService.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(txtRate))
+            {
+                clsUtility.ShowInfoMessage("Enter Rate for " + cmbGarmentName.Text, clsUtility.strProjectTitle);
+                txtRate.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private bool DuplicateUser(int i)
+        {
+            int a = 0;
+            if (i == 0)
+            {
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND OrderType=" + cmbService.SelectedIndex);
+            }
+            else
+            {
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND GarmentRateID !=" + i + " AND OrderType=" + cmbService.SelectedIndex);
+            }
+            if (a > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void SaveProductRateDetails()
+        {
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, cmbGarmentName.SelectedValue, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbService.SelectedIndex, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+            bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Product_Rate");
+            if (b)
+            {
+                ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
+                clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                ClearAll();
+                LoadProductDate();
+                grpProduct.Enabled = false;
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+            }
+            ObjDAL.ResetData();
+        }
+
+        private void UpdateProductRateDetails()
+        {
+            ObjDAL.SetStoreProcedureData("GarmentRateID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, cmbGarmentName.SelectedValue, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbService.SelectedIndex, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
+
+            bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Update_Product_Rate");
+            if (b)
+            {
+                ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate);
+                clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is Updated Successfully..", clsUtility.strProjectTitle);
+                ClearAll();
+                LoadProductDate();
+                grpProduct.Enabled = false;
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is not Updated Successfully..", clsUtility.strProjectTitle);
+            }
+            ObjDAL.ResetData();
         }
     }
 }

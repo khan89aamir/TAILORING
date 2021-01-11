@@ -191,8 +191,6 @@
             this.btnMeasureSave.UseVisualStyleBackColor = true;
             this.btnMeasureSave.Visible = false;
             this.btnMeasureSave.Click += new System.EventHandler(this.btnMeasureSave_Click);
-            this.btnMeasureSave.MouseEnter += new System.EventHandler(this.btnMeasureSave_MouseEnter);
-            this.btnMeasureSave.MouseLeave += new System.EventHandler(this.btnMeasureSave_MouseLeave);
             // 
             // checkBox1
             // 

@@ -123,6 +123,7 @@ namespace TAILORING.Others
 
                 //TextBox txt = new TextBox();
                 KryptonTextBox txt = new KryptonTextBox();
+                txt.StateCommon.Border.Rounding = 10;
 
                 panel.GlowAmount = 20;
                 panel.GlowFeather = 50;
@@ -146,8 +147,6 @@ namespace TAILORING.Others
                 txt.Name = "txt";
                 txt.Font = new Font("Arial Narrow", 11.25f, FontStyle.Regular);
                 txt.Location = new Point(110, 13);
-                txt.Enter += txtName_Enter;
-                txt.Leave += txtName_Leave;
                 txt.KeyPress += Decimal_Control_KeyPress;
                 txt.Enabled = IsEditable;
                 txt.BackColor = Color.White;
@@ -171,16 +170,6 @@ namespace TAILORING.Others
             //TextBox txt = (TextBox)sender;
             KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsDecimal(txt, e);
-        }
-
-        private void txtName_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtName_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
     }
 }

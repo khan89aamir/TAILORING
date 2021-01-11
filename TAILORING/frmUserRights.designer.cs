@@ -40,10 +40,9 @@
             this.Other = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ParentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpUserGridview = new System.Windows.Forms.GroupBox();
-            this.dgvUser =   new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dgvUser = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.grpRights = new System.Windows.Forms.GroupBox();
             this.grpUserName = new System.Windows.Forms.GroupBox();
-            this.gGlowBox1 = new gGlowBox.gGlowBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.grpRights.SuspendLayout();
             this.grpUserName.SuspendLayout();
-            this.gGlowBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -188,7 +186,6 @@
             // 
             this.dgvUser.AllowUserToAddRows = false;
             this.dgvUser.AllowUserToDeleteRows = false;
-            this.dgvUser.BackgroundColor = System.Drawing.Color.White;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Location = new System.Drawing.Point(5, 24);
             this.dgvUser.Name = "dgvUser";
@@ -205,7 +202,6 @@
             this.grpRights.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpRights.BackColor = System.Drawing.Color.Transparent;
             this.grpRights.Controls.Add(this.dgvUserRIghts);
-            this.grpRights.Enabled = false;
             this.grpRights.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpRights.Location = new System.Drawing.Point(240, 118);
             this.grpRights.Name = "grpRights";
@@ -217,7 +213,7 @@
             // grpUserName
             // 
             this.grpUserName.BackColor = System.Drawing.Color.Transparent;
-            this.grpUserName.Controls.Add(this.gGlowBox1);
+            this.grpUserName.Controls.Add(this.txtName);
             this.grpUserName.Controls.Add(this.lblCategoryName);
             this.grpUserName.Enabled = false;
             this.grpUserName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,20 +224,11 @@
             this.grpUserName.TabStop = false;
             this.grpUserName.Text = "Select User :";
             // 
-            // gGlowBox1
-            // 
-            this.gGlowBox1.Controls.Add(this.txtName);
-            this.gGlowBox1.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(139)))), ((int)(((byte)(97)))));
-            this.gGlowBox1.Location = new System.Drawing.Point(7, 42);
-            this.gGlowBox1.Name = "gGlowBox1";
-            this.gGlowBox1.Size = new System.Drawing.Size(221, 32);
-            this.gGlowBox1.TabIndex = 190;
-            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(4, 4);
+            this.txtName.Location = new System.Drawing.Point(14, 42);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(214, 25);
             this.txtName.TabIndex = 188;
@@ -425,8 +412,6 @@
             this.grpRights.ResumeLayout(false);
             this.grpUserName.ResumeLayout(false);
             this.grpUserName.PerformLayout();
-            this.gGlowBox1.ResumeLayout(false);
-            this.gGlowBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,7 +421,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grpUserGridview;
-        private System.Windows.Forms.DataGridView dgvUser;
         private System.Windows.Forms.GroupBox grpRights;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormName;
@@ -460,7 +444,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnEdit;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
-        private gGlowBox.gGlowBox gGlowBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUserRIghts;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUser;
     }
 }

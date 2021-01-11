@@ -85,6 +85,9 @@
     <Reference Include="gGlowBox, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CoreAppLib.1.0.15\lib\gGlowBox.dll</HintPath>
     </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>..\..\..\..\Downloads\JTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -132,17 +135,20 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UI.Glass.Panel">
+      <HintPath>..\..\..\..\..\..\Test\t\Glass\bin\Release\UI.Glass.Panel.dll</HintPath>
+    </Reference>
     <Reference Include="UserManagement, Version=1.3.5.1, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.15\lib\UserManagement.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsForm.cs" />
-    <Compile Include="Dashboard\frmDashboard.cs">
+    <Compile Include="Dashboard\frmDashboardUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\frmDashboard.Designer.cs">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
+    <Compile Include="Dashboard\frmDashboardUpdate.Designer.cs">
+      <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
@@ -283,8 +289,8 @@
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
-      <DependentUpon>frmDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\frmDashboardUpdate.resx">
+      <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -426,10 +432,12 @@
     <None Include="Resources\bulet - Copy.png" />
     <None Include="Resources\tick - Copy.png" />
     <None Include="Resources\padlock.png" />
+    <None Include="Resources\Background.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Others\Test\" />
     <Folder Include="Setting\" />
   </ItemGroup>
   <ItemGroup>

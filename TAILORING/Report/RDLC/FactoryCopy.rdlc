@@ -300,80 +300,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.56167in</Top>
-            <Left>6.10833in</Left>
+            <Left>6.11475in</Left>
             <Height>0.25in</Height>
             <Width>1.22917in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox5">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Mobile No :</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.88112in</Top>
-            <Left>6.10833in</Left>
-            <Height>0.25in</Height>
-            <Width>1.22917in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox8">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Customer  :</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.86681in</Top>
-            <Height>0.25in</Height>
-            <Width>1.04167in</Width>
-            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -406,10 +335,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.54736in</Top>
-            <Left>0.0057in</Left>
+            <Left>0.01212in</Left>
             <Height>0.25in</Height>
             <Width>0.875in</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -440,10 +369,10 @@
             </Paragraphs>
             <rd:DefaultName>parmOrderDate</rd:DefaultName>
             <Top>1.56168in</Top>
-            <Left>7.39652in</Left>
+            <Left>7.40294in</Left>
             <Height>0.25in</Height>
             <Width>0.99655in</Width>
-            <ZIndex>4</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -474,76 +403,10 @@
             </Paragraphs>
             <rd:DefaultName>parmOrderNo</rd:DefaultName>
             <Top>1.54736in</Top>
-            <Left>1.06126in</Left>
+            <Left>1.06768in</Left>
             <Height>0.25in</Height>
             <Width>1.83681in</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="parmCustomerName">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmCustomerName.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmCustomerName</rd:DefaultName>
-            <Top>1.8668in</Top>
-            <Left>1.06474in</Left>
-            <Height>0.25in</Height>
-            <Width>1.85068in</Width>
-            <ZIndex>6</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="parmMobile">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmMobile.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmMobile</rd:DefaultName>
-            <Top>1.88113in</Top>
-            <Left>7.35486in</Left>
-            <Height>0.25in</Height>
-            <Width>1.03821in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -555,85 +418,17 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>2.58903in</Top>
+            <Top>2.21403in</Top>
+            <Left>0.00642in</Left>
             <Height>0in</Height>
             <Width>8.39307in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
             </Style>
           </Line>
-          <Textbox Name="Textbox10">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Address  :</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.18625in</Top>
-            <Left>0.0057in</Left>
-            <Height>0.25in</Height>
-            <Width>1.04167in</Width>
-            <ZIndex>9</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="parmCustomerAddress">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmCustomerAddress.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmCustomerAddress</rd:DefaultName>
-            <Top>2.18625in</Top>
-            <Left>1.06126in</Left>
-            <Height>0.36111in</Height>
-            <Width>3.5884in</Width>
-            <ZIndex>10</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox11">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -655,11 +450,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.20057in</Top>
-            <Left>6.10833in</Left>
+            <Top>1.8668in</Top>
+            <Left>6.11474in</Left>
             <Height>0.25in</Height>
             <Width>1.22917in</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -688,11 +483,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>parmMobile</rd:DefaultName>
-            <Top>2.20057in</Top>
-            <Left>7.35486in</Left>
+            <Top>1.8668in</Top>
+            <Left>7.36127in</Left>
             <Height>0.25in</Height>
             <Width>1.03821in</Width>
-            <ZIndex>12</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1015,10 +810,10 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.00611in</Top>
-            <Left>0.04167in</Left>
+            <Left>0.04809in</Left>
             <Height>1.04167in</Height>
             <Width>8.40291in</Width>
-            <ZIndex>13</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1051,7 +846,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
                 <Top>0.05389in</Top>
-                <Left>3.18722in</Left>
+                <Left>3.15125in</Left>
                 <Height>0.25in</Height>
                 <Width>2.17049in</Width>
                 <Style>
@@ -1067,10 +862,10 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>1.10334in</Top>
-            <Left>0.0057in</Left>
+            <Left>0.04809in</Left>
             <Height>0.38889in</Height>
-            <Width>8.43888in</Width>
-            <ZIndex>14</ZIndex>
+            <Width>8.40291in</Width>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1117,10 +912,11 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>2.64447in</Top>
+            <Top>2.26947in</Top>
+            <Left>0.00642in</Left>
             <Height>0.29681in</Height>
             <Width>8.39307in</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1601,14 +1397,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="TrailDate1">
+                                          <Textbox Name="TrailDate">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=CDate(Fields!TrailDate.Value).ToString("dd-MMM-yyyy")</Value>
+                                                    <Value>=Fields!TrailDate.Value</Value>
                                                     <Style>
                                                       <FontFamily>Times New Roman</FontFamily>
                                                       <Format>d MMM yyyy</Format>
@@ -1620,7 +1416,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>TrailDate1</rd:DefaultName>
+                                            <rd:DefaultName>TrailDate</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -1636,14 +1432,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="DeliveryDate1">
+                                          <Textbox Name="DeliveryDate">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=CDate(Fields!DeliveryDate.Value).ToString("dd-MMM-yyyy")</Value>
+                                                    <Value>=Fields!DeliveryDate.Value</Value>
                                                     <Style>
                                                       <FontFamily>Times New Roman</FontFamily>
                                                       <Format>d MMM yyyy</Format>
@@ -1655,7 +1451,7 @@
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>DeliveryDate1</rd:DefaultName>
+                                            <rd:DefaultName>DeliveryDate</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -2790,11 +2586,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsMeasurment</DataSetName>
-            <Top>3.04387in</Top>
-            <Left>0.01243in</Left>
+            <Top>2.61679in</Top>
             <Height>2.57292in</Height>
             <Width>8.43215in</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2842,10 +2637,10 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>5.71403in</Top>
-            <Left>0.11323in</Left>
+            <Left>0.11965in</Left>
             <Height>1.19445in</Height>
             <Width>2.91864in</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -2893,10 +2688,10 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>5.71403in</Top>
-            <Left>5.47442in</Left>
+            <Left>5.48084in</Left>
             <Height>1.19445in</Height>
             <Width>2.91864in</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -2907,7 +2702,7 @@
         <Height>7.11681in</Height>
         <Style />
       </Body>
-      <Width>8.49666in</Width>
+      <Width>8.50308in</Width>
       <Page>
         <InteractiveHeight>11in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>

@@ -348,8 +348,15 @@ namespace TAILORING.Report.Forms
                         Service = dtOrderDetails.Rows[i]["Service"].ToString();
                         Fit = dtOrderDetails.Rows[i]["FitTypeName"].ToString();
                         TrailDate = dtOrderDetails.Rows[i]["TrailDate"].ToString();
+                        if (TrailDate.Trim().Length!=0)
+                        {
+                            TrailDate=Convert.ToDateTime(TrailDate).ToString("dd-MMMM-yyy");
+                        }
                         DeliveryDate = dtOrderDetails.Rows[i]["DeliveryDate"].ToString();
-
+                        if (DeliveryDate.Trim().Length != 0)
+                        {
+                            DeliveryDate = Convert.ToDateTime(DeliveryDate).ToString("dd-MMMM-yyy");
+                        }
                         DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("select * from vw_Garment_Measurment_rdlc where  SalesOrderID=" + OrderID + " and GarmentID=" + GarmendID);
                         if (dtCustMeasument.Rows.Count > 0)
                         {

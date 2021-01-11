@@ -275,10 +275,10 @@ namespace TAILORING
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDashBoard) || clsUtility.IsAdmin)
             {
-                bool b = ObjUtil.IsAlreadyOpen(typeof(Dashboard.frmDashboard));
+                bool b = ObjUtil.IsAlreadyOpen(typeof(Dashboard.frmDashboardUpdate));
                 if (!b)
                 {
-                    Dashboard.frmDashboard frmDashBoard = new Dashboard.frmDashboard();
+                    Dashboard.frmDashboardUpdate frmDashBoard = new Dashboard.frmDashboardUpdate();
                     frmDashBoard.Show();
                 }
             }

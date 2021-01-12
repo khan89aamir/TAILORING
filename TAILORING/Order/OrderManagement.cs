@@ -31,7 +31,11 @@ namespace TAILORING.Order
         DataTable dtStyle = new DataTable();
         DataTable dtBodyPosture = new DataTable();
 
-        int CustomerID = 0;
+        public int CustomerID = 0;
+        public string CustName = string.Empty;
+        public string CustMobileNo = string.Empty;
+        public string CustAddress = string.Empty;
+
         int OrderID = 0;
         double CGST = 0, SGST = 0;
         string InvoiceNo = string.Empty;
@@ -54,6 +58,11 @@ namespace TAILORING.Order
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             LoadTailoringTheme();
+
+            txtCustomerID.Text = CustomerID.ToString();
+            txtCustomerName.Text = CustName;
+            txtCustomerMobileNo.Text = CustMobileNo;
+            txtCustomerAdd.Text = CustAddress;
 
             InitItemTable();
             InitOrderDetailsTable(); //Order Details
@@ -188,170 +197,6 @@ namespace TAILORING.Order
                 txtCGST.Text = "0";
                 txtSGST.Text = "0";
             }
-        }
-
-        private void rdSearchByCustomerName_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdSearchByCustomerName.Checked)
-            {
-                txtSearchByCustomerName.Enabled = true;
-                txtSearchByCustomerName.Focus();
-            }
-            else
-            {
-                txtSearchByCustomerName.Enabled = false;
-                txtSearchByCustomerName.Clear();
-
-                ClearCustomerFields(true,false);
-            }
-        }
-
-        private void rdSearchByCustomerMobile_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdSearchByCustomerMobileNo.Checked)
-            {
-                txtSearchByMobileNo.Enabled = true;
-                txtSearchByMobileNo.Focus();
-            }
-            else
-            {
-                txtSearchByMobileNo.Enabled = false;
-                txtSearchByMobileNo.Clear();
-
-                ClearCustomerFields(true,false);
-            }
-        }
-
-        private void txtSearchByCustomerName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearchByCustomerName.Text.Length > 0)
-            {
-                ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
-                DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
-                if (ObjUtil.ValidateDataSet(ds))
-                {
-                    DataTable dt = ds.Tables[0];
-                    if (ObjUtil.ValidateTable(dt))
-                    {
-                        ObjUtil.SetControlData(txtSearchByCustomerName, "Name");
-                        ObjUtil.SetControlData(txtCustomerID, "CustomerID");
-                        ObjUtil.ShowDataPopup(dt, txtSearchByCustomerName, this, this);
-
-                        if (ObjUtil.GetDataPopup() != null && ObjUtil.GetDataPopup().DataSource != null)
-                        {
-                            ObjUtil.GetDataPopup().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                            if (ObjUtil.GetDataPopup().ColumnCount > 0)
-                            {
-                                ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
-                                ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
-                                ObjUtil.SetDataPopupSize(278, 0);
-                            }
-                        }
-                        ObjUtil.GetDataPopup().CellClick += frmOrderManagement_CellClick;
-                        ObjUtil.GetDataPopup().KeyDown += frmOrderManagement_KeyDown;
-                    }
-                    else
-                    {
-                        ObjUtil.CloseAutoExtender();
-                    }
-                }
-            }
-            else
-            {
-                txtCustomerID.Clear();
-                ObjUtil.CloseAutoExtender();
-            }
-        }
-
-        private void frmOrderManagement_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            DataTable dt = (DataTable)dgv.DataSource;
-            if (ObjUtil.ValidateTable(dt))
-            {
-                txtSearchByCustomerName.SelectionStart = txtSearchByCustomerName.MaxLength;
-                txtSearchByCustomerName.Focus();
-                txtCustomerName.Text = dt.Rows[e.RowIndex]["Name"].ToString();
-                txtCustomerAdd.Text = dt.Rows[e.RowIndex]["Address"].ToString();
-                txtCustomerMobileNo.Text = dt.Rows[e.RowIndex]["MobileNo"].ToString();
-
-                btnMeasurement.Enabled = true;
-            }
-            else
-            {
-                btnMeasurement.Enabled = false;
-            }
-            cmbOrderType.Enabled = true;
-        }
-
-        private void frmOrderManagement_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                txtSearchByCustomerName.SelectionStart = txtSearchByCustomerName.MaxLength;
-                txtSearchByCustomerName.Focus();
-                SearchByCustomerID();
-            }
-            cmbOrderType.Enabled = true;
-        }
-
-        private void SearchByCustomerID()
-        {
-            ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, txtCustomerID.Text, clsConnection_DAL.ParamType.Input);
-            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
-            if (ObjUtil.ValidateDataSet(ds))
-            {
-                DataTable dt = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dt))
-                {
-                    txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
-                    txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
-                    txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
-
-                    btnMeasurement.Enabled = true;
-                }
-                else
-                {
-                    btnMeasurement.Enabled = false;
-                }
-            }
-        }
-
-        private void frmOrderManagement_Mobile_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            DataTable dt = (DataTable)dgv.DataSource;
-            if (ObjUtil.ValidateTable(dt))
-            {
-                txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
-                txtSearchByMobileNo.Focus();
-                txtCustomerName.Text = dt.Rows[0]["Name"].ToString();
-                txtCustomerAdd.Text = dt.Rows[0]["Address"].ToString();
-                txtCustomerMobileNo.Text = dt.Rows[0]["MobileNo"].ToString();
-
-                btnMeasurement.Enabled = true;
-            }
-            else
-            {
-                btnMeasurement.Enabled = false;
-            }
-            cmbOrderType.Enabled = true;
-        }
-
-        private void frmOrderManagement_Mobile_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                txtSearchByMobileNo.SelectionStart = txtSearchByMobileNo.MaxLength;
-                txtSearchByMobileNo.Focus();
-                SearchByCustomerID();
-            }
-            cmbOrderType.Enabled = true;
         }
 
         private void cmbOrderType_SelectionChangeCommitted(object sender, EventArgs e)
@@ -832,13 +677,15 @@ namespace TAILORING.Order
         {
             //string k = e.KeyChar.ToString();
             //TextBox txt = (TextBox)sender;
+            //KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsNumeric(e);
         }
 
         private void Decimal_Control_KeyPress(object sender, KeyPressEventArgs e)
         {
             //string k = e.KeyChar.ToString();
-            TextBox txt = (TextBox)sender;
+            //TextBox txt = (TextBox)sender;
+            KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsDecimal(txt, e);
         }
 
@@ -857,16 +704,6 @@ namespace TAILORING.Order
 
                     CalcTotalAmount();
                 }
-            }
-        }
-
-        private void txtSearchByCustomerName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ObjUtil.IsString(e);
-            if (e.Handled)
-            {
-                clsUtility.ShowInfoMessage("Enter Valid Customer Name...", clsUtility.strProjectTitle);
-                txtSearchByCustomerName.Focus();
             }
         }
 
@@ -904,173 +741,6 @@ namespace TAILORING.Order
                     }
                 }
             }
-        }
-
-        private void txtSearchByMobileNo_TextChanged(object sender, EventArgs e)
-        {
-            if (txtSearchByMobileNo.Text.Length > 0)
-            {
-                ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtSearchByMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
-                DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
-                if (ObjUtil.ValidateDataSet(ds))
-                {
-                    DataTable dt = ds.Tables[0];
-                    if (ObjUtil.ValidateTable(dt))
-                    {
-                        ObjUtil.SetControlData(txtSearchByMobileNo, "MobileNo");
-                        ObjUtil.SetControlData(txtCustomerID, "CustomerID");
-                        ObjUtil.ShowDataPopup(dt, txtSearchByMobileNo, this, this);
-
-                        if (ObjUtil.GetDataPopup() != null && ObjUtil.GetDataPopup().DataSource != null)
-                        {
-                            ObjUtil.GetDataPopup().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                            if (ObjUtil.GetDataPopup().ColumnCount > 0)
-                            {
-                                ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
-                                ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
-                                ObjUtil.SetDataPopupSize(278, 0);
-                            }
-                        }
-                        ObjUtil.GetDataPopup().CellClick += frmOrderManagement_Mobile_CellClick;
-                        ObjUtil.GetDataPopup().KeyDown += frmOrderManagement_Mobile_KeyDown;
-                    }
-                    else
-                    {
-                        ObjUtil.CloseAutoExtender();
-                    }
-                }
-            }
-            else
-            {
-                txtCustomerID.Clear();
-                ObjUtil.CloseAutoExtender();
-            }
-        }
-
-        private void btnNewCustomer_Click(object sender, EventArgs e)
-        {
-            ClearCustomerFields(true,true);
-
-            rdSearchByCustomerMobileNo.Checked = false;
-            rdSearchByCustomerName.Checked = false;
-            rdSearchByCustomerOrderNo.Checked = false;
-
-            txtCustomerName.Focus();
-        }
-
-        private void btnSaveCustomer_Click(object sender, EventArgs e)
-        {
-            SaveCustomer();
-        }
-
-        private void SaveCustomer()
-        {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
-            {
-                if (ValidateForm())
-                {
-                    if (DuplicateUser(0))
-                    {
-                        ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("Address", SqlDbType.NVarChar, txtCustomerAdd.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtCustomerMobileNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
-                        ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Output);
-
-                        bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_Customer");
-                        if (b)
-                        {
-                            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..");
-
-                            DataTable dtout = ObjDAL.GetOutputParmData();
-                            if (ObjUtil.ValidateTable(dtout))
-                            {
-                                CustomerID = Convert.ToInt32(dtout.Rows[0][1]);
-                                txtCustomerID.Text = CustomerID.ToString();
-                                btnAdd.Enabled = true;
-                                btnMeasurement.Enabled = true;
-                            }
-                            ClearCustomerFields(true,false);
-                        }
-                        else
-                        {
-                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..");
-                        }
-                    }
-                    else
-                    {
-                        clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..");
-                        txtCustomerName.Focus();
-                    }
-                }
-                ObjDAL.ResetData();
-            }
-            else
-            {
-                clsUtility.ShowInfoMessage("You have no rights to perform this task");
-            }
-        }
-
-        private bool ValidateForm()
-        {
-            if (ObjUtil.IsControlTextEmpty(txtCustomerName))
-            {
-                clsUtility.ShowInfoMessage("Enter Customer Name       ", clsUtility.strProjectTitle);
-                txtCustomerName.Focus();
-                return false;
-            }
-            else if (ObjUtil.IsControlTextEmpty(txtCustomerMobileNo))
-            {
-                clsUtility.ShowInfoMessage("Enter Customer Mobile No.      ", clsUtility.strProjectTitle);
-                txtCustomerMobileNo.Focus();
-                return false;
-            }
-            else if (ObjUtil.IsControlTextEmpty(txtCustomerAdd))
-            {
-                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
-                txtCustomerAdd.Focus();
-                return false;
-            }
-            return true;
-        }
-
-        private bool DuplicateUser(int i)
-        {
-            int a = 0;
-            if (i == 0)
-            {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text.Trim() + "'");
-            }
-            else
-            {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.CustomerMaster", "MobileNo='" + txtCustomerMobileNo.Text + "' AND CustomerID !=" + i);
-            }
-            if (a > 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private void ClearCustomerFields(bool IsClear,bool IsEnable)
-        {
-            if (IsClear)
-            {
-                txtCustomerName.Clear();
-                txtCustomerMobileNo.Clear();
-                txtCustomerAdd.Clear();
-            }
-            txtCustomerName.Enabled = IsEnable;
-            txtCustomerMobileNo.Enabled = IsEnable;
-            txtCustomerAdd.Enabled = IsEnable;
-            btnSaveCustomer.Enabled = IsEnable;
         }
     }
 }

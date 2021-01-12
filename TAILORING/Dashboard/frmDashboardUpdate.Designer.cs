@@ -32,63 +32,63 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.kryptonTextBox6 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.picSearchByMobileNo = new System.Windows.Forms.PictureBox();
+            this.picSearchByOrderNo = new System.Windows.Forms.PictureBox();
+            this.picSearchByName = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.kryptonTextBox7 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtSearchByOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSearchByCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.sPanel3 = new TAILORING.SPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.sPanel2 = new TAILORING.SPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCriticalOrder = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.sPanel1 = new TAILORING.SPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTodayDelivery = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sPanel4 = new TAILORING.SPanel();
-            this.kryptonTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.txtOrderReceive = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.picSearchOrderDelivery = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picSearchOrderReceive = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.kryptonTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtOrderDelivery = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.sPanel3.SuspendLayout();
             this.sPanel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderReceive)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
@@ -112,9 +112,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(1140, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 22);
+            this.label4.Size = new System.Drawing.Size(49, 22);
             this.label4.TabIndex = 365;
-            this.label4.Text = "Dashboard";
+            this.label4.Text = "Date";
             this.label4.UseMnemonic = false;
             // 
             // label12
@@ -129,71 +129,6 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Dashboard";
             this.label12.UseMnemonic = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1262, 126);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 383;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(922, 128);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 382;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(586, 128);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 381;
-            this.pictureBox3.TabStop = false;
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(49, 15);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(194, 32);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox1.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
-            this.kryptonTextBox1.StateNormal.Border.Rounding = 20;
-            this.kryptonTextBox1.TabIndex = 373;
             // 
             // btnAdd
             // 
@@ -211,6 +146,7 @@
             this.btnAdd.TabIndex = 377;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Add New Customer";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label7
             // 
@@ -248,85 +184,133 @@
             this.label5.TabIndex = 368;
             this.label5.Text = "Customer Name :";
             // 
-            // pictureBox2
+            // picSearchByMobileNo
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-41, 57);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(341, 212);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 370;
-            this.pictureBox2.TabStop = false;
+            this.picSearchByMobileNo.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchByMobileNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearchByMobileNo.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByMobileNo.Image")));
+            this.picSearchByMobileNo.Location = new System.Drawing.Point(922, 128);
+            this.picSearchByMobileNo.Name = "picSearchByMobileNo";
+            this.picSearchByMobileNo.Size = new System.Drawing.Size(30, 25);
+            this.picSearchByMobileNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchByMobileNo.TabIndex = 382;
+            this.picSearchByMobileNo.TabStop = false;
+            this.picSearchByMobileNo.Click += new System.EventHandler(this.picSearchByMobileNo_Click);
             // 
-            // panel1
+            // picSearchByOrderNo
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.kryptonTextBox1);
-            this.panel1.Location = new System.Drawing.Point(337, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 76);
-            this.panel1.TabIndex = 378;
+            this.picSearchByOrderNo.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchByOrderNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearchByOrderNo.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByOrderNo.Image")));
+            this.picSearchByOrderNo.Location = new System.Drawing.Point(1262, 126);
+            this.picSearchByOrderNo.Name = "picSearchByOrderNo";
+            this.picSearchByOrderNo.Size = new System.Drawing.Size(30, 25);
+            this.picSearchByOrderNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchByOrderNo.TabIndex = 383;
+            this.picSearchByOrderNo.TabStop = false;
             // 
-            // panel2
+            // picSearchByName
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.kryptonTextBox6);
-            this.panel2.Location = new System.Drawing.Point(670, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 76);
-            this.panel2.TabIndex = 379;
-            // 
-            // kryptonTextBox6
-            // 
-            this.kryptonTextBox6.Location = new System.Drawing.Point(49, 15);
-            this.kryptonTextBox6.Name = "kryptonTextBox6";
-            this.kryptonTextBox6.Size = new System.Drawing.Size(194, 32);
-            this.kryptonTextBox6.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.kryptonTextBox6.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
-            this.kryptonTextBox6.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox6.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox6.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox6.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox6.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox6.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
-            this.kryptonTextBox6.StateNormal.Border.Rounding = 20;
-            this.kryptonTextBox6.TabIndex = 373;
+            this.picSearchByName.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchByName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearchByName.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByName.Image")));
+            this.picSearchByName.Location = new System.Drawing.Point(586, 128);
+            this.picSearchByName.Name = "picSearchByName";
+            this.picSearchByName.Size = new System.Drawing.Size(30, 25);
+            this.picSearchByName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchByName.TabIndex = 381;
+            this.picSearchByName.TabStop = false;
+            this.picSearchByName.Click += new System.EventHandler(this.picSearchByName_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.kryptonTextBox7);
+            this.panel3.Controls.Add(this.txtSearchByOrderNo);
             this.panel3.Location = new System.Drawing.Point(1011, 110);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(261, 76);
             this.panel3.TabIndex = 380;
             // 
-            // kryptonTextBox7
+            // txtSearchByOrderNo
             // 
-            this.kryptonTextBox7.Location = new System.Drawing.Point(49, 14);
-            this.kryptonTextBox7.Name = "kryptonTextBox7";
-            this.kryptonTextBox7.Size = new System.Drawing.Size(194, 32);
-            this.kryptonTextBox7.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.kryptonTextBox7.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
-            this.kryptonTextBox7.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtSearchByOrderNo.Location = new System.Drawing.Point(49, 14);
+            this.txtSearchByOrderNo.Name = "txtSearchByOrderNo";
+            this.txtSearchByOrderNo.Size = new System.Drawing.Size(194, 32);
+            this.txtSearchByOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSearchByOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
+            this.txtSearchByOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox7.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox7.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox7.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox7.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox7.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
-            this.kryptonTextBox7.StateNormal.Border.Rounding = 20;
-            this.kryptonTextBox7.TabIndex = 373;
+            this.txtSearchByOrderNo.StateCommon.Border.Rounding = 10;
+            this.txtSearchByOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByOrderNo.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtSearchByOrderNo.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtSearchByOrderNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByOrderNo.StateNormal.Border.Rounding = 20;
+            this.txtSearchByOrderNo.TabIndex = 373;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.txtSearchByCustomerMobileNo);
+            this.panel2.Location = new System.Drawing.Point(670, 110);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 76);
+            this.panel2.TabIndex = 379;
+            // 
+            // txtSearchByCustomerMobileNo
+            // 
+            this.txtSearchByCustomerMobileNo.Location = new System.Drawing.Point(49, 15);
+            this.txtSearchByCustomerMobileNo.MaxLength = 10;
+            this.txtSearchByCustomerMobileNo.Name = "txtSearchByCustomerMobileNo";
+            this.txtSearchByCustomerMobileNo.Size = new System.Drawing.Size(194, 32);
+            this.txtSearchByCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSearchByCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
+            this.txtSearchByCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearchByCustomerMobileNo.StateCommon.Border.Rounding = 10;
+            this.txtSearchByCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByCustomerMobileNo.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtSearchByCustomerMobileNo.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtSearchByCustomerMobileNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByCustomerMobileNo.StateNormal.Border.Rounding = 20;
+            this.txtSearchByCustomerMobileNo.TabIndex = 373;
+            this.txtSearchByCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByMobileNo_KeyPress);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.txtSearchByCustomerName);
+            this.panel1.Location = new System.Drawing.Point(337, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 76);
+            this.panel1.TabIndex = 378;
+            // 
+            // txtSearchByCustomerName
+            // 
+            this.txtSearchByCustomerName.Location = new System.Drawing.Point(49, 15);
+            this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
+            this.txtSearchByCustomerName.Size = new System.Drawing.Size(194, 32);
+            this.txtSearchByCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSearchByCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
+            this.txtSearchByCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearchByCustomerName.StateCommon.Border.Rounding = 10;
+            this.txtSearchByCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByCustomerName.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtSearchByCustomerName.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtSearchByCustomerName.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByCustomerName.StateNormal.Border.Rounding = 20;
+            this.txtSearchByCustomerName.TabIndex = 373;
+            this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
             // sPanel3
             // 
@@ -334,7 +318,7 @@
             this.sPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel3.BackgroundImage")));
             this.sPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel3.BorderColor = System.Drawing.Color.White;
-            this.sPanel3.Controls.Add(this.label3);
+            this.sPanel3.Controls.Add(this.lblInProgress);
             this.sPanel3.Controls.Add(this.label13);
             this.sPanel3.Controls.Add(this.linkLabel6);
             this.sPanel3.Controls.Add(this.linkLabel7);
@@ -345,17 +329,17 @@
             this.sPanel3.Size = new System.Drawing.Size(308, 384);
             this.sPanel3.TabIndex = 375;
             // 
-            // label3
+            // lblInProgress
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(148, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 40);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "5";
+            this.lblInProgress.AutoSize = true;
+            this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
+            this.lblInProgress.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInProgress.ForeColor = System.Drawing.Color.White;
+            this.lblInProgress.Location = new System.Drawing.Point(148, 67);
+            this.lblInProgress.Name = "lblInProgress";
+            this.lblInProgress.Size = new System.Drawing.Size(35, 40);
+            this.lblInProgress.TabIndex = 15;
+            this.lblInProgress.Text = "5";
             // 
             // label13
             // 
@@ -414,7 +398,7 @@
             this.sPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel2.BackgroundImage")));
             this.sPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel2.BorderColor = System.Drawing.Color.White;
-            this.sPanel2.Controls.Add(this.label1);
+            this.sPanel2.Controls.Add(this.lblCriticalOrder);
             this.sPanel2.Controls.Add(this.label2);
             this.sPanel2.Controls.Add(this.linkLabel1);
             this.sPanel2.Controls.Add(this.linkLabel2);
@@ -425,17 +409,17 @@
             this.sPanel2.Size = new System.Drawing.Size(308, 384);
             this.sPanel2.TabIndex = 374;
             // 
-            // label1
+            // lblCriticalOrder
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(132, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 40);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "10";
+            this.lblCriticalOrder.AutoSize = true;
+            this.lblCriticalOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lblCriticalOrder.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriticalOrder.ForeColor = System.Drawing.Color.White;
+            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 67);
+            this.lblCriticalOrder.Name = "lblCriticalOrder";
+            this.lblCriticalOrder.Size = new System.Drawing.Size(53, 40);
+            this.lblCriticalOrder.TabIndex = 15;
+            this.lblCriticalOrder.Text = "10";
             // 
             // label2
             // 
@@ -494,7 +478,7 @@
             this.sPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel1.BackgroundImage")));
             this.sPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel1.BorderColor = System.Drawing.Color.White;
-            this.sPanel1.Controls.Add(this.label8);
+            this.sPanel1.Controls.Add(this.lblTodayDelivery);
             this.sPanel1.Controls.Add(this.label9);
             this.sPanel1.Controls.Add(this.linkLabel4);
             this.sPanel1.Controls.Add(this.linkLabel5);
@@ -505,17 +489,17 @@
             this.sPanel1.Size = new System.Drawing.Size(308, 384);
             this.sPanel1.TabIndex = 373;
             // 
-            // label8
+            // lblTodayDelivery
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(131, 67);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 40);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "14";
+            this.lblTodayDelivery.AutoSize = true;
+            this.lblTodayDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.lblTodayDelivery.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayDelivery.ForeColor = System.Drawing.Color.White;
+            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 67);
+            this.lblTodayDelivery.Name = "lblTodayDelivery";
+            this.lblTodayDelivery.Size = new System.Drawing.Size(53, 40);
+            this.lblTodayDelivery.TabIndex = 15;
+            this.lblTodayDelivery.Text = "14";
             // 
             // label9
             // 
@@ -568,54 +552,76 @@
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "INV-23   Salman  08-Jan-2012";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-41, 57);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(341, 212);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 370;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
+            // 
             // sPanel4
             // 
             this.sPanel4.BackColor = System.Drawing.Color.Transparent;
             this.sPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel4.BackgroundImage")));
             this.sPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel4.BorderColor = System.Drawing.Color.White;
-            this.sPanel4.Controls.Add(this.kryptonTextBox4);
-            this.sPanel4.Controls.Add(this.pictureBox7);
+            this.sPanel4.Controls.Add(this.txtOrderReceive);
+            this.sPanel4.Controls.Add(this.picSearchOrderDelivery);
             this.sPanel4.Controls.Add(this.label11);
-            this.sPanel4.Controls.Add(this.pictureBox6);
+            this.sPanel4.Controls.Add(this.picSearchOrderReceive);
             this.sPanel4.Controls.Add(this.label10);
-            this.sPanel4.Controls.Add(this.kryptonTextBox5);
-            this.sPanel4.Controls.Add(this.kryptonButton1);
+            this.sPanel4.Controls.Add(this.txtOrderDelivery);
+            this.sPanel4.Controls.Add(this.btnCreateChalan);
             this.sPanel4.Edge = 40;
             this.sPanel4.Location = new System.Drawing.Point(998, 289);
             this.sPanel4.Name = "sPanel4";
             this.sPanel4.Size = new System.Drawing.Size(360, 384);
             this.sPanel4.TabIndex = 375;
             // 
-            // kryptonTextBox4
+            // txtOrderReceive
             // 
-            this.kryptonTextBox4.Location = new System.Drawing.Point(80, 93);
-            this.kryptonTextBox4.Name = "kryptonTextBox4";
-            this.kryptonTextBox4.Size = new System.Drawing.Size(209, 32);
-            this.kryptonTextBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.kryptonTextBox4.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtOrderReceive.Location = new System.Drawing.Point(80, 93);
+            this.txtOrderReceive.Name = "txtOrderReceive";
+            this.txtOrderReceive.Size = new System.Drawing.Size(209, 32);
+            this.txtOrderReceive.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtOrderReceive.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtOrderReceive.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox4.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtOrderReceive.StateCommon.Border.Rounding = 10;
+            this.txtOrderReceive.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderReceive.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateNormal.Border.Rounding = 20;
-            this.kryptonTextBox4.TabIndex = 382;
+            this.txtOrderReceive.StateNormal.Border.Rounding = 20;
+            this.txtOrderReceive.TabIndex = 382;
             // 
-            // pictureBox7
+            // picSearchOrderDelivery
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(293, 176);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 366;
-            this.pictureBox7.TabStop = false;
+            this.picSearchOrderDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchOrderDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearchOrderDelivery.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderDelivery.Image")));
+            this.picSearchOrderDelivery.Location = new System.Drawing.Point(293, 176);
+            this.picSearchOrderDelivery.Name = "picSearchOrderDelivery";
+            this.picSearchOrderDelivery.Size = new System.Drawing.Size(30, 25);
+            this.picSearchOrderDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchOrderDelivery.TabIndex = 366;
+            this.picSearchOrderDelivery.TabStop = false;
             // 
             // label11
             // 
@@ -629,17 +635,17 @@
             this.label11.TabIndex = 354;
             this.label11.Text = "Order Receive :";
             // 
-            // pictureBox6
+            // picSearchOrderReceive
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(292, 93);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 367;
-            this.pictureBox6.TabStop = false;
+            this.picSearchOrderReceive.BackColor = System.Drawing.Color.Transparent;
+            this.picSearchOrderReceive.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSearchOrderReceive.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderReceive.Image")));
+            this.picSearchOrderReceive.Location = new System.Drawing.Point(292, 93);
+            this.picSearchOrderReceive.Name = "picSearchOrderReceive";
+            this.picSearchOrderReceive.Size = new System.Drawing.Size(30, 25);
+            this.picSearchOrderReceive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearchOrderReceive.TabIndex = 367;
+            this.picSearchOrderReceive.TabStop = false;
             // 
             // label10
             // 
@@ -653,40 +659,40 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "Order Delivery :";
             // 
-            // kryptonTextBox5
+            // txtOrderDelivery
             // 
-            this.kryptonTextBox5.Location = new System.Drawing.Point(82, 174);
-            this.kryptonTextBox5.Name = "kryptonTextBox5";
-            this.kryptonTextBox5.Size = new System.Drawing.Size(209, 32);
-            this.kryptonTextBox5.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.kryptonTextBox5.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.kryptonTextBox5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtOrderDelivery.Location = new System.Drawing.Point(82, 174);
+            this.txtOrderDelivery.Name = "txtOrderDelivery";
+            this.txtOrderDelivery.Size = new System.Drawing.Size(209, 32);
+            this.txtOrderDelivery.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtOrderDelivery.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtOrderDelivery.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateCommon.Border.Rounding = 10;
-            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox5.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtOrderDelivery.StateCommon.Border.Rounding = 10;
+            this.txtOrderDelivery.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderDelivery.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateNormal.Border.Rounding = 20;
-            this.kryptonTextBox5.TabIndex = 382;
+            this.txtOrderDelivery.StateNormal.Border.Rounding = 20;
+            this.txtOrderDelivery.TabIndex = 382;
             // 
-            // kryptonButton1
+            // btnCreateChalan
             // 
-            this.kryptonButton1.AutoSize = true;
-            this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton1.Location = new System.Drawing.Point(78, 237);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.kryptonButton1.Size = new System.Drawing.Size(151, 34);
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnCreateChalan.AutoSize = true;
+            this.btnCreateChalan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateChalan.Location = new System.Drawing.Point(78, 237);
+            this.btnCreateChalan.Name = "btnCreateChalan";
+            this.btnCreateChalan.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnCreateChalan.Size = new System.Drawing.Size(151, 34);
+            this.btnCreateChalan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 12;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton1.TabIndex = 382;
-            this.kryptonButton1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
-            this.kryptonButton1.Values.Text = "Create Chalan";
+            this.btnCreateChalan.StateCommon.Border.Rounding = 12;
+            this.btnCreateChalan.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateChalan.TabIndex = 382;
+            this.btnCreateChalan.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateChalan.Values.Image")));
+            this.btnCreateChalan.Values.Text = "Create Chalan";
             // 
             // frmDashboardUpdate
             // 
@@ -695,9 +701,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1358, 665);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.picSearchByMobileNo);
+            this.Controls.Add(this.picSearchByOrderNo);
+            this.Controls.Add(this.picSearchByName);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
@@ -720,27 +726,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.sPanel3.ResumeLayout(false);
             this.sPanel3.PerformLayout();
             this.sPanel2.ResumeLayout(false);
             this.sPanel2.PerformLayout();
             this.sPanel1.ResumeLayout(false);
             this.sPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sPanel4.ResumeLayout(false);
             this.sPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderReceive)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -749,7 +755,6 @@
         #endregion
 
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -757,40 +762,41 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByCustomerName;
         private SPanel sPanel1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTodayDelivery;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel9;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCreateChalan;
+        private System.Windows.Forms.PictureBox picSearchOrderReceive;
+        private System.Windows.Forms.PictureBox picSearchOrderDelivery;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private System.Windows.Forms.PictureBox picSearchByOrderNo;
+        private System.Windows.Forms.PictureBox picSearchByMobileNo;
+        private System.Windows.Forms.PictureBox picSearchByName;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtOrderDelivery;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtOrderReceive;
         private SPanel sPanel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCriticalOrder;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private SPanel sPanel3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInProgress;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.LinkLabel linkLabel7;
         private System.Windows.Forms.LinkLabel linkLabel8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByCustomerMobileNo;
         private System.Windows.Forms.Panel panel3;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox7;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByOrderNo;
         private SPanel sPanel4;
+        private System.Windows.Forms.Label label4;
     }
 }

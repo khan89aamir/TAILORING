@@ -437,14 +437,10 @@ namespace TAILORING.Masters
             }
         }
 
-        private void txtSearchByMobileNo_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
         private void txtSearchByMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            //TextBox txt = (TextBox)sender;
+            KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsNumeric(e);
             if (e.Handled == true)
             {

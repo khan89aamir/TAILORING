@@ -11,6 +11,8 @@
             frmCompanyMaster=15,
             frmGSTMaster=12,
             frmViewMeasurementStyle=13,
+            frmOrderManagement=17,
+            frmQuickCustomer=18,
             Sales_Bill_Details = 23,
             Sales_Invoice = 24,
             frmSalesReport = 25,

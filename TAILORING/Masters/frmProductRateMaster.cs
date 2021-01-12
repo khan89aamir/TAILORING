@@ -55,13 +55,13 @@ namespace TAILORING.Masters
 
             LoadTailoringTheme();
             
-            LoadProductDate();
+            LoadProductData();
             LoadProductRateData();
 
             grpProduct.Focus();
         }
 
-        private void LoadProductDate()
+        private void LoadProductData()
         {
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
             if (ObjUtil.ValidateDataSet(ds))
@@ -127,7 +127,9 @@ namespace TAILORING.Masters
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpProduct.Enabled = true;
+            
+            EnableDisable(true);
+
             cmbGarmentName.Focus();
         }
 
@@ -159,7 +161,9 @@ namespace TAILORING.Masters
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpProduct.Enabled = true;
+                
+                EnableDisable(true);
+
                 cmbGarmentName.Focus();
             }
             else
@@ -204,8 +208,10 @@ namespace TAILORING.Masters
                     {
                         clsUtility.ShowInfoMessage("'" + cmbGarmentName.Text + "' Garment is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
-                        LoadProductDate();
-                        grpProduct.Enabled = false;
+                        LoadProductRateData();
+                        
+                        EnableDisable(false);
+
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
                     else
@@ -229,7 +235,8 @@ namespace TAILORING.Masters
                 ClearAll();
                 LoadProductRateData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpProduct.Enabled = false;
+                
+                EnableDisable(false);
             }
         }
 
@@ -326,8 +333,8 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
                 clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                 ClearAll();
-                LoadProductDate();
-                grpProduct.Enabled = false;
+                LoadProductRateData();
+                EnableDisable(false);
             }
             else
             {
@@ -350,14 +357,22 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterUpdate);
                 clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is Updated Successfully..", clsUtility.strProjectTitle);
                 ClearAll();
-                LoadProductDate();
-                grpProduct.Enabled = false;
+                LoadProductRateData();
+
+                EnableDisable(false);
             }
             else
             {
                 clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is not Updated Successfully..", clsUtility.strProjectTitle);
             }
             ObjDAL.ResetData();
+        }
+
+        private void EnableDisable(bool b)
+        {
+            cmbGarmentName.Enabled = b;
+            cmbService.Enabled = b;
+            txtRate.Enabled = b;
         }
     }
 }

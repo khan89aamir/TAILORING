@@ -21,6 +21,7 @@ namespace TAILORING.Dashboard
         {
             label4.Text = "Date : " + DateTime.Now.ToShortDateString();
             this.BackgroundImage = Properties.Resources.Background;
+            //this.BackColor = Color.FromArgb(82, 91, 114);
         }
     }
 }

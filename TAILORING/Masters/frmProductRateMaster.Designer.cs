@@ -209,9 +209,7 @@
             this.grpProduct.Controls.Add(this.cmbService);
             this.grpProduct.Controls.Add(this.label2);
             this.grpProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpProduct.Enabled = false;
             this.grpProduct.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
-            this.grpProduct.ForeColor = System.Drawing.Color.White;
             this.grpProduct.GlowAmount = 22;
             this.grpProduct.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.grpProduct.GlowFeather = 60;
@@ -223,6 +221,7 @@
             // 
             // txtRate
             // 
+            this.txtRate.Enabled = false;
             this.txtRate.Location = new System.Drawing.Point(133, 60);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(198, 31);
@@ -245,6 +244,7 @@
             this.cmbGarmentName.DropDownHeight = 306;
             this.cmbGarmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpProduct.SetEffectType(this.cmbGarmentName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbGarmentName.Enabled = false;
             this.cmbGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.FormattingEnabled = true;
             this.cmbGarmentName.IntegralHeight = false;
@@ -307,6 +307,7 @@
             // 
             this.cmbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.grpProduct.SetEffectType(this.cmbService, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbService.Enabled = false;
             this.cmbService.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbService.FormattingEnabled = true;
             this.cmbService.Items.AddRange(new object[] {
@@ -396,6 +397,7 @@
             this.groupBox1.Controls.Add(this.rdShowAll);
             this.groupBox1.Controls.Add(this.rdSearchByProduct);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.GlowAmount = 22;
             this.groupBox1.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.groupBox1.GlowFeather = 60;
@@ -444,11 +446,12 @@
             // 
             this.rdSearchByService.AutoSize = true;
             this.groupBox1.SetEffectType(this.rdSearchByService, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdSearchByService.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdSearchByService.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdSearchByService.ForeColor = System.Drawing.Color.White;
             this.rdSearchByService.Location = new System.Drawing.Point(356, 17);
             this.rdSearchByService.Name = "rdSearchByService";
             this.groupBox1.SetsGlowColor(this.rdSearchByService, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByService.sGlowColor"))));
-            this.rdSearchByService.Size = new System.Drawing.Size(77, 21);
+            this.rdSearchByService.Size = new System.Drawing.Size(74, 24);
             this.rdSearchByService.TabIndex = 14;
             this.rdSearchByService.Text = "Service :";
             this.rdSearchByService.UseVisualStyleBackColor = true;
@@ -458,11 +461,12 @@
             this.rdShowAll.AutoSize = true;
             this.rdShowAll.Checked = true;
             this.groupBox1.SetEffectType(this.rdShowAll, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdShowAll.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdShowAll.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdShowAll.ForeColor = System.Drawing.Color.White;
             this.rdShowAll.Location = new System.Drawing.Point(647, 17);
             this.rdShowAll.Name = "rdShowAll";
             this.groupBox1.SetsGlowColor(this.rdShowAll, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAll.sGlowColor"))));
-            this.rdShowAll.Size = new System.Drawing.Size(79, 21);
+            this.rdShowAll.Size = new System.Drawing.Size(74, 24);
             this.rdShowAll.TabIndex = 13;
             this.rdShowAll.TabStop = true;
             this.rdShowAll.Text = "Show All";
@@ -472,11 +476,12 @@
             // 
             this.rdSearchByProduct.AutoSize = true;
             this.groupBox1.SetEffectType(this.rdSearchByProduct, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
-            this.rdSearchByProduct.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdSearchByProduct.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdSearchByProduct.ForeColor = System.Drawing.Color.White;
             this.rdSearchByProduct.Location = new System.Drawing.Point(12, 17);
             this.rdSearchByProduct.Name = "rdSearchByProduct";
             this.groupBox1.SetsGlowColor(this.rdSearchByProduct, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByProduct.sGlowColor"))));
-            this.rdSearchByProduct.Size = new System.Drawing.Size(124, 21);
+            this.rdSearchByProduct.Size = new System.Drawing.Size(119, 24);
             this.rdSearchByProduct.TabIndex = 9;
             this.rdSearchByProduct.Text = "Garment Name :";
             this.rdSearchByProduct.UseVisualStyleBackColor = true;

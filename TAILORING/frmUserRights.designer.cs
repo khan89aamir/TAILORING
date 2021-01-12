@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRights));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvUserRIghts = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.FormID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +43,7 @@
             this.dgvUser = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.grpRights = new System.Windows.Forms.GroupBox();
             this.grpUserName = new System.Windows.Forms.GroupBox();
+            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,25 +56,15 @@
             this.btnEdit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panel2.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRIghts)).BeginInit();
             this.grpUserGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.grpRights.SuspendLayout();
             this.grpUserName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(853, 40);
-            this.panel2.TabIndex = 117;
             // 
             // label12
             // 
@@ -82,7 +72,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(11, 9);
+            this.label12.Location = new System.Drawing.Point(9, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(106, 22);
             this.label12.TabIndex = 82;
@@ -176,6 +166,7 @@
             this.grpUserGridview.BackColor = System.Drawing.Color.Transparent;
             this.grpUserGridview.Controls.Add(this.dgvUser);
             this.grpUserGridview.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpUserGridview.ForeColor = System.Drawing.Color.White;
             this.grpUserGridview.Location = new System.Drawing.Point(12, 288);
             this.grpUserGridview.Name = "grpUserGridview";
             this.grpUserGridview.Size = new System.Drawing.Size(225, 305);
@@ -204,6 +195,7 @@
             this.grpRights.BackColor = System.Drawing.Color.Transparent;
             this.grpRights.Controls.Add(this.dgvUserRIghts);
             this.grpRights.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpRights.ForeColor = System.Drawing.Color.White;
             this.grpRights.Location = new System.Drawing.Point(240, 118);
             this.grpRights.Name = "grpRights";
             this.grpRights.Size = new System.Drawing.Size(613, 470);
@@ -218,6 +210,7 @@
             this.grpUserName.Controls.Add(this.lblCategoryName);
             this.grpUserName.Enabled = false;
             this.grpUserName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpUserName.ForeColor = System.Drawing.Color.White;
             this.grpUserName.Location = new System.Drawing.Point(6, 118);
             this.grpUserName.Name = "grpUserName";
             this.grpUserName.Size = new System.Drawing.Size(234, 164);
@@ -225,11 +218,31 @@
             this.grpUserName.TabStop = false;
             this.grpUserName.Text = "Select User :";
             // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(11, 50);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(214, 31);
+            this.txtName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtName.StateCommon.Border.Rounding = 10;
+            this.txtName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtName.StateNormal.Border.Rounding = 20;
+            this.txtName.TabIndex = 380;
+            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
+            // 
             // lblCategoryName
             // 
             this.lblCategoryName.AutoSize = true;
             this.lblCategoryName.BackColor = System.Drawing.Color.Transparent;
             this.lblCategoryName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryName.ForeColor = System.Drawing.Color.White;
             this.lblCategoryName.Location = new System.Drawing.Point(12, 22);
             this.lblCategoryName.Name = "lblCategoryName";
             this.lblCategoryName.Size = new System.Drawing.Size(84, 17);
@@ -270,6 +283,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(584, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
@@ -282,6 +296,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(730, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 17);
@@ -366,24 +381,16 @@
             this.btnAdd.Values.Text = "Add New";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtName
+            // kryptonPanel1
             // 
-            this.txtName.Location = new System.Drawing.Point(11, 50);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(214, 31);
-            this.txtName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtName.StateCommon.Border.Rounding = 10;
-            this.txtName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtName.StateNormal.Border.Rounding = 20;
-            this.txtName.TabIndex = 380;
-            this.txtName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(853, 40);
+            this.kryptonPanel1.TabIndex = 371;
             // 
             // frmUserRights
             // 
@@ -392,6 +399,7 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(853, 600);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -406,7 +414,6 @@
             this.Controls.Add(this.grpUserName);
             this.Controls.Add(this.grpRights);
             this.Controls.Add(this.grpUserGridview);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmUserRights";
@@ -414,21 +421,21 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Rights";
             this.Load += new System.EventHandler(this.frmUserRights_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRIghts)).EndInit();
             this.grpUserGridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.grpRights.ResumeLayout(false);
             this.grpUserName.ResumeLayout(false);
             this.grpUserName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox grpUserGridview;
         private System.Windows.Forms.GroupBox grpRights;
@@ -456,5 +463,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUserRIghts;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvUser;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtName;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
     }
 }

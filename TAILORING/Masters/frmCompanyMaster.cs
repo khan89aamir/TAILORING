@@ -23,12 +23,11 @@ namespace TAILORING.Masters
 
         int ID = 0;
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
             btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
@@ -50,13 +49,6 @@ namespace TAILORING.Masters
 
         private void frmCompanyMaster_Load(object sender, EventArgs e)
         {
-            //btnAdd.BackgroundImage = B_Leave;
-            //btnSave.BackgroundImage = B_Leave;
-            //btnEdit.BackgroundImage = B_Leave;
-            //btnUpdate.BackgroundImage = B_Leave;
-            //btnDelete.BackgroundImage = B_Leave;
-            //btnCancel.BackgroundImage = B_Leave;
-
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
@@ -67,8 +59,18 @@ namespace TAILORING.Masters
             LoadTailoringTheme();
 
             LoadData();
+            
+            EnableDisable(false);
 
             grpCompany.Enabled = false;
+        }
+
+        private void EnableDisable(bool b)
+        {
+            txtCompanyName.Enabled = b;
+            txtCompanyMobileNo.Enabled = b;
+            txtCompanyEmailID.Enabled = b;
+            txtCompanyAddress.Enabled = b;
         }
 
         private void ClearAll()
@@ -170,7 +172,7 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpCompany.Enabled = true;
+            EnableDisable(true);
             txtCompanyName.Focus();
         }
 
@@ -197,7 +199,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("Company Name : '" + txtCompanyName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                             ClearAll();
                             LoadData();
-                            grpCompany.Enabled = false;
+                            EnableDisable(false);
                         }
                         else
                         {
@@ -224,7 +226,7 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpCompany.Enabled = true;
+                EnableDisable(true);
                 txtCompanyName.Focus();
                 txtCompanyName.SelectionStart = txtCompanyName.MaxLength;
             }
@@ -259,7 +261,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("'" + txtCompanyName.Text + "' Company is Updated", clsUtility.strProjectTitle);
                             LoadData();
                             ClearAll();
-                            grpCompany.Enabled = false;
+                            EnableDisable(false);
                         }
                         else
                         {
@@ -294,7 +296,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtCompanyName.Text + "' Company is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpCompany.Enabled = false;
+                        EnableDisable(false);
                         //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, clsUtility.IsAdmin);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
@@ -320,7 +322,7 @@ namespace TAILORING.Masters
                 LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpCompany.Enabled = false;
+                EnableDisable(false);
             }
         }
 
@@ -337,7 +339,7 @@ namespace TAILORING.Masters
                     txtCompanyMobileNo.Text = dgvCompanyMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCompanyEmailID.Text = dgvCompanyMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
                     chkDefaultCompany.Checked = Convert.ToBoolean(dgvCompanyMaster.SelectedRows[0].Cells["DefaultValue"].Value);
-                    grpCompany.Enabled = false;
+                    EnableDisable(false);
                     txtCompanyName.Focus();
                 }
                 catch { }

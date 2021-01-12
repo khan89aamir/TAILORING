@@ -25,9 +25,11 @@ namespace TAILORING.Masters
 
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
-           btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
             btnSave.PaletteMode = PaletteMode.SparklePurple;
             btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -53,8 +55,9 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dataGridView1.RowHeadersVisible = false; // set it to false if not needed
 
+            EnableDisable(false);
             LoadTailoringTheme();
-            
+
             LoadProductData();
             LoadProductRateData();
 
@@ -127,7 +130,7 @@ namespace TAILORING.Masters
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            
+
             EnableDisable(true);
 
             cmbGarmentName.Focus();
@@ -161,7 +164,7 @@ namespace TAILORING.Masters
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                
+
                 EnableDisable(true);
 
                 cmbGarmentName.Focus();
@@ -209,7 +212,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + cmbGarmentName.Text + "' Garment is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadProductRateData();
-                        
+
                         EnableDisable(false);
 
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
@@ -235,7 +238,7 @@ namespace TAILORING.Masters
                 ClearAll();
                 LoadProductRateData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                
+
                 EnableDisable(false);
             }
         }
@@ -244,6 +247,7 @@ namespace TAILORING.Masters
         {
             ObjUtil.SetRowNumber(dataGridView1);
             //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+            dataGridView1.Columns["GarmentRateID"].Visible = false;
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["Photo"].Visible = false;
             dataGridView1.Columns["LastChange"].Visible = false;
@@ -262,11 +266,13 @@ namespace TAILORING.Masters
                 try
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
-                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentID"].Value);
+                    ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentRateID"].Value);
                     cmbGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
                     txtRate.Text = dataGridView1.SelectedRows[0].Cells["Rate"].Value.ToString();
                     cmbService.Text = dataGridView1.SelectedRows[0].Cells["OrderType"].Value.ToString();
-                    grpProduct.Enabled = false;
+
+                    EnableDisable(false);
+
                     cmbGarmentName.Focus();
                 }
                 catch (Exception ex)
@@ -293,6 +299,12 @@ namespace TAILORING.Masters
             else if (ObjUtil.IsControlTextEmpty(txtRate))
             {
                 clsUtility.ShowInfoMessage("Enter Rate for " + cmbGarmentName.Text, clsUtility.strProjectTitle);
+                txtRate.Focus();
+                return false;
+            }
+            else if (txtRate.Text == "0")
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Rate for " + cmbGarmentName.Text, clsUtility.strProjectTitle);
                 txtRate.Focus();
                 return false;
             }
@@ -373,6 +385,35 @@ namespace TAILORING.Masters
             cmbGarmentName.Enabled = b;
             cmbService.Enabled = b;
             txtRate.Enabled = b;
+
+            cmbGarmentName.SelectedIndex = -1;
+        }
+
+        private void rdSearchByProduct_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSearchByGarment.Enabled = true;
+            txtSearchByGarment.Focus();
+
+            cmbSearchByService.SelectedIndex = -1;
+            cmbSearchByService.Enabled = false;
+        }
+
+        private void rdSearchByService_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbSearchByService.Enabled = true;
+            cmbSearchByService.Focus();
+
+            txtSearchByGarment.Clear();
+            txtSearchByGarment.Enabled = false;
+        }
+
+        private void rdShowAll_CheckedChanged(object sender, EventArgs e)
+        {
+            txtSearchByGarment.Clear();
+            txtSearchByGarment.Enabled = false;
+
+            cmbSearchByService.SelectedIndex = -1;
+            cmbSearchByService.Enabled = false;
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee_Details));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnDelete = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -83,7 +82,8 @@
             this.rdSearchByEmpName = new System.Windows.Forms.RadioButton();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvEmployee = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.panel2.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -104,18 +104,10 @@
             this.grpCustomerGridview.Panel.SuspendLayout();
             this.grpCustomerGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(993, 40);
-            this.panel2.TabIndex = 110;
             // 
             // label12
             // 
@@ -123,7 +115,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(11, 9);
+            this.label12.Location = new System.Drawing.Point(60, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(152, 22);
             this.label12.TabIndex = 82;
@@ -133,7 +125,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(705, 50);
+            this.btnCancel.Location = new System.Drawing.Point(705, 56);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -146,7 +138,7 @@
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(610, 50);
+            this.btnDelete.Location = new System.Drawing.Point(610, 56);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
@@ -159,7 +151,7 @@
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(515, 50);
+            this.btnUpdate.Location = new System.Drawing.Point(515, 56);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
@@ -172,7 +164,7 @@
             // 
             this.btnEdit.AutoSize = true;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(420, 50);
+            this.btnEdit.Location = new System.Drawing.Point(420, 56);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
@@ -185,7 +177,7 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(325, 50);
+            this.btnSave.Location = new System.Drawing.Point(325, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
@@ -198,7 +190,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(230, 50);
+            this.btnAdd.Location = new System.Drawing.Point(230, 56);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdd.Size = new System.Drawing.Size(78, 34);
@@ -255,7 +247,6 @@
             this.grpEmployee.Controls.Add(this.lblCountryCode);
             this.grpEmployee.Controls.Add(this.groupBox2);
             this.grpEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpEmployee.Enabled = false;
             this.grpEmployee.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.grpEmployee.ForeColor = System.Drawing.Color.White;
             this.grpEmployee.GlowAmount = 22;
@@ -871,10 +862,12 @@
             // 
             // grpCustomerGridview
             // 
-            this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpCustomerGridview.Location = new System.Drawing.Point(17, 486);
             this.grpCustomerGridview.Name = "grpCustomerGridview";
+            this.grpCustomerGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpCustomerGridview.Panel
             // 
@@ -898,8 +891,32 @@
             this.dgvEmployee.Location = new System.Drawing.Point(0, 0);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
-            this.dgvEmployee.Size = new System.Drawing.Size(964, 163);
+            this.dgvEmployee.Size = new System.Drawing.Size(964, 159);
             this.dgvEmployee.TabIndex = 0;
+            this.dgvEmployee.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellDoubleClick);
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(993, 51);
+            this.kryptonPanel1.TabIndex = 371;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // Employee_Details
             // 
@@ -908,6 +925,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(993, 702);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.kryptonHeaderGroup1);
             this.Controls.Add(this.grpKrytonHeader);
@@ -915,7 +933,6 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -925,8 +942,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Details";
             this.Load += new System.EventHandler(this.Employee_Details_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).EndInit();
             this.grpKrytonHeader.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).EndInit();
@@ -952,14 +967,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).EndInit();
             this.grpCustomerGridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
@@ -1013,5 +1030,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtAdd;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByEmpMobileNo;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByEmpName;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

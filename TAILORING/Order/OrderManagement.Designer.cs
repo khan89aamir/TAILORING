@@ -41,7 +41,6 @@
             this.txtSearchByCustomerName = new System.Windows.Forms.TextBox();
             this.rdSearchByCustomerName = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,7 +78,8 @@
             this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtCustomerAdd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.panel2.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
@@ -92,6 +92,9 @@
             this.grpGridview.Panel.SuspendLayout();
             this.grpGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -99,6 +102,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(394, 127);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 19);
@@ -110,6 +114,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(26, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 19);
@@ -122,7 +127,7 @@
             this.txtCustomerID.BackColor = System.Drawing.Color.White;
             this.txtCustomerID.Enabled = false;
             this.txtCustomerID.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.txtCustomerID.Location = new System.Drawing.Point(1093, 11);
+            this.txtCustomerID.Location = new System.Drawing.Point(1080, 9);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(41, 25);
@@ -135,6 +140,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(11, 612);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 19);
@@ -242,24 +248,11 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(11, 9);
+            this.label12.Location = new System.Drawing.Point(60, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(172, 22);
             this.label12.TabIndex = 82;
             this.label12.Text = "Order Management";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.txtCustomerID);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1137, 40);
-            this.panel2.TabIndex = 315;
             // 
             // dtpBookingDate
             // 
@@ -331,6 +324,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(863, 612);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 19);
@@ -342,6 +336,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(754, 127);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 19);
@@ -353,6 +348,7 @@
             this.lblCGST.AutoSize = true;
             this.lblCGST.BackColor = System.Drawing.Color.Transparent;
             this.lblCGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCGST.ForeColor = System.Drawing.Color.White;
             this.lblCGST.Location = new System.Drawing.Point(385, 612);
             this.lblCGST.Name = "lblCGST";
             this.lblCGST.Size = new System.Drawing.Size(49, 19);
@@ -364,6 +360,7 @@
             this.lblSGST.AutoSize = true;
             this.lblSGST.BackColor = System.Drawing.Color.Transparent;
             this.lblSGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSGST.ForeColor = System.Drawing.Color.White;
             this.lblSGST.Location = new System.Drawing.Point(593, 612);
             this.lblSGST.Name = "lblSGST";
             this.lblSGST.Size = new System.Drawing.Size(47, 19);
@@ -402,6 +399,7 @@
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
             this.kryptonHeaderGroup1.Location = new System.Drawing.Point(15, 233);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
+            this.kryptonHeaderGroup1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // kryptonHeaderGroup1.Panel
             // 
@@ -438,7 +436,7 @@
             this.grpNewOrder.GlowOn = true;
             this.grpNewOrder.Location = new System.Drawing.Point(0, 0);
             this.grpNewOrder.Name = "grpNewOrder";
-            this.grpNewOrder.Size = new System.Drawing.Size(1105, 76);
+            this.grpNewOrder.Size = new System.Drawing.Size(1105, 74);
             this.grpNewOrder.TabIndex = 287;
             // 
             // label5
@@ -498,6 +496,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(378, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 19);
@@ -545,6 +544,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 19);
@@ -605,6 +605,7 @@
             this.grpGridview.HeaderVisibleSecondary = false;
             this.grpGridview.Location = new System.Drawing.Point(16, 374);
             this.grpGridview.Name = "grpGridview";
+            this.grpGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpGridview.Panel
             // 
@@ -628,7 +629,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1104, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(1104, 194);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
@@ -642,7 +643,7 @@
             this.btnNewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewCustomer.AutoSize = true;
             this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewCustomer.Location = new System.Drawing.Point(1003, 43);
+            this.btnNewCustomer.Location = new System.Drawing.Point(999, 47);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnNewCustomer.Size = new System.Drawing.Size(122, 28);
@@ -812,6 +813,30 @@
             this.txtCustomerAdd.TabIndex = 386;
             this.txtCustomerAdd.Text = "";
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.txtCustomerID);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1137, 51);
+            this.kryptonPanel1.TabIndex = 387;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -819,6 +844,7 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.txtCustomerAdd);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtCustomerMobileNo);
@@ -850,7 +876,6 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cmbOrderType);
-            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "frmOrderManagement";
@@ -858,8 +883,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Management";
             this.Load += new System.EventHandler(this.frmOrderManagement_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
@@ -874,6 +897,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview)).EndInit();
             this.grpGridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -893,7 +920,6 @@
         private System.Windows.Forms.TextBox txtSearchByCustomerName;
         private System.Windows.Forms.RadioButton rdSearchByCustomerName;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;
@@ -931,5 +957,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerMobileNo;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerName;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtCustomerAdd;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

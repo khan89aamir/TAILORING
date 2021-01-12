@@ -112,7 +112,7 @@ namespace TAILORING.Masters
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpProduct.Enabled = true;
+            EnableDisable(true);
             txtGarmentCode.Focus();
         }
 
@@ -134,7 +134,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("Garment Name : '" + txtGarmentName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpProduct.Enabled = false;
+                        EnableDisable(false);
                     }
                     else
                     {
@@ -154,7 +154,7 @@ namespace TAILORING.Masters
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Product_Master, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpProduct.Enabled = true;
+                EnableDisable(true);
                 txtGarmentCode.Focus();
                 txtGarmentCode.SelectionStart = txtGarmentCode.MaxLength;
             }
@@ -184,7 +184,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is Updated", clsUtility.strProjectTitle);
                         LoadData();
                         ClearAll();
-                        grpProduct.Enabled = false;
+                        EnableDisable(false);
                     }
                     else
                     {
@@ -213,7 +213,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtGarmentName.Text + "' Garment is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpProduct.Enabled = false;
+                        EnableDisable(false);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
                     else
@@ -237,7 +237,7 @@ namespace TAILORING.Masters
                 ClearAll();
                 LoadData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpProduct.Enabled = false;
+                EnableDisable(false);
             }
         }
 
@@ -252,7 +252,7 @@ namespace TAILORING.Masters
                     txtGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
                     txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString();
                     cmbOrderType.SelectedItem = dataGridView1.SelectedRows[0].Cells["GarmentType"].Value.ToString();
-                    grpProduct.Enabled = false;
+                    EnableDisable(false);
                     txtGarmentCode.Focus();
                 }
                 catch (Exception ex)
@@ -264,7 +264,9 @@ namespace TAILORING.Masters
 
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
             btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
@@ -286,7 +288,6 @@ namespace TAILORING.Masters
 
         private void Product_Master_Load(object sender, EventArgs e)
         {
-
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
@@ -297,8 +298,17 @@ namespace TAILORING.Masters
             LoadTailoringTheme();
 
             LoadData();
-
+            EnableDisable(false);
             grpProduct.Focus();
+        }
+
+        private void EnableDisable(bool b)
+        {
+            txtGarmentCode.Enabled = b;
+            txtGarmentName.Enabled = b;
+            cmbOrderType.Enabled = b;
+
+            cmbOrderType.SelectedIndex = -1;
         }
 
         private void rdSearchByProduct_CheckedChanged(object sender, EventArgs e)

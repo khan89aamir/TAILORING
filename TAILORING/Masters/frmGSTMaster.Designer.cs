@@ -30,7 +30,6 @@ namespace TAILORING.Masters
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGSTMaster));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,12 +44,13 @@ namespace TAILORING.Masters
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpGST = new gGlowBox.gGlowGroupBox();
+            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtIGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvGSTMaster = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtIGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panel2.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -61,19 +61,10 @@ namespace TAILORING.Masters
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
             this.kryptonHeaderGroup1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGSTMaster)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(790, 40);
-            this.panel2.TabIndex = 316;
             // 
             // label12
             // 
@@ -81,7 +72,7 @@ namespace TAILORING.Masters
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(11, 9);
+            this.label12.Location = new System.Drawing.Point(60, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(161, 22);
             this.label12.TabIndex = 82;
@@ -91,6 +82,7 @@ namespace TAILORING.Masters
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(28, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -126,6 +118,7 @@ namespace TAILORING.Masters
             // 
             this.lblCustomerPhoneNo.AutoSize = true;
             this.lblCustomerPhoneNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.lblCustomerPhoneNo.ForeColor = System.Drawing.Color.White;
             this.lblCustomerPhoneNo.Location = new System.Drawing.Point(388, 18);
             this.lblCustomerPhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerPhoneNo.Name = "lblCustomerPhoneNo";
@@ -137,6 +130,7 @@ namespace TAILORING.Masters
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.lblCustomerName.ForeColor = System.Drawing.Color.White;
             this.lblCustomerName.Location = new System.Drawing.Point(28, 19);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerName.Name = "lblCustomerName";
@@ -148,7 +142,7 @@ namespace TAILORING.Masters
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(598, 49);
+            this.btnCancel.Location = new System.Drawing.Point(598, 56);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -161,7 +155,7 @@ namespace TAILORING.Masters
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(503, 49);
+            this.btnDelete.Location = new System.Drawing.Point(503, 56);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
@@ -174,7 +168,7 @@ namespace TAILORING.Masters
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(408, 49);
+            this.btnUpdate.Location = new System.Drawing.Point(408, 56);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
@@ -187,7 +181,7 @@ namespace TAILORING.Masters
             // 
             this.btnEdit.AutoSize = true;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(313, 49);
+            this.btnEdit.Location = new System.Drawing.Point(313, 56);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
@@ -200,7 +194,7 @@ namespace TAILORING.Masters
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(218, 49);
+            this.btnSave.Location = new System.Drawing.Point(218, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
@@ -213,7 +207,7 @@ namespace TAILORING.Masters
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(123, 49);
+            this.btnAdd.Location = new System.Drawing.Point(123, 56);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdd.Size = new System.Drawing.Size(78, 34);
@@ -224,9 +218,12 @@ namespace TAILORING.Masters
             // 
             // grpKrytonHeader
             // 
+            this.grpKrytonHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpKrytonHeader.HeaderVisibleSecondary = false;
             this.grpKrytonHeader.Location = new System.Drawing.Point(7, 96);
             this.grpKrytonHeader.Name = "grpKrytonHeader";
+            this.grpKrytonHeader.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpKrytonHeader.Panel
             // 
@@ -252,20 +249,77 @@ namespace TAILORING.Masters
             this.grpGST.Controls.Add(this.lblCustomerPhoneNo);
             this.grpGST.Controls.Add(this.label8);
             this.grpGST.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpGST.Enabled = false;
             this.grpGST.GlowAmount = 22;
             this.grpGST.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.grpGST.GlowFeather = 60;
             this.grpGST.GlowOn = true;
             this.grpGST.Location = new System.Drawing.Point(0, 0);
             this.grpGST.Name = "grpGST";
-            this.grpGST.Size = new System.Drawing.Size(755, 121);
+            this.grpGST.Size = new System.Drawing.Size(755, 119);
             this.grpGST.TabIndex = 287;
+            // 
+            // txtSGST
+            // 
+            this.txtSGST.Location = new System.Drawing.Point(469, 14);
+            this.txtSGST.Name = "txtSGST";
+            this.txtSGST.Size = new System.Drawing.Size(240, 31);
+            this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtSGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSGST.StateCommon.Border.Rounding = 10;
+            this.txtSGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSGST.StateNormal.Border.Rounding = 20;
+            this.txtSGST.TabIndex = 382;
+            // 
+            // txtIGST
+            // 
+            this.txtIGST.Location = new System.Drawing.Point(113, 64);
+            this.txtIGST.Name = "txtIGST";
+            this.txtIGST.Size = new System.Drawing.Size(240, 31);
+            this.txtIGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtIGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtIGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtIGST.StateCommon.Border.Rounding = 10;
+            this.txtIGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtIGST.StateNormal.Border.Rounding = 20;
+            this.txtIGST.TabIndex = 381;
+            // 
+            // txtCGST
+            // 
+            this.txtCGST.Location = new System.Drawing.Point(113, 14);
+            this.txtCGST.Name = "txtCGST";
+            this.txtCGST.Size = new System.Drawing.Size(240, 31);
+            this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCGST.StateCommon.Border.Rounding = 10;
+            this.txtCGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCGST.StateNormal.Border.Rounding = 20;
+            this.txtCGST.TabIndex = 380;
             // 
             // kryptonHeaderGroup1
             // 
+            this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup1.Location = new System.Drawing.Point(7, 247);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
+            this.kryptonHeaderGroup1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // kryptonHeaderGroup1.Panel
             // 
@@ -289,64 +343,33 @@ namespace TAILORING.Masters
             this.dgvGSTMaster.Location = new System.Drawing.Point(0, 0);
             this.dgvGSTMaster.Name = "dgvGSTMaster";
             this.dgvGSTMaster.ReadOnly = true;
-            this.dgvGSTMaster.Size = new System.Drawing.Size(756, 187);
+            this.dgvGSTMaster.Size = new System.Drawing.Size(756, 183);
             this.dgvGSTMaster.TabIndex = 0;
             this.dgvGSTMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGSTMaster_CellDoubleClick);
             this.dgvGSTMaster.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvGSTMaster_DataBindingComplete);
             // 
-            // txtCGST
+            // kryptonPanel1
             // 
-            this.txtCGST.Location = new System.Drawing.Point(113, 14);
-            this.txtCGST.Name = "txtCGST";
-            this.txtCGST.Size = new System.Drawing.Size(240, 31);
-            this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCGST.StateCommon.Border.Rounding = 10;
-            this.txtCGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCGST.StateNormal.Border.Rounding = 20;
-            this.txtCGST.TabIndex = 380;
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(790, 51);
+            this.kryptonPanel1.TabIndex = 371;
             // 
-            // txtIGST
+            // pictureBox1
             // 
-            this.txtIGST.Location = new System.Drawing.Point(113, 64);
-            this.txtIGST.Name = "txtIGST";
-            this.txtIGST.Size = new System.Drawing.Size(240, 31);
-            this.txtIGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtIGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtIGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtIGST.StateCommon.Border.Rounding = 10;
-            this.txtIGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtIGST.StateNormal.Border.Rounding = 20;
-            this.txtIGST.TabIndex = 381;
-            // 
-            // txtSGST
-            // 
-            this.txtSGST.Location = new System.Drawing.Point(469, 14);
-            this.txtSGST.Name = "txtSGST";
-            this.txtSGST.Size = new System.Drawing.Size(240, 31);
-            this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtSGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSGST.StateCommon.Border.Rounding = 10;
-            this.txtSGST.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSGST.StateNormal.Border.Rounding = 20;
-            this.txtSGST.TabIndex = 382;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // frmGSTMaster
             // 
@@ -355,6 +378,7 @@ namespace TAILORING.Masters
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 490);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.kryptonHeaderGroup1);
             this.Controls.Add(this.grpKrytonHeader);
             this.Controls.Add(this.btnCancel);
@@ -363,15 +387,12 @@ namespace TAILORING.Masters
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.Name = "frmGSTMaster";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GST Management";
             this.Load += new System.EventHandler(this.frmGSTMaster_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).EndInit();
             this.grpKrytonHeader.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).EndInit();
@@ -383,14 +404,16 @@ namespace TAILORING.Masters
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
             this.kryptonHeaderGroup1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGSTMaster)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -410,5 +433,7 @@ namespace TAILORING.Masters
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSGST;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtIGST;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCGST;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -20,8 +20,8 @@ namespace TAILORING.Dashboard
         private void frmDashboardUpdate_Load(object sender, EventArgs e)
         {
             label4.Text = "Date : " + DateTime.Now.ToShortDateString();
-            this.BackgroundImage = Properties.Resources.Background;
-            //this.BackColor = Color.FromArgb(82, 91, 114);
+            //this.BackgroundImage = Properties.Resources.Background;
+            this.BackColor = Color.FromArgb(82, 91, 114);
         }
     }
 }

@@ -27,7 +27,8 @@ namespace TAILORING
 
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
         }
 
         private void SplashWindow_Load(object sender, EventArgs e)

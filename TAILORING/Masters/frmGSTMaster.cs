@@ -22,14 +22,13 @@ namespace TAILORING.Masters
 
         int ID = 0;
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         double CGST = 0, SGST = 0;
 
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
             btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
@@ -51,13 +50,6 @@ namespace TAILORING.Masters
 
         private void frmGSTMaster_Load(object sender, EventArgs e)
         {
-            //btnAdd.BackgroundImage = B_Leave;
-            //btnSave.BackgroundImage = B_Leave;
-            //btnEdit.BackgroundImage = B_Leave;
-            //btnEdit.BackgroundImage = B_Leave;
-            //btnDelete.BackgroundImage = B_Leave;
-            //btnCancel.BackgroundImage = B_Leave;
-
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnEdit, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
@@ -66,8 +58,14 @@ namespace TAILORING.Masters
             dgvGSTMaster.RowHeadersVisible = false; // set it to false if not needed
 
             LoadTailoringTheme();
-
+            EnableDisable(false);
             LoadData();
+        }
+
+        private void EnableDisable(bool b)
+        {
+            txtCGST.Enabled = b;
+            txtSGST.Enabled = b;
         }
 
         private void ClearAll()
@@ -155,7 +153,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("GST is Saved Successfully..", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpGST.Enabled = false;
+                        EnableDisable(false);
                     }
                     else
                     {
@@ -176,7 +174,7 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpGST.Enabled = true;
+                EnableDisable(true);
                 txtCGST.Focus();
                 txtCGST.SelectionStart = txtCGST.MaxLength;
             }
@@ -235,7 +233,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtCGST.Text + "' CGST is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpGST.Enabled = false;
+                        EnableDisable(false);
                         //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, clsUtility.IsAdmin);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
@@ -261,7 +259,7 @@ namespace TAILORING.Masters
                 LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpGST.Enabled = false;
+                EnableDisable(false);
             }
         }
 
@@ -286,30 +284,19 @@ namespace TAILORING.Masters
                     txtCGST.Text = dgvGSTMaster.SelectedRows[0].Cells["CGST"].Value.ToString();
                     txtSGST.Text = dgvGSTMaster.SelectedRows[0].Cells["SGST"].Value.ToString();
                     txtIGST.Text = dgvGSTMaster.SelectedRows[0].Cells["IGST"].Value.ToString();
-                    grpGST.Enabled = false;
+                    EnableDisable(false);
                     txtCGST.Focus();
                 }
                 catch { }
             }
         }
 
-        private void btnAdd_MouseEnter(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Enter;
-        }
-
-        private void btnAdd_MouseLeave(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            btn.BackgroundImage = B_Leave;
-        }
-
         private void txtCGST_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            //TextBox txt = (TextBox)sender;
+            KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsDecimal(txt, e);
-            if (e.Handled == true)
+            if (e.Handled)
             {
                 clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
                 txt.Focus();
@@ -326,7 +313,6 @@ namespace TAILORING.Masters
             dgvGSTMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGSTMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             kryptonHeaderGroup1.ValuesSecondary.Heading = "Total Records : " + dgvGSTMaster.Rows.Count;
-            
         }
 
         private void txtCGST_TextChanged(object sender, EventArgs e)

@@ -38,7 +38,9 @@ namespace TAILORING.Masters
 
         private void LoadTailoringTheme()
         {
-            this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
             btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 
@@ -74,15 +76,30 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadTailoringTheme();
+            
+            EnableDisable(false);
 
             LoadData();
         }
-        
+
+        private void EnableDisable(bool b)
+        {
+            txtEmployeeCode.Enabled = b;
+            txtName.Enabled = b;
+            txtMobileNo.Enabled = b;
+            txtAdd.Enabled = b;
+
+            dtpDOB.Enabled = b;
+
+            cmbActiveStatus.Enabled = b;
+            cmbEmployeeType.Enabled = b;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpEmployee.Enabled = true;
+            EnableDisable(true);
             txtEmployeeCode.Focus();
         }
 
@@ -283,7 +300,7 @@ namespace TAILORING.Masters
                 }
                 ClearAll();
                 LoadData();
-                grpEmployee.Enabled = false;
+                EnableDisable(false);
             }
             else
             {
@@ -353,7 +370,7 @@ namespace TAILORING.Masters
                 ClearAll();
                 LoadData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpEmployee.Enabled = false;
+                EnableDisable(false);
             }
         }
 
@@ -404,7 +421,7 @@ namespace TAILORING.Masters
                         PicEmployee.Image = ObjUtil.GetImage((byte[])dgvEmployee.SelectedRows[0].Cells["Photo"].Value);
                     }
 
-                    grpEmployee.Enabled = false;
+                    EnableDisable(false);
                     BindUserDetails();
                 }
                 catch { }
@@ -416,7 +433,7 @@ namespace TAILORING.Masters
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Employee_Details, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpEmployee.Enabled = true;
+                EnableDisable(true);
                 txtEmployeeCode.Focus();
             }
             else
@@ -490,7 +507,7 @@ namespace TAILORING.Masters
                 }
                 LoadData();
                 ClearAll();
-                grpEmployee.Enabled = false;
+                EnableDisable(false);
                 ObjDAL.ResetData();
             }
             else
@@ -541,7 +558,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtName.Text + "' Employee has been deleted.  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpEmployee.Enabled = false;
+                        EnableDisable(false);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
                     else

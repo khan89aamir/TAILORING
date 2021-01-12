@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBill));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label12 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -39,11 +38,13 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.panel1.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -52,29 +53,15 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.StoreCopy.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1157, 595);
+            this.reportViewer1.Size = new System.Drawing.Size(1157, 640);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(198)))), ((int)(((byte)(221)))));
-            this.panel1.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1171, 45);
-            this.panel1.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(1069, 5);
+            this.btnSave.Location = new System.Drawing.Point(1081, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
@@ -89,7 +76,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(13, 9);
+            this.label12.Location = new System.Drawing.Point(12, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 22);
             this.label12.TabIndex = 83;
@@ -97,15 +84,17 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Font = new System.Drawing.Font("Times New Roman", 13.25F);
-            this.tabControl2.Location = new System.Drawing.Point(0, 45);
+            this.tabControl2.Location = new System.Drawing.Point(0, 47);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1171, 634);
+            this.tabControl2.Size = new System.Drawing.Size(1171, 632);
             this.tabControl2.TabIndex = 3;
             // 
             // tabPage4
@@ -114,7 +103,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1163, 601);
+            this.tabPage4.Size = new System.Drawing.Size(1163, 599);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "   Customer Copy   ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -125,7 +114,7 @@
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.CustomerCopy.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(3, 3);
             this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(1157, 595);
+            this.reportViewer2.Size = new System.Drawing.Size(1157, 593);
             this.reportViewer2.TabIndex = 1;
             // 
             // tabPage5
@@ -134,7 +123,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1163, 601);
+            this.tabPage5.Size = new System.Drawing.Size(1163, 646);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "   Store Copy   ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -159,25 +148,38 @@
             this.reportViewer3.Size = new System.Drawing.Size(1157, 595);
             this.reportViewer3.TabIndex = 1;
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.btnSave);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1171, 51);
+            this.kryptonPanel1.TabIndex = 371;
+            // 
             // frmBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 679);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.panel1);
             this.Name = "frmBill";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoice";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBill_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -185,7 +187,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private System.Windows.Forms.TabControl tabControl2;
@@ -194,5 +195,6 @@
         private System.Windows.Forms.TabPage tabPage6;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
     }
 }

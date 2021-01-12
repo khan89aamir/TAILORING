@@ -34,7 +34,8 @@
             // 
             // kryptonComboBox1
             // 
-            this.kryptonComboBox1.DropDownWidth = 115;
+            this.kryptonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.kryptonComboBox1.DropDownWidth = 208;
             this.kryptonComboBox1.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Ribbon;
             this.kryptonComboBox1.Items.AddRange(new object[] {
             "Active",
@@ -44,7 +45,7 @@
             this.kryptonComboBox1.Location = new System.Drawing.Point(276, 128);
             this.kryptonComboBox1.Name = "kryptonComboBox1";
             this.kryptonComboBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.kryptonComboBox1.Size = new System.Drawing.Size(121, 27);
+            this.kryptonComboBox1.Size = new System.Drawing.Size(214, 27);
             this.kryptonComboBox1.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));

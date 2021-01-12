@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewMeasurementStyle));
             this.grpSKUList = new System.Windows.Forms.GroupBox();
             this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpMeasurement = new System.Windows.Forms.GroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,21 +46,23 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flowStyleName = new System.Windows.Forms.FlowLayoutPanel();
             this.lnkAddItem = new System.Windows.Forms.LinkLabel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblSKUName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.lblOrderNo = new System.Windows.Forms.Label();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lblSKUName = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
+            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpSKUList.SuspendLayout();
             this.grpMeasurement.SuspendLayout();
             this.grpStyle.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpSKUStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpSKUList
@@ -98,6 +102,20 @@
             this.grpMeasurement.TabStop = false;
             this.grpMeasurement.Text = "Measurement :";
             // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
+            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(621, 137);
+            this.ctrlMeasurment1.TabIndex = 0;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -127,6 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(692, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
@@ -148,6 +167,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(426, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
@@ -169,6 +189,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(18, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 17);
@@ -227,6 +248,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
             this.checkBox1.Location = new System.Drawing.Point(236, 26);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
@@ -257,46 +279,6 @@
             this.lnkAddItem.TabStop = true;
             this.lnkAddItem.Text = "Body Posture";
             this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(11, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(188, 22);
-            this.label12.TabIndex = 82;
-            this.label12.Text = "Measurement & Style";
-            this.label12.UseMnemonic = false;
-            // 
-            // lblSKUName
-            // 
-            this.lblSKUName.AutoSize = true;
-            this.lblSKUName.BackColor = System.Drawing.Color.Transparent;
-            this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSKUName.ForeColor = System.Drawing.Color.White;
-            this.lblSKUName.Location = new System.Drawing.Point(401, 11);
-            this.lblSKUName.Name = "lblSKUName";
-            this.lblSKUName.Size = new System.Drawing.Size(88, 19);
-            this.lblSKUName.TabIndex = 339;
-            this.lblSKUName.Text = "SKU Name";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.lblSKUName);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1215, 40);
-            this.panel2.TabIndex = 352;
             // 
             // dataGridView1
             // 
@@ -337,32 +319,44 @@
             this.lblOrderNo.AutoSize = true;
             this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
             this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderNo.ForeColor = System.Drawing.Color.Black;
-            this.lblOrderNo.Location = new System.Drawing.Point(1020, 45);
+            this.lblOrderNo.ForeColor = System.Drawing.Color.White;
+            this.lblOrderNo.Location = new System.Drawing.Point(732, 12);
             this.lblOrderNo.Name = "lblOrderNo";
             this.lblOrderNo.Size = new System.Drawing.Size(76, 19);
             this.lblOrderNo.TabIndex = 356;
             this.lblOrderNo.Text = "OrderNo";
             // 
-            // btnCancel
+            // lblSKUName
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(1124, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnCancel.Size = new System.Drawing.Size(78, 28);
-            this.btnCancel.TabIndex = 360;
-            this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
-            this.btnCancel.Values.Text = " Cancel";
+            this.lblSKUName.AutoSize = true;
+            this.lblSKUName.BackColor = System.Drawing.Color.Transparent;
+            this.lblSKUName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSKUName.ForeColor = System.Drawing.Color.White;
+            this.lblSKUName.Location = new System.Drawing.Point(384, 12);
+            this.lblSKUName.Name = "lblSKUName";
+            this.lblSKUName.Size = new System.Drawing.Size(88, 19);
+            this.lblSKUName.TabIndex = 339;
+            this.lblSKUName.Text = "SKU Name";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(60, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(188, 22);
+            this.label12.TabIndex = 82;
+            this.label12.Text = "Measurement & Style";
+            this.label12.UseMnemonic = false;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(1034, 5);
+            this.btnSave.Location = new System.Drawing.Point(1035, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 28);
@@ -371,19 +365,45 @@
             this.btnSave.Values.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ctrlMeasurment1
+            // btnCancel
             // 
-            this.ctrlMeasurment1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.IsEditable = false;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(10, 21);
-            this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(621, 137);
-            this.ctrlMeasurment1.TabIndex = 0;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Location = new System.Drawing.Point(1125, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnCancel.Size = new System.Drawing.Size(78, 28);
+            this.btnCancel.TabIndex = 360;
+            this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
+            this.btnCancel.Values.Text = " Cancel";
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.btnCancel);
+            this.kryptonPanel1.Controls.Add(this.lblOrderNo);
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Controls.Add(this.btnSave);
+            this.kryptonPanel1.Controls.Add(this.lblSKUName);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1215, 51);
+            this.kryptonPanel1.TabIndex = 371;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // frmViewMeasurementStyle
             // 
@@ -392,13 +412,12 @@
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1215, 701);
-            this.Controls.Add(this.lblOrderNo);
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpSKUList);
             this.Controls.Add(this.grpMeasurement);
             this.Controls.Add(this.grpStyle);
             this.Controls.Add(this.lnkAddItem);
             this.Controls.Add(this.grpSKUStatus);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmViewMeasurementStyle";
             this.ShowIcon = false;
@@ -409,10 +428,12 @@
             this.grpMeasurement.ResumeLayout(false);
             this.grpStyle.ResumeLayout(false);
             this.grpStyle.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpSKUStatus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,14 +457,15 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.FlowLayoutPanel flowStyleName;
         private System.Windows.Forms.LinkLabel lnkAddItem;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblSKUName;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox grpSKUStatus;
         private System.Windows.Forms.FlowLayoutPanel flowGarmentList;
         private System.Windows.Forms.Label lblOrderNo;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
+        private System.Windows.Forms.Label lblSKUName;
+        private System.Windows.Forms.Label label12;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

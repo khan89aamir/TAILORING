@@ -103,7 +103,9 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpCustomer.Enabled = true;
+            
+            EnableDisable(true);
+
             txtCustomerName.Focus();
         }
 
@@ -129,7 +131,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
                             ClearAll();
                             LoadData();
-                            grpCustomer.Enabled = false;
+                            EnableDisable(false);
                         }
                         else
                         {
@@ -156,7 +158,9 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                grpCustomer.Enabled = true;
+                
+                EnableDisable(true);
+
                 txtCustomerName.Focus();
                 txtCustomerName.SelectionStart = txtCustomerName.MaxLength;
             }
@@ -190,7 +194,7 @@ namespace TAILORING.Masters
                             clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is Updated", clsUtility.strProjectTitle);
                             LoadData();
                             ClearAll();
-                            grpCustomer.Enabled = false;
+                            EnableDisable(false);
                         }
                         else
                         {
@@ -225,7 +229,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("'" + txtCustomerName.Text + "' Customer is deleted  ", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpCustomer.Enabled = false;
+                        EnableDisable(false);
                         //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete, clsUtility.IsAdmin);
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
@@ -251,7 +255,7 @@ namespace TAILORING.Masters
                 LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
-                grpCustomer.Enabled = false;
+                EnableDisable(false);
             }
         }
 
@@ -267,7 +271,9 @@ namespace TAILORING.Masters
                     txtCustomerAddress.Text = dgvCustomerMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCustomerMobileNo.Text = dgvCustomerMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCustomerEmailID.Text = dgvCustomerMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    grpCustomer.Enabled = false;
+                    
+                    EnableDisable(false);
+
                     txtCustomerName.Focus();
                 }
                 catch { }
@@ -283,6 +289,30 @@ namespace TAILORING.Masters
             }
         }
 
+        private void LoadTailoringTheme()
+        {
+            //this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
+            btnAdd.PaletteMode = PaletteMode.SparklePurple;
+            btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnEdit.PaletteMode = PaletteMode.SparklePurple;
+            btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnUpdate.PaletteMode = PaletteMode.SparklePurple;
+            btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnDelete.PaletteMode = PaletteMode.SparklePurple;
+            btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            btnCancel.PaletteMode = PaletteMode.SparklePurple;
+            btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        }
+
         private void Customer_Master_Load(object sender, EventArgs e)
         {
             //btnUpdate.Font = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 14.3f,FontStyle.Bold);
@@ -294,9 +324,20 @@ namespace TAILORING.Masters
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvCustomerMaster.RowHeadersVisible = false; // set it to false if not needed
 
+            LoadTailoringTheme();
+
             LoadData();
 
+            EnableDisable(false);
             //grpCustomer.Enabled = false;
+        }
+
+        private void EnableDisable(bool b)
+        {
+            txtCustomerName.Enabled = b;
+            txtCustomerMobileNo.Enabled = b;
+            txtCustomerEmailID.Enabled = b;
+            txtCustomerAddress.Enabled = b;
         }
 
         private void rdSearchByCustomerName_CheckedChanged(object sender, EventArgs e)
@@ -366,12 +407,14 @@ namespace TAILORING.Masters
             
             dgvCustomerMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCustomerMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            kryptonHeaderGroup1.ValuesPrimary.Heading= "Total Records : " + dgvCustomerMaster.Rows.Count;
+            //kryptonHeaderGroup1.ValuesPrimary.Heading= "Total Records : " + dgvCustomerMaster.Rows.Count;
+            kryptonHeaderGroup1.ValuesSecondary.Heading = "Total Records : " + dgvCustomerMaster.Rows.Count;
         }
 
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            //TextBox txt = (TextBox)sender;
+            KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsString(e);
             if (e.Handled == true)
             {

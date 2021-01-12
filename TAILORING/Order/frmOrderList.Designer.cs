@@ -30,10 +30,12 @@ namespace TAILORING.Order
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderList));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.groupBox1 = new gGlowBox.gGlowGroupBox();
+            this.txtCustomerOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.radByOrderNo = new System.Windows.Forms.RadioButton();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +47,8 @@ namespace TAILORING.Order
             this.rdShowAll = new System.Windows.Forms.RadioButton();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panel2.SuspendLayout();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -59,14 +59,10 @@ namespace TAILORING.Order
             this.grpCustomerGridview.Panel.SuspendLayout();
             this.grpCustomerGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::TAILORING.Properties.Resources.titlebg_green;
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Name = "panel2";
             // 
             // label12
             // 
@@ -80,6 +76,7 @@ namespace TAILORING.Order
             resources.ApplyResources(this.kryptonHeaderGroup1, "kryptonHeaderGroup1");
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
+            this.kryptonHeaderGroup1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // kryptonHeaderGroup1.Panel
             // 
@@ -113,10 +110,59 @@ namespace TAILORING.Order
             this.groupBox1.GlowOn = true;
             this.groupBox1.Name = "groupBox1";
             // 
+            // txtCustomerOrderNo
+            // 
+            resources.ApplyResources(this.txtCustomerOrderNo, "txtCustomerOrderNo");
+            this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
+            this.txtCustomerOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
+            this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
+            // 
+            // txtCustomerMobileNo
+            // 
+            resources.ApplyResources(this.txtCustomerMobileNo, "txtCustomerMobileNo");
+            this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
+            this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerMobileNo.StateCommon.Border.Rounding = 10;
+            this.txtCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerMobileNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
+            // 
+            // txtCustomerName
+            // 
+            resources.ApplyResources(this.txtCustomerName, "txtCustomerName");
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerName.StateCommon.Border.Rounding = 10;
+            this.txtCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerName.StateNormal.Border.Rounding = 20;
+            // 
             // radByOrderNo
             // 
             resources.ApplyResources(this.radByOrderNo, "radByOrderNo");
             this.groupBox1.SetEffectType(this.radByOrderNo, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.radByOrderNo.ForeColor = System.Drawing.Color.White;
             this.radByOrderNo.Name = "radByOrderNo";
             this.groupBox1.SetsGlowColor(this.radByOrderNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByOrderNo.sGlowColor"))));
             this.radByOrderNo.UseVisualStyleBackColor = true;
@@ -148,6 +194,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.radByCustomerMobileNo, "radByCustomerMobileNo");
             this.groupBox1.SetEffectType(this.radByCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.radByCustomerMobileNo.ForeColor = System.Drawing.Color.White;
             this.radByCustomerMobileNo.Name = "radByCustomerMobileNo";
             this.groupBox1.SetsGlowColor(this.radByCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByCustomerMobileNo.sGlowColor"))));
             this.radByCustomerMobileNo.UseVisualStyleBackColor = true;
@@ -166,6 +213,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.radByCustomerName, "radByCustomerName");
             this.groupBox1.SetEffectType(this.radByCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.radByCustomerName.ForeColor = System.Drawing.Color.White;
             this.radByCustomerName.Name = "radByCustomerName";
             this.groupBox1.SetsGlowColor(this.radByCustomerName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByCustomerName.sGlowColor"))));
             this.radByCustomerName.UseVisualStyleBackColor = true;
@@ -176,6 +224,7 @@ namespace TAILORING.Order
             resources.ApplyResources(this.radByDate, "radByDate");
             this.radByDate.Checked = true;
             this.groupBox1.SetEffectType(this.radByDate, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.radByDate.ForeColor = System.Drawing.Color.White;
             this.radByDate.Name = "radByDate";
             this.groupBox1.SetsGlowColor(this.radByDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("radByDate.sGlowColor"))));
             this.radByDate.TabStop = true;
@@ -186,6 +235,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.rdShowAll, "rdShowAll");
             this.groupBox1.SetEffectType(this.rdShowAll, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.rdShowAll.ForeColor = System.Drawing.Color.White;
             this.rdShowAll.Name = "rdShowAll";
             this.groupBox1.SetsGlowColor(this.rdShowAll, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAll.sGlowColor"))));
             this.rdShowAll.UseVisualStyleBackColor = true;
@@ -195,6 +245,7 @@ namespace TAILORING.Order
             // 
             resources.ApplyResources(this.grpCustomerGridview, "grpCustomerGridview");
             this.grpCustomerGridview.Name = "grpCustomerGridview";
+            this.grpCustomerGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpCustomerGridview.Panel
             // 
@@ -218,69 +269,35 @@ namespace TAILORING.Order
             this.dgvOrderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellClick);
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
-            // txtCustomerName
+            // kryptonPanel1
             // 
-            resources.ApplyResources(this.txtCustomerName, "txtCustomerName");
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateCommon.Border.Rounding = 10;
-            this.txtCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateNormal.Border.Rounding = 20;
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            resources.ApplyResources(this.kryptonPanel1, "kryptonPanel1");
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
             // 
-            // txtCustomerMobileNo
+            // pictureBox1
             // 
-            resources.ApplyResources(this.txtCustomerMobileNo, "txtCustomerMobileNo");
-            this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
-            this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerMobileNo.StateCommon.Border.Rounding = 10;
-            this.txtCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerMobileNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
-            // 
-            // txtCustomerOrderNo
-            // 
-            resources.ApplyResources(this.txtCustomerOrderNo, "txtCustomerOrderNo");
-            this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
-            this.txtCustomerOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
-            this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // frmOrderList
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
+            this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.kryptonHeaderGroup1);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmOrderList";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
@@ -292,13 +309,15 @@ namespace TAILORING.Order
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).EndInit();
             this.grpCustomerGridview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
+            this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label12;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
         private gGlowBox.gGlowGroupBox groupBox1;
@@ -316,5 +335,7 @@ namespace TAILORING.Order
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerOrderNo;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerMobileNo;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerName;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

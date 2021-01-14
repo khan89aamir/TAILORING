@@ -305,16 +305,9 @@ namespace TAILORING.Order
             //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
 
             dataGridView1.Columns["GarmentName"].HeaderText = "Garment";
-            dataGridView1.Columns["ServiceID"].Visible = false;
-            dataGridView1.Columns["Service"].Visible = false;
-            dataGridView1.Columns["TrailDate"].Visible = false;
-            dataGridView1.Columns["DeliveryDate"].Visible = false;
             dataGridView1.Columns["GarmentID"].Visible = false;
             dataGridView1.Columns["GarmentCode"].Visible = false;
             dataGridView1.Columns["QTY"].Visible = false;
-            dataGridView1.Columns["Rate"].Visible = false;
-            dataGridView1.Columns["Total"].Visible = false;
-            dataGridView1.Columns["Trim Amount"].Visible = false;
             dataGridView1.Columns["Photo"].Visible = false;
             dataGridView1.Columns["StichTypeID"].Visible = false;
             dataGridView1.Columns["FitTypeID"].Visible = false;
@@ -660,6 +653,8 @@ namespace TAILORING.Order
             if (checkBox1.Checked)
             {
                 CopyPreviousGarmentStyle();
+
+                cmbStyleQTY_SelectionChangeCommitted(sender, e);
             }
         }
 

@@ -121,21 +121,16 @@ namespace TAILORING.Order
 
         private void InitItemTable()
         {
+            //dtOrder = dtOrderManagement.Copy();
             //Gridview
             dtOrder.Columns.Add("GarmentID");
             dtOrder.Columns.Add("StichTypeID");
             dtOrder.Columns.Add("FitTypeID");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
-            dtOrder.Columns.Add("Service");
-            dtOrder.Columns.Add("TrailDate");
-            dtOrder.Columns.Add("DeliveryDate");
-            dtOrder.Columns.Add("Trim Amount");
-            dtOrder.Columns.Add("ServiceID", typeof(int));
             dtOrder.Columns.Add("QTY", typeof(int));
-            dtOrder.Columns.Add("Rate", typeof(double));
-            dtOrder.Columns.Add("Total", typeof(double));
             dtOrder.Columns.Add("Photo");
+
             //dtOrder.Columns.Add("Delete");
 
             //DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
@@ -410,11 +405,13 @@ namespace TAILORING.Order
                     //dRow["Delete"] = "Delete";
                     dtOrderManagement.Rows.Add(dRow);
                 }
-
                 dtOrderManagement.AcceptChanges();
 
                 //AddDefaultRow();
                 dataGridView1.DataSource = dtOrderManagement;
+
+                AdddtOrder();
+
                 ResetGarmentDetails();
 
                 btnAdd.Enabled = false;
@@ -422,6 +419,32 @@ namespace TAILORING.Order
             else
             {
                 clsUtility.ShowInfoMessage("Please Select Some Garments..");
+            }
+        }
+
+        private void AdddtOrder()
+        {
+            dtOrder.Clear();
+            DataTable dt = dtOrderManagement.DefaultView.ToTable(true, "GarmentID");
+            if (ObjUtil.ValidateTable(dt))
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow[] drData = dtOrderManagement.Select("GarmentID=" + dt.Rows[i]["GarmentID"]);
+                    object qty = dtOrderManagement.Compute("SUM(QTY)", "GarmentID=" + dt.Rows[i]["GarmentID"]);
+                    //for (int j = 0; j < drData.Length; j++)
+                    if (drData.Length > 0)
+                    {
+                        DataRow dRow = dtOrder.NewRow();
+                        dRow["GarmentID"] = drData[0]["GarmentID"];
+                        dRow["GarmentCode"] = drData[0]["GarmentCode"];
+                        dRow["GarmentName"] = drData[0]["GarmentName"];
+                        dRow["Photo"] = drData[0]["Photo"];
+                        dRow["QTY"] = qty;
+                        dtOrder.Rows.Add(dRow);
+                    }
+                }
+                dtOrder.AcceptChanges();
             }
         }
 
@@ -516,7 +539,9 @@ namespace TAILORING.Order
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
                             dataGridView1.DataSource = null;
+                            
                             PrintOrder();
+
                             ClearAll();
                         }
                         else
@@ -588,7 +613,7 @@ namespace TAILORING.Order
                 drow["TrailDate"] = dtOrder.Rows[i]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(dtOrder.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
 
                 drow["DeliveryDate"] = Convert.ToDateTime(dtOrder.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
-                drow["TrimAmount"] = dtOrder.Rows[i]["Trim Amount"];
+                drow["TrimAmount"] = dtOrder.Rows[i]["TrimAmount"];
                 drow["QTY"] = dtOrder.Rows[i]["QTY"];
                 drow["Rate"] = dtOrder.Rows[i]["Rate"];
                 drow["Total"] = dtOrder.Rows[i]["Total"];
@@ -771,7 +796,7 @@ namespace TAILORING.Order
             GridServiceIndex = cmbService.SelectedIndex;
             dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ServiceID"].Value = GridServiceIndex;
 
-            int pGarmentID =Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["GarmentID"].Value);
+            int pGarmentID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["GarmentID"].Value);
 
             DataTable dt = GetProductRate(pGarmentID, GridServiceIndex);
             if (ObjUtil.ValidateTable(dt))
@@ -814,7 +839,7 @@ namespace TAILORING.Order
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "QTY" || dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount" || dataGridView1.Columns[e.ColumnIndex].Name=="Rate")
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "QTY" || dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount" || dataGridView1.Columns[e.ColumnIndex].Name == "Rate")
                 {
                     int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
                     double trimamt = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value);

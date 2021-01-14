@@ -9,10 +9,11 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
 using CoreApp;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace TAILORING
 {
-    public partial class SplashWindow : Form
+    public partial class SplashWindow : KryptonForm
     {
         public SplashWindow()
         {
@@ -28,6 +29,7 @@ namespace TAILORING
         private void LoadTailoringTheme()
         {
             this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
             this.BackColor = Color.FromArgb(82, 91, 114);
         }
 

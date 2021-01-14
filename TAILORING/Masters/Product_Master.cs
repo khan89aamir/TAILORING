@@ -265,6 +265,7 @@ namespace TAILORING.Masters
         private void LoadTailoringTheme()
         {
             this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
             this.BackColor = Color.FromArgb(82, 91, 114);
 
             btnAdd.PaletteMode = PaletteMode.SparklePurple;

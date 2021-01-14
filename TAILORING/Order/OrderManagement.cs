@@ -49,6 +49,7 @@ namespace TAILORING.Order
         private void LoadTailoringTheme()
         {
             this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
             this.BackColor = Color.FromArgb(82, 91, 114);
 
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
@@ -111,7 +112,7 @@ namespace TAILORING.Order
             dtOrderManagement.Columns.Add("Rate", typeof(double));
             dtOrderManagement.Columns.Add("Total", typeof(double));
             dtOrderManagement.Columns.Add("Photo");
-            dtOrderManagement.Columns.Add("Delete");
+            //dtOrderManagement.Columns.Add("Delete");
             dtOrderManagement.AcceptChanges();
 
             //dataGridView1.DataSource = dtOrderManagement;
@@ -406,7 +407,7 @@ namespace TAILORING.Order
                     dRow["Rate"] = GarmentRate;
                     dRow["QTY"] = pQty;
                     dRow["Total"] = 0 + (pQty * Convert.ToDecimal(GarmentRate));
-                    dRow["Delete"] = "Delete";
+                    //dRow["Delete"] = "Delete";
                     dtOrderManagement.Rows.Add(dRow);
                 }
 

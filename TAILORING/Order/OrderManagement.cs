@@ -512,6 +512,7 @@ namespace TAILORING.Order
             dtMeasurement.Rows.Clear();
             dtStyle.Rows.Clear();
             dtBodyPosture.Rows.Clear();
+            dtOrderManagement.Rows.Clear();
 
             OrderID = 0;
             CustomerID = 0;
@@ -538,15 +539,16 @@ namespace TAILORING.Order
                         if (b)
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
-                            dataGridView1.DataSource = null;
-                            
-                            PrintOrder();
-
+                            //dataGridView1.DataSource = null;
                             ClearAll();
+                            dataGridView1.DataSource = dtOrderManagement;
+
+                            PrintOrder();  
                         }
                         else
                         {
                             clsUtility.ShowInfoMessage("Invoice is not Generated.");
+                            int a = ObjDAL.ExecuteNonQuery("DELETE FROM " + clsUtility.DBName + ".dbo.tblSalesOrder WHERE SalesOrderID=" + OrderID);
                         }
                     }
                 }
@@ -601,22 +603,27 @@ namespace TAILORING.Order
         private bool SavedSalesOrderDetails()
         {
             bool b = false;
-            for (int i = 0; i < dtOrder.Rows.Count; i++) //Sales Details
+            for (int i = 0; i < dtOrderManagement.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = OrderID;
-                drow["StichTypeID"] = dtOrder.Rows[i]["StichTypeID"];
-                drow["FitTypeID"] = dtOrder.Rows[i]["FitTypeID"];
-                drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
-                drow["Service"] = dtOrder.Rows[i]["ServiceID"];
+                drow["GarmentID"] = dtOrderManagement.Rows[i]["GarmentID"];
 
-                drow["TrailDate"] = dtOrder.Rows[i]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(dtOrder.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
+                DataRow[] dr = dtOrder.Select("GarmentID=" + dtOrderManagement.Rows[i]["GarmentID"]);
+                if (dr.Length > 0)
+                {
+                    drow["StichTypeID"] = dtOrder.Rows[0]["StichTypeID"];
+                    drow["FitTypeID"] = dtOrder.Rows[0]["FitTypeID"];
+                }
+                drow["Service"] = dtOrderManagement.Rows[i]["ServiceID"];
 
-                drow["DeliveryDate"] = Convert.ToDateTime(dtOrder.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
-                drow["TrimAmount"] = dtOrder.Rows[i]["TrimAmount"];
-                drow["QTY"] = dtOrder.Rows[i]["QTY"];
-                drow["Rate"] = dtOrder.Rows[i]["Rate"];
-                drow["Total"] = dtOrder.Rows[i]["Total"];
+                drow["TrailDate"] = dtOrderManagement.Rows[i]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(dtOrderManagement.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
+
+                drow["DeliveryDate"] = Convert.ToDateTime(dtOrderManagement.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
+                drow["TrimAmount"] = dtOrderManagement.Rows[i]["TrimAmount"];
+                drow["QTY"] = dtOrderManagement.Rows[i]["QTY"];
+                drow["Rate"] = dtOrderManagement.Rows[i]["Rate"];
+                drow["Total"] = dtOrderManagement.Rows[i]["Total"];
                 drow["CreatedBy"] = clsUtility.LoginID;
 
                 dtOrderDetails.Rows.Add(drow);

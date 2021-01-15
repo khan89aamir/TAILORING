@@ -447,6 +447,13 @@
     <None Include="Resources\padlock.png" />
     <None Include="Resources\Background.jpg" />
     <None Include="Resources\New logo 2.png" />
+    <None Include="Resources\bodyCheck.png" />
+    <None Include="Resources\measurcheck.png" />
+    <None Include="Resources\picBodyPosture.png" />
+    <None Include="Resources\picmeasurment.png" />
+    <None Include="Resources\picStyle.png" />
+    <None Include="Resources\Pictur31.png" />
+    <None Include="Resources\StyleCheck.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

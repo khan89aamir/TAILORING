@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cmbOrderType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
@@ -149,45 +146,6 @@
             this.label4.Size = new System.Drawing.Size(118, 19);
             this.label4.TabIndex = 323;
             this.label4.Text = "Tailoring Amount :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(346, 198);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 17);
-            this.label14.TabIndex = 319;
-            this.label14.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(81, 196);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 19);
-            this.label13.TabIndex = 318;
-            this.label13.Text = "Service :";
-            // 
-            // cmbOrderType
-            // 
-            this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOrderType.Enabled = false;
-            this.cmbOrderType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOrderType.FormattingEnabled = true;
-            this.cmbOrderType.Items.AddRange(new object[] {
-            "Normal",
-            "Urgent"});
-            this.cmbOrderType.Location = new System.Drawing.Point(146, 195);
-            this.cmbOrderType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbOrderType.Name = "cmbOrderType";
-            this.cmbOrderType.Size = new System.Drawing.Size(198, 25);
-            this.cmbOrderType.TabIndex = 317;
-            this.cmbOrderType.SelectionChangeCommitted += new System.EventHandler(this.cmbOrderType_SelectionChangeCommitted);
             // 
             // label12
             // 
@@ -442,6 +400,8 @@
             this.dtpTrailDate.ShowCheckBox = true;
             this.dtpTrailDate.Size = new System.Drawing.Size(131, 25);
             this.dtpTrailDate.TabIndex = 355;
+            this.dtpTrailDate.ValueChanged += new System.EventHandler(this.dtpTrailDate_ValueChanged);
+            this.dtpTrailDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpTrailDate_Validating);
             // 
             // label17
             // 
@@ -465,6 +425,7 @@
             this.grpNewOrder.SetsGlowColor(this.dtpDeliveryDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpDeliveryDate.sGlowColor"))));
             this.dtpDeliveryDate.Size = new System.Drawing.Size(131, 25);
             this.dtpDeliveryDate.TabIndex = 357;
+            this.dtpDeliveryDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDeliveryDate_Validating);
             // 
             // grpGridview
             // 
@@ -514,6 +475,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1104, 194);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -637,12 +599,12 @@
             // ColDelete1
             // 
             this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColDelete1.HeaderText = "Delete1";
             this.ColDelete1.Name = "ColDelete1";
             this.ColDelete1.Text = "Delete1";
@@ -790,7 +752,7 @@
             this.txtCustomerAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerAdd.StateCommon.Border.Rounding = 20;
+            this.txtCustomerAdd.StateCommon.Border.Rounding = 15;
             this.txtCustomerAdd.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerAdd.TabIndex = 386;
             this.txtCustomerAdd.Text = "";
@@ -847,9 +809,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.cmbOrderType);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "frmOrderManagement";
@@ -886,9 +845,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cmbOrderType;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label label15;

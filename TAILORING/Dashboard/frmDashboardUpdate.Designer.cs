@@ -32,6 +32,7 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sPanel4 = new TAILORING.SPanel();
             this.txtOrderReceive = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.picSearchOrderDelivery = new System.Windows.Forms.PictureBox();
@@ -75,6 +75,7 @@
             this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).BeginInit();
@@ -85,7 +86,6 @@
             this.sPanel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderReceive)).BeginInit();
@@ -129,6 +129,17 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Dashboard";
             this.label12.UseMnemonic = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // btnAdd
             // 
@@ -563,17 +574,6 @@
             this.pictureBox2.TabIndex = 370;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
-            // 
             // sPanel4
             // 
             this.sPanel4.BackColor = System.Drawing.Color.Transparent;
@@ -726,6 +726,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).EndInit();
@@ -742,7 +743,6 @@
             this.sPanel1.ResumeLayout(false);
             this.sPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sPanel4.ResumeLayout(false);
             this.sPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).EndInit();

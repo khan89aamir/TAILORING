@@ -46,6 +46,12 @@ namespace TAILORING.Order
         string GarmentName = string.Empty;
         string strPhoto = string.Empty;
 
+        DateTime dtTrailDate = DateTime.Now.AddDays(2);
+        DateTime dtDeliveryDate = DateTime.Now.AddDays(4);
+
+        DateTime dtPrevTrailDate = DateTime.Now;
+        DateTime dtPrevDeliveryDate = DateTime.Now;
+
         private void LoadTailoringTheme()
         {
             this.BackgroundImage = null;
@@ -89,14 +95,15 @@ namespace TAILORING.Order
 
             FillGarmentData(); // Load unique Garment Data
 
-            dtpTrailDate.Value.AddDays(4);
-            dtpDeliveryDate.Value.AddDays(5);
-
             InitOrderManagement();
             //dtDefaultOrderManagement = (DataTable)dataGridView1.DataSource;
             //dtOrderManagement = (DataTable)dataGridView1.DataSource;
 
             NumericQTY.Value = 2;
+
+            dtpDeliveryDate.MinDate = dtDeliveryDate;
+            dtpTrailDate.MinDate = dtTrailDate;
+            dtpTrailDate.Checked = false;
         }
         private void InitOrderManagement()
         {
@@ -233,14 +240,6 @@ namespace TAILORING.Order
                 txtCGST.Text = "0";
                 txtSGST.Text = "0";
             }
-        }
-
-        private void cmbOrderType_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            grpNewOrder.Enabled = true;
-            cmbGarmentName.Focus();
-
-            btnAdd.Enabled = true;
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -543,7 +542,7 @@ namespace TAILORING.Order
                             ClearAll();
                             dataGridView1.DataSource = dtOrderManagement;
 
-                            PrintOrder();  
+                            PrintOrder();
                         }
                         else
                         {
@@ -769,6 +768,9 @@ namespace TAILORING.Order
             }
         }
         KryptonComboBox cmbService = new KryptonComboBox();
+
+        KryptonDateTimePicker kdtTrailDate = new KryptonDateTimePicker();
+        KryptonDateTimePicker kdtDeliveryDate = new KryptonDateTimePicker();
         int GridServiceIndex = -1;
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -792,10 +794,126 @@ namespace TAILORING.Order
                     {
                         //cmbService.SelectedIndexChanged += cmbService_SelectedIndexChanged;
                         cmbService.SelectionChangeCommitted += CmbService_SelectionChangeCommitted;
+                    }
+                }
+            }
+            else if (headerText == "TrailDate")
+            {
+                kdtTrailDate = (KryptonDateTimePicker)e.Control;
+
+                //kdtTrailDate.MinDate = dtTrailDate;
+                kdtTrailDate.Validating += KdtTrailDate_Validating;
+            }
+            else if (headerText == "DeliveryDate")
+            {
+                kdtDeliveryDate = (KryptonDateTimePicker)e.Control;
+
+                //kdtDeliveryDate.MinDate = dtDeliveryDate;
+
+                kdtDeliveryDate.Validating += KdtDeliveryDate_Validating;
+            }
+        }
+
+        private void KdtDeliveryDate_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime dtDelivery = kdtDeliveryDate.Value;
+
+            if (kdtTrailDate.Checked)
+            {
+                e.Cancel = false;
+                if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
+                {
+                    DateTime dtTrail = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value);
+
+                    if (dtTrail >= dtDelivery)
+                    {
+                        clsUtility.ShowInfoMessage("Delivery Date should not be equal or less then Trail Date");
+                        //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = DBNull.Value;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = dtPrevDeliveryDate;
+                        kdtDeliveryDate.Value = dtPrevDeliveryDate;
+                        e.Cancel = true;
+                        return;
+                    }
+                    else if (dtDelivery <= dtpBookingDate.Value)
+                    {
+                        clsUtility.ShowInfoMessage("Delivery Date should not be equal less then to Booking Date");
+                        //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = DBNull.Value;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = dtPrevDeliveryDate;
+                        kdtDeliveryDate.Value = dtPrevDeliveryDate;
+                        //kdtTrailDate.Checked = false;
+
+                        e.Cancel = true;
                         return;
                     }
                 }
             }
+            else
+            {
+                if (dtDelivery == dtpBookingDate.Value)
+                {
+                    clsUtility.ShowInfoMessage("Delivery Date should not be equal to Booking Date");
+                    //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = DBNull.Value;
+                    dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = dtPrevDeliveryDate;
+                    kdtDeliveryDate.Value = dtPrevDeliveryDate;
+                    //kdtTrailDate.Checked = false;
+
+                    e.Cancel = true;
+                    return;
+                }
+            }
+        }
+
+        private void KdtTrailDate_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime dtDelivery = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value != DBNull.Value ? Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value) : dtPrevDeliveryDate;
+
+            if (kdtTrailDate.Checked)
+            {
+                e.Cancel = false;
+                if (kdtTrailDate.Value != null)
+                {
+                    DateTime dtTrail = kdtTrailDate.Value;
+
+                    if (dtTrail >= dtDelivery)
+                    {
+                        clsUtility.ShowInfoMessage("Trail Date should not be equal or greater then Delivery Date");
+
+                        //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value = DBNull.Value;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value = dtPrevTrailDate;
+                        kdtTrailDate.Value = dtPrevTrailDate;
+                        //kdtTrailDate.Checked = false;
+
+                        e.Cancel = true;
+                        return;
+                    }
+                    else if (dtTrail <= dtpBookingDate.Value)
+                    {
+                        clsUtility.ShowInfoMessage("Trail Date should not be equal or less then to Booking Date");
+
+                        //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value = DBNull.Value;
+                        dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value = dtPrevTrailDate;
+
+                        //kdtTrailDate.Checked = false;
+
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                if (dtDelivery <= dtpBookingDate.Value)
+                {
+                    clsUtility.ShowInfoMessage("Delivery Date should not be equal less then to Booking Date");
+                    //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = DBNull.Value;
+                    dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["DeliveryDate"].Value = dtPrevDeliveryDate;
+                    //kdtTrailDate.Checked = false;
+
+                    e.Cancel = true;
+                    return;
+                }
+            }
+
         }
 
         private void CmbService_SelectionChangeCommitted(object sender, EventArgs e)
@@ -813,17 +931,6 @@ namespace TAILORING.Order
             }
             //cmbService.SelectionChangeCommitted -= CmbService_SelectionChangeCommitted;
             //return;
-        }
-
-        private void cmbService_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //GridServiceIndex = cmbService.SelectedIndex;
-            //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["ServiceID"].Value = GridServiceIndex;
-            //cmbService == null;
-            //cmbService.SelectedIndexChanged -= cmbService_SelectedIndexChanged;
-            //clsUtility.ShowInfoMessage("Service selected index " + GridServiceIndex);
-            //return;
-            //GridServiceIndex = -1;
         }
 
         private void Int_Control_KeyPress(object sender, KeyPressEventArgs e)
@@ -857,6 +964,66 @@ namespace TAILORING.Order
 
                     CalcTotalAmount();
                 }
+            }
+        }
+
+        private void dtpTrailDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTrailDate.Value < dtpDeliveryDate.Value)
+            {
+                dtpTrailDate.Checked = true;
+            }
+        }
+
+        private void dtpTrailDate_Validating(object sender, CancelEventArgs e)
+        {
+            if (dtpTrailDate.Checked)
+            {
+                if (dtpTrailDate.Value >= dtpDeliveryDate.Value)
+                {
+                    clsUtility.ShowInfoMessage("Trail Date should not be equal or greater then Delivery Date");
+                    dtpTrailDate.Value = dtTrailDate;
+
+                    e.Cancel = true;
+
+                    dtpTrailDate.Focus();
+                }
+            }
+            dtpTrailDate.Checked = false;
+        }
+
+        private void dtpDeliveryDate_Validating(object sender, CancelEventArgs e)
+        {
+            if (dtpTrailDate.Checked)
+            {
+                if (dtpTrailDate.Value >= dtpDeliveryDate.Value)
+                {
+                    clsUtility.ShowInfoMessage("Delivery Date should not be equal or greater then Trail Date");
+                    dtpDeliveryDate.Value = dtDeliveryDate;
+
+                    e.Cancel = true;
+
+                    dtpDeliveryDate.Focus();
+                }
+            }
+        }
+
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "TrailDate")
+                {
+                    if (kdtTrailDate.Checked)
+                    {
+                        dtPrevTrailDate = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value != DBNull.Value ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value) : dtTrailDate;
+                    }
+                }
+                else if (dataGridView1.Columns[e.ColumnIndex].Name == "DeliveryDate")
+                {
+                    dtPrevDeliveryDate = dataGridView1.Rows[e.RowIndex].Cells["DeliveryDate"].Value != DBNull.Value ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DeliveryDate"].Value) : dtDeliveryDate;
+                }
+
             }
         }
 

@@ -103,6 +103,16 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bodyCheck {
+            get {
+                object obj = ResourceManager.GetObject("bodyCheck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnAdd_Values_Image {
             get {
                 object obj = ResourceManager.GetObject("btnAdd.Values.Image", resourceCulture);
@@ -203,6 +213,16 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap measurcheck {
+            get {
+                object obj = ResourceManager.GetObject("measurcheck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New_logo_2 {
             get {
                 object obj = ResourceManager.GetObject("New_logo_2", resourceCulture);
@@ -223,9 +243,59 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picBodyPosture {
+            get {
+                object obj = ResourceManager.GetObject("picBodyPosture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picIMGPass_Image {
             get {
                 object obj = ResourceManager.GetObject("picIMGPass.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picmeasurment {
+            get {
+                object obj = ResourceManager.GetObject("picmeasurment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picStyle {
+            get {
+                object obj = ResourceManager.GetObject("picStyle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pictur31 {
+            get {
+                object obj = ResourceManager.GetObject("Pictur31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StyleCheck {
+            get {
+                object obj = ResourceManager.GetObject("StyleCheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

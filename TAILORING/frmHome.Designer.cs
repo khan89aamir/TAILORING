@@ -488,10 +488,11 @@
             // 
             // ribbon1
             // 
-            this.ribbon1.BackColor = System.Drawing.SystemColors.Control;
+            this.ribbon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.ribbon1.BorderMode = System.Windows.Forms.RibbonWindowMode.InsideWindow;
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ribbon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.ribbon1.HideSingleTabIfTextEmpty = false;
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Minimized = false;

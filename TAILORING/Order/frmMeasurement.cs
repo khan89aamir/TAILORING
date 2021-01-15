@@ -55,7 +55,7 @@ namespace TAILORING.Order
         {
             //HorizontalScroll.Maximum = 0;
             ctrlMeasurment1.IsEditable = true;
-            
+
             LoadTailoringTheme();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
@@ -146,7 +146,6 @@ namespace TAILORING.Order
 
         private void BindStichType()
         {
-            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_StichType");
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -167,7 +166,6 @@ namespace TAILORING.Order
 
         private void BindFitType()
         {
-            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_FitType");
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -218,14 +216,14 @@ namespace TAILORING.Order
             for (int i = 0; i < dtStyle.Rows.Count; i++)
             {
                 KryptonButton btn = new KryptonButton();
-              
+
                 // for flat style
                 btn.PaletteMode = PaletteMode.Office2010Blue;
                 // add round corner
                 btn.StateCommon.Border.Rounding = 5;
-          
+
                 btn.StateCommon.Content.ShortText.Color1 = Color.Black;
-                
+
                 btn.AutoSize = false;
                 btn.Size = new Size(187, 45);
                 //btn.FlatStyle = FlatStyle.Flat;
@@ -244,8 +242,15 @@ namespace TAILORING.Order
                 {
                     btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
                     btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
-                    btn.StateCommon.Content.ShortText.Color1= Color.Black;
-                  
+
+                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
+                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
+                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+
                     //btn.StateNormal.Back.Color1 = Color.FromArgb(17, 241, 41);
                 }
                 else
@@ -281,9 +286,16 @@ namespace TAILORING.Order
             //}
             if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
             {
-                btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                btn.StateCommon.Content.ShortText.Color1 = Color.Black;//17, 241, 41
                 btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
+
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
+
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
             }
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
@@ -385,6 +397,14 @@ namespace TAILORING.Order
                     dr[0].Delete();
                     dtTempStyle.AcceptChanges();
                 }
+                //else
+                //{
+                //    DataRow[] drdup = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID=" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
+                //    if (drdup.Length > 0)
+                //    {
+                //        p.Parent.BackColor = Color.Transparent;
+                //    }
+                //}
             }
             DataRow drow = dtTempStyle.NewRow();
             drow["GarmentID"] = GarmentID;
@@ -475,8 +495,8 @@ namespace TAILORING.Order
         {
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
-               KryptonButton btn=  (KryptonButton) flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1!= Color.FromArgb(78, 148, 132))// Dark Green
+                KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
+                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
                     btn.StateCommon.Back.Color1 = Color.LightGray;
@@ -502,7 +522,7 @@ namespace TAILORING.Order
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);
             for (int i = 0; i < ctr.Length; i++)
             {
-                KryptonButton btn =(KryptonButton)ctr[i];
+                KryptonButton btn = (KryptonButton)ctr[i];
                 //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
                 btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
                 btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
@@ -783,11 +803,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBodyPosture_Click(object sender, EventArgs e)
         {
             picBody.Visible = true;
@@ -840,9 +855,9 @@ namespace TAILORING.Order
         #region Body Posture Code
 
         DataTable dtPosture = new DataTable();
-     
 
-     
+
+
 
         private void GetBodyPostureDetails()
         {
@@ -864,13 +879,14 @@ namespace TAILORING.Order
 
         private void BindBodyPostures(DataTable dt, DataTable dt1)
         {
+            flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 GroupBox grp = new GroupBox();
                 FlowLayoutPanel pnlContainer = new FlowLayoutPanel();
 
                 grp.Name = "grp";
-                grp.Size = new Size(kryptonHeaderGroup4.Size.Width-60, 185);
+                grp.Size = new Size(kryptonHeaderGroup4.Size.Width - 60, 185);
                 grp.Text = dt.Rows[i]["BodyPostureType"].ToString();
                 grp.Font = new Font("Times", 14.1f, FontStyle.Bold);
 
@@ -999,7 +1015,7 @@ namespace TAILORING.Order
             dtTempPosture.Rows.Add(drow);
             dtTempPosture.AcceptChanges();
         }
-   
+
         #endregion
     }
 }

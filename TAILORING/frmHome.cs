@@ -28,9 +28,6 @@ namespace TAILORING
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         private void otherArtsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)

@@ -292,6 +292,8 @@ namespace TAILORING.Masters
         private void LoadTailoringTheme()
         {
             //this.BackgroundImage = TAILORING.Properties.Resources.Background;
+            this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
             this.BackColor = Color.FromArgb(82, 91, 114);
 
             btnAdd.PaletteMode = PaletteMode.SparklePurple;
@@ -318,7 +320,7 @@ namespace TAILORING.Masters
             //btnUpdate.Font = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 14.3f,FontStyle.Bold);
 
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
-         //   ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
+            ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvCustomerMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders

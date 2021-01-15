@@ -23,9 +23,6 @@ namespace TAILORING.Masters
 
         int ID = 0;
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         private void ClearAll()
         {
             txtGarmentCode.Clear();

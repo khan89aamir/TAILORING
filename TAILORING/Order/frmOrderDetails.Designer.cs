@@ -29,7 +29,6 @@ namespace TAILORING.Order
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderDetails));
             this.label12 = new System.Windows.Forms.Label();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
@@ -71,9 +70,14 @@ namespace TAILORING.Order
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
             this.grpCustomerGridview.Size = new System.Drawing.Size(1078, 305);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.TabIndex = 332;
             this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
             this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -107,7 +111,7 @@ namespace TAILORING.Order
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.orderdetails;
             this.pictureBox1.Location = new System.Drawing.Point(16, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);

@@ -51,9 +51,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblLoginName = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picLogOut = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRegistrationDate = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -153,10 +150,11 @@
             this.ribbonHost25 = new System.Windows.Forms.RibbonHost();
             this.picHelp = new System.Windows.Forms.PictureBox();
             this.ribbonHost26 = new System.Windows.Forms.RibbonHost();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picLogOut = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +173,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -371,49 +371,6 @@
             this.lblVersion.Spring = true;
             this.lblVersion.Text = "Version : ";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(512, 256);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(308, 232);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
-            // picLogOut
-            // 
-            this.picLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.picLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picLogOut.BackgroundImage")));
-            this.picLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogOut.Image = ((System.Drawing.Image)(resources.GetObject("picLogOut.Image")));
-            this.picLogOut.Location = new System.Drawing.Point(1213, 40);
-            this.picLogOut.Name = "picLogOut";
-            this.picLogOut.Size = new System.Drawing.Size(48, 60);
-            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogOut.TabIndex = 25;
-            this.picLogOut.TabStop = false;
-            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(1212, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 18);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Log Out";
-            this.label1.Click += new System.EventHandler(this.picLogOut_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -432,11 +389,11 @@
             // 
             this.lblRegistrationDate.AutoSize = true;
             this.lblRegistrationDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegistrationDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblRegistrationDate.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.lblRegistrationDate.ForeColor = System.Drawing.Color.White;
             this.lblRegistrationDate.Location = new System.Drawing.Point(129, 72);
             this.lblRegistrationDate.Name = "lblRegistrationDate";
-            this.lblRegistrationDate.Size = new System.Drawing.Size(30, 17);
+            this.lblRegistrationDate.Size = new System.Drawing.Size(25, 20);
             this.lblRegistrationDate.TabIndex = 32;
             this.lblRegistrationDate.Text = "NA";
             // 
@@ -444,10 +401,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(5, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 17);
+            this.label6.Size = new System.Drawing.Size(110, 20);
             this.label6.TabIndex = 31;
             this.label6.Text = "Registration Date :";
             // 
@@ -455,11 +413,11 @@
             // 
             this.lblLicensedTo.AutoSize = true;
             this.lblLicensedTo.BackColor = System.Drawing.Color.Transparent;
-            this.lblLicensedTo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicensedTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblLicensedTo.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.lblLicensedTo.ForeColor = System.Drawing.Color.White;
             this.lblLicensedTo.Location = new System.Drawing.Point(129, 44);
             this.lblLicensedTo.Name = "lblLicensedTo";
-            this.lblLicensedTo.Size = new System.Drawing.Size(30, 17);
+            this.lblLicensedTo.Size = new System.Drawing.Size(25, 20);
             this.lblLicensedTo.TabIndex = 30;
             this.lblLicensedTo.Text = "NA";
             // 
@@ -467,10 +425,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(5, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 29;
             this.label3.Text = "Licensed to :";
             // 
@@ -478,10 +437,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 19);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 28;
             this.label2.Text = "Registration Info :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -545,7 +505,7 @@
             // 
             this.picAddUser.BackColor = System.Drawing.Color.Transparent;
             this.picAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picAddUser.Image = ((System.Drawing.Image)(resources.GetObject("picAddUser.Image")));
+            this.picAddUser.Image = global::TAILORING.Properties.Resources.AddUserwhite;
             this.picAddUser.Location = new System.Drawing.Point(8, 171);
             this.picAddUser.Name = "picAddUser";
             this.picAddUser.Size = new System.Drawing.Size(59, 44);
@@ -564,10 +524,11 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(73, 194);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(59, 15);
+            this.lblUser.Size = new System.Drawing.Size(53, 16);
             this.lblUser.TabIndex = 35;
             this.lblUser.Text = "Add User";
             // 
@@ -590,7 +551,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.formrightwhite;
             this.pictureBox1.Location = new System.Drawing.Point(8, 221);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 44);
@@ -610,10 +571,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(64, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 15);
+            this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 33;
             this.label4.Text = "Form Rights";
             // 
@@ -645,7 +607,7 @@
             // 
             this.picCompany.BackColor = System.Drawing.Color.Transparent;
             this.picCompany.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCompany.Image = ((System.Drawing.Image)(resources.GetObject("picCompany.Image")));
+            this.picCompany.Image = global::TAILORING.Properties.Resources.companywhiet;
             this.picCompany.Location = new System.Drawing.Point(12, 281);
             this.picCompany.Name = "picCompany";
             this.picCompany.Size = new System.Drawing.Size(84, 44);
@@ -664,10 +626,11 @@
             // 
             this.lblCompany.AutoSize = true;
             this.lblCompany.BackColor = System.Drawing.Color.Transparent;
-            this.lblCompany.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompany.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblCompany.ForeColor = System.Drawing.Color.White;
             this.lblCompany.Location = new System.Drawing.Point(73, 298);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(99, 15);
+            this.lblCompany.Size = new System.Drawing.Size(89, 16);
             this.lblCompany.TabIndex = 37;
             this.lblCompany.Text = "Company Master";
             // 
@@ -707,10 +670,11 @@
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployee.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblEmployee.ForeColor = System.Drawing.Color.White;
             this.lblEmployee.Location = new System.Drawing.Point(265, 200);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(100, 15);
+            this.lblEmployee.Size = new System.Drawing.Size(90, 16);
             this.lblEmployee.TabIndex = 39;
             this.lblEmployee.Text = "Employee Master";
             // 
@@ -731,7 +695,7 @@
             // 
             this.picCustomer.BackColor = System.Drawing.Color.Transparent;
             this.picCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCustomer.Image = ((System.Drawing.Image)(resources.GetObject("picCustomer.Image")));
+            this.picCustomer.Image = global::TAILORING.Properties.Resources.customerwhite;
             this.picCustomer.Location = new System.Drawing.Point(161, 282);
             this.picCustomer.Name = "picCustomer";
             this.picCustomer.Size = new System.Drawing.Size(86, 44);
@@ -750,10 +714,11 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblCustomer.ForeColor = System.Drawing.Color.White;
             this.lblCustomer.Location = new System.Drawing.Point(253, 298);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(99, 15);
+            this.lblCustomer.Size = new System.Drawing.Size(88, 16);
             this.lblCustomer.TabIndex = 43;
             this.lblCustomer.Text = "Customer Master";
             // 
@@ -774,7 +739,7 @@
             // 
             this.picProduct.BackColor = System.Drawing.Color.Transparent;
             this.picProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picProduct.Image = ((System.Drawing.Image)(resources.GetObject("picProduct.Image")));
+            this.picProduct.Image = global::TAILORING.Properties.Resources.productmasterwhite;
             this.picProduct.Location = new System.Drawing.Point(161, 232);
             this.picProduct.Name = "picProduct";
             this.picProduct.Size = new System.Drawing.Size(93, 44);
@@ -793,10 +758,11 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblProduct.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
             this.lblProduct.Location = new System.Drawing.Point(253, 250);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(90, 15);
+            this.lblProduct.Size = new System.Drawing.Size(79, 16);
             this.lblProduct.TabIndex = 41;
             this.lblProduct.Text = "Product Master";
             // 
@@ -816,7 +782,7 @@
             // 
             this.picProductRate.BackColor = System.Drawing.Color.Transparent;
             this.picProductRate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picProductRate.Image = ((System.Drawing.Image)(resources.GetObject("picProductRate.Image")));
+            this.picProductRate.Image = global::TAILORING.Properties.Resources.productratewhite;
             this.picProductRate.Location = new System.Drawing.Point(676, 190);
             this.picProductRate.Name = "picProductRate";
             this.picProductRate.Size = new System.Drawing.Size(93, 44);
@@ -834,10 +800,11 @@
             // 
             this.lblProductRate.AutoSize = true;
             this.lblProductRate.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductRate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductRate.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblProductRate.ForeColor = System.Drawing.Color.White;
             this.lblProductRate.Location = new System.Drawing.Point(768, 208);
             this.lblProductRate.Name = "lblProductRate";
-            this.lblProductRate.Size = new System.Drawing.Size(117, 15);
+            this.lblProductRate.Size = new System.Drawing.Size(104, 16);
             this.lblProductRate.TabIndex = 60;
             this.lblProductRate.Text = "Product Rate Master";
             // 
@@ -857,7 +824,7 @@
             // 
             this.picGST.BackColor = System.Drawing.Color.Transparent;
             this.picGST.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picGST.Image = ((System.Drawing.Image)(resources.GetObject("picGST.Image")));
+            this.picGST.Image = global::TAILORING.Properties.Resources.GST_White;
             this.picGST.Location = new System.Drawing.Point(489, 185);
             this.picGST.Name = "picGST";
             this.picGST.Size = new System.Drawing.Size(84, 44);
@@ -875,10 +842,11 @@
             // 
             this.lblGST.AutoSize = true;
             this.lblGST.BackColor = System.Drawing.Color.Transparent;
-            this.lblGST.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGST.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblGST.ForeColor = System.Drawing.Color.White;
             this.lblGST.Location = new System.Drawing.Point(538, 200);
             this.lblGST.Name = "lblGST";
-            this.lblGST.Size = new System.Drawing.Size(112, 15);
+            this.lblGST.Size = new System.Drawing.Size(103, 16);
             this.lblGST.TabIndex = 57;
             this.lblGST.Text = "   GST Management";
             // 
@@ -906,7 +874,7 @@
             // 
             this.picNewOrder.BackColor = System.Drawing.Color.Transparent;
             this.picNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("picNewOrder.Image")));
+            this.picNewOrder.Image = global::TAILORING.Properties.Resources.newOrder;
             this.picNewOrder.Location = new System.Drawing.Point(10, 343);
             this.picNewOrder.Name = "picNewOrder";
             this.picNewOrder.Size = new System.Drawing.Size(59, 44);
@@ -925,10 +893,11 @@
             // 
             this.lblNewOrder.AutoSize = true;
             this.lblNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewOrder.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblNewOrder.ForeColor = System.Drawing.Color.White;
             this.lblNewOrder.Location = new System.Drawing.Point(7, 390);
             this.lblNewOrder.Name = "lblNewOrder";
-            this.lblNewOrder.Size = new System.Drawing.Size(64, 15);
+            this.lblNewOrder.Size = new System.Drawing.Size(61, 16);
             this.lblNewOrder.TabIndex = 45;
             this.lblNewOrder.Text = "New Order";
             // 
@@ -968,10 +937,11 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrderList.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderList.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblOrderList.ForeColor = System.Drawing.Color.White;
             this.lblOrderList.Location = new System.Drawing.Point(138, 360);
             this.lblOrderList.Name = "lblOrderList";
-            this.lblOrderList.Size = new System.Drawing.Size(66, 15);
+            this.lblOrderList.Size = new System.Drawing.Size(60, 16);
             this.lblOrderList.TabIndex = 47;
             this.lblOrderList.Text = "  Order List";
             // 
@@ -998,7 +968,7 @@
             // 
             this.picDashBoard.BackColor = System.Drawing.Color.Transparent;
             this.picDashBoard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("picDashBoard.Image")));
+            this.picDashBoard.Image = global::TAILORING.Properties.Resources.dashboard;
             this.picDashBoard.Location = new System.Drawing.Point(204, 343);
             this.picDashBoard.Name = "picDashBoard";
             this.picDashBoard.Size = new System.Drawing.Size(65, 44);
@@ -1017,10 +987,11 @@
             // 
             this.lblDashbaord.AutoSize = true;
             this.lblDashbaord.BackColor = System.Drawing.Color.Transparent;
-            this.lblDashbaord.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashbaord.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblDashbaord.ForeColor = System.Drawing.Color.White;
             this.lblDashbaord.Location = new System.Drawing.Point(265, 360);
             this.lblDashbaord.Name = "lblDashbaord";
-            this.lblDashbaord.Size = new System.Drawing.Size(66, 15);
+            this.lblDashbaord.Size = new System.Drawing.Size(61, 16);
             this.lblDashbaord.TabIndex = 49;
             this.lblDashbaord.Text = "Dashboard";
             // 
@@ -1049,7 +1020,7 @@
             // 
             this.picReport.BackColor = System.Drawing.Color.Transparent;
             this.picReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picReport.Image = ((System.Drawing.Image)(resources.GetObject("picReport.Image")));
+            this.picReport.Image = global::TAILORING.Properties.Resources.reportwhite;
             this.picReport.Location = new System.Drawing.Point(843, 250);
             this.picReport.Name = "picReport";
             this.picReport.Size = new System.Drawing.Size(76, 44);
@@ -1068,10 +1039,11 @@
             // 
             this.lblReport.AutoSize = true;
             this.lblReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblReport.ForeColor = System.Drawing.Color.White;
             this.lblReport.Location = new System.Drawing.Point(840, 297);
             this.lblReport.Name = "lblReport";
-            this.lblReport.Size = new System.Drawing.Size(76, 15);
+            this.lblReport.Size = new System.Drawing.Size(71, 16);
             this.lblReport.TabIndex = 51;
             this.lblReport.Text = "Order Report";
             // 
@@ -1110,10 +1082,11 @@
             // 
             this.lblCustomerReport.AutoSize = true;
             this.lblCustomerReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblCustomerReport.ForeColor = System.Drawing.Color.White;
             this.lblCustomerReport.Location = new System.Drawing.Point(840, 334);
             this.lblCustomerReport.Name = "lblCustomerReport";
-            this.lblCustomerReport.Size = new System.Drawing.Size(97, 15);
+            this.lblCustomerReport.Size = new System.Drawing.Size(88, 16);
             this.lblCustomerReport.TabIndex = 62;
             this.lblCustomerReport.Text = "Customer Report";
             // 
@@ -1152,10 +1125,11 @@
             // 
             this.lblSKUReport.AutoSize = true;
             this.lblSKUReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblSKUReport.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSKUReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblSKUReport.ForeColor = System.Drawing.Color.White;
             this.lblSKUReport.Location = new System.Drawing.Point(840, 360);
             this.lblSKUReport.Name = "lblSKUReport";
-            this.lblSKUReport.Size = new System.Drawing.Size(71, 15);
+            this.lblSKUReport.Size = new System.Drawing.Size(65, 16);
             this.lblSKUReport.TabIndex = 63;
             this.lblSKUReport.Text = "SKU Report";
             // 
@@ -1182,7 +1156,7 @@
             // 
             this.picbackrestore.BackColor = System.Drawing.Color.Transparent;
             this.picbackrestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbackrestore.Image = ((System.Drawing.Image)(resources.GetObject("picbackrestore.Image")));
+            this.picbackrestore.Image = global::TAILORING.Properties.Resources.backupwhite;
             this.picbackrestore.Location = new System.Drawing.Point(113, 426);
             this.picbackrestore.Name = "picbackrestore";
             this.picbackrestore.Size = new System.Drawing.Size(94, 44);
@@ -1201,10 +1175,11 @@
             // 
             this.lblbackrestore.AutoSize = true;
             this.lblbackrestore.BackColor = System.Drawing.Color.Transparent;
-            this.lblbackrestore.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbackrestore.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblbackrestore.ForeColor = System.Drawing.Color.White;
             this.lblbackrestore.Location = new System.Drawing.Point(93, 473);
             this.lblbackrestore.Name = "lblbackrestore";
-            this.lblbackrestore.Size = new System.Drawing.Size(98, 15);
+            this.lblbackrestore.Size = new System.Drawing.Size(89, 16);
             this.lblbackrestore.TabIndex = 53;
             this.lblbackrestore.Text = "Backup / Restore";
             // 
@@ -1231,7 +1206,7 @@
             // 
             this.picSetting.BackColor = System.Drawing.Color.Transparent;
             this.picSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSetting.Image = ((System.Drawing.Image)(resources.GetObject("picSetting.Image")));
+            this.picSetting.Image = global::TAILORING.Properties.Resources.settings;
             this.picSetting.Location = new System.Drawing.Point(204, 426);
             this.picSetting.Name = "picSetting";
             this.picSetting.Size = new System.Drawing.Size(78, 44);
@@ -1249,10 +1224,11 @@
             // 
             this.lblSetting.AutoSize = true;
             this.lblSetting.BackColor = System.Drawing.Color.Transparent;
-            this.lblSetting.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetting.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblSetting.ForeColor = System.Drawing.Color.White;
             this.lblSetting.Location = new System.Drawing.Point(197, 473);
             this.lblSetting.Name = "lblSetting";
-            this.lblSetting.Size = new System.Drawing.Size(60, 15);
+            this.lblSetting.Size = new System.Drawing.Size(53, 16);
             this.lblSetting.TabIndex = 55;
             this.lblSetting.Text = "   Settings";
             // 
@@ -1279,7 +1255,7 @@
             // 
             this.picHelp.BackColor = System.Drawing.Color.Transparent;
             this.picHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picHelp.Image = ((System.Drawing.Image)(resources.GetObject("picHelp.Image")));
+            this.picHelp.Image = global::TAILORING.Properties.Resources.helpwhite;
             this.picHelp.Location = new System.Drawing.Point(306, 426);
             this.picHelp.Name = "picHelp";
             this.picHelp.Size = new System.Drawing.Size(59, 44);
@@ -1292,6 +1268,48 @@
             this.ribbonHost26.HostedControl = null;
             this.ribbonHost26.Name = "ribbonHost26";
             this.ribbonHost26.Text = " ";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(1212, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 18);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Log Out";
+            this.label1.Click += new System.EventHandler(this.picLogOut_Click);
+            // 
+            // picLogOut
+            // 
+            this.picLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.picLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogOut.Image = global::TAILORING.Properties.Resources.logout;
+            this.picLogOut.Location = new System.Drawing.Point(1213, 40);
+            this.picLogOut.Name = "picLogOut";
+            this.picLogOut.Size = new System.Drawing.Size(48, 60);
+            this.picLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogOut.TabIndex = 25;
+            this.picLogOut.TabStop = false;
+            this.picLogOut.Click += new System.EventHandler(this.picLogOut_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::TAILORING.Properties.Resources.New_logo_2;
+            this.pictureBox2.Location = new System.Drawing.Point(512, 256);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(308, 232);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
             // 
             // frmHome
             // 
@@ -1356,8 +1374,6 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddUser)).EndInit();
@@ -1377,6 +1393,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbackrestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

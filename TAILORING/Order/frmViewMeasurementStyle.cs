@@ -31,9 +31,6 @@ namespace TAILORING.Order
         DataTable dtTempStyle = new DataTable();
         DataTable dtTempPosture = new DataTable();
 
-        Image Pending = TAILORING.Properties.Resources.bulet;
-        Image Done = TAILORING.Properties.Resources.tick;
-
         public bool IsEdit = false;
         public int pOrderID = 0;
         public string OrderNo = "NA";
@@ -609,11 +606,11 @@ namespace TAILORING.Order
 
         private void ChangeMeasurementStyleStatus()//char ps, int garmentid
         {
-            for (int i = 0; i < dtGarmentList.Rows.Count; i++)
-            {
-                dtGarmentList.Rows[i]["Style"] = Done;
-                dtGarmentList.Rows[i]["Measurement"] = Done;
-            }
+            //for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+            //{
+            //    dtGarmentList.Rows[i]["Style"] = Done;
+            //    dtGarmentList.Rows[i]["Measurement"] = Done;
+            //}
             dtGarmentList.AcceptChanges();
         }
     }

@@ -23,9 +23,6 @@ namespace TAILORING.Order
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        Image Pending = TAILORING.Properties.Resources.bulet;
-        Image Done = TAILORING.Properties.Resources.tick;
-
         public DataTable dtGarmentList = new DataTable();
         public DataSet dsMeasure = new DataSet();
 
@@ -98,9 +95,9 @@ namespace TAILORING.Order
 
                     SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
 
-                    dataGridView1.Rows[i].Cells["Measurement"].Value = dataGridView1.Rows[i].Cells["Measurement"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Measurement"].Value;
+                    //dataGridView1.Rows[i].Cells["Measurement"].Value = dataGridView1.Rows[i].Cells["Measurement"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Measurement"].Value;
 
-                    dataGridView1.Rows[i].Cells["Style"].Value = dataGridView1.Rows[i].Cells["Style"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Style"].Value;
+                    //dataGridView1.Rows[i].Cells["Style"].Value = dataGridView1.Rows[i].Cells["Style"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Style"].Value;
 
                     imageList.Images.Add(img);
                     //imageList.ImageSize = new Size(48, 56);
@@ -408,11 +405,11 @@ namespace TAILORING.Order
             {
                 if (ps == 'S')
                 {
-                    dr[0]["Style"] = Done;
+                    //dr[0]["Style"] = Done;
                 }
                 else
                 {
-                    dr[0]["Measurement"] = Done;
+                    //dr[0]["Measurement"] = Done;
                 }
             }
             dtGarmentList.AcceptChanges();

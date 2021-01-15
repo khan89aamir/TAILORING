@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeasurement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,18 +62,18 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.kryptonHeaderGroup4 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
+            this.gGlowGroupBox1 = new gGlowBox.gGlowGroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnBodyPosture = new System.Windows.Forms.PictureBox();
             this.btnMeasurment = new System.Windows.Forms.PictureBox();
             this.btnStyle = new System.Windows.Forms.PictureBox();
             this.picBody = new System.Windows.Forms.PictureBox();
             this.picMeasure = new System.Windows.Forms.PictureBox();
             this.picStyle = new System.Windows.Forms.PictureBox();
-            this.kryptonHeaderGroup4 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
-            this.gGlowGroupBox1 = new gGlowBox.gGlowGroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
@@ -100,20 +100,20 @@
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).BeginInit();
+            this.kryptonHeaderGroup4.Panel.SuspendLayout();
+            this.kryptonHeaderGroup4.SuspendLayout();
+            this.gGlowGroupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStyle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).BeginInit();
-            this.kryptonHeaderGroup4.Panel.SuspendLayout();
-            this.kryptonHeaderGroup4.SuspendLayout();
-            this.gGlowGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -331,13 +331,20 @@
             this.grpKrytonHeader.Panel.Controls.Add(this.grpMeasurement);
             this.grpKrytonHeader.Size = new System.Drawing.Size(970, 460);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpKrytonHeader.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpKrytonHeader.StateCommon.Border.Rounding = 9;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpKrytonHeader.TabIndex = 352;
             this.grpKrytonHeader.ValuesPrimary.Heading = "Garment Measurement";
             this.grpKrytonHeader.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpKrytonHeader.ValuesPrimary.Image")));
@@ -381,13 +388,20 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpStyle);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(970, 460);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.Rounding = 9;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 354;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Garment Style";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
@@ -429,9 +443,14 @@
             this.grpStyle.SetsGlowColor(this.kryptonButton1, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("kryptonButton1.sGlowColor"))));
             this.kryptonButton1.Size = new System.Drawing.Size(78, 28);
             this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Yellow;
+            this.kryptonButton1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.kryptonButton1.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonButton1.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonButton1.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.Cyan;
             this.kryptonButton1.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.kryptonButton1.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonButton1.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonButton1.TabIndex = 359;
             this.kryptonButton1.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
             this.kryptonButton1.Values.Text = "Save";
@@ -476,14 +495,21 @@
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.grpSKUList);
             this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 643);
             this.kryptonHeaderGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup2.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup2.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.Border.Rounding = 8;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup2.TabIndex = 355;
             this.kryptonHeaderGroup2.ValuesPrimary.Heading = "Selected SKUs";
             this.kryptonHeaderGroup2.ValuesPrimary.Image = null;
@@ -527,9 +553,14 @@
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.dataGridView1);
             this.kryptonHeaderGroup3.Size = new System.Drawing.Size(80, 38);
             this.kryptonHeaderGroup3.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup3.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup3.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.TabIndex = 356;
             this.kryptonHeaderGroup3.ValuesPrimary.Heading = "SKU Status";
             this.kryptonHeaderGroup3.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -547,14 +578,15 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(78, 11);
             this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
             this.dataGridView1.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
+            this.dataGridView1.StateCommon.DataCell.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dataGridView1.TabIndex = 287;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
@@ -568,8 +600,13 @@
             this.lnkAddItem.Size = new System.Drawing.Size(116, 28);
             this.lnkAddItem.StateCommon.Back.Color1 = System.Drawing.Color.Turquoise;
             this.lnkAddItem.StateCommon.Back.Color2 = System.Drawing.Color.DeepSkyBlue;
+            this.lnkAddItem.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.lnkAddItem.StateNormal.Content.LongText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddItem.StateNormal.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.lnkAddItem.StateNormal.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.lnkAddItem.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddItem.StateNormal.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.lnkAddItem.StateNormal.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.lnkAddItem.TabIndex = 359;
             this.lnkAddItem.Values.Image = ((System.Drawing.Image)(resources.GetObject("lnkAddItem.Values.Image")));
             this.lnkAddItem.Values.Text = "Body Posture";
@@ -595,7 +632,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.measurmentsmall;
             this.pictureBox1.Location = new System.Drawing.Point(16, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);
@@ -616,6 +653,73 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(984, 492);
             this.tabControl1.TabIndex = 373;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.kryptonHeaderGroup4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(976, 466);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // kryptonHeaderGroup4
+            // 
+            this.kryptonHeaderGroup4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonHeaderGroup4.HeaderVisibleSecondary = false;
+            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(3, 3);
+            this.kryptonHeaderGroup4.Name = "kryptonHeaderGroup4";
+            this.kryptonHeaderGroup4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            // 
+            // kryptonHeaderGroup4.Panel
+            // 
+            this.kryptonHeaderGroup4.Panel.Controls.Add(this.gGlowGroupBox1);
+            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(970, 460);
+            this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup4.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup4.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.Border.Rounding = 9;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
+            this.kryptonHeaderGroup4.TabIndex = 355;
+            this.kryptonHeaderGroup4.ValuesPrimary.Heading = "Body Posture";
+            this.kryptonHeaderGroup4.ValuesPrimary.Image = global::TAILORING.Properties.Resources.bodyPosture;
+            // 
+            // gGlowGroupBox1
+            // 
+            this.gGlowGroupBox1.BackColor = System.Drawing.Color.White;
+            this.gGlowGroupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.gGlowGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gGlowGroupBox1.ForeColor = System.Drawing.Color.Black;
+            this.gGlowGroupBox1.GlowAmount = 22;
+            this.gGlowGroupBox1.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
+            this.gGlowGroupBox1.GlowFeather = 60;
+            this.gGlowGroupBox1.GlowOn = true;
+            this.gGlowGroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.gGlowGroupBox1.Name = "gGlowGroupBox1";
+            this.gGlowGroupBox1.Size = new System.Drawing.Size(962, 430);
+            this.gGlowGroupBox1.TabIndex = 287;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(962, 430);
+            this.flowLayoutPanel1.TabIndex = 318;
             // 
             // tabPage1
             // 
@@ -638,17 +742,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.kryptonHeaderGroup4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(976, 466);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnBodyPosture
             // 
@@ -728,55 +821,6 @@
             this.picStyle.TabStop = false;
             this.picStyle.Visible = false;
             // 
-            // kryptonHeaderGroup4
-            // 
-            this.kryptonHeaderGroup4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonHeaderGroup4.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup4.Location = new System.Drawing.Point(3, 3);
-            this.kryptonHeaderGroup4.Name = "kryptonHeaderGroup4";
-            this.kryptonHeaderGroup4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            // 
-            // kryptonHeaderGroup4.Panel
-            // 
-            this.kryptonHeaderGroup4.Panel.Controls.Add(this.gGlowGroupBox1);
-            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(970, 460);
-            this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonHeaderGroup4.StateCommon.Border.Rounding = 9;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup4.TabIndex = 355;
-            this.kryptonHeaderGroup4.ValuesPrimary.Heading = "Body Posture";
-            this.kryptonHeaderGroup4.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup4.ValuesPrimary.Image")));
-            // 
-            // gGlowGroupBox1
-            // 
-            this.gGlowGroupBox1.BackColor = System.Drawing.Color.White;
-            this.gGlowGroupBox1.Controls.Add(this.flowLayoutPanel1);
-            this.gGlowGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gGlowGroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.gGlowGroupBox1.GlowAmount = 22;
-            this.gGlowGroupBox1.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
-            this.gGlowGroupBox1.GlowFeather = 60;
-            this.gGlowGroupBox1.GlowOn = true;
-            this.gGlowGroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.gGlowGroupBox1.Name = "gGlowGroupBox1";
-            this.gGlowGroupBox1.Size = new System.Drawing.Size(962, 430);
-            this.gGlowGroupBox1.TabIndex = 287;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(962, 430);
-            this.flowLayoutPanel1.TabIndex = 318;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -853,20 +897,20 @@
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
+            this.kryptonHeaderGroup4.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).EndInit();
+            this.kryptonHeaderGroup4.ResumeLayout(false);
+            this.gGlowGroupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStyle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
-            this.kryptonHeaderGroup4.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).EndInit();
-            this.kryptonHeaderGroup4.ResumeLayout(false);
-            this.gGlowGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
             this.kryptonPanel2.PerformLayout();

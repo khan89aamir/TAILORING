@@ -21,9 +21,6 @@ namespace TAILORING.Masters
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        Image B_Leave = TAILORING.Properties.Resources.B_click;
-        Image B_Enter = TAILORING.Properties.Resources.B_on;
-
         int EmployeeID = 0;
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -65,13 +62,6 @@ namespace TAILORING.Masters
         {
             dtpDOB.ShowCheckBox = true;
             dtpDOB.Checked = false;
-
-            //btnAdd.BackgroundImage = B_Leave;
-            //btnSave.BackgroundImage = B_Leave;
-            //btnEdit.BackgroundImage = B_Leave;
-            //btnUpdate.BackgroundImage = B_Leave;
-            //btnDelete.BackgroundImage = B_Leave;
-            //btnCancel.BackgroundImage = B_Leave;
 
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);

@@ -706,7 +706,7 @@ namespace TAILORING.Order
         {
             if (Convert.ToInt32(cmbStyleQTY.SelectedItem) > 1)
             {
-                checkBox1.Checked = false;
+                //checkBox1.Checked = false;
                 checkBox1.Enabled = true;
             }
             else

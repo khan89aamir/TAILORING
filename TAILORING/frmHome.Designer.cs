@@ -524,11 +524,11 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblUser.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(73, 194);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(53, 16);
+            this.lblUser.Size = new System.Drawing.Size(65, 16);
             this.lblUser.TabIndex = 35;
             this.lblUser.Text = "Add User";
             // 
@@ -571,11 +571,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(64, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.Size = new System.Drawing.Size(84, 16);
             this.label4.TabIndex = 33;
             this.label4.Text = "Form Rights";
             // 
@@ -670,11 +670,11 @@
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployee.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblEmployee.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployee.ForeColor = System.Drawing.Color.White;
             this.lblEmployee.Location = new System.Drawing.Point(265, 200);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(90, 16);
+            this.lblEmployee.Size = new System.Drawing.Size(117, 16);
             this.lblEmployee.TabIndex = 39;
             this.lblEmployee.Text = "Employee Master";
             // 
@@ -714,11 +714,11 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomer.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblCustomer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.ForeColor = System.Drawing.Color.White;
             this.lblCustomer.Location = new System.Drawing.Point(253, 298);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(88, 16);
+            this.lblCustomer.Size = new System.Drawing.Size(114, 16);
             this.lblCustomer.TabIndex = 43;
             this.lblCustomer.Text = "Customer Master";
             // 
@@ -758,11 +758,11 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblProduct.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblProduct.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProduct.ForeColor = System.Drawing.Color.White;
             this.lblProduct.Location = new System.Drawing.Point(253, 250);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(79, 16);
+            this.lblProduct.Size = new System.Drawing.Size(103, 16);
             this.lblProduct.TabIndex = 41;
             this.lblProduct.Text = "Product Master";
             // 
@@ -800,11 +800,11 @@
             // 
             this.lblProductRate.AutoSize = true;
             this.lblProductRate.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductRate.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblProductRate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductRate.ForeColor = System.Drawing.Color.White;
             this.lblProductRate.Location = new System.Drawing.Point(768, 208);
             this.lblProductRate.Name = "lblProductRate";
-            this.lblProductRate.Size = new System.Drawing.Size(104, 16);
+            this.lblProductRate.Size = new System.Drawing.Size(136, 16);
             this.lblProductRate.TabIndex = 60;
             this.lblProductRate.Text = "Product Rate Master";
             // 
@@ -842,11 +842,11 @@
             // 
             this.lblGST.AutoSize = true;
             this.lblGST.BackColor = System.Drawing.Color.Transparent;
-            this.lblGST.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblGST.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGST.ForeColor = System.Drawing.Color.White;
             this.lblGST.Location = new System.Drawing.Point(538, 200);
             this.lblGST.Name = "lblGST";
-            this.lblGST.Size = new System.Drawing.Size(103, 16);
+            this.lblGST.Size = new System.Drawing.Size(134, 16);
             this.lblGST.TabIndex = 57;
             this.lblGST.Text = "   GST Management";
             // 
@@ -893,11 +893,11 @@
             // 
             this.lblNewOrder.AutoSize = true;
             this.lblNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewOrder.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblNewOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewOrder.ForeColor = System.Drawing.Color.White;
             this.lblNewOrder.Location = new System.Drawing.Point(7, 390);
             this.lblNewOrder.Name = "lblNewOrder";
-            this.lblNewOrder.Size = new System.Drawing.Size(61, 16);
+            this.lblNewOrder.Size = new System.Drawing.Size(76, 16);
             this.lblNewOrder.TabIndex = 45;
             this.lblNewOrder.Text = "New Order";
             // 
@@ -937,11 +937,11 @@
             // 
             this.lblOrderList.AutoSize = true;
             this.lblOrderList.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrderList.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblOrderList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderList.ForeColor = System.Drawing.Color.White;
             this.lblOrderList.Location = new System.Drawing.Point(138, 360);
             this.lblOrderList.Name = "lblOrderList";
-            this.lblOrderList.Size = new System.Drawing.Size(60, 16);
+            this.lblOrderList.Size = new System.Drawing.Size(78, 16);
             this.lblOrderList.TabIndex = 47;
             this.lblOrderList.Text = "  Order List";
             // 
@@ -987,11 +987,11 @@
             // 
             this.lblDashbaord.AutoSize = true;
             this.lblDashbaord.BackColor = System.Drawing.Color.Transparent;
-            this.lblDashbaord.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblDashbaord.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashbaord.ForeColor = System.Drawing.Color.White;
             this.lblDashbaord.Location = new System.Drawing.Point(265, 360);
             this.lblDashbaord.Name = "lblDashbaord";
-            this.lblDashbaord.Size = new System.Drawing.Size(61, 16);
+            this.lblDashbaord.Size = new System.Drawing.Size(76, 16);
             this.lblDashbaord.TabIndex = 49;
             this.lblDashbaord.Text = "Dashboard";
             // 
@@ -1039,11 +1039,11 @@
             // 
             this.lblReport.AutoSize = true;
             this.lblReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReport.ForeColor = System.Drawing.Color.White;
             this.lblReport.Location = new System.Drawing.Point(840, 297);
             this.lblReport.Name = "lblReport";
-            this.lblReport.Size = new System.Drawing.Size(71, 16);
+            this.lblReport.Size = new System.Drawing.Size(90, 16);
             this.lblReport.TabIndex = 51;
             this.lblReport.Text = "Order Report";
             // 
@@ -1082,11 +1082,11 @@
             // 
             this.lblCustomerReport.AutoSize = true;
             this.lblCustomerReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblCustomerReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerReport.ForeColor = System.Drawing.Color.White;
             this.lblCustomerReport.Location = new System.Drawing.Point(840, 334);
             this.lblCustomerReport.Name = "lblCustomerReport";
-            this.lblCustomerReport.Size = new System.Drawing.Size(88, 16);
+            this.lblCustomerReport.Size = new System.Drawing.Size(114, 16);
             this.lblCustomerReport.TabIndex = 62;
             this.lblCustomerReport.Text = "Customer Report";
             // 
@@ -1125,11 +1125,11 @@
             // 
             this.lblSKUReport.AutoSize = true;
             this.lblSKUReport.BackColor = System.Drawing.Color.Transparent;
-            this.lblSKUReport.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblSKUReport.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSKUReport.ForeColor = System.Drawing.Color.White;
             this.lblSKUReport.Location = new System.Drawing.Point(840, 360);
             this.lblSKUReport.Name = "lblSKUReport";
-            this.lblSKUReport.Size = new System.Drawing.Size(65, 16);
+            this.lblSKUReport.Size = new System.Drawing.Size(81, 16);
             this.lblSKUReport.TabIndex = 63;
             this.lblSKUReport.Text = "SKU Report";
             // 
@@ -1175,11 +1175,11 @@
             // 
             this.lblbackrestore.AutoSize = true;
             this.lblbackrestore.BackColor = System.Drawing.Color.Transparent;
-            this.lblbackrestore.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblbackrestore.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbackrestore.ForeColor = System.Drawing.Color.White;
             this.lblbackrestore.Location = new System.Drawing.Point(93, 473);
             this.lblbackrestore.Name = "lblbackrestore";
-            this.lblbackrestore.Size = new System.Drawing.Size(89, 16);
+            this.lblbackrestore.Size = new System.Drawing.Size(115, 16);
             this.lblbackrestore.TabIndex = 53;
             this.lblbackrestore.Text = "Backup / Restore";
             // 
@@ -1224,11 +1224,11 @@
             // 
             this.lblSetting.AutoSize = true;
             this.lblSetting.BackColor = System.Drawing.Color.Transparent;
-            this.lblSetting.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
+            this.lblSetting.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetting.ForeColor = System.Drawing.Color.White;
             this.lblSetting.Location = new System.Drawing.Point(197, 473);
             this.lblSetting.Name = "lblSetting";
-            this.lblSetting.Size = new System.Drawing.Size(53, 16);
+            this.lblSetting.Size = new System.Drawing.Size(71, 16);
             this.lblSetting.TabIndex = 55;
             this.lblSetting.Text = "   Settings";
             // 

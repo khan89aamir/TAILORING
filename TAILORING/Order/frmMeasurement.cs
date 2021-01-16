@@ -391,20 +391,20 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempStyle))
             {
+                DataRow[] drdup = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID=" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
+                if (drdup.Length > 0)
+                {
+                    p.Parent.BackColor = Color.Transparent;
+                    drdup[0].Delete();
+                    dtTempStyle.AcceptChanges();
+                    return;
+                }
                 DataRow[] dr = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID<>" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
                 if (dr.Length > 0)
                 {
                     dr[0].Delete();
                     dtTempStyle.AcceptChanges();
                 }
-                //else
-                //{
-                //    DataRow[] drdup = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID=" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
-                //    if (drdup.Length > 0)
-                //    {
-                //        p.Parent.BackColor = Color.Transparent;
-                //    }
-                //}
             }
             DataRow drow = dtTempStyle.NewRow();
             drow["GarmentID"] = GarmentID;
@@ -426,10 +426,12 @@ namespace TAILORING.Order
                 if (ps == 'S')
                 {
                     //dr[0]["Style"] = Done;
+                    btnStyle.Image = Properties.Resources.StyleCheck;
                 }
                 else
                 {
                     //dr[0]["Measurement"] = Done;
+                    btnMeasureSave.Image = Properties.Resources.measurcheck;
                 }
             }
             dtGarmentList.AcceptChanges();
@@ -519,13 +521,22 @@ namespace TAILORING.Order
             p.Parent.BackColor = Color.LightGray;
 
             AddTempdtStyle(p);
+
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);
             for (int i = 0; i < ctr.Length; i++)
             {
                 KryptonButton btn = (KryptonButton)ctr[i];
-                //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
-                btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
-                btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                if (p.Parent.BackColor != Color.Transparent)
+                {
+                    //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                }
+                else
+                {
+                    btn.StateCommon.Back.Color1 = Color.LightGray;
+                    btn.StateCommon.Back.Color2 = Color.LightGray;
+                }
             }
         }
 

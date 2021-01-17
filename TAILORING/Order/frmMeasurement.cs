@@ -699,6 +699,7 @@ namespace TAILORING.Order
                 CopyPreviousGarmentStyle();
 
                 cmbStyleQTY_SelectionChangeCommitted(sender, e);
+                //checkBox1.Checked = true;
             }
         }
 
@@ -899,7 +900,7 @@ namespace TAILORING.Order
                 grp.Name = "grp";
                 grp.Size = new Size(kryptonHeaderGroup4.Size.Width - 60, 185);
                 grp.Text = dt.Rows[i]["BodyPostureType"].ToString();
-                grp.Font = new Font("Times", 14.1f, FontStyle.Bold);
+                grp.Font = new Font("Times", 11.1f, FontStyle.Bold);
 
                 pnlContainer.BorderStyle = BorderStyle.FixedSingle;
                 pnlContainer.AutoScroll = true;

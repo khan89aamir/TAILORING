@@ -70,8 +70,11 @@
     <ApplicationIcon>Logo 1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\CoreAppLib.1.0.15\lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="CoreApp, Version=3.1.2.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -490,6 +493,10 @@
     <None Include="Resources\kryptonHeaderGroup3.ValuesPrimary.Image.png" />
     <None Include="Resources\customerwhite.png" />
     <None Include="Resources\customersmall.png" />
+    <None Include="Resources\Software logo1.png" />
+    <None Include="Resources\Picture1.png" />
+    <None Include="Resources\BillDetailswhite.png" />
+    <None Include="Resources\EmployeeNormalWhite.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

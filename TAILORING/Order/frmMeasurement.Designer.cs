@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeasurement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -214,12 +214,12 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.grpStyle.SetEffectType(this.checkBox1, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
+            this.grpStyle.SetEffectType(this.checkBox1, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.checkBox1.Enabled = false;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(243, 13);
+            this.checkBox1.Location = new System.Drawing.Point(230, 12);
             this.checkBox1.Name = "checkBox1";
             this.grpStyle.SetsGlowColor(this.checkBox1, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("checkBox1.sGlowColor"))));
             this.checkBox1.Size = new System.Drawing.Size(180, 21);
@@ -340,7 +340,7 @@
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpKrytonHeader.TabIndex = 352;
             this.grpKrytonHeader.ValuesPrimary.Heading = "Garment Measurement";
-            this.grpKrytonHeader.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpKrytonHeader.ValuesPrimary.Image")));
+            this.grpKrytonHeader.ValuesPrimary.Image = global::TAILORING.Properties.Resources.measurmentsmall;
             // 
             // grpMeasurement
             // 
@@ -378,7 +378,7 @@
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.TabIndex = 354;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Garment Style";
-            this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
+            this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.style;
             // 
             // grpStyle
             // 
@@ -390,8 +390,8 @@
             this.grpStyle.Controls.Add(this.flowStyleName);
             this.grpStyle.Controls.Add(this.label3);
             this.grpStyle.Controls.Add(this.label2);
-            this.grpStyle.Controls.Add(this.cmbFitType);
             this.grpStyle.Controls.Add(this.checkBox1);
+            this.grpStyle.Controls.Add(this.cmbFitType);
             this.grpStyle.Controls.Add(this.label1);
             this.grpStyle.Controls.Add(this.cmbStyleQTY);
             this.grpStyle.Controls.Add(this.cmbStichType);
@@ -535,8 +535,8 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(78, 11);
@@ -581,7 +581,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TAILORING.Properties.Resources.measurmentsmall;
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.measurmentNormal;
             this.pictureBox1.Location = new System.Drawing.Point(16, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);
@@ -767,9 +767,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(0, 184);
+            this.panel1.Location = new System.Drawing.Point(0, 182);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(959, 40);
+            this.panel1.Size = new System.Drawing.Size(959, 43);
             this.panel1.TabIndex = 382;
             // 
             // kryptonPanel2

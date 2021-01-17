@@ -67,6 +67,7 @@ namespace TAILORING
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+          
             try
             {
                 clsUtility.DBName = "TAILORING_01";
@@ -339,6 +340,31 @@ namespace TAILORING
             {
                 clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
+        }
+
+        private void kryptonRibbonGroup3_DialogBoxLauncherClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonRibbonGroup2_DialogBoxLauncherClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonRibbonGroup2_DialogBoxLauncherClick_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonRibbonGroup1_DialogBoxLauncherClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonRibbonGroupButton15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

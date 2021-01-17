@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -56,16 +56,6 @@
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtGrossAmt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerAdd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
@@ -80,6 +70,16 @@
             this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtGrossAmt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerAdd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
@@ -503,6 +503,134 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
+            // GarmentID
+            // 
+            this.GarmentID.DataPropertyName = "GarmentID";
+            this.GarmentID.HeaderText = "GarmentID";
+            this.GarmentID.Name = "GarmentID";
+            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GarmentID.Visible = false;
+            this.GarmentID.Width = 100;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "GarmentCode";
+            this.Column1.HeaderText = "GarmentCode";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 100;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "GarmentName";
+            this.Column2.HeaderText = "GarmentName";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 100;
+            // 
+            // ServiceID
+            // 
+            this.ServiceID.DataPropertyName = "ServiceID";
+            this.ServiceID.HeaderText = "ServiceID";
+            this.ServiceID.Name = "ServiceID";
+            this.ServiceID.Visible = false;
+            this.ServiceID.Width = 100;
+            // 
+            // Service
+            // 
+            this.Service.DataPropertyName = "Service";
+            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Service.DropDownWidth = 40;
+            this.Service.HeaderText = "Service";
+            this.Service.Items.AddRange(new string[] {
+            "Normal",
+            "Urgent"});
+            this.Service.Name = "Service";
+            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Service.Width = 60;
+            // 
+            // TrailDate
+            // 
+            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.TrailDate.Checked = false;
+            this.TrailDate.DataPropertyName = "TrailDate";
+            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TrailDate.HeaderText = "TrailDate";
+            this.TrailDate.Name = "TrailDate";
+            this.TrailDate.ShowCheckBox = true;
+            this.TrailDate.Width = 100;
+            // 
+            // DeliveryDate
+            // 
+            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.DeliveryDate.Checked = false;
+            this.DeliveryDate.DataPropertyName = "DeliveryDate";
+            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DeliveryDate.HeaderText = "DeliveryDate";
+            this.DeliveryDate.Name = "DeliveryDate";
+            this.DeliveryDate.ShowCheckBox = true;
+            this.DeliveryDate.Width = 100;
+            // 
+            // TrimAmount
+            // 
+            this.TrimAmount.DataPropertyName = "TrimAmount";
+            this.TrimAmount.HeaderText = "Trim Amount";
+            this.TrimAmount.Name = "TrimAmount";
+            this.TrimAmount.Width = 100;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.HeaderText = "QTY";
+            this.QTY.Name = "QTY";
+            this.QTY.Width = 100;
+            // 
+            // Rate
+            // 
+            this.Rate.DataPropertyName = "Rate";
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.Width = 100;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.Width = 100;
+            // 
+            // Photo
+            // 
+            this.Photo.DataPropertyName = "Photo";
+            this.Photo.HeaderText = "Photo";
+            this.Photo.Name = "Photo";
+            this.Photo.Visible = false;
+            this.Photo.Width = 100;
+            // 
+            // ColDelete
+            // 
+            this.ColDelete.DataPropertyName = "Delete";
+            this.ColDelete.HeaderText = "Delete";
+            this.ColDelete.Name = "ColDelete";
+            this.ColDelete.Text = "Delete";
+            this.ColDelete.UseColumnTextForButtonValue = true;
+            // 
+            // ColDelete1
+            // 
+            this.ColDelete1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
+            this.ColDelete1.DataPropertyName = "Delete1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColDelete1.HeaderText = "Delete1";
+            this.ColDelete1.Name = "ColDelete1";
+            this.ColDelete1.Text = "Delete1";
+            this.ColDelete1.UseColumnTextForButtonValue = true;
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -660,7 +788,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.txtCustomerAdd.StateCommon.Border.Rounding = 15;
+            this.txtCustomerAdd.StateCommon.Border.Rounding = 8;
             this.txtCustomerAdd.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerAdd.TabIndex = 386;
             this.txtCustomerAdd.Text = "";
@@ -681,141 +809,13 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TAILORING.Properties.Resources.NewOrderSmall;
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.newOrder;
             this.pictureBox1.Location = new System.Drawing.Point(16, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
-            // 
-            // GarmentID
-            // 
-            this.GarmentID.DataPropertyName = "GarmentID";
-            this.GarmentID.HeaderText = "GarmentID";
-            this.GarmentID.Name = "GarmentID";
-            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GarmentID.Visible = false;
-            this.GarmentID.Width = 100;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "GarmentCode";
-            this.Column1.HeaderText = "GarmentCode";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 100;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "GarmentName";
-            this.Column2.HeaderText = "GarmentName";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 100;
-            // 
-            // ServiceID
-            // 
-            this.ServiceID.DataPropertyName = "ServiceID";
-            this.ServiceID.HeaderText = "ServiceID";
-            this.ServiceID.Name = "ServiceID";
-            this.ServiceID.Visible = false;
-            this.ServiceID.Width = 100;
-            // 
-            // Service
-            // 
-            this.Service.DataPropertyName = "Service";
-            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Service.DropDownWidth = 40;
-            this.Service.HeaderText = "Service";
-            this.Service.Items.AddRange(new string[] {
-            "Normal",
-            "Urgent"});
-            this.Service.Name = "Service";
-            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Service.Width = 60;
-            // 
-            // TrailDate
-            // 
-            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.TrailDate.Checked = false;
-            this.TrailDate.DataPropertyName = "TrailDate";
-            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TrailDate.HeaderText = "TrailDate";
-            this.TrailDate.Name = "TrailDate";
-            this.TrailDate.ShowCheckBox = true;
-            this.TrailDate.Width = 100;
-            // 
-            // DeliveryDate
-            // 
-            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.DeliveryDate.Checked = false;
-            this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DeliveryDate.HeaderText = "DeliveryDate";
-            this.DeliveryDate.Name = "DeliveryDate";
-            this.DeliveryDate.ShowCheckBox = true;
-            this.DeliveryDate.Width = 100;
-            // 
-            // TrimAmount
-            // 
-            this.TrimAmount.DataPropertyName = "TrimAmount";
-            this.TrimAmount.HeaderText = "Trim Amount";
-            this.TrimAmount.Name = "TrimAmount";
-            this.TrimAmount.Width = 100;
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.HeaderText = "QTY";
-            this.QTY.Name = "QTY";
-            this.QTY.Width = 100;
-            // 
-            // Rate
-            // 
-            this.Rate.DataPropertyName = "Rate";
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            this.Rate.Width = 100;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.Width = 100;
-            // 
-            // Photo
-            // 
-            this.Photo.DataPropertyName = "Photo";
-            this.Photo.HeaderText = "Photo";
-            this.Photo.Name = "Photo";
-            this.Photo.Visible = false;
-            this.Photo.Width = 100;
-            // 
-            // ColDelete
-            // 
-            this.ColDelete.DataPropertyName = "Delete";
-            this.ColDelete.HeaderText = "Delete";
-            this.ColDelete.Name = "ColDelete";
-            this.ColDelete.Text = "Delete";
-            this.ColDelete.UseColumnTextForButtonValue = true;
-            // 
-            // ColDelete1
-            // 
-            this.ColDelete1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
-            this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColDelete1.HeaderText = "Delete1";
-            this.ColDelete1.Name = "ColDelete1";
-            this.ColDelete1.Text = "Delete1";
-            this.ColDelete1.UseColumnTextForButtonValue = true;
             // 
             // frmOrderManagement
             // 

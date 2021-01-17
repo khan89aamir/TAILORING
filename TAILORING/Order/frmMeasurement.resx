@@ -117,15 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="kryptonButton1.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
-        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
-        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
-        AADNAAAACw==
-</value>
-  </data>
-  <data name="cmbFitType.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="checkBox1.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
         dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
@@ -141,6 +133,14 @@
         AADNAAAACw==
 </value>
   </data>
+  <data name="cmbFitType.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
+        dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
+        AADNAAAACw==
+</value>
+  </data>
   <data name="cmbStichType.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
@@ -149,44 +149,12 @@
         AADNAAAACw==
 </value>
   </data>
-  <data name="checkBox1.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="kryptonButton1.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
         dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
         bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
         AADNAAAACw==
-</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="grpKrytonHeader.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QEHEgwJ4CGxLgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIjSURBVDhP
-        jVNLaxRBEG5R0JnuDUHiwcfBgyKiTFdvQDx6yC+Ihph4STDoyaAHRUUkQqZ7ZpUYJUETIh6MOYigIoiy
-        iIKvu088CXpQvCgKxlcSv+rpJYuuaMFHTVd9X9VU9YyoWelEa0vsaJd0dF06/cLD0gGcLVCNM31E5eX1
-        4lLHwiCZN5lRN8SfQfwC7C856sO5TzpzTllzNhrUmxB/DszElkZkujEJUiGaB6gZiW/AnLTaQfS4eDY3
-        izNVlKOriHf5OIAGPcqZrUWF02sWI/iGE+h6v+TKPexVRuOI3QKGVUV3SlceZg7wU7qEi931+jg3K5pS
-        6kagCsxinA/wUzxznNFhdB/D2TcAXkZ5uR0NHuD5q99HU4XW4vADC7sIckeUmj0octKfM7qinD4jc9or
-        K6YrGtIri3GKUbCfZbUCPhDA+3iGLvfg7wBPgPeRNf0QX8NzjTcjjidSxGnrciQeotOjumQ9PqnMbP8t
-        /wrXvM/vgE1Z3Y7gDeBQIFwI/mnYfm0HgHnNXmV6Q5AXhkRbAT2N2fpBmsQ1HoT/Pi/mufUxLHh3kDWw
-        gS2LlubJKl5gvRA4D/CbVMWcWBDYDQwFlKUURNy3F74D+Av9iDfb1pKvKwXmnxZbsxMjvAV5Ev5UKICF
-        0Q6+Pv5qA7WxYeZevj5gFHMe5X8Ee7mNAlOB8m/zi8z0ROz0ZQhno8FkM48V0v9nSxytDj9Tbwj9xYT4
-        BV5gBTBS/vNXAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QEIChEMJXHLIwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFkSURBVDhP
-        Y8AGeDPNFwLxFu5Mcz2edHMtIHsjb6bFAqg0bsCbaaIOoc2fAPF/IP4LxH+g7CcgOb4sSxWGBgYmEBsC
-        cj3Z+TLNm4EK7oIU8mSb2vFlWOwBsp/xZJif5c0yPw3SDBITyLaSB7L/AdU/AtJtIL0MQAU2II1wnGHR
-        x5NhJSaVZswFYoMwiA0SAxqSh6IWqJeBJ9PSHkUw0/w+1G0MMAOgXJDX9iGrBenFZsB/UOCBNSAZwJds
-        KQSU+42sDqcBPJnmdegG8GaaxWOqw2UAMPAwDMiyWIehDpcBIMyfY6YIN6DQkhMo9gVdDV4DQCEOil6+
-        LPMm3mxzf2xq8BoAxHsZQkOZQRjInocmB8aEDPjNm20mDDHA7BUWeYIGAL1hHgvUbAvl7+PLtFgFwkD2
-        FZAYQQOA0bkTmNrmgth8GWbu/JmmSiAMDhewPAEDCGGwAeDoyjT/iC5JBP7An2OmCACI/0K/wFkc0QAA
-        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="SKUList.sGlowColor" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -197,6 +165,7 @@
         AADNAAAACw==
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picBody.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

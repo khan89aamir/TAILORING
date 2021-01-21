@@ -55,7 +55,7 @@ namespace TAILORING.Order
             lblOrderNo.Text = "Order No : " + OrderNo;
 
             IsAdmin();
-            
+
             LoadTailoringTheme();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
@@ -178,6 +178,10 @@ namespace TAILORING.Order
             p.Parent.BackColor = Color.LightGray;
 
             GetSelectedSKU(p);
+            if (picBody.Visible)
+            {
+                GetBodyPostureDetails();
+            }
         }
 
         private void GetSelectedSKU(PictureBox p)
@@ -313,23 +317,34 @@ namespace TAILORING.Order
                 btn.PaletteMode = PaletteMode.Office2010Blue;
                 // add round corner
                 btn.StateCommon.Border.Rounding = 5;
-            
+
+                btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                btn.StateCommon.Content.ShortText.Color2 = Color.Black;
+
                 btn.AutoSize = false;
                 btn.Size = new Size(187, 45);
                 btn.Click += btnStyleName_Click;
-                btn.StateCommon.Content.ShortText.Font = new Font("Aril", 12.3f, FontStyle.Bold);
+                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 12.3f, FontStyle.Bold);
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 if (a > 0)
                 {
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(17, 241, 41);
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(17, 241, 41);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
+                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
+                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    //btn.StateCommon.Content.ShortText.Color1 = Color.White;
                 }
                 else
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
                 }
-                
+
                 flowStyleName.Controls.Add(btn);
             }
         }
@@ -340,12 +355,19 @@ namespace TAILORING.Order
 
             KryptonButton btn = (KryptonButton)sender;
 
-            if (btn.StateCommon.Back.Color1 != Color.FromArgb(17, 241, 41))
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
             {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+
                 btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
+
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
+
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
             }
-               
 
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
@@ -443,7 +465,19 @@ namespace TAILORING.Order
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);
             for (int i = 0; i < ctr.Length; i++)
             {
-                ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                KryptonButton btn = (KryptonButton)ctr[i];
+                if (p.Parent.BackColor != Color.Transparent)
+                {
+                    //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                }
+                else
+                {
+                    btn.StateCommon.Back.Color1 = Color.LightGray;
+                    btn.StateCommon.Back.Color2 = Color.LightGray;
+                }
             }
         }
 
@@ -460,6 +494,15 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempStyle))
             {
+                DataRow[] drdup = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID=" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
+                if (drdup.Length > 0)
+                {
+                    p.Parent.BackColor = Color.Transparent;
+                    drdup[0].Delete();
+                    dtTempStyle.AcceptChanges();
+                    return;
+                }// above added
+
                 DataRow[] dr = dtTempStyle.Select("StyleID=" + StyleID + " AND GarmentID=" + GarmentID + " AND StyleImageID<>" + p.Name + " AND QTY=" + cmbStyleQTY.Text);
                 if (dr.Length > 0)
                 {
@@ -482,14 +525,15 @@ namespace TAILORING.Order
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
                 KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1 != Color.FromArgb(17, 241, 41))// Green
+                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
+
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
                 }
             }
-          
+
         }
 
         private void ClearGarmentSelection()
@@ -654,6 +698,9 @@ namespace TAILORING.Order
 
         private void ChangeMeasurementStyleStatus()//char ps, int garmentid
         {
+            btnStyle.Image = Properties.Resources.StyleCheck;
+            btnMeasurment.Image = Properties.Resources.measurcheck;
+            btnBodyPosture.Image = Properties.Resources.bodyCheck;
             //for (int i = 0; i < dtGarmentList.Rows.Count; i++)
             //{
             //    dtGarmentList.Rows[i]["Style"] = Done;

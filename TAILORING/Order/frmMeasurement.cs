@@ -218,7 +218,7 @@ namespace TAILORING.Order
                 KryptonButton btn = new KryptonButton();
 
                 // for flat style
-                btn.PaletteMode = PaletteMode.Office2010Blue;
+                btn.PaletteMode = PaletteMode.SparklePurple;
                 // add round corner
                 btn.StateCommon.Border.Rounding = 5;
 
@@ -229,13 +229,15 @@ namespace TAILORING.Order
                 //btn.FlatStyle = FlatStyle.Flat;
                 //btn.FlatAppearance.BorderSize = 0;
                 //btn.ForeColor = Color.White;//17, 241, 41
+                
+                btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
                 btn.AutoSize = false;
                 btn.Click += btnStyleName_Click;
-                btn.StateCommon.Content.ShortText.Font = new Font("Aril", 12.3f, FontStyle.Bold);
+                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 12.3f, FontStyle.Bold);
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 //btn.StatePressed.Back.ColorStyle = PaletteColorStyle.Solid;
                 if (a > 0)
@@ -248,8 +250,6 @@ namespace TAILORING.Order
 
                     btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
                     btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
-
-                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
                     //btn.StateNormal.Back.Color1 = Color.FromArgb(17, 241, 41);
                 }
@@ -287,7 +287,7 @@ namespace TAILORING.Order
             if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
             {
                 //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
-                btn.StateCommon.Content.ShortText.Color1 = Color.Black;//17, 241, 41
+
                 btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
 
@@ -503,7 +503,6 @@ namespace TAILORING.Order
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
-                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
                 }
                 //if (flowStyleName.Controls[i].BackColor != Color.FromArgb(17, 241, 41))// Green
                 //{

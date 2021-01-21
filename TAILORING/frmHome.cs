@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -64,7 +66,19 @@ namespace TAILORING
                 lblLicensedTo.Text = "NA";
             }
         }
-
+        public string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            MessageBox.Show("No network adapters with an IPv4 address in the system!");
+            return "NA";
+        }
         private void frmHome_Load(object sender, EventArgs e)
         {
           
@@ -85,7 +99,7 @@ namespace TAILORING
                     lblLoginName.Text = "Login By : Test Admin";
                 }
                 lblVersion.Text = "Version : " + Application.ProductVersion;
-
+                lblMachineIP.Text = GetLocalIPAddress();
                 DisplayRegistrationInfo();
             }
             catch { }

@@ -229,6 +229,8 @@
             this.kryptonRibbonGroupTriple32 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroupButton65 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblMachineIP = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -483,11 +485,11 @@
             // 
             this.lblRegistrationDate.AutoSize = true;
             this.lblRegistrationDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegistrationDate.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.lblRegistrationDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.lblRegistrationDate.ForeColor = System.Drawing.Color.White;
             this.lblRegistrationDate.Location = new System.Drawing.Point(129, 72);
             this.lblRegistrationDate.Name = "lblRegistrationDate";
-            this.lblRegistrationDate.Size = new System.Drawing.Size(25, 20);
+            this.lblRegistrationDate.Size = new System.Drawing.Size(30, 17);
             this.lblRegistrationDate.TabIndex = 32;
             this.lblRegistrationDate.Text = "NA";
             // 
@@ -495,11 +497,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(5, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 20);
+            this.label6.Size = new System.Drawing.Size(118, 17);
             this.label6.TabIndex = 31;
             this.label6.Text = "Registration Date :";
             // 
@@ -507,11 +509,11 @@
             // 
             this.lblLicensedTo.AutoSize = true;
             this.lblLicensedTo.BackColor = System.Drawing.Color.Transparent;
-            this.lblLicensedTo.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.lblLicensedTo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.lblLicensedTo.ForeColor = System.Drawing.Color.White;
             this.lblLicensedTo.Location = new System.Drawing.Point(129, 44);
             this.lblLicensedTo.Name = "lblLicensedTo";
-            this.lblLicensedTo.Size = new System.Drawing.Size(25, 20);
+            this.lblLicensedTo.Size = new System.Drawing.Size(30, 17);
             this.lblLicensedTo.TabIndex = 30;
             this.lblLicensedTo.Text = "NA";
             // 
@@ -519,11 +521,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(5, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Licensed to :";
             // 
@@ -531,11 +533,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 20);
+            this.label2.Size = new System.Drawing.Size(132, 19);
             this.label2.TabIndex = 28;
             this.label2.Text = "Registration Info :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -570,11 +572,11 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
             this.lblUser.Location = new System.Drawing.Point(16, 76);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(56, 16);
+            this.lblUser.Size = new System.Drawing.Size(57, 15);
             this.lblUser.TabIndex = 35;
             this.lblUser.Text = "Add User";
             // 
@@ -789,10 +791,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::TAILORING.Properties.Resources.Picture1;
-            this.pictureBox2.Location = new System.Drawing.Point(444, 178);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(491, 250);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(335, 265);
+            this.pictureBox2.Size = new System.Drawing.Size(271, 220);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
@@ -1256,11 +1258,12 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
+            this.kryptonRibbon1.SelectedContext = null;
             this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab9;
             this.kryptonRibbon1.ShowMinimizeButton = false;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 148);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 125);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Arial", 11F);
+            this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.kryptonRibbon1.TabIndex = 67;
             // 
@@ -1481,7 +1484,7 @@
             // kryptonRibbonGroupButton47
             // 
             this.kryptonRibbonGroupButton47.ImageLarge = global::TAILORING.Properties.Resources.dashboard;
-            this.kryptonRibbonGroupButton47.TextLine1 = "    Dashboard";
+            this.kryptonRibbonGroupButton47.TextLine1 = "   Dashboard";
             this.kryptonRibbonGroupButton47.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // kryptonRibbonTab12
@@ -1624,16 +1627,41 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.lblMachineIP);
+            this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label9);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(3, 479);
+            this.panel3.Location = new System.Drawing.Point(3, 461);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(324, 96);
+            this.panel3.Size = new System.Drawing.Size(324, 118);
             this.panel3.TabIndex = 68;
+            // 
+            // lblMachineIP
+            // 
+            this.lblMachineIP.AutoSize = true;
+            this.lblMachineIP.BackColor = System.Drawing.Color.Transparent;
+            this.lblMachineIP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMachineIP.ForeColor = System.Drawing.Color.White;
+            this.lblMachineIP.Location = new System.Drawing.Point(129, 99);
+            this.lblMachineIP.Name = "lblMachineIP";
+            this.lblMachineIP.Size = new System.Drawing.Size(30, 17);
+            this.lblMachineIP.TabIndex = 34;
+            this.lblMachineIP.Text = "NA";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 99);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 17);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Machine IP :";
             // 
             // label4
             // 
@@ -1641,7 +1669,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(129, 72);
+            this.label4.Location = new System.Drawing.Point(129, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 17);
             this.label4.TabIndex = 32;
@@ -1652,7 +1680,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 72);
+            this.label5.Location = new System.Drawing.Point(5, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 31;
@@ -1664,7 +1692,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(129, 44);
+            this.label7.Location = new System.Drawing.Point(129, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 17);
             this.label7.TabIndex = 30;
@@ -1675,7 +1703,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 44);
+            this.label8.Location = new System.Drawing.Point(5, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 17);
             this.label8.TabIndex = 29;
@@ -1696,6 +1724,7 @@
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::TAILORING.Properties.Resources.logout;
             this.pictureBox6.Location = new System.Drawing.Point(1219, 145);
             this.pictureBox6.Name = "pictureBox6";
@@ -1966,5 +1995,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblMachineIP;
+        private System.Windows.Forms.Label label10;
     }
 }

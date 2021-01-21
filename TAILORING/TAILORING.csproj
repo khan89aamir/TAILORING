@@ -494,9 +494,9 @@
     <None Include="Resources\customerwhite.png" />
     <None Include="Resources\customersmall.png" />
     <None Include="Resources\Software logo1.png" />
-    <None Include="Resources\Picture1.png" />
     <None Include="Resources\BillDetailswhite.png" />
     <None Include="Resources\EmployeeNormalWhite.png" />
+    <None Include="Resources\Picture1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

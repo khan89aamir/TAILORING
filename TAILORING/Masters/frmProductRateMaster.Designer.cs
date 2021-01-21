@@ -204,7 +204,7 @@
             this.grpProduct.Controls.Add(this.label4);
             this.grpProduct.Controls.Add(this.label2);
             this.grpProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpProduct.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.grpProduct.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.grpProduct.GlowAmount = 22;
             this.grpProduct.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
             this.grpProduct.GlowFeather = 60;
@@ -278,7 +278,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtRate.StateCommon.Border.Rounding = 10;
-            this.txtRate.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRate.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRate.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -290,7 +290,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(20, 19);
             this.label5.Name = "label5";
@@ -302,7 +302,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 67);
             this.label3.Name = "label3";
@@ -326,7 +326,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(373, 19);
             this.label4.Name = "label4";
@@ -412,7 +412,7 @@
             this.groupBox1.Controls.Add(this.rdShowAll);
             this.groupBox1.Controls.Add(this.rdSearchByProduct);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.GlowAmount = 22;
             this.groupBox1.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
@@ -454,7 +454,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByGarment.StateCommon.Border.Rounding = 10;
-            this.txtSearchByGarment.StateCommon.Content.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByGarment.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchByGarment.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -465,7 +465,7 @@
             // 
             this.rdSearchByService.AutoSize = true;
             this.groupBox1.SetEffectType(this.rdSearchByService, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdSearchByService.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdSearchByService.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.rdSearchByService.ForeColor = System.Drawing.Color.White;
             this.rdSearchByService.Location = new System.Drawing.Point(356, 17);
             this.rdSearchByService.Name = "rdSearchByService";
@@ -481,7 +481,7 @@
             this.rdShowAll.AutoSize = true;
             this.rdShowAll.Checked = true;
             this.groupBox1.SetEffectType(this.rdShowAll, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdShowAll.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdShowAll.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.rdShowAll.ForeColor = System.Drawing.Color.White;
             this.rdShowAll.Location = new System.Drawing.Point(647, 17);
             this.rdShowAll.Name = "rdShowAll";
@@ -497,7 +497,7 @@
             // 
             this.rdSearchByProduct.AutoSize = true;
             this.groupBox1.SetEffectType(this.rdSearchByProduct, gGlowBox.gGlowGroupBox.eEffectType.Shadow);
-            this.rdSearchByProduct.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
+            this.rdSearchByProduct.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.rdSearchByProduct.ForeColor = System.Drawing.Color.White;
             this.rdSearchByProduct.Location = new System.Drawing.Point(12, 17);
             this.rdSearchByProduct.Name = "rdSearchByProduct";

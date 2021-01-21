@@ -51,6 +51,104 @@ namespace TAILORING.Order
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void AddGarments()
+        {
+            flowGarmentList.Controls.Clear();
+            for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+            {
+                //Panel panel = new Panel();
+                FlowLayoutPanel panel = new FlowLayoutPanel();
+
+                PictureBox pic = new PictureBox();
+                Label lbl = new Label();
+
+                panel.Name = "pnl";
+                panel.Size = new Size(120, 200);
+                panel.Cursor = Cursors.Hand;
+
+                lbl.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
+                lbl.Text = dtGarmentList.Rows[i]["GarmentName"].ToString();
+                //lbl.AutoSize = true;
+                //lbl.Location = new Point(pic.Location.X, pic.Size.Height+20);
+                lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                lbl.TextAlign = ContentAlignment.TopCenter;
+
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                if (System.IO.File.Exists(dtGarmentList.Rows[i]["Photo"].ToString()))
+                {
+                    pic.Image = Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString());
+                }
+                else
+                {
+                    pic.Image = TAILORING.Properties.Resources.NoImage;
+                }
+                pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
+                pic.Size = new Size(panel.Size.Width - 10, panel.Size.Height - 20);
+                pic.Click += Pic_GarmentList_Click;
+                pic.BorderStyle = BorderStyle.None;
+
+                panel.Controls.Add(pic);
+                panel.Controls.Add(lbl);
+                flowGarmentList.Controls.Add(panel);
+
+                GetDefaultSelectSKU();
+
+                int a = GetSelectedStyleImage(GarmentID, StyleID);
+                if (pic.Name == a.ToString())
+                {
+                    pic.Parent.BackColor = Color.LightGray;
+                }
+            }
+        }
+
+        private void Pic_GarmentList_Click(object sender, EventArgs e)
+        {
+            ClearGarmentSelection();
+
+            PictureBox p = (PictureBox)sender;
+            p.Parent.BackColor = Color.LightGray;
+
+            GetSelectedSKU(p);
+            if (picBody.Visible)
+            {
+                GetBodyPostureDetails();
+            }
+        }
+
+        private void GetSelectedSKU(PictureBox p)
+        {
+            SaveddtMeasurement(); // Auto Saved Garment Measurement value
+
+            DataRow[] drow = dtGarmentList.Select("GarmentID=" + p.Name);
+            if (drow.Length > 0)
+            {
+                lblSKUName.Text = "SKU Selected : " + drow[0]["GarmentName"];
+                GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+                int QTY = Convert.ToInt32(drow[0]["QTY"]);
+
+                ctrlMeasurment1.ProductCount = 1;
+                GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+
+                AddStyleQTY(QTY);
+
+                GetGarmentStyle(GarmentID);// Garment Style
+
+                checkBox1.Enabled = false;
+
+                GetStichFitType();
+            }
+        }
+
+        private void ClearGarmentSelection()
+        {
+            flowStyleImage.Controls.Clear();
+            Control[] ctrl = flowGarmentList.Controls.Find("pnl", true);
+            for (int i = 0; i < ctrl.Length; i++)
+            {
+                ctrl[i].BackColor = Color.Transparent;
+            }
+        }
+
         private void frmMeasurement_Load(object sender, EventArgs e)
         {
             //HorizontalScroll.Maximum = 0;
@@ -87,30 +185,27 @@ namespace TAILORING.Order
                     dtGarmentList.Columns.Add("Style", typeof(Image));
                 }
                 dataGridView1.DataSource = dtGarmentList;
+                
+                AddGarments();
 
-                SKUList.Items.Clear();
-                for (int i = 0; i < dtGarmentList.Rows.Count; i++)
-                {
-                    Image img = Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString());
+                //SKUList.Items.Clear();
+                //for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+                //{
+                //    Image img = Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString());
 
-                    SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
+                //    SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
 
-                    //dataGridView1.Rows[i].Cells["Measurement"].Value = dataGridView1.Rows[i].Cells["Measurement"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Measurement"].Value;
+                //    imageList.Images.Add(img);
 
-                    //dataGridView1.Rows[i].Cells["Style"].Value = dataGridView1.Rows[i].Cells["Style"].Value == DBNull.Value ? Pending : dataGridView1.Rows[i].Cells["Style"].Value;
+                //    imageList.ImageSize = new Size(110, 200);
+                //    SKUList.View = System.Windows.Forms.View.LargeIcon;
+                //    SKUList.LargeImageList = imageList;
 
-                    imageList.Images.Add(img);
-                    //imageList.ImageSize = new Size(48, 56);
-                    //imageList.ImageSize = new Size(111, 96);
-                    imageList.ImageSize = new Size(110, 200);
-                    SKUList.View = System.Windows.Forms.View.LargeIcon;
-                    SKUList.LargeImageList = imageList;
-
-                    SKUList.Items[i].ImageIndex = i;
-                }
-                SKUList.Font = new Font("Times New Roman", 11, FontStyle.Bold);
-                SKUList.Items[0].Selected = true;
-                GetDefaultSelectSKU();
+                //    SKUList.Items[i].ImageIndex = i;
+                //}
+                //SKUList.Font = new Font("Times New Roman", 11, FontStyle.Bold);
+                //SKUList.Items[0].Selected = true;
+                //GetDefaultSelectSKU();
 
                 BindStichType();
                 BindFitType();
@@ -229,7 +324,7 @@ namespace TAILORING.Order
                 //btn.FlatStyle = FlatStyle.Flat;
                 //btn.FlatAppearance.BorderSize = 0;
                 //btn.ForeColor = Color.White;//17, 241, 41
-                
+
                 btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
@@ -595,23 +690,23 @@ namespace TAILORING.Order
         {
             SaveddtMeasurement(); // Auto Saved Garment Measurement value
 
-            lblSKUName.Text = SKUList.SelectedItems[0].Text.ToString();
-            DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
-            if (drow.Length > 0)
-            {
-                flowStyleImage.Controls.Clear();
-                GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
-                int QTY = Convert.ToInt32(drow[0]["QTY"]);
+            //lblSKUName.Text = SKUList.SelectedItems[0].Text.ToString();
+            //DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
+            //if (drow.Length > 0)
+            //{
+            //    flowStyleImage.Controls.Clear();
+            //    GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+            //    int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
-                ctrlMeasurment1.ProductCount = 1;
-                GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+            //    ctrlMeasurment1.ProductCount = 1;
+            //    GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
 
-                GetGarmentStyle(GarmentID);// Garment Style
-                AddStyleQTY(QTY);
-                checkBox1.Enabled = false;
+            //    GetGarmentStyle(GarmentID);// Garment Style
+            //    AddStyleQTY(QTY);
+            //    checkBox1.Enabled = false;
 
-                GetStichFitType();
-            }
+            //    GetStichFitType();
+            //}
         }
 
         private void AddStyleQTY(int QTY)
@@ -626,22 +721,44 @@ namespace TAILORING.Order
 
         private void GetDefaultSelectSKU()
         {
-            lblSKUName.Text = SKUList.Items[0].Text;
-            DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.Items[0].Text + "'");
-            if (drow.Length > 0)
+            Control[] ctrl = flowGarmentList.Controls.Find("pnl", true);
+            if (ctrl.Length > 0)
             {
-                GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
-                int QTY = Convert.ToInt32(drow[0]["QTY"]);
+                ctrl[0].BackColor = Color.LightGray;
+                lblSKUName.Text = "SKU Selected : " + ctrl[0].Controls[1].Text;
+                DataRow[] drow = dtGarmentList.Select("GarmentName='" + ctrl[0].Controls[1].Text + "'");
+                if (drow.Length > 0)
+                {
+                    GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+                    int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
-                ctrlMeasurment1.ProductCount = 1;
-                GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+                    ctrlMeasurment1.ProductCount = 1;
+                    GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
 
-                AddStyleQTY(QTY);
+                    AddStyleQTY(QTY);
 
-                GetGarmentStyle(GarmentID);// Garment Style
+                    GetGarmentStyle(GarmentID);// Garment Style
 
-                checkBox1.Enabled = false;
+                    checkBox1.Enabled = false;
+                }
             }
+
+            //lblSKUName.Text = SKUList.Items[0].Text;
+            //DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.Items[0].Text + "'");
+            //if (drow.Length > 0)
+            //{
+            //    GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+            //    int QTY = Convert.ToInt32(drow[0]["QTY"]);
+
+            //    ctrlMeasurment1.ProductCount = 1;
+            //    GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
+
+            //    AddStyleQTY(QTY);
+
+            //    GetGarmentStyle(GarmentID);// Garment Style
+
+            //    checkBox1.Enabled = false;
+            //}
         }
 
         private void ResetdtMeasurement()

@@ -130,14 +130,14 @@ namespace TAILORING.Others
 
                 label.Location = new Point(13, 16);
                 label.Text = dt.Columns[i].ColumnName;
-                label.Font = new Font("Arial Narrow", 11.25f, FontStyle.Bold);
+                label.Font = new Font("Times New Roman", 11.25f, FontStyle.Bold);
                 label.AutoSize = true;
 
                 if (lstMendatoryColumn.Contains(label.Text))
                 {
                     Label lblmendatory = new Label();
                     lblmendatory.Text = "*";
-                    lblmendatory.Font = new Font("Arial Narrow", 11.25f, FontStyle.Bold);
+                    lblmendatory.Font = new Font("Times New Roman", 11.25f, FontStyle.Bold);
                     lblmendatory.ForeColor = Color.Red;
                     lblmendatory.BackColor = Color.Transparent;
                     lblmendatory.AutoSize = true;
@@ -145,7 +145,7 @@ namespace TAILORING.Others
                     panel.Controls.Add(lblmendatory);
                 }
                 txt.Name = "txt";
-                txt.Font = new Font("Arial Narrow", 11.25f, FontStyle.Regular);
+                txt.Font = new Font("Times New Roman", 11.25f, FontStyle.Regular);
                 txt.Location = new Point(110, 13);
                 txt.KeyPress += Decimal_Control_KeyPress;
                 txt.Enabled = IsEditable;

@@ -35,7 +35,7 @@ namespace TAILORING
             this.BackColor = Color.FromArgb(82, 91, 114);
 
             btnLogin.PaletteMode = PaletteMode.SparklePurple;
-            btnLogin.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnLogin.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
         private bool ValidateLogin(string username, string password)

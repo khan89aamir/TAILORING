@@ -34,7 +34,7 @@ namespace TAILORING.Order
             this.BackColor = Color.FromArgb(82, 91, 114);
 
             btnPostureSave.PaletteMode = PaletteMode.SparklePurple;
-            btnPostureSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnPostureSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
         private void frmBodyPosture_Load(object sender, EventArgs e)

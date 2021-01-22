@@ -110,6 +110,7 @@ namespace TAILORING.Masters
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
             EnableDisable(true);
+            cmbOrderType.SelectedIndex = -1;
             txtGarmentCode.Focus();
         }
 
@@ -132,6 +133,7 @@ namespace TAILORING.Masters
                         ClearAll();
                         LoadData();
                         EnableDisable(false);
+                        cmbOrderType.SelectedIndex = -1;
                     }
                     else
                     {
@@ -152,6 +154,7 @@ namespace TAILORING.Masters
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
                 EnableDisable(true);
+                cmbOrderType.SelectedIndex = -1;
                 txtGarmentCode.Focus();
                 txtGarmentCode.SelectionStart = txtGarmentCode.MaxLength;
             }
@@ -182,6 +185,7 @@ namespace TAILORING.Masters
                         LoadData();
                         ClearAll();
                         EnableDisable(false);
+                        cmbOrderType.SelectedIndex = -1;
                     }
                     else
                     {
@@ -211,6 +215,7 @@ namespace TAILORING.Masters
                         ClearAll();
                         LoadData();
                         EnableDisable(false);
+                        cmbOrderType.SelectedIndex = -1;
                         ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterDelete);
                     }
                     else
@@ -235,6 +240,7 @@ namespace TAILORING.Masters
                 LoadData();
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
                 EnableDisable(false);
+                cmbOrderType.SelectedIndex = -1;
             }
         }
 
@@ -305,8 +311,6 @@ namespace TAILORING.Masters
             txtGarmentCode.Enabled = b;
             txtGarmentName.Enabled = b;
             cmbOrderType.Enabled = b;
-
-            cmbOrderType.SelectedIndex = -1;
         }
 
         private void rdSearchByProduct_CheckedChanged(object sender, EventArgs e)

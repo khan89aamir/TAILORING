@@ -433,24 +433,70 @@ namespace TAILORING.Order
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    DataRow[] drData = dtOrderManagement.Select("GarmentID=" + dt.Rows[i]["GarmentID"]);
-                    object qty = dtOrderManagement.Compute("SUM(QTY)", "GarmentID=" + dt.Rows[i]["GarmentID"]);
-                    //for (int j = 0; j < drData.Length; j++)
-                    if (drData.Length > 0)
+                    bool b = AddMasterdtOrder(Convert.ToInt32(dt.Rows[i]["GarmentID"]));
+                    if (b == false)
                     {
-                        DataRow dRow = dtOrder.NewRow();
-                        dRow["GarmentID"] = drData[0]["GarmentID"];
-                        dRow["GarmentCode"] = drData[0]["GarmentCode"];
-                        dRow["GarmentName"] = drData[0]["GarmentName"];
-                        dRow["Photo"] = drData[0]["Photo"];
-                        dRow["QTY"] = qty;
-                        dtOrder.Rows.Add(dRow);
+                        DataRow[] drData = dtOrderManagement.Select("GarmentID=" + dt.Rows[i]["GarmentID"]);
+                        object qty = dtOrderManagement.Compute("SUM(QTY)", "GarmentID=" + dt.Rows[i]["GarmentID"]);
+                        //for (int j = 0; j < drData.Length; j++)
+                        if (drData.Length > 0)
+                        {
+                            DataRow dRow = dtOrder.NewRow();
+                            dRow["GarmentID"] = drData[0]["GarmentID"];
+                            dRow["GarmentCode"] = drData[0]["GarmentCode"];
+                            dRow["GarmentName"] = drData[0]["GarmentName"];
+                            dRow["Photo"] = drData[0]["Photo"];
+                            dRow["QTY"] = qty;
+                            dtOrder.Rows.Add(dRow);
+                        }
                     }
                 }
                 dtOrder.AcceptChanges();
             }
         }
 
+        private bool AddMasterdtOrder(int pGarmentID)
+        {
+            bool b = false;
+            int a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblMasterGarmentMapping", "MasterGarmentID=" + pGarmentID);
+            if (a > 0)
+            {
+                object qty = dtOrderManagement.Compute("SUM(QTY)", "GarmentID=" + pGarmentID);
+                DataTable dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblMasterGarmentMapping", "GarmentID", "MasterGarmentMappingID");
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                        DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
+                        if (ObjUtil.ValidateDataSet(ds))
+                        {
+                            DataTable dtData = ds.Tables[0];
+                            if (ObjUtil.ValidateTable(dtData))
+                            {
+                                DataRow dRow = dtOrder.NewRow();
+                                dRow["GarmentID"] = dtData.Rows[0]["GarmentID"];
+                                dRow["GarmentCode"] = dtData.Rows[0]["GarmentCode"].ToString();
+                                dRow["GarmentName"] = dtData.Rows[0]["GarmentName"].ToString();
+                                dRow["Photo"] = dtData.Rows[0]["Photo"];
+                                dRow["QTY"] = qty;
+                                dtOrder.Rows.Add(dRow);
+
+                                b = true;
+                            }
+                            else
+                                b = false;
+                        }
+                    }
+                    dtOrder.AcceptChanges();
+                }
+            }
+            else
+            {
+                b = false;
+            }
+            return b;
+        }
         private void CalcTotalAmount()
         {
             object total = 0;
@@ -543,7 +589,7 @@ namespace TAILORING.Order
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
                             //dataGridView1.DataSource = null;
-                            
+
                             PrintOrder();
 
                             ClearAll();
@@ -810,7 +856,7 @@ namespace TAILORING.Order
             else if (headerText == "TrailDate")
             {
                 kdtTrailDate = (KryptonDateTimePicker)e.Control;
-                
+
                 //kdtTrailDate.MinDate = dtTrailDate;
                 kdtTrailDate.Validating += KdtTrailDate_Validating;
 
@@ -831,7 +877,7 @@ namespace TAILORING.Order
         private void KdtDeliveryDate_Validating(object sender, CancelEventArgs e)
         {
             DateTime dtDelivery = kdtDeliveryDate.Value;
-            
+
             //System.Diagnostics.Debug.WriteLine("kdtDeliveryDate.Value "+ kdtDeliveryDate.Value+ " kdtTrailDate.Checked"+ kdtTrailDate.Checked);
 
             if (kdtTrailDate.Checked)
@@ -839,9 +885,9 @@ namespace TAILORING.Order
                 e.Cancel = false;
                 if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
                 {
-                    
+
                     DateTime dtTrail = Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrailDate"].Value);
-                    
+
                     //System.Diagnostics.Debug.WriteLine("dtTrail "+ dtTrail);
 
                     if (dtTrail >= dtDelivery)

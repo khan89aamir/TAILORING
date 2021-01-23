@@ -404,7 +404,7 @@ namespace TAILORING.Order
                     dRow["Photo"] = strPhoto;
                     dRow["Rate"] = GarmentRate;
                     dRow["QTY"] = pQty;
-                    dRow["Total"] = 0 + (pQty * Convert.ToDecimal(GarmentRate));
+                    dRow["Total"] = pQty * Convert.ToDecimal(GarmentRate);
                     //dRow["Delete"] = "Delete";
                     dtOrderManagement.Rows.Add(dRow);
                 }
@@ -1053,7 +1053,7 @@ namespace TAILORING.Order
         {
             if (dtpTrailDate.Value < dtpDeliveryDate.Value)
             {
-                dtpTrailDate.Checked = true;
+                //dtpTrailDate.Checked = true;
             }
         }
 
@@ -1139,6 +1139,7 @@ namespace TAILORING.Order
                             clsUtility.ShowInfoMessage("Unable to delete Garment Name. " + dataGridView1.Rows[e.RowIndex].Cells["GarmentName"].Value, clsUtility.strProjectTitle);
                         }
                         dataGridView1.DataSource = dt;
+                        AdddtOrder(); // Refresh Order QTY
                         CalcTotalAmount();
                     }
                 }

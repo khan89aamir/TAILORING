@@ -126,6 +126,8 @@ namespace TAILORING.Order
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
+                CopyCommonMeasurement();
+
                 ctrlMeasurment1.ProductCount = 1;
                 GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
 
@@ -185,7 +187,7 @@ namespace TAILORING.Order
                     dtGarmentList.Columns.Add("Style", typeof(Image));
                 }
                 dataGridView1.DataSource = dtGarmentList;
-                
+
                 AddGarments();
 
                 //SKUList.Items.Clear();
@@ -688,7 +690,7 @@ namespace TAILORING.Order
 
         private void SKUList_MouseClick(object sender, MouseEventArgs e)
         {
-            SaveddtMeasurement(); // Auto Saved Garment Measurement value
+            //SaveddtMeasurement(); // Auto Saved Garment Measurement value
 
             //lblSKUName.Text = SKUList.SelectedItems[0].Text.ToString();
             //DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
@@ -799,12 +801,67 @@ namespace TAILORING.Order
                         dtTempMeasurement.Rows.Add(drow);
                     }
                     dtTempMeasurement.AcceptChanges();
+
+                    CopyCommonMeasurement();
                     ChangeMeasurementStyleStatus('M', GarmentID);
                 }
                 else
                 {
                     clsUtility.ShowInfoMessage("Please Enter Measurement for Garment.");
                     return;
+                }
+            }
+        }
+
+        private void CopyCommonMeasurement()
+        {
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+            DataSet dscommon = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_CommonMeasurement");
+            if (ObjUtil.ValidateDataSet(dscommon))
+            {
+                DataTable dtcommon = dscommon.Tables[0];
+                if (ObjUtil.ValidateTable(dtcommon))
+                {
+                    double pMeasurementValue = 0;
+                    for (int i = 0; i < dtcommon.Rows.Count; i++)
+                    {
+                        int pGarmentID = Convert.ToInt32(dtcommon.Rows[i]["GarmentID"]);
+                        int pMeasurementID = Convert.ToInt32(dtcommon.Rows[i]["MeasurementID"]);
+                        DataRow[] dr = dtTempMeasurement.Select("MeasurementID=" + pMeasurementID);
+                        //if (dr.Length > 0)
+                        for (int k = 0; k < dr.Length; k++)
+                        {
+                            pMeasurementValue = Convert.ToDouble(dr[k]["MeasurementValue"]);
+
+                            DataRow[] drexists = dtTempMeasurement.Select("GarmentID=" + GarmentID + " AND MeasurementID=" + pMeasurementID);
+                            if (drexists.Length == 0)
+                            {
+                                ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+                                DataSet dsMeasure = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GarmentMeasurement");
+
+                                if (ObjUtil.ValidateDataSet(dsMeasure))
+                                {
+                                    DataTable dtMeasure = dsMeasure.Tables[0];
+                                    for (int j = 0; j < dtMeasure.Rows.Count; j++)
+                                    {
+                                        DataRow drow = dtTempMeasurement.NewRow();
+                                        drow["GarmentID"] = GarmentID;
+                                        drow["MeasurementID"] = dtMeasure.Rows[j]["MeasurementID"];
+                                        drow["MeasurementValue"] = Convert.ToInt32(dtMeasure.Rows[j]["MeasurementID"]) == pMeasurementID ? pMeasurementValue : 0;
+
+                                        dtTempMeasurement.Rows.Add(drow);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                drexists[0]["MeasurementValue"] = pMeasurementValue;
+                            }
+                            dtTempMeasurement.AcceptChanges();
+                            pMeasurementValue = 0;
+                            //return;
+                        }
+                    }
                 }
             }
         }
@@ -974,11 +1031,11 @@ namespace TAILORING.Order
                         dtTempMeasurement.Rows.Add(drow);
                     }
                     dtTempMeasurement.AcceptChanges();
+
                     ChangeMeasurementStyleStatus('M', GarmentID);
                 }
             }
         }
-
 
         #region Body Posture Code
 

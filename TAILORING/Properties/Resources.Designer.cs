@@ -203,6 +203,16 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkSqure {
+            get {
+                object obj = ResourceManager.GetObject("checkSqure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap companysm {
             get {
                 object obj = ResourceManager.GetObject("companysm", resourceCulture);
@@ -446,6 +456,16 @@ namespace TAILORING.Properties {
         internal static System.Drawing.Bitmap orderdetailswhite {
             get {
                 object obj = ResourceManager.GetObject("orderdetailswhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orderReceive {
+            get {
+                object obj = ResourceManager.GetObject("orderReceive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

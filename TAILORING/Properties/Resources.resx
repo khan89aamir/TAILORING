@@ -1081,6 +1081,9 @@
         bUzlVOE3k/0NLsPHOjaxg/ZEHW9irPmHLPsG/HBFFMb3q7wAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="checkSqure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkSqure.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="companysm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\companysm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1173,6 +1176,9 @@
   </data>
   <data name="orderdetailswhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orderdetailswhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orderReceive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderReceive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="picBodyPosture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picBodyPosture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

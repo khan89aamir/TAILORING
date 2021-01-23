@@ -421,21 +421,14 @@
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.gGlowGroupBox1);
             this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 643);
             this.kryptonHeaderGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup2.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonHeaderGroup2.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.Border.Rounding = 8;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup2.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup2.TabIndex = 372;
             this.kryptonHeaderGroup2.ValuesPrimary.Heading = "Selected SKUs";
             this.kryptonHeaderGroup2.ValuesPrimary.Image = null;
@@ -492,20 +485,13 @@
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.gGlowGroupBox4);
             this.kryptonHeaderGroup4.Size = new System.Drawing.Size(970, 427);
             this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonHeaderGroup4.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup4.StateCommon.Border.Rounding = 9;
             this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup4.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup4.TabIndex = 356;
             this.kryptonHeaderGroup4.ValuesPrimary.Heading = "Body Posture";
             this.kryptonHeaderGroup4.ValuesPrimary.Image = global::TAILORING.Properties.Resources.bodyPosture;
@@ -559,21 +545,14 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.gGlowGroupBox2);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(970, 427);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonHeaderGroup1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.Rounding = 8;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 374;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Measurment";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = null;
@@ -616,21 +595,14 @@
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.gGlowGroupBox3);
             this.kryptonHeaderGroup3.Size = new System.Drawing.Size(970, 427);
             this.kryptonHeaderGroup3.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup3.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonHeaderGroup3.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.Border.Rounding = 8;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup3.TabIndex = 375;
             this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Style";
             this.kryptonHeaderGroup3.ValuesPrimary.Image = null;
@@ -663,9 +635,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(1, 186);
+            this.panel1.Location = new System.Drawing.Point(-10, 187);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(959, 43);
+            this.panel1.Size = new System.Drawing.Size(977, 43);
             this.panel1.TabIndex = 383;
             // 
             // picStyle

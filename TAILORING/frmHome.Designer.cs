@@ -1258,11 +1258,11 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab10;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab11;
             this.kryptonRibbon1.ShowMinimizeButton = false;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 115);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 11.05F);
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.kryptonRibbon1.TabIndex = 67;
             // 

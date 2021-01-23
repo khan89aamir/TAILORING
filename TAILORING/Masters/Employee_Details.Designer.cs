@@ -71,7 +71,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.PicEmployee = new System.Windows.Forms.PictureBox();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpCustomerSearch = new gGlowBox.gGlowGroupBox();
             this.txtSearchByEmpMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -84,6 +83,7 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picIMGPass = new System.Windows.Forms.PictureBox();
+            this.PicEmployee = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -92,7 +92,6 @@
             this.grpGender.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -107,6 +106,7 @@
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
@@ -218,7 +218,7 @@
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpKrytonHeader.TabIndex = 343;
             this.grpKrytonHeader.ValuesPrimary.Heading = "Employee Details";
-            this.grpKrytonHeader.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpKrytonHeader.ValuesPrimary.Image")));
+            this.grpKrytonHeader.ValuesPrimary.Image = global::TAILORING.Properties.Resources.employeesmall;
             // 
             // grpEmployee
             // 
@@ -717,16 +717,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Browse...";
             // 
-            // PicEmployee
-            // 
-            this.PicEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PicEmployee.Location = new System.Drawing.Point(11, 25);
-            this.PicEmployee.Name = "PicEmployee";
-            this.PicEmployee.Size = new System.Drawing.Size(210, 179);
-            this.PicEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicEmployee.TabIndex = 209;
-            this.PicEmployee.TabStop = false;
-            // 
             // kryptonHeaderGroup1
             // 
             this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -919,6 +909,16 @@
             this.picIMGPass.TabIndex = 386;
             this.picIMGPass.TabStop = false;
             // 
+            // PicEmployee
+            // 
+            this.PicEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PicEmployee.Location = new System.Drawing.Point(11, 25);
+            this.PicEmployee.Name = "PicEmployee";
+            this.PicEmployee.Size = new System.Drawing.Size(210, 179);
+            this.PicEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicEmployee.TabIndex = 209;
+            this.PicEmployee.TabStop = false;
+            // 
             // Employee_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -954,7 +954,6 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
@@ -971,6 +970,7 @@
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

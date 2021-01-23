@@ -46,6 +46,7 @@
             this.txtSearchByCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sPanel3 = new TAILORING.SPanel();
             this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sPanel4 = new TAILORING.SPanel();
             this.txtOrderReceive = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.picSearchOrderDelivery = new System.Windows.Forms.PictureBox();
@@ -82,10 +82,10 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sPanel3.SuspendLayout();
             this.sPanel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderReceive)).BeginInit();
@@ -200,7 +200,7 @@
             this.picSearchByMobileNo.BackColor = System.Drawing.Color.Transparent;
             this.picSearchByMobileNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchByMobileNo.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByMobileNo.Image")));
-            this.picSearchByMobileNo.Location = new System.Drawing.Point(922, 128);
+            this.picSearchByMobileNo.Location = new System.Drawing.Point(926, 128);
             this.picSearchByMobileNo.Name = "picSearchByMobileNo";
             this.picSearchByMobileNo.Size = new System.Drawing.Size(30, 25);
             this.picSearchByMobileNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +213,7 @@
             this.picSearchByOrderNo.BackColor = System.Drawing.Color.Transparent;
             this.picSearchByOrderNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchByOrderNo.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByOrderNo.Image")));
-            this.picSearchByOrderNo.Location = new System.Drawing.Point(1262, 126);
+            this.picSearchByOrderNo.Location = new System.Drawing.Point(1265, 126);
             this.picSearchByOrderNo.Name = "picSearchByOrderNo";
             this.picSearchByOrderNo.Size = new System.Drawing.Size(30, 25);
             this.picSearchByOrderNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +225,7 @@
             this.picSearchByName.BackColor = System.Drawing.Color.Transparent;
             this.picSearchByName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchByName.Image = ((System.Drawing.Image)(resources.GetObject("picSearchByName.Image")));
-            this.picSearchByName.Location = new System.Drawing.Point(586, 128);
+            this.picSearchByName.Location = new System.Drawing.Point(591, 128);
             this.picSearchByName.Name = "picSearchByName";
             this.picSearchByName.Size = new System.Drawing.Size(30, 25);
             this.picSearchByName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -323,6 +323,17 @@
             this.txtSearchByCustomerName.TabIndex = 373;
             this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-32, 77);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(296, 165);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 370;
+            this.pictureBox2.TabStop = false;
+            // 
             // sPanel3
             // 
             this.sPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -335,7 +346,7 @@
             this.sPanel3.Controls.Add(this.linkLabel7);
             this.sPanel3.Controls.Add(this.linkLabel8);
             this.sPanel3.Edge = 40;
-            this.sPanel3.Location = new System.Drawing.Point(678, 300);
+            this.sPanel3.Location = new System.Drawing.Point(636, 295);
             this.sPanel3.Name = "sPanel3";
             this.sPanel3.Size = new System.Drawing.Size(308, 384);
             this.sPanel3.TabIndex = 375;
@@ -415,7 +426,7 @@
             this.sPanel2.Controls.Add(this.linkLabel2);
             this.sPanel2.Controls.Add(this.linkLabel3);
             this.sPanel2.Edge = 40;
-            this.sPanel2.Location = new System.Drawing.Point(348, 300);
+            this.sPanel2.Location = new System.Drawing.Point(310, 294);
             this.sPanel2.Name = "sPanel2";
             this.sPanel2.Size = new System.Drawing.Size(308, 384);
             this.sPanel2.TabIndex = 374;
@@ -486,7 +497,7 @@
             // sPanel1
             // 
             this.sPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.sPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel1.BackgroundImage")));
+            this.sPanel1.BackgroundImage = global::TAILORING.Properties.Resources.Pictur31;
             this.sPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel1.BorderColor = System.Drawing.Color.White;
             this.sPanel1.Controls.Add(this.lblTodayDelivery);
@@ -495,7 +506,7 @@
             this.sPanel1.Controls.Add(this.linkLabel5);
             this.sPanel1.Controls.Add(this.linkLabel9);
             this.sPanel1.Edge = 40;
-            this.sPanel1.Location = new System.Drawing.Point(15, 300);
+            this.sPanel1.Location = new System.Drawing.Point(-9, 294);
             this.sPanel1.Name = "sPanel1";
             this.sPanel1.Size = new System.Drawing.Size(308, 384);
             this.sPanel1.TabIndex = 373;
@@ -563,17 +574,6 @@
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "INV-23   Salman  08-Jan-2012";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-32, 77);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(296, 165);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 370;
-            this.pictureBox2.TabStop = false;
-            // 
             // sPanel4
             // 
             this.sPanel4.BackColor = System.Drawing.Color.Transparent;
@@ -610,6 +610,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtOrderReceive.StateNormal.Border.Rounding = 20;
             this.txtOrderReceive.TabIndex = 382;
+            this.txtOrderReceive.Text = "INV-116";
             // 
             // picSearchOrderDelivery
             // 
@@ -646,6 +647,7 @@
             this.picSearchOrderReceive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchOrderReceive.TabIndex = 367;
             this.picSearchOrderReceive.TabStop = false;
+            this.picSearchOrderReceive.Click += new System.EventHandler(this.picSearchOrderReceive_Click);
             // 
             // label10
             // 
@@ -681,7 +683,7 @@
             // 
             this.btnCreateChalan.AutoSize = true;
             this.btnCreateChalan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateChalan.Location = new System.Drawing.Point(78, 237);
+            this.btnCreateChalan.Location = new System.Drawing.Point(123, 240);
             this.btnCreateChalan.Name = "btnCreateChalan";
             this.btnCreateChalan.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCreateChalan.Size = new System.Drawing.Size(151, 34);
@@ -736,13 +738,13 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.sPanel3.ResumeLayout(false);
             this.sPanel3.PerformLayout();
             this.sPanel2.ResumeLayout(false);
             this.sPanel2.PerformLayout();
             this.sPanel1.ResumeLayout(false);
             this.sPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.sPanel4.ResumeLayout(false);
             this.sPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchOrderDelivery)).EndInit();

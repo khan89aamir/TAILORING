@@ -187,5 +187,21 @@ namespace TAILORING.Dashboard
                 txt.Focus();
             }
         }
+
+        private void picSearchOrderReceive_Click(object sender, EventArgs e)
+        {
+            if (txtOrderReceive.Text.Trim().Length==0)
+            {
+                clsUtility.ShowInfoMessage("Please Enter Order No to receive.");
+            }
+            else
+            {
+                frmOrderReceive frmOrderReceive = new frmOrderReceive();
+                frmOrderReceive.OrderNo = txtOrderReceive.Text;
+                frmOrderReceive.Show();
+
+            }
+           
+        }
     }
 }

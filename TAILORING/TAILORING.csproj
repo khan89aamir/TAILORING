@@ -148,6 +148,12 @@
     <Compile Include="Dashboard\frmDashboardUpdate.Designer.cs">
       <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\frmOrderReceive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmOrderReceive.Designer.cs">
+      <DependentUpon>frmOrderReceive.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmQuickCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Dashboard\frmDashboardUpdate.resx">
       <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmOrderReceive.resx">
+      <DependentUpon>frmOrderReceive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmQuickCustomer.resx">
       <DependentUpon>frmQuickCustomer.cs</DependentUpon>
@@ -498,6 +507,8 @@
     <None Include="Resources\EmployeeNormalWhite.png" />
     <None Include="Resources\Picture1.png" />
     <None Include="Resources\employeesmall.png" />
+    <None Include="Resources\orderReceive.png" />
+    <None Include="Resources\checkSqure.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

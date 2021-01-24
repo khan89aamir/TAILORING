@@ -51,6 +51,13 @@ namespace TAILORING.Order
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void InitTempdtMeasurement()
+        {
+            dtTempMeasurement.Columns.Add("GarmentID", typeof(int));
+            dtTempMeasurement.Columns.Add("MeasurementID", typeof(int));
+            dtTempMeasurement.Columns.Add("MeasurementValue", typeof(double));
+        }
+
         private void frmViewMeasurementStyle_Load(object sender, EventArgs e)
         {
             lblOrderNo.Text = "Order No : " + OrderNo;
@@ -58,6 +65,8 @@ namespace TAILORING.Order
             IsAdmin();
 
             LoadTailoringTheme();
+            
+            InitTempdtMeasurement();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
@@ -240,14 +249,14 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt1))
                 {
                     ResetdtMeasurement();
-                    //for (int i = 0; i < dt1.Columns.Count; i++)
-                    //{
-                    //    DataRow drow = dtTempMeasurement.NewRow();
-                    //    drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
-                    //    drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
-                    //    drow["GarmentID"] = GarmentID;
-                    //    dtTempMeasurement.Rows.Add(drow);
-                    //}
+                    for (int i = 0; i < dt1.Columns.Count; i++)
+                    {
+                        DataRow drow = dtTempMeasurement.NewRow();
+                        drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
+                        drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
+                        drow["GarmentID"] = GarmentID;
+                        dtTempMeasurement.Rows.Add(drow);
+                    }
                     dtTempMeasurement.AcceptChanges();
 
                     ChangeMeasurementStyleStatus('M', GarmentID);
@@ -291,15 +300,15 @@ namespace TAILORING.Order
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_MeasurementValue_Report");
             if (ObjUtil.ValidateDataSet(ds))
             {
-                //dtMeasurement = ds.Tables[0];
-                dtTempMeasurement = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dtTempMeasurement))
+                dtMeasurement = ds.Tables[0];
+                //dtTempMeasurement = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dtMeasurement))
                 {
-                    dtTempMeasurement.Rows[0].Delete();
-                    dtTempMeasurement.AcceptChanges();
+                    dtMeasurement.Rows[0].Delete();
+                    dtMeasurement.AcceptChanges();
                 }
             }
-            return dtTempMeasurement;
+            return dtMeasurement;
         }
 
         private void AddStyleQTY(int QTY)
@@ -1058,15 +1067,15 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempMeasurement))
             {
-                //DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
-                //if (dr.Length > 0)
-                //{
-                //    for (int i = 0; i < dr.Length; i++)
-                //    {
-                //        dr[i].Delete();
-                //    }
-                //    dtTempMeasurement.AcceptChanges();
-                //}
+                DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
+                if (dr.Length > 0)
+                {
+                    for (int i = 0; i < dr.Length; i++)
+                    {
+                        dr[i].Delete();
+                    }
+                    dtTempMeasurement.AcceptChanges();
+                }
             }
         }
     }

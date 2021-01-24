@@ -166,13 +166,15 @@ namespace TAILORING.Dashboard
 
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //TextBox txt = (TextBox)sender;
-            KryptonTextBox txt = (KryptonTextBox)sender;
-            e.Handled = ObjUtil.IsString(e);
-            if (e.Handled)
+            //KryptonTextBox txt = (KryptonTextBox)sender;
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                txt.Focus();
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txtSearchByCustomerName.Focus();
+                }
             }
         }
 

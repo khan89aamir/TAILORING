@@ -124,5 +124,59 @@ namespace TAILORING.Dashboard
 
             dgvOrderDetails.EndEdit();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!ValidateRecive())
+            {
+                clsUtility.ShowInfoMessage("Please Check Garments to be received.");
+                return;
+            }
+
+            ReceviceGarments();
+
+
+        }
+
+        private void ReceviceGarments()
+        {
+            for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
+            {
+                if (dgvOrderDetails.Rows[i].Cells[0].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value) == true)
+                {
+                    int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
+                    int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
+                    int GarmentID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["GarmentID"].Value);
+
+
+                  
+                    ObjDAL.SetColumnData("SalesOrderID", SqlDbType.Int, SalesID);
+                    ObjDAL.SetColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
+                    ObjDAL.SetColumnData("GarmentID", SqlDbType.Int, GarmentID);
+                    // 4 - Order received.
+                    ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int,4);
+                    ObjDAL.InsertData("TAILORING_01.dbo.tblOrderStatus", false);
+                }
+            }
+            clsUtility.ShowInfoMessage("Selected Garments has been Received.");
+            this.Close();
+        }
+
+        private bool ValidateRecive()
+        {
+            bool status = false;
+            dgvOrderDetails.EndEdit();
+            for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
+            {
+                if (dgvOrderDetails.Rows[i].Cells[0].Value!=DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value)==true)
+                {
+                    status = true;
+                    return status;
+
+                }
+            }
+
+            return false;
+        }
     }
 }

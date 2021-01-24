@@ -248,6 +248,7 @@
             this.btnAdd.TabIndex = 380;
             this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.checkSqure;
             this.btnAdd.Values.Text = "Received";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmOrderReceive
             // 

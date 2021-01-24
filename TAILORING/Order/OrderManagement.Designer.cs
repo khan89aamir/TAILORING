@@ -408,7 +408,6 @@
             this.dtpTrailDate.ShowCheckBox = true;
             this.dtpTrailDate.Size = new System.Drawing.Size(131, 25);
             this.dtpTrailDate.TabIndex = 355;
-            this.dtpTrailDate.ValueChanged += new System.EventHandler(this.dtpTrailDate_ValueChanged);
             this.dtpTrailDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpTrailDate_Validating);
             // 
             // label17

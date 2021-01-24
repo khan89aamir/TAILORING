@@ -258,7 +258,7 @@
             kryptonRibbonGroup23.DialogBoxLauncher = false;
             kryptonRibbonGroup23.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple23});
-            kryptonRibbonGroup23.TextLine1 = "Product Master";
+            kryptonRibbonGroup23.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple23
             // 
@@ -1258,11 +1258,12 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab11;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab10;
             this.kryptonRibbon1.ShowMinimizeButton = false;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 11.05F);
+            this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.BackColor1 = System.Drawing.Color.DarkGray;
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.kryptonRibbon1.TabIndex = 67;
             // 
@@ -1328,7 +1329,7 @@
             this.kryptonRibbonGroup20.DialogBoxLauncher = false;
             this.kryptonRibbonGroup20.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple20});
-            this.kryptonRibbonGroup20.TextLine1 = "Company Master";
+            this.kryptonRibbonGroup20.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple20
             // 
@@ -1338,7 +1339,8 @@
             // kryptonRibbonGroupButton29
             // 
             this.kryptonRibbonGroupButton29.ImageLarge = global::TAILORING.Properties.Resources.companywhiet;
-            this.kryptonRibbonGroupButton29.TextLine1 = "Compnany Master";
+            this.kryptonRibbonGroupButton29.TextLine1 = " ";
+            this.kryptonRibbonGroupButton29.TextLine2 = "Compnany Master";
             this.kryptonRibbonGroupButton29.Click += new System.EventHandler(this.companyManagementToolStripMenuItem_Click);
             // 
             // kryptonRibbonGroup21
@@ -1347,7 +1349,7 @@
             this.kryptonRibbonGroup21.DialogBoxLauncher = false;
             this.kryptonRibbonGroup21.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple21});
-            this.kryptonRibbonGroup21.TextLine1 = "Employee Master";
+            this.kryptonRibbonGroup21.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple21
             // 
@@ -1366,7 +1368,7 @@
             this.kryptonRibbonGroup22.DialogBoxLauncher = false;
             this.kryptonRibbonGroup22.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple22});
-            this.kryptonRibbonGroup22.TextLine1 = "Customer Master";
+            this.kryptonRibbonGroup22.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple22
             // 
@@ -1394,7 +1396,7 @@
             // kryptonRibbonGroupButton41
             // 
             this.kryptonRibbonGroupButton41.ImageLarge = global::TAILORING.Properties.Resources.productratewhite;
-            this.kryptonRibbonGroupButton41.TextLine1 = "Product Rate Mater";
+            this.kryptonRibbonGroupButton41.TextLine1 = "Product Rate Master";
             this.kryptonRibbonGroupButton41.Click += new System.EventHandler(this.picProductRate_Click);
             // 
             // kryptonRibbonGroup25

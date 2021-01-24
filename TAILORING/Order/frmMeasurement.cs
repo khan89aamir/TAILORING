@@ -118,7 +118,7 @@ namespace TAILORING.Order
         private void GetSelectedSKU(PictureBox p)
         {
             SaveddtMeasurement(); // Auto Saved Garment Measurement value
-
+            OldGarmentID = GarmentID;
             DataRow[] drow = dtGarmentList.Select("GarmentID=" + p.Name);
             if (drow.Length > 0)
             {
@@ -812,9 +812,10 @@ namespace TAILORING.Order
                 }
             }
         }
-
+        int OldGarmentID = 0;
         private void CopyCommonMeasurement()
         {
+            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, OldGarmentID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
             DataSet dscommon = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_CommonMeasurement");
             if (ObjUtil.ValidateDataSet(dscommon))
@@ -871,12 +872,12 @@ namespace TAILORING.Order
             {
                 CopyPreviousGarmentStyle();
 
-                cmbStyleQTY_SelectionChangeCommitted(sender, e);
+                ChangedStyleQTY();
                 //checkBox1.Checked = true;
             }
         }
 
-        private void cmbStyleQTY_SelectionChangeCommitted(object sender, EventArgs e)
+        private void ChangedStyleQTY()
         {
             if (Convert.ToInt32(cmbStyleQTY.SelectedItem) > 1)
             {
@@ -890,6 +891,12 @@ namespace TAILORING.Order
             }
             flowStyleImage.Controls.Clear();
             GetGarmentStyle(GarmentID);// Garment Style
+        }
+
+        private void cmbStyleQTY_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ChangedStyleQTY();
+            checkBox1.Checked = false;
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)

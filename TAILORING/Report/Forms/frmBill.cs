@@ -193,18 +193,39 @@ namespace TAILORING.Report.Forms
 
         private string ImageToBase64(string path)
         {
-            using (Image image = Image.FromFile(path))
+            if (File.Exists(path))
             {
-                using (MemoryStream m = new MemoryStream())
+                using (Image image = Image.FromFile(path))
                 {
-                    image.Save(m, image.RawFormat);
-                    byte[] imageBytes = m.ToArray();
+                    using (MemoryStream m = new MemoryStream())
+                    {
+                        image.Save(m, image.RawFormat);
+                        byte[] imageBytes = m.ToArray();
 
-                    // Convert byte[] to Base64 String
-                    string base64String = Convert.ToBase64String(imageBytes);
-                    return base64String;
+                        // Convert byte[] to Base64 String
+                        string base64String = Convert.ToBase64String(imageBytes);
+                        return base64String;
+                    }
                 }
             }
+            else
+            {
+                using (Image image = Properties.Resources.NoImage)
+                {
+                    using (MemoryStream m = new MemoryStream())
+                    {
+                        image.Save(m, image.RawFormat);
+                        byte[] imageBytes = m.ToArray();
+
+                        // Convert byte[] to Base64 String
+                        string base64String = Convert.ToBase64String(imageBytes);
+                        return base64String;
+                    }
+                }
+
+             
+            }
+       
         }
 
         private void InitMearumentStyleTable()
@@ -263,9 +284,9 @@ namespace TAILORING.Report.Forms
             #endregion
 
         }
-        private string GenerateSubOrderNo(string SKUNo, string QTYNo, string TotalQTY, string pOrderNo)
+        private string GenerateSubOrderNo(string SKUNo, int QTYNo, int TotalQTY, string pOrderNo)
         {
-            string str = SKUNo + "-" + QTYNo + "/" + TotalQTY + "/" + "/" + pOrderNo;
+            string str = SKUNo + "-" + QTYNo + "/" + TotalQTY + "/" + pOrderNo;
             return str;
         }
 
@@ -320,11 +341,34 @@ namespace TAILORING.Report.Forms
                 DataSet dsOrderDetails = ObjCon.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_OrderDetails");
                 if (dsOrderDetails.Tables.Count > 0)
                 {
+
+                    int TotalGarmentQTY = 0;
+                    int CurQTY = 0;
+                    int LastGarmentID = 0;
+
                     DataTable dtOrderDetails = dsOrderDetails.Tables[0];
                     for (int i = 0; i < dtOrderDetails.Rows.Count; i++)
                     {
                         string GarmendID = dtOrderDetails.Rows[i]["GarmentID"].ToString();
-                        int QTY = Convert.ToInt32(dtOrderDetails.Rows[i]["QTY"]);
+                        string SalesOrderDetailsID = dtOrderDetails.Rows[i]["SalesOrderDetailsID"].ToString();
+
+                        DataRow [] dRow= dtOrderDetails.Select("GarmentID='" + GarmendID+"'");
+                        TotalGarmentQTY = dRow.Length;
+
+                        // if both the garment ID match means loop is iterating for previous garment only.
+                        // then increase the QTY
+                        if (LastGarmentID==Convert.ToInt32(GarmendID))
+                        {
+                            CurQTY++;
+                        }
+                        else
+                        {
+                            CurQTY = 1;
+
+                        }
+                        // set the garment ID to last one
+                        LastGarmentID = Convert.ToInt32(GarmendID);
+
                         ProductID = GarmendID;
                         Swatch = "Swatch";
                         PU = dtOrderDetails.Rows[i]["GarmentCode"].ToString();
@@ -389,10 +433,9 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
-                        /// check for each style for each QTY
-                        for (int j = 1; j <= QTY; j++)
-                        {
-                            DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + j + " and SalesOrderID = " + OrderID);
+                          string subOrderNo = "NA";
+
+                            DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + CurQTY + " and SalesOrderID = " + OrderID);
                             if (ObjUtil.ValidateTable(dtStyles))
                             {
                                 for (int s = 0; s < dtStyles.Rows.Count; s++)
@@ -432,14 +475,16 @@ namespace TAILORING.Report.Forms
                                 }
                             }
 
-                            // add product ID as unique so that you can see record in list view for each QTY sepratly
-                            inc++;
-                            string subOrderNo = GenerateSubOrderNo(PU, j.ToString(), QTY.ToString(), OrderNo);
+                        // add product ID as unique so that you can see record in list view for each QTY separately
+                        inc = i;
+                             subOrderNo = GenerateSubOrderNo(PU, CurQTY, TotalGarmentQTY, OrderNo);
+                         
                             // add your 1st QTY into table
                             AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
                                 mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mc10, mc1v, mc2v, mc3v, mc4v, mc5v, mc6v, mc7v, mc8v,
                                 mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo);
-                        }
+
+                        UpdateSubOrderNo(subOrderNo, SalesOrderDetailsID);
                     }
                 }
             }
@@ -449,6 +494,13 @@ namespace TAILORING.Report.Forms
             }
 
             int count2 = dtMeasurment.Rows.Count;
+        }
+
+        private void UpdateSubOrderNo(string subOrderNo, string SalesOrderDetailsID)
+        {
+          ObjCon.ExecuteNonQuery("update  "+clsUtility.DBName+".dbo.[tblSalesOrderDetails] set SubOrderNo='"+ subOrderNo + "' where "+
+                                " SalesOrderDetailsID="+ SalesOrderDetailsID);
+
         }
         private void InitiMeasrument()
         {

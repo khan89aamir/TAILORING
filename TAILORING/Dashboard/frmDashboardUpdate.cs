@@ -73,7 +73,7 @@ namespace TAILORING.Dashboard
         private void SearchByCustomerMobileNo()
         {
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtSearchByCustomerMobileNo, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, txtSearchByCustomerMobileNo.Text, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
             if (ObjUtil.ValidateDataSet(ds))
@@ -166,6 +166,7 @@ namespace TAILORING.Dashboard
 
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             //TextBox txt = (TextBox)sender;
             KryptonTextBox txt = (KryptonTextBox)sender;
             e.Handled = ObjUtil.IsString(e);

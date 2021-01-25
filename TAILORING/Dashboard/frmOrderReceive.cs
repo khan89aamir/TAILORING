@@ -35,12 +35,9 @@ namespace TAILORING.Dashboard
 
                 BindcustomerDetails(_CustID);
 
-                ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, _SalesOrderID, clsConnection_DAL.ParamType.Input);
-
-                DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderDetails]");
-                if (ObjUtil.ValidateDataSet(ds))
+                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from "+clsUtility.DBName+ ".dbo.vw_GetOrderStatusDetails where SalesOrderID="+ _SalesOrderID);
+                if (ObjUtil.ValidateTable(dt))
                 {
-                    DataTable dt = ds.Tables[0];
                     if (ObjUtil.ValidateTable(dt))
                     {
                         dgvOrderDetails.DataSource = dt;
@@ -74,7 +71,9 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
             dgvOrderDetails.Columns["Rate"].Visible = false;
             dgvOrderDetails.Columns["Total"].Visible = false;
+            dgvOrderDetails.Columns["QTY"].Visible = false;
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
+            dgvOrderDetails.Columns["TrimAmount"].Visible = false;
             grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
@@ -83,7 +82,39 @@ namespace TAILORING.Dashboard
                 {
                     dgvOrderDetails.Columns[i].ReadOnly = true;
                 }
-             
+
+               
+            }
+            for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
+            {
+                if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Received")
+                {
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(102, 205, 170);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(102, 205, 170);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+                else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Delivered")
+                {
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor= Color.FromArgb(50, 122, 179);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 122, 179);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+                else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "In Process")
+                {
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(96, 44, 24);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(96, 44, 24);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+                else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Critical")
+                {
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(177, 0, 0);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(177, 0, 0);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                }   
             }
 
             ObjUtil.SetRowNumber(dgvOrderDetails);
@@ -146,16 +177,16 @@ namespace TAILORING.Dashboard
                 {
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
-                    int GarmentID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["GarmentID"].Value);
+                    //int GarmentID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["GarmentID"].Value);
 
 
                   
                     ObjDAL.SetColumnData("SalesOrderID", SqlDbType.Int, SalesID);
                     ObjDAL.SetColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
-                    ObjDAL.SetColumnData("GarmentID", SqlDbType.Int, GarmentID);
+              
                     // 4 - Order received.
                     ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int,4);
-                    ObjDAL.InsertData("TAILORING_01.dbo.tblOrderStatus", false);
+                   int result= ObjDAL.InsertData("TAILORING_01.dbo.tblOrderStatus", false);
                 }
             }
             clsUtility.ShowInfoMessage("Selected Garments has been Received.");
@@ -177,6 +208,11 @@ namespace TAILORING.Dashboard
             }
 
             return false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

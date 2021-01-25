@@ -439,7 +439,6 @@
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
             this.kryptonPanel1.Size = new System.Drawing.Size(773, 51);
             this.kryptonPanel1.TabIndex = 370;
-            this.kryptonPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel1_Paint);
             // 
             // label12
             // 

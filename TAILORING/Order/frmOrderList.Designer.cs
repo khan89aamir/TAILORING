@@ -133,6 +133,7 @@ namespace TAILORING.Order
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerOrderNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
+            this.txtCustomerOrderNo.TextChanged += new System.EventHandler(this.txtCustomerOrderNo_TextChanged);
             // 
             // txtCustomerMobileNo
             // 
@@ -151,6 +152,7 @@ namespace TAILORING.Order
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerMobileNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
+            this.txtCustomerMobileNo.TextChanged += new System.EventHandler(this.txtCustomerMobileNo_TextChanged);
             // 
             // txtCustomerName
             // 
@@ -169,6 +171,7 @@ namespace TAILORING.Order
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerName.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerName.StateNormal.Border.Rounding = 20;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // radByOrderNo
             // 

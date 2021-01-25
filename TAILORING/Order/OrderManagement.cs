@@ -701,6 +701,8 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("dtStyle", SqlDbType.Structured, dtStyle, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("dtBodyPosture", SqlDbType.Structured, dtBodyPosture, clsConnection_DAL.ParamType.Input);
 
+            ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID, clsConnection_DAL.ParamType.Input);
+
             b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
             if (!b)
             {
@@ -1049,14 +1051,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void dtpTrailDate_ValueChanged(object sender, EventArgs e)
-        {
-            if (dtpTrailDate.Value < dtpDeliveryDate.Value)
-            {
-                //dtpTrailDate.Checked = true;
-            }
-        }
-
         private void dtpTrailDate_Validating(object sender, CancelEventArgs e)
         {
             if (dtpTrailDate.Checked)
@@ -1067,11 +1061,10 @@ namespace TAILORING.Order
                     dtpTrailDate.Value = dtTrailDate;
 
                     e.Cancel = true;
-
+                    dtpTrailDate.Checked = false;
                     dtpTrailDate.Focus();
                 }
             }
-            dtpTrailDate.Checked = false;
         }
 
         private void dtpDeliveryDate_Validating(object sender, CancelEventArgs e)

@@ -27,6 +27,7 @@ namespace TAILORING.Order
         DataTable dtMasterMeasurement = null;
         DataTable dtStyle = new DataTable();
         DataTable dtStyleImages = new DataTable();
+        DataTable dtPosture = new DataTable();
 
         DataTable dtTempMeasurement = new DataTable();
         DataTable dtTempStyle = new DataTable();
@@ -50,6 +51,13 @@ namespace TAILORING.Order
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void InitTempdtMeasurement()
+        {
+            dtTempMeasurement.Columns.Add("GarmentID", typeof(int));
+            dtTempMeasurement.Columns.Add("MeasurementID", typeof(int));
+            dtTempMeasurement.Columns.Add("MeasurementValue", typeof(double));
+        }
+
         private void frmViewMeasurementStyle_Load(object sender, EventArgs e)
         {
             lblOrderNo.Text = "Order No : " + OrderNo;
@@ -57,6 +65,8 @@ namespace TAILORING.Order
             IsAdmin();
 
             LoadTailoringTheme();
+            
+            InitTempdtMeasurement();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
@@ -186,6 +196,7 @@ namespace TAILORING.Order
 
         private void GetSelectedSKU(PictureBox p)
         {
+            SaveddtMeasurement(); // Auto Saved Garment Measurement value
             DataRow[] drow = dtGarmentList.Select("GarmentID=" + p.Name);
             if (drow.Length > 0)
             {
@@ -229,6 +240,30 @@ namespace TAILORING.Order
             }
         }
 
+        private void SaveddtMeasurement()
+        {
+            DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt1 = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt1))
+                {
+                    ResetdtMeasurement();
+                    for (int i = 0; i < dt1.Columns.Count; i++)
+                    {
+                        DataRow drow = dtTempMeasurement.NewRow();
+                        drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
+                        drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
+                        drow["GarmentID"] = GarmentID;
+                        dtTempMeasurement.Rows.Add(drow);
+                    }
+                    dtTempMeasurement.AcceptChanges();
+
+                    ChangeMeasurementStyleStatus('M', GarmentID);
+                }
+            }
+        }
+
         private void GetGarmentMasterMeasurement(int GarmentID)
         {
             DataTable dtMeasurement = new DataTable();
@@ -265,15 +300,15 @@ namespace TAILORING.Order
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_MeasurementValue_Report");
             if (ObjUtil.ValidateDataSet(ds))
             {
-                //dtMeasurement = ds.Tables[0];
-                dtTempMeasurement = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dtTempMeasurement))
+                dtMeasurement = ds.Tables[0];
+                //dtTempMeasurement = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dtMeasurement))
                 {
-                    dtTempMeasurement.Rows[0].Delete();
-                    dtTempMeasurement.AcceptChanges();
+                    dtMeasurement.Rows[0].Delete();
+                    dtMeasurement.AcceptChanges();
                 }
             }
-            return dtTempMeasurement;
+            return dtMeasurement;
         }
 
         private void AddStyleQTY(int QTY)
@@ -286,6 +321,7 @@ namespace TAILORING.Order
             cmbStyleQTY.SelectedIndex = 0;
         }
 
+        #region Garment Style Code
         private void GetGarmentStyle(int GarmentID)
         {
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
@@ -533,8 +569,9 @@ namespace TAILORING.Order
                     btn.StateCommon.Back.Color2 = Color.LightGray;
                 }
             }
-
         }
+
+        #endregion
 
         private void ClearGarmentSelection()
         {
@@ -661,14 +698,12 @@ namespace TAILORING.Order
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            PrintOrder();
-            //this.Close();
-            //Update Code
-        }
-
-        private void grpMeasurement_Enter(object sender, EventArgs e)
-        {
-
+            if (ValidateGarmentStyle())
+            {
+                //PrintOrder();
+                //this.Close();
+                //Update Code
+            }
         }
 
         private void btnBodyPosture_Click(object sender, EventArgs e)
@@ -708,12 +743,8 @@ namespace TAILORING.Order
             //}
             dtGarmentList.AcceptChanges();
         }
+
         #region Body Posture Code
-
-        DataTable dtPosture = new DataTable();
-
-
-
 
         private void GetBodyPostureDetails()
         {
@@ -873,5 +904,179 @@ namespace TAILORING.Order
         }
 
         #endregion
+
+        private bool ValidateGarmentStyle()
+        {
+            bool b = false;
+            DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (!ObjUtil.ValidateDataSet(ds))
+            { }
+            else if (ObjUtil.ValidateDataSet(ds))
+            {
+                SaveMeasurement();
+                DataTable dt = dtTempMeasurement.DefaultView.ToTable(true, "GarmentID");
+                if (dt.Rows.Count != dtGarmentList.Rows.Count)
+                {
+                    clsUtility.ShowInfoMessage("Please Fill All Garments Measurement..");
+                }
+                else if (ObjUtil.IsControlTextEmpty(cmbStichType))
+                {
+                    clsUtility.ShowInfoMessage("Please Select StichType..");
+                    cmbStichType.Focus();
+                }
+                else if (ObjUtil.IsControlTextEmpty(cmbFitType))
+                {
+                    clsUtility.ShowInfoMessage("Please Select FitType..");
+                    cmbFitType.Focus();
+                }
+                else if (!ObjUtil.ValidateTable(dtTempStyle))
+                {
+                    clsUtility.ShowInfoMessage("Please Select Styles for Garments..");
+                }
+                else if (ObjUtil.ValidateTable(dtTempStyle))
+                {
+                    for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+                    {
+                        int pQTY = 0;
+                        pQTY = Convert.ToInt32(dtGarmentList.Rows[i]["QTY"]);
+                        for (int j = 1; j <= pQTY; j++)
+                        {
+                            DataRow[] drow = dtTempStyle.Select("GarmentID=" + dtGarmentList.Rows[i]["GarmentID"] + " AND QTY=" + j);
+                            if (drow.Length == 0)
+                            {
+                                b = false;
+                                clsUtility.ShowInfoMessage("Please Select Style for All QTY");
+                                return b;
+                                //break;
+                            }
+                            else
+                            {
+                                b = true;
+                            }
+                        }
+                    }
+                }
+            }
+            return b;
+        }
+
+        private void SaveMeasurement()
+        {
+            DataSet ds = ctrlMeasurment1.GetMeasurement();
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt1 = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt1))
+                {
+                    ResetdtMeasurement(); // Delete row if same Garment measurement is already exists.
+                    for (int i = 0; i < dt1.Columns.Count; i++)
+                    {
+                        DataRow drow = dtTempMeasurement.NewRow();
+                        drow["MeasurementID"] = dtMasterMeasurement.Rows[i]["MeasurementID"];
+                        drow["MeasurementValue"] = dt1.Rows[0][i].ToString() == "" ? 0 : dt1.Rows[0][i];
+                        drow["GarmentID"] = GarmentID;
+                        dtTempMeasurement.Rows.Add(drow);
+                    }
+                    dtTempMeasurement.AcceptChanges();
+
+                    //CopyCommonMeasurement();
+                    ChangeMeasurementStyleStatus('M', GarmentID);
+                }
+                else
+                {
+                    clsUtility.ShowInfoMessage("Please Enter Measurement for Garment.");
+                    return;
+                }
+            }
+        }
+        int OldGarmentID = 0;
+        private void CopyCommonMeasurement()
+        {
+            //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, OldGarmentID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+            DataSet dscommon = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_CommonMeasurement");
+            if (ObjUtil.ValidateDataSet(dscommon))
+            {
+                DataTable dtcommon = dscommon.Tables[0];
+                if (ObjUtil.ValidateTable(dtcommon))
+                {
+                    double pMeasurementValue = 0;
+                    for (int i = 0; i < dtcommon.Rows.Count; i++)
+                    {
+                        int pGarmentID = Convert.ToInt32(dtcommon.Rows[i]["GarmentID"]);
+                        int pMeasurementID = Convert.ToInt32(dtcommon.Rows[i]["MeasurementID"]);
+                        DataRow[] dr = dtTempMeasurement.Select("MeasurementID=" + pMeasurementID);
+                        //if (dr.Length > 0)
+                        for (int k = 0; k < dr.Length; k++)
+                        {
+                            pMeasurementValue = Convert.ToDouble(dr[k]["MeasurementValue"]);
+
+                            DataRow[] drexists = dtTempMeasurement.Select("GarmentID=" + GarmentID + " AND MeasurementID=" + pMeasurementID);
+                            if (drexists.Length == 0)
+                            {
+                                ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+                                DataSet dsMeasure = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GarmentMeasurement");
+
+                                if (ObjUtil.ValidateDataSet(dsMeasure))
+                                {
+                                    DataTable dtMeasure = dsMeasure.Tables[0];
+                                    for (int j = 0; j < dtMeasure.Rows.Count; j++)
+                                    {
+                                        DataRow drow = dtTempMeasurement.NewRow();
+                                        drow["GarmentID"] = GarmentID;
+                                        drow["MeasurementID"] = dtMeasure.Rows[j]["MeasurementID"];
+                                        drow["MeasurementValue"] = Convert.ToInt32(dtMeasure.Rows[j]["MeasurementID"]) == pMeasurementID ? pMeasurementValue : 0;
+
+                                        dtTempMeasurement.Rows.Add(drow);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                drexists[0]["MeasurementValue"] = pMeasurementValue;
+                            }
+                            dtTempMeasurement.AcceptChanges();
+                            pMeasurementValue = 0;
+                            //return;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ChangeMeasurementStyleStatus(char ps, int garmentid)
+        {
+            DataRow[] dr = dtGarmentList.Select("GarmentID=" + garmentid);
+            if (dr.Length > 0)
+            {
+                if (ps == 'S')
+                {
+                    //dr[0]["Style"] = Done;
+                    btnStyle.Image = Properties.Resources.StyleCheck;
+                }
+                else
+                {
+                    //dr[0]["Measurement"] = Done;
+                    btnMeasurment.Image = Properties.Resources.measurcheck;
+                }
+            }
+            dtGarmentList.AcceptChanges();
+        }
+
+        private void ResetdtMeasurement()
+        {
+            if (ObjUtil.ValidateTable(dtTempMeasurement))
+            {
+                DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
+                if (dr.Length > 0)
+                {
+                    for (int i = 0; i < dr.Length; i++)
+                    {
+                        dr[i].Delete();
+                    }
+                    dtTempMeasurement.AcceptChanges();
+                }
+            }
+        }
     }
 }

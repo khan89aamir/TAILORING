@@ -131,6 +131,7 @@
             // txtCustomerAddress
             // 
             this.txtCustomerAddress.Location = new System.Drawing.Point(477, 15);
+            this.txtCustomerAddress.MaxLength = 1000;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.Size = new System.Drawing.Size(263, 96);
             this.txtCustomerAddress.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -159,6 +160,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
             this.txtCustomerMobileNo.TabIndex = 380;
+            this.txtCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerMobileNo_KeyPress);
             // 
             // txtCustomerName
             // 
@@ -177,6 +179,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCustomerName.StateNormal.Border.Rounding = 20;
             this.txtCustomerName.TabIndex = 379;
+            this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
             // lblCustomerAddress
             // 
@@ -304,8 +307,10 @@
             // 
             // frmQuickCustomer
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 273);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.btnCancel);

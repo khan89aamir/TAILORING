@@ -1258,7 +1258,7 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab10;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab16;
             this.kryptonRibbon1.ShowMinimizeButton = false;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -1432,6 +1432,7 @@
             this.kryptonRibbonGroup33.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple33});
             this.kryptonRibbonGroup33.TextLine1 = "Create new order";
+            this.kryptonRibbonGroup33.Visible = false;
             // 
             // kryptonRibbonGroupTriple33
             // 

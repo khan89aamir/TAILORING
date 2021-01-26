@@ -53,7 +53,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.StoreCopy.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1157, 640);
+            this.reportViewer1.Size = new System.Drawing.Size(1157, 593);
             this.reportViewer1.TabIndex = 0;
             // 
             // btnSave
@@ -63,7 +63,7 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Location = new System.Drawing.Point(1081, 7);
             this.btnSave.Name = "btnSave";
-            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
             this.btnSave.TabIndex = 289;
             this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
@@ -123,7 +123,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1163, 646);
+            this.tabPage5.Size = new System.Drawing.Size(1163, 599);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "   Store Copy   ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1163, 601);
+            this.tabPage6.Size = new System.Drawing.Size(1163, 599);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "   Factory Copy   ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             this.reportViewer3.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.FactoryCopy.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(3, 3);
             this.reportViewer3.Name = "reportViewer3";
-            this.reportViewer3.Size = new System.Drawing.Size(1157, 595);
+            this.reportViewer3.Size = new System.Drawing.Size(1157, 593);
             this.reportViewer3.TabIndex = 1;
             // 
             // kryptonPanel1

@@ -425,7 +425,8 @@ namespace TAILORING.Order
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
                 // for flat style
-                btn.PaletteMode = PaletteMode.Office2010Blue;
+                btn.PaletteMode = PaletteMode.SparklePurple;
+
                 // add round corner
                 btn.StateCommon.Border.Rounding = 5;
 
@@ -439,6 +440,9 @@ namespace TAILORING.Order
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 if (a > 0)
                 {
+                    btn.StateCommon.Content.ShortText.Color1 = Color.White;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.White;
+
                     btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
                     btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
 
@@ -583,6 +587,9 @@ namespace TAILORING.Order
                     //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
                     btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
                     btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.White;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.White;
                 }
                 else
                 {

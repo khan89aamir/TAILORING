@@ -36,7 +36,18 @@ namespace TAILORING.Report.Forms
         private void frmBill_Load(object sender, EventArgs e)
         {
             // OrderID = "1";
+            LoadTailoringTheme();
             LoadData();
+        }
+
+        private void LoadTailoringTheme()
+        {
+            this.BackgroundImage = null;
+            this.PaletteMode = PaletteMode.SparklePurple;
+            this.BackColor = Color.FromArgb(82, 91, 114);
+
+            btnSave.PaletteMode = PaletteMode.SparklePurple;
+            btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
         private void LoadData()

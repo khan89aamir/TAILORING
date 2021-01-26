@@ -408,6 +408,7 @@ namespace TAILORING.Masters
             this.rdSearchByCustomerMobileNo.Size = new System.Drawing.Size(95, 21);
             this.rdSearchByCustomerMobileNo.TabIndex = 8;
             this.rdSearchByCustomerMobileNo.Text = "Mobile No :";
+            this.grpCustomerSearch.SetUseEffect(this.rdSearchByCustomerMobileNo, false);
             this.rdSearchByCustomerMobileNo.UseVisualStyleBackColor = true;
             // 
             // rdShowAllOfCustomer
@@ -425,6 +426,7 @@ namespace TAILORING.Masters
             this.rdShowAllOfCustomer.TabIndex = 7;
             this.rdShowAllOfCustomer.TabStop = true;
             this.rdShowAllOfCustomer.Text = "Show All";
+            this.grpCustomerSearch.SetUseEffect(this.rdShowAllOfCustomer, false);
             this.rdShowAllOfCustomer.UseVisualStyleBackColor = true;
             // 
             // rdSearchByCompanyName
@@ -440,6 +442,7 @@ namespace TAILORING.Masters
             this.rdSearchByCompanyName.Size = new System.Drawing.Size(129, 21);
             this.rdSearchByCompanyName.TabIndex = 5;
             this.rdSearchByCompanyName.Text = "Company Name :";
+            this.grpCustomerSearch.SetUseEffect(this.rdSearchByCompanyName, false);
             this.rdSearchByCompanyName.UseVisualStyleBackColor = true;
             // 
             // grpCustomerGridview
@@ -471,6 +474,7 @@ namespace TAILORING.Masters
             this.dgvCompanyMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompanyMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCompanyMaster.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompanyMaster.MultiSelect = false;
             this.dgvCompanyMaster.Name = "dgvCompanyMaster";
             this.dgvCompanyMaster.ReadOnly = true;
             this.dgvCompanyMaster.Size = new System.Drawing.Size(751, 159);
@@ -583,7 +587,7 @@ namespace TAILORING.Masters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(783, 593);
             this.Controls.Add(this.kryptonPanel1);

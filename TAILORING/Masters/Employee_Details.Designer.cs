@@ -57,6 +57,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.picIMGPass = new System.Windows.Forms.PictureBox();
             this.txtEmail = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtPass = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtUsername = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -71,6 +72,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.PicEmployee = new System.Windows.Forms.PictureBox();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpCustomerSearch = new gGlowBox.gGlowGroupBox();
             this.txtSearchByEmpMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -82,8 +84,6 @@
             this.dgvEmployee = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picIMGPass = new System.Windows.Forms.PictureBox();
-            this.PicEmployee = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -91,7 +91,9 @@
             this.grpEmployee.SuspendLayout();
             this.grpGender.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -105,8 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
@@ -527,6 +527,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Login Details";
             // 
+            // picIMGPass
+            // 
+            this.picIMGPass.BackColor = System.Drawing.Color.Transparent;
+            this.picIMGPass.Image = ((System.Drawing.Image)(resources.GetObject("picIMGPass.Image")));
+            this.picIMGPass.Location = new System.Drawing.Point(323, 66);
+            this.picIMGPass.Name = "picIMGPass";
+            this.picIMGPass.Size = new System.Drawing.Size(31, 25);
+            this.picIMGPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIMGPass.TabIndex = 386;
+            this.picIMGPass.TabStop = false;
+            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(113, 100);
@@ -698,6 +709,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(172, 207);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(49, 17);
@@ -710,12 +722,23 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(8, 207);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(66, 17);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Browse...";
+            // 
+            // PicEmployee
+            // 
+            this.PicEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PicEmployee.Location = new System.Drawing.Point(11, 25);
+            this.PicEmployee.Name = "PicEmployee";
+            this.PicEmployee.Size = new System.Drawing.Size(210, 179);
+            this.PicEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicEmployee.TabIndex = 209;
+            this.PicEmployee.TabStop = false;
             // 
             // kryptonHeaderGroup1
             // 
@@ -806,6 +829,7 @@
             this.rdSearchByEmpMobileNo.Size = new System.Drawing.Size(95, 21);
             this.rdSearchByEmpMobileNo.TabIndex = 8;
             this.rdSearchByEmpMobileNo.Text = "Mobile No :";
+            this.grpCustomerSearch.SetUseEffect(this.rdSearchByEmpMobileNo, false);
             this.rdSearchByEmpMobileNo.UseVisualStyleBackColor = true;
             // 
             // rdShowAllOfEmp
@@ -823,6 +847,7 @@
             this.rdShowAllOfEmp.TabIndex = 7;
             this.rdShowAllOfEmp.TabStop = true;
             this.rdShowAllOfEmp.Text = "Show All";
+            this.grpCustomerSearch.SetUseEffect(this.rdShowAllOfEmp, false);
             this.rdShowAllOfEmp.UseVisualStyleBackColor = true;
             // 
             // rdSearchByEmpName
@@ -838,6 +863,7 @@
             this.rdSearchByEmpName.Size = new System.Drawing.Size(131, 21);
             this.rdSearchByEmpName.TabIndex = 5;
             this.rdSearchByEmpName.Text = "Employee Name :";
+            this.grpCustomerSearch.SetUseEffect(this.rdSearchByEmpName, false);
             this.rdSearchByEmpName.UseVisualStyleBackColor = true;
             // 
             // grpCustomerGridview
@@ -869,6 +895,7 @@
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.Location = new System.Drawing.Point(0, 0);
+            this.dgvEmployee.MultiSelect = false;
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
             this.dgvEmployee.Size = new System.Drawing.Size(964, 159);
@@ -898,31 +925,11 @@
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
             // 
-            // picIMGPass
-            // 
-            this.picIMGPass.BackColor = System.Drawing.Color.Transparent;
-            this.picIMGPass.Image = ((System.Drawing.Image)(resources.GetObject("picIMGPass.Image")));
-            this.picIMGPass.Location = new System.Drawing.Point(323, 66);
-            this.picIMGPass.Name = "picIMGPass";
-            this.picIMGPass.Size = new System.Drawing.Size(31, 25);
-            this.picIMGPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIMGPass.TabIndex = 386;
-            this.picIMGPass.TabStop = false;
-            // 
-            // PicEmployee
-            // 
-            this.PicEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PicEmployee.Location = new System.Drawing.Point(11, 25);
-            this.PicEmployee.Name = "PicEmployee";
-            this.PicEmployee.Size = new System.Drawing.Size(210, 179);
-            this.PicEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicEmployee.TabIndex = 209;
-            this.PicEmployee.TabStop = false;
-            // 
             // Employee_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(993, 702);
             this.Controls.Add(this.kryptonPanel1);
@@ -952,8 +959,10 @@
             this.grpGender.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
@@ -969,8 +978,6 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIMGPass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

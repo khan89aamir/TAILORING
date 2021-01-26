@@ -19,23 +19,23 @@ namespace TAILORING.Dashboard
             InitializeComponent();
         }
         public string OrderNo { get; set; }
-     
+
         private void LoadOrderReceive()
         {
             lblOrderNo.Text = OrderNo.ToString();
-          
 
-           DataTable dtOrderDetails=ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  "+ clsUtility.DBName + ".[dbo].tblSalesOrder where OrderNo='"+OrderNo+"'");
+
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  " + clsUtility.DBName + ".[dbo].tblSalesOrder where OrderNo='" + OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
                 int _CustID = Convert.ToInt32(dtOrderDetails.Rows[0]["CustomerID"]);
-                int _SalesOrderID= Convert.ToInt32(dtOrderDetails.Rows[0]["SalesOrderID"]);
+                int _SalesOrderID = Convert.ToInt32(dtOrderDetails.Rows[0]["SalesOrderID"]);
 
 
                 BindcustomerDetails(_CustID);
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from "+clsUtility.DBName+ ".dbo.vw_GetOrderStatusDetails where SalesOrderID="+ _SalesOrderID);
+                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails where SalesOrderID=" + _SalesOrderID);
                 if (ObjUtil.ValidateTable(dt))
                 {
                     if (ObjUtil.ValidateTable(dt))
@@ -54,14 +54,14 @@ namespace TAILORING.Dashboard
                 clsUtility.ShowInfoMessage("No Order found with order no : " + OrderNo);
                 this.Close();
             }
-          
-          
+
+
 
         }
 
         private void frmOrderReceive_Load(object sender, EventArgs e)
         {
-            
+
             LoadOrderReceive();
         }
 
@@ -78,12 +78,12 @@ namespace TAILORING.Dashboard
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
-                if (i!=0)
+                if (i != 0)
                 {
                     dgvOrderDetails.Columns[i].ReadOnly = true;
                 }
 
-               
+
             }
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
@@ -96,7 +96,7 @@ namespace TAILORING.Dashboard
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Delivered")
                 {
-                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor= Color.FromArgb(50, 122, 179);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(50, 122, 179);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 122, 179);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
@@ -114,7 +114,7 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(177, 0, 0);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
-                }   
+                }
             }
 
             ObjUtil.SetRowNumber(dgvOrderDetails);
@@ -127,8 +127,8 @@ namespace TAILORING.Dashboard
         }
         private void BindcustomerDetails(int custID)
         {
-           DataTable dtCustomerDetails= ObjDAL.ExecuteSelectStatement("select Name,MobileNo from "+clsUtility.DBName+".[dbo].[CustomerMaster] where CustomerID="+custID);
-            if (dtCustomerDetails.Rows.Count>0)
+            DataTable dtCustomerDetails = ObjDAL.ExecuteSelectStatement("select Name,MobileNo from " + clsUtility.DBName + ".[dbo].[CustomerMaster] where CustomerID=" + custID);
+            if (dtCustomerDetails.Rows.Count > 0)
             {
                 lblCustomerName.Text = dtCustomerDetails.Rows[0]["Name"].ToString();
                 lblMobile.Text = dtCustomerDetails.Rows[0]["MobileNo"].ToString();
@@ -180,13 +180,13 @@ namespace TAILORING.Dashboard
                     //int GarmentID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["GarmentID"].Value);
 
 
-                  
+
                     ObjDAL.SetColumnData("SalesOrderID", SqlDbType.Int, SalesID);
                     ObjDAL.SetColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
-              
+
                     // 4 - Order received.
-                    ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int,4);
-                   int result= ObjDAL.InsertData("TAILORING_01.dbo.tblOrderStatus", false);
+                    ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 4);
+                    int result = ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblOrderStatus", false);
                 }
             }
             clsUtility.ShowInfoMessage("Selected Garments has been Received.");
@@ -199,7 +199,7 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.EndEdit();
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
-                if (dgvOrderDetails.Rows[i].Cells[0].Value!=DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value)==true)
+                if (dgvOrderDetails.Rows[i].Cells[0].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value) == true)
                 {
                     status = true;
                     return status;

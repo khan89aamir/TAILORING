@@ -426,7 +426,7 @@ namespace TAILORING.Masters
             {
                 KryptonTextBox txt = (KryptonTextBox)sender;
                 e.Handled = ObjUtil.IsString(e);
-                if (e.Handled == true)
+                if (e.Handled)
                 {
                     clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
                     txt.Focus();

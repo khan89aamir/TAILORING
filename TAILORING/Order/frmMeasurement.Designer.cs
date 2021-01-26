@@ -46,6 +46,7 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpMeasurement = new gGlowBox.gGlowGroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpStyle = new gGlowBox.gGlowGroupBox();
             this.flowStyleImage = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,7 +73,6 @@
             this.picMeasure = new System.Windows.Forms.PictureBox();
             this.picStyle = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -125,6 +125,7 @@
             this.btnCancel.TabIndex = 358;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
             this.btnCancel.Values.Text = " Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -337,6 +338,19 @@
             this.grpMeasurement.Name = "grpMeasurement";
             this.grpMeasurement.Size = new System.Drawing.Size(962, 450);
             this.grpMeasurement.TabIndex = 287;
+            // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlMeasurment1.ForeColor = System.Drawing.Color.Black;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 450);
+            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // kryptonHeaderGroup1
             // 
@@ -731,19 +745,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(959, 34);
             this.panel1.TabIndex = 382;
-            // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlMeasurment1.ForeColor = System.Drawing.Color.Black;
-            this.ctrlMeasurment1.IsEditable = false;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(0, 0);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 450);
-            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmMeasurement
             // 

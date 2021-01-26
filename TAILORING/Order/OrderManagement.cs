@@ -104,7 +104,7 @@ namespace TAILORING.Order
             //dtDefaultOrderManagement = (DataTable)dataGridView1.DataSource;
             //dtOrderManagement = (DataTable)dataGridView1.DataSource;
 
-            NumericQTY.Value = 2;
+            //NumericQTY.Value = 2;
 
             dtpDeliveryDate.MinDate = dtDeliveryDate;
             dtpTrailDate.MinDate = dtTrailDate;
@@ -277,37 +277,6 @@ namespace TAILORING.Order
                 //dataGridView1.Columns["FitTypeID"].Visible = false;
                 //}
                 CalcTotalAmount();
-
-                //if (dataGridView1.Columns.Contains("ColDelete"))
-                //{
-                //    dataGridView1.Columns.Remove("ColDelete");
-                //}
-                //if (dataGridView1.Columns.Contains("ColOrderType"))
-                //{
-                //    dataGridView1.Columns.Remove("ColOrderType");
-                //}
-                //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-                //DataGridViewButtonColumn ColDelete = new DataGridViewButtonColumn();
-                //ColDelete.DataPropertyName = "Delete";
-                //ColDelete.HeaderText = "Delete";
-                //ColDelete.Name = "ColDelete";
-                //ColDelete.Text = "Delete";
-                //ColDelete.UseColumnTextForButtonValue = true;
-                ////dataGridView1.Columns.Add(ColDelete);
-
-                //KryptonDataGridViewComboBoxColumn ColOrderType = new KryptonDataGridViewComboBoxColumn();
-                ////DataGridViewComboBoxColumn ColOrderType = new DataGridViewComboBoxColumn();
-                ////ColOrderType.DataPropertyName = "Service";
-                //ColOrderType.Name = "ColOrderType";
-                //ColOrderType.HeaderText = "Service";
-                //ColOrderType.Items.Add("Normal");
-                //ColOrderType.Items.Add("Urgent");
-                //ColOrderType.Width = Width - 10;
-                //dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColDelete });
-                ////dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewComboBoxColumn[] { ColOrderType });
-                //dataGridView1.Columns.AddRange(new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn[] { ColOrderType });
             }
             catch { }
         }
@@ -341,6 +310,7 @@ namespace TAILORING.Order
                 {
                     GarmentRate = Convert.ToDouble(dt.Rows[0]["Rate"]);
                 }
+                NumericQTY.Focus();
             }
             btnAdd.Enabled = true;
         }
@@ -516,7 +486,7 @@ namespace TAILORING.Order
                 txtSGST.Text = pSGST.ToString();
 
                 GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
-                txtGrossAmt.Text = Math.Round(GrossAmt,0).ToString();// Rounding off tailoring amount
+                txtGrossAmt.Text = Math.Round(GrossAmt, 0).ToString();// Rounding off tailoring amount
             }
             catch { }
         }
@@ -624,7 +594,11 @@ namespace TAILORING.Order
             ObjDAL.SetColumnData("OrderDate", SqlDbType.Date, dtpBookingDate.Value.ToString("yyyy-MM-dd"));
             ObjDAL.SetColumnData("TrailDate", SqlDbType.Date, dtpTrailDate.Value.ToString("yyyy-MM-dd"));
             ObjDAL.SetColumnData("TotalAmount", SqlDbType.Decimal, txtGrossAmt.Text);
-            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtGrossAmt.Text);
+            ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtTailoringAmount.Text);
+
+            //ObjDAL.SetColumnData("CGST", SqlDbType.Decimal, txtCGST.Text);
+            //ObjDAL.SetColumnData("SGST", SqlDbType.Decimal, txtSGST.Text);
+
             ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
             ObjDAL.SetColumnData("OrderMode", SqlDbType.VarChar, "System");
             ObjDAL.SetColumnData("CreatedBy", SqlDbType.Int, clsUtility.LoginID);
@@ -698,13 +672,14 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("dtMeasurement", SqlDbType.Structured, dtMeasurement, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("dtStyle", SqlDbType.Structured, dtStyle, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("dtBodyPosture", SqlDbType.Structured, dtBodyPosture, clsConnection_DAL.ParamType.Input);
-
             ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("Flag", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Output);
 
             b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Insert_SalesOrderDetails");
-            if (!b)
+            DataTable dtOutput = ObjDAL.GetOutputParmData();
+            if (ObjUtil.ValidateTable(dtOutput))
             {
-                DeleteSalesOrder();
+                b = Convert.ToBoolean(dtOutput.Rows[0][1]);
             }
             return b;
         }

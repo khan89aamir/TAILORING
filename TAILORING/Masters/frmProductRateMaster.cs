@@ -73,6 +73,12 @@ namespace TAILORING.Masters
                 DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
                 {
+                    dt.Columns.Remove("GarmentCode");
+                    dt.Columns.Remove("GarmentType");
+                    dt.Columns.Remove("Photo");
+                    dt.Columns.Remove("LastChange");
+                    dt.AcceptChanges();
+
                     cmbGarmentName.DataSource = dt;
                     cmbGarmentName.DisplayMember = "GarmentName";
                     cmbGarmentName.ValueMember = "GarmentID";
@@ -119,11 +125,14 @@ namespace TAILORING.Masters
 
         private void txtRate_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ObjUtil.IsDecimal(txtRate, e);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Number...");
-                txtRate.Focus();
+                e.Handled = ObjUtil.IsDecimal(txtRate, e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number...");
+                    txtRate.Focus();
+                }
             }
         }
 
@@ -268,7 +277,7 @@ namespace TAILORING.Masters
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentRateID"].Value);
-                    cmbGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
+                    cmbGarmentName.SelectedValue = dataGridView1.SelectedRows[0].Cells["GarmentID"].Value.ToString();
                     txtRate.Text = dataGridView1.SelectedRows[0].Cells["Rate"].Value.ToString();
                     cmbService.Text = dataGridView1.SelectedRows[0].Cells["OrderType"].Value.ToString();
 
@@ -415,6 +424,21 @@ namespace TAILORING.Masters
 
             cmbSearchByService.SelectedIndex = -1;
             cmbSearchByService.Enabled = false;
+        }
+
+        private void cmbService_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txtRate.Focus();
+        }
+
+        private void cmbSearchByService_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            rdSearchByService.Focus();
+        }
+
+        private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            label1.Focus();
         }
     }
 }

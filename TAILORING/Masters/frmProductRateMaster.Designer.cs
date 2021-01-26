@@ -223,14 +223,17 @@
             "Normal",
             "Urgent"});
             this.cmbGarmentName.Location = new System.Drawing.Point(133, 19);
+            this.cmbGarmentName.MaxDropDownItems = 20;
             this.cmbGarmentName.Name = "cmbGarmentName";
             this.cmbGarmentName.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.cmbGarmentName.Size = new System.Drawing.Size(198, 27);
+            this.cmbGarmentName.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
             this.cmbGarmentName.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cmbGarmentName.StateCommon.ComboBox.Border.Rounding = 10;
             this.cmbGarmentName.TabIndex = 381;
+            this.cmbGarmentName.SelectionChangeCommitted += new System.EventHandler(this.cmbGarmentName_SelectionChangeCommitted);
             // 
             // cmbService
             // 
@@ -248,6 +251,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cmbService.StateActive.ComboBox.Border.Rounding = 10;
+            this.cmbService.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
             this.cmbService.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -265,6 +269,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cmbService.StateNormal.Item.Border.Rounding = 10;
             this.cmbService.TabIndex = 332;
+            this.cmbService.SelectionChangeCommitted += new System.EventHandler(this.cmbService_SelectionChangeCommitted);
             // 
             // txtRate
             // 
@@ -272,7 +277,7 @@
             this.txtRate.Location = new System.Drawing.Point(133, 60);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(198, 31);
-            this.txtRate.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtRate.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtRate.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtRate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -294,7 +299,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(20, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 20);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 325;
             this.label5.Text = "Garment Name :";
             // 
@@ -306,7 +311,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(86, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 20);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 324;
             this.label3.Text = "Rate :";
             // 
@@ -330,7 +335,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(373, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.Size = new System.Drawing.Size(59, 17);
             this.label4.TabIndex = 321;
             this.label4.Text = "Service :";
             // 
@@ -375,6 +380,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(735, 158);
@@ -436,11 +442,13 @@
             this.cmbSearchByService.Name = "cmbSearchByService";
             this.cmbSearchByService.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.cmbSearchByService.Size = new System.Drawing.Size(198, 27);
+            this.cmbSearchByService.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
             this.cmbSearchByService.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cmbSearchByService.StateCommon.ComboBox.Border.Rounding = 10;
             this.cmbSearchByService.TabIndex = 382;
+            this.cmbSearchByService.SelectionChangeCommitted += new System.EventHandler(this.cmbSearchByService_SelectionChangeCommitted);
             // 
             // txtSearchByGarment
             // 
@@ -470,9 +478,10 @@
             this.rdSearchByService.Location = new System.Drawing.Point(356, 17);
             this.rdSearchByService.Name = "rdSearchByService";
             this.groupBox1.SetsGlowColor(this.rdSearchByService, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByService.sGlowColor"))));
-            this.rdSearchByService.Size = new System.Drawing.Size(74, 24);
+            this.rdSearchByService.Size = new System.Drawing.Size(77, 21);
             this.rdSearchByService.TabIndex = 14;
             this.rdSearchByService.Text = "Service :";
+            this.groupBox1.SetUseEffect(this.rdSearchByService, false);
             this.rdSearchByService.UseVisualStyleBackColor = true;
             this.rdSearchByService.CheckedChanged += new System.EventHandler(this.rdSearchByService_CheckedChanged);
             // 
@@ -486,10 +495,11 @@
             this.rdShowAll.Location = new System.Drawing.Point(647, 17);
             this.rdShowAll.Name = "rdShowAll";
             this.groupBox1.SetsGlowColor(this.rdShowAll, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAll.sGlowColor"))));
-            this.rdShowAll.Size = new System.Drawing.Size(74, 24);
+            this.rdShowAll.Size = new System.Drawing.Size(79, 21);
             this.rdShowAll.TabIndex = 13;
             this.rdShowAll.TabStop = true;
             this.rdShowAll.Text = "Show All";
+            this.groupBox1.SetUseEffect(this.rdShowAll, false);
             this.rdShowAll.UseVisualStyleBackColor = true;
             this.rdShowAll.CheckedChanged += new System.EventHandler(this.rdShowAll_CheckedChanged);
             // 
@@ -502,9 +512,10 @@
             this.rdSearchByProduct.Location = new System.Drawing.Point(12, 17);
             this.rdSearchByProduct.Name = "rdSearchByProduct";
             this.groupBox1.SetsGlowColor(this.rdSearchByProduct, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByProduct.sGlowColor"))));
-            this.rdSearchByProduct.Size = new System.Drawing.Size(119, 24);
+            this.rdSearchByProduct.Size = new System.Drawing.Size(124, 21);
             this.rdSearchByProduct.TabIndex = 9;
             this.rdSearchByProduct.Text = "Garment Name :";
+            this.groupBox1.SetUseEffect(this.rdSearchByProduct, false);
             this.rdSearchByProduct.UseVisualStyleBackColor = true;
             this.rdSearchByProduct.CheckedChanged += new System.EventHandler(this.rdSearchByProduct_CheckedChanged);
             // 
@@ -535,7 +546,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(765, 554);
             this.Controls.Add(this.kryptonPanel1);

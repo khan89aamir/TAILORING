@@ -156,6 +156,9 @@
   <data name="kryptonHeaderGroup1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 54</value>
   </data>
+  <data name="txtCustomerOrderNo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="txtCustomerOrderNo.Location" type="System.Drawing.Point, System.Drawing">
     <value>896, 12</value>
   </data>
@@ -177,6 +180,9 @@
   <data name="&gt;&gt;txtCustomerOrderNo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="txtCustomerMobileNo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="txtCustomerMobileNo.Location" type="System.Drawing.Point, System.Drawing">
     <value>534, 12</value>
   </data>
@@ -197,6 +203,9 @@
   </data>
   <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="txtCustomerName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="txtCustomerName.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 12</value>
@@ -458,8 +467,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAD9nR2xvd0JveCwgVmVyc2lvbj0xLjAuMi4wLCBDdWx0dXJlPW5l
         dXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAACJnR2xvd0JveC5nR2xvd0dyb3VwQm94K1Nlcmlh
-        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAAIZmY4NWIzY2T/AAAAhQAAALMA
-        AADNAAAACw==
+        bENvbG9yBQAAAAROYW1lAUEBUgFHAUIBAAAAAAgICAgCAAAABgMAAAALVHJhbnNwYXJlbnQAAAAA/wAA
+        AP8AAAD/AAAACw==
 </value>
   </data>
   <data name="radByCustomerName.Size" type="System.Drawing.Size, System.Drawing">

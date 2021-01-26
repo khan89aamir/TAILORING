@@ -138,7 +138,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(915, 13);
+            this.label4.Location = new System.Drawing.Point(928, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 17);
             this.label4.TabIndex = 353;
@@ -150,7 +150,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(663, 21);
+            this.label14.Location = new System.Drawing.Point(655, 15);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 352;
@@ -162,7 +162,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(686, 17);
+            this.label3.Location = new System.Drawing.Point(704, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 350;
@@ -174,11 +174,12 @@
             this.gGlowGroupBox3.SetEffectType(this.cmbFitType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFitType.FormattingEnabled = true;
-            this.cmbFitType.Location = new System.Drawing.Point(757, 11);
+            this.cmbFitType.Location = new System.Drawing.Point(775, 15);
             this.cmbFitType.Name = "cmbFitType";
             this.gGlowGroupBox3.SetsGlowColor(this.cmbFitType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbFitType.sGlowColor"))));
             this.cmbFitType.Size = new System.Drawing.Size(150, 25);
             this.cmbFitType.TabIndex = 351;
+            this.cmbFitType.SelectionChangeCommitted += new System.EventHandler(this.cmbFitType_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -198,11 +199,12 @@
             this.gGlowGroupBox3.SetEffectType(this.cmbStichType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.cmbStichType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStichType.FormattingEnabled = true;
-            this.cmbStichType.Location = new System.Drawing.Point(502, 13);
+            this.cmbStichType.Location = new System.Drawing.Point(502, 15);
             this.cmbStichType.Name = "cmbStichType";
             this.gGlowGroupBox3.SetsGlowColor(this.cmbStichType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbStichType.sGlowColor"))));
             this.cmbStichType.Size = new System.Drawing.Size(150, 25);
             this.cmbStichType.TabIndex = 349;
+            this.cmbStichType.SelectionChangeCommitted += new System.EventHandler(this.cmbStichType_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -234,7 +236,7 @@
             this.gGlowGroupBox3.SetEffectType(this.cmbStyleQTY, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.FormattingEnabled = true;
-            this.cmbStyleQTY.Location = new System.Drawing.Point(154, 13);
+            this.cmbStyleQTY.Location = new System.Drawing.Point(154, 15);
             this.cmbStyleQTY.Name = "cmbStyleQTY";
             this.gGlowGroupBox3.SetsGlowColor(this.cmbStyleQTY, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbStyleQTY.sGlowColor"))));
             this.cmbStyleQTY.Size = new System.Drawing.Size(65, 25);
@@ -249,13 +251,14 @@
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(227, 15);
+            this.checkBox1.Location = new System.Drawing.Point(227, 17);
             this.checkBox1.Name = "checkBox1";
             this.gGlowGroupBox3.SetsGlowColor(this.checkBox1, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("checkBox1.sGlowColor"))));
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 346;
             this.checkBox1.Text = "Copy style as per previous";
             this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // flowStyleName
             // 
@@ -554,8 +557,8 @@
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.TabIndex = 374;
-            this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Measurment";
-            this.kryptonHeaderGroup1.ValuesPrimary.Image = null;
+            this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Garment Measurement";
+            this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.measurmentsmall;
             // 
             // gGlowGroupBox2
             // 
@@ -604,8 +607,8 @@
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup3.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup3.TabIndex = 375;
-            this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Style";
-            this.kryptonHeaderGroup3.ValuesPrimary.Image = null;
+            this.kryptonHeaderGroup3.ValuesPrimary.Heading = "Garment Style";
+            this.kryptonHeaderGroup3.ValuesPrimary.Image = global::TAILORING.Properties.Resources.style;
             // 
             // gGlowGroupBox3
             // 

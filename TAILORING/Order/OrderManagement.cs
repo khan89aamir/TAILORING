@@ -516,7 +516,7 @@ namespace TAILORING.Order
                 txtSGST.Text = pSGST.ToString();
 
                 GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
-                txtGrossAmt.Text = GrossAmt.ToString();
+                txtGrossAmt.Text = Math.Round(GrossAmt,0).ToString();// Rounding off tailoring amount
             }
             catch { }
         }
@@ -588,17 +588,15 @@ namespace TAILORING.Order
                         if (b)
                         {
                             clsUtility.ShowInfoMessage("Invoice " + InvoiceNo + " is Generated.");
-                            //dataGridView1.DataSource = null;
 
                             PrintOrder();
-
                             ClearAll();
                             dataGridView1.DataSource = dtOrderManagement;
                         }
                         else
                         {
                             clsUtility.ShowInfoMessage("Invoice is not Generated.");
-                            int a = ObjDAL.ExecuteNonQuery("DELETE FROM " + clsUtility.DBName + ".dbo.tblSalesOrder WHERE SalesOrderID=" + OrderID);
+                            DeleteSalesOrder();
                         }
                     }
                 }

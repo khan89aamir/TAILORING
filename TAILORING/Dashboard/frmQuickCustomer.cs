@@ -39,6 +39,7 @@ namespace TAILORING.Dashboard
         private void frmQuickCustomer_Load(object sender, EventArgs e)
         {
             LoadTailoringTheme();
+            txtCustomerName.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -112,6 +113,12 @@ namespace TAILORING.Dashboard
                 txtCustomerMobileNo.Focus();
                 return false;
             }
+            else if (txtCustomerMobileNo.Text.Length < 10)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Customer Mobile No.      ", clsUtility.strProjectTitle);
+                txtCustomerMobileNo.Focus();
+                return false;
+            }
             else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
             {
                 clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
@@ -139,6 +146,26 @@ namespace TAILORING.Dashboard
             else
             {
                 return true;
+            }
+        }
+
+        private void txtCustomerMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsNumeric(txtCustomerMobileNo.Text);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Only Number..");
+                txtCustomerMobileNo.Focus();
+            }
+        }
+
+        private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Only Charactor..");
+                txtCustomerName.Focus();
             }
         }
     }

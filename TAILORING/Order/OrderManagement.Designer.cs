@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -406,7 +403,7 @@
             this.dtpTrailDate.Name = "dtpTrailDate";
             this.grpNewOrder.SetsGlowColor(this.dtpTrailDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpTrailDate.sGlowColor"))));
             this.dtpTrailDate.ShowCheckBox = true;
-            this.dtpTrailDate.Size = new System.Drawing.Size(131, 25);
+            this.dtpTrailDate.Size = new System.Drawing.Size(143, 25);
             this.dtpTrailDate.TabIndex = 355;
             this.dtpTrailDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpTrailDate_Validating);
             // 
@@ -430,7 +427,7 @@
             this.dtpDeliveryDate.Location = new System.Drawing.Point(956, 19);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.grpNewOrder.SetsGlowColor(this.dtpDeliveryDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpDeliveryDate.sGlowColor"))));
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(131, 25);
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(143, 25);
             this.dtpDeliveryDate.TabIndex = 357;
             this.dtpDeliveryDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDeliveryDate_Validating);
             // 
@@ -606,12 +603,12 @@
             // ColDelete1
             // 
             this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColDelete1.HeaderText = "Delete1";
             this.ColDelete1.Name = "ColDelete1";
             this.ColDelete1.Text = "Delete1";
@@ -637,7 +634,7 @@
             // 
             this.txtTailoringAmount.Location = new System.Drawing.Point(146, 605);
             this.txtTailoringAmount.Name = "txtTailoringAmount";
-            this.txtTailoringAmount.Size = new System.Drawing.Size(119, 33);
+            this.txtTailoringAmount.Size = new System.Drawing.Size(119, 31);
             this.txtTailoringAmount.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtTailoringAmount.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtTailoringAmount.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -656,7 +653,7 @@
             // 
             this.txtCGST.Location = new System.Drawing.Point(498, 605);
             this.txtCGST.Name = "txtCGST";
-            this.txtCGST.Size = new System.Drawing.Size(59, 33);
+            this.txtCGST.Size = new System.Drawing.Size(59, 31);
             this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtCGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -675,7 +672,7 @@
             // 
             this.txtSGST.Location = new System.Drawing.Point(705, 605);
             this.txtSGST.Name = "txtSGST";
-            this.txtSGST.Size = new System.Drawing.Size(59, 33);
+            this.txtSGST.Size = new System.Drawing.Size(59, 31);
             this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtSGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -694,7 +691,7 @@
             // 
             this.txtGrossAmt.Location = new System.Drawing.Point(1006, 605);
             this.txtGrossAmt.Name = "txtGrossAmt";
-            this.txtGrossAmt.Size = new System.Drawing.Size(119, 33);
+            this.txtGrossAmt.Size = new System.Drawing.Size(119, 31);
             this.txtGrossAmt.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtGrossAmt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtGrossAmt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -714,7 +711,7 @@
             this.txtCustomerMobileNo.Location = new System.Drawing.Point(160, 111);
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
             this.txtCustomerMobileNo.ReadOnly = true;
-            this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 33);
+            this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 31);
             this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -734,7 +731,7 @@
             this.txtCustomerName.Location = new System.Drawing.Point(160, 69);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(223, 33);
+            this.txtCustomerName.Size = new System.Drawing.Size(223, 31);
             this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -759,7 +756,6 @@
             this.txtCustomerAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerAdd.StateCommon.Border.Rounding = 8;
             this.txtCustomerAdd.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerAdd.TabIndex = 386;

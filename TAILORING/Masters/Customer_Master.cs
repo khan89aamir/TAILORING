@@ -47,6 +47,12 @@ namespace TAILORING.Masters
                 txtCustomerMobileNo.Focus();
                 return false;
             }
+            else if (txtCustomerMobileNo.Text.Length < 10)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Customer Mobile No.      ", clsUtility.strProjectTitle);
+                txtCustomerMobileNo.Focus();
+                return false;
+            }
             else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
             {
                 clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
@@ -103,7 +109,7 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            
+
             EnableDisable(true);
 
             txtCustomerName.Focus();
@@ -158,7 +164,7 @@ namespace TAILORING.Masters
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
-                
+
                 EnableDisable(true);
 
                 txtCustomerName.Focus();
@@ -271,7 +277,7 @@ namespace TAILORING.Masters
                     txtCustomerAddress.Text = dgvCustomerMaster.SelectedRows[0].Cells["Address"].Value.ToString();
                     txtCustomerMobileNo.Text = dgvCustomerMaster.SelectedRows[0].Cells["MobileNo"].Value.ToString();
                     txtCustomerEmailID.Text = dgvCustomerMaster.SelectedRows[0].Cells["EmailID"].Value.ToString();
-                    
+
                     EnableDisable(false);
 
                     txtCustomerName.Focus();
@@ -402,11 +408,11 @@ namespace TAILORING.Masters
         private void dgvCustomerMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvCustomerMaster);
-           // ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
+            // ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvCustomerMaster.Columns["CustomerID"].Visible = false;
             dgvCustomerMaster.Columns["LastChange"].Visible = false;
-           
-            
+
+
             dgvCustomerMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCustomerMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //kryptonHeaderGroup1.ValuesPrimary.Heading= "Total Records : " + dgvCustomerMaster.Rows.Count;
@@ -416,12 +422,15 @@ namespace TAILORING.Masters
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            KryptonTextBox txt = (KryptonTextBox)sender;
-            e.Handled = ObjUtil.IsString(e);
-            if (e.Handled == true)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                txt.Focus();
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled == true)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
             }
         }
 
@@ -442,12 +451,15 @@ namespace TAILORING.Masters
         private void txtSearchByMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            KryptonTextBox txt = (KryptonTextBox)sender;
-            e.Handled = ObjUtil.IsNumeric(e);
-            if (e.Handled == true)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                txt.Focus();
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsNumeric(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
             }
         }
 
@@ -477,11 +489,6 @@ namespace TAILORING.Masters
             {
                 dgvCustomerMaster.DataSource = null;
             }
-        }
-
-        private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

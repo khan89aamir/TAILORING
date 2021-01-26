@@ -118,6 +118,7 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("FromDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("ToDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderList]");
             if (ObjUtil.ValidateDataSet(ds))
@@ -133,6 +134,7 @@ namespace TAILORING.Order
                     dgvOrderDetails.DataSource = null;
                 }
             }
+            ObjDAL.ResetData();
         }
 
         private void SearchByCustomerName()
@@ -141,6 +143,7 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, CustomerID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("FromDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("ToDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderList]");
             if (ObjUtil.ValidateDataSet(ds))
@@ -156,6 +159,7 @@ namespace TAILORING.Order
                     dgvOrderDetails.DataSource = null;
                 }
             }
+            ObjDAL.ResetData();
         }
 
         private void SearchByCustomerMobileNo()
@@ -164,6 +168,7 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, CustomerID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("FromDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("ToDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderList]");
             if (ObjUtil.ValidateDataSet(ds))
@@ -179,6 +184,7 @@ namespace TAILORING.Order
                     dgvOrderDetails.DataSource = null;
                 }
             }
+            ObjDAL.ResetData();
         }
 
         private void SearchByDates()
@@ -186,6 +192,7 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("FromDate", SqlDbType.Date, dtpFromDate.Value.ToString("yyyy-MM-dd"), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("ToDate", SqlDbType.Date, dtpToDate.Value.ToString("yyyy-MM-dd"), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderList]");
             if (ObjUtil.ValidateDataSet(ds))
@@ -193,12 +200,6 @@ namespace TAILORING.Order
                 DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
                 {
-                    //try
-                    //{
-                    //    DataRelation Datatablerelation = new DataRelation("OrderDetails", ds.Tables[0].Columns["SalesOrderID"], ds.Tables[1].Columns["SalesOrderID"], true);
-                    //    ds.Relations.Add(Datatablerelation);
-                    //}
-                    //catch { }
                     dgvOrderDetails.DataSource = dt;
                     grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
                 }
@@ -207,13 +208,14 @@ namespace TAILORING.Order
                     dgvOrderDetails.DataSource = null;
                 }
             }
+            ObjDAL.ResetData();
         }
 
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             if (txtCustomerName.Text.Length > 0)
             {
-                ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text, clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtCustomerName.Text.Trim(), clsConnection_DAL.ParamType.Input);
                 ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
                 DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
                 if (ObjUtil.ValidateDataSet(ds))
@@ -363,6 +365,8 @@ namespace TAILORING.Order
 
             dgvOrderDetails.Columns["CustomerID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
+            dgvOrderDetails.Columns["Address"].Visible = false;
+            dgvOrderDetails.Columns["MobileNo"].Visible = false;
 
             if (dgvOrderDetails.Columns.Contains("ColViewDetail"))
             {
@@ -419,6 +423,11 @@ namespace TAILORING.Order
                     Obj.ShowDialog();
                 }
             }
+        }
+
+        private void txtCustomerOrderNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

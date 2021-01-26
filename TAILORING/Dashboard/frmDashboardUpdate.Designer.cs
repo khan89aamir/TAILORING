@@ -208,6 +208,7 @@
             this.picSearchByOrderNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchByOrderNo.TabIndex = 383;
             this.picSearchByOrderNo.TabStop = false;
+            this.picSearchByOrderNo.Click += new System.EventHandler(this.picSearchByOrderNo_Click);
             // 
             // picSearchByName
             // 
@@ -250,6 +251,7 @@
             this.txtSearchByOrderNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.txtSearchByOrderNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByOrderNo.TabIndex = 373;
+            this.txtSearchByOrderNo.TextChanged += new System.EventHandler(this.txtSearchByOrderNo_TextChanged);
             // 
             // panel2
             // 
@@ -267,6 +269,7 @@
             this.txtSearchByCustomerMobileNo.Location = new System.Drawing.Point(49, 15);
             this.txtSearchByCustomerMobileNo.MaxLength = 10;
             this.txtSearchByCustomerMobileNo.Name = "txtSearchByCustomerMobileNo";
+            this.txtSearchByCustomerMobileNo.ShortcutsEnabled = false;
             this.txtSearchByCustomerMobileNo.Size = new System.Drawing.Size(194, 32);
             this.txtSearchByCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtSearchByCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(202)))), ((int)(((byte)(209)))));
@@ -280,6 +283,7 @@
             this.txtSearchByCustomerMobileNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.txtSearchByCustomerMobileNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByCustomerMobileNo.TabIndex = 373;
+            this.txtSearchByCustomerMobileNo.TextChanged += new System.EventHandler(this.txtSearchByCustomerMobileNo_TextChanged);
             this.txtSearchByCustomerMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByMobileNo_KeyPress);
             // 
             // panel1
@@ -310,6 +314,7 @@
             this.txtSearchByCustomerName.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
             this.txtSearchByCustomerName.StateNormal.Border.Rounding = 20;
             this.txtSearchByCustomerName.TabIndex = 373;
+            this.txtSearchByCustomerName.TextChanged += new System.EventHandler(this.txtSearchByCustomerName_TextChanged);
             this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
             // pictureBox2
@@ -720,12 +725,16 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.sPanel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "frmDashboardUpdate";
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDashboardUpdate_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDashboardUpdate_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();

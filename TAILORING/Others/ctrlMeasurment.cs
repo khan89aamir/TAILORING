@@ -150,6 +150,7 @@ namespace TAILORING.Others
                 txt.KeyPress += Decimal_Control_KeyPress;
                 txt.Enabled = IsEditable;
                 txt.BackColor = Color.White;
+                txt.ShortcutsEnabled = false;
 
                 if (ObjUtil.ValidateTable(dt))
                     txt.Text = dt.Rows[0][label.Text].ToString();

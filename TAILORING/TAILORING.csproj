@@ -142,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmCreateChalan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmCreateChalan.Designer.cs">
+      <DependentUpon>frmCreateChalan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmDashboardUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Dashboard\frmCreateChalan.resx">
+      <DependentUpon>frmCreateChalan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmDashboardUpdate.resx">
       <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,6 +518,11 @@
     <None Include="Resources\employeesmall.png" />
     <None Include="Resources\orderReceive.png" />
     <None Include="Resources\checkSqure.png" />
+    <None Include="Resources\GarmentFeaturs.png" />
+    <None Include="Resources\garmentMeasur.png" />
+    <None Include="Resources\garmentbody.png" />
+    <None Include="Resources\garmentStyle.png" />
+    <None Include="Resources\printer.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

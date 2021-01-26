@@ -205,5 +205,11 @@ namespace TAILORING.Dashboard
             }
            
         }
+
+        private void btnCreateChalan_Click(object sender, EventArgs e)
+        {
+            frmCreateChalan frmCreate = new frmCreateChalan();
+            frmCreate.Show();
+        }
     }
 }

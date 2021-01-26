@@ -303,6 +303,36 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap garmentbody {
+            get {
+                object obj = ResourceManager.GetObject("garmentbody", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garmentMeasur {
+            get {
+                object obj = ResourceManager.GetObject("garmentMeasur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garmentStyle {
+            get {
+                object obj = ResourceManager.GetObject("garmentStyle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gridview_ValuesPrimary_Image {
             get {
                 object obj = ResourceManager.GetObject("Gridview.ValuesPrimary.Image", resourceCulture);
@@ -526,6 +556,16 @@ namespace TAILORING.Properties {
         internal static System.Drawing.Bitmap Picture1 {
             get {
                 object obj = ResourceManager.GetObject("Picture1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

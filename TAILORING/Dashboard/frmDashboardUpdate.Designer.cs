@@ -32,7 +32,6 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sPanel3 = new TAILORING.SPanel();
             this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,7 +75,6 @@
             this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).BeginInit();
@@ -83,6 +82,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sPanel3.SuspendLayout();
             this.sPanel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
@@ -129,17 +129,6 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Dashboard";
             this.label12.UseMnemonic = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
             // 
             // btnAdd
             // 
@@ -333,6 +322,17 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 370;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // sPanel3
             // 
@@ -595,7 +595,7 @@
             // 
             // txtOrderReceive
             // 
-            this.txtOrderReceive.Location = new System.Drawing.Point(80, 93);
+            this.txtOrderReceive.Location = new System.Drawing.Point(82, 149);
             this.txtOrderReceive.Name = "txtOrderReceive";
             this.txtOrderReceive.Size = new System.Drawing.Size(209, 32);
             this.txtOrderReceive.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -617,7 +617,7 @@
             this.picSearchOrderDelivery.BackColor = System.Drawing.Color.Transparent;
             this.picSearchOrderDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchOrderDelivery.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderDelivery.Image")));
-            this.picSearchOrderDelivery.Location = new System.Drawing.Point(293, 176);
+            this.picSearchOrderDelivery.Location = new System.Drawing.Point(295, 232);
             this.picSearchOrderDelivery.Name = "picSearchOrderDelivery";
             this.picSearchOrderDelivery.Size = new System.Drawing.Size(30, 25);
             this.picSearchOrderDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -628,11 +628,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(77, 74);
+            this.label11.Location = new System.Drawing.Point(79, 130);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 17);
+            this.label11.Size = new System.Drawing.Size(115, 17);
             this.label11.TabIndex = 354;
             this.label11.Text = "Order Receive :";
             // 
@@ -641,7 +641,7 @@
             this.picSearchOrderReceive.BackColor = System.Drawing.Color.Transparent;
             this.picSearchOrderReceive.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchOrderReceive.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderReceive.Image")));
-            this.picSearchOrderReceive.Location = new System.Drawing.Point(292, 93);
+            this.picSearchOrderReceive.Location = new System.Drawing.Point(294, 149);
             this.picSearchOrderReceive.Name = "picSearchOrderReceive";
             this.picSearchOrderReceive.Size = new System.Drawing.Size(30, 25);
             this.picSearchOrderReceive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -653,17 +653,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(77, 154);
+            this.label10.Location = new System.Drawing.Point(79, 210);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 17);
+            this.label10.Size = new System.Drawing.Size(117, 17);
             this.label10.TabIndex = 6;
             this.label10.Text = "Order Delivery :";
             // 
             // txtOrderDelivery
             // 
-            this.txtOrderDelivery.Location = new System.Drawing.Point(82, 174);
+            this.txtOrderDelivery.Location = new System.Drawing.Point(84, 230);
             this.txtOrderDelivery.Name = "txtOrderDelivery";
             this.txtOrderDelivery.Size = new System.Drawing.Size(209, 32);
             this.txtOrderDelivery.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -683,10 +683,10 @@
             // 
             this.btnCreateChalan.AutoSize = true;
             this.btnCreateChalan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateChalan.Location = new System.Drawing.Point(123, 240);
+            this.btnCreateChalan.Location = new System.Drawing.Point(82, 60);
             this.btnCreateChalan.Name = "btnCreateChalan";
             this.btnCreateChalan.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnCreateChalan.Size = new System.Drawing.Size(151, 34);
+            this.btnCreateChalan.Size = new System.Drawing.Size(215, 34);
             this.btnCreateChalan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -695,6 +695,7 @@
             this.btnCreateChalan.TabIndex = 382;
             this.btnCreateChalan.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateChalan.Values.Image")));
             this.btnCreateChalan.Values.Text = "Create Chalan";
+            this.btnCreateChalan.Click += new System.EventHandler(this.btnCreateChalan_Click);
             // 
             // frmDashboardUpdate
             // 
@@ -728,7 +729,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).EndInit();
@@ -739,6 +739,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sPanel3.ResumeLayout(false);
             this.sPanel3.PerformLayout();
             this.sPanel2.ResumeLayout(false);

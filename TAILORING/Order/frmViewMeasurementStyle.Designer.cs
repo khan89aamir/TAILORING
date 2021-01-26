@@ -129,7 +129,7 @@
             this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlMeasurment1.Name = "ctrlMeasurment1";
             this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(958, 414);
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(958, 443);
             this.ctrlMeasurment1.TabIndex = 0;
             // 
             // label4
@@ -458,7 +458,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-10, 203);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(980, 505);
+            this.tabControl1.Size = new System.Drawing.Size(980, 524);
             this.tabControl1.TabIndex = 373;
             // 
             // tabPage1
@@ -467,7 +467,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(972, 479);
+            this.tabPage1.Size = new System.Drawing.Size(972, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -483,7 +483,7 @@
             // kryptonHeaderGroup4.Panel
             // 
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.gGlowGroupBox4);
-            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(966, 473);
+            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(966, 492);
             this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -508,7 +508,7 @@
             this.gGlowGroupBox4.GlowOn = true;
             this.gGlowGroupBox4.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox4.Name = "gGlowGroupBox4";
-            this.gGlowGroupBox4.Size = new System.Drawing.Size(958, 443);
+            this.gGlowGroupBox4.Size = new System.Drawing.Size(958, 462);
             this.gGlowGroupBox4.TabIndex = 287;
             // 
             // flowLayoutPanel1
@@ -518,7 +518,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(958, 443);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(958, 462);
             this.flowLayoutPanel1.TabIndex = 318;
             // 
             // tabPage2
@@ -527,7 +527,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(972, 450);
+            this.tabPage2.Size = new System.Drawing.Size(972, 479);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -543,7 +543,7 @@
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.gGlowGroupBox2);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(966, 444);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(966, 473);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -568,7 +568,7 @@
             this.gGlowGroupBox2.GlowOn = true;
             this.gGlowGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox2.Name = "gGlowGroupBox2";
-            this.gGlowGroupBox2.Size = new System.Drawing.Size(958, 414);
+            this.gGlowGroupBox2.Size = new System.Drawing.Size(958, 443);
             this.gGlowGroupBox2.TabIndex = 287;
             // 
             // tabPage3
@@ -635,9 +635,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(-10, 187);
+            this.panel1.Location = new System.Drawing.Point(-10, 202);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 43);
+            this.panel1.Size = new System.Drawing.Size(973, 50);
             this.panel1.TabIndex = 383;
             // 
             // picStyle
@@ -645,7 +645,7 @@
             this.picStyle.BackColor = System.Drawing.Color.Transparent;
             this.picStyle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picStyle.Image = ((System.Drawing.Image)(resources.GetObject("picStyle.Image")));
-            this.picStyle.Location = new System.Drawing.Point(771, 144);
+            this.picStyle.Location = new System.Drawing.Point(789, 146);
             this.picStyle.Name = "picStyle";
             this.picStyle.Size = new System.Drawing.Size(40, 68);
             this.picStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -658,7 +658,7 @@
             this.picMeasure.BackColor = System.Drawing.Color.Transparent;
             this.picMeasure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMeasure.Image = ((System.Drawing.Image)(resources.GetObject("picMeasure.Image")));
-            this.picMeasure.Location = new System.Drawing.Point(471, 144);
+            this.picMeasure.Location = new System.Drawing.Point(497, 146);
             this.picMeasure.Name = "picMeasure";
             this.picMeasure.Size = new System.Drawing.Size(40, 68);
             this.picMeasure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -671,7 +671,7 @@
             this.picBody.BackColor = System.Drawing.Color.Transparent;
             this.picBody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBody.Image = ((System.Drawing.Image)(resources.GetObject("picBody.Image")));
-            this.picBody.Location = new System.Drawing.Point(171, 144);
+            this.picBody.Location = new System.Drawing.Point(193, 146);
             this.picBody.Name = "picBody";
             this.picBody.Size = new System.Drawing.Size(40, 68);
             this.picBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -683,7 +683,7 @@
             // 
             this.btnStyle.BackColor = System.Drawing.Color.Transparent;
             this.btnStyle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStyle.Image = global::TAILORING.Properties.Resources.picStyle;
+            this.btnStyle.Image = global::TAILORING.Properties.Resources.garmentStyle;
             this.btnStyle.Location = new System.Drawing.Point(670, 82);
             this.btnStyle.Name = "btnStyle";
             this.btnStyle.Size = new System.Drawing.Size(246, 83);
@@ -696,7 +696,7 @@
             // 
             this.btnMeasurment.BackColor = System.Drawing.Color.Transparent;
             this.btnMeasurment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.picmeasurment;
+            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.garmentMeasur;
             this.btnMeasurment.Location = new System.Drawing.Point(378, 82);
             this.btnMeasurment.Name = "btnMeasurment";
             this.btnMeasurment.Size = new System.Drawing.Size(246, 83);
@@ -709,7 +709,7 @@
             // 
             this.btnBodyPosture.BackColor = System.Drawing.Color.Transparent;
             this.btnBodyPosture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.picBodyPosture;
+            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.garmentbody;
             this.btnBodyPosture.Location = new System.Drawing.Point(86, 82);
             this.btnBodyPosture.Name = "btnBodyPosture";
             this.btnBodyPosture.Size = new System.Drawing.Size(246, 83);

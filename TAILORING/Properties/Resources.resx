@@ -1111,6 +1111,15 @@
   <data name="formrightwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formrightwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="garmentbody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garmentbody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="garmentMeasur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garmentMeasur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="garmentStyle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\garmentStyle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Gridview.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -1197,6 +1206,9 @@
   </data>
   <data name="Picture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Picture1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="productmastersm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\productmastersm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -48,10 +48,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +72,7 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(938, 51);
+            this.kryptonPanel1.Size = new System.Drawing.Size(1010, 51);
             this.kryptonPanel1.TabIndex = 372;
             // 
             // pictureBox1
@@ -111,16 +111,11 @@
             // 
             this.grpCustomerGridview.Panel.Controls.Add(this.chkAll);
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
-            this.grpCustomerGridview.Size = new System.Drawing.Size(938, 376);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(1010, 388);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpCustomerGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.TabIndex = 373;
             this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
             this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -149,8 +144,13 @@
             this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
-            this.dgvOrderDetails.Size = new System.Drawing.Size(936, 326);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1008, 338);
             this.dgvOrderDetails.TabIndex = 0;
+            this.dgvOrderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellClick);
+            this.dgvOrderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellEndEdit);
+            this.dgvOrderDetails.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvOrderDetails_CellValidating);
+            this.dgvOrderDetails.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellValueChanged);
+            this.dgvOrderDetails.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvOrderDetails_CurrentCellDirtyStateChanged);
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
             // colCheck
@@ -177,7 +177,7 @@
             // 
             this.lblOrderNo.AutoSize = true;
             this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNo.ForeColor = System.Drawing.Color.White;
             this.lblOrderNo.Location = new System.Drawing.Point(141, 70);
             this.lblOrderNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -190,7 +190,7 @@
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerName.ForeColor = System.Drawing.Color.White;
             this.lblCustomerName.Location = new System.Drawing.Point(141, 104);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -216,9 +216,9 @@
             // 
             this.lblMobile.AutoSize = true;
             this.lblMobile.BackColor = System.Drawing.Color.Transparent;
-            this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobile.ForeColor = System.Drawing.Color.White;
-            this.lblMobile.Location = new System.Drawing.Point(540, 69);
+            this.lblMobile.Location = new System.Drawing.Point(599, 66);
             this.lblMobile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(30, 17);
@@ -231,7 +231,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(410, 69);
+            this.label4.Location = new System.Drawing.Point(469, 66);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 17);
@@ -242,13 +242,11 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(848, 527);
+            this.btnCancel.Location = new System.Drawing.Point(920, 534);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnCancel.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnCancel.TabIndex = 381;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
             this.btnCancel.Values.Text = " Cancel";
@@ -258,13 +256,11 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(744, 527);
+            this.btnAdd.Location = new System.Drawing.Point(816, 534);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnAdd.Size = new System.Drawing.Size(88, 34);
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnAdd.TabIndex = 380;
             this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.checkSqure;
             this.btnAdd.Values.Text = "Received";
@@ -280,7 +276,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panel2.BackColor = System.Drawing.Color.Green;
             this.panel2.Location = new System.Drawing.Point(119, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(28, 30);
@@ -313,49 +309,10 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Controls.Add(this.panel3);
-            this.panel5.Location = new System.Drawing.Point(688, 57);
+            this.panel5.Location = new System.Drawing.Point(771, 54);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 80);
             this.panel5.TabIndex = 386;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 387;
-            this.label1.Text = "Critical";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(151, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
-            this.label3.TabIndex = 388;
-            this.label3.Text = "Received";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(35, 50);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 389;
-            this.label5.Text = "Delivered";
             // 
             // label6
             // 
@@ -370,12 +327,51 @@
             this.label6.TabIndex = 390;
             this.label6.Text = "In Process";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(35, 50);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 389;
+            this.label5.Text = "Delivered";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(151, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 17);
+            this.label3.TabIndex = 388;
+            this.label3.Text = "Received";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(35, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 387;
+            this.label1.Text = "Critical";
+            // 
             // frmOrderReceive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(938, 568);
+            this.ClientSize = new System.Drawing.Size(1010, 576);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMobile);

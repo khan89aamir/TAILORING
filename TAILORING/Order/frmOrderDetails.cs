@@ -73,5 +73,10 @@ namespace TAILORING.Order
             dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+        private void frmOrderDetails_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

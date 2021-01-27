@@ -313,5 +313,10 @@ namespace TAILORING.Dashboard
             txtSearchByCustomerName.Clear();
             txtSearchByCustomerMobileNo.Clear();
         }
+
+        private void frmDashboardUpdate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

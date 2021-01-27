@@ -647,5 +647,10 @@ namespace TAILORING.Report.Forms
             reportViewer1.PrintDialog();
             reportViewer3.PrintDialog();
         }
+
+        private void frmBill_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

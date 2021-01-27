@@ -322,6 +322,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmQuickCustomer_FormClosed);
             this.Load += new System.EventHandler(this.frmQuickCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup3.Panel)).EndInit();
             this.kryptonHeaderGroup3.Panel.ResumeLayout(false);

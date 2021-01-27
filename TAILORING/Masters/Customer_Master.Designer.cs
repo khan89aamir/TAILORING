@@ -573,7 +573,7 @@
             this.rdSearchByCustomerMobileNo.Text = "Mobile No :";
             this.gGlowGroupBox1.SetUseEffect(this.rdSearchByCustomerMobileNo, false);
             this.rdSearchByCustomerMobileNo.UseVisualStyleBackColor = false;
-            this.rdSearchByCustomerMobileNo.CheckedChanged += new System.EventHandler(this.txtSearchByCustomer_TextChanged);
+            this.rdSearchByCustomerMobileNo.CheckedChanged += new System.EventHandler(this.rdSearchByCustomerMobileNo_CheckedChanged);
             // 
             // rdSearchByCustomerName
             // 

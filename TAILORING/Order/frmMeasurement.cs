@@ -37,6 +37,7 @@ namespace TAILORING.Order
         ImageList imageList = new ImageList();
 
         int GarmentID = 0, StyleID = 0;
+        public int CustomerID = 0;
 
         private void LoadTailoringTheme()
         {
@@ -91,7 +92,10 @@ namespace TAILORING.Order
                 panel.Controls.Add(lbl);
                 flowGarmentList.Controls.Add(panel);
 
-                GetDefaultSelectSKU();
+                if (i == 0)
+                {
+                    GetDefaultSelectSKU();
+                }
 
                 int a = GetSelectedStyleImage(GarmentID, StyleID);
                 if (pic.Name == a.ToString())
@@ -152,12 +156,129 @@ namespace TAILORING.Order
             }
         }
 
+        private void CopyGarmentType_LastOrder()
+        {
+            for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+            {
+                ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, CustomerID, clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dtGarmentList.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GarmentMeasurementStyle_CopyOrder");
+                if (ObjUtil.ValidateDataSet(ds))
+                {
+                    DataTable dt = ds.Tables[0];
+                    if (ObjUtil.ValidateTable(dt))
+                    {
+                        if (Convert.ToInt32(dt.Rows[0]["SalesOrderID"]) == 0)
+                        {
+                            clsUtility.ShowInfoMessage("No previous order found..");
+                        }
+                        else
+                        {
+                            //if (i == 0)
+                            //{
+                            //    dtTempMeasurement.Clear();
+                            //    dtTempStyle.Clear();
+                            //    dtTempPosture.Clear();
+                            //}
+                            //Updating Stich and Fit type for selected Garment.
+                            DataRow[] dr = dtGarmentList.Select("GarmentID=" + dtGarmentList.Rows[i]["GarmentID"]);
+                            if (dr.Length > 0)
+                            {
+                                dr[0]["StichTypeID"] = dt.Rows[0]["StichTypeID"];
+                                dr[0]["FitTypeID"] = dt.Rows[0]["FitTypeID"];
+                            }
+                            dtGarmentList.AcceptChanges();
+
+                            GarmentID = Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]);
+
+                            GetStichFitType();
+
+                            if (ds.Tables.Count > 1)
+                                CopyMeasurement_LastOrder(ds.Tables[1]);
+                            if (ds.Tables.Count > 2)
+                                CopyStyle_LastOrder(ds.Tables[2]);
+                            if (ds.Tables.Count > 3)
+                                CopyBodyPosture_LastOrder(ds.Tables[3]);
+                        }
+                    }
+                }
+            }
+            GarmentID = 0;
+        }
+
+        private void CopyMeasurement_LastOrder(DataTable dtMeasure)
+        {
+            if (ObjUtil.ValidateTable(dtMeasure))
+            {
+                for (int i = 0; i < dtMeasure.Rows.Count; i++)
+                {
+                    DataRow[] drow = dtTempMeasurement.Select("GarmentID=" + dtMeasure.Rows[i]["GarmentID"] + " AND MeasurementID=" + dtMeasure.Rows[i]["MeasurementID"]);
+                    if (drow.Length == 0)
+                    {
+                        DataRow dr = dtTempMeasurement.NewRow();
+                        dr["GarmentID"] = dtMeasure.Rows[i]["GarmentID"];
+                        dr["MeasurementID"] = dtMeasure.Rows[i]["MeasurementID"];
+                        dr["MeasurementValue"] = dtMeasure.Rows[i]["MeasurementValue"].ToString() == "" ? "0" : dtMeasure.Rows[i]["MeasurementValue"];
+
+                        dtTempMeasurement.Rows.Add(dr);
+                    }
+                }
+                dtTempMeasurement.AcceptChanges();
+            }
+        }
+
+        private void CopyStyle_LastOrder(DataTable dtStyle)
+        {
+            if (ObjUtil.ValidateTable(dtStyle))
+            {
+                for (int i = 0; i < dtStyle.Rows.Count; i++)
+                {
+                    DataRow[] drow = dtTempStyle.Select("GarmentID=" + dtStyle.Rows[i]["GarmentID"] + " AND StyleID=" + dtStyle.Rows[i]["StyleID"]);
+                    if (drow.Length == 0)
+                    {
+                        DataRow dr = dtTempStyle.NewRow();
+                        dr["GarmentID"] = dtStyle.Rows[i]["GarmentID"];
+                        dr["StyleID"] = dtStyle.Rows[i]["StyleID"];
+                        dr["QTY"] = dtStyle.Rows[i]["QTY"];
+                        dr["StyleImageID"] = dtStyle.Rows[i]["StyleImageID"];
+
+                        dtTempStyle.Rows.Add(dr);
+                    }
+                }
+                dtTempStyle.AcceptChanges();
+            }
+        }
+
+        private void CopyBodyPosture_LastOrder(DataTable dtPosture)
+        {
+            if (ObjUtil.ValidateTable(dtPosture))
+            {
+                for (int i = 0; i < dtPosture.Rows.Count; i++)
+                {
+                    DataRow[] drow = dtTempPosture.Select("GarmentID=" + dtPosture.Rows[i]["GarmentID"] + " AND BodyPostureID=" + dtPosture.Rows[i]["BodyPostureID"]);
+                    if (drow.Length == 0)
+                    {
+                        DataRow dr = dtTempPosture.NewRow();
+                        dr["GarmentID"] = dtPosture.Rows[i]["GarmentID"];
+                        dr["BodyPostureID"] = dtPosture.Rows[i]["BodyPostureID"];
+                        dr["BodyPostureMappingID"] = dtPosture.Rows[i]["BodyPostureMappingID"];
+
+                        dtTempPosture.Rows.Add(dr);
+                    }
+                }
+                dtTempPosture.AcceptChanges();
+            }
+        }
+
         private void frmMeasurement_Load(object sender, EventArgs e)
         {
             //HorizontalScroll.Maximum = 0;
             ctrlMeasurment1.IsEditable = true;
 
             LoadTailoringTheme();
+
+            BindStichType();
+            BindFitType();
 
             if (!ObjUtil.ValidateDataSet(dsMeasure))
             {
@@ -173,6 +294,8 @@ namespace TAILORING.Order
                 InitTempdtMeasurement();
                 InitTempdtStyle();
                 InitTempdtPosture();
+
+                //CopyGarmentType_LastOrder();
             }
             else
             {
@@ -189,29 +312,9 @@ namespace TAILORING.Order
                 }
                 dataGridView1.DataSource = dtGarmentList;
 
+                CopyGarmentType_LastOrder();
+
                 AddGarments();
-
-                //SKUList.Items.Clear();
-                //for (int i = 0; i < dtGarmentList.Rows.Count; i++)
-                //{
-                //    Image img = Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString());
-
-                //    SKUList.Items.Add(dtGarmentList.Rows[i]["GarmentName"].ToString());
-
-                //    imageList.Images.Add(img);
-
-                //    imageList.ImageSize = new Size(110, 200);
-                //    SKUList.View = System.Windows.Forms.View.LargeIcon;
-                //    SKUList.LargeImageList = imageList;
-
-                //    SKUList.Items[i].ImageIndex = i;
-                //}
-                //SKUList.Font = new Font("Times New Roman", 11, FontStyle.Bold);
-                //SKUList.Items[0].Selected = true;
-                //GetDefaultSelectSKU();
-
-                BindStichType();
-                BindFitType();
             }
             else
             {
@@ -316,16 +419,12 @@ namespace TAILORING.Order
                 KryptonButton btn = new KryptonButton();
                 btn.PaletteMode = PaletteMode.SparklePurple;
                 // add round corner
-                btn.StateCommon.Border.Rounding = 5;
+                btn.StateCommon.Border.Rounding = 17;
                 btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                btn.StateCommon.Content.ShortText.Color2 = Color.Black;
 
                 btn.AutoSize = false;
                 btn.Size = new Size(187, 45);
-                //btn.FlatStyle = FlatStyle.Flat;
-                //btn.FlatAppearance.BorderSize = 0;
-                //btn.ForeColor = Color.White;//17, 241, 41
-
-                //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
@@ -334,28 +433,24 @@ namespace TAILORING.Order
                 btn.Click += btnStyleName_Click;
                 btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 12.3f, FontStyle.Bold);
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
-                //btn.StatePressed.Back.ColorStyle = PaletteColorStyle.Solid;
                 if (a > 0)
                 {
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;
 
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
 
-                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
+                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(72, 170, 144);
 
-                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
-
-                    //btn.StateNormal.Back.Color1 = Color.FromArgb(17, 241, 41);
+                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
+                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(72, 170, 144);
                 }
                 else
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
-                    //btn.StatePressed.Back.Color1 = Color.LightGray;
                 }
                 flowStyleName.Controls.Add(btn);
             }
@@ -382,10 +477,9 @@ namespace TAILORING.Order
             //{
             //    btn.BackColor = Color.FromArgb(0, 191, 255); // Blue
             //}
-            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))
             {
                 //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
-
                 btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
 
@@ -394,6 +488,18 @@ namespace TAILORING.Order
 
                 btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+            }
+            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(72, 170, 144))
+            {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                btn.StatePressed.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.StatePressed.Back.Color2 = Color.FromArgb(17, 241, 41);
+
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(17, 241, 41);
+
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(17, 241, 41);
             }
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
@@ -440,48 +546,56 @@ namespace TAILORING.Order
 
         private void AddStyleImages()
         {
-            flowStyleImage.Controls.Clear();
-            for (int i = 0; i < dtStyleImages.Rows.Count; i++)
+            GC.Collect();
+            try
             {
-                Panel panel = new Panel();
-                PictureBox pic = new PictureBox();
-                //Label lbl = new Label();
-                panel.Name = "pnl";
-
-                //lbl.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
-                //lbl.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
-                //lbl.AutoSize = true;
-                //lbl.BackColor = Color.Transparent;
-                //lbl.Location = new Point(pic.Location.X + 17, pic.Location.Y + 80);
-                //lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
-
-                panel.Size = new Size(175, 160);
-                panel.Cursor = Cursors.Hand;
-
-                pic.SizeMode = PictureBoxSizeMode.Zoom;
-                if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
+                flowStyleImage.Controls.Clear();
+                for (int i = 0; i < dtStyleImages.Rows.Count; i++)
                 {
-                    pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
-                }
-                else
-                {
-                    pic.Image = TAILORING.Properties.Resources.NoImage;
-                }
-                pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
-                pic.Size = new Size(panel.Width - 5, panel.Height - 5);
-                pic.Click += Pic_Click;
-                pic.BorderStyle = BorderStyle.None;
+                    Panel panel = new Panel();
+                    PictureBox pic = new PictureBox();
+                    //Label lbl = new Label();
+                    panel.Name = "pnl";
 
-                panel.Controls.Add(pic);
-                //panel.Controls.Add(lbl);
+                    //lbl.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
+                    //lbl.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
+                    //lbl.AutoSize = true;
+                    //lbl.BackColor = Color.Transparent;
+                    //lbl.Location = new Point(pic.Location.X + 17, pic.Location.Y + 80);
+                    //lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
 
-                flowStyleImage.Controls.Add(panel);
+                    panel.Size = new Size(175, 160);
+                    panel.Cursor = Cursors.Hand;
 
-                int a = GetSelectedStyleImage(GarmentID, StyleID);
-                if (pic.Name == a.ToString())
-                {
-                    pic.Parent.BackColor = Color.LightGray;
+                    pic.SizeMode = PictureBoxSizeMode.Zoom;
+                    if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
+                    {
+                        pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
+                    }
+                    else
+                    {
+                        pic.Image = TAILORING.Properties.Resources.NoImage;
+                    }
+                    pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
+                    pic.Size = new Size(panel.Width - 5, panel.Height - 5);
+                    pic.Click += Pic_Click;
+                    pic.BorderStyle = BorderStyle.None;
+
+                    panel.Controls.Add(pic);
+                    //panel.Controls.Add(lbl);
+
+                    flowStyleImage.Controls.Add(panel);
+
+                    int a = GetSelectedStyleImage(GarmentID, StyleID);
+                    if (pic.Name == a.ToString())
+                    {
+                        pic.Parent.BackColor = Color.LightGray;
+                    }
                 }
+            }
+            catch (OutOfMemoryException ex)
+            {
+                clsUtility.ShowErrorMessage(ex.ToString());
             }
         }
 
@@ -596,7 +710,7 @@ namespace TAILORING.Order
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
                 KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
+                if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
                     btn.StateCommon.Back.Color1 = Color.LightGray;
@@ -626,8 +740,8 @@ namespace TAILORING.Order
                 if (p.Parent.BackColor != Color.Transparent)
                 {
                     //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
 
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;
@@ -1206,6 +1320,11 @@ namespace TAILORING.Order
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmMeasurement_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
         }
 
         private void AddTempdtPosture(PictureBox p)

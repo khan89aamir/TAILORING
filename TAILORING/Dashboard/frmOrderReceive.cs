@@ -214,5 +214,10 @@ namespace TAILORING.Dashboard
         {
             this.Close();
         }
+
+        private void frmOrderReceive_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

@@ -184,7 +184,7 @@ namespace TAILORING.Order
                         dtGarmentList.Columns.Add("Style", typeof(Image));
                     }
                     dataGridView1.DataSource = dtGarmentList;
-                    dtTempMeasurement= dsMeasure.Tables[1];
+                    dtTempMeasurement = dsMeasure.Tables[1];
                     dtTempStyle = dsMeasure.Tables[2];
                     dtTempPosture = dsMeasure.Tables[3];
 
@@ -273,7 +273,7 @@ namespace TAILORING.Order
                 AddStyleQTY(QTY);
 
                 GetGarmentStyle(GarmentID);// Garment Style
-                
+
                 checkBox1.Checked = false;
                 checkBox1.Enabled = false;
             }
@@ -430,7 +430,7 @@ namespace TAILORING.Order
                 btn.PaletteMode = PaletteMode.SparklePurple;
 
                 // add round corner
-                btn.StateCommon.Border.Rounding = 5;
+                btn.StateCommon.Border.Rounding = 17;
 
                 btn.StateCommon.Content.ShortText.Color1 = Color.Black;
                 btn.StateCommon.Content.ShortText.Color2 = Color.Black;
@@ -445,14 +445,14 @@ namespace TAILORING.Order
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;
 
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);//17, 
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
 
-                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(72, 170, 144);//17, 
+                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(72, 170, 144);
 
-                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//17, 
-                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(72, 170, 144);//17, 
+                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(72, 170, 144);
 
                     //btn.StateCommon.Content.ShortText.Color1 = Color.White;
                 }
@@ -475,7 +475,7 @@ namespace TAILORING.Order
 
             KryptonButton btn = (KryptonButton)sender;
 
-            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))
             {
                 //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
@@ -488,7 +488,18 @@ namespace TAILORING.Order
                 btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
             }
+            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(72, 170, 144))
+            {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                btn.StatePressed.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.StatePressed.Back.Color2 = Color.FromArgb(17, 241, 41);
 
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(17, 241, 41);
+
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(17, 241, 41);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(17, 241, 41);
+            }
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
         }
@@ -590,8 +601,8 @@ namespace TAILORING.Order
                 if (p.Parent.BackColor != Color.Transparent)
                 {
                     //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
 
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;
@@ -648,7 +659,7 @@ namespace TAILORING.Order
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
                 KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
+                if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
 
@@ -809,7 +820,7 @@ namespace TAILORING.Order
                 drow["SalesOrderID"] = pOrderID;
                 drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
                 drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
-                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"].ToString()==""?"0": dttempMeasure.Rows[i]["MeasurementValue"];
+                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"].ToString() == "" ? "0" : dttempMeasure.Rows[i]["MeasurementValue"];
                 drow["CreatedBy"] = clsUtility.LoginID;
 
                 dtMeasurementData.Rows.Add(drow);
@@ -1320,6 +1331,11 @@ namespace TAILORING.Order
                 clsUtility.ShowInfoMessage("There is no Data to copy.");
                 checkBox1.Checked = false;
             }
+        }
+
+        private void frmViewMeasurementStyle_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
         }
 
         private void ResetdtMeasurement()

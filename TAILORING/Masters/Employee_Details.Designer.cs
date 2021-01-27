@@ -831,6 +831,7 @@
             this.rdSearchByEmpMobileNo.Text = "Mobile No :";
             this.grpCustomerSearch.SetUseEffect(this.rdSearchByEmpMobileNo, false);
             this.rdSearchByEmpMobileNo.UseVisualStyleBackColor = true;
+            this.rdSearchByEmpMobileNo.CheckedChanged += new System.EventHandler(this.rdSearchByEmpMobileNo_CheckedChanged);
             // 
             // rdShowAllOfEmp
             // 
@@ -849,6 +850,7 @@
             this.rdShowAllOfEmp.Text = "Show All";
             this.grpCustomerSearch.SetUseEffect(this.rdShowAllOfEmp, false);
             this.rdShowAllOfEmp.UseVisualStyleBackColor = true;
+            this.rdShowAllOfEmp.CheckedChanged += new System.EventHandler(this.rdShowAllOfEmp_CheckedChanged);
             // 
             // rdSearchByEmpName
             // 
@@ -865,6 +867,7 @@
             this.rdSearchByEmpName.Text = "Employee Name :";
             this.grpCustomerSearch.SetUseEffect(this.rdSearchByEmpName, false);
             this.rdSearchByEmpName.UseVisualStyleBackColor = true;
+            this.rdSearchByEmpName.CheckedChanged += new System.EventHandler(this.rdSearchByEmpName_CheckedChanged);
             // 
             // grpCustomerGridview
             // 

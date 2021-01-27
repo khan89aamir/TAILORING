@@ -129,6 +129,7 @@ namespace TAILORING.Order
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Details";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrderDetails_FormClosed);
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).EndInit();
             this.grpCustomerGridview.Panel.ResumeLayout(false);

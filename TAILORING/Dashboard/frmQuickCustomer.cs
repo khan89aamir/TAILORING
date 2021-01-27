@@ -168,5 +168,10 @@ namespace TAILORING.Dashboard
                 txtCustomerName.Focus();
             }
         }
+
+        private void frmQuickCustomer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

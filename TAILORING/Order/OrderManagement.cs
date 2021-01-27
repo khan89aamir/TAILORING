@@ -498,6 +498,7 @@ namespace TAILORING.Order
                 Order.frmMeasurement Obj = new Order.frmMeasurement();
                 Obj.dtGarmentList = dtOrder;
                 Obj.dsMeasure = this.dsMeasure;
+                Obj.CustomerID = this.CustomerID;
                 Obj.ShowDialog();
 
                 btnSave.Enabled = true;
@@ -1073,6 +1074,11 @@ namespace TAILORING.Order
                 }
 
             }
+        }
+
+        private void txtTailoringAmount_Enter(object sender, EventArgs e)
+        {
+            lblCGST.Focus();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -172,6 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoice";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBill_FormClosed);
             this.Load += new System.EventHandler(this.frmBill_Load);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);

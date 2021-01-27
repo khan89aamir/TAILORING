@@ -378,31 +378,7 @@ namespace TAILORING.Masters
 
         private void txtSearchByCustomer_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchByCustomerName.Text.Trim().Length == 0)
-            {
-                LoadData();
-                return;
-            }
 
-            ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("MobileNo", SqlDbType.VarChar, '0', clsConnection_DAL.ParamType.Input);
-            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Customer");
-            if (ObjUtil.ValidateDataSet(ds))
-            {
-                DataTable dt = ds.Tables[0];
-                if (ObjUtil.ValidateTable(dt))
-                {
-                    dgvCustomerMaster.DataSource = dt;
-                }
-                else
-                {
-                    dgvCustomerMaster.DataSource = null;
-                }
-            }
-            else
-            {
-                dgvCustomerMaster.DataSource = null;
-            }
         }
 
         private void dgvCustomerMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

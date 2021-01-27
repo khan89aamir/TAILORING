@@ -142,7 +142,7 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
 
             EnableDisable(true);
-
+            cmbGarmentName.SelectedIndex = -1;
             cmbGarmentName.Focus();
         }
 
@@ -176,7 +176,6 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
 
                 EnableDisable(true);
-
                 cmbGarmentName.Focus();
             }
             else
@@ -232,6 +231,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is not deleted  ", clsUtility.strProjectTitle);
                         ObjDAL.ResetData();
                     }
+                    cmbGarmentName.SelectedIndex = -1;
                 }
             }
             else
@@ -250,6 +250,7 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
 
                 EnableDisable(false);
+                cmbGarmentName.SelectedIndex = -1;
             }
         }
 
@@ -387,6 +388,7 @@ namespace TAILORING.Masters
             {
                 clsUtility.ShowInfoMessage("Garment : '" + cmbGarmentName.Text + "' is not Updated Successfully..", clsUtility.strProjectTitle);
             }
+            cmbGarmentName.SelectedIndex = -1;
             ObjDAL.ResetData();
         }
 
@@ -396,7 +398,7 @@ namespace TAILORING.Masters
             cmbService.Enabled = b;
             txtRate.Enabled = b;
 
-            cmbGarmentName.SelectedIndex = -1;
+            //cmbGarmentName.SelectedIndex = -1;
         }
 
         private void rdSearchByProduct_CheckedChanged(object sender, EventArgs e)
@@ -438,7 +440,7 @@ namespace TAILORING.Masters
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            label1.Focus();
+            txtRate.Focus();
         }
     }
 }

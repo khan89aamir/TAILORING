@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -501,7 +501,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.Size = new System.Drawing.Size(1104, 194);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
@@ -552,12 +552,9 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtTailoringAmount.StateCommon.Border.Rounding = 10;
             this.txtTailoringAmount.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTailoringAmount.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtTailoringAmount.StateNormal.Border.Rounding = 20;
             this.txtTailoringAmount.TabIndex = 380;
             this.txtTailoringAmount.Text = "0";
+            this.txtTailoringAmount.Enter += new System.EventHandler(this.txtTailoringAmount_Enter);
             // 
             // txtCGST
             // 
@@ -721,7 +718,7 @@
             this.Column1.DataPropertyName = "GarmentCode";
             this.Column1.HeaderText = "GarmentCode";
             this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column1.Width = 100;
             // 
@@ -730,7 +727,8 @@
             this.Column2.DataPropertyName = "GarmentName";
             this.Column2.HeaderText = "GarmentName";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 100;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 120;
             // 
             // ServiceID
             // 
@@ -750,9 +748,9 @@
             "Normal",
             "Urgent"});
             this.Service.Name = "Service";
-            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Service.Width = 60;
+            this.Service.Width = 100;
             // 
             // TrailDate
             // 
@@ -762,8 +760,9 @@
             this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TrailDate.HeaderText = "TrailDate";
             this.TrailDate.Name = "TrailDate";
+            this.TrailDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.TrailDate.ShowCheckBox = true;
-            this.TrailDate.Width = 100;
+            this.TrailDate.Width = 110;
             // 
             // DeliveryDate
             // 
@@ -773,14 +772,16 @@
             this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DeliveryDate.HeaderText = "DeliveryDate";
             this.DeliveryDate.Name = "DeliveryDate";
+            this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DeliveryDate.ShowCheckBox = true;
-            this.DeliveryDate.Width = 100;
+            this.DeliveryDate.Width = 110;
             // 
             // TrimAmount
             // 
             this.TrimAmount.DataPropertyName = "TrimAmount";
             this.TrimAmount.HeaderText = "Trim Amount";
             this.TrimAmount.Name = "TrimAmount";
+            this.TrimAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.TrimAmount.Width = 100;
             // 
             // QTY
@@ -788,6 +789,7 @@
             this.QTY.DataPropertyName = "QTY";
             this.QTY.HeaderText = "QTY";
             this.QTY.Name = "QTY";
+            this.QTY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.QTY.Width = 100;
             // 
             // Rate
@@ -795,6 +797,7 @@
             this.Rate.DataPropertyName = "Rate";
             this.Rate.HeaderText = "Rate";
             this.Rate.Name = "Rate";
+            this.Rate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Rate.Width = 100;
             // 
             // Total
@@ -802,6 +805,7 @@
             this.Total.DataPropertyName = "Total";
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
+            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Total.Width = 100;
             // 
             // Photo
@@ -809,6 +813,7 @@
             this.Photo.DataPropertyName = "Photo";
             this.Photo.HeaderText = "Photo";
             this.Photo.Name = "Photo";
+            this.Photo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Photo.Visible = false;
             this.Photo.Width = 100;
             // 
@@ -817,18 +822,19 @@
             this.ColDelete.DataPropertyName = "Delete";
             this.ColDelete.HeaderText = "Delete";
             this.ColDelete.Name = "ColDelete";
+            this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ColDelete.Text = "Delete";
             this.ColDelete.UseColumnTextForButtonValue = true;
             // 
             // ColDelete1
             // 
             this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColDelete1.HeaderText = "Delete1";
             this.ColDelete1.Name = "ColDelete1";
             this.ColDelete1.Text = "Delete1";
@@ -864,6 +870,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmOrderManagement";
             this.ShowIcon = false;

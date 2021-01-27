@@ -419,7 +419,7 @@ namespace TAILORING.Order
                 KryptonButton btn = new KryptonButton();
                 btn.PaletteMode = PaletteMode.SparklePurple;
                 // add round corner
-                btn.StateCommon.Border.Rounding = 17;
+                btn.StateCommon.Border.Rounding = 5;
                 btn.StateCommon.Content.ShortText.Color1 = Color.Black;
                 btn.StateCommon.Content.ShortText.Color2 = Color.Black;
 
@@ -438,14 +438,14 @@ namespace TAILORING.Order
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;
 
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);//78, 148, 132
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
 
-                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
-                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(72, 170, 144);
+                    btn.OverrideFocus.Back.Color1 = Color.FromArgb(78, 148, 132);//78, 148, 132
+                    btn.OverrideFocus.Back.Color2 = Color.FromArgb(78, 148, 132);
 
-                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(72, 170, 144);//78, 148, 132
-                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(72, 170, 144);
+                    btn.OverrideDefault.Back.Color1 = Color.FromArgb(78, 148, 132);//78, 148, 132
+                    btn.OverrideDefault.Back.Color2 = Color.FromArgb(78, 148, 132);
                 }
                 else
                 {
@@ -477,7 +477,7 @@ namespace TAILORING.Order
             //{
             //    btn.BackColor = Color.FromArgb(0, 191, 255); // Blue
             //}
-            if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
             {
                 //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
                 btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
@@ -489,7 +489,7 @@ namespace TAILORING.Order
                 btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
                 btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
             }
-            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(72, 170, 144))
+            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(78, 148, 132))
             {
                 //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
                 btn.StatePressed.Back.Color1 = Color.FromArgb(17, 241, 41);
@@ -710,7 +710,7 @@ namespace TAILORING.Order
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
                 KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1 != Color.FromArgb(72, 170, 144))// Dark Green
+                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
                 {
                     //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
                     btn.StateCommon.Back.Color1 = Color.LightGray;
@@ -740,8 +740,8 @@ namespace TAILORING.Order
                 if (p.Parent.BackColor != Color.Transparent)
                 {
                     //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(72, 170, 144);
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(72, 170, 144);
+                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
+                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
 
                     btn.StateCommon.Content.ShortText.Color1 = Color.White;
                     btn.StateCommon.Content.ShortText.Color2 = Color.White;

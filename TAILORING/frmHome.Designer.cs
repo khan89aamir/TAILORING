@@ -172,13 +172,6 @@
             this.ribbonHost14 = new System.Windows.Forms.RibbonHost();
             this.ribbonHost13 = new System.Windows.Forms.RibbonHost();
             this.kryptonRibbon1 = new ComponentFactory.Krypton.Ribbon.KryptonRibbon();
-            this.kryptonRibbonTab9 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
-            this.kryptonRibbonGroup11 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
-            this.kryptonRibbonGroupTriple11 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton23 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
-            this.kryptonRibbonGroup19 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
-            this.kryptonRibbonGroupTriple19 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
-            this.kryptonRibbonGroupButton26 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab10 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup20 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple20 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -195,6 +188,13 @@
             this.kryptonRibbonGroup25 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple25 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroupButton44 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonTab9 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup11 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple11 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton23 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroup19 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple19 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton26 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab16 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup33 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple33 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -1266,61 +1266,15 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedContext = null;
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab14;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab11;
             this.kryptonRibbon1.ShowMinimizeButton = false;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 148);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 11.05F);
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.BackColor2 = System.Drawing.Color.DarkGray;
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.kryptonRibbon1.TabIndex = 67;
-            // 
-            // kryptonRibbonTab9
-            // 
-            this.kryptonRibbonTab9.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.kryptonRibbonGroup11,
-            this.kryptonRibbonGroup19});
-            this.kryptonRibbonTab9.Text = "User Management";
-            // 
-            // kryptonRibbonGroup11
-            // 
-            this.kryptonRibbonGroup11.AllowCollapsed = false;
-            this.kryptonRibbonGroup11.DialogBoxLauncher = false;
-            this.kryptonRibbonGroup11.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple11});
-            this.kryptonRibbonGroup11.TextLine1 = " ";
-            // 
-            // kryptonRibbonGroupTriple11
-            // 
-            this.kryptonRibbonGroupTriple11.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton23});
-            // 
-            // kryptonRibbonGroupButton23
-            // 
-            this.kryptonRibbonGroupButton23.ImageLarge = global::TAILORING.Properties.Resources.AddUserwhite;
-            this.kryptonRibbonGroupButton23.TextLine1 = "Add New User";
-            this.kryptonRibbonGroupButton23.Click += new System.EventHandler(this.userCreationToolStripMenuItem1_Click);
-            // 
-            // kryptonRibbonGroup19
-            // 
-            this.kryptonRibbonGroup19.AllowCollapsed = false;
-            this.kryptonRibbonGroup19.DialogBoxLauncher = false;
-            this.kryptonRibbonGroup19.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
-            this.kryptonRibbonGroupTriple19});
-            this.kryptonRibbonGroup19.TextLine1 = " ";
-            // 
-            // kryptonRibbonGroupTriple19
-            // 
-            this.kryptonRibbonGroupTriple19.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
-            this.kryptonRibbonGroupButton26});
-            // 
-            // kryptonRibbonGroupButton26
-            // 
-            this.kryptonRibbonGroupButton26.ImageLarge = global::TAILORING.Properties.Resources.formrightwhite;
-            this.kryptonRibbonGroupButton26.TextLine1 = "User Form Rights";
-            this.kryptonRibbonGroupButton26.Click += new System.EventHandler(this.userRightsManagementToolStripMenuItem_Click);
             // 
             // kryptonRibbonTab10
             // 
@@ -1427,6 +1381,51 @@
             this.kryptonRibbonGroupButton44.TextLine1 = "GST Master";
             this.kryptonRibbonGroupButton44.Click += new System.EventHandler(this.picGST_Click);
             // 
+            // kryptonRibbonTab9
+            // 
+            this.kryptonRibbonTab9.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup11,
+            this.kryptonRibbonGroup19});
+            this.kryptonRibbonTab9.Text = "User Management";
+            // 
+            // kryptonRibbonGroup11
+            // 
+            this.kryptonRibbonGroup11.AllowCollapsed = false;
+            this.kryptonRibbonGroup11.DialogBoxLauncher = false;
+            this.kryptonRibbonGroup11.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple11});
+            this.kryptonRibbonGroup11.TextLine1 = " ";
+            // 
+            // kryptonRibbonGroupTriple11
+            // 
+            this.kryptonRibbonGroupTriple11.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton23});
+            // 
+            // kryptonRibbonGroupButton23
+            // 
+            this.kryptonRibbonGroupButton23.ImageLarge = global::TAILORING.Properties.Resources.AddUserwhite;
+            this.kryptonRibbonGroupButton23.TextLine1 = "Add New User";
+            this.kryptonRibbonGroupButton23.Click += new System.EventHandler(this.userCreationToolStripMenuItem1_Click);
+            // 
+            // kryptonRibbonGroup19
+            // 
+            this.kryptonRibbonGroup19.AllowCollapsed = false;
+            this.kryptonRibbonGroup19.DialogBoxLauncher = false;
+            this.kryptonRibbonGroup19.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple19});
+            this.kryptonRibbonGroup19.TextLine1 = " ";
+            // 
+            // kryptonRibbonGroupTriple19
+            // 
+            this.kryptonRibbonGroupTriple19.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton26});
+            // 
+            // kryptonRibbonGroupButton26
+            // 
+            this.kryptonRibbonGroupButton26.ImageLarge = global::TAILORING.Properties.Resources.formrightwhite;
+            this.kryptonRibbonGroupButton26.TextLine1 = "User Form Rights";
+            this.kryptonRibbonGroupButton26.Click += new System.EventHandler(this.userRightsManagementToolStripMenuItem_Click);
+            // 
             // kryptonRibbonTab16
             // 
             this.kryptonRibbonTab16.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
@@ -1451,6 +1450,7 @@
             // 
             this.kryptonRibbonGroupButton24.ImageLarge = global::TAILORING.Properties.Resources.newOrder;
             this.kryptonRibbonGroupButton24.TextLine1 = "Create New Order";
+            this.kryptonRibbonGroupButton24.Visible = false;
             this.kryptonRibbonGroupButton24.Click += new System.EventHandler(this.SalesInvoice_ToolStrip_Click);
             // 
             // kryptonRibbonGroup34

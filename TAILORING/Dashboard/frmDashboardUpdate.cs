@@ -53,13 +53,16 @@ namespace TAILORING.Dashboard
                     {
                         clsUtility.ShowInfoMessage(dt.Rows.Count + " Customers Name " + txtSearchByCustomerName.Text + " is found");
                     }
-                    Order.frmOrderManagement Obj = new Order.frmOrderManagement();
-                    Obj.CustomerID = CustomerID;
-                    Obj.CustName = strCustName;
-                    Obj.CustMobileNo = strMobileNo;
-                    Obj.CustAddress = strAddress;
-                    this.Close();
-                    Obj.ShowDialog();
+                    else
+                    {
+                        Order.frmOrderManagement Obj = new Order.frmOrderManagement();
+                        Obj.CustomerID = CustomerID;
+                        Obj.CustName = strCustName;
+                        Obj.CustMobileNo = strMobileNo;
+                        Obj.CustAddress = strAddress;
+                        this.Close();
+                        Obj.ShowDialog();
+                    }
                 }
                 else
                 {
@@ -95,13 +98,16 @@ namespace TAILORING.Dashboard
                     {
                         clsUtility.ShowInfoMessage(dt.Rows.Count + " Customers Mobile No. " + txtSearchByCustomerMobileNo.Text + " is found");
                     }
-                    Order.frmOrderManagement Obj = new Order.frmOrderManagement();
-                    Obj.CustomerID = CustomerID;
-                    Obj.CustName = strCustName;
-                    Obj.CustMobileNo = strMobileNo;
-                    Obj.CustAddress = strAddress;
-                    this.Close();
-                    Obj.ShowDialog();
+                    else
+                    {
+                        Order.frmOrderManagement Obj = new Order.frmOrderManagement();
+                        Obj.CustomerID = CustomerID;
+                        Obj.CustName = strCustName;
+                        Obj.CustMobileNo = strMobileNo;
+                        Obj.CustAddress = strAddress;
+                        this.Close();
+                        Obj.ShowDialog();
+                    }
                 }
                 else
                 {
@@ -174,10 +180,10 @@ namespace TAILORING.Dashboard
                     strAddress = dt.Rows[0]["Address"].ToString();
                     CustomerID = Convert.ToInt32(dt.Rows[0]["CustomerID"]);
 
-                    if (dt.Rows.Count > 1)
-                    {
-                        clsUtility.ShowInfoMessage(dt.Rows.Count + " Order No. " + txtSearchByOrderNo.Text + " is found");
-                    }
+                    //if (dt.Rows.Count > 1)
+                    //{
+                    //    clsUtility.ShowInfoMessage(dt.Rows.Count + " Order No. " + txtSearchByOrderNo.Text + " is found");
+                    //}
                     Order.frmOrderManagement Obj = new Order.frmOrderManagement();
                     Obj.CustomerID = CustomerID;
                     Obj.CustName = strCustName;

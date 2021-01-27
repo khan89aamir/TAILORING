@@ -135,6 +135,7 @@ namespace TAILORING.Order
 
                 GetGarmentStyle(GarmentID);// Garment Style
 
+                checkBox1.Checked = false;
                 checkBox1.Enabled = false;
 
                 GetStichFitType();
@@ -635,6 +636,9 @@ namespace TAILORING.Order
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
                 }
             }
         }
@@ -987,6 +991,24 @@ namespace TAILORING.Order
                         }
                     }
                 }
+                else if (ObjUtil.ValidateTable(dtGarmentList))
+                {
+                    b = false;
+                    for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+                    {
+                        if (dtGarmentList.Rows[i]["StichTypeID"].ToString() == "")
+                        {
+                            clsUtility.ShowInfoMessage("Please Select Stich Type for " + dtGarmentList.Rows[i]["GarmentName"]);
+                            return b;
+                        }
+                        else if (dtGarmentList.Rows[i]["FitTypeID"].ToString() == "")
+                        {
+                            clsUtility.ShowInfoMessage("Please Select Fit Type for " + dtGarmentList.Rows[i]["GarmentName"]);
+                            return b;
+                        }
+                    }
+                    b = true;
+                }
             }
             return b;
         }
@@ -1179,6 +1201,11 @@ namespace TAILORING.Order
 
             // after work done.. mark the menu as done.
             btnBodyPosture.Image = Properties.Resources.bodyCheck;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void AddTempdtPosture(PictureBox p)

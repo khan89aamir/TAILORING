@@ -235,7 +235,7 @@ namespace TAILORING.Order
                             {
                                 ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
                                 ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
-                                ObjUtil.GetDataPopup().Columns["LastChange"].Visible = false;
+                                //ObjUtil.GetDataPopup().Columns["LastChange"].Visible = false;
                                 ObjUtil.SetDataPopupSize(350, 0);
                             }
                         }
@@ -323,8 +323,8 @@ namespace TAILORING.Order
                             {
                                 ObjUtil.GetDataPopup().Columns["Address"].Visible = false;
                                 ObjUtil.GetDataPopup().Columns["CustomerID"].Visible = false;
-                                ObjUtil.GetDataPopup().Columns["LastChange"].Visible = false;
-                                ObjUtil.SetDataPopupSize(350, 0);
+                                //ObjUtil.GetDataPopup().Columns["LastChange"].Visible = false;
+                                ObjUtil.SetDataPopupSize(330, 0);
                             }
                         }
                         ObjUtil.GetDataPopup().CellClick += frmOrderDetails_SearchByCustomerMobileNo_CellClick;
@@ -427,7 +427,61 @@ namespace TAILORING.Order
 
         private void txtCustomerOrderNo_TextChanged(object sender, EventArgs e)
         {
+            if (txtCustomerOrderNo.Text.Trim().Length > 0)
+            {
+                SearchByCustomerOrderNo();
+            }
+        }
 
+        private void radByOrderNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radByOrderNo.Checked)
+            {
+                txtCustomerOrderNo.Enabled = true;
+                txtCustomerOrderNo.Focus();
+            }
+            else
+            {
+                txtCustomerOrderNo.Enabled = false;
+                txtCustomerOrderNo.Clear();
+            }
+        }
+
+        private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 13)
+            {
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txtCustomerName.Focus();
+                }
+            }
+        }
+
+        private void SearchByCustomerOrderNo()
+        {
+            ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("FromDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("ToDate", SqlDbType.Date, DBNull.Value, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, txtCustomerOrderNo.Text.Trim(), clsConnection_DAL.ParamType.Input);
+
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderList]");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dgvOrderDetails.DataSource = dt;
+                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                }
+                else
+                {
+                    dgvOrderDetails.DataSource = null;
+                }
+            }
+            ObjDAL.ResetData();
         }
     }
 }

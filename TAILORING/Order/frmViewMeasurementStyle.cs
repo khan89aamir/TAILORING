@@ -184,8 +184,9 @@ namespace TAILORING.Order
                         dtGarmentList.Columns.Add("Style", typeof(Image));
                     }
                     dataGridView1.DataSource = dtGarmentList;
-                    dtTempStyle = dsMeasure.Tables[1];
-                    dtTempPosture = dsMeasure.Tables[2];
+                    dtTempMeasurement= dsMeasure.Tables[1];
+                    dtTempStyle = dsMeasure.Tables[2];
+                    dtTempPosture = dsMeasure.Tables[3];
 
                     AddGarments();
                 }
@@ -272,7 +273,8 @@ namespace TAILORING.Order
                 AddStyleQTY(QTY);
 
                 GetGarmentStyle(GarmentID);// Garment Style
-
+                
+                checkBox1.Checked = false;
                 checkBox1.Enabled = false;
             }
         }
@@ -458,6 +460,9 @@ namespace TAILORING.Order
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
                 }
 
                 flowStyleName.Controls.Add(btn);
@@ -792,20 +797,19 @@ namespace TAILORING.Order
             Report.Forms.frmBill Obj = new Report.Forms.frmBill();
             Obj.OrderID = pOrderID.ToString();
             Obj.Show();
-            Obj.BringToFront();
         }
 
         private void FillMeasurementData()
         {
             DataTable dttempMeasure = dtTempMeasurement;
-
+            dtMeasurementData.Clear();
             for (int i = 0; i < dttempMeasure.Rows.Count; i++)
             {
                 DataRow drow = dtMeasurementData.NewRow();
                 drow["SalesOrderID"] = pOrderID;
                 drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
                 drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
-                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];
+                drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"].ToString()==""?"0": dttempMeasure.Rows[i]["MeasurementValue"];
                 drow["CreatedBy"] = clsUtility.LoginID;
 
                 dtMeasurementData.Rows.Add(drow);
@@ -815,7 +819,8 @@ namespace TAILORING.Order
 
         private void FillStyleData()
         {
-            DataTable dttempStyle = dsMeasure.Tables[1];
+            DataTable dttempStyle = dtTempStyle;
+            dtStyleData.Clear();
             for (int i = 0; i < dttempStyle.Rows.Count; i++)
             {
                 //dtStyle = dttempStyle.Copy();
@@ -835,7 +840,8 @@ namespace TAILORING.Order
 
         private void FillBodyPostureData()
         {
-            DataTable dttempPosture = dsMeasure.Tables[2];
+            DataTable dttempPosture = dtTempPosture;
+            dtBodyPostureData.Clear();
             for (int i = 0; i < dttempPosture.Rows.Count; i++)
             {
                 //dtBodyPosture = dttempPosture.Copy();
@@ -896,11 +902,15 @@ namespace TAILORING.Order
             ObjDAL.SetStoreProcedureData("dtMeasurement", SqlDbType.Structured, dtMeasurementData, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("dtStyle", SqlDbType.Structured, dtStyleData, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("dtBodyPosture", SqlDbType.Structured, dtBodyPostureData, clsConnection_DAL.ParamType.Input);
-
             ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, pOrderID, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("Flag", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Output);
 
             b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Update_SalesOrderDetails");
-
+            DataTable dtOutput = ObjDAL.GetOutputParmData();
+            if (ObjUtil.ValidateTable(dtOutput))
+            {
+                b = Convert.ToBoolean(dtOutput.Rows[0][1]);
+            }
             ObjDAL.ResetData();
             return b;
         }

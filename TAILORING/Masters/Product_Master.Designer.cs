@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Master));
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cmbOrderType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblActiveStatus = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbOrderType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOrderType)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -99,21 +100,6 @@
             this.label13.Size = new System.Drawing.Size(99, 17);
             this.label13.TabIndex = 292;
             this.label13.Text = "Garment Type :";
-            // 
-            // cmbOrderType
-            // 
-            this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.grpProduct.SetEffectType(this.cmbOrderType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.cmbOrderType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOrderType.FormattingEnabled = true;
-            this.cmbOrderType.Items.AddRange(new object[] {
-            "Top",
-            "Bottom"});
-            this.cmbOrderType.Location = new System.Drawing.Point(125, 64);
-            this.cmbOrderType.Name = "cmbOrderType";
-            this.grpProduct.SetsGlowColor(this.cmbOrderType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbOrderType.sGlowColor"))));
-            this.cmbOrderType.Size = new System.Drawing.Size(206, 25);
-            this.cmbOrderType.TabIndex = 291;
             // 
             // label3
             // 
@@ -309,12 +295,12 @@
             // grpProduct
             // 
             this.grpProduct.BackColor = System.Drawing.Color.Transparent;
+            this.grpProduct.Controls.Add(this.cmbOrderType);
             this.grpProduct.Controls.Add(this.txtGarmentName);
             this.grpProduct.Controls.Add(this.txtGarmentCode);
             this.grpProduct.Controls.Add(this.label14);
             this.grpProduct.Controls.Add(this.lblActiveStatus);
             this.grpProduct.Controls.Add(this.label13);
-            this.grpProduct.Controls.Add(this.cmbOrderType);
             this.grpProduct.Controls.Add(this.lblProductName);
             this.grpProduct.Controls.Add(this.label2);
             this.grpProduct.Controls.Add(this.label3);
@@ -333,7 +319,7 @@
             this.txtGarmentName.Location = new System.Drawing.Point(484, 13);
             this.txtGarmentName.Name = "txtGarmentName";
             this.txtGarmentName.Size = new System.Drawing.Size(206, 31);
-            this.txtGarmentName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtGarmentName.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtGarmentName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtGarmentName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -351,7 +337,7 @@
             this.txtGarmentCode.Location = new System.Drawing.Point(125, 13);
             this.txtGarmentCode.Name = "txtGarmentCode";
             this.txtGarmentCode.Size = new System.Drawing.Size(206, 31);
-            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtGarmentCode.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtGarmentCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -406,7 +392,7 @@
             this.txtSearchByGarment.Location = new System.Drawing.Point(149, 14);
             this.txtSearchByGarment.Name = "txtSearchByGarment";
             this.txtSearchByGarment.Size = new System.Drawing.Size(206, 31);
-            this.txtSearchByGarment.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSearchByGarment.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtSearchByGarment.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
             this.txtSearchByGarment.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -448,6 +434,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(716, 189);
@@ -478,11 +465,31 @@
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
             // 
+            // cmbOrderType
+            // 
+            this.cmbOrderType.DropDownHeight = 300;
+            this.cmbOrderType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrderType.DropDownWidth = 208;
+            this.cmbOrderType.Items.AddRange(new object[] {
+            "Top",
+            "Bottom"});
+            this.cmbOrderType.Location = new System.Drawing.Point(125, 64);
+            this.cmbOrderType.MaxDropDownItems = 20;
+            this.cmbOrderType.Name = "cmbOrderType";
+            this.cmbOrderType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.cmbOrderType.Size = new System.Drawing.Size(206, 27);
+            this.cmbOrderType.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
+            this.cmbOrderType.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbOrderType.StateCommon.ComboBox.Border.Rounding = 10;
+            this.cmbOrderType.TabIndex = 382;
+            // 
             // Product_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(780, 590);
             this.Controls.Add(this.kryptonPanel1);
@@ -523,6 +530,7 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbOrderType)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,7 +546,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cmbOrderType;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnUpdate;
@@ -556,5 +563,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByGarment;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbOrderType;
     }
 }

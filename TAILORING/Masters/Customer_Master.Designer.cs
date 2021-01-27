@@ -266,6 +266,7 @@
             this.dgvCustomerMaster.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
             this.dgvCustomerMaster.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonLowProfile;
             this.dgvCustomerMaster.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomerMaster.MultiSelect = false;
             this.dgvCustomerMaster.Name = "dgvCustomerMaster";
             this.dgvCustomerMaster.Size = new System.Drawing.Size(756, 183);
             this.dgvCustomerMaster.TabIndex = 287;
@@ -570,6 +571,7 @@
             this.rdSearchByCustomerMobileNo.Size = new System.Drawing.Size(95, 21);
             this.rdSearchByCustomerMobileNo.TabIndex = 386;
             this.rdSearchByCustomerMobileNo.Text = "Mobile No :";
+            this.gGlowGroupBox1.SetUseEffect(this.rdSearchByCustomerMobileNo, false);
             this.rdSearchByCustomerMobileNo.UseVisualStyleBackColor = false;
             this.rdSearchByCustomerMobileNo.CheckedChanged += new System.EventHandler(this.txtSearchByCustomer_TextChanged);
             // 
@@ -587,6 +589,7 @@
             this.rdSearchByCustomerName.Size = new System.Drawing.Size(130, 21);
             this.rdSearchByCustomerName.TabIndex = 384;
             this.rdSearchByCustomerName.Text = "Customer Name :";
+            this.gGlowGroupBox1.SetUseEffect(this.rdSearchByCustomerName, false);
             this.rdSearchByCustomerName.UseVisualStyleBackColor = false;
             this.rdSearchByCustomerName.CheckedChanged += new System.EventHandler(this.rdSearchByCustomerName_CheckedChanged);
             // 
@@ -606,6 +609,7 @@
             this.rdShowAllOfCustomer.TabIndex = 385;
             this.rdShowAllOfCustomer.TabStop = true;
             this.rdShowAllOfCustomer.Text = "Show All";
+            this.gGlowGroupBox1.SetUseEffect(this.rdShowAllOfCustomer, false);
             this.rdShowAllOfCustomer.UseVisualStyleBackColor = false;
             this.rdShowAllOfCustomer.CheckedChanged += new System.EventHandler(this.rdShowAllOfCustomer_CheckedChanged);
             // 

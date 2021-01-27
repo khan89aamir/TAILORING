@@ -206,6 +206,13 @@
             this.kryptonRibbonGroup26 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple26 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroupButton47 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonTab17 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
+            this.kryptonRibbonGroup35 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple35 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton25 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroup36 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            this.kryptonRibbonGroupTriple36 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton27 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.kryptonRibbonTab12 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab();
             this.kryptonRibbonGroup27 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.kryptonRibbonGroupTriple27 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
@@ -1250,15 +1257,17 @@
             this.kryptonRibbon1.RibbonAppButton.AppButtonShowRecentDocs = false;
             this.kryptonRibbon1.RibbonAppButton.AppButtonVisible = false;
             this.kryptonRibbon1.RibbonTabs.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonTab[] {
-            this.kryptonRibbonTab9,
             this.kryptonRibbonTab10,
+            this.kryptonRibbonTab9,
             this.kryptonRibbonTab16,
             this.kryptonRibbonTab11,
+            this.kryptonRibbonTab17,
             this.kryptonRibbonTab12,
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab16;
+            this.kryptonRibbon1.SelectedContext = null;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab14;
             this.kryptonRibbon1.ShowMinimizeButton = false;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -1485,8 +1494,53 @@
             // kryptonRibbonGroupButton47
             // 
             this.kryptonRibbonGroupButton47.ImageLarge = global::TAILORING.Properties.Resources.dashboard;
-            this.kryptonRibbonGroupButton47.TextLine1 = "   Dashboard";
+            this.kryptonRibbonGroupButton47.TextLine1 = "Application Dashboard";
             this.kryptonRibbonGroupButton47.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // kryptonRibbonTab17
+            // 
+            this.kryptonRibbonTab17.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
+            this.kryptonRibbonGroup35,
+            this.kryptonRibbonGroup36});
+            this.kryptonRibbonTab17.Text = "Barcode";
+            // 
+            // kryptonRibbonGroup35
+            // 
+            this.kryptonRibbonGroup35.AllowCollapsed = false;
+            this.kryptonRibbonGroup35.DialogBoxLauncher = false;
+            this.kryptonRibbonGroup35.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple35});
+            this.kryptonRibbonGroup35.TextLine1 = " ";
+            // 
+            // kryptonRibbonGroupTriple35
+            // 
+            this.kryptonRibbonGroupTriple35.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton25});
+            // 
+            // kryptonRibbonGroupButton25
+            // 
+            this.kryptonRibbonGroupButton25.ImageLarge = global::TAILORING.Properties.Resources.barcode;
+            this.kryptonRibbonGroupButton25.TextLine1 = " Barcode Designer  ";
+            this.kryptonRibbonGroupButton25.Click += new System.EventHandler(this.kryptonRibbonGroupButton25_Click);
+            // 
+            // kryptonRibbonGroup36
+            // 
+            this.kryptonRibbonGroup36.AllowCollapsed = false;
+            this.kryptonRibbonGroup36.DialogBoxLauncher = false;
+            this.kryptonRibbonGroup36.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple36});
+            this.kryptonRibbonGroup36.TextLine1 = " ";
+            // 
+            // kryptonRibbonGroupTriple36
+            // 
+            this.kryptonRibbonGroupTriple36.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton27});
+            // 
+            // kryptonRibbonGroupButton27
+            // 
+            this.kryptonRibbonGroupButton27.ImageLarge = global::TAILORING.Properties.Resources.printing;
+            this.kryptonRibbonGroupButton27.TextLine1 = " Barcode Print ";
+            this.kryptonRibbonGroupButton27.Click += new System.EventHandler(this.kryptonRibbonGroupButton27_Click);
             // 
             // kryptonRibbonTab12
             // 
@@ -1521,7 +1575,7 @@
             this.kryptonRibbonGroup28.DialogBoxLauncher = false;
             this.kryptonRibbonGroup28.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple28});
-            this.kryptonRibbonGroup28.TextLine1 = "Customer Details Report";
+            this.kryptonRibbonGroup28.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple28
             // 
@@ -1539,7 +1593,7 @@
             this.kryptonRibbonGroup29.DialogBoxLauncher = false;
             this.kryptonRibbonGroup29.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
             this.kryptonRibbonGroupTriple29});
-            this.kryptonRibbonGroup29.TextLine1 = "SKU Details Report";
+            this.kryptonRibbonGroup29.TextLine1 = " ";
             // 
             // kryptonRibbonGroupTriple29
             // 
@@ -1998,5 +2052,12 @@
         private System.Windows.Forms.Label lblMachineIP;
         private System.Windows.Forms.Label label10;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup24;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonTab kryptonRibbonTab17;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup35;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple35;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton25;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup36;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple36;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton27;
     }
 }

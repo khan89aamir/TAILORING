@@ -204,20 +204,18 @@ namespace TAILORING.Dashboard
                     int RecordCount=ObjDAL.ExecuteScalarInt("select count(*) from "+clsUtility.DBName+".dbo.tblOrderStatus where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID );
                     if (RecordCount>0)
                     {
-                        ObjDAL.UpdateColumnData("SalesOrderID", SqlDbType.Int, SalesID);
-                        ObjDAL.UpdateColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
+              
 
                         // 4 - Order received.
                         ObjDAL.UpdateColumnData("OrderStatus", SqlDbType.Int, 4);
                         ObjDAL.UpdateColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.UpdateColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
 
-                        ObjDAL.UpdateData(clsUtility.DBName+".dbo.tblOrderStatus", "SalesOrderID=" + SalesID);
+                        ObjDAL.UpdateData(clsUtility.DBName+".dbo.tblOrderStatus", "SalesOrderID=" + SalesID+ " AND SalesOrderDetailsID="+ SalesOrderDetailsID);
                     }
                     else
                     {
-                        ObjDAL.SetColumnData("SalesOrderID", SqlDbType.Int, SalesID);
-                        ObjDAL.SetColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
+                    
 
                         // 4 - Order received.
                         ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 4);

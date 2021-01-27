@@ -35,6 +35,11 @@ namespace TAILORING.Report.Forms
         int inc = 0;
         private void frmBill_Load(object sender, EventArgs e)
         {
+            if (!Directory.Exists(Application.StartupPath + "//BarCodeImg"))
+            {
+                Directory.CreateDirectory(Application.StartupPath + "//BarCodeImg");
+            }
+            
             // OrderID = "1";
             LoadTailoringTheme();
             LoadData();
@@ -294,6 +299,8 @@ namespace TAILORING.Report.Forms
             dtMeasurment.Columns.Add("s10");
             #endregion
 
+            dtMeasurment.Columns.Add("barcode");
+            
         }
         private string GenerateSubOrderNo(string SKUNo, int QTYNo, int TotalQTY, string pOrderNo)
         {
@@ -489,11 +496,22 @@ namespace TAILORING.Report.Forms
                         // add product ID as unique so that you can see record in list view for each QTY separately
                         inc = i;
                              subOrderNo = GenerateSubOrderNo(PU, CurQTY, TotalGarmentQTY, OrderNo);
-                         
-                            // add your 1st QTY into table
-                            AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
+
+                     Bitmap bmpBarCode = IMS_Client_2.Barcode.clsBarCodeUtility.GenerateBarCode(subOrderNo);
+                        string imgPath = "";
+                        if (bmpBarCode != null)
+                        {
+                            imgPath = Application.StartupPath + "//BarCodeImg//" + subOrderNo.Replace("/","_")+".jpeg";
+
+                            if (!File.Exists(imgPath))
+                            {
+                                bmpBarCode.Save(imgPath);
+                            }
+                        }
+                        // add your 1st QTY into table
+                        AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
                                 mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mc10, mc1v, mc2v, mc3v, mc4v, mc5v, mc6v, mc7v, mc8v,
-                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo);
+                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo, ImageToBase64(imgPath));
 
                         UpdateSubOrderNo(subOrderNo, SalesOrderDetailsID);
                     }
@@ -579,7 +597,8 @@ namespace TAILORING.Report.Forms
                                 string s8,
                                 string s9,
                                 string s10,
-                                string SubOrderID
+                                string SubOrderID,
+                                string BarCodeImagePath
 
             )
         {
@@ -625,7 +644,7 @@ namespace TAILORING.Report.Forms
             dRow["s8"] = s8;
             dRow["s9"] = s9;
             dRow["s10"] = s10;
-
+            dRow["barcode"] = BarCodeImagePath;
             dtMeasurment.Rows.Add(dRow);
             dtMeasurment.AcceptChanges();
         }

@@ -32,6 +32,7 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sPanel3 = new TAILORING.SPanel();
             this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).BeginInit();
@@ -82,7 +83,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sPanel3.SuspendLayout();
             this.sPanel2.SuspendLayout();
             this.sPanel1.SuspendLayout();
@@ -129,6 +129,17 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Dashboard";
             this.label12.UseMnemonic = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // btnAdd
             // 
@@ -328,17 +339,6 @@
             this.pictureBox2.TabIndex = 370;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
-            // 
             // sPanel3
             // 
             this.sPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -362,7 +362,7 @@
             this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
             this.lblInProgress.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInProgress.ForeColor = System.Drawing.Color.White;
-            this.lblInProgress.Location = new System.Drawing.Point(148, 67);
+            this.lblInProgress.Location = new System.Drawing.Point(148, 73);
             this.lblInProgress.Name = "lblInProgress";
             this.lblInProgress.Size = new System.Drawing.Size(35, 40);
             this.lblInProgress.TabIndex = 15;
@@ -442,7 +442,7 @@
             this.lblCriticalOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblCriticalOrder.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriticalOrder.ForeColor = System.Drawing.Color.White;
-            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 67);
+            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 73);
             this.lblCriticalOrder.Name = "lblCriticalOrder";
             this.lblCriticalOrder.Size = new System.Drawing.Size(53, 40);
             this.lblCriticalOrder.TabIndex = 15;
@@ -522,7 +522,7 @@
             this.lblTodayDelivery.BackColor = System.Drawing.Color.Transparent;
             this.lblTodayDelivery.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayDelivery.ForeColor = System.Drawing.Color.White;
-            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 67);
+            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 73);
             this.lblTodayDelivery.Name = "lblTodayDelivery";
             this.lblTodayDelivery.Size = new System.Drawing.Size(53, 40);
             this.lblTodayDelivery.TabIndex = 15;
@@ -615,7 +615,6 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtOrderReceive.StateNormal.Border.Rounding = 20;
             this.txtOrderReceive.TabIndex = 382;
-            this.txtOrderReceive.Text = "INV-116";
             // 
             // picSearchOrderDelivery
             // 
@@ -628,6 +627,7 @@
             this.picSearchOrderDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchOrderDelivery.TabIndex = 366;
             this.picSearchOrderDelivery.TabStop = false;
+            this.picSearchOrderDelivery.Click += new System.EventHandler(this.picSearchOrderDelivery_Click);
             // 
             // label11
             // 
@@ -738,6 +738,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByMobileNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByOrderNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearchByName)).EndInit();
@@ -748,7 +749,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sPanel3.ResumeLayout(false);
             this.sPanel3.PerformLayout();
             this.sPanel2.ResumeLayout(false);

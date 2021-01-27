@@ -686,7 +686,7 @@
             // 
             this.btnStyle.BackColor = System.Drawing.Color.Transparent;
             this.btnStyle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStyle.Image = global::TAILORING.Properties.Resources.garmentStyle;
+            this.btnStyle.Image = global::TAILORING.Properties.Resources.picStyle;
             this.btnStyle.Location = new System.Drawing.Point(672, 66);
             this.btnStyle.Name = "btnStyle";
             this.btnStyle.Size = new System.Drawing.Size(246, 83);
@@ -699,7 +699,7 @@
             // 
             this.btnMeasurment.BackColor = System.Drawing.Color.Transparent;
             this.btnMeasurment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.garmentMeasur;
+            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.picmeasurment;
             this.btnMeasurment.Location = new System.Drawing.Point(369, 66);
             this.btnMeasurment.Name = "btnMeasurment";
             this.btnMeasurment.Size = new System.Drawing.Size(246, 83);
@@ -712,7 +712,7 @@
             // 
             this.btnBodyPosture.BackColor = System.Drawing.Color.Transparent;
             this.btnBodyPosture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.garmentbody;
+            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.picBodyPosture;
             this.btnBodyPosture.Location = new System.Drawing.Point(66, 66);
             this.btnBodyPosture.Name = "btnBodyPosture";
             this.btnBodyPosture.Size = new System.Drawing.Size(246, 83);

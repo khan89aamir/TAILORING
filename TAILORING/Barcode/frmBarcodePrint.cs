@@ -9,25 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TAILORING.Dashboard
+namespace TAILORING.Barcode
 {
-    public partial class frmCreateChalan : KryptonForm
+    public partial class frmBarcodePrint : KryptonForm
     {
-        public frmCreateChalan()
+        public frmBarcodePrint()
         {
             InitializeComponent();
         }
         CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
-        CoreApp.clsUtility ObjUtil = new clsUtility();
-        private void frmCreateChalan_Load(object sender, EventArgs e)
-        {
-            LoadInProcess();
-        }
-        private void LoadInProcess()
+        CoreApp.clsUtility ObjUtil = new CoreApp.clsUtility();
+        private void kryptonButton1_Click(object sender, EventArgs e)
         {
             // for creating chalan , get only those records, which are in process or critical.
-            string strQ = "select SalesOrderID, OrderNo,OrderDate,OrderAmount,OrderQTY,TotalAmount from tblSalesOrder where SalesOrderID in " +
-                          "(select SalesOrderID from tblOrderStatus where OrderStatus in (3, 2))";
+            string strQ = "select SalesOrderID, SubOrderNo,GarmentName,GarmentCode,StichTypeName,FitTypeName,TrailDate,DeliveryDate from[dbo].[vw_GetOrderStatusDetails]" +
+                            " where SalesOrderID in (select SalesOrderID from tblSalesOrder where OrderNo = '"+txtInvoiceNo.Text+"');";
 
             DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
             if (ObjUtil.ValidateTable(dt))
@@ -43,14 +39,6 @@ namespace TAILORING.Dashboard
                 }
             }
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked)
-            {
-                LoadInProcess();
-            }
-        }
         private void SetGridFont(KryptonDataGridView kryptonDataGridView)
         {
 
@@ -59,42 +47,36 @@ namespace TAILORING.Dashboard
         }
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
-            ObjUtil.SetRowNumber(dgvOrderDetails);
-            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
+           
+
+
             SetGridFont(dgvOrderDetails);
 
-            
+
             grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
+
+            ObjUtil.SetRowNumber(dgvOrderDetails);
+            //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
+
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void frmBarcodePrint_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!ValidateRecive())
             {
-                clsUtility.ShowInfoMessage("Please select at least one order for creating chalan.");
+                clsUtility.ShowInfoMessage("Please Select your record to be printed.");
                 return;
             }
-            dgvOrderDetails.EndEdit();
-            List<int> list = new List<int>();
-            for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
-            {
-                if (dgvOrderDetails.Rows[i].Cells["colCheck"].Value!=DBNull.Value &&  Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells["colCheck"].Value))
-                {
-                    list.Add(Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value));
-                }
-              
-            }
 
-               string strOrderList=   string.Join<int>(",", list);
-
-            Report.Forms.frmChalan frmChalan = new Report.Forms.frmChalan();
-            frmChalan.OrderList = strOrderList;
-            frmChalan.Show();
-
-
+            clsUtility.ShowInfoMessage("Printer Not Configured !");
         }
         private bool ValidateRecive()
         {
@@ -111,6 +93,11 @@ namespace TAILORING.Dashboard
             }
 
             return false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

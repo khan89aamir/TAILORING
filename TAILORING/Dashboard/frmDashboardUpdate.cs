@@ -313,5 +313,20 @@ namespace TAILORING.Dashboard
             frmCreateChalan frmCreate = new frmCreateChalan();
             frmCreate.Show();
         }
+
+        private void picSearchOrderDelivery_Click(object sender, EventArgs e)
+        {
+            if (txtOrderDelivery.Text.Trim().Length == 0)
+            {
+                clsUtility.ShowInfoMessage("Please Enter Order No to Deliver.");
+            }
+            else
+            {
+                frmOrderDelivery frmOrderDelivery = new frmOrderDelivery();
+                frmOrderDelivery.OrderNo = txtOrderDelivery.Text;
+                frmOrderDelivery.Show();
+
+            }
+        }
     }
 }

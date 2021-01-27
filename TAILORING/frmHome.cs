@@ -380,5 +380,17 @@ namespace TAILORING
         {
 
         }
+
+        private void kryptonRibbonGroupButton25_Click(object sender, EventArgs e)
+        {
+            IMS_Client_2.Barcode.frmBarCodeDesigner frmBarCodeDesigner = new IMS_Client_2.Barcode.frmBarCodeDesigner();
+            frmBarCodeDesigner.Show();
+        }
+
+        private void kryptonRibbonGroupButton27_Click(object sender, EventArgs e)
+        {
+            Barcode.frmBarcodePrint frmBarcodePrint = new Barcode.frmBarcodePrint();
+            frmBarcodePrint.Show();
+        }
     }
 }

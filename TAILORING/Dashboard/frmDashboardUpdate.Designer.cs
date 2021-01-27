@@ -362,7 +362,7 @@
             this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
             this.lblInProgress.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInProgress.ForeColor = System.Drawing.Color.White;
-            this.lblInProgress.Location = new System.Drawing.Point(148, 67);
+            this.lblInProgress.Location = new System.Drawing.Point(148, 73);
             this.lblInProgress.Name = "lblInProgress";
             this.lblInProgress.Size = new System.Drawing.Size(35, 40);
             this.lblInProgress.TabIndex = 15;
@@ -442,7 +442,7 @@
             this.lblCriticalOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblCriticalOrder.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriticalOrder.ForeColor = System.Drawing.Color.White;
-            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 67);
+            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 73);
             this.lblCriticalOrder.Name = "lblCriticalOrder";
             this.lblCriticalOrder.Size = new System.Drawing.Size(53, 40);
             this.lblCriticalOrder.TabIndex = 15;
@@ -522,7 +522,7 @@
             this.lblTodayDelivery.BackColor = System.Drawing.Color.Transparent;
             this.lblTodayDelivery.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayDelivery.ForeColor = System.Drawing.Color.White;
-            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 67);
+            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 73);
             this.lblTodayDelivery.Name = "lblTodayDelivery";
             this.lblTodayDelivery.Size = new System.Drawing.Size(53, 40);
             this.lblTodayDelivery.TabIndex = 15;
@@ -600,7 +600,7 @@
             // 
             // txtOrderReceive
             // 
-            this.txtOrderReceive.Location = new System.Drawing.Point(80, 93);
+            this.txtOrderReceive.Location = new System.Drawing.Point(82, 149);
             this.txtOrderReceive.Name = "txtOrderReceive";
             this.txtOrderReceive.Size = new System.Drawing.Size(209, 32);
             this.txtOrderReceive.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -615,29 +615,29 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtOrderReceive.StateNormal.Border.Rounding = 20;
             this.txtOrderReceive.TabIndex = 382;
-            this.txtOrderReceive.Text = "INV-116";
             // 
             // picSearchOrderDelivery
             // 
             this.picSearchOrderDelivery.BackColor = System.Drawing.Color.Transparent;
             this.picSearchOrderDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchOrderDelivery.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderDelivery.Image")));
-            this.picSearchOrderDelivery.Location = new System.Drawing.Point(293, 176);
+            this.picSearchOrderDelivery.Location = new System.Drawing.Point(295, 232);
             this.picSearchOrderDelivery.Name = "picSearchOrderDelivery";
             this.picSearchOrderDelivery.Size = new System.Drawing.Size(30, 25);
             this.picSearchOrderDelivery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearchOrderDelivery.TabIndex = 366;
             this.picSearchOrderDelivery.TabStop = false;
+            this.picSearchOrderDelivery.Click += new System.EventHandler(this.picSearchOrderDelivery_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(77, 74);
+            this.label11.Location = new System.Drawing.Point(79, 130);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 17);
+            this.label11.Size = new System.Drawing.Size(115, 17);
             this.label11.TabIndex = 354;
             this.label11.Text = "Order Receive :";
             // 
@@ -646,7 +646,7 @@
             this.picSearchOrderReceive.BackColor = System.Drawing.Color.Transparent;
             this.picSearchOrderReceive.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearchOrderReceive.Image = ((System.Drawing.Image)(resources.GetObject("picSearchOrderReceive.Image")));
-            this.picSearchOrderReceive.Location = new System.Drawing.Point(292, 93);
+            this.picSearchOrderReceive.Location = new System.Drawing.Point(294, 149);
             this.picSearchOrderReceive.Name = "picSearchOrderReceive";
             this.picSearchOrderReceive.Size = new System.Drawing.Size(30, 25);
             this.picSearchOrderReceive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -658,17 +658,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(77, 154);
+            this.label10.Location = new System.Drawing.Point(79, 210);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 17);
+            this.label10.Size = new System.Drawing.Size(117, 17);
             this.label10.TabIndex = 6;
             this.label10.Text = "Order Delivery :";
             // 
             // txtOrderDelivery
             // 
-            this.txtOrderDelivery.Location = new System.Drawing.Point(82, 174);
+            this.txtOrderDelivery.Location = new System.Drawing.Point(84, 230);
             this.txtOrderDelivery.Name = "txtOrderDelivery";
             this.txtOrderDelivery.Size = new System.Drawing.Size(209, 32);
             this.txtOrderDelivery.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -688,10 +688,10 @@
             // 
             this.btnCreateChalan.AutoSize = true;
             this.btnCreateChalan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateChalan.Location = new System.Drawing.Point(123, 240);
+            this.btnCreateChalan.Location = new System.Drawing.Point(82, 60);
             this.btnCreateChalan.Name = "btnCreateChalan";
             this.btnCreateChalan.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnCreateChalan.Size = new System.Drawing.Size(151, 34);
+            this.btnCreateChalan.Size = new System.Drawing.Size(215, 34);
             this.btnCreateChalan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -700,6 +700,7 @@
             this.btnCreateChalan.TabIndex = 382;
             this.btnCreateChalan.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateChalan.Values.Image")));
             this.btnCreateChalan.Values.Text = "Create Chalan";
+            this.btnCreateChalan.Click += new System.EventHandler(this.btnCreateChalan_Click);
             // 
             // frmDashboardUpdate
             // 

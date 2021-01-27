@@ -64,7 +64,12 @@ namespace TAILORING.Dashboard
 
             LoadOrderReceive();
         }
-
+        private void SetGridFont(KryptonDataGridView kryptonDataGridView)
+        {
+            
+            kryptonDataGridView.StateCommon.DataCell.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
+            kryptonDataGridView.StateCommon.HeaderColumn.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
+        }
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
@@ -74,6 +79,15 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["QTY"].Visible = false;
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
+            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
+            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitType";
+            dgvOrderDetails.Columns["TrimAmount"].Visible = false;
+            dgvOrderDetails.Columns["OrderStatusID"].Visible = false;
+
+
+            SetGridFont(dgvOrderDetails);
+
+
             grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
@@ -89,10 +103,11 @@ namespace TAILORING.Dashboard
             {
                 if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Received")
                 {
-                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(102, 205, 170);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(102, 205, 170);
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Green; ;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = true;
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Delivered")
                 {
@@ -100,6 +115,7 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 122, 179);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
+                    dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = true;
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "In Process")
                 {
@@ -164,7 +180,13 @@ namespace TAILORING.Dashboard
                 return;
             }
 
-            ReceviceGarments();
+             bool result= clsUtility.ShowQuestionMessage("Are you sure, you want to receive the selected garments?");
+            if (result)
+            {
+                ReceviceGarments();
+            }
+
+         
 
 
         }
@@ -175,22 +197,44 @@ namespace TAILORING.Dashboard
             {
                 if (dgvOrderDetails.Rows[i].Cells[0].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value) == true)
                 {
+                    
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
-                    //int GarmentID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["GarmentID"].Value);
+
+                    int RecordCount=ObjDAL.ExecuteScalarInt("select count(*) from "+clsUtility.DBName+".dbo.tblOrderStatus where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID );
+                    if (RecordCount>0)
+                    {
+              
+
+                        // 4 - Order received.
+                        ObjDAL.UpdateColumnData("OrderStatus", SqlDbType.Int, 4);
+                        ObjDAL.UpdateColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        ObjDAL.UpdateColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
+
+                        ObjDAL.UpdateData(clsUtility.DBName+".dbo.tblOrderStatus", "SalesOrderID=" + SalesID+ " AND SalesOrderDetailsID="+ SalesOrderDetailsID);
+                    }
+                    else
+                    {
+                    
+
+                        // 4 - Order received.
+                        ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 4);
+                        ObjDAL.SetColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        ObjDAL.SetColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
+
+                        ObjDAL.InsertData(clsUtility.DBName+".dbo.tblOrderStatus",false);
+
+                    }
 
 
 
-                    ObjDAL.SetColumnData("SalesOrderID", SqlDbType.Int, SalesID);
-                    ObjDAL.SetColumnData("SalesOrderDetailsID", SqlDbType.Int, SalesOrderDetailsID);
-
-                    // 4 - Order received.
-                    ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 4);
-                    int result = ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblOrderStatus", false);
+                  
                 }
             }
             clsUtility.ShowInfoMessage("Selected Garments has been Received.");
-            this.Close();
+            LoadOrderReceive();
+
+
         }
 
         private bool ValidateRecive()
@@ -213,6 +257,39 @@ namespace TAILORING.Dashboard
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+          
+            
+        }
+
+        private void dgvOrderDetails_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+         
+        }
+        bool iscolUchekced = false;
+        private void dgvOrderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+          
+
+
+        }
+
+        private void dgvOrderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+           
+
+        }
+
+        private void dgvOrderDetails_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvOrderDetails.IsCurrentCellDirty)
+            {
+                dgvOrderDetails.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
 
         private void frmOrderReceive_FormClosed(object sender, FormClosedEventArgs e)

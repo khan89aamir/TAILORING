@@ -314,6 +314,27 @@ namespace TAILORING.Dashboard
             txtSearchByCustomerMobileNo.Clear();
         }
 
+        private void btnCreateChalan_Click(object sender, EventArgs e)
+        {
+            frmCreateChalan frmCreate = new frmCreateChalan();
+            frmCreate.Show();
+        }
+
+        private void picSearchOrderDelivery_Click(object sender, EventArgs e)
+        {
+            if (txtOrderDelivery.Text.Trim().Length == 0)
+            {
+                clsUtility.ShowInfoMessage("Please Enter Order No to Deliver.");
+            }
+            else
+            {
+                frmOrderDelivery frmOrderDelivery = new frmOrderDelivery();
+                frmOrderDelivery.OrderNo = txtOrderDelivery.Text;
+                frmOrderDelivery.Show();
+
+            }
+        }
+
         private void frmDashboardUpdate_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();

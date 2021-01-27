@@ -18,7 +18,9 @@
             frmSalesReport = 25,
             tblMiniSalesReport = 45,
             frmDashBoard=49,
-            frmDatabaseMaintenance = 7///commented
+            frmDatabaseMaintenance = 7,///commented
+                frmBarCode=50,
+                frmBarCodeDesigner=51
         }
         public enum Operation
         {

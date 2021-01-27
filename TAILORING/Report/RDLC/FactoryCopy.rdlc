@@ -265,6 +265,10 @@
           <DataField>SubOrderID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="barcode">
+          <DataField>barcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsReportData</rd:DataSetName>
@@ -933,7 +937,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>2.57292in</Height>
+                  <Height>2.875in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1491,8 +1495,8 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>dsMeasurment</DataSetName>
-                              <Top>0.31945in</Top>
-                              <Left>0.1008in</Left>
+                              <Top>0.53818in</Top>
+                              <Left>0.1284in</Left>
                               <Height>0.5in</Height>
                               <Width>8.27983in</Width>
                               <Style>
@@ -1506,8 +1510,8 @@
                               <Value>=Fields!s1.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.42015in</Top>
-                              <Left>0.13622in</Left>
+                              <Top>1.64931in</Top>
+                              <Left>0.15426in</Left>
                               <Height>1.10417in</Height>
                               <Width>1.27325in</Width>
                               <ZIndex>1</ZIndex>
@@ -1522,8 +1526,8 @@
                               <Value>=Fields!s2.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.42015in</Top>
-                              <Left>1.49114in</Left>
+                              <Top>1.64931in</Top>
+                              <Left>1.50918in</Left>
                               <Height>1.10417in</Height>
                               <Width>1.27325in</Width>
                               <ZIndex>2</ZIndex>
@@ -1538,8 +1542,8 @@
                               <Value>=Fields!s3.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.42015in</Top>
-                              <Left>2.84607in</Left>
+                              <Top>1.64931in</Top>
+                              <Left>2.86411in</Left>
                               <Height>1.10417in</Height>
                               <Width>1.27325in</Width>
                               <ZIndex>3</ZIndex>
@@ -1554,8 +1558,8 @@
                               <Value>=Fields!s4.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.42015in</Top>
-                              <Left>4.20099in</Left>
+                              <Top>1.64931in</Top>
+                              <Left>4.21903in</Left>
                               <Height>1.10417in</Height>
                               <Width>1.27325in</Width>
                               <ZIndex>4</ZIndex>
@@ -1570,8 +1574,8 @@
                               <Value>=Fields!s5.Value</Value>
                               <MIMEType>image/png</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Top>1.42015in</Top>
-                              <Left>5.55592in</Left>
+                              <Top>1.64931in</Top>
+                              <Left>5.57396in</Left>
                               <Height>1.10417in</Height>
                               <Width>1.27325in</Width>
                               <ZIndex>5</ZIndex>
@@ -1582,8 +1586,8 @@
                               </Style>
                             </Image>
                             <Line Name="Line2">
-                              <Top>2.57292in</Top>
-                              <Left>0.03005in</Left>
+                              <Top>2.82292in</Top>
+                              <Left>0.04809in</Left>
                               <Height>0in</Height>
                               <Width>8.35059in</Width>
                               <ZIndex>6</ZIndex>
@@ -2386,8 +2390,8 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>dsMeasurment</DataSetName>
-                              <Top>0.8507in</Top>
-                              <Left>0.1008in</Left>
+                              <Top>1.09373in</Top>
+                              <Left>0.1284in</Left>
                               <Height>0.5in</Height>
                               <Width>8.27988in</Width>
                               <ZIndex>7</ZIndex>
@@ -2437,8 +2441,8 @@
                                 </Textbox>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>1.39237in</Top>
-                              <Left>6.89105in</Left>
+                              <Top>1.62153in</Top>
+                              <Left>6.90909in</Left>
                               <Height>1.13195in</Height>
                               <Width>1.48959in</Width>
                               <ZIndex>8</ZIndex>
@@ -2467,7 +2471,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>SubOrderID</rd:DefaultName>
-                              <Top>0.04167in</Top>
+                              <Top>0.1302in</Top>
                               <Left>1.37495in</Left>
                               <Height>0.25in</Height>
                               <Width>1.30867in</Width>
@@ -2540,7 +2544,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>0.04167in</Top>
+                              <Top>0.1302in</Top>
                               <Left>0.13622in</Left>
                               <Height>0.25in</Height>
                               <Width>1.19706in</Width>
@@ -2555,6 +2559,22 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
+                            <Image Name="imgBarCode">
+                              <Source>Database</Source>
+                              <Value>=Fields!barcode.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>Fit</Sizing>
+                              <Top>0.04167in</Top>
+                              <Left>5.70938in</Left>
+                              <Height>0.42707in</Height>
+                              <Width>2.00786in</Width>
+                              <ZIndex>12</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -2587,7 +2607,7 @@
             </TablixRowHierarchy>
             <DataSetName>dsMeasurment</DataSetName>
             <Top>2.61679in</Top>
-            <Height>2.57292in</Height>
+            <Height>2.875in</Height>
             <Width>8.43215in</Width>
             <ZIndex>10</ZIndex>
             <Style>
@@ -2636,7 +2656,7 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>5.71403in</Top>
+            <Top>5.58903in</Top>
             <Left>0.11965in</Left>
             <Height>1.19445in</Height>
             <Width>2.91864in</Width>
@@ -2687,7 +2707,7 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>5.71403in</Top>
+            <Top>5.58903in</Top>
             <Left>5.48084in</Left>
             <Height>1.19445in</Height>
             <Width>2.91864in</Width>
@@ -2699,7 +2719,7 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>7.11681in</Height>
+        <Height>6.78348in</Height>
         <Style />
       </Body>
       <Width>8.50308in</Width>

@@ -57,7 +57,6 @@
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.lnkAddItem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.kryptonHeaderGroup4 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
@@ -65,13 +64,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnBodyPosture = new System.Windows.Forms.PictureBox();
-            this.btnMeasurment = new System.Windows.Forms.PictureBox();
-            this.btnStyle = new System.Windows.Forms.PictureBox();
-            this.picBody = new System.Windows.Forms.PictureBox();
-            this.picMeasure = new System.Windows.Forms.PictureBox();
-            this.picStyle = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picStyle = new System.Windows.Forms.PictureBox();
+            this.picMeasure = new System.Windows.Forms.PictureBox();
+            this.picBody = new System.Windows.Forms.PictureBox();
+            this.btnStyle = new System.Windows.Forms.PictureBox();
+            this.btnMeasurment = new System.Windows.Forms.PictureBox();
+            this.btnBodyPosture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
@@ -95,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4)).BeginInit();
@@ -105,12 +104,13 @@
             this.gGlowGroupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBody)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStyle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -547,17 +547,6 @@
             this.kryptonPanel1.Size = new System.Drawing.Size(1211, 39);
             this.kryptonPanel1.TabIndex = 372;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TAILORING.Properties.Resources.measurmentNormal;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -654,84 +643,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnBodyPosture
-            // 
-            this.btnBodyPosture.BackColor = System.Drawing.Color.Transparent;
-            this.btnBodyPosture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.picBodyPosture;
-            this.btnBodyPosture.Location = new System.Drawing.Point(110, 68);
-            this.btnBodyPosture.Name = "btnBodyPosture";
-            this.btnBodyPosture.Size = new System.Drawing.Size(246, 83);
-            this.btnBodyPosture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBodyPosture.TabIndex = 376;
-            this.btnBodyPosture.TabStop = false;
-            this.btnBodyPosture.Click += new System.EventHandler(this.btnBodyPosture_Click);
-            // 
-            // btnMeasurment
-            // 
-            this.btnMeasurment.BackColor = System.Drawing.Color.Transparent;
-            this.btnMeasurment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.picmeasurment;
-            this.btnMeasurment.Location = new System.Drawing.Point(402, 68);
-            this.btnMeasurment.Name = "btnMeasurment";
-            this.btnMeasurment.Size = new System.Drawing.Size(246, 83);
-            this.btnMeasurment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMeasurment.TabIndex = 377;
-            this.btnMeasurment.TabStop = false;
-            this.btnMeasurment.Click += new System.EventHandler(this.btnMeasurment_Click);
-            // 
-            // btnStyle
-            // 
-            this.btnStyle.BackColor = System.Drawing.Color.Transparent;
-            this.btnStyle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStyle.Image = global::TAILORING.Properties.Resources.picStyle;
-            this.btnStyle.Location = new System.Drawing.Point(694, 68);
-            this.btnStyle.Name = "btnStyle";
-            this.btnStyle.Size = new System.Drawing.Size(246, 83);
-            this.btnStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnStyle.TabIndex = 378;
-            this.btnStyle.TabStop = false;
-            this.btnStyle.Click += new System.EventHandler(this.btnStyle_Click);
-            // 
-            // picBody
-            // 
-            this.picBody.BackColor = System.Drawing.Color.Transparent;
-            this.picBody.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBody.Image = ((System.Drawing.Image)(resources.GetObject("picBody.Image")));
-            this.picBody.Location = new System.Drawing.Point(195, 130);
-            this.picBody.Name = "picBody";
-            this.picBody.Size = new System.Drawing.Size(40, 68);
-            this.picBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBody.TabIndex = 379;
-            this.picBody.TabStop = false;
-            this.picBody.Visible = false;
-            // 
-            // picMeasure
-            // 
-            this.picMeasure.BackColor = System.Drawing.Color.Transparent;
-            this.picMeasure.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMeasure.Image = ((System.Drawing.Image)(resources.GetObject("picMeasure.Image")));
-            this.picMeasure.Location = new System.Drawing.Point(495, 130);
-            this.picMeasure.Name = "picMeasure";
-            this.picMeasure.Size = new System.Drawing.Size(40, 68);
-            this.picMeasure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMeasure.TabIndex = 380;
-            this.picMeasure.TabStop = false;
-            this.picMeasure.Visible = false;
-            // 
-            // picStyle
-            // 
-            this.picStyle.BackColor = System.Drawing.Color.Transparent;
-            this.picStyle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picStyle.Image = ((System.Drawing.Image)(resources.GetObject("picStyle.Image")));
-            this.picStyle.Location = new System.Drawing.Point(795, 130);
-            this.picStyle.Name = "picStyle";
-            this.picStyle.Size = new System.Drawing.Size(40, 68);
-            this.picStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picStyle.TabIndex = 381;
-            this.picStyle.TabStop = false;
-            this.picStyle.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -740,6 +651,95 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(959, 34);
             this.panel1.TabIndex = 382;
+            // 
+            // picStyle
+            // 
+            this.picStyle.BackColor = System.Drawing.Color.Transparent;
+            this.picStyle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picStyle.Image = ((System.Drawing.Image)(resources.GetObject("picStyle.Image")));
+            this.picStyle.Location = new System.Drawing.Point(790, 128);
+            this.picStyle.Name = "picStyle";
+            this.picStyle.Size = new System.Drawing.Size(40, 68);
+            this.picStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picStyle.TabIndex = 381;
+            this.picStyle.TabStop = false;
+            this.picStyle.Visible = false;
+            // 
+            // picMeasure
+            // 
+            this.picMeasure.BackColor = System.Drawing.Color.Transparent;
+            this.picMeasure.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMeasure.Image = ((System.Drawing.Image)(resources.GetObject("picMeasure.Image")));
+            this.picMeasure.Location = new System.Drawing.Point(487, 128);
+            this.picMeasure.Name = "picMeasure";
+            this.picMeasure.Size = new System.Drawing.Size(40, 68);
+            this.picMeasure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMeasure.TabIndex = 380;
+            this.picMeasure.TabStop = false;
+            this.picMeasure.Visible = false;
+            // 
+            // picBody
+            // 
+            this.picBody.BackColor = System.Drawing.Color.Transparent;
+            this.picBody.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBody.Image = ((System.Drawing.Image)(resources.GetObject("picBody.Image")));
+            this.picBody.Location = new System.Drawing.Point(173, 128);
+            this.picBody.Name = "picBody";
+            this.picBody.Size = new System.Drawing.Size(40, 68);
+            this.picBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBody.TabIndex = 379;
+            this.picBody.TabStop = false;
+            this.picBody.Visible = false;
+            // 
+            // btnStyle
+            // 
+            this.btnStyle.BackColor = System.Drawing.Color.Transparent;
+            this.btnStyle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStyle.Image = global::TAILORING.Properties.Resources.picStyle;
+            this.btnStyle.Location = new System.Drawing.Point(672, 66);
+            this.btnStyle.Name = "btnStyle";
+            this.btnStyle.Size = new System.Drawing.Size(246, 83);
+            this.btnStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnStyle.TabIndex = 378;
+            this.btnStyle.TabStop = false;
+            this.btnStyle.Click += new System.EventHandler(this.btnStyle_Click);
+            // 
+            // btnMeasurment
+            // 
+            this.btnMeasurment.BackColor = System.Drawing.Color.Transparent;
+            this.btnMeasurment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMeasurment.Image = global::TAILORING.Properties.Resources.picmeasurment;
+            this.btnMeasurment.Location = new System.Drawing.Point(369, 66);
+            this.btnMeasurment.Name = "btnMeasurment";
+            this.btnMeasurment.Size = new System.Drawing.Size(246, 83);
+            this.btnMeasurment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMeasurment.TabIndex = 377;
+            this.btnMeasurment.TabStop = false;
+            this.btnMeasurment.Click += new System.EventHandler(this.btnMeasurment_Click);
+            // 
+            // btnBodyPosture
+            // 
+            this.btnBodyPosture.BackColor = System.Drawing.Color.Transparent;
+            this.btnBodyPosture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.picBodyPosture;
+            this.btnBodyPosture.Location = new System.Drawing.Point(66, 66);
+            this.btnBodyPosture.Name = "btnBodyPosture";
+            this.btnBodyPosture.Size = new System.Drawing.Size(246, 83);
+            this.btnBodyPosture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBodyPosture.TabIndex = 376;
+            this.btnBodyPosture.TabStop = false;
+            this.btnBodyPosture.Click += new System.EventHandler(this.btnBodyPosture_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.measurmentNormal;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
             // 
             // ctrlMeasurment1
             // 
@@ -808,7 +808,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
@@ -818,12 +817,13 @@
             this.gGlowGroupBox1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBody)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStyle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMeasure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStyle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMeasurment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBodyPosture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

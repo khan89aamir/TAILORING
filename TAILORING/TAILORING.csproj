@@ -139,14 +139,57 @@
     <Reference Include="UserManagement, Version=1.3.5.1, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.16\lib\UserManagement.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net40\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net40\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barcode\clsBarCodeUtility.cs" />
+    <Compile Include="Barcode\Form1.cs" />
+    <Compile Include="Barcode\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\frmBarCodeDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcode\frmBarCodeDesigner.designer.cs">
+      <DependentUpon>frmBarCodeDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\frmBarcodePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcode\frmBarcodePrint.Designer.cs">
+      <DependentUpon>frmBarcodePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\LineControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Barcode\uRectangle.cs" />
+    <Compile Include="Barcode\uRectangle.designer.cs">
+      <DependentUpon>uRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\VerticalLabel.cs" />
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmCreateChalan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmCreateChalan.Designer.cs">
+      <DependentUpon>frmCreateChalan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmDashboardUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard\frmDashboardUpdate.Designer.cs">
       <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\frmOrderDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmOrderDelivery.Designer.cs">
+      <DependentUpon>frmOrderDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\frmOrderReceive.cs">
       <SubType>Form</SubType>
@@ -283,6 +326,12 @@
     <Compile Include="Masters\frmGSTMaster.Designer.cs">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Forms\frmChalan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\frmChalan.Designer.cs">
+      <DependentUpon>frmChalan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Forms\frmCustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,8 +354,26 @@
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Barcode\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode\frmBarCodeDesigner.resx">
+      <DependentUpon>frmBarCodeDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode\frmBarcodePrint.resx">
+      <DependentUpon>frmBarcodePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcode\uRectangle.resx">
+      <DependentUpon>uRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmCreateChalan.resx">
+      <DependentUpon>frmCreateChalan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmDashboardUpdate.resx">
       <DependentUpon>frmDashboardUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmOrderDelivery.resx">
+      <DependentUpon>frmOrderDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmOrderReceive.resx">
       <DependentUpon>frmOrderReceive.cs</DependentUpon>
@@ -371,12 +438,16 @@
     <EmbeddedResource Include="Report\Forms\frmBill.resx">
       <DependentUpon>frmBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\frmChalan.resx">
+      <DependentUpon>frmChalan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\frmCustomerDetails.resx">
       <DependentUpon>frmCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\frmOrderDetails.resx">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\Chalan.rdlc" />
     <EmbeddedResource Include="Report\RDLC\CustomerCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\FactoryCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\StoreCopy.rdlc" />
@@ -459,13 +530,10 @@
     <None Include="Resources\padlock.png" />
     <None Include="Resources\Background.jpg" />
     <None Include="Resources\New logo 2.png" />
-    <None Include="Resources\bodyCheck.png" />
-    <None Include="Resources\measurcheck.png" />
     <None Include="Resources\picBodyPosture.png" />
     <None Include="Resources\picmeasurment.png" />
     <None Include="Resources\picStyle.png" />
     <None Include="Resources\Pictur31.png" />
-    <None Include="Resources\StyleCheck.png" />
     <None Include="Resources\btnAdd.Values.Image.png" />
     <None Include="Resources\Software logo.png" />
     <None Include="Resources\AdduserSmall.png" />
@@ -509,6 +577,17 @@
     <None Include="Resources\employeesmall.png" />
     <None Include="Resources\orderReceive.png" />
     <None Include="Resources\checkSqure.png" />
+    <None Include="Resources\GarmentFeaturs.png" />
+    <None Include="Resources\garmentMeasur.png" />
+    <None Include="Resources\garmentbody.png" />
+    <None Include="Resources\garmentStyle.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\printing.png" />
+    <None Include="Resources\bodyCheck.png" />
+    <None Include="Resources\StyleCheck.png" />
+    <None Include="Resources\measurcheck.png" />
+    <None Include="Resources\Barcode1.PNG" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

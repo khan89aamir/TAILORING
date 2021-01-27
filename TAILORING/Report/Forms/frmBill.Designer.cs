@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBill));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,10 +62,10 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Location = new System.Drawing.Point(1081, 7);
             this.btnSave.Name = "btnSave";
-            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
             this.btnSave.TabIndex = 289;
-            this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
+            this.btnSave.Values.Image = global::TAILORING.Properties.Resources.printer;
             this.btnSave.Values.Text = "Print";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

@@ -72,7 +72,7 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(938, 51);
+            this.kryptonPanel1.Size = new System.Drawing.Size(1010, 51);
             this.kryptonPanel1.TabIndex = 372;
             // 
             // pictureBox1
@@ -111,7 +111,7 @@
             // 
             this.grpCustomerGridview.Panel.Controls.Add(this.chkAll);
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
-            this.grpCustomerGridview.Size = new System.Drawing.Size(938, 376);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(1010, 388);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,8 +144,13 @@
             this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
-            this.dgvOrderDetails.Size = new System.Drawing.Size(936, 326);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1008, 338);
             this.dgvOrderDetails.TabIndex = 0;
+            this.dgvOrderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellClick);
+            this.dgvOrderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellEndEdit);
+            this.dgvOrderDetails.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvOrderDetails_CellValidating);
+            this.dgvOrderDetails.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellValueChanged);
+            this.dgvOrderDetails.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvOrderDetails_CurrentCellDirtyStateChanged);
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
             // colCheck
@@ -172,7 +177,7 @@
             // 
             this.lblOrderNo.AutoSize = true;
             this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNo.ForeColor = System.Drawing.Color.White;
             this.lblOrderNo.Location = new System.Drawing.Point(141, 70);
             this.lblOrderNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -185,7 +190,7 @@
             // 
             this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerName.ForeColor = System.Drawing.Color.White;
             this.lblCustomerName.Location = new System.Drawing.Point(141, 104);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -211,9 +216,9 @@
             // 
             this.lblMobile.AutoSize = true;
             this.lblMobile.BackColor = System.Drawing.Color.Transparent;
-            this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobile.ForeColor = System.Drawing.Color.White;
-            this.lblMobile.Location = new System.Drawing.Point(540, 69);
+            this.lblMobile.Location = new System.Drawing.Point(644, 65);
             this.lblMobile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(30, 17);
@@ -226,7 +231,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(410, 69);
+            this.label4.Location = new System.Drawing.Point(514, 65);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 17);
@@ -237,7 +242,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(848, 527);
+            this.btnCancel.Location = new System.Drawing.Point(920, 534);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -251,7 +256,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(744, 527);
+            this.btnAdd.Location = new System.Drawing.Point(816, 534);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnAdd.Size = new System.Drawing.Size(88, 34);
@@ -271,7 +276,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.panel2.BackColor = System.Drawing.Color.Green;
             this.panel2.Location = new System.Drawing.Point(119, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(28, 30);
@@ -304,7 +309,7 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Controls.Add(this.panel3);
-            this.panel5.Location = new System.Drawing.Point(688, 57);
+            this.panel5.Location = new System.Drawing.Point(771, 54);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 80);
             this.panel5.TabIndex = 386;
@@ -366,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(938, 568);
+            this.ClientSize = new System.Drawing.Size(1010, 576);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblMobile);

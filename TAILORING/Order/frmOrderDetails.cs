@@ -64,14 +64,15 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
 
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
 
-            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+          
         }
 
         private void frmOrderDetails_FormClosed(object sender, FormClosedEventArgs e)

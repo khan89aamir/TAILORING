@@ -156,7 +156,7 @@ namespace TAILORING.Order
             }
         }
 
-        private void CopyGarmentType_LastOrder()
+        private void CopyGarmentDetails_LastOrder()
         {
             for (int i = 0; i < dtGarmentList.Rows.Count; i++)
             {
@@ -295,7 +295,7 @@ namespace TAILORING.Order
                 InitTempdtStyle();
                 InitTempdtPosture();
 
-                //CopyGarmentType_LastOrder();
+                CopyGarmentDetails_LastOrder();
             }
             else
             {
@@ -312,7 +312,7 @@ namespace TAILORING.Order
                 }
                 dataGridView1.DataSource = dtGarmentList;
 
-                CopyGarmentType_LastOrder();
+                //CopyGarmentType_LastOrder();
 
                 AddGarments();
             }
@@ -1275,6 +1275,10 @@ namespace TAILORING.Order
                         {
                             pic.Parent.BackColor = Color.LightGray;
                         }
+                        //else //added
+                        //{
+                        //    pic.Parent.BackColor = Color.Transparent;
+                        //}
                     }
                 }
                 flowLayoutPanel1.Controls.Add(grp);
@@ -1286,7 +1290,8 @@ namespace TAILORING.Order
             bool b = false;
             if (ObjUtil.ValidateTable(dtTempPosture))
             {
-                DataRow[] dr = dtTempPosture.Select("BodyPostureMappingID=" + pBodyPostureMappingID);
+                //DataRow[] dr = dtTempPosture.Select("BodyPostureMappingID=" + pBodyPostureMappingID);
+                DataRow[] dr = dtTempPosture.Select("BodyPostureMappingID=" + pBodyPostureMappingID + " AND GarmentID=" + GarmentID);
                 if (dr.Length > 0)
                 {
                     b = true;

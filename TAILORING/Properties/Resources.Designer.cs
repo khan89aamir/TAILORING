@@ -383,6 +383,16 @@ namespace TAILORING.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout {
             get {
                 object obj = ResourceManager.GetObject("logout", resourceCulture);
@@ -416,16 +426,6 @@ namespace TAILORING.Properties {
         internal static System.Drawing.Bitmap measurmentsmall {
             get {
                 object obj = ResourceManager.GetObject("measurmentsmall", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap New_logo_2 {
-            get {
-                object obj = ResourceManager.GetObject("New logo 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -380,21 +380,27 @@ namespace TAILORING.Masters
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ObjUtil.IsString(e);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                txtGarmentName.Focus();
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txtGarmentName.Focus();
+                }
             }
         }
 
         private void txtGarmentCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ObjUtil.IsAlphaNumeric(e);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors or Number...", clsUtility.strProjectTitle);
-                txtGarmentCode.Focus();
+                e.Handled = ObjUtil.IsAlphaNumeric(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors or Number...", clsUtility.strProjectTitle);
+                    txtGarmentCode.Focus();
+                }
             }
         }
     }

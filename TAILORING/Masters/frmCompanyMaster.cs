@@ -56,14 +56,12 @@ namespace TAILORING.Masters
             dgvCompanyMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvCompanyMaster.RowHeadersVisible = false; // set it to false if not needed
-            
+
             LoadTailoringTheme();
 
             LoadData();
-            
-            EnableDisable(false);
 
-            grpCompany.Enabled = false;
+            EnableDisable(false);
         }
 
         private void EnableDisable(bool b)
@@ -72,6 +70,8 @@ namespace TAILORING.Masters
             txtCompanyMobileNo.Enabled = b;
             txtCompanyEmailID.Enabled = b;
             txtCompanyAddress.Enabled = b;
+
+            chkDefaultCompany.Enabled = b;
         }
 
         private void ClearAll()
@@ -119,9 +119,21 @@ namespace TAILORING.Masters
                 txtCompanyMobileNo.Focus();
                 return false;
             }
+            else if (txtCompanyMobileNo.Text.Trim().Length < 10)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Company Mobile No.      ", clsUtility.strProjectTitle);
+                txtCompanyMobileNo.Focus();
+                return false;
+            }
             else if (ObjUtil.IsControlTextEmpty(txtCompanyEmailID))
             {
                 clsUtility.ShowInfoMessage("Enter Company Email ID.      ", clsUtility.strProjectTitle);
+                txtCompanyEmailID.Focus();
+                return false;
+            }
+            else if (ObjUtil.ValidateEmail(txtCompanyEmailID.Text))
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Company Email ID.      ", clsUtility.strProjectTitle);
                 txtCompanyEmailID.Focus();
                 return false;
             }
@@ -358,6 +370,20 @@ namespace TAILORING.Masters
             dgvCompanyMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvCompanyMaster.Rows.Count;
+        }
+
+        private void txtCompanyMobileNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 13)
+            {
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsNumeric(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
+            }
         }
     }
 }

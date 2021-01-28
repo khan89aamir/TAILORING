@@ -60,7 +60,7 @@ namespace TAILORING.Dashboard
                         Obj.CustName = strCustName;
                         Obj.CustMobileNo = strMobileNo;
                         Obj.CustAddress = strAddress;
-                        this.Close();
+                        //this.Close();
                         Obj.ShowDialog();
                     }
                 }

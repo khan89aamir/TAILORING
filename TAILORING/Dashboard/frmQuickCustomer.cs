@@ -151,21 +151,27 @@ namespace TAILORING.Dashboard
 
         private void txtCustomerMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ObjUtil.IsNumeric(txtCustomerMobileNo.Text);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Number..");
-                txtCustomerMobileNo.Focus();
+                e.Handled = ObjUtil.IsNumeric(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number..");
+                    txtCustomerMobileNo.Focus();
+                }
             }
         }
 
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = ObjUtil.IsAlphaNumeric(e);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactor..");
-                txtCustomerName.Focus();
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactor..");
+                    txtCustomerName.Focus();
+                }
             }
         }
 

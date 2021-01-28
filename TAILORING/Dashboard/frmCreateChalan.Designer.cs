@@ -31,9 +31,9 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.radSearchByInProcess = new System.Windows.Forms.RadioButton();
+            this.radSearchByOrderNo = new System.Windows.Forms.RadioButton();
+            this.txtSearchByScanOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
@@ -87,50 +87,52 @@
             this.label12.TabIndex = 82;
             this.label12.Text = "Create Chalan";
             // 
-            // radioButton1
+            // radSearchByInProcess
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(12, 64);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(147, 21);
-            this.radioButton1.TabIndex = 374;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "In Process Orders";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radSearchByInProcess.AutoSize = true;
+            this.radSearchByInProcess.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSearchByInProcess.ForeColor = System.Drawing.Color.White;
+            this.radSearchByInProcess.Location = new System.Drawing.Point(12, 64);
+            this.radSearchByInProcess.Name = "radSearchByInProcess";
+            this.radSearchByInProcess.Size = new System.Drawing.Size(147, 21);
+            this.radSearchByInProcess.TabIndex = 374;
+            this.radSearchByInProcess.TabStop = true;
+            this.radSearchByInProcess.Text = "In Process Orders";
+            this.radSearchByInProcess.UseVisualStyleBackColor = true;
+            this.radSearchByInProcess.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // radSearchByOrderNo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(564, 67);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(132, 21);
-            this.radioButton2.TabIndex = 375;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Scan Order No :";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radSearchByOrderNo.AutoSize = true;
+            this.radSearchByOrderNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSearchByOrderNo.ForeColor = System.Drawing.Color.White;
+            this.radSearchByOrderNo.Location = new System.Drawing.Point(564, 67);
+            this.radSearchByOrderNo.Name = "radSearchByOrderNo";
+            this.radSearchByOrderNo.Size = new System.Drawing.Size(132, 21);
+            this.radSearchByOrderNo.TabIndex = 375;
+            this.radSearchByOrderNo.TabStop = true;
+            this.radSearchByOrderNo.Text = "Scan Order No :";
+            this.radSearchByOrderNo.UseVisualStyleBackColor = true;
+            this.radSearchByOrderNo.CheckedChanged += new System.EventHandler(this.radSearchByOrderNo_CheckedChanged);
             // 
-            // txtCustomerName
+            // txtSearchByScanOrderNo
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(702, 62);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(213, 31);
-            this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtSearchByScanOrderNo.Enabled = false;
+            this.txtSearchByScanOrderNo.Location = new System.Drawing.Point(702, 62);
+            this.txtSearchByScanOrderNo.Name = "txtSearchByScanOrderNo";
+            this.txtSearchByScanOrderNo.Size = new System.Drawing.Size(213, 31);
+            this.txtSearchByScanOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSearchByScanOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtSearchByScanOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateCommon.Border.Rounding = 10;
-            this.txtCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtSearchByScanOrderNo.StateCommon.Border.Rounding = 10;
+            this.txtSearchByScanOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByScanOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateNormal.Border.Rounding = 20;
-            this.txtCustomerName.TabIndex = 381;
+            this.txtSearchByScanOrderNo.StateNormal.Border.Rounding = 20;
+            this.txtSearchByScanOrderNo.TabIndex = 381;
             // 
             // btnCancel
             // 
@@ -140,6 +142,10 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.TabIndex = 383;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
@@ -153,6 +159,10 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnAdd.Size = new System.Drawing.Size(127, 34);
+            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.Rounding = 5;
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.TabIndex = 382;
             this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.checkSqure;
@@ -223,9 +233,9 @@
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtCustomerName);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.txtSearchByScanOrderNo);
+            this.Controls.Add(this.radSearchByOrderNo);
+            this.Controls.Add(this.radSearchByInProcess);
             this.Controls.Add(this.kryptonPanel1);
             this.MaximizeBox = false;
             this.Name = "frmCreateChalan";
@@ -255,9 +265,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerName;
+        private System.Windows.Forms.RadioButton radSearchByInProcess;
+        private System.Windows.Forms.RadioButton radSearchByOrderNo;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByScanOrderNo;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpCustomerGridview;

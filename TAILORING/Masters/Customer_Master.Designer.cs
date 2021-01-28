@@ -142,7 +142,7 @@
             this.lblCustomerAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblCustomerAddress.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerAddress.ForeColor = System.Drawing.Color.White;
-            this.lblCustomerAddress.Location = new System.Drawing.Point(416, 10);
+            this.lblCustomerAddress.Location = new System.Drawing.Point(416, 48);
             this.lblCustomerAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerAddress.Name = "lblCustomerAddress";
             this.lblCustomerAddress.Size = new System.Drawing.Size(64, 17);
@@ -182,7 +182,11 @@
             this.btnAdd.Location = new System.Drawing.Point(105, 54);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnAdd.Size = new System.Drawing.Size(88, 34);
+            this.btnAdd.Size = new System.Drawing.Size(90, 34);
+            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.Rounding = 5;
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.TabIndex = 287;
             this.btnAdd.Values.Image = global::TAILORING.Properties.Resources.btnAdd_Values_Image;
@@ -193,10 +197,14 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(208, 54);
+            this.btnSave.Location = new System.Drawing.Point(209, 54);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
+            this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.Rounding = 5;
             this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.TabIndex = 288;
             this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
@@ -211,6 +219,10 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
+            this.btnEdit.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnEdit.StateCommon.Border.Rounding = 5;
             this.btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.TabIndex = 289;
             this.btnEdit.Values.Image = global::TAILORING.Properties.Resources.btnEdit_Values_Image;
@@ -221,10 +233,14 @@
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(394, 54);
+            this.btnUpdate.Location = new System.Drawing.Point(393, 54);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
+            this.btnUpdate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnUpdate.StateCommon.Border.Rounding = 5;
             this.btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.TabIndex = 290;
             this.btnUpdate.Values.Image = global::TAILORING.Properties.Resources.btnUpdate_Values_Image;
@@ -235,10 +251,14 @@
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(487, 54);
+            this.btnDelete.Location = new System.Drawing.Point(485, 54);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
+            this.btnDelete.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnDelete.StateCommon.Border.Rounding = 5;
             this.btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.TabIndex = 291;
             this.btnDelete.Values.Image = global::TAILORING.Properties.Resources.btnDelete_Values_Image;
@@ -249,10 +269,14 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(580, 54);
+            this.btnCancel.Location = new System.Drawing.Point(577, 54);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.TabIndex = 292;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
@@ -261,6 +285,8 @@
             // 
             // dgvCustomerMaster
             // 
+            this.dgvCustomerMaster.AllowUserToAddRows = false;
+            this.dgvCustomerMaster.AllowUserToDeleteRows = false;
             this.dgvCustomerMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomerMaster.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Mixed;
@@ -268,6 +294,7 @@
             this.dgvCustomerMaster.Location = new System.Drawing.Point(0, 0);
             this.dgvCustomerMaster.MultiSelect = false;
             this.dgvCustomerMaster.Name = "dgvCustomerMaster";
+            this.dgvCustomerMaster.ReadOnly = true;
             this.dgvCustomerMaster.Size = new System.Drawing.Size(756, 183);
             this.dgvCustomerMaster.TabIndex = 287;
             this.dgvCustomerMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerMaster_CellDoubleClick);
@@ -521,7 +548,8 @@
             // 
             // txtSearchByMobileNo
             // 
-            this.txtSearchByMobileNo.Location = new System.Drawing.Point(441, 19);
+            this.txtSearchByMobileNo.Enabled = false;
+            this.txtSearchByMobileNo.Location = new System.Drawing.Point(444, 19);
             this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(205, 31);
             this.txtSearchByMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -536,11 +564,13 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByMobileNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByMobileNo.TabIndex = 387;
+            this.txtSearchByMobileNo.TextChanged += new System.EventHandler(this.txtSearchByMobileNo_TextChanged);
             this.txtSearchByMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByMobileNo_KeyPress);
             // 
             // txtSearchByCustomerName
             // 
-            this.txtSearchByCustomerName.Location = new System.Drawing.Point(146, 17);
+            this.txtSearchByCustomerName.Enabled = false;
+            this.txtSearchByCustomerName.Location = new System.Drawing.Point(146, 19);
             this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
             this.txtSearchByCustomerName.Size = new System.Drawing.Size(193, 31);
             this.txtSearchByCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -555,6 +585,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByCustomerName.StateNormal.Border.Rounding = 20;
             this.txtSearchByCustomerName.TabIndex = 388;
+            this.txtSearchByCustomerName.TextChanged += new System.EventHandler(this.txtSearchByCustomer_TextChanged);
             this.txtSearchByCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
             // rdSearchByCustomerMobileNo
@@ -564,7 +595,7 @@
             this.gGlowGroupBox1.SetEffectType(this.rdSearchByCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.rdSearchByCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdSearchByCustomerMobileNo.ForeColor = System.Drawing.Color.White;
-            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(350, 22);
+            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(344, 24);
             this.rdSearchByCustomerMobileNo.Margin = new System.Windows.Forms.Padding(2);
             this.rdSearchByCustomerMobileNo.Name = "rdSearchByCustomerMobileNo";
             this.gGlowGroupBox1.SetsGlowColor(this.rdSearchByCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByCustomerMobileNo.sGlowColor"))));
@@ -582,7 +613,7 @@
             this.gGlowGroupBox1.SetEffectType(this.rdSearchByCustomerName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.rdSearchByCustomerName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdSearchByCustomerName.ForeColor = System.Drawing.Color.White;
-            this.rdSearchByCustomerName.Location = new System.Drawing.Point(11, 20);
+            this.rdSearchByCustomerName.Location = new System.Drawing.Point(11, 24);
             this.rdSearchByCustomerName.Margin = new System.Windows.Forms.Padding(2);
             this.rdSearchByCustomerName.Name = "rdSearchByCustomerName";
             this.gGlowGroupBox1.SetsGlowColor(this.rdSearchByCustomerName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByCustomerName.sGlowColor"))));
@@ -601,7 +632,7 @@
             this.gGlowGroupBox1.SetEffectType(this.rdShowAllOfCustomer, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.rdShowAllOfCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdShowAllOfCustomer.ForeColor = System.Drawing.Color.White;
-            this.rdShowAllOfCustomer.Location = new System.Drawing.Point(656, 22);
+            this.rdShowAllOfCustomer.Location = new System.Drawing.Point(654, 24);
             this.rdShowAllOfCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.rdShowAllOfCustomer.Name = "rdShowAllOfCustomer";
             this.gGlowGroupBox1.SetsGlowColor(this.rdShowAllOfCustomer, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAllOfCustomer.sGlowColor"))));

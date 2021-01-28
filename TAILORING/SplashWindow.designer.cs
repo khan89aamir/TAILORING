@@ -46,7 +46,7 @@
             this.lblversion.Location = new System.Drawing.Point(13, 265);
             this.lblversion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblversion.Name = "lblversion";
-            this.lblversion.Size = new System.Drawing.Size(63, 20);
+            this.lblversion.Size = new System.Drawing.Size(61, 19);
             this.lblversion.TabIndex = 1;
             this.lblversion.Text = "Version :";
             // 
@@ -60,7 +60,7 @@
             this.lblStatus.Location = new System.Drawing.Point(345, 265);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(57, 20);
+            this.lblStatus.Size = new System.Drawing.Size(57, 19);
             this.lblStatus.TabIndex = 2;
             this.lblStatus.Text = "Status : ";
             // 
@@ -75,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::TAILORING.Properties.Resources.New_logo_2;
+            this.pictureBox2.Image = global::TAILORING.Properties.Resources.Logo;
             this.pictureBox2.Location = new System.Drawing.Point(42, 26);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(472, 218);
@@ -87,8 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::TAILORING.Properties.Resources.back_green;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(562, 303);
             this.Controls.Add(this.pictureBox2);

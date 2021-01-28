@@ -142,10 +142,14 @@ namespace TAILORING.Masters
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(598, 56);
+            this.btnCancel.Location = new System.Drawing.Point(595, 56);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
             this.btnCancel.TabIndex = 298;
             this.btnCancel.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Values.Image")));
             this.btnCancel.Values.Text = " Cancel";
@@ -155,10 +159,14 @@ namespace TAILORING.Masters
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(503, 56);
+            this.btnDelete.Location = new System.Drawing.Point(501, 56);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
+            this.btnDelete.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnDelete.StateCommon.Border.Rounding = 5;
             this.btnDelete.TabIndex = 297;
             this.btnDelete.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Values.Image")));
             this.btnDelete.Values.Text = " Delete ";
@@ -168,14 +176,18 @@ namespace TAILORING.Masters
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(408, 56);
+            this.btnUpdate.Location = new System.Drawing.Point(407, 56);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
+            this.btnUpdate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnUpdate.StateCommon.Border.Rounding = 5;
             this.btnUpdate.TabIndex = 296;
             this.btnUpdate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Values.Image")));
             this.btnUpdate.Values.Text = "Update";
-            this.btnUpdate.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnEdit
             // 
@@ -185,6 +197,10 @@ namespace TAILORING.Masters
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
+            this.btnEdit.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnEdit.StateCommon.Border.Rounding = 5;
             this.btnEdit.TabIndex = 295;
             this.btnEdit.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Values.Image")));
             this.btnEdit.Values.Text = "Edit";
@@ -194,10 +210,14 @@ namespace TAILORING.Masters
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(218, 56);
+            this.btnSave.Location = new System.Drawing.Point(219, 56);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
+            this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.Rounding = 5;
             this.btnSave.TabIndex = 294;
             this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
             this.btnSave.Values.Text = "Save";
@@ -210,7 +230,11 @@ namespace TAILORING.Masters
             this.btnAdd.Location = new System.Drawing.Point(123, 56);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnAdd.Size = new System.Drawing.Size(78, 34);
+            this.btnAdd.Size = new System.Drawing.Size(80, 34);
+            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.Rounding = 5;
             this.btnAdd.TabIndex = 293;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Add New";
@@ -230,6 +254,11 @@ namespace TAILORING.Masters
             this.grpKrytonHeader.Panel.Controls.Add(this.grpGST);
             this.grpKrytonHeader.Size = new System.Drawing.Size(757, 146);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpKrytonHeader.StateCommon.Border.Rounding = 10;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,13 +284,14 @@ namespace TAILORING.Masters
             this.grpGST.GlowOn = true;
             this.grpGST.Location = new System.Drawing.Point(0, 0);
             this.grpGST.Name = "grpGST";
-            this.grpGST.Size = new System.Drawing.Size(755, 119);
+            this.grpGST.Size = new System.Drawing.Size(749, 116);
             this.grpGST.TabIndex = 287;
             // 
             // txtSGST
             // 
             this.txtSGST.Location = new System.Drawing.Point(469, 14);
             this.txtSGST.Name = "txtSGST";
+            this.txtSGST.ShortcutsEnabled = false;
             this.txtSGST.Size = new System.Drawing.Size(240, 31);
             this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
@@ -275,9 +305,12 @@ namespace TAILORING.Masters
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSGST.StateNormal.Border.Rounding = 20;
             this.txtSGST.TabIndex = 382;
+            this.txtSGST.TextChanged += new System.EventHandler(this.txtCGST_TextChanged);
+            this.txtSGST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCGST_KeyPress);
             // 
             // txtIGST
             // 
+            this.txtIGST.Enabled = false;
             this.txtIGST.Location = new System.Drawing.Point(113, 64);
             this.txtIGST.Name = "txtIGST";
             this.txtIGST.Size = new System.Drawing.Size(240, 31);
@@ -298,6 +331,7 @@ namespace TAILORING.Masters
             // 
             this.txtCGST.Location = new System.Drawing.Point(113, 14);
             this.txtCGST.Name = "txtCGST";
+            this.txtCGST.ShortcutsEnabled = false;
             this.txtCGST.Size = new System.Drawing.Size(240, 31);
             this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
             this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
@@ -311,6 +345,8 @@ namespace TAILORING.Masters
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCGST.StateNormal.Border.Rounding = 20;
             this.txtCGST.TabIndex = 380;
+            this.txtCGST.TextChanged += new System.EventHandler(this.txtCGST_TextChanged);
+            this.txtCGST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCGST_KeyPress);
             // 
             // kryptonHeaderGroup1
             // 
@@ -326,6 +362,11 @@ namespace TAILORING.Masters
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.dgvGSTMaster);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(758, 233);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup1.StateCommon.Border.Rounding = 10;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
@@ -345,6 +386,8 @@ namespace TAILORING.Masters
             this.dgvGSTMaster.Name = "dgvGSTMaster";
             this.dgvGSTMaster.ReadOnly = true;
             this.dgvGSTMaster.Size = new System.Drawing.Size(756, 183);
+            this.dgvGSTMaster.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dgvGSTMaster.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvGSTMaster.TabIndex = 0;
             this.dgvGSTMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGSTMaster_CellDoubleClick);
             this.dgvGSTMaster.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvGSTMaster_DataBindingComplete);

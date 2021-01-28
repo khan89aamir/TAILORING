@@ -70,6 +70,11 @@ namespace TAILORING.Order
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
             this.grpCustomerGridview.Size = new System.Drawing.Size(1078, 305);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.grpCustomerGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpCustomerGridview.StateCommon.Border.Rounding = 10;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
@@ -88,6 +93,8 @@ namespace TAILORING.Order
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
             this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 255);
+            this.dgvOrderDetails.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dgvOrderDetails.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvOrderDetails.TabIndex = 0;
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 

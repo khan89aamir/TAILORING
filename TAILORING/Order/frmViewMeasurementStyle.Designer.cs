@@ -129,7 +129,7 @@
             this.ctrlMeasurment1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlMeasurment1.Name = "ctrlMeasurment1";
             this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(958, 443);
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(958, 462);
             this.ctrlMeasurment1.TabIndex = 0;
             // 
             // label4
@@ -227,7 +227,7 @@
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
             this.flowStyleImage.Location = new System.Drawing.Point(6, 50);
             this.flowStyleImage.Name = "flowStyleImage";
-            this.flowStyleImage.Size = new System.Drawing.Size(715, 390);
+            this.flowStyleImage.Size = new System.Drawing.Size(715, 409);
             this.flowStyleImage.TabIndex = 338;
             // 
             // cmbStyleQTY
@@ -257,6 +257,7 @@
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 346;
             this.checkBox1.Text = "Copy style as per previous";
+            this.gGlowGroupBox3.SetUseEffect(this.checkBox1, false);
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -268,7 +269,7 @@
             this.flowStyleName.BackColor = System.Drawing.Color.White;
             this.flowStyleName.Location = new System.Drawing.Point(727, 50);
             this.flowStyleName.Name = "flowStyleName";
-            this.flowStyleName.Size = new System.Drawing.Size(228, 390);
+            this.flowStyleName.Size = new System.Drawing.Size(228, 409);
             this.flowStyleName.TabIndex = 339;
             // 
             // lnkAddItem
@@ -530,7 +531,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(972, 479);
+            this.tabPage2.Size = new System.Drawing.Size(972, 498);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -546,7 +547,7 @@
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.gGlowGroupBox2);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(966, 473);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(966, 492);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -571,7 +572,7 @@
             this.gGlowGroupBox2.GlowOn = true;
             this.gGlowGroupBox2.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox2.Name = "gGlowGroupBox2";
-            this.gGlowGroupBox2.Size = new System.Drawing.Size(958, 443);
+            this.gGlowGroupBox2.Size = new System.Drawing.Size(958, 462);
             this.gGlowGroupBox2.TabIndex = 287;
             // 
             // tabPage3
@@ -580,7 +581,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(972, 479);
+            this.tabPage3.Size = new System.Drawing.Size(972, 498);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -596,7 +597,7 @@
             // kryptonHeaderGroup3.Panel
             // 
             this.kryptonHeaderGroup3.Panel.Controls.Add(this.gGlowGroupBox3);
-            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(966, 473);
+            this.kryptonHeaderGroup3.Size = new System.Drawing.Size(966, 492);
             this.kryptonHeaderGroup3.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -631,16 +632,16 @@
             this.gGlowGroupBox3.GlowOn = true;
             this.gGlowGroupBox3.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox3.Name = "gGlowGroupBox3";
-            this.gGlowGroupBox3.Size = new System.Drawing.Size(958, 443);
+            this.gGlowGroupBox3.Size = new System.Drawing.Size(958, 462);
             this.gGlowGroupBox3.TabIndex = 287;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(-10, 202);
+            this.panel1.Location = new System.Drawing.Point(-10, 197);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 50);
+            this.panel1.Size = new System.Drawing.Size(973, 33);
             this.panel1.TabIndex = 383;
             // 
             // picStyle

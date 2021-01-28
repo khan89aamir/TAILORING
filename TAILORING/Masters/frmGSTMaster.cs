@@ -51,7 +51,7 @@ namespace TAILORING.Masters
 
         private void frmGSTMaster_Load(object sender, EventArgs e)
         {
-            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnEdit, btnDelete, btnCancel);
+            ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             dgvGSTMaster.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -114,6 +114,13 @@ namespace TAILORING.Masters
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvGSTMaster.DataSource = dt;
+
+                    ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
+                    ID = Convert.ToInt32(dgvGSTMaster.SelectedRows[0].Cells["GSTID"].Value);
+                    txtCGST.Text = dgvGSTMaster.SelectedRows[0].Cells["CGST"].Value.ToString();
+                    txtSGST.Text = dgvGSTMaster.SelectedRows[0].Cells["SGST"].Value.ToString();
+                    txtIGST.Text = dgvGSTMaster.SelectedRows[0].Cells["IGST"].Value.ToString();
+                    txtCGST.Focus();
                 }
                 else
                 {
@@ -131,7 +138,9 @@ namespace TAILORING.Masters
             ClearAll();
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
-            grpGST.Enabled = true;
+
+            EnableDisable(true);
+
             txtCGST.Focus();
         }
 
@@ -205,7 +214,7 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage("GST is Updated Successfully..", clsUtility.strProjectTitle);
                         ClearAll();
                         LoadData();
-                        grpGST.Enabled = false;
+                        EnableDisable(false);
                     }
                     else
                     {
@@ -256,22 +265,13 @@ namespace TAILORING.Masters
             bool b = clsUtility.ShowQuestionMessage(clsUtility.MsgActionCancel, clsUtility.strProjectTitle);
             if (b)
             {
-                ClearAll();
-                LoadData();
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
+                ClearAll();
+                LoadData();
+
                 EnableDisable(false);
             }
-        }
-
-        private void txtCGST_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtCGST_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
         }
 
         private void dgvGSTMaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -294,20 +294,22 @@ namespace TAILORING.Masters
 
         private void txtCGST_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //TextBox txt = (TextBox)sender;
-            KryptonTextBox txt = (KryptonTextBox)sender;
-            e.Handled = ObjUtil.IsDecimal(txt, e);
-            if (e.Handled)
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                txt.Focus();
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsDecimal(txt, e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
             }
         }
 
         private void dgvGSTMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvGSTMaster);
-          //  ObjUtil.SetDataGridProperty(dgvGSTMaster, DataGridViewAutoSizeColumnsMode.Fill);
+            //  ObjUtil.SetDataGridProperty(dgvGSTMaster, DataGridViewAutoSizeColumnsMode.Fill);
             dgvGSTMaster.Columns["GSTID"].Visible = false;
             dgvGSTMaster.Columns["LastChange"].Visible = false;
 

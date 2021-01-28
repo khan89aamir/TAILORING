@@ -597,8 +597,8 @@ namespace TAILORING.Order
             ObjDAL.SetColumnData("TotalAmount", SqlDbType.Decimal, txtGrossAmt.Text);
             ObjDAL.SetColumnData("OrderAmount", SqlDbType.Decimal, txtTailoringAmount.Text);
 
-            //ObjDAL.SetColumnData("CGST", SqlDbType.Decimal, txtCGST.Text);
-            //ObjDAL.SetColumnData("SGST", SqlDbType.Decimal, txtSGST.Text);
+            ObjDAL.SetColumnData("CGST", SqlDbType.Decimal, txtCGST.Text);
+            ObjDAL.SetColumnData("SGST", SqlDbType.Decimal, txtSGST.Text);
 
             ObjDAL.SetColumnData("OrderQTY", SqlDbType.Int, pQTY);
             ObjDAL.SetColumnData("OrderMode", SqlDbType.VarChar, "System");
@@ -751,9 +751,9 @@ namespace TAILORING.Order
             //    dataGridView1.Columns["QTY"].ReadOnly = false;
             //}
 
-            if (dataGridView1.Columns.Contains("Trim Amount"))
+            if (dataGridView1.Columns.Contains("TrimAmount"))
             {
-                dataGridView1.Columns["Trim Amount"].ReadOnly = false;
+                dataGridView1.Columns["TrimAmount"].ReadOnly = false;
             }
             if (dataGridView1.Columns.Contains("Service"))
             {

@@ -46,13 +46,6 @@ namespace TAILORING.Masters
             this.lblCustomerPhoneNo = new System.Windows.Forms.Label();
             this.lblCustomerAddress = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
-            this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
-            this.grpCustomerSearch = new gGlowBox.gGlowGroupBox();
-            this.txtSearchByMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.rdSearchByCustomerMobileNo = new System.Windows.Forms.RadioButton();
-            this.rdShowAllOfCustomer = new System.Windows.Forms.RadioButton();
-            this.rdSearchByCompanyName = new System.Windows.Forms.RadioButton();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvCompanyMaster = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -68,11 +61,6 @@ namespace TAILORING.Masters
             this.grpKrytonHeader.Panel.SuspendLayout();
             this.grpKrytonHeader.SuspendLayout();
             this.grpCompany.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
-            this.kryptonHeaderGroup1.Panel.SuspendLayout();
-            this.kryptonHeaderGroup1.SuspendLayout();
-            this.grpCustomerSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).BeginInit();
             this.grpCustomerGridview.Panel.SuspendLayout();
@@ -107,8 +95,13 @@ namespace TAILORING.Masters
             // grpKrytonHeader.Panel
             // 
             this.grpKrytonHeader.Panel.Controls.Add(this.grpCompany);
-            this.grpKrytonHeader.Size = new System.Drawing.Size(754, 153);
+            this.grpKrytonHeader.Size = new System.Drawing.Size(754, 162);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpKrytonHeader.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpKrytonHeader.StateCommon.Border.Rounding = 10;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpKrytonHeader.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,7 +132,7 @@ namespace TAILORING.Masters
             this.grpCompany.GlowOn = true;
             this.grpCompany.Location = new System.Drawing.Point(0, 0);
             this.grpCompany.Name = "grpCompany";
-            this.grpCompany.Size = new System.Drawing.Size(752, 126);
+            this.grpCompany.Size = new System.Drawing.Size(746, 132);
             this.grpCompany.TabIndex = 287;
             // 
             // txtCompanyAddress
@@ -191,6 +184,7 @@ namespace TAILORING.Masters
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtCompanyMobileNo.StateNormal.Border.Rounding = 20;
             this.txtCompanyMobileNo.TabIndex = 381;
+            this.txtCompanyMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyMobileNo_KeyPress);
             // 
             // txtCompanyName
             // 
@@ -216,7 +210,7 @@ namespace TAILORING.Masters
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(356, 93);
+            this.label3.Location = new System.Drawing.Point(356, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(15, 17);
             this.label3.TabIndex = 302;
@@ -228,7 +222,7 @@ namespace TAILORING.Masters
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(723, 9);
+            this.label2.Location = new System.Drawing.Point(723, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 17);
             this.label2.TabIndex = 301;
@@ -246,6 +240,7 @@ namespace TAILORING.Masters
             this.chkDefaultCompany.Size = new System.Drawing.Size(146, 21);
             this.chkDefaultCompany.TabIndex = 300;
             this.chkDefaultCompany.Text = "Is Default Company";
+            this.grpCompany.SetUseEffect(this.chkDefaultCompany, false);
             this.chkDefaultCompany.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -320,145 +315,25 @@ namespace TAILORING.Masters
             this.lblCustomerName.TabIndex = 291;
             this.lblCustomerName.Text = "Name :";
             // 
-            // kryptonHeaderGroup1
-            // 
-            this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(17, 278);
-            this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
-            this.kryptonHeaderGroup1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            // 
-            // kryptonHeaderGroup1.Panel
-            // 
-            this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpCustomerSearch);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(752, 86);
-            this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonHeaderGroup1.TabIndex = 329;
-            this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Search By";
-            this.kryptonHeaderGroup1.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("kryptonHeaderGroup1.ValuesPrimary.Image")));
-            // 
-            // grpCustomerSearch
-            // 
-            this.grpCustomerSearch.BackColor = System.Drawing.Color.Transparent;
-            this.grpCustomerSearch.Controls.Add(this.txtSearchByMobileNo);
-            this.grpCustomerSearch.Controls.Add(this.txtSearchByCustomerName);
-            this.grpCustomerSearch.Controls.Add(this.rdSearchByCustomerMobileNo);
-            this.grpCustomerSearch.Controls.Add(this.rdShowAllOfCustomer);
-            this.grpCustomerSearch.Controls.Add(this.rdSearchByCompanyName);
-            this.grpCustomerSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpCustomerSearch.GlowAmount = 22;
-            this.grpCustomerSearch.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
-            this.grpCustomerSearch.GlowFeather = 60;
-            this.grpCustomerSearch.GlowOn = true;
-            this.grpCustomerSearch.Location = new System.Drawing.Point(0, 0);
-            this.grpCustomerSearch.Name = "grpCustomerSearch";
-            this.grpCustomerSearch.Size = new System.Drawing.Size(750, 59);
-            this.grpCustomerSearch.TabIndex = 287;
-            // 
-            // txtSearchByMobileNo
-            // 
-            this.txtSearchByMobileNo.Location = new System.Drawing.Point(443, 15);
-            this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
-            this.txtSearchByMobileNo.Size = new System.Drawing.Size(184, 31);
-            this.txtSearchByMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtSearchByMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtSearchByMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSearchByMobileNo.StateCommon.Border.Rounding = 10;
-            this.txtSearchByMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchByMobileNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSearchByMobileNo.StateNormal.Border.Rounding = 20;
-            this.txtSearchByMobileNo.TabIndex = 384;
-            // 
-            // txtSearchByCustomerName
-            // 
-            this.txtSearchByCustomerName.Location = new System.Drawing.Point(141, 15);
-            this.txtSearchByCustomerName.Name = "txtSearchByCustomerName";
-            this.txtSearchByCustomerName.Size = new System.Drawing.Size(184, 31);
-            this.txtSearchByCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtSearchByCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtSearchByCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSearchByCustomerName.StateCommon.Border.Rounding = 10;
-            this.txtSearchByCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchByCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSearchByCustomerName.StateNormal.Border.Rounding = 20;
-            this.txtSearchByCustomerName.TabIndex = 383;
-            // 
-            // rdSearchByCustomerMobileNo
-            // 
-            this.rdSearchByCustomerMobileNo.AutoSize = true;
-            this.grpCustomerSearch.SetEffectType(this.rdSearchByCustomerMobileNo, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdSearchByCustomerMobileNo.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.rdSearchByCustomerMobileNo.ForeColor = System.Drawing.Color.White;
-            this.rdSearchByCustomerMobileNo.Location = new System.Drawing.Point(340, 20);
-            this.rdSearchByCustomerMobileNo.Margin = new System.Windows.Forms.Padding(2);
-            this.rdSearchByCustomerMobileNo.Name = "rdSearchByCustomerMobileNo";
-            this.grpCustomerSearch.SetsGlowColor(this.rdSearchByCustomerMobileNo, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByCustomerMobileNo.sGlowColor"))));
-            this.rdSearchByCustomerMobileNo.Size = new System.Drawing.Size(95, 21);
-            this.rdSearchByCustomerMobileNo.TabIndex = 8;
-            this.rdSearchByCustomerMobileNo.Text = "Mobile No :";
-            this.grpCustomerSearch.SetUseEffect(this.rdSearchByCustomerMobileNo, false);
-            this.rdSearchByCustomerMobileNo.UseVisualStyleBackColor = true;
-            // 
-            // rdShowAllOfCustomer
-            // 
-            this.rdShowAllOfCustomer.AutoSize = true;
-            this.rdShowAllOfCustomer.Checked = true;
-            this.grpCustomerSearch.SetEffectType(this.rdShowAllOfCustomer, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdShowAllOfCustomer.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.rdShowAllOfCustomer.ForeColor = System.Drawing.Color.White;
-            this.rdShowAllOfCustomer.Location = new System.Drawing.Point(641, 20);
-            this.rdShowAllOfCustomer.Margin = new System.Windows.Forms.Padding(2);
-            this.rdShowAllOfCustomer.Name = "rdShowAllOfCustomer";
-            this.grpCustomerSearch.SetsGlowColor(this.rdShowAllOfCustomer, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdShowAllOfCustomer.sGlowColor"))));
-            this.rdShowAllOfCustomer.Size = new System.Drawing.Size(79, 21);
-            this.rdShowAllOfCustomer.TabIndex = 7;
-            this.rdShowAllOfCustomer.TabStop = true;
-            this.rdShowAllOfCustomer.Text = "Show All";
-            this.grpCustomerSearch.SetUseEffect(this.rdShowAllOfCustomer, false);
-            this.rdShowAllOfCustomer.UseVisualStyleBackColor = true;
-            // 
-            // rdSearchByCompanyName
-            // 
-            this.rdSearchByCompanyName.AutoSize = true;
-            this.grpCustomerSearch.SetEffectType(this.rdSearchByCompanyName, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.rdSearchByCompanyName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.rdSearchByCompanyName.ForeColor = System.Drawing.Color.White;
-            this.rdSearchByCompanyName.Location = new System.Drawing.Point(7, 20);
-            this.rdSearchByCompanyName.Margin = new System.Windows.Forms.Padding(2);
-            this.rdSearchByCompanyName.Name = "rdSearchByCompanyName";
-            this.grpCustomerSearch.SetsGlowColor(this.rdSearchByCompanyName, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("rdSearchByCompanyName.sGlowColor"))));
-            this.rdSearchByCompanyName.Size = new System.Drawing.Size(129, 21);
-            this.rdSearchByCompanyName.TabIndex = 5;
-            this.rdSearchByCompanyName.Text = "Company Name :";
-            this.grpCustomerSearch.SetUseEffect(this.rdSearchByCompanyName, false);
-            this.rdSearchByCompanyName.UseVisualStyleBackColor = true;
-            // 
             // grpCustomerGridview
             // 
             this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpCustomerGridview.Location = new System.Drawing.Point(18, 372);
+            this.grpCustomerGridview.Location = new System.Drawing.Point(18, 282);
             this.grpCustomerGridview.Name = "grpCustomerGridview";
             this.grpCustomerGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpCustomerGridview.Panel
             // 
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvCompanyMaster);
-            this.grpCustomerGridview.Size = new System.Drawing.Size(753, 209);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(753, 186);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.grpCustomerGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpCustomerGridview.StateCommon.Border.Rounding = 10;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
@@ -477,7 +352,7 @@ namespace TAILORING.Masters
             this.dgvCompanyMaster.MultiSelect = false;
             this.dgvCompanyMaster.Name = "dgvCompanyMaster";
             this.dgvCompanyMaster.ReadOnly = true;
-            this.dgvCompanyMaster.Size = new System.Drawing.Size(751, 159);
+            this.dgvCompanyMaster.Size = new System.Drawing.Size(751, 136);
             this.dgvCompanyMaster.TabIndex = 0;
             this.dgvCompanyMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanyMaster_CellDoubleClick);
             this.dgvCompanyMaster.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCompanyMaster_DataBindingComplete);
@@ -486,10 +361,14 @@ namespace TAILORING.Masters
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(564, 58);
+            this.btnCancel.Location = new System.Drawing.Point(564, 60);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
             this.btnCancel.TabIndex = 336;
             this.btnCancel.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Values.Image")));
             this.btnCancel.Values.Text = " Cancel";
@@ -499,10 +378,14 @@ namespace TAILORING.Masters
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(469, 58);
+            this.btnDelete.Location = new System.Drawing.Point(469, 60);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
+            this.btnDelete.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnDelete.StateCommon.Border.Rounding = 5;
             this.btnDelete.TabIndex = 335;
             this.btnDelete.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Values.Image")));
             this.btnDelete.Values.Text = " Delete ";
@@ -512,10 +395,14 @@ namespace TAILORING.Masters
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(374, 58);
+            this.btnUpdate.Location = new System.Drawing.Point(374, 60);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
+            this.btnUpdate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnUpdate.StateCommon.Border.Rounding = 5;
             this.btnUpdate.TabIndex = 334;
             this.btnUpdate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Values.Image")));
             this.btnUpdate.Values.Text = "Update";
@@ -525,10 +412,14 @@ namespace TAILORING.Masters
             // 
             this.btnEdit.AutoSize = true;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(279, 58);
+            this.btnEdit.Location = new System.Drawing.Point(279, 60);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
+            this.btnEdit.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnEdit.StateCommon.Border.Rounding = 5;
             this.btnEdit.TabIndex = 333;
             this.btnEdit.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Values.Image")));
             this.btnEdit.Values.Text = "Edit";
@@ -538,10 +429,14 @@ namespace TAILORING.Masters
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(184, 58);
+            this.btnSave.Location = new System.Drawing.Point(184, 60);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
+            this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.Rounding = 5;
             this.btnSave.TabIndex = 332;
             this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
             this.btnSave.Values.Text = "Save";
@@ -551,10 +446,14 @@ namespace TAILORING.Masters
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(89, 58);
+            this.btnAdd.Location = new System.Drawing.Point(89, 60);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnAdd.Size = new System.Drawing.Size(78, 34);
+            this.btnAdd.Size = new System.Drawing.Size(80, 34);
+            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.Rounding = 5;
             this.btnAdd.TabIndex = 331;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Add New";
@@ -589,7 +488,7 @@ namespace TAILORING.Masters
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(783, 593);
+            this.ClientSize = new System.Drawing.Size(783, 480);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
@@ -598,7 +497,6 @@ namespace TAILORING.Masters
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.grpCustomerGridview);
-            this.Controls.Add(this.kryptonHeaderGroup1);
             this.Controls.Add(this.grpKrytonHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -613,12 +511,6 @@ namespace TAILORING.Masters
             this.grpKrytonHeader.ResumeLayout(false);
             this.grpCompany.ResumeLayout(false);
             this.grpCompany.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
-            this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).EndInit();
-            this.kryptonHeaderGroup1.ResumeLayout(false);
-            this.grpCustomerSearch.ResumeLayout(false);
-            this.grpCustomerSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).EndInit();
             this.grpCustomerGridview.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).EndInit();
@@ -646,11 +538,6 @@ namespace TAILORING.Masters
         private System.Windows.Forms.Label lblCustomerPhoneNo;
         private System.Windows.Forms.Label lblCustomerAddress;
         private System.Windows.Forms.Label lblCustomerName;
-        private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
-        private gGlowBox.gGlowGroupBox grpCustomerSearch;
-        private System.Windows.Forms.RadioButton rdSearchByCustomerMobileNo;
-        private System.Windows.Forms.RadioButton rdShowAllOfCustomer;
-        private System.Windows.Forms.RadioButton rdSearchByCompanyName;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpCustomerGridview;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvCompanyMaster;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
@@ -662,8 +549,6 @@ namespace TAILORING.Masters
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCompanyEmailID;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCompanyMobileNo;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCompanyName;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByMobileNo;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByCustomerName;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox txtCompanyAddress;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;

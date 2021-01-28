@@ -442,5 +442,18 @@ namespace TAILORING.Masters
         {
             txtRate.Focus();
         }
+
+        private void txtSearchByGarment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 13)
+            {
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txtSearchByGarment.Focus();
+                }
+            }
+        }
     }
 }

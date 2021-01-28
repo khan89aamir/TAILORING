@@ -14,6 +14,9 @@ namespace TAILORING.Dashboard
     {
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         clsUtility ObjUtil = new clsUtility();
+
+        bool iscolUchekced = false;
+
         public frmOrderReceive()
         {
             InitializeComponent();
@@ -24,14 +27,12 @@ namespace TAILORING.Dashboard
         {
             lblOrderNo.Text = OrderNo.ToString();
 
-
-            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  " + clsUtility.DBName + ".[dbo].tblSalesOrder where OrderNo='" + OrderNo + "'");
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) where OrderNo='" + OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
                 int _CustID = Convert.ToInt32(dtOrderDetails.Rows[0]["CustomerID"]);
                 int _SalesOrderID = Convert.ToInt32(dtOrderDetails.Rows[0]["SalesOrderID"]);
-
 
                 BindcustomerDetails(_CustID);
 
@@ -54,19 +55,14 @@ namespace TAILORING.Dashboard
                 clsUtility.ShowInfoMessage("No Order found with order no : " + OrderNo);
                 this.Close();
             }
-
-
-
         }
 
         private void frmOrderReceive_Load(object sender, EventArgs e)
         {
-
             LoadOrderReceive();
         }
         private void SetGridFont(KryptonDataGridView kryptonDataGridView)
         {
-            
             kryptonDataGridView.StateCommon.DataCell.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
             kryptonDataGridView.StateCommon.HeaderColumn.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
         }
@@ -84,11 +80,9 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
             dgvOrderDetails.Columns["OrderStatusID"].Visible = false;
 
-
             SetGridFont(dgvOrderDetails);
 
-
-            grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
+            grpCustomerGridview.ValuesSecondary.Description = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
@@ -96,8 +90,6 @@ namespace TAILORING.Dashboard
                 {
                     dgvOrderDetails.Columns[i].ReadOnly = true;
                 }
-
-
             }
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
@@ -138,17 +130,14 @@ namespace TAILORING.Dashboard
 
             dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-
         }
         private void BindcustomerDetails(int custID)
         {
-            DataTable dtCustomerDetails = ObjDAL.ExecuteSelectStatement("select Name,MobileNo from " + clsUtility.DBName + ".[dbo].[CustomerMaster] where CustomerID=" + custID);
+            DataTable dtCustomerDetails = ObjDAL.ExecuteSelectStatement("select Name,MobileNo from " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) where CustomerID=" + custID);
             if (dtCustomerDetails.Rows.Count > 0)
             {
                 lblCustomerName.Text = dtCustomerDetails.Rows[0]["Name"].ToString();
                 lblMobile.Text = dtCustomerDetails.Rows[0]["MobileNo"].ToString();
-
             }
         }
 
@@ -180,15 +169,11 @@ namespace TAILORING.Dashboard
                 return;
             }
 
-             bool result= clsUtility.ShowQuestionMessage("Are you sure, you want to receive the selected garments?");
+            bool result = clsUtility.ShowQuestionMessage("Are you sure, you want to receive the selected garments?");
             if (result)
             {
                 ReceviceGarments();
             }
-
-         
-
-
         }
 
         private void ReceviceGarments()
@@ -197,44 +182,32 @@ namespace TAILORING.Dashboard
             {
                 if (dgvOrderDetails.Rows[i].Cells[0].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells[0].Value) == true)
                 {
-                    
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
 
-                    int RecordCount=ObjDAL.ExecuteScalarInt("select count(*) from "+clsUtility.DBName+".dbo.tblOrderStatus where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID );
-                    if (RecordCount>0)
+                    int RecordCount = ObjDAL.ExecuteScalarInt("select count(*) from " + clsUtility.DBName + ".dbo.tblOrderStatus where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
+                    if (RecordCount > 0)
                     {
-              
-
                         // 4 - Order received.
                         ObjDAL.UpdateColumnData("OrderStatus", SqlDbType.Int, 4);
                         ObjDAL.UpdateColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.UpdateColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
 
-                        ObjDAL.UpdateData(clsUtility.DBName+".dbo.tblOrderStatus", "SalesOrderID=" + SalesID+ " AND SalesOrderDetailsID="+ SalesOrderDetailsID);
+                        ObjDAL.UpdateData(clsUtility.DBName + ".dbo.tblOrderStatus", "SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
                     }
                     else
                     {
-                    
-
                         // 4 - Order received.
                         ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 4);
                         ObjDAL.SetColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.SetColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
 
-                        ObjDAL.InsertData(clsUtility.DBName+".dbo.tblOrderStatus",false);
-
+                        ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblOrderStatus", false);
                     }
-
-
-
-                  
                 }
             }
             clsUtility.ShowInfoMessage("Selected Garments has been Received.");
             LoadOrderReceive();
-
-
         }
 
         private bool ValidateRecive()
@@ -247,10 +220,8 @@ namespace TAILORING.Dashboard
                 {
                     status = true;
                     return status;
-
                 }
             }
-
             return false;
         }
 
@@ -261,26 +232,21 @@ namespace TAILORING.Dashboard
 
         private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-          
-            
+
         }
 
         private void dgvOrderDetails_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-         
+
         }
-        bool iscolUchekced = false;
+        
         private void dgvOrderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-          
-
 
         }
 
         private void dgvOrderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
 
         }
 

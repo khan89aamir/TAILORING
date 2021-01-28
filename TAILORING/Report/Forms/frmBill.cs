@@ -76,7 +76,7 @@ namespace TAILORING.Report.Forms
             string strCompMobile = "";
             string strCompEmail = "";
 
-            DataTable dtCompany = ObjCon.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster");
+            DataTable dtCompany = ObjCon.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK)");
             if (ObjUtil.ValidateTable(dtCompany))
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
@@ -86,7 +86,7 @@ namespace TAILORING.Report.Forms
                 strCompEmail = dtCompany.Rows[0]["EmailID"].ToString();
             }
 
-            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] where SalesOrderID=" + OrderID);
+            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] WITH(NOLOCK) where SalesOrderID=" + OrderID);
             if (ObjUtil.ValidateTable(dtOrderMaster))
             {
                 Orderdate = dtOrderMaster.Rows[0]["OrderDate"].ToString();
@@ -94,7 +94,7 @@ namespace TAILORING.Report.Forms
                 CustomerID = dtOrderMaster.Rows[0]["CustomerID"].ToString();
             }
 
-            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] where CustomerID=" + CustomerID);
+            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) where CustomerID=" + CustomerID);
             if (ObjUtil.ValidateTable(dtCustomer))
             {
                 strCustomerName = dtCustomer.Rows[0]["Name"].ToString();
@@ -238,8 +238,6 @@ namespace TAILORING.Report.Forms
                         return base64String;
                     }
                 }
-
-             
             }
        
         }

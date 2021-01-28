@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -105,7 +105,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(455, 80);
+            this.label10.Location = new System.Drawing.Point(630, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 19);
             this.label10.TabIndex = 333;
@@ -117,7 +117,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(16, 75);
+            this.label8.Location = new System.Drawing.Point(16, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 19);
             this.label8.TabIndex = 331;
@@ -256,7 +256,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(12, 117);
+            this.label19.Location = new System.Drawing.Point(12, 134);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 19);
             this.label19.TabIndex = 351;
@@ -300,6 +300,11 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpNewOrder);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1107, 101);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup1.StateCommon.Border.Rounding = 10;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,7 +331,7 @@
             this.grpNewOrder.GlowOn = true;
             this.grpNewOrder.Location = new System.Drawing.Point(0, 0);
             this.grpNewOrder.Name = "grpNewOrder";
-            this.grpNewOrder.Size = new System.Drawing.Size(1105, 74);
+            this.grpNewOrder.Size = new System.Drawing.Size(1099, 71);
             this.grpNewOrder.TabIndex = 287;
             // 
             // label2
@@ -468,6 +473,11 @@
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
             this.grpGridview.Size = new System.Drawing.Size(1106, 221);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.grpGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpGridview.StateCommon.Border.Rounding = 10;
             this.grpGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
@@ -502,7 +512,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.Size = new System.Drawing.Size(1104, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(1098, 191);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -615,7 +625,7 @@
             // 
             // txtCustomerMobileNo
             // 
-            this.txtCustomerMobileNo.Location = new System.Drawing.Point(160, 111);
+            this.txtCustomerMobileNo.Location = new System.Drawing.Point(160, 128);
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
             this.txtCustomerMobileNo.ReadOnly = true;
             this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 31);
@@ -635,7 +645,7 @@
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(160, 69);
+            this.txtCustomerName.Location = new System.Drawing.Point(160, 77);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(223, 31);
@@ -655,7 +665,7 @@
             // 
             // txtCustomerAdd
             // 
-            this.txtCustomerAdd.Location = new System.Drawing.Point(597, 66);
+            this.txtCustomerAdd.Location = new System.Drawing.Point(772, 75);
             this.txtCustomerAdd.Name = "txtCustomerAdd";
             this.txtCustomerAdd.ReadOnly = true;
             this.txtCustomerAdd.Size = new System.Drawing.Size(349, 84);
@@ -773,7 +783,6 @@
             this.DeliveryDate.HeaderText = "DeliveryDate";
             this.DeliveryDate.Name = "DeliveryDate";
             this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDate.ShowCheckBox = true;
             this.DeliveryDate.Width = 110;
             // 
             // TrimAmount
@@ -829,12 +838,12 @@
             // ColDelete1
             // 
             this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColDelete1.HeaderText = "Delete1";
             this.ColDelete1.Name = "ColDelete1";
             this.ColDelete1.Text = "Delete1";

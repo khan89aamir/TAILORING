@@ -23,16 +23,6 @@ namespace TAILORING.Masters
 
         int EmployeeID = 0;
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                PicEmployee.Image = Image.FromFile(openFileDialog.FileName);
-            }
-        }
-
         private void LoadTailoringTheme()
         {
             this.BackgroundImage = null;
@@ -67,7 +57,7 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadTailoringTheme();
-            
+
             EnableDisable(false);
 
             LoadData();
@@ -84,6 +74,10 @@ namespace TAILORING.Masters
 
             cmbActiveStatus.Enabled = b;
             cmbEmployeeType.Enabled = b;
+
+            txtUsername.Enabled = b;
+            txtPass.Enabled = b;
+            txtEmail.Enabled = b;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -91,6 +85,7 @@ namespace TAILORING.Masters
             ClearAll();
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
             EnableDisable(true);
+            radMale.Checked = false;
             txtEmployeeCode.Focus();
         }
 
@@ -171,6 +166,12 @@ namespace TAILORING.Masters
                 txtMobileNo.Focus();
                 return false;
             }
+            else if (txtMobileNo.Text.Trim().Length < 10)
+            {
+                clsUtility.ShowInfoMessage("Please Enter Valid Employee Mobile No.", clsUtility.strProjectTitle);
+                txtMobileNo.Focus();
+                return false;
+            }
             else if (ObjUtil.IsControlTextEmpty(cmbEmployeeType))
             {
                 clsUtility.ShowInfoMessage("Please Select Employee Type.", clsUtility.strProjectTitle);
@@ -212,14 +213,14 @@ namespace TAILORING.Masters
                         clsUtility.ShowInfoMessage(msg, clsUtility.strProjectTitle);
                         if (flag == 0 || flag == -2)
                             txtEmployeeCode.Focus();
-                        else if(flag == -1)
+                        else if (flag == -1)
                             txtMobileNo.Focus();
 
                         ObjDAL.ResetData();
                         return false;
                     }
                     ObjDAL.ResetData();
-                } 
+                }
             }
 
             if (txtUsername.Text.Trim().Length > 0) // if user name is entered
@@ -565,35 +566,33 @@ namespace TAILORING.Masters
             }
         }
 
-        private void txtEmployeeCode_Enter(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender);
-        }
-
-        private void txtEmployeeCode_Leave(object sender, EventArgs e)
-        {
-            ObjUtil.SetTextHighlightColor(sender, Color.White);
-        }
-
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
-            e.Handled = ObjUtil.IsString(e);
-            if (e.Handled == true)
+            //TextBox txt = (TextBox)sender;
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                txt.Focus();
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsString(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
             }
         }
 
         private void txtMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
-            e.Handled = ObjUtil.IsNumeric(e);
-            if (e.Handled == true)
+            //TextBox txt = (TextBox)sender;
+            if (e.KeyChar != 13)
             {
-                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                txt.Focus();
+                KryptonTextBox txt = (KryptonTextBox)sender;
+                e.Handled = ObjUtil.IsNumeric(e);
+                if (e.Handled)
+                {
+                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                    txt.Focus();
+                }
             }
         }
 
@@ -696,6 +695,21 @@ namespace TAILORING.Masters
                 txtSearchByEmpName.Clear();
 
                 LoadData();
+            }
+        }
+
+        private void lnkCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PicEmployee.Image = null;
+        }
+
+        private void lnkBrowse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                PicEmployee.Image = Image.FromFile(openFileDialog.FileName);
             }
         }
     }

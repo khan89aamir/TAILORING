@@ -198,6 +198,12 @@
     <Compile Include="Dashboard\frmOrderDelivery.Designer.cs">
       <DependentUpon>frmOrderDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\frmOrderPopupDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmOrderPopupDetails.Designer.cs">
+      <DependentUpon>frmOrderPopupDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmOrderReceive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmOrderDelivery.resx">
       <DependentUpon>frmOrderDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmOrderPopupDetails.resx">
+      <DependentUpon>frmOrderPopupDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmOrderReceive.resx">
       <DependentUpon>frmOrderReceive.cs</DependentUpon>

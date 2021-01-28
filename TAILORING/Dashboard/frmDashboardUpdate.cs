@@ -17,7 +17,15 @@ namespace TAILORING.Dashboard
         {
             InitializeComponent();
         }
-
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams handleParam = base.CreateParams;
+        //        handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+        //        return handleParam;
+        //    }
+        //}
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
@@ -26,8 +34,79 @@ namespace TAILORING.Dashboard
             label4.Text = "Date : " + DateTime.Now.ToShortDateString();
             //this.BackgroundImage = Properties.Resources.Background;
             this.BackColor = Color.FromArgb(82, 91, 114);
+
+            BindDasbhoardData();
         }
 
+        private void GenerateKryptonButtons(string text)
+        {
+            KryptonButton btn = new KryptonButton();
+            btn.OverrideDefault.Back.Color1 = Color.FromArgb(116, 123, 141);
+            btn.OverrideDefault.Back.Color2 = Color.FromArgb(116, 123, 141);
+
+            btn.StateNormal.Back.Color1 = Color.FromArgb(116, 123, 141);
+            btn.StateNormal.Back.Color2 = Color.FromArgb(116, 123, 141);
+
+            btn.StateNormal.Border.Rounding = 7;
+            btn.StateTracking.Border.Rounding = 7;
+
+            btn.StateNormal.Content.ShortText.Font = new Font("Times New Roman", 10.00f, FontStyle.Bold);
+            btn.StateNormal.Content.ShortText.Color1 = Color.White;
+            btn.Tag = text.Trim();
+            btn.Values.Text = text;
+            btn.Click += Btn_Click;
+            btn.Width = 200;
+            btn.Height = 28;
+            pnlInprocessOrder.Controls.Add(btn);
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            KryptonButton btn = (KryptonButton)(sender);
+            frmOrderPopupDetails frmOrderPopupDetails = new frmOrderPopupDetails();
+            frmOrderPopupDetails.subOrderNo = btn.Tag.ToString();
+            frmOrderPopupDetails.ShowDialog();
+
+        }
+
+        private void BindDasbhoardData()
+        {
+          DataSet dsDashbaordData=  ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName+".dbo.SPR_GetDashboardData");
+            if (dsDashbaordData.Tables.Count>0)
+            {
+
+                string strInProcess = dsDashbaordData.Tables[0].Rows[0]["In_Process"].ToString();
+                string strTotayDelivery = dsDashbaordData.Tables[0].Rows[0]["Critical"].ToString();
+                string strCriticalOrder = dsDashbaordData.Tables[0].Rows[0]["TodaysDelivery"].ToString();
+
+                lblInProgress.Text = strInProcess;
+                lblTodayDelivery.Text = strTotayDelivery;
+                lblCriticalOrder.Text = strCriticalOrder;
+
+                // in process order
+                for (int i = 0; i < dsDashbaordData.Tables[1].Rows.Count; i++)
+                {
+                   
+                    GenerateKryptonButtons(dsDashbaordData.Tables[1].Rows[i]["SubOrderNo"].ToString());
+                }
+                // Critical order
+                for (int i = 0; i < dsDashbaordData.Tables[2].Rows.Count; i++)
+                {
+                    GenerateKryptonButtons(dsDashbaordData.Tables[2].Rows[i]["SubOrderNo"].ToString());
+                }
+
+                // Today Delivery
+                for (int i = 0; i < dsDashbaordData.Tables[3].Rows.Count; i++)
+                {
+                    GenerateKryptonButtons(dsDashbaordData.Tables[3].Rows[i]["SubOrderNo"].ToString());
+                }
+
+
+
+
+            }
+        }
+      
         private void SearchByCustomerName()
         {
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
@@ -337,7 +416,17 @@ namespace TAILORING.Dashboard
 
         private void frmDashboardUpdate_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
             GC.Collect();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pnlCricitialOrder.BackColor = Color.Transparent;
+            pnlInprocessOrder.BackColor = Color.Transparent;
+            pnlTodayDeliery.BackColor = Color.Transparent;
+
+            timer1.Stop();
         }
     }
 }

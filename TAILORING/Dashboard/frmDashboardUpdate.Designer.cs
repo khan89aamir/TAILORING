@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboardUpdate));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,21 +51,13 @@
             this.sPanel3 = new TAILORING.SPanel();
             this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.sPanel2 = new TAILORING.SPanel();
             this.lblCriticalOrder = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.sPanel1 = new TAILORING.SPanel();
+            this.pnlTodayDeliery = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTodayDelivery = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.sPanel4 = new TAILORING.SPanel();
             this.txtOrderReceive = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.picSearchOrderDelivery = new System.Windows.Forms.PictureBox();
@@ -73,6 +66,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtOrderDelivery = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnlCricitialOrder = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlInprocessOrder = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,8 +148,11 @@
             this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnAdd.StateCommon.Border.Rounding = 12;
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnAdd.TabIndex = 377;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Add New Customer";
@@ -255,11 +254,13 @@
             this.txtSearchByOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearchByOrderNo.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByOrderNo.StateCommon.Border.Rounding = 10;
             this.txtSearchByOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchByOrderNo.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
             this.txtSearchByOrderNo.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
             this.txtSearchByOrderNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByOrderNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByOrderNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByOrderNo.TabIndex = 373;
             this.txtSearchByOrderNo.TextChanged += new System.EventHandler(this.txtSearchByOrderNo_TextChanged);
@@ -287,11 +288,13 @@
             this.txtSearchByCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearchByCustomerMobileNo.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByCustomerMobileNo.StateCommon.Border.Rounding = 10;
             this.txtSearchByCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchByCustomerMobileNo.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
             this.txtSearchByCustomerMobileNo.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
             this.txtSearchByCustomerMobileNo.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByCustomerMobileNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByCustomerMobileNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByCustomerMobileNo.TabIndex = 373;
             this.txtSearchByCustomerMobileNo.TextChanged += new System.EventHandler(this.txtSearchByCustomerMobileNo_TextChanged);
@@ -318,11 +321,13 @@
             this.txtSearchByCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSearchByCustomerName.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByCustomerName.StateCommon.Border.Rounding = 10;
             this.txtSearchByCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchByCustomerName.StateNormal.Border.Color1 = System.Drawing.Color.Transparent;
             this.txtSearchByCustomerName.StateNormal.Border.Color2 = System.Drawing.Color.Transparent;
             this.txtSearchByCustomerName.StateNormal.Border.DrawBorders = ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.None;
+            this.txtSearchByCustomerName.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtSearchByCustomerName.StateNormal.Border.Rounding = 20;
             this.txtSearchByCustomerName.TabIndex = 373;
             this.txtSearchByCustomerName.TextChanged += new System.EventHandler(this.txtSearchByCustomerName_TextChanged);
@@ -345,13 +350,11 @@
             this.sPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel3.BackgroundImage")));
             this.sPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel3.BorderColor = System.Drawing.Color.White;
+            this.sPanel3.Controls.Add(this.pnlInprocessOrder);
             this.sPanel3.Controls.Add(this.lblInProgress);
             this.sPanel3.Controls.Add(this.label13);
-            this.sPanel3.Controls.Add(this.linkLabel6);
-            this.sPanel3.Controls.Add(this.linkLabel7);
-            this.sPanel3.Controls.Add(this.linkLabel8);
             this.sPanel3.Edge = 40;
-            this.sPanel3.Location = new System.Drawing.Point(636, 295);
+            this.sPanel3.Location = new System.Drawing.Point(645, 295);
             this.sPanel3.Name = "sPanel3";
             this.sPanel3.Size = new System.Drawing.Size(308, 384);
             this.sPanel3.TabIndex = 375;
@@ -362,7 +365,7 @@
             this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
             this.lblInProgress.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInProgress.ForeColor = System.Drawing.Color.White;
-            this.lblInProgress.Location = new System.Drawing.Point(148, 73);
+            this.lblInProgress.Location = new System.Drawing.Point(148, 68);
             this.lblInProgress.Name = "lblInProgress";
             this.lblInProgress.Size = new System.Drawing.Size(35, 40);
             this.lblInProgress.TabIndex = 15;
@@ -380,58 +383,17 @@
             this.label13.TabIndex = 14;
             this.label13.Text = "IN PROCESS";
             // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.LinkColor = System.Drawing.Color.White;
-            this.linkLabel6.Location = new System.Drawing.Point(77, 143);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(183, 17);
-            this.linkLabel6.TabIndex = 16;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "INV-30   Rahul   08-Jan-2012";
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel7.LinkColor = System.Drawing.Color.White;
-            this.linkLabel7.Location = new System.Drawing.Point(77, 175);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(174, 17);
-            this.linkLabel7.TabIndex = 17;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "INV-34   Tina   08-Jan-2012";
-            // 
-            // linkLabel8
-            // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel8.LinkColor = System.Drawing.Color.White;
-            this.linkLabel8.Location = new System.Drawing.Point(77, 215);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(188, 17);
-            this.linkLabel8.TabIndex = 18;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "INV-23   Salman  08-Jan-2012";
-            // 
             // sPanel2
             // 
             this.sPanel2.BackColor = System.Drawing.Color.Transparent;
             this.sPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sPanel2.BackgroundImage")));
             this.sPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel2.BorderColor = System.Drawing.Color.White;
+            this.sPanel2.Controls.Add(this.pnlCricitialOrder);
             this.sPanel2.Controls.Add(this.lblCriticalOrder);
             this.sPanel2.Controls.Add(this.label2);
-            this.sPanel2.Controls.Add(this.linkLabel1);
-            this.sPanel2.Controls.Add(this.linkLabel2);
-            this.sPanel2.Controls.Add(this.linkLabel3);
             this.sPanel2.Edge = 40;
-            this.sPanel2.Location = new System.Drawing.Point(310, 294);
+            this.sPanel2.Location = new System.Drawing.Point(319, 294);
             this.sPanel2.Name = "sPanel2";
             this.sPanel2.Size = new System.Drawing.Size(308, 384);
             this.sPanel2.TabIndex = 374;
@@ -442,7 +404,7 @@
             this.lblCriticalOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblCriticalOrder.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriticalOrder.ForeColor = System.Drawing.Color.White;
-            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 73);
+            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 68);
             this.lblCriticalOrder.Name = "lblCriticalOrder";
             this.lblCriticalOrder.Size = new System.Drawing.Size(53, 40);
             this.lblCriticalOrder.TabIndex = 15;
@@ -460,61 +422,30 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "CRITICAL ORDERS";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(78, 151);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(183, 17);
-            this.linkLabel1.TabIndex = 16;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "INV-30   Rahul   08-Jan-2012";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(78, 183);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(174, 17);
-            this.linkLabel2.TabIndex = 17;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "INV-34   Tina   08-Jan-2012";
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkColor = System.Drawing.Color.White;
-            this.linkLabel3.Location = new System.Drawing.Point(78, 215);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(188, 17);
-            this.linkLabel3.TabIndex = 18;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "INV-23   Salman  08-Jan-2012";
-            // 
             // sPanel1
             // 
             this.sPanel1.BackColor = System.Drawing.Color.Transparent;
             this.sPanel1.BackgroundImage = global::TAILORING.Properties.Resources.Pictur31;
             this.sPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sPanel1.BorderColor = System.Drawing.Color.White;
+            this.sPanel1.Controls.Add(this.pnlTodayDeliery);
             this.sPanel1.Controls.Add(this.lblTodayDelivery);
             this.sPanel1.Controls.Add(this.label9);
-            this.sPanel1.Controls.Add(this.linkLabel4);
-            this.sPanel1.Controls.Add(this.linkLabel5);
-            this.sPanel1.Controls.Add(this.linkLabel9);
             this.sPanel1.Edge = 40;
-            this.sPanel1.Location = new System.Drawing.Point(-9, 294);
+            this.sPanel1.Location = new System.Drawing.Point(0, 294);
             this.sPanel1.Name = "sPanel1";
             this.sPanel1.Size = new System.Drawing.Size(308, 384);
             this.sPanel1.TabIndex = 373;
+            // 
+            // pnlTodayDeliery
+            // 
+            this.pnlTodayDeliery.AutoScroll = true;
+            this.pnlTodayDeliery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
+            this.pnlTodayDeliery.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlTodayDeliery.Location = new System.Drawing.Point(49, 107);
+            this.pnlTodayDeliery.Name = "pnlTodayDeliery";
+            this.pnlTodayDeliery.Size = new System.Drawing.Size(224, 220);
+            this.pnlTodayDeliery.TabIndex = 16;
             // 
             // lblTodayDelivery
             // 
@@ -522,7 +453,7 @@
             this.lblTodayDelivery.BackColor = System.Drawing.Color.Transparent;
             this.lblTodayDelivery.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayDelivery.ForeColor = System.Drawing.Color.White;
-            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 73);
+            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 68);
             this.lblTodayDelivery.Name = "lblTodayDelivery";
             this.lblTodayDelivery.Size = new System.Drawing.Size(53, 40);
             this.lblTodayDelivery.TabIndex = 15;
@@ -539,45 +470,6 @@
             this.label9.Size = new System.Drawing.Size(178, 22);
             this.label9.TabIndex = 14;
             this.label9.Text = "TODAY DELIVERY";
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkColor = System.Drawing.Color.White;
-            this.linkLabel4.Location = new System.Drawing.Point(66, 151);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(183, 17);
-            this.linkLabel4.TabIndex = 16;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "INV-30   Rahul   08-Jan-2012";
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.LinkColor = System.Drawing.Color.White;
-            this.linkLabel5.Location = new System.Drawing.Point(66, 183);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(174, 17);
-            this.linkLabel5.TabIndex = 17;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "INV-34   Tina   08-Jan-2012";
-            // 
-            // linkLabel9
-            // 
-            this.linkLabel9.AutoSize = true;
-            this.linkLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel9.LinkColor = System.Drawing.Color.White;
-            this.linkLabel9.Location = new System.Drawing.Point(66, 215);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(188, 17);
-            this.linkLabel9.TabIndex = 18;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "INV-23   Salman  08-Jan-2012";
             // 
             // sPanel4
             // 
@@ -608,11 +500,13 @@
             this.txtOrderReceive.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtOrderReceive.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtOrderReceive.StateCommon.Border.Rounding = 10;
             this.txtOrderReceive.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderReceive.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtOrderReceive.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtOrderReceive.StateNormal.Border.Rounding = 20;
             this.txtOrderReceive.TabIndex = 382;
             // 
@@ -676,11 +570,13 @@
             this.txtOrderDelivery.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtOrderDelivery.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtOrderDelivery.StateCommon.Border.Rounding = 10;
             this.txtOrderDelivery.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrderDelivery.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtOrderDelivery.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtOrderDelivery.StateNormal.Border.Rounding = 20;
             this.txtOrderDelivery.TabIndex = 382;
             // 
@@ -695,12 +591,41 @@
             this.btnCreateChalan.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCreateChalan.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnCreateChalan.StateCommon.Border.Rounding = 12;
             this.btnCreateChalan.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateChalan.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnCreateChalan.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnCreateChalan.TabIndex = 382;
             this.btnCreateChalan.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateChalan.Values.Image")));
             this.btnCreateChalan.Values.Text = "Create Chalan";
             this.btnCreateChalan.Click += new System.EventHandler(this.btnCreateChalan_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pnlCricitialOrder
+            // 
+            this.pnlCricitialOrder.AutoScroll = true;
+            this.pnlCricitialOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
+            this.pnlCricitialOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlCricitialOrder.Location = new System.Drawing.Point(54, 107);
+            this.pnlCricitialOrder.Name = "pnlCricitialOrder";
+            this.pnlCricitialOrder.Size = new System.Drawing.Size(224, 220);
+            this.pnlCricitialOrder.TabIndex = 17;
+            // 
+            // pnlInprocessOrder
+            // 
+            this.pnlInprocessOrder.AutoScroll = true;
+            this.pnlInprocessOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
+            this.pnlInprocessOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlInprocessOrder.Location = new System.Drawing.Point(55, 107);
+            this.pnlInprocessOrder.Name = "pnlInprocessOrder";
+            this.pnlInprocessOrder.Size = new System.Drawing.Size(224, 220);
+            this.pnlInprocessOrder.TabIndex = 17;
             // 
             // frmDashboardUpdate
             // 
@@ -779,9 +704,6 @@
         private SPanel sPanel1;
         private System.Windows.Forms.Label lblTodayDelivery;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel9;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCreateChalan;
         private System.Windows.Forms.PictureBox picSearchOrderReceive;
         private System.Windows.Forms.PictureBox picSearchOrderDelivery;
@@ -795,15 +717,9 @@
         private SPanel sPanel2;
         private System.Windows.Forms.Label lblCriticalOrder;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
         private SPanel sPanel3;
         private System.Windows.Forms.Label lblInProgress;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.LinkLabel linkLabel7;
-        private System.Windows.Forms.LinkLabel linkLabel8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByCustomerMobileNo;
@@ -811,5 +727,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByOrderNo;
         private SPanel sPanel4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel pnlTodayDeliery;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.FlowLayoutPanel pnlInprocessOrder;
+        private System.Windows.Forms.FlowLayoutPanel pnlCricitialOrder;
     }
 }

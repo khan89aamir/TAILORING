@@ -297,20 +297,23 @@ namespace TAILORING.Order
         }
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            DataRow[] drow = dtGarment.Select("GarmentID=" + cmbGarmentName.SelectedValue);
-            if (drow.Length > 0)
+            if (cmbGarmentName.SelectedValue != null)
             {
-                //txtRate.Text = drow[0]["Rate"].ToString();
-                GarmentName = drow[0]["GarmentName"].ToString();
-                GarmentCode = drow[0]["GarmentCode"].ToString();
-                strPhoto = drow[0]["Photo"].ToString();
-
-                DataTable dt = GetProductRate(Convert.ToInt32(cmbGarmentName.SelectedValue), 0);// 0 ->Normal OrderType
-                if (ObjUtil.ValidateTable(dt))
+                DataRow[] drow = dtGarment.Select("GarmentID=" + cmbGarmentName.SelectedValue);
+                if (drow.Length > 0)
                 {
-                    GarmentRate = Convert.ToDouble(dt.Rows[0]["Rate"]);
+                    //txtRate.Text = drow[0]["Rate"].ToString();
+                    GarmentName = drow[0]["GarmentName"].ToString();
+                    GarmentCode = drow[0]["GarmentCode"].ToString();
+                    strPhoto = drow[0]["Photo"].ToString();
+
+                    DataTable dt = GetProductRate(Convert.ToInt32(cmbGarmentName.SelectedValue), 0);// 0 ->Normal OrderType
+                    if (ObjUtil.ValidateTable(dt))
+                    {
+                        GarmentRate = Convert.ToDouble(dt.Rows[0]["Rate"]);
+                    }
+                    NumericQTY.Focus();
                 }
-                NumericQTY.Focus();
             }
             btnAdd.Enabled = true;
         }

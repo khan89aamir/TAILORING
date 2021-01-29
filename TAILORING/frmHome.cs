@@ -227,7 +227,7 @@ namespace TAILORING
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmSalesReport) || clsUtility.IsAdmin)
             {
-                Report.Forms.frmBill frmBill = new Report.Forms.frmBill();
+                Report.Forms.frmOrderDetails frmBill = new Report.Forms.frmOrderDetails();
                 frmBill.Show();
             }
             else

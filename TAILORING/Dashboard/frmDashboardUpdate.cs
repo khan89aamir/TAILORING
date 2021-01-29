@@ -38,7 +38,7 @@ namespace TAILORING.Dashboard
             BindDasbhoardData();
         }
 
-        private void GenerateKryptonButtons(string text)
+        private void GenerateKryptonButtons(string text, string CardName)
         {
             KryptonButton btn = new KryptonButton();
             btn.OverrideDefault.Back.Color1 = Color.FromArgb(116, 123, 141);
@@ -57,15 +57,31 @@ namespace TAILORING.Dashboard
             btn.Click += Btn_Click;
             btn.Width = 200;
             btn.Height = 28;
-            pnlInprocessOrder.Controls.Add(btn);
+            if (CardName=="InProcess")
+            {
+                pnlInprocessOrder.Controls.Add(btn);
+            }
+            else if (CardName == "Critical")
+            {
+                pnlCricitialOrder.Controls.Add(btn);
+
+            }
+            else if (CardName == "Today")
+            {
+                pnlTodayDeliery.Controls.Add(btn);
+
+            }
+
         }
 
         private void Btn_Click(object sender, EventArgs e)
         {
             KryptonButton btn = (KryptonButton)(sender);
-            frmOrderPopupDetails frmOrderPopupDetails = new frmOrderPopupDetails();
-            frmOrderPopupDetails.subOrderNo = btn.Tag.ToString();
-            frmOrderPopupDetails.ShowDialog();
+
+            Order.frmOrderDetails frmOrderDetails = new Order.frmOrderDetails();
+            frmOrderDetails.isFromDashboard = true;
+            frmOrderDetails.strSubOrderNo= btn.Tag.ToString();
+            frmOrderDetails.Show();
 
         }
 
@@ -76,9 +92,9 @@ namespace TAILORING.Dashboard
             {
 
                 string strInProcess = dsDashbaordData.Tables[0].Rows[0]["In_Process"].ToString();
-                string strTotayDelivery = dsDashbaordData.Tables[0].Rows[0]["Critical"].ToString();
-                string strCriticalOrder = dsDashbaordData.Tables[0].Rows[0]["TodaysDelivery"].ToString();
-
+                string strTotayDelivery = dsDashbaordData.Tables[0].Rows[0]["TodaysDelivery"].ToString();
+                string strCriticalOrder = dsDashbaordData.Tables[0].Rows[0]["Critical"].ToString();
+                 
                 lblInProgress.Text = strInProcess;
                 lblTodayDelivery.Text = strTotayDelivery;
                 lblCriticalOrder.Text = strCriticalOrder;
@@ -87,18 +103,18 @@ namespace TAILORING.Dashboard
                 for (int i = 0; i < dsDashbaordData.Tables[1].Rows.Count; i++)
                 {
                    
-                    GenerateKryptonButtons(dsDashbaordData.Tables[1].Rows[i]["SubOrderNo"].ToString());
+                    GenerateKryptonButtons(dsDashbaordData.Tables[1].Rows[i]["SubOrderNo"].ToString(), "InProcess");
                 }
                 // Critical order
                 for (int i = 0; i < dsDashbaordData.Tables[2].Rows.Count; i++)
                 {
-                    GenerateKryptonButtons(dsDashbaordData.Tables[2].Rows[i]["SubOrderNo"].ToString());
+                    GenerateKryptonButtons(dsDashbaordData.Tables[2].Rows[i]["SubOrderNo"].ToString(), "Critical");
                 }
 
                 // Today Delivery
                 for (int i = 0; i < dsDashbaordData.Tables[3].Rows.Count; i++)
                 {
-                    GenerateKryptonButtons(dsDashbaordData.Tables[3].Rows[i]["SubOrderNo"].ToString());
+                    GenerateKryptonButtons(dsDashbaordData.Tables[3].Rows[i]["SubOrderNo"].ToString(), "Today");
                 }
 
 

@@ -866,6 +866,7 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -1239,7 +1240,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>CHALAN</Value>
+                        <Value>Order Details</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                           <FontSize>12pt</FontSize>

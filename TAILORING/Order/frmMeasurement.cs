@@ -272,7 +272,7 @@ namespace TAILORING.Order
                         dr["BodyPostureMappingID"] = dtPosture.Rows[i]["BodyPostureMappingID"];
 
                         dtTempPosture.Rows.Add(dr);
-                        ChangeMeasurementStyleStatus('B', Convert.ToInt32(dtStyle.Rows[i]["GarmentID"]));
+                        ChangeMeasurementStyleStatus('B', Convert.ToInt32(dtPosture.Rows[i]["GarmentID"]));
                     }
                 }
                 dtTempPosture.AcceptChanges();

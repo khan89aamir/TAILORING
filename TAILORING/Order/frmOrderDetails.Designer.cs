@@ -34,6 +34,10 @@ namespace TAILORING.Order
             this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSuborderNo = new System.Windows.Forms.Label();
+            this.lblOrderNo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview.Panel)).BeginInit();
             this.grpCustomerGridview.Panel.SuspendLayout();
@@ -70,14 +74,20 @@ namespace TAILORING.Order
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
             this.grpCustomerGridview.Size = new System.Drawing.Size(1078, 305);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpCustomerGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpCustomerGridview.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.Border.Rounding = 10;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpCustomerGridview.TabIndex = 332;
             this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
             this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
@@ -94,12 +104,17 @@ namespace TAILORING.Order
             this.dgvOrderDetails.ReadOnly = true;
             this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 255);
             this.dgvOrderDetails.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dgvOrderDetails.StateCommon.Background.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dgvOrderDetails.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvOrderDetails.TabIndex = 0;
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.lblOrderNo);
+            this.kryptonPanel1.Controls.Add(this.label3);
+            this.kryptonPanel1.Controls.Add(this.lblSuborderNo);
+            this.kryptonPanel1.Controls.Add(this.label1);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.label12);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,6 +135,63 @@ namespace TAILORING.Order
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(763, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.TabIndex = 365;
+            this.label1.Text = "Sub Order No :";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblSuborderNo
+            // 
+            this.lblSuborderNo.AutoSize = true;
+            this.lblSuborderNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSuborderNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuborderNo.ForeColor = System.Drawing.Color.White;
+            this.lblSuborderNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSuborderNo.Location = new System.Drawing.Point(903, 30);
+            this.lblSuborderNo.Name = "lblSuborderNo";
+            this.lblSuborderNo.Size = new System.Drawing.Size(32, 19);
+            this.lblSuborderNo.TabIndex = 366;
+            this.lblSuborderNo.Text = "NA";
+            this.lblSuborderNo.Visible = false;
+            // 
+            // lblOrderNo
+            // 
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrderNo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNo.ForeColor = System.Drawing.Color.White;
+            this.lblOrderNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblOrderNo.Location = new System.Drawing.Point(903, 6);
+            this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(32, 19);
+            this.lblOrderNo.TabIndex = 368;
+            this.lblOrderNo.Text = "NA";
+            this.lblOrderNo.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(763, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 19);
+            this.label3.TabIndex = 367;
+            this.label3.Text = "Order No :";
+            this.label3.Visible = false;
             // 
             // frmOrderDetails
             // 
@@ -157,5 +229,9 @@ namespace TAILORING.Order
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvOrderDetails;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblSuborderNo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOrderNo;
+        private System.Windows.Forms.Label label3;
     }
 }

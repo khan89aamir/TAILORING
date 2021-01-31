@@ -78,10 +78,11 @@ namespace TAILORING.Order
                 if (System.IO.File.Exists(dtGarmentList.Rows[i]["Photo"].ToString()))
                 {
                     pic.Image = Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString());
+                    Image.FromFile(dtGarmentList.Rows[i]["Photo"].ToString()).Dispose();
                 }
                 else
                 {
-                    pic.Image = TAILORING.Properties.Resources.NoImage;
+                    pic.Image = Properties.Resources.NoImage;
                 }
                 pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
                 pic.Size = new Size(panel.Size.Width - 10, panel.Size.Height - 20);
@@ -272,7 +273,7 @@ namespace TAILORING.Order
                         dr["BodyPostureMappingID"] = dtPosture.Rows[i]["BodyPostureMappingID"];
 
                         dtTempPosture.Rows.Add(dr);
-                        ChangeMeasurementStyleStatus('B', Convert.ToInt32(dtStyle.Rows[i]["GarmentID"]));
+                        ChangeMeasurementStyleStatus('B', Convert.ToInt32(dtPosture.Rows[i]["GarmentID"]));
                     }
                 }
                 dtTempPosture.AcceptChanges();
@@ -590,10 +591,11 @@ namespace TAILORING.Order
                     if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
                     {
                         pic.Image = Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString());
+                        Image.FromFile(dtStyleImages.Rows[i]["ImagePath"].ToString()).Dispose();
                     }
                     else
                     {
-                        pic.Image = TAILORING.Properties.Resources.NoImage;
+                        pic.Image = Properties.Resources.NoImage;
                     }
                     pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
                     pic.Size = new Size(panel.Width - 5, panel.Height - 5);
@@ -1259,21 +1261,20 @@ namespace TAILORING.Order
             {
                 GroupBox grp = new GroupBox();
                 FlowLayoutPanel pnlContainer = new FlowLayoutPanel();
-
+                pnlContainer.BorderStyle = BorderStyle.None;
+                
                 grp.Name = "grp";
                 grp.Size = new Size(kryptonHeaderGroup4.Size.Width - 60, 185);
                 grp.Text = dt.Rows[i]["BodyPostureType"].ToString();
                 grp.Font = new Font("Times", 11.1f, FontStyle.Bold);
 
-                pnlContainer.BorderStyle = BorderStyle.FixedSingle;
+                //pnlContainer.BorderStyle = BorderStyle.FixedSingle;
                 pnlContainer.AutoScroll = true;
                 pnlContainer.Size = new Size(grp.Size.Width - 30, 155);
                 pnlContainer.Location = new Point(grp.Location.X + 13, grp.Location.Y + 22);
-                //pnlContainer.BackColor = Color.Blue;
 
                 grp.Controls.Add(pnlContainer);
 
-                //grp.BackColor = Color.Purple;
                 DataRow[] dr = dt1.Select("BodyPostureID=" + dt.Rows[i]["BodyPostureID"]);
                 if (dr.Length > 0)
                 {
@@ -1283,6 +1284,7 @@ namespace TAILORING.Order
                         PictureBox pic = new PictureBox();
                         Label lbl = new Label();
                         panel.Name = "pnl";
+                        panel.BorderStyle = BorderStyle.None;
 
                         lbl.Name = dr[j]["BodyPostureMappingID"].ToString();
                         lbl.Text = dr[j]["BodyPostureName"].ToString();
@@ -1293,16 +1295,17 @@ namespace TAILORING.Order
 
                         panel.Size = new Size(180, 145);
                         panel.Cursor = Cursors.Hand;
-                        //panel.BackColor = Color.Red;
+
                         pic.SizeMode = PictureBoxSizeMode.Zoom;
                         pic.Click += PicBody_Click;
                         if (File.Exists(dr[j]["Photo"].ToString()))
                         {
+                            Image.FromFile(dr[j]["Photo"].ToString()).Dispose();
                             pic.Image = Image.FromFile(dr[j]["Photo"].ToString());
                         }
                         else
                         {
-                            pic.Image = TAILORING.Properties.Resources.NoImage;
+                            pic.Image = Properties.Resources.NoImage;
                         }
                         pic.Name = dr[j]["BodyPostureMappingID"].ToString();
                         pic.Size = new Size(panel.Width - 30, panel.Height - 10);
@@ -1310,7 +1313,7 @@ namespace TAILORING.Order
                         pic.BorderStyle = BorderStyle.None;
 
                         panel.Controls.Add(pic);
-                        panel.Controls.Add(lbl);
+                        //panel.Controls.Add(lbl);
 
                         pnlContainer.Controls.Add(panel);
 
@@ -1387,7 +1390,8 @@ namespace TAILORING.Order
 
             if (ObjUtil.ValidateTable(dtTempPosture))
             {
-                DataRow[] dr = dtTempPosture.Select("BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
+                //DataRow[] dr = dtTempPosture.Select("BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
+                DataRow[] dr = dtTempPosture.Select("GarmentID=" + GarmentID + " AND BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
                 if (dr.Length > 0)
                 {
                     dr[0].Delete();

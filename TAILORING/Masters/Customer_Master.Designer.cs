@@ -104,7 +104,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(356, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(15, 17);
@@ -116,7 +116,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(356, 10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(15, 17);
@@ -421,6 +421,7 @@
             // txtCustomerMobileNo
             // 
             this.txtCustomerMobileNo.Location = new System.Drawing.Point(114, 46);
+            this.txtCustomerMobileNo.MaxLength = 10;
             this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
             this.txtCustomerMobileNo.Size = new System.Drawing.Size(240, 31);
             this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -550,6 +551,7 @@
             // 
             this.txtSearchByMobileNo.Enabled = false;
             this.txtSearchByMobileNo.Location = new System.Drawing.Point(444, 19);
+            this.txtSearchByMobileNo.MaxLength = 10;
             this.txtSearchByMobileNo.Name = "txtSearchByMobileNo";
             this.txtSearchByMobileNo.Size = new System.Drawing.Size(205, 31);
             this.txtSearchByMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));

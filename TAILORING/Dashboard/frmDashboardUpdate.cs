@@ -100,10 +100,6 @@ namespace TAILORING.Dashboard
                 {
                     GenerateKryptonButtons(dsDashbaordData.Tables[3].Rows[i]["SubOrderNo"].ToString());
                 }
-
-
-
-
             }
         }
       
@@ -149,7 +145,6 @@ namespace TAILORING.Dashboard
                     txtSearchByCustomerName.Focus();
                 }
             }
-
         }
 
         private void SearchByCustomerMobileNo()
@@ -184,7 +179,7 @@ namespace TAILORING.Dashboard
                         Obj.CustName = strCustName;
                         Obj.CustMobileNo = strMobileNo;
                         Obj.CustAddress = strAddress;
-                        this.Close();
+                        //this.Close();
                         Obj.ShowDialog();
                     }
                 }
@@ -268,7 +263,7 @@ namespace TAILORING.Dashboard
                     Obj.CustName = strCustName;
                     Obj.CustMobileNo = strMobileNo;
                     Obj.CustAddress = strAddress;
-                    this.Close();
+                    //this.Close();
                     Obj.ShowDialog();
                 }
                 else

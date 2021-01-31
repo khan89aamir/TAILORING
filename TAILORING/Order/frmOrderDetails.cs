@@ -44,7 +44,6 @@ namespace TAILORING.Order
         private void LoadData()
         {
             ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, SalesOrderID, clsConnection_DAL.ParamType.Input);
-
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderDetails]");
             if (ObjUtil.ValidateDataSet(ds))
             {
@@ -64,15 +63,17 @@ namespace TAILORING.Order
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ObjUtil.SetRowNumber(dgvOrderDetails);
-            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
 
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
 
-          
+            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
+            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitTypeName";
+
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void frmOrderDetails_FormClosed(object sender, FormClosedEventArgs e)

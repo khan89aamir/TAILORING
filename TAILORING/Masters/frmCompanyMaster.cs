@@ -71,7 +71,7 @@ namespace TAILORING.Masters
             txtCompanyEmailID.Enabled = b;
             txtCompanyAddress.Enabled = b;
 
-            chkDefaultCompany.Enabled = b;
+            //chkDefaultCompany.Enabled = b;
         }
 
         private void ClearAll()

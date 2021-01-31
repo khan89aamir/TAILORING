@@ -304,6 +304,7 @@
             // txtMobileNo
             // 
             this.txtMobileNo.Location = new System.Drawing.Point(122, 98);
+            this.txtMobileNo.MaxLength = 10;
             this.txtMobileNo.Name = "txtMobileNo";
             this.txtMobileNo.Size = new System.Drawing.Size(206, 31);
             this.txtMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
@@ -362,7 +363,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(332, 219);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 17);
@@ -401,7 +402,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(332, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
@@ -440,7 +441,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(334, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 17);
@@ -464,7 +465,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(673, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(15, 17);
@@ -520,7 +521,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(334, 54);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 17);
@@ -532,7 +533,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(334, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(15, 17);
@@ -822,6 +823,7 @@
             // 
             this.txtSearchByEmpMobileNo.Enabled = false;
             this.txtSearchByEmpMobileNo.Location = new System.Drawing.Point(596, 15);
+            this.txtSearchByEmpMobileNo.MaxLength = 10;
             this.txtSearchByEmpMobileNo.Name = "txtSearchByEmpMobileNo";
             this.txtSearchByEmpMobileNo.Size = new System.Drawing.Size(222, 31);
             this.txtSearchByEmpMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));

@@ -87,7 +87,7 @@ namespace TAILORING.Dashboard
                     }
                     else
                     {
-                        clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is already exist..", clsUtility.strProjectTitle);
+                        clsUtility.ShowErrorMessage("Mobile No '" + txtCustomerMobileNo.Text + "' is already exist..", clsUtility.strProjectTitle);
                         txtCustomerName.Focus();
                     }
                     ObjDAL.ResetData();

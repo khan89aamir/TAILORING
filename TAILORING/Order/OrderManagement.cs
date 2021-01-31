@@ -136,6 +136,7 @@ namespace TAILORING.Order
             //dtOrder = dtOrderManagement.Copy();
             //Gridview
             dtOrder.Columns.Add("GarmentID");
+            dtOrder.Columns.Add("MasterGarmentID");
             dtOrder.Columns.Add("StichTypeID");
             dtOrder.Columns.Add("FitTypeID");
             dtOrder.Columns.Add("GarmentCode");
@@ -413,6 +414,7 @@ namespace TAILORING.Order
                         {
                             DataRow dRow = dtOrder.NewRow();
                             dRow["GarmentID"] = drData[0]["GarmentID"];
+                            dRow["MasterGarmentID"] = drData[0]["GarmentID"];
                             dRow["GarmentCode"] = drData[0]["GarmentCode"];
                             dRow["GarmentName"] = drData[0]["GarmentName"];
                             dRow["Photo"] = drData[0]["Photo"];
@@ -445,6 +447,7 @@ namespace TAILORING.Order
                             if (ObjUtil.ValidateTable(dtData))
                             {
                                 DataRow dRow = dtOrder.NewRow();
+                                dRow["MasterGarmentID"] = pGarmentID;
                                 dRow["GarmentID"] = dtData.Rows[0]["GarmentID"];
                                 dRow["GarmentCode"] = dtData.Rows[0]["GarmentCode"].ToString();
                                 dRow["GarmentName"] = dtData.Rows[0]["GarmentName"].ToString();
@@ -563,6 +566,7 @@ namespace TAILORING.Order
                             PrintOrder();
                             ClearAll();
                             dataGridView1.DataSource = dtOrderManagement;
+                            this.Close();
                         }
                         else
                         {
@@ -626,27 +630,31 @@ namespace TAILORING.Order
         private bool SavedSalesOrderDetails()
         {
             bool b = false;
-            for (int i = 0; i < dtOrderManagement.Rows.Count; i++) //Sales Details
+            for (int i = 0; i < dtOrder.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = OrderID;
-                drow["GarmentID"] = dtOrderManagement.Rows[i]["GarmentID"];
+                drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
 
-                DataRow[] dr = dtOrder.Select("GarmentID=" + dtOrderManagement.Rows[i]["GarmentID"]);
+                DataRow[] dr = dtOrder.Select("GarmentID=" + dtOrder.Rows[i]["GarmentID"]);
                 if (dr.Length > 0)
                 {
-                    drow["StichTypeID"] = dtOrder.Rows[0]["StichTypeID"];
-                    drow["FitTypeID"] = dtOrder.Rows[0]["FitTypeID"];
+                    drow["StichTypeID"] = dr[0]["StichTypeID"];
+                    drow["FitTypeID"] = dr[0]["FitTypeID"];
                 }
-                drow["Service"] = dtOrderManagement.Rows[i]["ServiceID"];
+                DataRow[] drOrder = dtOrderManagement.Select("GarmentID=" + dtOrder.Rows[i]["MasterGarmentID"]);
+                if (drOrder.Length > 0)
+                {
+                    drow["Service"] = drOrder[0]["ServiceID"];
 
-                drow["TrailDate"] = dtOrderManagement.Rows[i]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(dtOrderManagement.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
+                    drow["TrailDate"] = drOrder[0]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(drOrder[0]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
 
-                drow["DeliveryDate"] = Convert.ToDateTime(dtOrderManagement.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
-                drow["TrimAmount"] = dtOrderManagement.Rows[i]["TrimAmount"];
-                drow["QTY"] = dtOrderManagement.Rows[i]["QTY"];
-                drow["Rate"] = dtOrderManagement.Rows[i]["Rate"];
-                drow["Total"] = dtOrderManagement.Rows[i]["Total"];
+                    drow["DeliveryDate"] = Convert.ToDateTime(drOrder[0]["DeliveryDate"]).ToString("yyyy-MM-dd");
+                    drow["TrimAmount"] = drOrder[0]["TrimAmount"];
+                    drow["QTY"] = drOrder[0]["QTY"];
+                    drow["Rate"] = drOrder[0]["Rate"];
+                    drow["Total"] = drOrder[0]["Total"];
+                }
                 drow["CreatedBy"] = clsUtility.LoginID;
 
                 dtOrderDetails.Rows.Add(drow);
@@ -1011,7 +1019,7 @@ namespace TAILORING.Order
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "QTY" || dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount" || dataGridView1.Columns[e.ColumnIndex].Name == "Rate")
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount")
                 {
                     int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
                     double trimamt = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value);

@@ -55,17 +55,6 @@
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtGrossAmt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtCustomerAdd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
@@ -80,6 +69,17 @@
             this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtSGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtGrossAmt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerMobileNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtCustomerAdd = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -188,23 +188,28 @@
             this.btnMeasurement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMeasurement.AutoSize = true;
             this.btnMeasurement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMeasurement.Location = new System.Drawing.Point(926, 8);
+            this.btnMeasurement.Location = new System.Drawing.Point(863, 7);
             this.btnMeasurement.Name = "btnMeasurement";
             this.btnMeasurement.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnMeasurement.OverrideDefault.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnMeasurement.OverrideDefault.Border.Rounding = 7;
             this.btnMeasurement.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnMeasurement.OverrideFocus.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnMeasurement.OverrideFocus.Border.Rounding = 7;
             this.btnMeasurement.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnMeasurement.Size = new System.Drawing.Size(115, 30);
             this.btnMeasurement.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnMeasurement.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnMeasurement.StateCommon.Border.Rounding = 7;
             this.btnMeasurement.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnMeasurement.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnMeasurement.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnMeasurement.TabIndex = 362;
             this.btnMeasurement.Values.Image = global::TAILORING.Properties.Resources.measurmentsmall;
             this.btnMeasurement.Values.Text = "Measurement";
@@ -215,26 +220,31 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(1050, 8);
+            this.btnSave.Location = new System.Drawing.Point(990, 8);
             this.btnSave.Name = "btnSave";
             this.btnSave.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.OverrideDefault.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSave.OverrideDefault.Border.Rounding = 7;
             this.btnSave.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.OverrideFocus.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSave.OverrideFocus.Border.Rounding = 7;
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnSave.Size = new System.Drawing.Size(76, 28);
+            this.btnSave.Size = new System.Drawing.Size(136, 28);
             this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnSave.StateCommon.Border.Rounding = 7;
             this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnSave.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnSave.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnSave.TabIndex = 361;
             this.btnSave.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Values.Image")));
-            this.btnSave.Values.Text = "Save";
+            this.btnSave.Values.Text = "Generate Invoice";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label16
@@ -300,14 +310,21 @@
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpNewOrder);
             this.kryptonHeaderGroup1.Size = new System.Drawing.Size(1107, 101);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonHeaderGroup1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.Border.Rounding = 10;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.LongText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonHeaderGroup1.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonHeaderGroup1.TabIndex = 358;
             this.kryptonHeaderGroup1.ValuesPrimary.Heading = "Order Details";
             this.kryptonHeaderGroup1.ValuesPrimary.Image = global::TAILORING.Properties.Resources.orderdetails;
@@ -387,11 +404,13 @@
             this.cmbGarmentName.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbGarmentName.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.cmbGarmentName.StateCommon.ComboBox.Border.Rounding = 7;
             this.cmbGarmentName.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.StateCommon.Item.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbGarmentName.StateCommon.Item.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.cmbGarmentName.StateCommon.Item.Border.Rounding = 7;
             this.cmbGarmentName.TabIndex = 348;
             this.cmbGarmentName.SelectionChangeCommitted += new System.EventHandler(this.cmbGarmentName_SelectionChangeCommitted);
@@ -473,14 +492,20 @@
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
             this.grpGridview.Size = new System.Drawing.Size(1106, 221);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.grpGridview.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.Border.Rounding = 10;
             this.grpGridview.StateCommon.HeaderPrimary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderPrimary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.grpGridview.StateCommon.HeaderPrimary.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.grpGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
+            this.grpGridview.StateCommon.HeaderSecondary.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.grpGridview.TabIndex = 359;
             this.grpGridview.ValuesPrimary.Heading = "List Of Order Details";
             this.grpGridview.ValuesPrimary.Image = ((System.Drawing.Image)(resources.GetObject("grpGridview.ValuesPrimary.Image")));
@@ -521,198 +546,6 @@
             this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(1033, 337);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnAdd.OverrideDefault.Border.Rounding = 7;
-            this.btnAdd.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnAdd.OverrideFocus.Border.Rounding = 7;
-            this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnAdd.Size = new System.Drawing.Size(89, 31);
-            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnAdd.StateCommon.Border.Rounding = 7;
-            this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.btnAdd.TabIndex = 361;
-            this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
-            this.btnAdd.Values.Text = "Add Item";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtTailoringAmount
-            // 
-            this.txtTailoringAmount.Location = new System.Drawing.Point(146, 605);
-            this.txtTailoringAmount.Name = "txtTailoringAmount";
-            this.txtTailoringAmount.Size = new System.Drawing.Size(119, 31);
-            this.txtTailoringAmount.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtTailoringAmount.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtTailoringAmount.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtTailoringAmount.StateCommon.Border.Rounding = 10;
-            this.txtTailoringAmount.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTailoringAmount.TabIndex = 380;
-            this.txtTailoringAmount.Text = "0";
-            this.txtTailoringAmount.Enter += new System.EventHandler(this.txtTailoringAmount_Enter);
-            // 
-            // txtCGST
-            // 
-            this.txtCGST.Location = new System.Drawing.Point(498, 605);
-            this.txtCGST.Name = "txtCGST";
-            this.txtCGST.Size = new System.Drawing.Size(59, 31);
-            this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCGST.StateCommon.Border.Rounding = 10;
-            this.txtCGST.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCGST.StateNormal.Border.Rounding = 20;
-            this.txtCGST.TabIndex = 381;
-            this.txtCGST.Text = "0";
-            // 
-            // txtSGST
-            // 
-            this.txtSGST.Location = new System.Drawing.Point(705, 605);
-            this.txtSGST.Name = "txtSGST";
-            this.txtSGST.Size = new System.Drawing.Size(59, 31);
-            this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtSGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSGST.StateCommon.Border.Rounding = 10;
-            this.txtSGST.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtSGST.StateNormal.Border.Rounding = 20;
-            this.txtSGST.TabIndex = 382;
-            this.txtSGST.Text = "0";
-            // 
-            // txtGrossAmt
-            // 
-            this.txtGrossAmt.Location = new System.Drawing.Point(1006, 605);
-            this.txtGrossAmt.Name = "txtGrossAmt";
-            this.txtGrossAmt.Size = new System.Drawing.Size(119, 31);
-            this.txtGrossAmt.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtGrossAmt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtGrossAmt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGrossAmt.StateCommon.Border.Rounding = 10;
-            this.txtGrossAmt.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrossAmt.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGrossAmt.StateNormal.Border.Rounding = 20;
-            this.txtGrossAmt.TabIndex = 383;
-            this.txtGrossAmt.Text = "0";
-            // 
-            // txtCustomerMobileNo
-            // 
-            this.txtCustomerMobileNo.Location = new System.Drawing.Point(160, 128);
-            this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
-            this.txtCustomerMobileNo.ReadOnly = true;
-            this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 31);
-            this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerMobileNo.StateCommon.Border.Rounding = 10;
-            this.txtCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerMobileNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
-            this.txtCustomerMobileNo.TabIndex = 384;
-            this.txtCustomerMobileNo.Text = "0";
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Location = new System.Drawing.Point(160, 77);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(223, 31);
-            this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateCommon.Border.Rounding = 10;
-            this.txtCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerName.StateNormal.Border.Rounding = 20;
-            this.txtCustomerName.TabIndex = 385;
-            this.txtCustomerName.Text = "0";
-            // 
-            // txtCustomerAdd
-            // 
-            this.txtCustomerAdd.Location = new System.Drawing.Point(772, 75);
-            this.txtCustomerAdd.Name = "txtCustomerAdd";
-            this.txtCustomerAdd.ReadOnly = true;
-            this.txtCustomerAdd.Size = new System.Drawing.Size(349, 84);
-            this.txtCustomerAdd.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
-            this.txtCustomerAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerAdd.StateCommon.Border.Rounding = 8;
-            this.txtCustomerAdd.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerAdd.TabIndex = 386;
-            this.txtCustomerAdd.Text = "";
-            // 
-            // kryptonPanel1
-            // 
-            this.kryptonPanel1.Controls.Add(this.pictureBox1);
-            this.kryptonPanel1.Controls.Add(this.txtCustomerID);
-            this.kryptonPanel1.Controls.Add(this.label12);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(1137, 51);
-            this.kryptonPanel1.TabIndex = 387;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TAILORING.Properties.Resources.newOrder;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 364;
-            this.pictureBox1.TabStop = false;
-            // 
-            // kryptonPanel2
-            // 
-            this.kryptonPanel2.Controls.Add(this.btnMeasurement);
-            this.kryptonPanel2.Controls.Add(this.btnSave);
-            this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.kryptonPanel2.Location = new System.Drawing.Point(0, 642);
-            this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.kryptonPanel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel2.Size = new System.Drawing.Size(1137, 51);
-            this.kryptonPanel2.TabIndex = 388;
             // 
             // GarmentID
             // 
@@ -837,6 +670,7 @@
             // 
             // ColDelete1
             // 
+            this.ColDelete1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.ColDelete1.DataPropertyName = "Delete1";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -849,6 +683,215 @@
             this.ColDelete1.Text = "Delete1";
             this.ColDelete1.UseColumnTextForButtonValue = true;
             this.ColDelete1.Visible = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Enabled = false;
+            this.btnAdd.Location = new System.Drawing.Point(1033, 337);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.OverrideDefault.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.OverrideDefault.Border.Rounding = 7;
+            this.btnAdd.OverrideFocus.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.OverrideFocus.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.OverrideFocus.Border.Rounding = 7;
+            this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.btnAdd.Size = new System.Drawing.Size(89, 31);
+            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateCommon.Border.Rounding = 7;
+            this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
+            this.btnAdd.TabIndex = 361;
+            this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
+            this.btnAdd.Values.Text = "Add Item";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtTailoringAmount
+            // 
+            this.txtTailoringAmount.Location = new System.Drawing.Point(146, 605);
+            this.txtTailoringAmount.Name = "txtTailoringAmount";
+            this.txtTailoringAmount.Size = new System.Drawing.Size(119, 31);
+            this.txtTailoringAmount.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtTailoringAmount.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtTailoringAmount.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtTailoringAmount.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtTailoringAmount.StateCommon.Border.Rounding = 10;
+            this.txtTailoringAmount.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTailoringAmount.TabIndex = 380;
+            this.txtTailoringAmount.Text = "0";
+            this.txtTailoringAmount.Enter += new System.EventHandler(this.txtTailoringAmount_Enter);
+            // 
+            // txtCGST
+            // 
+            this.txtCGST.Location = new System.Drawing.Point(498, 605);
+            this.txtCGST.Name = "txtCGST";
+            this.txtCGST.Size = new System.Drawing.Size(59, 31);
+            this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCGST.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCGST.StateCommon.Border.Rounding = 10;
+            this.txtCGST.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCGST.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCGST.StateNormal.Border.Rounding = 20;
+            this.txtCGST.TabIndex = 381;
+            this.txtCGST.Text = "0";
+            // 
+            // txtSGST
+            // 
+            this.txtSGST.Location = new System.Drawing.Point(705, 605);
+            this.txtSGST.Name = "txtSGST";
+            this.txtSGST.Size = new System.Drawing.Size(59, 31);
+            this.txtSGST.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtSGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtSGST.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSGST.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtSGST.StateCommon.Border.Rounding = 10;
+            this.txtSGST.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSGST.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtSGST.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtSGST.StateNormal.Border.Rounding = 20;
+            this.txtSGST.TabIndex = 382;
+            this.txtSGST.Text = "0";
+            // 
+            // txtGrossAmt
+            // 
+            this.txtGrossAmt.Location = new System.Drawing.Point(1006, 605);
+            this.txtGrossAmt.Name = "txtGrossAmt";
+            this.txtGrossAmt.Size = new System.Drawing.Size(119, 31);
+            this.txtGrossAmt.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtGrossAmt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtGrossAmt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGrossAmt.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtGrossAmt.StateCommon.Border.Rounding = 10;
+            this.txtGrossAmt.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrossAmt.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGrossAmt.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtGrossAmt.StateNormal.Border.Rounding = 20;
+            this.txtGrossAmt.TabIndex = 383;
+            this.txtGrossAmt.Text = "0";
+            // 
+            // txtCustomerMobileNo
+            // 
+            this.txtCustomerMobileNo.Location = new System.Drawing.Point(160, 128);
+            this.txtCustomerMobileNo.Name = "txtCustomerMobileNo";
+            this.txtCustomerMobileNo.ReadOnly = true;
+            this.txtCustomerMobileNo.Size = new System.Drawing.Size(223, 31);
+            this.txtCustomerMobileNo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerMobileNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerMobileNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerMobileNo.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCustomerMobileNo.StateCommon.Border.Rounding = 10;
+            this.txtCustomerMobileNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerMobileNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerMobileNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCustomerMobileNo.StateNormal.Border.Rounding = 20;
+            this.txtCustomerMobileNo.TabIndex = 384;
+            this.txtCustomerMobileNo.Text = "0";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(160, 77);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.ReadOnly = true;
+            this.txtCustomerName.Size = new System.Drawing.Size(223, 31);
+            this.txtCustomerName.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerName.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerName.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerName.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCustomerName.StateCommon.Border.Rounding = 10;
+            this.txtCustomerName.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerName.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCustomerName.StateNormal.Border.Rounding = 20;
+            this.txtCustomerName.TabIndex = 385;
+            this.txtCustomerName.Text = "0";
+            // 
+            // txtCustomerAdd
+            // 
+            this.txtCustomerAdd.Location = new System.Drawing.Point(772, 75);
+            this.txtCustomerAdd.Name = "txtCustomerAdd";
+            this.txtCustomerAdd.ReadOnly = true;
+            this.txtCustomerAdd.Size = new System.Drawing.Size(349, 84);
+            this.txtCustomerAdd.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(236)))));
+            this.txtCustomerAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.txtCustomerAdd.StateCommon.Border.Rounding = 8;
+            this.txtCustomerAdd.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerAdd.TabIndex = 386;
+            this.txtCustomerAdd.Text = "";
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.Controls.Add(this.pictureBox1);
+            this.kryptonPanel1.Controls.Add(this.txtCustomerID);
+            this.kryptonPanel1.Controls.Add(this.label12);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel1.Size = new System.Drawing.Size(1137, 51);
+            this.kryptonPanel1.TabIndex = 387;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::TAILORING.Properties.Resources.newOrder;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 364;
+            this.pictureBox1.TabStop = false;
+            // 
+            // kryptonPanel2
+            // 
+            this.kryptonPanel2.Controls.Add(this.btnMeasurement);
+            this.kryptonPanel2.Controls.Add(this.btnSave);
+            this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kryptonPanel2.Location = new System.Drawing.Point(0, 642);
+            this.kryptonPanel2.Name = "kryptonPanel2";
+            this.kryptonPanel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.kryptonPanel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
+            this.kryptonPanel2.Size = new System.Drawing.Size(1137, 51);
+            this.kryptonPanel2.TabIndex = 388;
             // 
             // frmOrderManagement
             // 

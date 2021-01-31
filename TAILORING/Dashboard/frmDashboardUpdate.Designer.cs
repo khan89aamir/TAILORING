@@ -49,9 +49,11 @@
             this.txtSearchByCustomerName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.sPanel3 = new TAILORING.SPanel();
+            this.pnlInprocessOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.lblInProgress = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.sPanel2 = new TAILORING.SPanel();
+            this.pnlCricitialOrder = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCriticalOrder = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.sPanel1 = new TAILORING.SPanel();
@@ -67,8 +69,6 @@
             this.txtOrderDelivery = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnCreateChalan = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pnlCricitialOrder = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlInprocessOrder = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -359,13 +359,23 @@
             this.sPanel3.Size = new System.Drawing.Size(308, 384);
             this.sPanel3.TabIndex = 375;
             // 
+            // pnlInprocessOrder
+            // 
+            this.pnlInprocessOrder.AutoScroll = true;
+            this.pnlInprocessOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
+            this.pnlInprocessOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlInprocessOrder.Location = new System.Drawing.Point(55, 107);
+            this.pnlInprocessOrder.Name = "pnlInprocessOrder";
+            this.pnlInprocessOrder.Size = new System.Drawing.Size(224, 220);
+            this.pnlInprocessOrder.TabIndex = 17;
+            // 
             // lblInProgress
             // 
             this.lblInProgress.AutoSize = true;
             this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
             this.lblInProgress.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInProgress.ForeColor = System.Drawing.Color.White;
-            this.lblInProgress.Location = new System.Drawing.Point(148, 68);
+            this.lblInProgress.Location = new System.Drawing.Point(149, 68);
             this.lblInProgress.Name = "lblInProgress";
             this.lblInProgress.Size = new System.Drawing.Size(35, 40);
             this.lblInProgress.TabIndex = 15;
@@ -398,13 +408,23 @@
             this.sPanel2.Size = new System.Drawing.Size(308, 384);
             this.sPanel2.TabIndex = 374;
             // 
+            // pnlCricitialOrder
+            // 
+            this.pnlCricitialOrder.AutoScroll = true;
+            this.pnlCricitialOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
+            this.pnlCricitialOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlCricitialOrder.Location = new System.Drawing.Point(54, 107);
+            this.pnlCricitialOrder.Name = "pnlCricitialOrder";
+            this.pnlCricitialOrder.Size = new System.Drawing.Size(224, 220);
+            this.pnlCricitialOrder.TabIndex = 17;
+            // 
             // lblCriticalOrder
             // 
             this.lblCriticalOrder.AutoSize = true;
             this.lblCriticalOrder.BackColor = System.Drawing.Color.Transparent;
             this.lblCriticalOrder.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriticalOrder.ForeColor = System.Drawing.Color.White;
-            this.lblCriticalOrder.Location = new System.Drawing.Point(132, 68);
+            this.lblCriticalOrder.Location = new System.Drawing.Point(133, 68);
             this.lblCriticalOrder.Name = "lblCriticalOrder";
             this.lblCriticalOrder.Size = new System.Drawing.Size(53, 40);
             this.lblCriticalOrder.TabIndex = 15;
@@ -453,7 +473,7 @@
             this.lblTodayDelivery.BackColor = System.Drawing.Color.Transparent;
             this.lblTodayDelivery.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayDelivery.ForeColor = System.Drawing.Color.White;
-            this.lblTodayDelivery.Location = new System.Drawing.Point(131, 68);
+            this.lblTodayDelivery.Location = new System.Drawing.Point(132, 68);
             this.lblTodayDelivery.Name = "lblTodayDelivery";
             this.lblTodayDelivery.Size = new System.Drawing.Size(53, 40);
             this.lblTodayDelivery.TabIndex = 15;
@@ -606,26 +626,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pnlCricitialOrder
-            // 
-            this.pnlCricitialOrder.AutoScroll = true;
-            this.pnlCricitialOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
-            this.pnlCricitialOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlCricitialOrder.Location = new System.Drawing.Point(54, 107);
-            this.pnlCricitialOrder.Name = "pnlCricitialOrder";
-            this.pnlCricitialOrder.Size = new System.Drawing.Size(224, 220);
-            this.pnlCricitialOrder.TabIndex = 17;
-            // 
-            // pnlInprocessOrder
-            // 
-            this.pnlInprocessOrder.AutoScroll = true;
-            this.pnlInprocessOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(123)))), ((int)(((byte)(141)))));
-            this.pnlInprocessOrder.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlInprocessOrder.Location = new System.Drawing.Point(55, 107);
-            this.pnlInprocessOrder.Name = "pnlInprocessOrder";
-            this.pnlInprocessOrder.Size = new System.Drawing.Size(224, 220);
-            this.pnlInprocessOrder.TabIndex = 17;
             // 
             // frmDashboardUpdate
             // 

@@ -164,7 +164,8 @@ namespace TAILORING.Order
             dtOrderDetails.Columns.Add("SalesOrderID");
             dtOrderDetails.Columns.Add("StichTypeID", typeof(int));
             dtOrderDetails.Columns.Add("FitTypeID", typeof(int));
-            dtOrderDetails.Columns.Add("GarmentID");
+            dtOrderDetails.Columns.Add("MasterGarmentID", typeof(int));
+            dtOrderDetails.Columns.Add("GarmentID", typeof(int));
             dtOrderDetails.Columns.Add("Service", typeof(int));
             dtOrderDetails.Columns.Add("TrailDate");
             dtOrderDetails.Columns.Add("DeliveryDate");
@@ -254,6 +255,8 @@ namespace TAILORING.Order
             {
                 ObjUtil.SetRowNumber(dataGridView1);
                 //ObjUtil.SetDataGridProperty(dataGridView1, DataGridViewAutoSizeColumnsMode.Fill);
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                 dataGridView1.Columns["GarmentID"].Visible = false;
                 dataGridView1.Columns["Photo"].Visible = false;
 
@@ -638,6 +641,7 @@ namespace TAILORING.Order
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = OrderID;
                 drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
+                drow["MasterGarmentID"] = dtOrder.Rows[i]["MasterGarmentID"];
 
                 DataRow[] dr = dtOrder.Select("GarmentID=" + dtOrder.Rows[i]["GarmentID"]);
                 if (dr.Length > 0)
@@ -806,10 +810,14 @@ namespace TAILORING.Order
                 //    clsUtility.ShowInfoMessage("Enter Trim Amount..");
                 //    e.Cancel = true;
                 //}
-                if (e.FormattedValue != DBNull.Value && Convert.ToDecimal(e.FormattedValue) < 0)
+                if (e.FormattedValue != DBNull.Value)
                 {
-                    clsUtility.ShowInfoMessage("Enter Trim Amount..");
-                    e.Cancel = true;
+                    if (e.FormattedValue.ToString() == "")
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "0";
+                        return;
+                    }
+                    //e.Cancel = true;
                 }
                 return;
             }
@@ -822,7 +830,8 @@ namespace TAILORING.Order
 
             if (headerText == "Trim Amount")
             {
-                e.Control.KeyPress += Decimal_Control_KeyPress;
+                //e.Control.KeyPress += Decimal_Control_KeyPress;
+                e.Control.KeyPress += Int_Control_KeyPress;
             }
             //else if (headerText == "QTY")
             //{
@@ -1022,10 +1031,12 @@ namespace TAILORING.Order
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Trim Amount")
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "TrimAmount")
                 {
                     int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
-                    double trimamt = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value);
+
+                    double trimamt = dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value != DBNull.Value ? Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value) : 0;
+
                     double Rate = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value);
                     double Total = (QTY * Rate) + trimamt;
 
@@ -1108,14 +1119,14 @@ namespace TAILORING.Order
                         int a = 0;
                         DataTable dt = (DataTable)dataGridView1.DataSource;
 
-                        //if (pSalesOrderDetailsID > 0)
-                        //{
-                        //    a = ObjDAL.DeleteData(clsUtility.DBName + ".[dbo].[tblSalesOrderDetails]", "SalesOrderDetailsID=" + pSalesOrderDetailsID);
-                        //}
                         if (a > 0 || pSalesOrderDetailsID == 0)
                         {
+                            int GarmentID = 0;
+                            GarmentID = Convert.ToInt32(dt.Rows[e.RowIndex]["GarmentID"]);
+
                             dt.Rows[e.RowIndex].Delete();
                             dt.AcceptChanges();
+                            Delete_ReferenceGarments(GarmentID);
                         }
                         else
                         {
@@ -1128,5 +1139,65 @@ namespace TAILORING.Order
                 }
             }
         }
+
+        private void Delete_ReferenceGarments(int GarmentID)
+        {
+            if (ObjUtil.ValidateTable(dtOrder))
+            {
+                DataRow[] drGarment = dtOrder.Select("MasterGarmentID=" + GarmentID);
+                for (int i = 0; i < drGarment.Length; i++)
+                {
+                    int SubGarmentID = Convert.ToInt32(drGarment[i]["GarmentID"]);
+                    drGarment[i].Delete();
+                    drGarment[i].AcceptChanges();
+                    dtOrder.AcceptChanges();
+
+                    if (ObjUtil.ValidateDataSet(dsMeasure))
+                    {
+                        DataTable dtTempMeasure = dsMeasure.Tables[0];
+                        if (ObjUtil.ValidateTable(dtTempMeasure))
+                        {
+                            DataRow[] drMeasure = dtTempMeasure.Select("GarmentID=" + SubGarmentID);
+                            for (int j = 0; j < drMeasure.Length; j++)
+                            {
+                                drMeasure[j].Delete();
+                                drMeasure[j].AcceptChanges();
+                            }
+                            dtTempMeasure.AcceptChanges();
+                        }
+                        if (dsMeasure.Tables.Count > 1)
+                        {
+                            DataTable dtTempStyle = dsMeasure.Tables[1];
+                            if (ObjUtil.ValidateTable(dtTempStyle))
+                            {
+                                DataRow[] drStyle = dtTempStyle.Select("GarmentID=" + SubGarmentID);
+                                for (int k = 0; k < drStyle.Length; k++)
+                                {
+                                    drStyle[k].Delete();
+                                    drStyle[k].AcceptChanges();
+                                }
+                                dtTempStyle.AcceptChanges();
+                            }
+                        }
+                        if (dsMeasure.Tables.Count > 2)
+                        {
+                            DataTable dtTempBodyPosture = dsMeasure.Tables[2];
+                            if (ObjUtil.ValidateTable(dtTempBodyPosture))
+                            {
+                                DataRow[] drBody = dtTempBodyPosture.Select("GarmentID=" + SubGarmentID);
+                                for (int k1 = 0; k1 < drBody.Length; k1++)
+                                {
+                                    drBody[k1].Delete();
+                                    drBody[k1].AcceptChanges();
+                                }
+                                dtTempBodyPosture.AcceptChanges();
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
     }
 }

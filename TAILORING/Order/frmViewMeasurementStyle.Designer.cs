@@ -116,7 +116,7 @@
             this.flowGarmentList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowGarmentList.Location = new System.Drawing.Point(0, 0);
             this.flowGarmentList.Name = "flowGarmentList";
-            this.flowGarmentList.Size = new System.Drawing.Size(241, 630);
+            this.flowGarmentList.Size = new System.Drawing.Size(241, 641);
             this.flowGarmentList.TabIndex = 340;
             // 
             // ctrlMeasurment1
@@ -413,8 +413,6 @@
             // 
             // kryptonHeaderGroup2
             // 
-            this.kryptonHeaderGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
             this.kryptonHeaderGroup2.Location = new System.Drawing.Point(958, 52);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
@@ -423,7 +421,7 @@
             // kryptonHeaderGroup2.Panel
             // 
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.gGlowGroupBox1);
-            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 660);
+            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 671);
             this.kryptonHeaderGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -448,7 +446,7 @@
             this.gGlowGroupBox1.GlowOn = true;
             this.gGlowGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox1.Name = "gGlowGroupBox1";
-            this.gGlowGroupBox1.Size = new System.Drawing.Size(241, 630);
+            this.gGlowGroupBox1.Size = new System.Drawing.Size(241, 641);
             this.gGlowGroupBox1.TabIndex = 287;
             // 
             // tabControl1

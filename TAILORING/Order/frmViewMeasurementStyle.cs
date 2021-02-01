@@ -43,6 +43,7 @@ namespace TAILORING.Order
         public int pOrderID = 0;
         public string OrderNo = "NA";
         int GarmentID = 0, StyleID = 0;
+        int OrderStatus = 0;
 
         private void LoadTailoringTheme()
         {
@@ -120,8 +121,6 @@ namespace TAILORING.Order
         {
             lblOrderNo.Text = "Order No : " + OrderNo;
 
-            IsAdmin();
-
             LoadTailoringTheme();
 
             InitMeasurementTable();
@@ -152,19 +151,28 @@ namespace TAILORING.Order
             ChangeMeasurementStyleStatus();
         }
 
+        private void EnableDisable_Update(bool b)
+        {
+            flowStyleImage.Enabled = b;
+            btnSave.Enabled = b;
+            IsEdit = b;
+        }
+
         private void IsAdmin()
         {
-            if (clsUtility.IsAdmin || clsFormRights.HasFormRight(clsFormRights.Forms.frmViewMeasurementStyle, clsFormRights.Operation.Update))
+            if ((clsUtility.IsAdmin || clsFormRights.HasFormRight(clsFormRights.Forms.frmViewMeasurementStyle, clsFormRights.Operation.Update)) && OrderStatus == 3)
             {
-                flowStyleImage.Enabled = true;
-                btnSave.Enabled = true;
-                IsEdit = true;
+                //flowStyleImage.Enabled = true;
+                //btnSave.Enabled = true;
+                //IsEdit = true;
+                EnableDisable_Update(true);
             }
             else
             {
-                flowStyleImage.Enabled = false;
-                btnSave.Enabled = false;
-                IsEdit = false;
+                //flowStyleImage.Enabled = false;
+                //btnSave.Enabled = false;
+                //IsEdit = false;
+                EnableDisable_Update(false);
                 //clsUtility.ShowInfoMessage("You have no rights to perform this task");
             }
         }
@@ -267,6 +275,9 @@ namespace TAILORING.Order
                 lblSKUName.Text = "SKU Selected : " + drow[0]["GarmentName"];
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
+                OrderStatus = Convert.ToInt32(drow[0]["OrderStatus"]);
+
+                IsAdmin();
 
                 ctrlMeasurment1.ProductCount = 1;
                 GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
@@ -292,6 +303,9 @@ namespace TAILORING.Order
                 {
                     GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
                     int QTY = Convert.ToInt32(drow[0]["QTY"]);
+                    OrderStatus = Convert.ToInt32(drow[0]["OrderStatus"]);
+
+                    IsAdmin();
 
                     ctrlMeasurment1.ProductCount = 1;
                     GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
@@ -991,7 +1005,7 @@ namespace TAILORING.Order
             flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                GroupBox grp = new GroupBox();                
+                GroupBox grp = new GroupBox();
                 FlowLayoutPanel pnlContainer = new FlowLayoutPanel();
                 pnlContainer.BorderStyle = BorderStyle.None;
 

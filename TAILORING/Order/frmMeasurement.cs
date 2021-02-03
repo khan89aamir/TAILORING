@@ -1066,14 +1066,6 @@ namespace TAILORING.Order
             checkBox1.Checked = false;
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            frmBodyPosture obj = new frmBodyPosture();
-            obj.GarmentID = this.GarmentID;
-            obj.dtTempPosture = this.dtTempPosture;
-            obj.ShowDialog();
-        }
-
         private void cmbStichType_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (ObjUtil.ValidateTable(dtGarmentList))
@@ -1233,9 +1225,6 @@ namespace TAILORING.Order
 
         DataTable dtPosture = new DataTable();
 
-
-
-
         private void GetBodyPostureDetails()
         {
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
@@ -1262,7 +1251,7 @@ namespace TAILORING.Order
                 GroupBox grp = new GroupBox();
                 FlowLayoutPanel pnlContainer = new FlowLayoutPanel();
                 pnlContainer.BorderStyle = BorderStyle.None;
-                
+
                 grp.Name = "grp";
                 grp.Size = new Size(kryptonHeaderGroup4.Size.Width - 60, 185);
                 grp.Text = dt.Rows[i]["BodyPostureType"].ToString();
@@ -1361,7 +1350,6 @@ namespace TAILORING.Order
             p.Parent.BackColor = Color.LightGray;
             AddTempdtPosture(p);
 
-            // after work done.. mark the menu as done.
             //btnBodyPosture.Image = Properties.Resources.bodyCheck;
             ChangeMeasurementStyleStatus('B', GarmentID);
         }
@@ -1390,6 +1378,14 @@ namespace TAILORING.Order
 
             if (ObjUtil.ValidateTable(dtTempPosture))
             {
+                DataRow[] drup = dtTempPosture.Select("GarmentID=" + GarmentID + " AND BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID=" + p.Name);
+                if (drup.Length > 0)
+                {
+                    p.Parent.BackColor = Color.Transparent;
+                    drup[0].Delete();
+                    dtTempPosture.AcceptChanges();
+                    return;
+                }
                 //DataRow[] dr = dtTempPosture.Select("BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
                 DataRow[] dr = dtTempPosture.Select("GarmentID=" + GarmentID + " AND BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
                 if (dr.Length > 0)
@@ -1406,7 +1402,6 @@ namespace TAILORING.Order
             dtTempPosture.Rows.Add(drow);
             dtTempPosture.AcceptChanges();
         }
-
         #endregion
     }
 }

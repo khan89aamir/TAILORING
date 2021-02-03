@@ -46,6 +46,7 @@
             this.cmbStichType = new System.Windows.Forms.ComboBox();
             this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpMeasurement = new gGlowBox.gGlowGroupBox();
+            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpStyle = new gGlowBox.gGlowGroupBox();
             this.flowStyleImage = new System.Windows.Forms.FlowLayoutPanel();
@@ -55,7 +56,6 @@
             this.flowGarmentList = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonHeaderGroup3 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.lnkAddItem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -72,7 +72,6 @@
             this.btnStyle = new System.Windows.Forms.PictureBox();
             this.btnMeasurment = new System.Windows.Forms.PictureBox();
             this.btnBodyPosture = new System.Windows.Forms.PictureBox();
-            this.ctrlMeasurment1 = new TAILORING.Others.ctrlMeasurment();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -348,6 +347,19 @@
             this.grpMeasurement.Size = new System.Drawing.Size(962, 450);
             this.grpMeasurement.TabIndex = 287;
             // 
+            // ctrlMeasurment1
+            // 
+            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
+            this.ctrlMeasurment1.DataSource = null;
+            this.ctrlMeasurment1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlMeasurment1.ForeColor = System.Drawing.Color.Black;
+            this.ctrlMeasurment1.IsEditable = false;
+            this.ctrlMeasurment1.Location = new System.Drawing.Point(0, 0);
+            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
+            this.ctrlMeasurment1.ProductCount = 0;
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 450);
+            this.ctrlMeasurment1.TabIndex = 0;
+            // 
             // kryptonHeaderGroup1
             // 
             this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -425,7 +437,7 @@
             // 
             this.kryptonHeaderGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(959, 40);
+            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(963, 40);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             this.kryptonHeaderGroup2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
@@ -514,29 +526,12 @@
             this.dataGridView1.TabIndex = 287;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // lnkAddItem
-            // 
-            this.lnkAddItem.AutoSize = true;
-            this.lnkAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lnkAddItem.Location = new System.Drawing.Point(631, 4);
-            this.lnkAddItem.Name = "lnkAddItem";
-            this.lnkAddItem.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.lnkAddItem.Size = new System.Drawing.Size(116, 28);
-            this.lnkAddItem.StateCommon.Back.Color1 = System.Drawing.Color.DeepSkyBlue;
-            this.lnkAddItem.StateNormal.Content.LongText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddItem.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddItem.TabIndex = 359;
-            this.lnkAddItem.Values.Text = "Body Posture";
-            this.lnkAddItem.Visible = false;
-            this.lnkAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-            // 
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.btnCancel);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.label12);
             this.kryptonPanel1.Controls.Add(this.btnSave);
-            this.kryptonPanel1.Controls.Add(this.lnkAddItem);
             this.kryptonPanel1.Controls.Add(this.btnMeasureSave);
             this.kryptonPanel1.Controls.Add(this.lblSKUName);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -660,7 +655,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(0, 191);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(959, 34);
+            this.panel1.Size = new System.Drawing.Size(963, 34);
             this.panel1.TabIndex = 382;
             // 
             // picStyle
@@ -740,19 +735,6 @@
             this.btnBodyPosture.TabIndex = 376;
             this.btnBodyPosture.TabStop = false;
             this.btnBodyPosture.Click += new System.EventHandler(this.btnBodyPosture_Click);
-            // 
-            // ctrlMeasurment1
-            // 
-            this.ctrlMeasurment1.BackColor = System.Drawing.Color.White;
-            this.ctrlMeasurment1.DataSource = null;
-            this.ctrlMeasurment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctrlMeasurment1.ForeColor = System.Drawing.Color.Black;
-            this.ctrlMeasurment1.IsEditable = false;
-            this.ctrlMeasurment1.Location = new System.Drawing.Point(0, 0);
-            this.ctrlMeasurment1.Name = "ctrlMeasurment1";
-            this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 450);
-            this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmMeasurement
             // 
@@ -855,7 +837,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton lnkAddItem;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tabControl1;

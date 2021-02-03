@@ -789,14 +789,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void lnkAddItem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmBodyPosture obj = new frmBodyPosture();
-            obj.GarmentID = this.GarmentID;
-            obj.dtTempPosture = this.dtTempPosture;
-            obj.ShowDialog();
-        }
-
         private void ChangedStyleQTY()
         {
             if (Convert.ToInt32(cmbStyleQTY.SelectedItem) > 1)
@@ -1125,6 +1117,14 @@ namespace TAILORING.Order
 
             if (ObjUtil.ValidateTable(dtTempPosture))
             {
+                DataRow[] drup = dtTempPosture.Select("GarmentID=" + GarmentID + " AND BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID=" + p.Name);
+                if (drup.Length > 0)
+                {
+                    p.Parent.BackColor = Color.Transparent;
+                    drup[0].Delete();
+                    dtTempPosture.AcceptChanges();
+                    return;
+                }
                 //DataRow[] dr = dtTempPosture.Select("BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
                 DataRow[] dr = dtTempPosture.Select("GarmentID=" + GarmentID + " AND BodyPostureID=" + BodyPostureID + " AND BodyPostureMappingID<>" + p.Name);
                 if (dr.Length > 0)
@@ -1141,7 +1141,6 @@ namespace TAILORING.Order
             dtTempPosture.Rows.Add(drow);
             dtTempPosture.AcceptChanges();
         }
-
         #endregion
 
         private bool ValidateGarmentStyle()

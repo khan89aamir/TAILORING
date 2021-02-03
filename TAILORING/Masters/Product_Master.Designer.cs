@@ -307,7 +307,7 @@
             // grpKrytonHeader.Panel
             // 
             this.grpKrytonHeader.Panel.Controls.Add(this.grpProduct);
-            this.grpKrytonHeader.Size = new System.Drawing.Size(719, 138);
+            this.grpKrytonHeader.Size = new System.Drawing.Size(736, 138);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpKrytonHeader.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -340,7 +340,7 @@
             this.grpProduct.GlowOn = true;
             this.grpProduct.Location = new System.Drawing.Point(0, 0);
             this.grpProduct.Name = "grpProduct";
-            this.grpProduct.Size = new System.Drawing.Size(711, 108);
+            this.grpProduct.Size = new System.Drawing.Size(728, 108);
             this.grpProduct.TabIndex = 287;
             // 
             // cmbOrderType
@@ -413,7 +413,7 @@
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.groupBox1);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(717, 86);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(734, 86);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -440,7 +440,7 @@
             this.groupBox1.GlowOn = true;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(709, 56);
+            this.groupBox1.Size = new System.Drawing.Size(726, 56);
             this.groupBox1.TabIndex = 287;
             // 
             // txtSearchByGarment
@@ -474,7 +474,7 @@
             // grpGridview.Panel
             // 
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
-            this.grpGridview.Size = new System.Drawing.Size(718, 239);
+            this.grpGridview.Size = new System.Drawing.Size(735, 239);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -499,7 +499,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(733, 189);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
@@ -513,7 +513,7 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(780, 51);
+            this.kryptonPanel1.Size = new System.Drawing.Size(779, 51);
             this.kryptonPanel1.TabIndex = 371;
             // 
             // pictureBox1
@@ -533,7 +533,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(780, 590);
+            this.ClientSize = new System.Drawing.Size(779, 590);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpGridview);
             this.Controls.Add(this.kryptonHeaderGroup1);

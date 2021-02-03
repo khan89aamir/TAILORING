@@ -42,7 +42,6 @@
             this.cmbStyleQTY = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flowStyleName = new System.Windows.Forms.FlowLayoutPanel();
-            this.lnkAddItem = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
             this.lblOrderNo = new System.Windows.Forms.Label();
@@ -272,20 +271,6 @@
             this.flowStyleName.Size = new System.Drawing.Size(228, 409);
             this.flowStyleName.TabIndex = 339;
             // 
-            // lnkAddItem
-            // 
-            this.lnkAddItem.AutoSize = true;
-            this.lnkAddItem.BackColor = System.Drawing.Color.Transparent;
-            this.lnkAddItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddItem.Location = new System.Drawing.Point(861, 9);
-            this.lnkAddItem.Name = "lnkAddItem";
-            this.lnkAddItem.Size = new System.Drawing.Size(113, 21);
-            this.lnkAddItem.TabIndex = 353;
-            this.lnkAddItem.TabStop = true;
-            this.lnkAddItem.Text = "Body Posture";
-            this.lnkAddItem.Visible = false;
-            this.lnkAddItem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAddItem_LinkClicked);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -389,7 +374,6 @@
             this.kryptonPanel1.Controls.Add(this.lblOrderNo);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.label12);
-            this.kryptonPanel1.Controls.Add(this.lnkAddItem);
             this.kryptonPanel1.Controls.Add(this.btnSave);
             this.kryptonPanel1.Controls.Add(this.lblSKUName);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -413,8 +397,9 @@
             // 
             // kryptonHeaderGroup2
             // 
+            this.kryptonHeaderGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(958, 52);
+            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(963, 52);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             this.kryptonHeaderGroup2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
@@ -639,7 +624,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(-10, 197);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 33);
+            this.panel1.Size = new System.Drawing.Size(976, 34);
             this.panel1.TabIndex = 383;
             // 
             // picStyle
@@ -802,7 +787,6 @@
         private System.Windows.Forms.ComboBox cmbStyleQTY;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.FlowLayoutPanel flowStyleName;
-        private System.Windows.Forms.LinkLabel lnkAddItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox grpSKUStatus;
         private System.Windows.Forms.FlowLayoutPanel flowGarmentList;

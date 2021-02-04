@@ -76,9 +76,9 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>..\packages\CoreAppLib.1.0.16\lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="CoreApp, Version=3.1.2.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="CoreApp, Version=3.1.2.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CoreApp.dll</HintPath>
+      <HintPath>..\..\DLL Source Code\CoreApp\CoreApp\bin\x86\Release\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.16\lib\CoreSys.dll</HintPath>

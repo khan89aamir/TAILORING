@@ -145,6 +145,8 @@
             this.dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.Size = new System.Drawing.Size(1008, 338);
+            this.dgvOrderDetails.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dgvOrderDetails.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvOrderDetails.TabIndex = 0;
             this.dgvOrderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellClick);
             this.dgvOrderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellEndEdit);

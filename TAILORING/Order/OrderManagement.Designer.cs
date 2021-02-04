@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -55,6 +55,20 @@
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.ServiceID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Service = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
+            this.TrailDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.DeliveryDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.TrimAmount = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.QTY = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Rate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Total = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -66,20 +80,6 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
-            this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Total = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Rate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.QTY = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.TrimAmount = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.DeliveryDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.TrailDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.Service = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.ServiceID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -523,6 +523,153 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
+            // GarmentID
+            // 
+            this.GarmentID.DataPropertyName = "GarmentID";
+            this.GarmentID.HeaderText = "GarmentID";
+            this.GarmentID.Name = "GarmentID";
+            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GarmentID.Visible = false;
+            this.GarmentID.Width = 100;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "GarmentCode";
+            this.Column1.FillWeight = 100.2838F;
+            this.Column1.HeaderText = "GarmentCode";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 106;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "GarmentName";
+            this.Column2.FillWeight = 97.03809F;
+            this.Column2.HeaderText = "GarmentName";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 103;
+            // 
+            // ServiceID
+            // 
+            this.ServiceID.DataPropertyName = "ServiceID";
+            this.ServiceID.HeaderText = "ServiceID";
+            this.ServiceID.Name = "ServiceID";
+            this.ServiceID.Visible = false;
+            this.ServiceID.Width = 100;
+            // 
+            // Service
+            // 
+            this.Service.DataPropertyName = "Service";
+            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Service.DropDownWidth = 40;
+            this.Service.FillWeight = 102.6595F;
+            this.Service.HeaderText = "Service";
+            this.Service.Items.AddRange(new string[] {
+            "Normal",
+            "Urgent"});
+            this.Service.Name = "Service";
+            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Service.Width = 108;
+            // 
+            // TrailDate
+            // 
+            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.TrailDate.Checked = false;
+            this.TrailDate.DataPropertyName = "TrailDate";
+            this.TrailDate.FillWeight = 102.3659F;
+            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TrailDate.HeaderText = "TrailDate";
+            this.TrailDate.Name = "TrailDate";
+            this.TrailDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrailDate.ShowCheckBox = true;
+            this.TrailDate.Width = 108;
+            // 
+            // DeliveryDate
+            // 
+            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.DeliveryDate.Checked = false;
+            this.DeliveryDate.DataPropertyName = "DeliveryDate";
+            this.DeliveryDate.FillWeight = 100.7437F;
+            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DeliveryDate.HeaderText = "DeliveryDate";
+            this.DeliveryDate.Name = "DeliveryDate";
+            this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDate.Width = 107;
+            // 
+            // TrimAmount
+            // 
+            this.TrimAmount.DataPropertyName = "TrimAmount";
+            this.TrimAmount.FillWeight = 102.0182F;
+            this.TrimAmount.HeaderText = "Trim Amount";
+            this.TrimAmount.Name = "TrimAmount";
+            this.TrimAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrimAmount.Width = 108;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.FillWeight = 104.4484F;
+            this.QTY.HeaderText = "QTY";
+            this.QTY.Name = "QTY";
+            this.QTY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.QTY.Width = 110;
+            // 
+            // Rate
+            // 
+            this.Rate.DataPropertyName = "Rate";
+            this.Rate.FillWeight = 99.78585F;
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Rate.Width = 105;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.FillWeight = 97.39281F;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Total.Width = 103;
+            // 
+            // Photo
+            // 
+            this.Photo.DataPropertyName = "Photo";
+            this.Photo.HeaderText = "Photo";
+            this.Photo.Name = "Photo";
+            this.Photo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Photo.Visible = false;
+            this.Photo.Width = 100;
+            // 
+            // ColDelete
+            // 
+            this.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColDelete.DataPropertyName = "Delete";
+            this.ColDelete.FillWeight = 93.26373F;
+            this.ColDelete.HeaderText = "Delete";
+            this.ColDelete.Name = "ColDelete";
+            this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColDelete.Text = "Delete";
+            this.ColDelete.UseColumnTextForButtonValue = true;
+            // 
+            // ColDelete1
+            // 
+            this.ColDelete1.DataPropertyName = "Delete1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColDelete1.HeaderText = "Delete1";
+            this.ColDelete1.Name = "ColDelete1";
+            this.ColDelete1.Text = "Delete1";
+            this.ColDelete1.UseColumnTextForButtonValue = true;
+            this.ColDelete1.Visible = false;
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -572,6 +719,7 @@
             // 
             this.txtCGST.Location = new System.Drawing.Point(498, 605);
             this.txtCGST.Name = "txtCGST";
+            this.txtCGST.ReadOnly = true;
             this.txtCGST.Size = new System.Drawing.Size(59, 31);
             this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
@@ -715,153 +863,6 @@
             this.kryptonPanel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
             this.kryptonPanel2.Size = new System.Drawing.Size(1137, 51);
             this.kryptonPanel2.TabIndex = 388;
-            // 
-            // ColDelete1
-            // 
-            this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColDelete1.HeaderText = "Delete1";
-            this.ColDelete1.Name = "ColDelete1";
-            this.ColDelete1.Text = "Delete1";
-            this.ColDelete1.UseColumnTextForButtonValue = true;
-            this.ColDelete1.Visible = false;
-            // 
-            // ColDelete
-            // 
-            this.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColDelete.DataPropertyName = "Delete";
-            this.ColDelete.FillWeight = 93.26373F;
-            this.ColDelete.HeaderText = "Delete";
-            this.ColDelete.Name = "ColDelete";
-            this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColDelete.Text = "Delete";
-            this.ColDelete.UseColumnTextForButtonValue = true;
-            // 
-            // Photo
-            // 
-            this.Photo.DataPropertyName = "Photo";
-            this.Photo.HeaderText = "Photo";
-            this.Photo.Name = "Photo";
-            this.Photo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Photo.Visible = false;
-            this.Photo.Width = 100;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.FillWeight = 97.39281F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Total.Width = 103;
-            // 
-            // Rate
-            // 
-            this.Rate.DataPropertyName = "Rate";
-            this.Rate.FillWeight = 99.78585F;
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            this.Rate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Rate.Width = 105;
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.FillWeight = 104.4484F;
-            this.QTY.HeaderText = "QTY";
-            this.QTY.Name = "QTY";
-            this.QTY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.QTY.Width = 110;
-            // 
-            // TrimAmount
-            // 
-            this.TrimAmount.DataPropertyName = "TrimAmount";
-            this.TrimAmount.FillWeight = 102.0182F;
-            this.TrimAmount.HeaderText = "Trim Amount";
-            this.TrimAmount.Name = "TrimAmount";
-            this.TrimAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrimAmount.Width = 108;
-            // 
-            // DeliveryDate
-            // 
-            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.DeliveryDate.Checked = false;
-            this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.FillWeight = 100.7437F;
-            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DeliveryDate.HeaderText = "DeliveryDate";
-            this.DeliveryDate.Name = "DeliveryDate";
-            this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDate.Width = 107;
-            // 
-            // TrailDate
-            // 
-            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.TrailDate.Checked = false;
-            this.TrailDate.DataPropertyName = "TrailDate";
-            this.TrailDate.FillWeight = 102.3659F;
-            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TrailDate.HeaderText = "TrailDate";
-            this.TrailDate.Name = "TrailDate";
-            this.TrailDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailDate.ShowCheckBox = true;
-            this.TrailDate.Width = 108;
-            // 
-            // Service
-            // 
-            this.Service.DataPropertyName = "Service";
-            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Service.DropDownWidth = 40;
-            this.Service.FillWeight = 102.6595F;
-            this.Service.HeaderText = "Service";
-            this.Service.Items.AddRange(new string[] {
-            "Normal",
-            "Urgent"});
-            this.Service.Name = "Service";
-            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Service.Width = 108;
-            // 
-            // ServiceID
-            // 
-            this.ServiceID.DataPropertyName = "ServiceID";
-            this.ServiceID.HeaderText = "ServiceID";
-            this.ServiceID.Name = "ServiceID";
-            this.ServiceID.Visible = false;
-            this.ServiceID.Width = 100;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "GarmentName";
-            this.Column2.FillWeight = 97.03809F;
-            this.Column2.HeaderText = "GarmentName";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 103;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "GarmentCode";
-            this.Column1.FillWeight = 100.2838F;
-            this.Column1.HeaderText = "GarmentCode";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 106;
-            // 
-            // GarmentID
-            // 
-            this.GarmentID.DataPropertyName = "GarmentID";
-            this.GarmentID.HeaderText = "GarmentID";
-            this.GarmentID.Name = "GarmentID";
-            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GarmentID.Visible = false;
-            this.GarmentID.Width = 100;
             // 
             // frmOrderManagement
             // 

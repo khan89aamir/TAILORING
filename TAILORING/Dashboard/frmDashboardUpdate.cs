@@ -306,29 +306,29 @@ namespace TAILORING.Dashboard
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             //KryptonTextBox txt = (KryptonTextBox)sender;
-            if (e.KeyChar != 13)
-            {
+            //if (e.KeyChar != 13)
+            //{
                 e.Handled = ObjUtil.IsString(e);
                 if (e.Handled)
                 {
                     clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
                     txtSearchByCustomerName.Focus();
                 }
-            }
+            //}
         }
 
         private void txtSearchByMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             //KryptonTextBox txt = (KryptonTextBox)sender;
-            if (e.KeyChar != 13)
-            {
+            //if (e.KeyChar != 13)
+            //{
                 e.Handled = ObjUtil.IsNumeric(e);
                 if (e.Handled)
                 {
                     clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
                     txtSearchByCustomerMobileNo.Focus();
                 }
-            }
+            //}
         }
 
         private void picSearchOrderReceive_Click(object sender, EventArgs e)

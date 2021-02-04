@@ -357,6 +357,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtEmployeeCode.StateNormal.Border.Rounding = 20;
             this.txtEmployeeCode.TabIndex = 380;
+            this.txtEmployeeCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmployeeCode_KeyPress);
             // 
             // label16
             // 

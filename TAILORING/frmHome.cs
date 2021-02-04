@@ -76,7 +76,7 @@ namespace TAILORING
                     return ip.ToString();
                 }
             }
-            MessageBox.Show("No network adapters with an IPv4 address in the system!");
+            clsUtility.ShowInfoMessage("No network adapters with an IPv4 address in the system!");
             return "NA";
         }
         private void frmHome_Load(object sender, EventArgs e)
@@ -89,6 +89,8 @@ namespace TAILORING
                 //clsUtility.IsAdmin = false;
                 clsUtility.IsAdmin = true;
                 clsUtility.strProjectTitle = "Smart Tailor Solution";
+                //clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+
                 if (clsUtility.LoginID > 0)
                 {
                     object ob = ObjDAL.ExecuteScalar("SELECT UserName from " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK) WHERE UserID =" + clsUtility.LoginID);

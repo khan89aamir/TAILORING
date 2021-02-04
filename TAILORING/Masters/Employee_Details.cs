@@ -48,6 +48,11 @@ namespace TAILORING.Masters
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void Employee_Details_Load(object sender, EventArgs e)
         {
             dtpDOB.ShowCheckBox = true;
@@ -57,7 +62,7 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadTailoringTheme();
-
+            SetDataGridviewPaletteMode(dgvEmployee);
             EnableDisable(false);
 
             LoadData();
@@ -540,8 +545,9 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Employee_Details, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
-                DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtName.Text + "' ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (d == DialogResult.Yes)
+                //DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtName.Text + "' ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete '" + txtName.Text + "' ? ");
+                if (d)
                 {
                     ObjDAL.SetStoreProcedureData("EmpID", SqlDbType.Int, EmployeeID, clsConnection_DAL.ParamType.Input);
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Employee");
@@ -556,8 +562,8 @@ namespace TAILORING.Masters
                     else
                     {
                         clsUtility.ShowErrorMessage("Failed to delete the employee. ", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                 }
             }
             else
@@ -569,31 +575,31 @@ namespace TAILORING.Masters
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            if (e.KeyChar != 13)
+            //if (e.KeyChar != 13)
+            //{
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsString(e);
+            if (e.Handled)
             {
-                KryptonTextBox txt = (KryptonTextBox)sender;
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txt.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
+            //}
         }
 
         private void txtMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            if (e.KeyChar != 13)
+            //if (e.KeyChar != 13)
+            //{
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsNumeric(e);
+            if (e.Handled)
             {
-                KryptonTextBox txt = (KryptonTextBox)sender;
-                e.Handled = ObjUtil.IsNumeric(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                    txt.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
+            //}
         }
 
         private void txtSearchByEmpName_TextChanged(object sender, EventArgs e)
@@ -710,6 +716,17 @@ namespace TAILORING.Masters
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 PicEmployee.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private void txtEmployeeCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Employee Code...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
         }
     }

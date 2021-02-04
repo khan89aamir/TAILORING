@@ -47,12 +47,18 @@ namespace TAILORING
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmUserRights_Load(object sender, EventArgs e)
         {
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.Beginning);
 
             LoadTailoringTheme();
+            SetDataGridviewPaletteMode(dgvUserRIghts);
 
             InitRightTable();
             LoadRightGrid();
@@ -621,8 +627,9 @@ namespace TAILORING
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult d = MessageBox.Show("Are you sure want to delete user rights for User :  '" + txtName.Text + "'  ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (d == DialogResult.Yes)
+            //DialogResult d = MessageBox.Show("Are you sure want to delete user rights for User :  '" + txtName.Text + "'  ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete user rights for User :  '" + txtName.Text + "'  ");
+            if (d)
             {
                 ObjCon.ExecuteNonQuery("DELETE " + clsUtility.DBName + ".[dbo].[tblUserRights] WHERE UserID=" + txtUserID.Text);
                 clsUtility.ShowInfoMessage("Rights has been deleted.", clsUtility.strProjectTitle);

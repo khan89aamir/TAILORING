@@ -37,25 +37,25 @@ namespace TAILORING.Masters
         {
             if (ObjUtil.IsControlTextEmpty(txtCustomerName))
             {
-                clsUtility.ShowInfoMessage("Enter Customer Name       ", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Customer Name       ");
                 txtCustomerName.Focus();
                 return false;
             }
             else if (ObjUtil.IsControlTextEmpty(txtCustomerMobileNo))
             {
-                clsUtility.ShowInfoMessage("Enter Customer Mobile No.      ", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Customer Mobile No.      ");
                 txtCustomerMobileNo.Focus();
                 return false;
             }
             else if (txtCustomerMobileNo.Text.Length < 10)
             {
-                clsUtility.ShowInfoMessage("Enter Valid Customer Mobile No.      ", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Valid Customer Mobile No.      ");
                 txtCustomerMobileNo.Focus();
                 return false;
             }
             else if (ObjUtil.IsControlTextEmpty(txtCustomerAddress))
             {
-                clsUtility.ShowInfoMessage("Enter Customer Address.      ", clsUtility.strProjectTitle);
+                clsUtility.ShowInfoMessage("Enter Customer Address.      ");
                 txtCustomerAddress.Focus();
                 return false;
             }
@@ -107,6 +107,7 @@ namespace TAILORING.Masters
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearAll();
+
             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew, clsUtility.IsAdmin);
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
 
@@ -134,14 +135,14 @@ namespace TAILORING.Masters
                         {
                             //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave, clsUtility.IsAdmin);
                             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterSave);
-                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..", clsUtility.strProjectTitle);
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is Saved Successfully..");
                             ClearAll();
                             LoadData();
                             EnableDisable(false);
                         }
                         else
                         {
-                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..", clsUtility.strProjectTitle);
+                            clsUtility.ShowInfoMessage("Customer Name : '" + txtCustomerName.Text + "' is not Saved Successfully..");
                         }
                     }
                     else
@@ -225,8 +226,9 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
-                DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtCustomerName.Text + "' Customer ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (d == DialogResult.Yes)
+                //DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtCustomerName.Text + "' Customer ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete '" + txtCustomerName.Text + "' Customer ");
+                if (d)
                 {
                     ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Customer");
@@ -242,8 +244,8 @@ namespace TAILORING.Masters
                     else
                     {
                         clsUtility.ShowErrorMessage("'" + txtCustomerName.Text + "' Customer is not deleted  ", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                 }
             }
             else
@@ -321,6 +323,11 @@ namespace TAILORING.Masters
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void Customer_Master_Load(object sender, EventArgs e)
         {
             //btnUpdate.Font = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 14.3f,FontStyle.Bold);
@@ -333,6 +340,8 @@ namespace TAILORING.Masters
             dgvCustomerMaster.RowHeadersVisible = false; // set it to false if not needed
 
             LoadTailoringTheme();
+
+            SetDataGridviewPaletteMode(dgvCustomerMaster);
 
             LoadData();
 
@@ -421,16 +430,16 @@ namespace TAILORING.Masters
         private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            if (e.KeyChar != 13)
+            //if (e.KeyChar != 13)
+            //{
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsString(e);
+            if (e.Handled)
             {
-                KryptonTextBox txt = (KryptonTextBox)sender;
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txt.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
+            //}
         }
 
         private void rdSearchByCustomerMobileNo_CheckedChanged(object sender, EventArgs e)
@@ -450,8 +459,8 @@ namespace TAILORING.Masters
         private void txtSearchByMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             //TextBox txt = (TextBox)sender;
-            if (e.KeyChar != 13)
-            {
+            //if (e.KeyChar != 13)
+            //{
                 KryptonTextBox txt = (KryptonTextBox)sender;
                 e.Handled = ObjUtil.IsNumeric(e);
                 if (e.Handled)
@@ -459,7 +468,7 @@ namespace TAILORING.Masters
                     clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
                     txt.Focus();
                 }
-            }
+            //}
         }
 
         private void txtSearchByMobileNo_TextChanged(object sender, EventArgs e)

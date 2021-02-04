@@ -294,6 +294,7 @@
             this.dgvCustomerMaster.Location = new System.Drawing.Point(0, 0);
             this.dgvCustomerMaster.MultiSelect = false;
             this.dgvCustomerMaster.Name = "dgvCustomerMaster";
+            this.dgvCustomerMaster.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.dgvCustomerMaster.ReadOnly = true;
             this.dgvCustomerMaster.Size = new System.Drawing.Size(756, 183);
             this.dgvCustomerMaster.TabIndex = 287;

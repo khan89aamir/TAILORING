@@ -317,9 +317,6 @@ namespace TAILORING.Masters
             // 
             // grpCustomerGridview
             // 
-            this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpCustomerGridview.Location = new System.Drawing.Point(18, 282);
             this.grpCustomerGridview.Name = "grpCustomerGridview";
             this.grpCustomerGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
@@ -353,6 +350,8 @@ namespace TAILORING.Masters
             this.dgvCompanyMaster.Name = "dgvCompanyMaster";
             this.dgvCompanyMaster.ReadOnly = true;
             this.dgvCompanyMaster.Size = new System.Drawing.Size(751, 136);
+            this.dgvCompanyMaster.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dgvCompanyMaster.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvCompanyMaster.TabIndex = 0;
             this.dgvCompanyMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanyMaster_CellDoubleClick);
             this.dgvCompanyMaster.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCompanyMaster_DataBindingComplete);

@@ -22,8 +22,14 @@ namespace TAILORING.Dashboard
         CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
         CoreApp.clsUtility ObjUtil = new CoreApp.clsUtility();
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmOrderDelivery_Load(object sender, EventArgs e)
         {
+            SetDataGridviewPaletteMode(dgvOrderDetails);
             LoadOrderReceive();
         }
         private void LoadOrderReceive()

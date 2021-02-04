@@ -73,9 +73,15 @@ namespace TAILORING.Order
             btnMeasurement.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             LoadTailoringTheme();
+            SetDataGridviewPaletteMode(dataGridView1);
 
             txtCustomerID.Text = CustomerID.ToString();
             txtCustomerName.Text = CustName;
@@ -1113,8 +1119,9 @@ namespace TAILORING.Order
                     //pSalesOrderDetailsID = dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value == DBNull.Value
                     //    ? 0 : Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value);
 
-                    DialogResult d = MessageBox.Show("Are you sure want to delete ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (d == DialogResult.Yes)
+                    //DialogResult d = MessageBox.Show("Are you sure want to delete ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete ? ");
+                    if (d)
                     {
                         int a = 0;
                         DataTable dt = (DataTable)dataGridView1.DataSource;

@@ -39,7 +39,7 @@ namespace TAILORING.Report.Forms
             {
                 Directory.CreateDirectory(Application.StartupPath + "//BarCodeImg");
             }
-            
+
             // OrderID = "1";
             LoadTailoringTheme();
             LoadData();
@@ -239,7 +239,7 @@ namespace TAILORING.Report.Forms
                     }
                 }
             }
-       
+
         }
 
         private void InitMearumentStyleTable()
@@ -298,7 +298,7 @@ namespace TAILORING.Report.Forms
             #endregion
 
             dtMeasurment.Columns.Add("barcode");
-            
+
         }
         private string GenerateSubOrderNo(string SKUNo, int QTYNo, int TotalQTY, string pOrderNo)
         {
@@ -368,12 +368,12 @@ namespace TAILORING.Report.Forms
                         string GarmendID = dtOrderDetails.Rows[i]["GarmentID"].ToString();
                         string SalesOrderDetailsID = dtOrderDetails.Rows[i]["SalesOrderDetailsID"].ToString();
 
-                        DataRow [] dRow= dtOrderDetails.Select("GarmentID='" + GarmendID+"'");
+                        DataRow[] dRow = dtOrderDetails.Select("GarmentID='" + GarmendID + "'");
                         TotalGarmentQTY = dRow.Length;
 
                         // if both the garment ID match means loop is iterating for previous garment only.
                         // then increase the QTY
-                        if (LastGarmentID==Convert.ToInt32(GarmendID))
+                        if (LastGarmentID == Convert.ToInt32(GarmendID))
                         {
                             CurQTY++;
                         }
@@ -449,57 +449,57 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
-                          string subOrderNo = "NA";
+                        string subOrderNo = "NA";
 
-                            DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + CurQTY + " and SalesOrderID = " + OrderID);
-                            if (ObjUtil.ValidateTable(dtStyles))
+                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + CurQTY + " and SalesOrderID = " + OrderID);
+                        if (ObjUtil.ValidateTable(dtStyles))
+                        {
+                            for (int s = 0; s < dtStyles.Rows.Count; s++)
                             {
-                                for (int s = 0; s < dtStyles.Rows.Count; s++)
+                                switch (s)
                                 {
-                                    switch (s)
-                                    {
-                                        case 0:
+                                    case 0:
 
-                                            s1 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 1:
+                                        s1 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 1:
 
-                                            s2 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 2:
+                                        s2 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 2:
 
-                                            s3 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 3:
+                                        s3 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 3:
 
-                                            s4 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 4:
+                                        s4 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 4:
 
-                                            s5 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 5:
+                                        s5 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 5:
 
-                                            s6 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
-                                        case 6:
+                                        s6 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
+                                    case 6:
 
-                                            s7 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
-                                            break;
+                                        s7 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        break;
 
-                                    }
                                 }
                             }
+                        }
 
                         // add product ID as unique so that you can see record in list view for each QTY separately
                         inc = i;
-                             subOrderNo = GenerateSubOrderNo(PU, CurQTY, TotalGarmentQTY, OrderNo);
+                        subOrderNo = GenerateSubOrderNo(PU, CurQTY, TotalGarmentQTY, OrderNo);
 
-                     Bitmap bmpBarCode = IMS_Client_2.Barcode.clsBarCodeUtility.GenerateBarCode(subOrderNo);
+                        Bitmap bmpBarCode = IMS_Client_2.Barcode.clsBarCodeUtility.GenerateBarCode(subOrderNo);
                         string imgPath = "";
                         if (bmpBarCode != null)
                         {
-                            imgPath = Application.StartupPath + "//BarCodeImg//" + subOrderNo.Replace("/","_")+".jpeg";
+                            imgPath = Application.StartupPath + "//BarCodeImg//" + subOrderNo.Replace("/", "_") + ".jpeg";
 
                             if (!File.Exists(imgPath))
                             {
@@ -517,7 +517,7 @@ namespace TAILORING.Report.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                clsUtility.ShowErrorMessage(ex.ToString());
             }
 
             int count2 = dtMeasurment.Rows.Count;
@@ -525,8 +525,7 @@ namespace TAILORING.Report.Forms
 
         private void UpdateSubOrderNo(string subOrderNo, string SalesOrderDetailsID)
         {
-          ObjCon.ExecuteNonQuery("update  "+clsUtility.DBName+".dbo.[tblSalesOrderDetails] set SubOrderNo='"+ subOrderNo + "' where "+
-                                " SalesOrderDetailsID="+ SalesOrderDetailsID);
+            ObjCon.ExecuteNonQuery("update  " + clsUtility.DBName + ".dbo.[tblSalesOrderDetails] set SubOrderNo='" + subOrderNo + "' where SalesOrderDetailsID=" + SalesOrderDetailsID);
 
         }
         private void InitiMeasrument()

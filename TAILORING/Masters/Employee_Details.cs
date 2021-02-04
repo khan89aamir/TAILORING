@@ -349,16 +349,6 @@ namespace TAILORING.Masters
             PicEmployee.Image = null;
         }
 
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-            txtPass.UseSystemPasswordChar = false;
-        }
-
-        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-        {
-            txtPass.UseSystemPasswordChar = true;
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             bool b = clsUtility.ShowQuestionMessage(clsUtility.MsgActionCancel, clsUtility.strProjectTitle);
@@ -728,6 +718,17 @@ namespace TAILORING.Masters
                 clsUtility.ShowInfoMessage("Enter Valid Employee Code...", clsUtility.strProjectTitle);
                 txt.Focus();
             }
+        }
+
+        private void picIMGPass_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = false;
+            txtPass.PasswordChar = '\0';
+        }
+
+        private void picIMGPass_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }

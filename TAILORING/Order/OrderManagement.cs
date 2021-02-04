@@ -795,20 +795,7 @@ namespace TAILORING.Order
             e.Cancel = false;
             int column = dataGridView1.CurrentCell.ColumnIndex;
             string headerText = dataGridView1.Columns[column].HeaderText;
-            //if (headerText == "QTY")
-            //{
-            //    if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
-            //    {
-            //        clsUtility.ShowInfoMessage("Enter QTY..");
-            //        e.Cancel = true;
-            //    }
-            //    else if (Convert.ToInt32(e.FormattedValue) == 0)
-            //    {
-            //        clsUtility.ShowInfoMessage("Enter Valid QTY..");
-            //        e.Cancel = true;
-            //    }
-            //    return;
-            //}
+            
             if (headerText == "Trim Amount")
             {
                 //if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
@@ -839,10 +826,6 @@ namespace TAILORING.Order
                 //e.Control.KeyPress += Decimal_Control_KeyPress;
                 e.Control.KeyPress += Int_Control_KeyPress;
             }
-            //else if (headerText == "QTY")
-            //{
-            //    e.Control.KeyPress += Int_Control_KeyPress;
-            //}
             else if (headerText == "Service")
             {
                 cmbService = (KryptonComboBox)e.Control;

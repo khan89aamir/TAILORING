@@ -136,9 +136,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UserManagement, Version=1.3.5.1, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="UserManagement, Version=1.3.5.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\DLL\UserManagement.dll</HintPath>
+      <HintPath>..\..\..\DLL\UserManagement.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.6\lib\net40\zxing.dll</HintPath>

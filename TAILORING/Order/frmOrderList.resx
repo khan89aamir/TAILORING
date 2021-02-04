@@ -156,220 +156,6 @@
   <data name="kryptonHeaderGroup1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 58</value>
   </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Name" xml:space="preserve">
-    <value>txtCustomerOrderNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerOrderNo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Name" xml:space="preserve">
-    <value>txtCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Name" xml:space="preserve">
-    <value>txtCustomerName</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonTextBox, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Name" xml:space="preserve">
-    <value>radByOrderNo</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByOrderNo.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Name" xml:space="preserve">
-    <value>txtCustomerID</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtCustomerID.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Name" xml:space="preserve">
-    <value>dtpToDate</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpToDate.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Name" xml:space="preserve">
-    <value>radByCustomerMobileNo</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerMobileNo.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Name" xml:space="preserve">
-    <value>dtpFromDate</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;dtpFromDate.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Name" xml:space="preserve">
-    <value>radByCustomerName</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByCustomerName.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Name" xml:space="preserve">
-    <value>radByDate</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radByDate.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;radByDate.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Name" xml:space="preserve">
-    <value>rdShowAll</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;rdShowAll.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1122, 93</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>287</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>kryptonHeaderGroup1.Panel</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Name" xml:space="preserve">
-    <value>kryptonHeaderGroup1.Panel</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Parent" xml:space="preserve">
-    <value>kryptonHeaderGroup1</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="kryptonHeaderGroup1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1130, 123</value>
-  </data>
-  <data name="kryptonHeaderGroup1.TabIndex" type="System.Int32, mscorlib">
-    <value>330</value>
-  </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
-    <value>Search By</value>
-  </data>
-  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QELDCUwpwyXDwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE7SURBVDhP
-        lZO9SoNBEEW/IkFtbNR3UPyrLCSktxN8Ad9DfIBYapAg1oHYWQoqiIraKiKiWIimsBEsRGLheu7uDfqR
-        RMyBw2buzITdQLJehBBK2MAmfvrcwbJHusNAAasovvAS93yqFjUseiUPjc04EsIxTuA0LuMSzuERippX
-        fiAsp144wVHcjVUILZ+HWMT2l+SfQ6A3i0nU8gsuopZGcMxz46jnNOJiG4JnvMFh/MAFtzqgd4VNlwmC
-        dzzw56EY9oC+ftiWywTBA966/BPmrvHJZYJgG8Wso67Qn0L9BnVHCS2iOMdBxznIB/BUQzDvOEGwlvLI
-        BeZuQj2DZ2rCuuMEQSXlHdzhvk+hq29gwatdl3UTPWcL7/EVH7GOJa8lCFbxNxW3/gcLb2kv0t+yYEn/
-        PF1xxVEfZNk3xZHaOsH9RpMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Name" xml:space="preserve">
-    <value>kryptonHeaderGroup1</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Type" xml:space="preserve">
-    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;kryptonHeaderGroup1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="txtCustomerOrderNo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -581,7 +367,7 @@
     <value>dtpToDate</value>
   </data>
   <data name="&gt;&gt;dtpToDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;dtpToDate.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -657,7 +443,7 @@
     <value>dtpFromDate</value>
   </data>
   <data name="&gt;&gt;dtpFromDate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
   </data>
   <data name="&gt;&gt;dtpFromDate.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -788,6 +574,76 @@
   <data name="&gt;&gt;rdShowAll.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1122, 93</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>287</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>gGlowBox.gGlowGroupBox, gGlowBox, Version=1.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>kryptonHeaderGroup1.Panel</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Name" xml:space="preserve">
+    <value>kryptonHeaderGroup1.Panel</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonGroupPanel, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.Parent" xml:space="preserve">
+    <value>kryptonHeaderGroup1</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Panel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="kryptonHeaderGroup1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1130, 123</value>
+  </data>
+  <data name="kryptonHeaderGroup1.TabIndex" type="System.Int32, mscorlib">
+    <value>330</value>
+  </data>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Heading" xml:space="preserve">
+    <value>Search By</value>
+  </data>
+  <data name="kryptonHeaderGroup1.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5QELDCUwpwyXDwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE7SURBVDhP
+        lZO9SoNBEEW/IkFtbNR3UPyrLCSktxN8Ad9DfIBYapAg1oHYWQoqiIraKiKiWIimsBEsRGLheu7uDfqR
+        RMyBw2buzITdQLJehBBK2MAmfvrcwbJHusNAAasovvAS93yqFjUseiUPjc04EsIxTuA0LuMSzuERippX
+        fiAsp144wVHcjVUILZ+HWMT2l+SfQ6A3i0nU8gsuopZGcMxz46jnNOJiG4JnvMFh/MAFtzqgd4VNlwmC
+        dzzw56EY9oC+ftiWywTBA966/BPmrvHJZYJgG8Wso67Qn0L9BnVHCS2iOMdBxznIB/BUQzDvOEGwlvLI
+        BeZuQj2DZ2rCuuMEQSXlHdzhvk+hq29gwatdl3UTPWcL7/EVH7GOJa8lCFbxNxW3/gcLb2kv0t+yYEn/
+        PF1xxVEfZNk3xZHaOsH9RpMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Name" xml:space="preserve">
+    <value>kryptonHeaderGroup1</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Type" xml:space="preserve">
+    <value>ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup, ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonHeaderGroup1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="grpCustomerGridview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -865,6 +721,18 @@
   <data name="&gt;&gt;grpCustomerGridview.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 6</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 34</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>364</value>
+  </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
   </data>
@@ -899,30 +767,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;kryptonPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 6</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 34</value>
-  </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>364</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>kryptonPanel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

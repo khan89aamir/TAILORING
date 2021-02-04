@@ -170,6 +170,7 @@ namespace TAILORING
         private void picIMGPass_MouseDown(object sender, MouseEventArgs e)
         {
             txtPassword.UseSystemPasswordChar = false;
+            txtPassword.PasswordChar = '\0';
         }
 
         private void picIMGPass_MouseUp(object sender, MouseEventArgs e)

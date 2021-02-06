@@ -154,7 +154,6 @@ namespace TAILORING.Masters
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
                 EnableDisable(true);
-                cmbOrderType.SelectedIndex = -1;
                 txtGarmentCode.Focus();
                 txtGarmentCode.SelectionStart = txtGarmentCode.MaxLength;
             }

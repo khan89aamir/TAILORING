@@ -104,6 +104,7 @@ namespace TAILORING.Order
             dtOrderDetails.Columns.Add("SalesOrderID");
             dtOrderDetails.Columns.Add("StichTypeID", typeof(int));
             dtOrderDetails.Columns.Add("FitTypeID", typeof(int));
+            dtOrderDetails.Columns.Add("MasterGarmentID");
             dtOrderDetails.Columns.Add("GarmentID");
             dtOrderDetails.Columns.Add("Service");
             dtOrderDetails.Columns.Add("TrailDate");

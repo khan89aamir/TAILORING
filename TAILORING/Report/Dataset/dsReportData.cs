@@ -4,6 +4,10 @@
 
     partial class dsReportData
     {
+        partial class dtSKUDataTable
+        {
+        }
+
         partial class MeasurmentDataTable
         {
         }

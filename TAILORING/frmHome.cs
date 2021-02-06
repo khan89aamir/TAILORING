@@ -393,5 +393,23 @@ namespace TAILORING
             Barcode.frmBarcodePrint frmBarcodePrint = new Barcode.frmBarcodePrint();
             frmBarcodePrint.Show();
         }
+
+        private void kryptonRibbonGroupButton53_Click(object sender, EventArgs e)
+        {
+            Report.Forms.frmCustomerDetails frmCustomerDetails = new Report.Forms.frmCustomerDetails();
+            frmCustomerDetails.Show();
+        }
+
+        private void kryptonRibbonGroupButton56_Click(object sender, EventArgs e)
+        {
+            Report.Forms.frmSKUDetails frmCustomerDetails = new Report.Forms.frmSKUDetails();
+            frmCustomerDetails.Show();
+        }
+
+        private void kryptonRibbonGroupButton62_Click(object sender, EventArgs e)
+        {
+            Settings.frmSettings frmSettings = new Settings.frmSettings();
+            frmSettings.ShowDialog();
+        }
     }
 }

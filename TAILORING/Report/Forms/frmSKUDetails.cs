@@ -1,6 +1,4 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
-using CoreApp;
-using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,15 +7,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CoreApp;
+using Microsoft.Reporting.WinForms;
 
 namespace TAILORING.Report.Forms
 {
-    public partial class frmCustomerDetails : KryptonForm
+    public partial class frmSKUDetails : KryptonForm
     {
-        public frmCustomerDetails()
+        clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+        public frmSKUDetails()
         {
             InitializeComponent();
         }
+        public string OrderList;
         string strcomName = "";
         string parmGSTNo = "";
         string storeAddress = "";
@@ -28,9 +30,7 @@ namespace TAILORING.Report.Forms
         string strCustomerAddress = "";
         string strCompMobile = "";
         string strCompEmail = "";
-
-        CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
-        private void frmCustomerDetails_Load(object sender, EventArgs e)
+        private void frmSKUDetails_Load(object sender, EventArgs e)
         {
             DataTable dtCompany = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster");
             if (dtCompany.Rows.Count > 0)
@@ -52,10 +52,11 @@ namespace TAILORING.Report.Forms
                 ReportParameter param8 = new ReportParameter("parmGSTNo", parmGSTNo, true);
                 ReportParameter param9 = new ReportParameter("parmCompanyMobile", strCompMobile, true);
                 ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
-            
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CustomerMaster ");
+              
 
-                ReportDataSource rds2 = new ReportDataSource("dsCustomer", dt);
+                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.tblProductMaster ");
+
+                ReportDataSource rds2 = new ReportDataSource("dsSKU", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);
                 reportViewer1.LocalReport.SetParameters(param1);
 
@@ -65,7 +66,7 @@ namespace TAILORING.Report.Forms
                 reportViewer1.LocalReport.SetParameters(param8);
                 reportViewer1.LocalReport.SetParameters(param9);
                 reportViewer1.LocalReport.SetParameters(param10);
-         
+             
 
 
 

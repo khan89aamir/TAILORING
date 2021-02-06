@@ -153,6 +153,7 @@ namespace TAILORING.Dashboard
                         Obj.CustAddress = strAddress;
                         //this.Close();
                         Obj.ShowDialog();
+                        BindDasbhoardData();
                     }
                 }
                 else
@@ -197,6 +198,7 @@ namespace TAILORING.Dashboard
                         Obj.CustAddress = strAddress;
                         //this.Close();
                         Obj.ShowDialog();
+                        BindDasbhoardData();
                     }
                 }
                 else
@@ -281,6 +283,7 @@ namespace TAILORING.Dashboard
                     Obj.CustAddress = strAddress;
                     //this.Close();
                     Obj.ShowDialog();
+                    BindDasbhoardData();
                 }
                 else
                 {
@@ -296,6 +299,7 @@ namespace TAILORING.Dashboard
             {
                 frmQuickCustomer Obj = new frmQuickCustomer();
                 Obj.ShowDialog();
+                BindDasbhoardData();
             }
             else
             {

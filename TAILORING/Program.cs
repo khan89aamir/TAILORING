@@ -64,8 +64,8 @@ namespace TAILORING
                 }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-               // Application.Run(new Others.Test.Form1());
                 Application.Run(new frmHome());
+                Application.Run(new Dashboard.frmCreateChalan());
                 //Application.Run(new Report.Forms.frmBill());
             }
         }

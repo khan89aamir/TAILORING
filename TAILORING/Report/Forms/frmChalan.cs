@@ -56,7 +56,7 @@ namespace TAILORING.Report.Forms
                 ReportParameter param11 = new ReportParameter("parmDate", DateTime.Now.ToShortDateString(), true);
 
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from vw_Chalan_Rdlc where SalesOrderID in (" + OrderList + ")");
+                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from "+clsUtility.DBName+".dbo.vw_Chalan_Rdlc where SubOrderNo in (" + OrderList + ")");
 
                 ReportDataSource rds2 = new ReportDataSource("dsChalan", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);

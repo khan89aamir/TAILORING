@@ -37,8 +37,21 @@ namespace TAILORING.Report.Forms
         string strCompEmail = "";
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
+            BindOrderStatus();
+          
 
-    
+
+        }
+        private void BindOrderStatus()
+        {
+         DataTable dtOrderStatus=   ObjDAL.ExecuteSelectStatement(" select * from "+ clsUtility.DBName + ".dbo.tblOrderStatusMaster");
+            if (dtOrderStatus.Rows.Count>0)
+            {
+                cmbOrderStatus.DataSource = dtOrderStatus;
+                cmbOrderStatus.DisplayMember = "OrderStatus";
+                cmbOrderStatus.ValueMember = "Id";
+            }
+            cmbOrderStatus.SelectedIndex = -1;
         }
         private void GenerateButton()
         {
@@ -65,9 +78,9 @@ namespace TAILORING.Report.Forms
                 ReportParameter param11 = new ReportParameter("parmDate", DateTime.Now.ToShortDateString(), true);
 
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from vw_Chalan_Rdlc");
+                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from vw_OrderDetails_RDLC");
 
-                ReportDataSource rds2 = new ReportDataSource("dsChalan", dt);
+                ReportDataSource rds2 = new ReportDataSource("dsOrderDetails", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);
                 reportViewer1.LocalReport.SetParameters(param1);
 

@@ -7,65 +7,37 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>473330da-f04d-4296-9cd9-06f82253650f</rd:DataSourceID>
+      <rd:DataSourceID>04eea052-e023-4748-b6c0-4c812915261d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsChalan">
+    <DataSet Name="dsCustomer">
       <Query>
         <DataSourceName>dsReportData</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="SalesOrderID">
-          <DataField>SalesOrderID</DataField>
+        <Field Name="Name">
+          <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SubOrderNo">
-          <DataField>SubOrderNo</DataField>
+        <Field Name="MobileNo">
+          <DataField>MobileNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="GarmentName">
-          <DataField>GarmentName</DataField>
+        <Field Name="EmailID">
+          <DataField>EmailID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="StichType">
-          <DataField>StichType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FitType">
-          <DataField>FitType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ServiceType">
-          <DataField>ServiceType</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="gTrailDate">
-          <DataField>gTrailDate</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DeliveryDate">
-          <DataField>DeliveryDate</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="QTY">
-          <DataField>QTY</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Rate">
-          <DataField>Rate</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="OrderNo">
-          <DataField>OrderNo</DataField>
+        <Field Name="Address">
+          <DataField>Address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsReportData</rd:DataSetName>
         <rd:SchemaPath>C:\Users\ABDUL MATEEN\Source\Repos\TAILORING\TAILORING\Report\Dataset\dsReportData.xsd</rd:SchemaPath>
-        <rd:TableName>dtChalan</rd:TableName>
+        <rd:TableName>dtCustomerDetails</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -370,7 +342,7 @@
               </Image>
               <Image Name="Image2">
                 <Source>Embedded</Source>
-                <Value>email</Value>
+                <Value>phonecall1</Value>
                 <Sizing>Fit</Sizing>
                 <Top>0.70138in</Top>
                 <Left>3.76062in</Left>
@@ -385,10 +357,8 @@
               </Image>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.06819in</Top>
-            <Left>0.06243in</Left>
             <Height>1.04167in</Height>
-            <Width>8.05105in</Width>
+            <Width>7.85313in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -396,154 +366,20 @@
               <BackgroundColor>#efeeee</BackgroundColor>
             </Style>
           </Rectangle>
-          <Rectangle Name="Rectangle3">
-            <ReportItems>
-              <Textbox Name="Textbox20">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>CHALAN</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontSize>12pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                          <Color>Gray</Color>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Top>0.05389in</Top>
-                <Left>3.15044in</Left>
-                <Height>0.25in</Height>
-                <Width>2.17049in</Width>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox16">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Date :</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox16</rd:DefaultName>
-                <Top>0.06945in</Top>
-                <Left>6.15788in</Left>
-                <Height>0.25in</Height>
-                <Width>0.67708in</Width>
-                <ZIndex>1</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-            </ReportItems>
-            <KeepTogether>true</KeepTogether>
-            <Top>1.16542in</Top>
-            <Left>0.06324in</Left>
-            <Height>0.38889in</Height>
-            <Width>8.05024in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundColor>#efeeee</BackgroundColor>
-            </Style>
-          </Rectangle>
-          <Textbox Name="parmDate">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmDate.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                      <Format>MM/dd/yyyy</Format>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmDate</rd:DefaultName>
-            <Top>1.23487in</Top>
-            <Left>7.05098in</Left>
-            <Height>0.25in</Height>
-            <Width>1in</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Tablix Name="Tablix3">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.21181in</Width>
+                  <Width>1.17708in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.19514in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.8125in</Width>
+                  <Width>1.56028in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.81945in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.76457in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.66667in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.75521in</Width>
+                  <Width>3.75in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -559,9 +395,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Sub Order No</Value>
+                                  <Value>Name</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -594,9 +430,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Garment</Value>
+                                  <Value>Mobile No</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -629,9 +465,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Stich Type</Value>
+                                  <Value>Email ID</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -657,41 +493,6 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox17">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Fit Type</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox17</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Textbox15">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -699,9 +500,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Service</Value>
+                                  <Value>Address</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -725,146 +526,6 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox19">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>[Trail Date]</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox21">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Delivery Date</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox21</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox23">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>QTY</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox27">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Rate</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox27</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -872,16 +533,16 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SubOrderNo1">
+                        <Textbox Name="Name">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SubOrderNo.Value</Value>
+                                  <Value>=Fields!Name.Value</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -890,7 +551,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SubOrderNo1</rd:DefaultName>
+                          <rd:DefaultName>Name</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -906,16 +567,16 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="GarmentName">
+                        <Textbox Name="MobileNo">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GarmentName.Value</Value>
+                                  <Value>=Fields!MobileNo.Value</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -924,7 +585,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>GarmentName</rd:DefaultName>
+                          <rd:DefaultName>MobileNo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -940,16 +601,16 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="StichType">
+                        <Textbox Name="EmailID">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!StichType.Value</Value>
+                                  <Value>=Fields!EmailID.Value</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -958,7 +619,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>StichType</rd:DefaultName>
+                          <rd:DefaultName>EmailID</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -974,16 +635,16 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="FitType">
+                        <Textbox Name="Address">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!FitType.Value</Value>
+                                  <Value>=Fields!Address.Value</Value>
                                   <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -992,179 +653,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>FitType</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="ServiceType">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!ServiceType.Value</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>ServiceType</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="gTrailDate">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!gTrailDate.Value</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <Format>M/d/yyyy</Format>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>gTrailDate</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="DeliveryDate">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!DeliveryDate.Value</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                    <Format>MM/dd/yyyy</Format>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>DeliveryDate</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="QTY">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!QTY.Value</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>QTY</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Rate">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Rate.Value</Value>
-                                  <Style>
-                                    <FontFamily>tIMES New Roman</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Rate</rd:DefaultName>
+                          <rd:DefaultName>Address</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1188,11 +677,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1201,16 +685,15 @@
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Details1" />
+                  <Group Name="Details" />
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>dsChalan</DataSetName>
-            <Top>1.62375in</Top>
-            <Left>0.06243in</Left>
+            <DataSetName>dsCustomer</DataSetName>
+            <Top>1.09723in</Top>
             <Height>0.5in</Height>
-            <Width>8.03021in</Width>
-            <ZIndex>3</ZIndex>
+            <Width>7.6825in</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1218,37 +701,29 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.19792in</Height>
+        <Height>4.5625in</Height>
         <Style />
       </Body>
-      <Width>8.21591in</Width>
+      <Width>7.85313in</Width>
       <Page>
-        <LeftMargin>0.1in</LeftMargin>
-        <RightMargin>0.1in</RightMargin>
-        <TopMargin>0.1in</TopMargin>
-        <BottomMargin>0.1in</BottomMargin>
+        <LeftMargin>0.24in</LeftMargin>
+        <RightMargin>0.24in</RightMargin>
+        <TopMargin>0.24in</TopMargin>
+        <BottomMargin>0.24in</BottomMargin>
         <Style />
       </Page>
   <ReportParameters>
-    <ReportParameter Name="parmStoreName">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="parmAddress">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parmGSTNo">
+    <ReportParameter Name="parmStoreName">
       <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parmCompanyMobile">
+    <ReportParameter Name="parmGSTNo">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -1260,9 +735,10 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parmDate">
-      <DataType>DateTime</DataType>
+    <ReportParameter Name="parmCompanyMobile">
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1271,12 +747,12 @@
       <MIMEType>image/png</MIMEType>
       <ImageData>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHOSURBVFiFtdaxj0xRFMfxzxuzkdgViUKxEbvZXmFIiJCtKCj4MyhUJDSiILGUWo1EolGIQrulbbCrERJREI3YbdiGNUcxM8nMi7lz33jvJKc7v/v7vvvOufeKCMOJM3iGz7iLxXJNnVk2v4Eo5RY6jQOMMW8cYmB+PWHeKAQcRzcDoBEIeJ5pPshNzNcF0MJh1WI/7lTUjI0W2lPoluoEWJtCt14nwMspzFfqAoBj8hvwHtp1T0EbPzPMLzVxELUiYgcPMnbqSU07PhJFRCiKYi8+4sCYuu2ImGsCoAUR8QO3EnWzRVEsNwEw3Ay78M74HnjR2GU0BHE+AdDFcqMAfYinCYhvONQ0wB68SkCsYzZjvhfwqL/WYxzMAuiL5/ElAbGBpYT5brwvaTb94ypPfcER6QNqC+fGaB8mNJ0sgP5CF/AnARFYxVm9kV7E7Qn1IxCTm4RrExYc5O/MupHfkdepXM3Yiaq5hYX8ceEitmuGWKk2s3TwtUaATy0VIiLe6L2iN6roErE63enFnOqv6XJ2ceL/jtFeX3yY0vxy9hRMgJjBFXyval4LwBDIPtyXnpQdpadd0RfXFkVRzOAoTuE0TuIX3uJmRLwerv8LGGH5IpMhtYgAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
-    <EmbeddedImage Name="email">
+    <EmbeddedImage Name="phonecall1">
       <MIMEType>image/png</MIMEType>
-      <ImageData>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHFSURBVFiF7dexS1tRFMfxTzoIBjESUAT/AP+GooODQyAubm4t9F/o2v4PHQrVgkMFpVN3XTp0dtOhIAGpOBTsmsXcDj2hl6cvPmvM6+CDA3nvnPP7/u69794kjZSSOq9ntdKfDPwPBuA5jpEmHMfBdlQDfBhH0MZeDfA9tKWUxFmwgYsJgC+wkXF9RCtu5rD7iPBdzAWrFWwJP9DNXHVwPkbwOTqZfjeYSaHwE9pRNIudMcB3MBua7WDk+RsNl9jM3K6j9w/gHtYznc3QLtaVCnzGfDTP4D0GFcCDqJ2J3vnQKqsfKfYTW9ko1nA2ov4Ma1n9VmiMYlSazi9YDNEm3uE6y1/Hs2bULEZPFe1KRZeyXRKQVXyPWC3kuiXrfW8DA2z7u3ebeI2luJ/GdHxeilwzO1O23f3elCZO85H5czb0IvcLL7Lcy3g2fPs7hZk6vY+BPt5iKgQWsF/S/C3ittw+FkJjKjT7dxn4iuVoauAVriqu5W1xFRqN0FwOxg0DVQofEqMG5qAwVW9Kpuqh0Q/tfGkP8q2zgpNHABfjBCv513ELH1Q7ZscVg2C24HCC4GIcUvOP0uFbX9tV+/+CJwO1G/gNW13WamxIoPoAAAAASUVORK5CYII=</ImageData>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHOSURBVFiFtdaxj0xRFMfxzxuzkdgViUKxEbvZXmFIiJCtKCj4MyhUJDSiILGUWo1EolGIQrulbbCrERJREI3YbdiGNUcxM8nMi7lz33jvJKc7v/v7vvvOufeKCMOJM3iGz7iLxXJNnVk2v4Eo5RY6jQOMMW8cYmB+PWHeKAQcRzcDoBEIeJ5pPshNzNcF0MJh1WI/7lTUjI0W2lPoluoEWJtCt14nwMspzFfqAoBj8hvwHtp1T0EbPzPMLzVxELUiYgcPMnbqSU07PhJFRCiKYi8+4sCYuu2ImGsCoAUR8QO3EnWzRVEsNwEw3Ay78M74HnjR2GU0BHE+AdDFcqMAfYinCYhvONQ0wB68SkCsYzZjvhfwqL/WYxzMAuiL5/ElAbGBpYT5brwvaTb94ypPfcER6QNqC+fGaB8mNJ0sgP5CF/AnARFYxVm9kV7E7Qn1IxCTm4RrExYc5O/MupHfkdepXM3Yiaq5hYX8ceEitmuGWKk2s3TwtUaATy0VIiLe6L2iN6roErE63enFnOqv6XJ2ceL/jtFeX3yY0vxy9hRMgJjBFXyval4LwBDIPtyXnpQdpadd0RfXFkVRzOAoTuE0TuIX3uJmRLwerv8LGGH5IpMhtYgAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>1d871936-5058-408c-8ff7-74327d61fbfe</rd:ReportID>
+  <rd:ReportID>45c29996-fc25-4070-8d0c-4b007b39182d</rd:ReportID>
 </Report>
 

@@ -49,6 +49,7 @@ namespace TAILORING.Order
                 label1.Visible = true;
                 lblSuborderNo.Text = strSubOrderNo;
              
+                // mateen cdoe, when the order form is opening from dashbaord.
                 string[] arr = strSubOrderNo.Replace("/", "@").Split('@');
                 lblOrderNo.Text = arr[2];
                 lblOrderNo.Visible = true;

@@ -1266,9 +1266,10 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab12;
+            this.kryptonRibbon1.SelectedContext = null;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab14;
             this.kryptonRibbon1.ShowMinimizeButton = false;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 148);
+            this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonRibbon1.StateCommon.RibbonGeneral.TextFont = new System.Drawing.Font("Times New Roman", 11.05F);
             this.kryptonRibbon1.StateCommon.RibbonGroupNormalTitle.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
@@ -1588,6 +1589,7 @@
             // 
             this.kryptonRibbonGroupButton53.ImageLarge = global::TAILORING.Properties.Resources.reportwhite;
             this.kryptonRibbonGroupButton53.TextLine1 = "Customer Details Report";
+            this.kryptonRibbonGroupButton53.Click += new System.EventHandler(this.kryptonRibbonGroupButton53_Click);
             // 
             // kryptonRibbonGroup29
             // 
@@ -1606,6 +1608,7 @@
             // 
             this.kryptonRibbonGroupButton56.ImageLarge = global::TAILORING.Properties.Resources.reportwhite;
             this.kryptonRibbonGroupButton56.TextLine1 = "SKU Details Report";
+            this.kryptonRibbonGroupButton56.Click += new System.EventHandler(this.kryptonRibbonGroupButton56_Click);
             // 
             // kryptonRibbonTab13
             // 
@@ -1654,6 +1657,7 @@
             // 
             this.kryptonRibbonGroupButton62.ImageLarge = global::TAILORING.Properties.Resources.settings;
             this.kryptonRibbonGroupButton62.TextLine1 = "Software Settings";
+            this.kryptonRibbonGroupButton62.Click += new System.EventHandler(this.kryptonRibbonGroupButton62_Click);
             // 
             // kryptonRibbonTab15
             // 

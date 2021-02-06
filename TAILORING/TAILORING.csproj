@@ -180,6 +180,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmChalanSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmChalanSub.Designer.cs">
+      <DependentUpon>frmChalanSub.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmCreateChalan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,18 @@
     <Compile Include="Report\Forms\frmOrderDetails.Designer.cs">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Forms\frmSKUDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\frmSKUDetails.Designer.cs">
+      <DependentUpon>frmSKUDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="SPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -378,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Barcode\uRectangle.resx">
       <DependentUpon>uRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmChalanSub.resx">
+      <DependentUpon>frmChalanSub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmCreateChalan.resx">
       <DependentUpon>frmCreateChalan.cs</DependentUpon>
@@ -463,14 +484,22 @@
     <EmbeddedResource Include="Report\Forms\frmOrderDetails.resx">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\frmSKUDetails.resx">
+      <DependentUpon>frmSKUDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDLC\CustomerDetails.rdlc" />
     <EmbeddedResource Include="Report\RDLC\OrderDetails.rdlc" />
     <EmbeddedResource Include="Report\RDLC\Chalan.rdlc" />
     <EmbeddedResource Include="Report\RDLC\CustomerCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\FactoryCopy.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\SKUReport.rdlc" />
     <EmbeddedResource Include="Report\RDLC\StoreCopy.rdlc" />
     <EmbeddedResource Include="Report\RDLC\Report1.rdlc" />
     <EmbeddedResource Include="Masters\frmGSTMaster.resx">
       <DependentUpon>frmGSTMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
@@ -611,9 +640,7 @@
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Setting\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>

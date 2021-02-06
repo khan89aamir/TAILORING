@@ -160,7 +160,7 @@ namespace TAILORING.Report.Forms
 
 
             ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
-            DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get("SPR_Get_OrderDetails");
+            DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get("SPR_Get_MasterOrderDetails");
             if (ObjUtil.ValidateDataSet(dataSet))
             {
                 ReportDataSource rds = new ReportDataSource("dsItemDetails", dataSet.Tables[0]);
@@ -171,7 +171,7 @@ namespace TAILORING.Report.Forms
             }
 
             string strCalculation = "  select OrderAmount,(select SUM(t2.TrimAmount) from " + clsUtility.DBName + ".[dbo].[tblSalesOrderDetails] t2 " +
-                                   " where t2.SalesOrderID=" + OrderID + " ) as TrimAmount, '0.00'as Tax,t1.TotalAmount " +
+                                   " where t2.SalesOrderID=" + OrderID + " ) as TrimAmount, (CGST+SGST) as Tax,t1.TotalAmount " +
                                    " FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] t1 where t1.SalesOrderID=" + OrderID;
 
             DataTable dtCalculation = ObjCon.ExecuteSelectStatement(strCalculation);

@@ -76,9 +76,9 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>..\packages\CoreAppLib.1.0.16\lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="CoreApp, Version=3.1.2.2, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="CoreApp, Version=3.1.2.1, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL Source Code\CoreApp\CoreApp\bin\x86\Release\CoreApp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\DLL\CoreApp.dll</HintPath>
     </Reference>
     <Reference Include="CoreSys, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\CoreAppLib.1.0.16\lib\CoreSys.dll</HintPath>
@@ -138,7 +138,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UserManagement, Version=1.3.5.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DLL\UserManagement.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\DLL\UserManagement.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.6\lib\net40\zxing.dll</HintPath>

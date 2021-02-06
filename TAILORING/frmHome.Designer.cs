@@ -1266,8 +1266,7 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedContext = null;
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab14;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab11;
             this.kryptonRibbon1.ShowMinimizeButton = false;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -1708,7 +1707,7 @@
             this.lblMachineIP.BackColor = System.Drawing.Color.Transparent;
             this.lblMachineIP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMachineIP.ForeColor = System.Drawing.Color.White;
-            this.lblMachineIP.Location = new System.Drawing.Point(129, 99);
+            this.lblMachineIP.Location = new System.Drawing.Point(144, 99);
             this.lblMachineIP.Name = "lblMachineIP";
             this.lblMachineIP.Size = new System.Drawing.Size(30, 17);
             this.lblMachineIP.TabIndex = 34;
@@ -1731,11 +1730,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(129, 69);
+            this.label4.Location = new System.Drawing.Point(144, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 17);
+            this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 32;
-            this.label4.Text = "NA";
+            this.label4.Text = "08-03-2020";
             // 
             // label5
             // 
@@ -1754,11 +1753,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(129, 41);
+            this.label7.Location = new System.Drawing.Point(144, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 17);
+            this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 30;
-            this.label7.Text = "NA";
+            this.label7.Text = "Pankaj Mehta";
             // 
             // label8
             // 

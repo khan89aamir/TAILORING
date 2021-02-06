@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbFitType = new System.Windows.Forms.ComboBox();
+            this.cmbFitType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbStichType = new System.Windows.Forms.ComboBox();
+            this.cmbStichType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.flowStyleImage = new System.Windows.Forms.FlowLayoutPanel();
-            this.cmbStyleQTY = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cmbStyleQTY = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.checkBox1 = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.flowStyleName = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpSKUStatus = new System.Windows.Forms.GroupBox();
@@ -71,6 +71,9 @@
             this.btnStyle = new System.Windows.Forms.PictureBox();
             this.btnMeasurment = new System.Windows.Forms.PictureBox();
             this.btnBodyPosture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFitType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStichType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStyleQTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpSKUStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -111,6 +114,7 @@
             // flowGarmentList
             // 
             this.flowGarmentList.AutoScroll = true;
+            this.flowGarmentList.AutoSize = true;
             this.flowGarmentList.BackColor = System.Drawing.Color.White;
             this.flowGarmentList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowGarmentList.Location = new System.Drawing.Point(0, 0);
@@ -137,7 +141,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(928, 15);
+            this.label4.Location = new System.Drawing.Point(926, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 17);
             this.label4.TabIndex = 353;
@@ -149,7 +153,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(655, 15);
+            this.label14.Location = new System.Drawing.Point(671, 19);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 352;
@@ -161,7 +165,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(704, 19);
+            this.label3.Location = new System.Drawing.Point(695, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 350;
@@ -170,13 +174,18 @@
             // cmbFitType
             // 
             this.cmbFitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gGlowGroupBox3.SetEffectType(this.cmbFitType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbFitType.DropDownWidth = 146;
             this.cmbFitType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFitType.FormattingEnabled = true;
-            this.cmbFitType.Location = new System.Drawing.Point(775, 15);
+            this.cmbFitType.Location = new System.Drawing.Point(767, 13);
             this.cmbFitType.Name = "cmbFitType";
-            this.gGlowGroupBox3.SetsGlowColor(this.cmbFitType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbFitType.sGlowColor"))));
-            this.cmbFitType.Size = new System.Drawing.Size(150, 25);
+            this.cmbFitType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.cmbFitType.Size = new System.Drawing.Size(150, 28);
+            this.cmbFitType.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbFitType.StateCommon.ComboBox.Border.Rounding = 7;
+            this.cmbFitType.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFitType.TabIndex = 351;
             this.cmbFitType.SelectionChangeCommitted += new System.EventHandler(this.cmbFitType_SelectionChangeCommitted);
             // 
@@ -186,7 +195,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(417, 19);
+            this.label1.Location = new System.Drawing.Point(426, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 348;
@@ -195,13 +204,18 @@
             // cmbStichType
             // 
             this.cmbStichType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gGlowGroupBox3.SetEffectType(this.cmbStichType, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbStichType.DropDownWidth = 146;
             this.cmbStichType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStichType.FormattingEnabled = true;
-            this.cmbStichType.Location = new System.Drawing.Point(502, 15);
+            this.cmbStichType.Location = new System.Drawing.Point(512, 13);
             this.cmbStichType.Name = "cmbStichType";
-            this.gGlowGroupBox3.SetsGlowColor(this.cmbStichType, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbStichType.sGlowColor"))));
-            this.cmbStichType.Size = new System.Drawing.Size(150, 25);
+            this.cmbStichType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.cmbStichType.Size = new System.Drawing.Size(150, 28);
+            this.cmbStichType.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbStichType.StateCommon.ComboBox.Border.Rounding = 7;
+            this.cmbStichType.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStichType.TabIndex = 349;
             this.cmbStichType.SelectionChangeCommitted += new System.EventHandler(this.cmbStichType_SelectionChangeCommitted);
             // 
@@ -232,32 +246,38 @@
             // cmbStyleQTY
             // 
             this.cmbStyleQTY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gGlowGroupBox3.SetEffectType(this.cmbStyleQTY, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.cmbStyleQTY.DropDownWidth = 61;
             this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.FormattingEnabled = true;
-            this.cmbStyleQTY.Location = new System.Drawing.Point(154, 15);
+            this.cmbStyleQTY.Location = new System.Drawing.Point(155, 13);
+            this.cmbStyleQTY.MaxDropDownItems = 9;
             this.cmbStyleQTY.Name = "cmbStyleQTY";
-            this.gGlowGroupBox3.SetsGlowColor(this.cmbStyleQTY, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("cmbStyleQTY.sGlowColor"))));
-            this.cmbStyleQTY.Size = new System.Drawing.Size(65, 25);
+            this.cmbStyleQTY.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.cmbStyleQTY.Size = new System.Drawing.Size(65, 28);
+            this.cmbStyleQTY.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbStyleQTY.StateCommon.ComboBox.Border.Rounding = 7;
+            this.cmbStyleQTY.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.TabIndex = 347;
             this.cmbStyleQTY.SelectionChangeCommitted += new System.EventHandler(this.cmbStyleQTY_SelectionChangeCommitted);
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.gGlowGroupBox3.SetEffectType(this.checkBox1, gGlowBox.gGlowGroupBox.eEffectType.Glow);
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(227, 17);
+            this.checkBox1.Location = new System.Drawing.Point(229, 17);
             this.checkBox1.Name = "checkBox1";
+            this.checkBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.gGlowGroupBox3.SetsGlowColor(this.checkBox1, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("checkBox1.sGlowColor"))));
-            this.checkBox1.Size = new System.Drawing.Size(182, 21);
+            this.checkBox1.Size = new System.Drawing.Size(188, 21);
+            this.checkBox1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.checkBox1.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.TabIndex = 346;
-            this.checkBox1.Text = "Copy style as per previous";
             this.gGlowGroupBox3.SetUseEffect(this.checkBox1, false);
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.Values.Text = "Copy style as per previous";
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // flowStyleName
@@ -349,7 +369,11 @@
             this.btnSave.Location = new System.Drawing.Point(1031, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnSave.Size = new System.Drawing.Size(78, 28);
+            this.btnSave.Size = new System.Drawing.Size(78, 32);
+            this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnSave.StateCommon.Border.Rounding = 5;
             this.btnSave.TabIndex = 359;
             this.btnSave.Values.Image = global::TAILORING.Properties.Resources.btnSave_Values_Image;
             this.btnSave.Values.Text = "Save";
@@ -363,7 +387,11 @@
             this.btnCancel.Location = new System.Drawing.Point(1121, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
-            this.btnCancel.Size = new System.Drawing.Size(78, 28);
+            this.btnCancel.Size = new System.Drawing.Size(78, 32);
+            this.btnCancel.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnCancel.StateCommon.Border.Rounding = 5;
             this.btnCancel.TabIndex = 360;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
             this.btnCancel.Values.Text = " Cancel";
@@ -729,10 +757,17 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Text = "Measurement And Style";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmViewMeasurementStyle_FormClosed);
             this.Load += new System.EventHandler(this.frmViewMeasurementStyle_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFitType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStichType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStyleQTY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpSKUStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
@@ -744,6 +779,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup2)).EndInit();
             this.kryptonHeaderGroup2.ResumeLayout(false);
             this.gGlowGroupBox1.ResumeLayout(false);
+            this.gGlowGroupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup4.Panel)).EndInit();
@@ -779,13 +815,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbFitType;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbFitType;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbStichType;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbStichType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowStyleImage;
-        private System.Windows.Forms.ComboBox cmbStyleQTY;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbStyleQTY;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox checkBox1;
         private System.Windows.Forms.FlowLayoutPanel flowStyleName;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox grpSKUStatus;

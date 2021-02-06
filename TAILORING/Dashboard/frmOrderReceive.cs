@@ -57,8 +57,14 @@ namespace TAILORING.Dashboard
             }
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmOrderReceive_Load(object sender, EventArgs e)
         {
+            SetDataGridviewPaletteMode(dgvOrderDetails);
             LoadOrderReceive();
         }
         private void SetGridFont(KryptonDataGridView kryptonDataGridView)

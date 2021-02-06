@@ -48,6 +48,11 @@ namespace TAILORING.Masters
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmCompanyMaster_Load(object sender, EventArgs e)
         {
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
@@ -58,7 +63,7 @@ namespace TAILORING.Masters
             dgvCompanyMaster.RowHeadersVisible = false; // set it to false if not needed
 
             LoadTailoringTheme();
-
+            SetDataGridviewPaletteMode(dgvCompanyMaster);
             LoadData();
 
             EnableDisable(false);
@@ -191,7 +196,7 @@ namespace TAILORING.Masters
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmCompanyMaster, clsFormRights.Operation.Save) || clsUtility.IsAdmin)
             {
                 if (ValidateForm())
                 {
@@ -235,7 +240,7 @@ namespace TAILORING.Masters
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmCompanyMaster, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 //ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit, clsUtility.IsAdmin);
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
@@ -251,7 +256,7 @@ namespace TAILORING.Masters
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmCompanyMaster, clsFormRights.Operation.Update) || clsUtility.IsAdmin)
             {
                 if (ValidateForm())
                 {
@@ -297,10 +302,11 @@ namespace TAILORING.Masters
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.Customer_Master, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmCompanyMaster, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
-                DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtCompanyName.Text + "' Company ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (d == DialogResult.Yes)
+                //DialogResult d = MessageBox.Show("Are you sure want to delete '" + txtCompanyName.Text + "' Company ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete '" + txtCompanyName.Text + "' Company ");
+                if (d)
                 {
                     ObjDAL.SetStoreProcedureData("CompanyID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Company");
@@ -316,8 +322,8 @@ namespace TAILORING.Masters
                     else
                     {
                         clsUtility.ShowErrorMessage("'" + txtCompanyName.Text + "' Company is not deleted  ", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                 }
             }
             else
@@ -374,16 +380,16 @@ namespace TAILORING.Masters
 
         private void txtCompanyMobileNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 13)
+            //if (e.KeyChar != 13)
+            //{
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsNumeric(e);
+            if (e.Handled)
             {
-                KryptonTextBox txt = (KryptonTextBox)sender;
-                e.Handled = ObjUtil.IsNumeric(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                    txt.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
+            //}
         }
     }
 }

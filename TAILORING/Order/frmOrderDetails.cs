@@ -29,6 +29,12 @@ namespace TAILORING.Order
             this.PaletteMode = PaletteMode.SparklePurple;
             this.BackColor = Color.FromArgb(82, 91, 114);
         }
+
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         public string strSubOrderNo;
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
@@ -37,6 +43,7 @@ namespace TAILORING.Order
             dgvOrderDetails.RowHeadersVisible = false; // set it to false if not needed
             
             LoadTailoringTheme();
+            SetDataGridviewPaletteMode(dgvOrderDetails);
 
             LoadData();
         }

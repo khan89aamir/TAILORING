@@ -73,9 +73,15 @@ namespace TAILORING.Order
             btnMeasurement.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmOrderManagement_Load(object sender, EventArgs e)
         {
             LoadTailoringTheme();
+            SetDataGridviewPaletteMode(dataGridView1);
 
             txtCustomerID.Text = CustomerID.ToString();
             txtCustomerName.Text = CustName;
@@ -789,20 +795,7 @@ namespace TAILORING.Order
             e.Cancel = false;
             int column = dataGridView1.CurrentCell.ColumnIndex;
             string headerText = dataGridView1.Columns[column].HeaderText;
-            //if (headerText == "QTY")
-            //{
-            //    if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
-            //    {
-            //        clsUtility.ShowInfoMessage("Enter QTY..");
-            //        e.Cancel = true;
-            //    }
-            //    else if (Convert.ToInt32(e.FormattedValue) == 0)
-            //    {
-            //        clsUtility.ShowInfoMessage("Enter Valid QTY..");
-            //        e.Cancel = true;
-            //    }
-            //    return;
-            //}
+            
             if (headerText == "Trim Amount")
             {
                 //if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")
@@ -833,10 +826,6 @@ namespace TAILORING.Order
                 //e.Control.KeyPress += Decimal_Control_KeyPress;
                 e.Control.KeyPress += Int_Control_KeyPress;
             }
-            //else if (headerText == "QTY")
-            //{
-            //    e.Control.KeyPress += Int_Control_KeyPress;
-            //}
             else if (headerText == "Service")
             {
                 cmbService = (KryptonComboBox)e.Control;
@@ -1113,8 +1102,9 @@ namespace TAILORING.Order
                     //pSalesOrderDetailsID = dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value == DBNull.Value
                     //    ? 0 : Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SalesOrderDetailsID"].Value);
 
-                    DialogResult d = MessageBox.Show("Are you sure want to delete ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (d == DialogResult.Yes)
+                    //DialogResult d = MessageBox.Show("Are you sure want to delete ? ", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete ? ");
+                    if (d)
                     {
                         int a = 0;
                         DataTable dt = (DataTable)dataGridView1.DataSource;

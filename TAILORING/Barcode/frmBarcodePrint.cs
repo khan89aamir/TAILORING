@@ -19,11 +19,12 @@ namespace TAILORING.Barcode
         }
         CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
         CoreApp.clsUtility ObjUtil = new CoreApp.clsUtility();
+
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             // for creating chalan , get only those records, which are in process or critical.
             string strQ = "select SalesOrderID, SubOrderNo,GarmentName,GarmentCode,StichTypeName,FitTypeName,TrailDate,DeliveryDate from[dbo].[vw_GetOrderStatusDetails]" +
-                            " where SalesOrderID in (select SalesOrderID from tblSalesOrder where OrderNo = '"+txtInvoiceNo.Text+"');";
+                            " where SalesOrderID in (select SalesOrderID from tblSalesOrder where OrderNo = '" + txtInvoiceNo.Text + "');";
 
             DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
             if (ObjUtil.ValidateTable(dt))
@@ -39,20 +40,18 @@ namespace TAILORING.Barcode
                 }
             }
         }
+
         private void SetGridFont(KryptonDataGridView kryptonDataGridView)
         {
-
             kryptonDataGridView.StateCommon.DataCell.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
             kryptonDataGridView.StateCommon.HeaderColumn.Content.Font = new Font("Times New Roman", 11.0f, FontStyle.Regular);
         }
+
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
-           
-
 
             SetGridFont(dgvOrderDetails);
-
 
             grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
 
@@ -63,9 +62,14 @@ namespace TAILORING.Barcode
             dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmBarcodePrint_Load(object sender, EventArgs e)
         {
-
+            SetDataGridviewPaletteMode(dgvOrderDetails);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -88,10 +92,8 @@ namespace TAILORING.Barcode
                 {
                     status = true;
                     return status;
-
                 }
             }
-
             return false;
         }
 

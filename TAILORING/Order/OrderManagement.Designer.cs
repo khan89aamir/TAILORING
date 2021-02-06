@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.btnMeasurement = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -45,16 +44,30 @@
             this.lblSGST = new System.Windows.Forms.Label();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpNewOrder = new gGlowBox.gGlowGroupBox();
+            this.dtpDeliveryDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.dtpTrailDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.NumericQTY = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.NumericQTY = new System.Windows.Forms.NumericUpDown();
             this.cmbGarmentName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtpTrailDate = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.grpGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dataGridView1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.ServiceID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Service = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
+            this.TrailDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.DeliveryDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
+            this.TrimAmount = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.QTY = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Rate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Total = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtTailoringAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtCGST = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -66,26 +79,12 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.ColDelete1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
-            this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Photo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Total = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Rate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.QTY = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.TrimAmount = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.DeliveryDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.TrailDate = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewDateTimePickerColumn();
-            this.Service = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.ServiceID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Column2 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.Column1 = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.GarmentID = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.dtpBookingDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
             this.kryptonHeaderGroup1.SuspendLayout();
             this.grpNewOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGarmentName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview.Panel)).BeginInit();
@@ -160,16 +159,6 @@
             this.label12.Size = new System.Drawing.Size(172, 22);
             this.label12.TabIndex = 82;
             this.label12.Text = "Order Management";
-            // 
-            // dtpBookingDate
-            // 
-            this.dtpBookingDate.Enabled = false;
-            this.dtpBookingDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBookingDate.Location = new System.Drawing.Point(1000, 194);
-            this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(121, 25);
-            this.dtpBookingDate.TabIndex = 340;
             // 
             // label15
             // 
@@ -315,14 +304,14 @@
             // grpNewOrder
             // 
             this.grpNewOrder.BackColor = System.Drawing.Color.Transparent;
-            this.grpNewOrder.Controls.Add(this.label2);
+            this.grpNewOrder.Controls.Add(this.dtpDeliveryDate);
+            this.grpNewOrder.Controls.Add(this.dtpTrailDate);
             this.grpNewOrder.Controls.Add(this.NumericQTY);
+            this.grpNewOrder.Controls.Add(this.label2);
             this.grpNewOrder.Controls.Add(this.cmbGarmentName);
             this.grpNewOrder.Controls.Add(this.label1);
             this.grpNewOrder.Controls.Add(this.label11);
-            this.grpNewOrder.Controls.Add(this.dtpTrailDate);
             this.grpNewOrder.Controls.Add(this.label17);
-            this.grpNewOrder.Controls.Add(this.dtpDeliveryDate);
             this.grpNewOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpNewOrder.Enabled = false;
             this.grpNewOrder.GlowAmount = 22;
@@ -334,23 +323,43 @@
             this.grpNewOrder.Size = new System.Drawing.Size(1099, 71);
             this.grpNewOrder.TabIndex = 287;
             // 
-            // label2
+            // dtpDeliveryDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(380, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 19);
-            this.label2.TabIndex = 351;
-            this.label2.Text = "QTY :";
+            this.grpNewOrder.SetEffectType(this.dtpDeliveryDate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(954, 19);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.grpNewOrder.SetsGlowColor(this.dtpDeliveryDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpDeliveryDate.sGlowColor"))));
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(143, 27);
+            this.dtpDeliveryDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpDeliveryDate.StateCommon.Border.Rounding = 10;
+            this.dtpDeliveryDate.TabIndex = 391;
+            this.dtpDeliveryDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDeliveryDate_Validating);
+            // 
+            // dtpTrailDate
+            // 
+            this.dtpTrailDate.Checked = false;
+            this.grpNewOrder.SetEffectType(this.dtpTrailDate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
+            this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTrailDate.Location = new System.Drawing.Point(658, 19);
+            this.dtpTrailDate.Name = "dtpTrailDate";
+            this.dtpTrailDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.grpNewOrder.SetsGlowColor(this.dtpTrailDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpTrailDate.sGlowColor"))));
+            this.dtpTrailDate.ShowCheckBox = true;
+            this.dtpTrailDate.Size = new System.Drawing.Size(143, 27);
+            this.dtpTrailDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpTrailDate.StateCommon.Border.Rounding = 10;
+            this.dtpTrailDate.TabIndex = 390;
+            this.dtpTrailDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpTrailDate_Validating);
             // 
             // NumericQTY
             // 
-            this.NumericQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumericQTY.Location = new System.Drawing.Point(443, 24);
-            this.NumericQTY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NumericQTY.Location = new System.Drawing.Point(472, 18);
             this.NumericQTY.Maximum = new decimal(new int[] {
             9,
             0,
@@ -362,14 +371,31 @@
             0,
             0});
             this.NumericQTY.Name = "NumericQTY";
-            this.NumericQTY.Size = new System.Drawing.Size(57, 25);
-            this.NumericQTY.TabIndex = 350;
+            this.NumericQTY.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.NumericQTY.Size = new System.Drawing.Size(57, 28);
+            this.NumericQTY.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.NumericQTY.StateCommon.Border.Rounding = 10;
+            this.NumericQTY.TabIndex = 358;
             this.NumericQTY.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.NumericQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Int_Control_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(398, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 19);
+            this.label2.TabIndex = 351;
+            this.label2.Text = "QTY :";
             // 
             // cmbGarmentName
             // 
@@ -378,7 +404,7 @@
             this.cmbGarmentName.DropDownWidth = 219;
             this.cmbGarmentName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGarmentName.FormattingEnabled = true;
-            this.cmbGarmentName.Location = new System.Drawing.Point(130, 21);
+            this.cmbGarmentName.Location = new System.Drawing.Point(141, 18);
             this.cmbGarmentName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGarmentName.MaxDropDownItems = 20;
             this.cmbGarmentName.Name = "cmbGarmentName";
@@ -414,25 +440,11 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(577, 24);
+            this.label11.Location = new System.Drawing.Point(556, 23);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 19);
             this.label11.TabIndex = 354;
             this.label11.Text = "Trail Date :";
-            // 
-            // dtpTrailDate
-            // 
-            this.dtpTrailDate.Checked = false;
-            this.grpNewOrder.SetEffectType(this.dtpTrailDate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.dtpTrailDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpTrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTrailDate.Location = new System.Drawing.Point(658, 21);
-            this.dtpTrailDate.Name = "dtpTrailDate";
-            this.grpNewOrder.SetsGlowColor(this.dtpTrailDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpTrailDate.sGlowColor"))));
-            this.dtpTrailDate.ShowCheckBox = true;
-            this.dtpTrailDate.Size = new System.Drawing.Size(143, 25);
-            this.dtpTrailDate.TabIndex = 355;
-            this.dtpTrailDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpTrailDate_Validating);
             // 
             // label17
             // 
@@ -440,23 +452,11 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(851, 23);
+            this.label17.Location = new System.Drawing.Point(828, 23);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 19);
             this.label17.TabIndex = 356;
             this.label17.Text = "Delivery Date :";
-            // 
-            // dtpDeliveryDate
-            // 
-            this.grpNewOrder.SetEffectType(this.dtpDeliveryDate, gGlowBox.gGlowGroupBox.eEffectType.Glow);
-            this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(956, 19);
-            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.grpNewOrder.SetsGlowColor(this.dtpDeliveryDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpDeliveryDate.sGlowColor"))));
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(143, 25);
-            this.dtpDeliveryDate.TabIndex = 357;
-            this.dtpDeliveryDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDeliveryDate_Validating);
             // 
             // grpGridview
             // 
@@ -511,9 +511,11 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.Size = new System.Drawing.Size(1098, 191);
+            this.dataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
+            this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -522,6 +524,153 @@
             this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
+            // 
+            // GarmentID
+            // 
+            this.GarmentID.DataPropertyName = "GarmentID";
+            this.GarmentID.HeaderText = "GarmentID";
+            this.GarmentID.Name = "GarmentID";
+            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GarmentID.Visible = false;
+            this.GarmentID.Width = 100;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "GarmentCode";
+            this.Column1.FillWeight = 100.2838F;
+            this.Column1.HeaderText = "GarmentCode";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 106;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "GarmentName";
+            this.Column2.FillWeight = 97.03809F;
+            this.Column2.HeaderText = "GarmentName";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 103;
+            // 
+            // ServiceID
+            // 
+            this.ServiceID.DataPropertyName = "ServiceID";
+            this.ServiceID.HeaderText = "ServiceID";
+            this.ServiceID.Name = "ServiceID";
+            this.ServiceID.Visible = false;
+            this.ServiceID.Width = 100;
+            // 
+            // Service
+            // 
+            this.Service.DataPropertyName = "Service";
+            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Service.DropDownWidth = 40;
+            this.Service.FillWeight = 102.6595F;
+            this.Service.HeaderText = "Service";
+            this.Service.Items.AddRange(new string[] {
+            "Normal",
+            "Urgent"});
+            this.Service.Name = "Service";
+            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Service.Width = 108;
+            // 
+            // TrailDate
+            // 
+            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.TrailDate.Checked = false;
+            this.TrailDate.DataPropertyName = "TrailDate";
+            this.TrailDate.FillWeight = 102.3659F;
+            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TrailDate.HeaderText = "TrailDate";
+            this.TrailDate.Name = "TrailDate";
+            this.TrailDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrailDate.ShowCheckBox = true;
+            this.TrailDate.Width = 108;
+            // 
+            // DeliveryDate
+            // 
+            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
+            this.DeliveryDate.Checked = false;
+            this.DeliveryDate.DataPropertyName = "DeliveryDate";
+            this.DeliveryDate.FillWeight = 100.7437F;
+            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DeliveryDate.HeaderText = "DeliveryDate";
+            this.DeliveryDate.Name = "DeliveryDate";
+            this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDate.Width = 107;
+            // 
+            // TrimAmount
+            // 
+            this.TrimAmount.DataPropertyName = "TrimAmount";
+            this.TrimAmount.FillWeight = 102.0182F;
+            this.TrimAmount.HeaderText = "Trim Amount";
+            this.TrimAmount.Name = "TrimAmount";
+            this.TrimAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrimAmount.Width = 108;
+            // 
+            // QTY
+            // 
+            this.QTY.DataPropertyName = "QTY";
+            this.QTY.FillWeight = 104.4484F;
+            this.QTY.HeaderText = "QTY";
+            this.QTY.Name = "QTY";
+            this.QTY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.QTY.Width = 110;
+            // 
+            // Rate
+            // 
+            this.Rate.DataPropertyName = "Rate";
+            this.Rate.FillWeight = 99.78585F;
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Rate.Width = 105;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.FillWeight = 97.39281F;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Total.Width = 103;
+            // 
+            // Photo
+            // 
+            this.Photo.DataPropertyName = "Photo";
+            this.Photo.HeaderText = "Photo";
+            this.Photo.Name = "Photo";
+            this.Photo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Photo.Visible = false;
+            this.Photo.Width = 100;
+            // 
+            // ColDelete
+            // 
+            this.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColDelete.DataPropertyName = "Delete";
+            this.ColDelete.FillWeight = 93.26373F;
+            this.ColDelete.HeaderText = "Delete";
+            this.ColDelete.Name = "ColDelete";
+            this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColDelete.Text = "Delete";
+            this.ColDelete.UseColumnTextForButtonValue = true;
+            // 
+            // ColDelete1
+            // 
+            this.ColDelete1.DataPropertyName = "Delete1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColDelete1.HeaderText = "Delete1";
+            this.ColDelete1.Name = "ColDelete1";
+            this.ColDelete1.Text = "Delete1";
+            this.ColDelete1.UseColumnTextForButtonValue = true;
+            this.ColDelete1.Visible = false;
             // 
             // btnAdd
             // 
@@ -572,6 +721,7 @@
             // 
             this.txtCGST.Location = new System.Drawing.Point(498, 605);
             this.txtCGST.Name = "txtCGST";
+            this.txtCGST.ReadOnly = true;
             this.txtCGST.Size = new System.Drawing.Size(59, 31);
             this.txtCGST.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtCGST.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
@@ -716,152 +866,18 @@
             this.kryptonPanel2.Size = new System.Drawing.Size(1137, 51);
             this.kryptonPanel2.TabIndex = 388;
             // 
-            // ColDelete1
+            // dtpBookingDate
             // 
-            this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColDelete1.HeaderText = "Delete1";
-            this.ColDelete1.Name = "ColDelete1";
-            this.ColDelete1.Text = "Delete1";
-            this.ColDelete1.UseColumnTextForButtonValue = true;
-            this.ColDelete1.Visible = false;
-            // 
-            // ColDelete
-            // 
-            this.ColDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColDelete.DataPropertyName = "Delete";
-            this.ColDelete.FillWeight = 93.26373F;
-            this.ColDelete.HeaderText = "Delete";
-            this.ColDelete.Name = "ColDelete";
-            this.ColDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColDelete.Text = "Delete";
-            this.ColDelete.UseColumnTextForButtonValue = true;
-            // 
-            // Photo
-            // 
-            this.Photo.DataPropertyName = "Photo";
-            this.Photo.HeaderText = "Photo";
-            this.Photo.Name = "Photo";
-            this.Photo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Photo.Visible = false;
-            this.Photo.Width = 100;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.FillWeight = 97.39281F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Total.Width = 103;
-            // 
-            // Rate
-            // 
-            this.Rate.DataPropertyName = "Rate";
-            this.Rate.FillWeight = 99.78585F;
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            this.Rate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Rate.Width = 105;
-            // 
-            // QTY
-            // 
-            this.QTY.DataPropertyName = "QTY";
-            this.QTY.FillWeight = 104.4484F;
-            this.QTY.HeaderText = "QTY";
-            this.QTY.Name = "QTY";
-            this.QTY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.QTY.Width = 110;
-            // 
-            // TrimAmount
-            // 
-            this.TrimAmount.DataPropertyName = "TrimAmount";
-            this.TrimAmount.FillWeight = 102.0182F;
-            this.TrimAmount.HeaderText = "Trim Amount";
-            this.TrimAmount.Name = "TrimAmount";
-            this.TrimAmount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrimAmount.Width = 108;
-            // 
-            // DeliveryDate
-            // 
-            this.DeliveryDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.DeliveryDate.Checked = false;
-            this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.FillWeight = 100.7437F;
-            this.DeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DeliveryDate.HeaderText = "DeliveryDate";
-            this.DeliveryDate.Name = "DeliveryDate";
-            this.DeliveryDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDate.Width = 107;
-            // 
-            // TrailDate
-            // 
-            this.TrailDate.CalendarTodayDate = new System.DateTime(2021, 1, 13, 0, 0, 0, 0);
-            this.TrailDate.Checked = false;
-            this.TrailDate.DataPropertyName = "TrailDate";
-            this.TrailDate.FillWeight = 102.3659F;
-            this.TrailDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TrailDate.HeaderText = "TrailDate";
-            this.TrailDate.Name = "TrailDate";
-            this.TrailDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailDate.ShowCheckBox = true;
-            this.TrailDate.Width = 108;
-            // 
-            // Service
-            // 
-            this.Service.DataPropertyName = "Service";
-            this.Service.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Service.DropDownWidth = 40;
-            this.Service.FillWeight = 102.6595F;
-            this.Service.HeaderText = "Service";
-            this.Service.Items.AddRange(new string[] {
-            "Normal",
-            "Urgent"});
-            this.Service.Name = "Service";
-            this.Service.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Service.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Service.Width = 108;
-            // 
-            // ServiceID
-            // 
-            this.ServiceID.DataPropertyName = "ServiceID";
-            this.ServiceID.HeaderText = "ServiceID";
-            this.ServiceID.Name = "ServiceID";
-            this.ServiceID.Visible = false;
-            this.ServiceID.Width = 100;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "GarmentName";
-            this.Column2.FillWeight = 97.03809F;
-            this.Column2.HeaderText = "GarmentName";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 103;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "GarmentCode";
-            this.Column1.FillWeight = 100.2838F;
-            this.Column1.HeaderText = "GarmentCode";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 106;
-            // 
-            // GarmentID
-            // 
-            this.GarmentID.DataPropertyName = "GarmentID";
-            this.GarmentID.HeaderText = "GarmentID";
-            this.GarmentID.Name = "GarmentID";
-            this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GarmentID.Visible = false;
-            this.GarmentID.Width = 100;
+            this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBookingDate.Location = new System.Drawing.Point(1000, 194);
+            this.dtpBookingDate.Name = "dtpBookingDate";
+            this.dtpBookingDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.dtpBookingDate.Size = new System.Drawing.Size(121, 27);
+            this.dtpBookingDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpBookingDate.StateCommon.Border.Rounding = 10;
+            this.dtpBookingDate.TabIndex = 389;
             // 
             // frmOrderManagement
             // 
@@ -870,6 +886,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.txtCustomerAdd);
@@ -886,7 +903,6 @@
             this.Controls.Add(this.lblCGST);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -897,6 +913,10 @@
             this.Name = "frmOrderManagement";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Text = "Order Management";
             this.Load += new System.EventHandler(this.frmOrderManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
@@ -905,7 +925,6 @@
             this.kryptonHeaderGroup1.ResumeLayout(false);
             this.grpNewOrder.ResumeLayout(false);
             this.grpNewOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericQTY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGarmentName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpGridview.Panel)).EndInit();
             this.grpGridview.Panel.ResumeLayout(false);
@@ -931,7 +950,6 @@
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
@@ -940,15 +958,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup kryptonHeaderGroup1;
         private gGlowBox.gGlowGroupBox grpNewOrder;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown NumericQTY;
         
         //private System.Windows.Forms.ComboBox cmbGarmentName;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbGarmentName;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
-        private System.Windows.Forms.DateTimePicker dtpTrailDate;
         private System.Windows.Forms.Label label17;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpGridview;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
@@ -979,5 +994,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn Photo;
         private System.Windows.Forms.DataGridViewButtonColumn ColDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn ColDelete1;
+        private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown NumericQTY;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpBookingDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpDeliveryDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpTrailDate;
     }
 }

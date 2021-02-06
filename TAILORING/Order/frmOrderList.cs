@@ -31,6 +31,11 @@ namespace TAILORING.Order
             this.BackColor = Color.FromArgb(82, 91, 114);
         }
 
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
             dgvOrderDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
@@ -38,6 +43,7 @@ namespace TAILORING.Order
             dgvOrderDetails.RowHeadersVisible = false; // set it to false if not needed
 
             LoadTailoringTheme();
+            SetDataGridviewPaletteMode(dgvOrderDetails);
 
             radByDate_CheckedChanged(sender, e);
             SearchByDates();

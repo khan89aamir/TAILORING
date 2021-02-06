@@ -158,7 +158,8 @@
             this.gGlowGroupBox1.Controls.Add(this.label5);
             this.gGlowGroupBox1.Controls.Add(this.label4);
             this.gGlowGroupBox1.GlowAmount = 20;
-            this.gGlowGroupBox1.GlowFeather = 50;
+            this.gGlowGroupBox1.GlowColorDefault = System.Drawing.Color.White;
+            this.gGlowGroupBox1.GlowFeather = 70;
             this.gGlowGroupBox1.GlowOn = true;
             this.gGlowGroupBox1.Location = new System.Drawing.Point(8, 205);
             this.gGlowGroupBox1.Name = "gGlowGroupBox1";
@@ -250,6 +251,10 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.frmLogin_Load);

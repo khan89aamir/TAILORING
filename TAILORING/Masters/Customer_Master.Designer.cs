@@ -294,6 +294,7 @@
             this.dgvCustomerMaster.Location = new System.Drawing.Point(0, 0);
             this.dgvCustomerMaster.MultiSelect = false;
             this.dgvCustomerMaster.Name = "dgvCustomerMaster";
+            this.dgvCustomerMaster.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.dgvCustomerMaster.ReadOnly = true;
             this.dgvCustomerMaster.Size = new System.Drawing.Size(756, 183);
             this.dgvCustomerMaster.TabIndex = 287;
@@ -671,6 +672,10 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Text = "Customer Management";
             this.Load += new System.EventHandler(this.Customer_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerMaster)).EndInit();

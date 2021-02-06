@@ -32,16 +32,16 @@ namespace TAILORING
 
         private void otherArtsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)
-            {
-                DB_backupRestore.cs.frmDatabaseMaintenance Obj = new DB_backupRestore.cs.frmDatabaseMaintenance();
-                Obj.IsNew = true;
-                Obj.ShowDialog();
-            }
-            else
-            {
-                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
-            }
+            //if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)
+            //{
+            //    DB_backupRestore.cs.frmDatabaseMaintenance Obj = new DB_backupRestore.cs.frmDatabaseMaintenance();
+            //    Obj.IsNew = true;
+            //    Obj.ShowDialog();
+            //}
+            //else
+            //{
+            //    clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+            //}
         }
 
         private void DisplayRegistrationInfo()
@@ -76,12 +76,11 @@ namespace TAILORING
                     return ip.ToString();
                 }
             }
-            MessageBox.Show("No network adapters with an IPv4 address in the system!");
+            clsUtility.ShowInfoMessage("No network adapters with an IPv4 address in the system!");
             return "NA";
         }
         private void frmHome_Load(object sender, EventArgs e)
         {
-          
             try
             {
                 clsUtility.DBName = "TAILORING_01";
@@ -89,6 +88,8 @@ namespace TAILORING
                 //clsUtility.IsAdmin = false;
                 clsUtility.IsAdmin = true;
                 clsUtility.strProjectTitle = "Smart Tailor Solution";
+                clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
+
                 if (clsUtility.LoginID > 0)
                 {
                     object ob = ObjDAL.ExecuteScalar("SELECT UserName from " + clsUtility.DBName + ".[dbo].[UserManagement] WITH(NOLOCK) WHERE UserID =" + clsUtility.LoginID);

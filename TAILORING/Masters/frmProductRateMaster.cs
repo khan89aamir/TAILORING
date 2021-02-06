@@ -47,6 +47,12 @@ namespace TAILORING.Masters
             btnCancel.PaletteMode = PaletteMode.SparklePurple;
             btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         }
+
+        private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
+        {
+            dgv.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
+        }
+
         private void frmProductRateMaster_Load(object sender, EventArgs e)
         {
             ObjUtil.RegisterCommandButtons(btnAdd, btnSave, btnEdit, btnUpdate, btnDelete, btnCancel);
@@ -58,6 +64,8 @@ namespace TAILORING.Masters
 
             EnableDisable(false);
             LoadTailoringTheme();
+            
+            SetDataGridviewPaletteMode(dataGridView1);
 
             LoadProductData();
             LoadProductRateData();
@@ -211,8 +219,9 @@ namespace TAILORING.Masters
         {
             if (clsFormRights.HasFormRight(clsFormRights.Forms.frmProductRateMaster, clsFormRights.Operation.Delete) || clsUtility.IsAdmin)
             {
-                DialogResult d = MessageBox.Show("Are you sure want to delete '" + cmbGarmentName.Text + "' Garment", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (d == DialogResult.Yes)
+                //DialogResult d = MessageBox.Show("Are you sure want to delete '" + cmbGarmentName.Text + "' Garment", clsUtility.strProjectTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                bool d = clsUtility.ShowQuestionMessage("Are you sure want to delete '" + cmbGarmentName.Text + "' Garment");
+                if (d)
                 {
                     ObjDAL.SetStoreProcedureData("GarmentRateID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
                     bool b = ObjDAL.ExecuteStoreProcedure_DML(clsUtility.DBName + ".dbo.SPR_Delete_Product_Rate");
@@ -229,8 +238,8 @@ namespace TAILORING.Masters
                     else
                     {
                         clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is not deleted  ", clsUtility.strProjectTitle);
-                        ObjDAL.ResetData();
                     }
+                    ObjDAL.ResetData();
                     cmbGarmentName.SelectedIndex = -1;
                 }
             }

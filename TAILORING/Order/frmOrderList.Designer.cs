@@ -39,9 +39,9 @@ namespace TAILORING.Order
             this.radByOrderNo = new System.Windows.Forms.RadioButton();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.radByCustomerMobileNo = new System.Windows.Forms.RadioButton();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.radByCustomerName = new System.Windows.Forms.RadioButton();
             this.radByDate = new System.Windows.Forms.RadioButton();
             this.rdShowAll = new System.Windows.Forms.RadioButton();
@@ -202,7 +202,12 @@ namespace TAILORING.Order
             resources.ApplyResources(this.dtpToDate, "dtpToDate");
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.groupBox1.SetsGlowColor(this.dtpToDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpToDate.sGlowColor"))));
+            this.dtpToDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpToDate.StateCommon.Border.Rounding = 7;
             this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             // 
             // radByCustomerMobileNo
@@ -222,7 +227,12 @@ namespace TAILORING.Order
             resources.ApplyResources(this.dtpFromDate, "dtpFromDate");
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.groupBox1.SetsGlowColor(this.dtpFromDate, ((gGlowBox.gGlowGroupBox.SerialColor)(resources.GetObject("dtpFromDate.sGlowColor"))));
+            this.dtpFromDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpFromDate.StateCommon.Border.Rounding = 7;
             this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpFromDate_ValueChanged);
             // 
             // radByCustomerName
@@ -325,6 +335,10 @@ namespace TAILORING.Order
             this.MaximizeBox = false;
             this.Name = "frmOrderList";
             this.ShowIcon = false;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).EndInit();
             this.kryptonHeaderGroup1.Panel.ResumeLayout(false);
@@ -352,9 +366,9 @@ namespace TAILORING.Order
         private System.Windows.Forms.RadioButton radByOrderNo;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpToDate;
         private System.Windows.Forms.RadioButton radByCustomerMobileNo;
-        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFromDate;
         private System.Windows.Forms.RadioButton radByCustomerName;
         private System.Windows.Forms.RadioButton radByDate;
         private System.Windows.Forms.RadioButton rdShowAll;

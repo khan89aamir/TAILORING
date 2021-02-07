@@ -64,7 +64,7 @@ namespace TAILORING.Masters
 
             EnableDisable(false);
             LoadTailoringTheme();
-            
+
             SetDataGridviewPaletteMode(dataGridView1);
 
             LoadProductData();
@@ -126,6 +126,7 @@ namespace TAILORING.Masters
 
         private void ClearAll()
         {
+            txtGarmentCode.Clear();
             cmbGarmentName.SelectedIndex = -1;
             cmbService.SelectedIndex = -1;
             txtRate.Clear();
@@ -184,7 +185,7 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
 
                 EnableDisable(true);
-                cmbGarmentName.Focus();
+                txtGarmentCode.Focus();
             }
             else
             {
@@ -205,7 +206,7 @@ namespace TAILORING.Masters
                     else
                     {
                         clsUtility.ShowErrorMessage("'" + cmbGarmentName.Text + "' Garment is already exist..", clsUtility.strProjectTitle);
-                        cmbGarmentName.Focus();
+                        txtGarmentCode.Focus();
                     }
                 }
             }
@@ -259,7 +260,6 @@ namespace TAILORING.Masters
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterCancel);
 
                 EnableDisable(false);
-                cmbGarmentName.SelectedIndex = -1;
             }
         }
 
@@ -287,13 +287,14 @@ namespace TAILORING.Masters
                 {
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentRateID"].Value);
+                    txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString();
                     cmbGarmentName.SelectedValue = dataGridView1.SelectedRows[0].Cells["GarmentID"].Value.ToString();
                     txtRate.Text = dataGridView1.SelectedRows[0].Cells["Rate"].Value.ToString();
                     cmbService.Text = dataGridView1.SelectedRows[0].Cells["OrderType"].Value.ToString();
 
                     EnableDisable(false);
 
-                    cmbGarmentName.Focus();
+                    txtGarmentCode.Focus();
                 }
                 catch (Exception ex)
                 {
@@ -304,7 +305,13 @@ namespace TAILORING.Masters
 
         private bool ValidateForm()
         {
-            if (ObjUtil.IsControlTextEmpty(cmbGarmentName))
+            if (ObjUtil.IsControlTextEmpty(txtGarmentCode))
+            {
+                clsUtility.ShowInfoMessage("Enter Garment Code..       ", clsUtility.strProjectTitle);
+                txtGarmentCode.Focus();
+                return false;
+            }
+            else if (ObjUtil.IsControlTextEmpty(cmbGarmentName))
             {
                 clsUtility.ShowInfoMessage("Select Garment..       ", clsUtility.strProjectTitle);
                 cmbGarmentName.Focus();
@@ -403,6 +410,7 @@ namespace TAILORING.Masters
 
         private void EnableDisable(bool b)
         {
+            txtGarmentCode.Enabled = b;
             cmbGarmentName.Enabled = b;
             cmbService.Enabled = b;
             txtRate.Enabled = b;

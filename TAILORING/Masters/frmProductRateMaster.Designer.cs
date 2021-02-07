@@ -57,6 +57,9 @@
             this.rdSearchByProduct = new System.Windows.Forms.RadioButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtGarmentCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lblActiveStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -224,6 +227,9 @@
             // grpProduct
             // 
             this.grpProduct.BackColor = System.Drawing.Color.Transparent;
+            this.grpProduct.Controls.Add(this.txtGarmentCode);
+            this.grpProduct.Controls.Add(this.lblActiveStatus);
+            this.grpProduct.Controls.Add(this.label6);
             this.grpProduct.Controls.Add(this.cmbGarmentName);
             this.grpProduct.Controls.Add(this.cmbService);
             this.grpProduct.Controls.Add(this.txtRate);
@@ -251,7 +257,7 @@
             this.cmbGarmentName.Items.AddRange(new object[] {
             "Normal",
             "Urgent"});
-            this.cmbGarmentName.Location = new System.Drawing.Point(133, 19);
+            this.cmbGarmentName.Location = new System.Drawing.Point(459, 19);
             this.cmbGarmentName.MaxDropDownItems = 20;
             this.cmbGarmentName.Name = "cmbGarmentName";
             this.cmbGarmentName.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
@@ -272,7 +278,7 @@
             this.cmbService.Items.AddRange(new object[] {
             "Normal",
             "Urgent"});
-            this.cmbService.Location = new System.Drawing.Point(435, 19);
+            this.cmbService.Location = new System.Drawing.Point(110, 66);
             this.cmbService.Name = "cmbService";
             this.cmbService.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.cmbService.Size = new System.Drawing.Size(198, 27);
@@ -303,7 +309,7 @@
             // txtRate
             // 
             this.txtRate.Enabled = false;
-            this.txtRate.Location = new System.Drawing.Point(133, 60);
+            this.txtRate.Location = new System.Drawing.Point(460, 62);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(198, 31);
             this.txtRate.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -326,7 +332,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(20, 19);
+            this.label5.Location = new System.Drawing.Point(346, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 325;
@@ -338,7 +344,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(86, 67);
+            this.label3.Location = new System.Drawing.Point(409, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 324;
@@ -350,7 +356,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(639, 18);
+            this.label1.Location = new System.Drawing.Point(314, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(15, 17);
             this.label1.TabIndex = 322;
@@ -362,7 +368,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(373, 19);
+            this.label4.Location = new System.Drawing.Point(45, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 17);
             this.label4.TabIndex = 321;
@@ -374,7 +380,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(334, 64);
+            this.label2.Location = new System.Drawing.Point(661, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 17);
             this.label2.TabIndex = 285;
@@ -584,6 +590,48 @@
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
             // 
+            // txtGarmentCode
+            // 
+            this.txtGarmentCode.Location = new System.Drawing.Point(111, 17);
+            this.txtGarmentCode.Name = "txtGarmentCode";
+            this.txtGarmentCode.Size = new System.Drawing.Size(198, 31);
+            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtGarmentCode.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtGarmentCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGarmentCode.StateCommon.Border.Rounding = 10;
+            this.txtGarmentCode.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGarmentCode.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGarmentCode.StateNormal.Border.Rounding = 20;
+            this.txtGarmentCode.TabIndex = 384;
+            // 
+            // lblActiveStatus
+            // 
+            this.lblActiveStatus.AutoSize = true;
+            this.lblActiveStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveStatus.ForeColor = System.Drawing.Color.White;
+            this.lblActiveStatus.Location = new System.Drawing.Point(3, 24);
+            this.lblActiveStatus.Name = "lblActiveStatus";
+            this.lblActiveStatus.Size = new System.Drawing.Size(101, 17);
+            this.lblActiveStatus.TabIndex = 382;
+            this.lblActiveStatus.Text = "Garment Code :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(315, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 17);
+            this.label6.TabIndex = 383;
+            this.label6.Text = "*";
+            // 
             // frmProductRateMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,5 +719,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbSearchByService;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtGarmentCode;
+        private System.Windows.Forms.Label lblActiveStatus;
+        private System.Windows.Forms.Label label6;
     }
 }

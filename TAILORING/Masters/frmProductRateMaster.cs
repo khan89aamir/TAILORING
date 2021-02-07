@@ -81,7 +81,6 @@ namespace TAILORING.Masters
                 DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
                 {
-                    dt.Columns.Remove("GarmentCode");
                     dt.Columns.Remove("GarmentType");
                     dt.Columns.Remove("Photo");
                     dt.Columns.Remove("LastChange");
@@ -104,6 +103,7 @@ namespace TAILORING.Masters
         }
         private void LoadProductRateData()
         {
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, 0, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, 2, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product_Rate");
             if (ObjUtil.ValidateDataSet(ds))
@@ -151,8 +151,7 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
 
             EnableDisable(true);
-            cmbGarmentName.SelectedIndex = -1;
-            cmbGarmentName.Focus();
+            txtGarmentCode.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -343,11 +342,11 @@ namespace TAILORING.Masters
             int a = 0;
             if (i == 0)
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND OrderType=" + cmbService.SelectedIndex);
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND OrderType=" + cmbService.SelectedIndex + " AND GarmentCode='" + txtGarmentCode.Text.Trim() + "'");
             }
             else
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND GarmentRateID !=" + i + " AND OrderType=" + cmbService.SelectedIndex);
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND GarmentRateID !=" + i + " AND OrderType=" + cmbService.SelectedIndex + " AND GarmentCode='" + txtGarmentCode.Text.Trim() + "'");
             }
             if (a > 0)
             {
@@ -362,6 +361,7 @@ namespace TAILORING.Masters
         private void SaveProductRateDetails()
         {
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, cmbGarmentName.SelectedValue, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.VarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbService.SelectedIndex, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
@@ -386,6 +386,7 @@ namespace TAILORING.Masters
         {
             ObjDAL.SetStoreProcedureData("GarmentRateID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, cmbGarmentName.SelectedValue, clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.VarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbService.SelectedIndex, clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("Rate", SqlDbType.Decimal, txtRate.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
@@ -443,6 +444,8 @@ namespace TAILORING.Masters
 
             cmbSearchByService.SelectedIndex = -1;
             cmbSearchByService.Enabled = false;
+
+            LoadProductRateData();
         }
 
         private void cmbService_SelectionChangeCommitted(object sender, EventArgs e)
@@ -453,6 +456,58 @@ namespace TAILORING.Masters
         private void cmbSearchByService_SelectionChangeCommitted(object sender, EventArgs e)
         {
             rdSearchByService.Focus();
+            SearchByService();
+        }
+
+        private void SearchByService()
+        {
+            ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, '0', clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, cmbSearchByService.SelectedIndex, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Product_Rate");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                }
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }
+        }
+
+        private void SearchByGarmentName()
+        {
+            if (txtSearchByGarment.Text.Trim().Length == 0)
+            {
+                LoadProductRateData();
+                return;
+            }
+            ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtSearchByGarment.Text.Trim(), clsConnection_DAL.ParamType.Input);
+            ObjDAL.SetStoreProcedureData("OrderType", SqlDbType.Int, 2, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Product_Rate");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                }
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }
         }
 
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
@@ -462,15 +517,27 @@ namespace TAILORING.Masters
 
         private void txtSearchByGarment_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 13)
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
             {
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txtSearchByGarment.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Valid Garment Name...", clsUtility.strProjectTitle);
+                txtSearchByGarment.Focus();
             }
+        }
+
+        private void txtGarmentCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Valid Garment Code...", clsUtility.strProjectTitle);
+                txtGarmentCode.Focus();
+            }
+        }
+
+        private void txtSearchByGarment_TextChanged(object sender, EventArgs e)
+        {
+            SearchByGarmentName();
         }
     }
 }

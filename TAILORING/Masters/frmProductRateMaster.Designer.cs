@@ -38,6 +38,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.grpKrytonHeader = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.grpProduct = new gGlowBox.gGlowGroupBox();
+            this.txtGarmentCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.lblActiveStatus = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbGarmentName = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.cmbService = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.txtRate = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -57,9 +60,6 @@
             this.rdSearchByProduct = new System.Windows.Forms.RadioButton();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtGarmentCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.lblActiveStatus = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpKrytonHeader.Panel)).BeginInit();
             this.grpKrytonHeader.Panel.SuspendLayout();
@@ -249,6 +249,49 @@
             this.grpProduct.Size = new System.Drawing.Size(730, 108);
             this.grpProduct.TabIndex = 287;
             // 
+            // txtGarmentCode
+            // 
+            this.txtGarmentCode.Location = new System.Drawing.Point(111, 17);
+            this.txtGarmentCode.Name = "txtGarmentCode";
+            this.txtGarmentCode.Size = new System.Drawing.Size(198, 31);
+            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtGarmentCode.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtGarmentCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGarmentCode.StateCommon.Border.Rounding = 10;
+            this.txtGarmentCode.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGarmentCode.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtGarmentCode.StateNormal.Border.Rounding = 20;
+            this.txtGarmentCode.TabIndex = 384;
+            this.txtGarmentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarmentCode_KeyPress);
+            // 
+            // lblActiveStatus
+            // 
+            this.lblActiveStatus.AutoSize = true;
+            this.lblActiveStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveStatus.ForeColor = System.Drawing.Color.White;
+            this.lblActiveStatus.Location = new System.Drawing.Point(3, 24);
+            this.lblActiveStatus.Name = "lblActiveStatus";
+            this.lblActiveStatus.Size = new System.Drawing.Size(101, 17);
+            this.lblActiveStatus.TabIndex = 382;
+            this.lblActiveStatus.Text = "Garment Code :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(315, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 17);
+            this.label6.TabIndex = 383;
+            this.label6.Text = "*";
+            // 
             // cmbGarmentName
             // 
             this.cmbGarmentName.DropDownHeight = 300;
@@ -356,7 +399,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(314, 71);
+            this.label1.Location = new System.Drawing.Point(314, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(15, 17);
             this.label1.TabIndex = 322;
@@ -380,7 +423,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(661, 69);
+            this.label2.Location = new System.Drawing.Point(661, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 17);
             this.label2.TabIndex = 285;
@@ -515,6 +558,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByGarment.StateNormal.Border.Rounding = 20;
             this.txtSearchByGarment.TabIndex = 381;
+            this.txtSearchByGarment.TextChanged += new System.EventHandler(this.txtSearchByGarment_TextChanged);
             this.txtSearchByGarment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchByGarment_KeyPress);
             // 
             // rdSearchByService
@@ -589,48 +633,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 364;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtGarmentCode
-            // 
-            this.txtGarmentCode.Location = new System.Drawing.Point(111, 17);
-            this.txtGarmentCode.Name = "txtGarmentCode";
-            this.txtGarmentCode.Size = new System.Drawing.Size(198, 31);
-            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.txtGarmentCode.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtGarmentCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGarmentCode.StateCommon.Border.Rounding = 10;
-            this.txtGarmentCode.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentCode.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGarmentCode.StateNormal.Border.Rounding = 20;
-            this.txtGarmentCode.TabIndex = 384;
-            // 
-            // lblActiveStatus
-            // 
-            this.lblActiveStatus.AutoSize = true;
-            this.lblActiveStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveStatus.ForeColor = System.Drawing.Color.White;
-            this.lblActiveStatus.Location = new System.Drawing.Point(3, 24);
-            this.lblActiveStatus.Name = "lblActiveStatus";
-            this.lblActiveStatus.Size = new System.Drawing.Size(101, 17);
-            this.lblActiveStatus.TabIndex = 382;
-            this.lblActiveStatus.Text = "Garment Code :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(315, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 17);
-            this.label6.TabIndex = 383;
-            this.label6.Text = "*";
             // 
             // frmProductRateMaster
             // 

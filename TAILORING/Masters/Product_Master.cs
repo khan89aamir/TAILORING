@@ -339,7 +339,7 @@ namespace TAILORING.Masters
             }
             ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtSearchByGarment.Text.Trim(), clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Product");
-            if (ds != null && ds.Tables.Count > 0)
+            if (ObjUtil.ValidateDataSet(ds))
             {
                 DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
@@ -373,14 +373,12 @@ namespace TAILORING.Masters
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 13)
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
             {
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txtGarmentName.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Valid Garment Name...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
         }
     }

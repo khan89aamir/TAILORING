@@ -411,6 +411,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByGarment.StateNormal.Border.Rounding = 20;
             this.txtSearchByGarment.TabIndex = 382;
+            this.txtSearchByGarment.TextChanged += new System.EventHandler(this.txtSearchByProduct_TextChanged);
             this.txtSearchByGarment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // grpGridview

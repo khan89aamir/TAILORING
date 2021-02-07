@@ -314,13 +314,20 @@ namespace TAILORING.Order
                 {
                     //txtRate.Text = drow[0]["Rate"].ToString();
                     GarmentName = drow[0]["GarmentName"].ToString();
-                    GarmentCode = drow[0]["GarmentCode"].ToString();
+                    //GarmentCode = drow[0]["GarmentCode"].ToString();
                     strPhoto = drow[0]["Photo"].ToString();
 
                     DataTable dt = GetProductRate(Convert.ToInt32(cmbGarmentName.SelectedValue), 0);// 0 ->Normal OrderType
                     if (ObjUtil.ValidateTable(dt))
                     {
                         GarmentRate = Convert.ToDouble(dt.Rows[0]["Rate"]);
+                        GarmentCode = dt.Rows[0]["GarmentCode"].ToString();
+                    }
+                    else
+                    {
+                        clsUtility.ShowInfoMessage("No Rate Found for Garment " + cmbGarmentName.Text);
+                        btnAdd.Enabled = false;
+                        return;
                     }
                     NumericQTY.Focus();
                 }
@@ -451,27 +458,28 @@ namespace TAILORING.Order
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
-                        DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
-                        if (ObjUtil.ValidateDataSet(ds))
+                        //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                        //DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
+                        DataTable dtData = GetProductRate(Convert.ToInt32(dt.Rows[i]["GarmentID"]), 0);
+                        //if (ObjUtil.ValidateDataSet(ds))
+                        //{
+                        //DataTable dtData = ds.Tables[0];
+                        if (ObjUtil.ValidateTable(dtData))
                         {
-                            DataTable dtData = ds.Tables[0];
-                            if (ObjUtil.ValidateTable(dtData))
-                            {
-                                DataRow dRow = dtOrder.NewRow();
-                                dRow["MasterGarmentID"] = pGarmentID;
-                                dRow["GarmentID"] = dtData.Rows[0]["GarmentID"];
-                                dRow["GarmentCode"] = dtData.Rows[0]["GarmentCode"].ToString();
-                                dRow["GarmentName"] = dtData.Rows[0]["GarmentName"].ToString();
-                                dRow["Photo"] = dtData.Rows[0]["Photo"];
-                                dRow["QTY"] = qty;
-                                dtOrder.Rows.Add(dRow);
+                            DataRow dRow = dtOrder.NewRow();
+                            dRow["MasterGarmentID"] = pGarmentID;
+                            dRow["GarmentID"] = dtData.Rows[0]["GarmentID"];
+                            dRow["GarmentCode"] = dtData.Rows[0]["GarmentCode"].ToString();
+                            dRow["GarmentName"] = dtData.Rows[0]["GarmentName"].ToString();
+                            dRow["Photo"] = dtData.Rows[0]["Photo"];
+                            dRow["QTY"] = qty;
+                            dtOrder.Rows.Add(dRow);
 
-                                b = true;
-                            }
-                            else
-                                b = false;
+                            b = true;
                         }
+                        else
+                            b = false;
+                        //}
                     }
                     dtOrder.AcceptChanges();
                 }
@@ -795,7 +803,7 @@ namespace TAILORING.Order
             e.Cancel = false;
             int column = dataGridView1.CurrentCell.ColumnIndex;
             string headerText = dataGridView1.Columns[column].HeaderText;
-            
+
             if (headerText == "Trim Amount")
             {
                 //if (e.FormattedValue == DBNull.Value || e.FormattedValue.ToString() == "")

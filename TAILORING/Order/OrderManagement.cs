@@ -27,6 +27,7 @@ namespace TAILORING.Order
 
         DataTable dtOrder = new DataTable();
         DataTable dtOrderDetails = new DataTable();
+        DataTable dtTempOrderDetails = new DataTable();
 
         DataSet dsMeasure = new DataSet();
         DataTable dtMeasurement = new DataTable();
@@ -99,6 +100,9 @@ namespace TAILORING.Order
 
             InitItemTable();
             InitOrderDetailsTable(); //Order Details
+
+            InitTempOrderDetailsTable(); //Temp Order Details
+
             InitMeasurementTable(); //Measurement
             InitStyleTable(); //Style
             InitBodyPostureTable(); //BodyPosture
@@ -143,8 +147,6 @@ namespace TAILORING.Order
             //Gridview
             dtOrder.Columns.Add("GarmentID");
             dtOrder.Columns.Add("MasterGarmentID");
-            dtOrder.Columns.Add("StichTypeID");
-            dtOrder.Columns.Add("FitTypeID");
             dtOrder.Columns.Add("GarmentCode");
             dtOrder.Columns.Add("GarmentName");
             dtOrder.Columns.Add("QTY", typeof(int));
@@ -184,6 +186,22 @@ namespace TAILORING.Order
             dtOrderDetails.AcceptChanges();
         }
 
+        private void InitTempOrderDetailsTable()
+        {
+            dtTempOrderDetails.Columns.Add("MasterGarmentID", typeof(int));
+            dtTempOrderDetails.Columns.Add("GarmentID", typeof(int));
+            dtTempOrderDetails.Columns.Add("StichTypeID", typeof(int));
+            dtTempOrderDetails.Columns.Add("FitTypeID", typeof(int));
+            dtTempOrderDetails.Columns.Add("Service", typeof(int));
+            dtTempOrderDetails.Columns.Add("TrailDate");
+            dtTempOrderDetails.Columns.Add("DeliveryDate");
+            dtTempOrderDetails.Columns.Add("TrimAmount");
+            dtTempOrderDetails.Columns.Add("QTY", typeof(int));
+            dtTempOrderDetails.Columns.Add("Rate", typeof(double));
+            dtTempOrderDetails.Columns.Add("Total", typeof(double));
+
+            dtTempOrderDetails.AcceptChanges();
+        }
         private void InitMeasurementTable()
         {
             dtMeasurement.Columns.Add("SalesOrderID");
@@ -418,6 +436,7 @@ namespace TAILORING.Order
         private void AdddtOrder()
         {
             dtOrder.Clear();
+            dtTempOrderDetails.Clear();
             DataTable dt = dtOrderManagement.DefaultView.ToTable(true, "GarmentID");
             if (ObjUtil.ValidateTable(dt))
             {
@@ -439,10 +458,27 @@ namespace TAILORING.Order
                             dRow["Photo"] = drData[0]["Photo"];
                             dRow["QTY"] = qty;
                             dtOrder.Rows.Add(dRow);
+
+                            for (int j = 1; j <= Convert.ToInt32(qty); j++)
+                            {
+                                DataRow dr = dtTempOrderDetails.NewRow();
+                                dr["MasterGarmentID"] = drData[0]["GarmentID"];
+                                dr["GarmentID"] = drData[0]["GarmentID"];
+                                dr["Service"] = drData[0]["ServiceID"];
+                                dr["TrailDate"] = drData[0]["TrailDate"];
+                                dr["DeliveryDate"] = drData[0]["DeliveryDate"];
+                                dr["TrimAmount"] = drData[0]["TrimAmount"];
+                                dr["Rate"] = drData[0]["Rate"];
+                                dr["QTY"] = 1;
+                                dr["Total"] = drData[0]["Total"];
+
+                                dtTempOrderDetails.Rows.Add(dr);
+                            }
                         }
                     }
                 }
                 dtOrder.AcceptChanges();
+                dtTempOrderDetails.AcceptChanges();
             }
         }
 
@@ -453,14 +489,16 @@ namespace TAILORING.Order
             if (a > 0)
             {
                 object qty = dtOrderManagement.Compute("SUM(QTY)", "GarmentID=" + pGarmentID);
+                DataRow[] dr1 = dtOrderManagement.Select("GarmentID=" + pGarmentID);
+
                 DataTable dt = ObjDAL.GetDataCol(clsUtility.DBName + ".dbo.tblMasterGarmentMapping", "GarmentID", "MasterGarmentMappingID");
-                if (ObjUtil.ValidateTable(dt))
+                if (ObjUtil.ValidateTable(dt) && dr1.Length > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         //ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dt.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
                         //DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_Product");
-                        DataTable dtData = GetProductRate(Convert.ToInt32(dt.Rows[i]["GarmentID"]), 0);
+                        DataTable dtData = GetProductRate(Convert.ToInt32(dt.Rows[i]["GarmentID"]), 0); // Normal Order Type
                         //if (ObjUtil.ValidateDataSet(ds))
                         //{
                         //DataTable dtData = ds.Tables[0];
@@ -475,6 +513,19 @@ namespace TAILORING.Order
                             dRow["QTY"] = qty;
                             dtOrder.Rows.Add(dRow);
 
+                            DataRow dr = dtTempOrderDetails.NewRow();
+                            dr["MasterGarmentID"] = pGarmentID;
+                            dr["GarmentID"] = dtData.Rows[0]["GarmentID"];
+                            dr["Service"] = dr1[0]["ServiceID"];
+                            dr["TrailDate"] = dr1[0]["TrailDate"];
+                            dr["DeliveryDate"] = dr1[0]["DeliveryDate"];
+                            dr["TrimAmount"] = dr1[0]["TrimAmount"];
+                            dr["Rate"] = dtData.Rows[0]["Rate"];
+                            dr["QTY"] = 1;
+                            dr["Total"] = Convert.ToDecimal(dr1[0]["TrimAmount"]) + Convert.ToDecimal(dtData.Rows[0]["Rate"]);
+
+                            dtTempOrderDetails.Rows.Add(dr);
+
                             b = true;
                         }
                         else
@@ -482,6 +533,7 @@ namespace TAILORING.Order
                         //}
                     }
                     dtOrder.AcceptChanges();
+                    dtTempOrderDetails.AcceptChanges();
                 }
             }
             else
@@ -490,6 +542,24 @@ namespace TAILORING.Order
             }
             return b;
         }
+
+        private void AdddtTempOrderDetails()
+        {
+            if (ObjUtil.ValidateTable(dtOrder))
+            {
+                for (int i = 0; i < dtOrder.Rows.Count; i++)
+                {
+                    DataRow dr = dtTempOrderDetails.NewRow();
+                    dr["MasterGarmentID"] = dtOrder.Rows[i]["MasterGarmentID"];
+                    dr["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
+                    dr["QTY"] = dtOrder.Rows[i]["QTY"];
+
+                    dtTempOrderDetails.Rows.Add(dr);
+                }
+                dtTempOrderDetails.AcceptChanges();
+            }
+        }
+
         private void CalcTotalAmount()
         {
             object total = 0;
@@ -518,8 +588,11 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtOrder))
             {
+                //AdddtTempOrderDetails();
+
                 Order.frmMeasurement Obj = new Order.frmMeasurement();
                 Obj.dtGarmentList = dtOrder;
+                Obj.dtTempOrderDetails = this.dtTempOrderDetails;
                 Obj.dsMeasure = this.dsMeasure;
                 Obj.CustomerID = this.CustomerID;
                 Obj.ShowDialog();
@@ -650,21 +723,17 @@ namespace TAILORING.Order
         private bool SavedSalesOrderDetails()
         {
             bool b = false;
-            for (int i = 0; i < dtOrder.Rows.Count; i++) //Sales Details
+            for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = OrderID;
-                drow["GarmentID"] = dtOrder.Rows[i]["GarmentID"];
-                drow["MasterGarmentID"] = dtOrder.Rows[i]["MasterGarmentID"];
+                drow["GarmentID"] = dtTempOrderDetails.Rows[i]["GarmentID"];
+                drow["MasterGarmentID"] = dtTempOrderDetails.Rows[i]["MasterGarmentID"];
+                drow["StichTypeID"] = dtTempOrderDetails.Rows[i]["StichTypeID"];
+                drow["FitTypeID"] = dtTempOrderDetails.Rows[i]["FitTypeID"];
 
-                DataRow[] dr = dtOrder.Select("GarmentID=" + dtOrder.Rows[i]["GarmentID"]);
-                if (dr.Length > 0)
-                {
-                    drow["StichTypeID"] = dr[0]["StichTypeID"];
-                    drow["FitTypeID"] = dr[0]["FitTypeID"];
-                }
-                DataRow[] drOrder = dtOrderManagement.Select("GarmentID=" + dtOrder.Rows[i]["MasterGarmentID"]);
-                if (drOrder.Length > 0)
+                DataRow[] drOrder = dtOrderManagement.Select("GarmentID=" + dtTempOrderDetails.Rows[i]["MasterGarmentID"]);
+                if (drOrder.Length > 0 && dtTempOrderDetails.Rows[i]["GarmentID"].ToString() != dtTempOrderDetails.Rows[i]["MasterGarmentID"].ToString())
                 {
                     drow["Service"] = drOrder[0]["ServiceID"];
 
@@ -675,6 +744,18 @@ namespace TAILORING.Order
                     drow["QTY"] = drOrder[0]["QTY"];
                     drow["Rate"] = drOrder[0]["Rate"];
                     drow["Total"] = drOrder[0]["Total"];
+                }
+                else
+                {
+                    drow["Service"] = dtOrderManagement.Rows[i]["ServiceID"];
+
+                    drow["TrailDate"] = dtOrderManagement.Rows[i]["TrailDate"] != DBNull.Value ? Convert.ToDateTime(dtOrderManagement.Rows[i]["TrailDate"]).ToString("yyyy-MM-dd") : DBNull.Value.ToString();
+
+                    drow["DeliveryDate"] = Convert.ToDateTime(dtOrderManagement.Rows[i]["DeliveryDate"]).ToString("yyyy-MM-dd");
+                    drow["TrimAmount"] = dtOrderManagement.Rows[i]["TrimAmount"];
+                    drow["QTY"] = dtOrderManagement.Rows[i]["QTY"];
+                    drow["Rate"] = dtOrderManagement.Rows[i]["Rate"];
+                    drow["Total"] = dtOrderManagement.Rows[i]["Total"];
                 }
                 drow["CreatedBy"] = clsUtility.LoginID;
 
@@ -1002,6 +1083,14 @@ namespace TAILORING.Order
             if (ObjUtil.ValidateTable(dt))
             {
                 dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Rate"].Value = dt.Rows[0]["Rate"];
+                //dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["GarmentCode"].Value = dt.Rows[0]["GarmentCode"];
+
+                int QTY = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["QTY"].Value);
+                double trimamt = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrimAmount"].Value != DBNull.Value ? Convert.ToDouble(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["TrimAmount"].Value) : 0;
+                double Rate = Convert.ToDouble(dt.Rows[0]["Rate"]);
+                double Total = (QTY * Rate) + trimamt;
+
+                dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Total"].Value = Total;
                 CalcTotalAmount();
             }
             //cmbService.SelectionChangeCommitted -= CmbService_SelectionChangeCommitted;
@@ -1124,6 +1213,10 @@ namespace TAILORING.Order
 
                             dt.Rows[e.RowIndex].Delete();
                             dt.AcceptChanges();
+
+                            dtTempOrderDetails.Rows[e.RowIndex].Delete();
+                            dtTempOrderDetails.AcceptChanges();
+
                             Delete_ReferenceGarments(GarmentID);
                         }
                         else

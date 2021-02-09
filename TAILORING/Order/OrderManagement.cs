@@ -1130,6 +1130,46 @@ namespace TAILORING.Order
 
                     CalcTotalAmount();
                 }
+                else if (dataGridView1.Columns[e.ColumnIndex].Name == "TrailDate")
+                {
+                    int pMasterGarmentID = 0;
+                    int pGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+
+                    DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
+                    if (drow.Length > 0)
+                    {
+                        pMasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
+                    }
+                    DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
+                    if (pGarmentID != pMasterGarmentID)
+                    {
+                        for (int i = 0; i < dr.Length; i++)
+                        {
+                            dr[i]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                            if (dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
+                            {
+                                dr[i]["StichTypeID"] = 1;//Trail
+                            }
+                            else
+                            {
+                                dr[i]["StichTypeID"] = 2;//Finish
+                            }
+                        }
+                    }
+                    else
+                    {
+                        dr[0]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                        if (dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
+                        {
+                            dr[0]["StichTypeID"] = 1;//Trail
+                        }
+                        else
+                        {
+                            dr[0]["StichTypeID"] = 2;//Finish
+                        }
+                    }
+                    dtTempOrderDetails.AcceptChanges();
+                }
             }
         }
 

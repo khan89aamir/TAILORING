@@ -175,32 +175,15 @@ namespace TAILORING.Order
                     if (ObjUtil.ValidateTable(dt))
                     {
                         GarmentID = Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]);
+                        //GetStichFitType();
                         if (Convert.ToInt32(dt.Rows[0]["SalesOrderID"]) == 0)
                         {
-                            GetStichFitType();
+                            //GetStichFitType();
                             //clsUtility.ShowInfoMessage("No previous order found..");
                         }
                         else
                         {
-                            //if (i == 0)
-                            //{
-                            //    dtTempMeasurement.Clear();
-                            //    dtTempStyle.Clear();
-                            //    dtTempPosture.Clear();
-                            //}
-
-                            //Updating Stich and Fit type for selected Garment.
-                            //DataRow[] dr = dtGarmentList.Select("GarmentID=" + dtGarmentList.Rows[i]["GarmentID"]);
-                            //if (dr.Length > 0)
-                            //{
-                            //    dr[0]["StichTypeID"] = dt.Rows[0]["StichTypeID"];
-                            //    dr[0]["FitTypeID"] = dt.Rows[0]["FitTypeID"];
-                            //}
-                            //dtGarmentList.AcceptChanges();
-
-                            //GarmentID = Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]);
-
-                            GetStichFitType();
+                            //GetStichFitType();
 
                             if (ds.Tables.Count > 1)
                                 CopyMeasurement_LastOrder(ds.Tables[1]);
@@ -808,18 +791,20 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
+                int index = 0;
+                index = Convert.ToInt32(cmbStyleQTY.Text);
                 DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
-                if (drow.Length > 0)
+                if (drow.Length > 0 && index <= drow.Length)
                 {
-                    if (drow[0]["StichTypeID"] != DBNull.Value)
+                    if (drow[index - 1]["StichTypeID"] != DBNull.Value)
                     {
-                        cmbStichType.SelectedValue = drow[0]["StichTypeID"];
+                        cmbStichType.SelectedValue = drow[index - 1]["StichTypeID"];
                     }
                     else
                     {
                         cmbStichType.SelectedIndex = -1;
                     }
-                    if (drow[0]["FitTypeID"] != DBNull.Value)
+                    if (drow[index - 1]["FitTypeID"] != DBNull.Value)
                     {
                         cmbFitType.SelectedValue = drow[0]["FitTypeID"];
                     }
@@ -893,6 +878,8 @@ namespace TAILORING.Order
 
                     // Get Current Garment selection status
                     GetGarmentSelectionStatus();
+
+                    GetStichFitType();
                 }
             }
         }
@@ -1065,6 +1052,8 @@ namespace TAILORING.Order
         {
             ChangedStyleQTY();
             checkBox1.Checked = false;
+
+            GetStichFitType();
         }
 
         private void cmbStichType_SelectionChangeCommitted(object sender, EventArgs e)

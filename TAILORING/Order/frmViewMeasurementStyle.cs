@@ -996,6 +996,10 @@ namespace TAILORING.Order
                     }
                     BindBodyPostures(dt, dtPosture);
                 }
+                else
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                }
             }
         }
 

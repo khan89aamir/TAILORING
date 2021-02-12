@@ -1323,6 +1323,5 @@ namespace TAILORING.Order
             }
 
         }
-
     }
 }

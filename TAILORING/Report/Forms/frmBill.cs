@@ -454,6 +454,18 @@ namespace TAILORING.Report.Forms
                         DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + CurQTY + " and SalesOrderID = " + OrderID);
                         if (ObjUtil.ValidateTable(dtStyles))
                         {
+
+                             s1 = "";
+                             s2 = "";
+                             s3 = "";
+                             s4 = "";
+                             s5 = "";
+                             s6 = "";
+                             s7 = "";
+                             s8 = "";
+                             s9 = "";
+                             s10 = "";
+
                             for (int s = 0; s < dtStyles.Rows.Count; s++)
                             {
                                 switch (s)

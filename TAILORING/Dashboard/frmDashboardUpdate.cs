@@ -443,5 +443,10 @@ namespace TAILORING.Dashboard
 
             timer1.Stop();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            BindDasbhoardData();
+        }
     }
 }

@@ -241,7 +241,25 @@ namespace TAILORING.Report.Forms
             }
 
         }
+        private string ImageToBase2_64(Image img)
+        {
+          
+            
+                using (Image image = img)
+                {
+                    using (MemoryStream m = new MemoryStream())
+                    {
+                        image.Save(m, image.RawFormat);
+                        byte[] imageBytes = m.ToArray();
 
+                        // Convert byte[] to Base64 String
+                        string base64String = Convert.ToBase64String(imageBytes);
+                        return base64String;
+                    }
+                }
+            
+
+        }
         private void InitMearumentStyleTable()
         {
             #region ProductDetails
@@ -297,7 +315,16 @@ namespace TAILORING.Report.Forms
             dtMeasurment.Columns.Add("s10");
             #endregion
 
+
             dtMeasurment.Columns.Add("barcode");
+            
+            dtMeasurment.Columns.Add("bdimg1");
+            dtMeasurment.Columns.Add("bdimg2");
+            dtMeasurment.Columns.Add("bdimg3");
+            dtMeasurment.Columns.Add("bdimg4");
+            dtMeasurment.Columns.Add("bdimg5");
+            dtMeasurment.Columns.Add("bdimg6");
+
 
         }
         private string GenerateSubOrderNo(string SKUNo, int QTYNo, int TotalQTY, string pOrderNo)
@@ -350,6 +377,13 @@ namespace TAILORING.Report.Forms
                 string s8 = "";
                 string s9 = "";
                 string s10 = "";
+                string bdimg1 = "";
+                string bdimg2 = "";
+                string bdimg3 = "";
+                string bdimg4 = "";
+                string bdimg5 = "";
+                string bdimg6 = "";
+             
 
                 #endregion
 
@@ -502,6 +536,48 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
+
+                        // Body Posture
+                        string strbodyPosture = "select bm.BodyPostureImage from " + clsUtility.DBName + ".dbo.tblCustomerBodyPosture cb  join " +
+                                                clsUtility.DBName + ".dbo.tblBodyPostureMapping bm on cb.BodyPostureMappingID = bm.BodyPostureMappingID" +
+                                                " where cb.SalesOrderID = "+OrderID+" and cb.GarmentID = "+GarmendID;
+
+                        DataTable dtbodyPosture= ObjCon.ExecuteSelectStatement(strbodyPosture);
+                        if (dtbodyPosture.Rows.Count>0)
+                        {
+                            for (int c = 0; c < dtbodyPosture.Rows.Count; c++)
+                            {
+                               switch(c)
+                                {
+                                    case 0:
+                                       bdimg1= ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                      break;
+                                    case 1:
+                                        bdimg2 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
+                                    case 2:
+                                        bdimg3 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
+                                    case 3:
+                                        bdimg4 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
+                                    case 4:
+                                        bdimg5 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
+                                    case 5:
+                                        bdimg6 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
+                               
+                                }
+                            }
+                        }
+                        else
+                        {
+                            bdimg1 = ImageToBase2_64(Properties.Resources.nobody);
+
+                        }
+
+
                         // add product ID as unique so that you can see record in list view for each QTY separately
                         inc = i;
                         subOrderNo = GenerateSubOrderNo(PU, CurQTY, TotalGarmentQTY, OrderNo);
@@ -517,10 +593,18 @@ namespace TAILORING.Report.Forms
                                 bmpBarCode.Save(imgPath);
                             }
                         }
+
+
+
+
                         // add your 1st QTY into table
                         AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
                                 mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mc10, mc1v, mc2v, mc3v, mc4v, mc5v, mc6v, mc7v, mc8v,
-                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo, ImageToBase64(imgPath));
+                                mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo, ImageToBase64(imgPath),
+                                bdimg1, bdimg2, bdimg3, bdimg4, bdimg5, bdimg6
+
+
+                                );
 
                         UpdateSubOrderNo(subOrderNo, SalesOrderDetailsID);
                     }
@@ -606,7 +690,15 @@ namespace TAILORING.Report.Forms
                                 string s9,
                                 string s10,
                                 string SubOrderID,
-                                string BarCodeImagePath
+                                string BarCodeImagePath,
+                                string bdimg1,
+                                string bdimg2,
+                                string bdimg3,
+                                string bdimg4,
+                                string bdimg5,
+                                string bdimg6
+                              
+
 
             )
         {
@@ -653,6 +745,16 @@ namespace TAILORING.Report.Forms
             dRow["s9"] = s9;
             dRow["s10"] = s10;
             dRow["barcode"] = BarCodeImagePath;
+            dRow["bdimg1"] = bdimg1;
+            dRow["bdimg2"] = bdimg2;
+            dRow["bdimg3"] = bdimg3;
+            dRow["bdimg4"] = bdimg4;
+            dRow["bdimg5"] = bdimg5;
+            dRow["bdimg6"] = bdimg6;
+
+
+
+
             dtMeasurment.Rows.Add(dRow);
             dtMeasurment.AcceptChanges();
         }

@@ -269,6 +269,30 @@
           <DataField>barcode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="bdimg1">
+          <DataField>bdimg1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bdimg2">
+          <DataField>bdimg2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bdimg3">
+          <DataField>bdimg3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bdimg4">
+          <DataField>bdimg4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bdimg5">
+          <DataField>bdimg5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bdimg6">
+          <DataField>bdimg6</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsReportData</rd:DataSetName>
@@ -282,151 +306,11 @@
   </DataSets>
       <Body>
         <ReportItems>
-          <Textbox Name="Textbox3">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Order Date :</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.56167in</Top>
-            <Left>6.11475in</Left>
-            <Height>0.25in</Height>
-            <Width>1.22917in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox9">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Order No :</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.54736in</Top>
-            <Left>0.01212in</Left>
-            <Height>0.25in</Height>
-            <Width>0.875in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="parmOrderDate">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmOrderDate.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <Format>M/d/yyyy</Format>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmOrderDate</rd:DefaultName>
-            <Top>1.56168in</Top>
-            <Left>7.40294in</Left>
-            <Height>0.25in</Height>
-            <Width>0.99655in</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="parmOrderNo">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!parmOrderNo.Value</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>11pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>parmOrderNo</rd:DefaultName>
-            <Top>1.54736in</Top>
-            <Left>1.06768in</Left>
-            <Height>0.25in</Height>
-            <Width>1.83681in</Width>
-            <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Line Name="Line1">
-            <Top>2.21403in</Top>
-            <Left>0.00642in</Left>
+            <Top>1.87026in</Top>
+            <Left>0.02446in</Left>
             <Height>0in</Height>
             <Width>8.39307in</Width>
-            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -454,11 +338,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.8668in</Top>
-            <Left>6.11474in</Left>
+            <Top>1.54736in</Top>
+            <Left>6.18452in</Left>
             <Height>0.25in</Height>
             <Width>1.22917in</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -487,11 +371,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>parmMobile</rd:DefaultName>
-            <Top>1.8668in</Top>
-            <Left>7.36127in</Left>
+            <Top>1.54736in</Top>
+            <Left>7.43105in</Left>
             <Height>0.25in</Height>
             <Width>1.03821in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -814,10 +698,10 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.00611in</Top>
-            <Left>0.04809in</Left>
+            <Left>0.06613in</Left>
             <Height>1.04167in</Height>
             <Width>8.40291in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -863,13 +747,153 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
+              <Textbox Name="Textbox3">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Order Date :</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>12pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <Top>0.05389in</Top>
+                <Left>6.09932in</Left>
+                <Height>0.25in</Height>
+                <Width>1.22917in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="parmOrderDate">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!parmOrderDate.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>11pt</FontSize>
+                          <Format>M/d/yyyy</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>parmOrderDate</rd:DefaultName>
+                <Top>0.0539in</Top>
+                <Left>7.38751in</Left>
+                <Height>0.25in</Height>
+                <Width>0.99655in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="parmOrderNo">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!parmOrderNo.Value</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>parmOrderNo</rd:DefaultName>
+                <Top>0.0539in</Top>
+                <Left>1.11783in</Left>
+                <Height>0.25in</Height>
+                <Width>1.83681in</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox9">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Order No :</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>12pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <Top>0.0539in</Top>
+                <Left>0.06227in</Left>
+                <Height>0.25in</Height>
+                <Width>0.875in</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>1.10334in</Top>
-            <Left>0.04809in</Left>
-            <Height>0.38889in</Height>
+            <Left>0.06613in</Left>
+            <Height>0.4289in</Height>
             <Width>8.40291in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -916,11 +940,11 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>2.26947in</Top>
-            <Left>0.00642in</Left>
+            <Top>1.89447in</Top>
+            <Left>0.02446in</Left>
             <Height>0.29681in</Height>
             <Width>8.39307in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -937,7 +961,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>2.875in</Height>
+                  <Height>4.10417in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1586,7 +1610,7 @@
                               </Style>
                             </Image>
                             <Line Name="Line2">
-                              <Top>2.82292in</Top>
+                              <Top>4.07292in</Top>
                               <Left>0.04809in</Left>
                               <Height>0in</Height>
                               <Width>8.35059in</Width>
@@ -2575,6 +2599,102 @@
                                 </Border>
                               </Style>
                             </Image>
+                            <Image Name="Image8">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg1.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.84375in</Top>
+                              <Left>0.15426in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>13</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image9">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg2.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.84375in</Top>
+                              <Left>1.50918in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>14</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image10">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg3.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.82292in</Top>
+                              <Left>2.86411in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>15</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image11">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg4.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.84375in</Top>
+                              <Left>4.21903in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>16</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image12">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg5.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.82292in</Top>
+                              <Left>5.58109in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>17</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
+                            <Image Name="Image13">
+                              <Source>Database</Source>
+                              <Value>=Fields!bdimg6.Value</Value>
+                              <MIMEType>image/png</MIMEType>
+                              <Sizing>FitProportional</Sizing>
+                              <Top>2.82292in</Top>
+                              <Left>6.94047in</Left>
+                              <Height>1.10417in</Height>
+                              <Width>1.27325in</Width>
+                              <ZIndex>18</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Image>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -2606,10 +2726,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsMeasurment</DataSetName>
-            <Top>2.61679in</Top>
-            <Height>2.875in</Height>
+            <Top>2.18623in</Top>
+            <Height>4.10417in</Height>
             <Width>8.43215in</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2640,7 +2760,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
-                <Top>0.94445in</Top>
+                <Top>0.5382in</Top>
                 <Left>0.58287in</Left>
                 <Height>0.25in</Height>
                 <Width>1.74995in</Width>
@@ -2656,11 +2776,11 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>5.58903in</Top>
-            <Left>0.11965in</Left>
-            <Height>1.19445in</Height>
+            <Top>6.71401in</Top>
+            <Left>0.06613in</Left>
+            <Height>0.7882in</Height>
             <Width>2.91864in</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -2691,7 +2811,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
-                <Top>0.90278in</Top>
+                <Top>0.52432in</Top>
                 <Left>0.73732in</Left>
                 <Height>0.25in</Height>
                 <Width>1.74995in</Width>
@@ -2707,11 +2827,11 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>5.58903in</Top>
-            <Left>5.48084in</Left>
-            <Height>1.19445in</Height>
+            <Top>6.71401in</Top>
+            <Left>5.48004in</Left>
+            <Height>0.81599in</Height>
             <Width>2.91864in</Width>
-            <ZIndex>12</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -2719,10 +2839,10 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>6.78348in</Height>
+        <Height>7.53in</Height>
         <Style />
       </Body>
-      <Width>8.50308in</Width>
+      <Width>8.46926in</Width>
       <Page>
         <InteractiveHeight>11in</InteractiveHeight>
         <InteractiveWidth>8.5in</InteractiveWidth>
@@ -2953,6 +3073,7 @@ Oc7JPdodu7KTJx9znDOSBXjHQLOU09Hr0sU5Bco5zhHVAmsLZQtMLeggz3dD7bqknFOgnOP4yDY4hrJl
 oNp08nf3b80pFM3HCTYg6OurCHfMnZE95tW9GyUP59OgVri4bDVQb1pIB/7UEiNfVs6WfKWQgFcLd5J961UFuKwNL/KABTnxUXJwRyfvmG0l4ZKB9M+QW3My8C8jTb7k5YuPdq5n7LQrhUw6OiOtQ3pxYbKsjbC4eRqoCDc4pzqoNZ1cni3Wlj23/yJGNXTXj1Z52edT0vklRWavUrhjVPj1/KSV8Kk4BgeC47Fll/SuXeKyzwUhhZuMcQVNV1xedEdRXdrzz39iSs87OlfrKpP7LZzWKeoZP0sH0qaOaSc7F0s8X0rAZW2U1HCKhAu+q9V0mqDbbnpH7h+Zir2sZD7lVjIH9idNpNoFPXMU8rjIZoVFtX4yr+qdoynPst49FocObpGe3qm06YrLE+6oW2t+f51WKa7PcoR+Cnfqd7X+fyucz4q7fgqHwfVTOJ+3Afop3KnnS0D+r8L5vPDWT+FO5AK9FO7Y85U7/1fhPF5UBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID+8B8pi4ROE5tCdAAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>66470b7b-bda0-4728-ab9f-f6f7a670f07f</rd:ReportID>
 </Report>

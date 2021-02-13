@@ -294,6 +294,12 @@
     <Compile Include="Order\frmOrderList.Designer.cs">
       <DependentUpon>frmOrderList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\frmOrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\frmOrderStatus.Designer.cs">
+      <DependentUpon>frmOrderStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\frmViewMeasurementStyle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmOrderList.resx">
       <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\frmOrderStatus.resx">
+      <DependentUpon>frmOrderStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\frmViewMeasurementStyle.resx">
       <DependentUpon>frmViewMeasurementStyle.cs</DependentUpon>
@@ -637,6 +646,7 @@
     <None Include="Resources\animated.gif" />
     <None Include="Resources\pictureBox4.Image.png" />
     <None Include="Resources\Logo.png" />
+    <None Include="Resources\nobody.JPG" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="Resources\titlebg_green.jpg" />
   </ItemGroup>

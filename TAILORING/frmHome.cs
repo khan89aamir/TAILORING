@@ -412,5 +412,11 @@ namespace TAILORING
             Settings.frmSettings frmSettings = new Settings.frmSettings();
             frmSettings.ShowDialog();
         }
+
+        private void kryptonRibbonGroupButton33_Click(object sender, EventArgs e)
+        {
+            Order.frmOrderStatus frmOrderStatus = new Order.frmOrderStatus();
+            frmOrderStatus.Show();
+        }
     }
 }

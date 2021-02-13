@@ -34,6 +34,7 @@ namespace TAILORING.Order
         DataTable dtTempMeasurement = new DataTable();
         DataTable dtTempStyle = new DataTable();
         DataTable dtTempPosture = new DataTable();
+        DataTable dtTempOrderDetails = new DataTable();
 
         DataTable dtMeasurementData = new DataTable();
         DataTable dtStyleData = new DataTable();
@@ -102,6 +103,7 @@ namespace TAILORING.Order
         private void InitOrderDetailsTable()
         {
             dtOrderDetails.Columns.Add("SalesOrderID");
+            dtOrderDetails.Columns.Add("SalesOrderDetailsID");
             dtOrderDetails.Columns.Add("StichTypeID", typeof(int));
             dtOrderDetails.Columns.Add("FitTypeID", typeof(int));
             dtOrderDetails.Columns.Add("MasterGarmentID");
@@ -196,7 +198,7 @@ namespace TAILORING.Order
                     dtTempMeasurement = dsMeasure.Tables[1];
                     dtTempStyle = dsMeasure.Tables[2];
                     dtTempPosture = dsMeasure.Tables[3];
-
+                    dtTempOrderDetails = dsMeasure.Tables[4];
                     AddGarments();
                 }
             }
@@ -760,22 +762,24 @@ namespace TAILORING.Order
 
         private void GetStichFitType()
         {
-            if (ObjUtil.ValidateTable(dtGarmentList))
+            if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
-                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
-                if (drow.Length > 0)
+                int index = 0;
+                index = Convert.ToInt32(cmbStyleQTY.Text);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0 && index <= drow.Length)
                 {
-                    if (drow[0]["StichTypeID"] != DBNull.Value)
+                    if (drow[index - 1]["StichTypeID"] != DBNull.Value)
                     {
-                        cmbStichType.SelectedValue = drow[0]["StichTypeID"];
+                        cmbStichType.SelectedValue = drow[index - 1]["StichTypeID"];
                     }
                     else
                     {
                         cmbStichType.SelectedIndex = -1;
                     }
-                    if (drow[0]["FitTypeID"] != DBNull.Value)
+                    if (drow[index - 1]["FitTypeID"] != DBNull.Value)
                     {
-                        cmbFitType.SelectedValue = drow[0]["FitTypeID"];
+                        cmbFitType.SelectedValue = drow[index - 1]["FitTypeID"];
                     }
                     else
                     {
@@ -810,6 +814,7 @@ namespace TAILORING.Order
         {
             ChangedStyleQTY();
             checkBox1.Checked = false;
+            GetStichFitType();
         }
 
         private void PrintOrder()
@@ -903,13 +908,14 @@ namespace TAILORING.Order
         {
             bool b = false;
             dtOrderDetails.Clear();
-            for (int i = 0; i < dtGarmentList.Rows.Count; i++) //Sales Details
+            for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
                 drow["SalesOrderID"] = pOrderID;
-                drow["GarmentID"] = dtGarmentList.Rows[i]["GarmentID"];
-                drow["StichTypeID"] = dtGarmentList.Rows[i]["StichTypeID"];
-                drow["FitTypeID"] = dtGarmentList.Rows[i]["FitTypeID"];
+                drow["SalesOrderDetailsID"] = dtTempOrderDetails.Rows[i]["SalesOrderDetailsID"];
+                drow["GarmentID"] = dtTempOrderDetails.Rows[i]["GarmentID"];
+                drow["StichTypeID"] = dtTempOrderDetails.Rows[i]["StichTypeID"];
+                drow["FitTypeID"] = dtTempOrderDetails.Rows[i]["FitTypeID"];
                 drow["CreatedBy"] = clsUtility.LoginID;
                 dtOrderDetails.Rows.Add(drow);
             }
@@ -989,6 +995,10 @@ namespace TAILORING.Order
                         dtPosture = ds.Tables[1];
                     }
                     BindBodyPostures(dt, dtPosture);
+                }
+                else
+                {
+                    flowLayoutPanel1.Controls.Clear();
                 }
             }
         }
@@ -1294,26 +1304,48 @@ namespace TAILORING.Order
 
         private void cmbStichType_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (ObjUtil.ValidateTable(dtGarmentList))
+            //if (ObjUtil.ValidateTable(dtGarmentList))
+            //{
+            //    DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
+            //    if (drow.Length > 0)
+            //    {
+            //        drow[0]["StichTypeID"] = cmbStichType.SelectedValue;
+            //        dtGarmentList.AcceptChanges();
+            //    }
+            //}
+
+            if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
-                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
-                if (drow.Length > 0)
+                int pqty = Convert.ToInt32(cmbStyleQTY.Text);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0 && pqty <= drow.Length)
                 {
-                    drow[0]["StichTypeID"] = cmbStichType.SelectedValue;
-                    dtGarmentList.AcceptChanges();
+                    drow[pqty - 1]["StichTypeID"] = cmbStichType.SelectedValue;
+                    dtTempOrderDetails.AcceptChanges();
                 }
             }
         }
 
         private void cmbFitType_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (ObjUtil.ValidateTable(dtGarmentList))
+            //if (ObjUtil.ValidateTable(dtGarmentList))
+            //{
+            //    DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
+            //    if (drow.Length > 0)
+            //    {
+            //        drow[0]["FitTypeID"] = cmbFitType.SelectedValue;
+            //        dtGarmentList.AcceptChanges();
+            //    }
+            //}
+
+            if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
-                DataRow[] drow = dtGarmentList.Select("GarmentID=" + GarmentID);
-                if (drow.Length > 0)
+                int pqty = Convert.ToInt32(cmbStyleQTY.Text);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                if (drow.Length > 0 && pqty <= drow.Length)
                 {
-                    drow[0]["FitTypeID"] = cmbFitType.SelectedValue;
-                    dtGarmentList.AcceptChanges();
+                    drow[pqty - 1]["FitTypeID"] = cmbFitType.SelectedValue;
+                    dtTempOrderDetails.AcceptChanges();
                 }
             }
         }

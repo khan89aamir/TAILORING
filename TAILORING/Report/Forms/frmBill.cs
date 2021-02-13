@@ -355,9 +355,8 @@ namespace TAILORING.Report.Forms
 
                 ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
                 DataSet dsOrderDetails = ObjCon.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_OrderDetails");
-                if (dsOrderDetails.Tables.Count > 0)
+                if (ObjUtil.ValidateDataSet(dsOrderDetails))
                 {
-
                     int TotalGarmentQTY = 0;
                     int CurQTY = 0;
                     int LastGarmentID = 0;

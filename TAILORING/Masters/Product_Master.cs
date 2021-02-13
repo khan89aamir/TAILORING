@@ -25,22 +25,15 @@ namespace TAILORING.Masters
 
         private void ClearAll()
         {
-            txtGarmentCode.Clear();
             txtGarmentName.Clear();
             cmbOrderType.SelectedIndex = -1;
 
-            txtGarmentCode.Focus();
+            txtGarmentName.Focus();
         }
 
         private bool Validateform()
         {
-            if (ObjUtil.IsControlTextEmpty(txtGarmentCode))
-            {
-                clsUtility.ShowInfoMessage("Enter Garment Code           ", clsUtility.strProjectTitle);
-                txtGarmentCode.Focus();
-                return false;
-            }
-            else if (ObjUtil.IsControlTextEmpty(txtGarmentName))
+            if (ObjUtil.IsControlTextEmpty(txtGarmentName))
             {
                 clsUtility.ShowInfoMessage("Enter Garment Name           ", clsUtility.strProjectTitle);
                 txtGarmentName.Focus();
@@ -53,7 +46,6 @@ namespace TAILORING.Masters
                 return false;
             }
             ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
-            ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
             ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
 
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Validate_Product");
@@ -69,8 +61,6 @@ namespace TAILORING.Masters
                         msg = dt.Rows[0]["Msg"].ToString();
                         clsUtility.ShowInfoMessage(msg, clsUtility.strProjectTitle);
                         if (flag == 0)
-                            txtGarmentCode.Focus();
-                        else
                             txtGarmentName.Focus();
 
                         ObjDAL.ResetData();
@@ -111,7 +101,7 @@ namespace TAILORING.Masters
             ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterNew);
             EnableDisable(true);
             cmbOrderType.SelectedIndex = -1;
-            txtGarmentCode.Focus();
+            txtGarmentName.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -120,7 +110,6 @@ namespace TAILORING.Masters
             {
                 if (Validateform())
                 {
-                    ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentType", SqlDbType.VarChar, cmbOrderType.SelectedItem.ToString(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("CreatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
@@ -154,8 +143,8 @@ namespace TAILORING.Masters
             {
                 ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterEdit);
                 EnableDisable(true);
-                txtGarmentCode.Focus();
-                txtGarmentCode.SelectionStart = txtGarmentCode.MaxLength;
+                txtGarmentName.Focus();
+                txtGarmentName.SelectionStart = txtGarmentName.MaxLength;
             }
             else
             {
@@ -170,7 +159,6 @@ namespace TAILORING.Masters
                 if (Validateform())
                 {
                     ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, ID, clsConnection_DAL.ParamType.Input);
-                    ObjDAL.SetStoreProcedureData("GarmentCode", SqlDbType.NVarChar, txtGarmentCode.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtGarmentName.Text.Trim(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("GarmentType", SqlDbType.VarChar, cmbOrderType.SelectedItem.ToString(), clsConnection_DAL.ParamType.Input);
                     ObjDAL.SetStoreProcedureData("UpdatedBy", SqlDbType.Int, clsUtility.LoginID, clsConnection_DAL.ParamType.Input);
@@ -253,10 +241,9 @@ namespace TAILORING.Masters
                     ObjUtil.SetCommandButtonStatus(clsCommon.ButtonStatus.AfterGridClick);
                     ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["GarmentID"].Value);
                     txtGarmentName.Text = dataGridView1.SelectedRows[0].Cells["GarmentName"].Value.ToString();
-                    txtGarmentCode.Text = dataGridView1.SelectedRows[0].Cells["GarmentCode"].Value.ToString();
                     cmbOrderType.SelectedItem = dataGridView1.SelectedRows[0].Cells["GarmentType"].Value.ToString();
                     EnableDisable(false);
-                    txtGarmentCode.Focus();
+                    txtGarmentName.Focus();
                 }
                 catch (Exception ex)
                 {
@@ -315,7 +302,6 @@ namespace TAILORING.Masters
 
         private void EnableDisable(bool b)
         {
-            txtGarmentCode.Enabled = b;
             txtGarmentName.Enabled = b;
             cmbOrderType.Enabled = b;
         }
@@ -353,7 +339,7 @@ namespace TAILORING.Masters
             }
             ObjDAL.SetStoreProcedureData("GarmentName", SqlDbType.NVarChar, txtSearchByGarment.Text.Trim(), clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Search_Product");
-            if (ds != null && ds.Tables.Count > 0)
+            if (ObjUtil.ValidateDataSet(ds))
             {
                 DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
@@ -387,27 +373,12 @@ namespace TAILORING.Masters
 
         private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 13)
+            KryptonTextBox txt = (KryptonTextBox)sender;
+            e.Handled = ObjUtil.IsAlphaNumeric(e);
+            if (e.Handled)
             {
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txtGarmentName.Focus();
-                }
-            }
-        }
-
-        private void txtGarmentCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != 13)
-            {
-                e.Handled = ObjUtil.IsAlphaNumeric(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors or Number...", clsUtility.strProjectTitle);
-                    txtGarmentCode.Focus();
-                }
+                clsUtility.ShowInfoMessage("Enter Valid Garment Name...", clsUtility.strProjectTitle);
+                txt.Focus();
             }
         }
     }

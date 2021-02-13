@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Master));
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblActiveStatus = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.rdShowAll = new System.Windows.Forms.RadioButton();
             this.rdSearchByProduct = new System.Windows.Forms.RadioButton();
@@ -48,7 +46,6 @@
             this.grpProduct = new gGlowBox.gGlowGroupBox();
             this.cmbOrderType = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.txtGarmentName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtGarmentCode = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonHeaderGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.groupBox1 = new gGlowBox.gGlowGroupBox();
             this.txtSearchByGarment = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -83,7 +80,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(332, 64);
+            this.label14.Location = new System.Drawing.Point(712, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(15, 17);
             this.label14.TabIndex = 293;
@@ -95,23 +92,11 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(14, 64);
+            this.label13.Location = new System.Drawing.Point(388, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 17);
             this.label13.TabIndex = 292;
             this.label13.Text = "Garment Type :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(333, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 17);
-            this.label3.TabIndex = 287;
-            this.label3.Text = "*";
             // 
             // label2
             // 
@@ -119,23 +104,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(696, 13);
+            this.label2.Location = new System.Drawing.Point(357, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 17);
             this.label2.TabIndex = 285;
             this.label2.Text = "*";
-            // 
-            // lblActiveStatus
-            // 
-            this.lblActiveStatus.AutoSize = true;
-            this.lblActiveStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblActiveStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveStatus.ForeColor = System.Drawing.Color.White;
-            this.lblActiveStatus.Location = new System.Drawing.Point(12, 17);
-            this.lblActiveStatus.Name = "lblActiveStatus";
-            this.lblActiveStatus.Size = new System.Drawing.Size(101, 17);
-            this.lblActiveStatus.TabIndex = 189;
-            this.lblActiveStatus.Text = "Garment Code :";
             // 
             // lblProductName
             // 
@@ -143,7 +116,7 @@
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.ForeColor = System.Drawing.Color.White;
-            this.lblProductName.Location = new System.Drawing.Point(370, 17);
+            this.lblProductName.Location = new System.Drawing.Point(17, 22);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(106, 17);
             this.lblProductName.TabIndex = 187;
@@ -197,7 +170,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(572, 54);
+            this.btnCancel.Location = new System.Drawing.Point(569, 58);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -214,7 +187,7 @@
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(477, 54);
+            this.btnDelete.Location = new System.Drawing.Point(475, 58);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnDelete.Size = new System.Drawing.Size(78, 34);
@@ -231,7 +204,7 @@
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(382, 54);
+            this.btnUpdate.Location = new System.Drawing.Point(381, 58);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnUpdate.Size = new System.Drawing.Size(78, 34);
@@ -248,7 +221,7 @@
             // 
             this.btnEdit.AutoSize = true;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(287, 54);
+            this.btnEdit.Location = new System.Drawing.Point(287, 58);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnEdit.Size = new System.Drawing.Size(78, 34);
@@ -265,7 +238,7 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(192, 54);
+            this.btnSave.Location = new System.Drawing.Point(193, 58);
             this.btnSave.Name = "btnSave";
             this.btnSave.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnSave.Size = new System.Drawing.Size(78, 34);
@@ -282,7 +255,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(97, 54);
+            this.btnAdd.Location = new System.Drawing.Point(97, 58);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue;
             this.btnAdd.Size = new System.Drawing.Size(80, 34);
@@ -300,14 +273,14 @@
             this.grpKrytonHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpKrytonHeader.HeaderVisibleSecondary = false;
-            this.grpKrytonHeader.Location = new System.Drawing.Point(19, 94);
+            this.grpKrytonHeader.Location = new System.Drawing.Point(12, 101);
             this.grpKrytonHeader.Name = "grpKrytonHeader";
             this.grpKrytonHeader.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpKrytonHeader.Panel
             // 
             this.grpKrytonHeader.Panel.Controls.Add(this.grpProduct);
-            this.grpKrytonHeader.Size = new System.Drawing.Size(736, 138);
+            this.grpKrytonHeader.Size = new System.Drawing.Size(743, 100);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpKrytonHeader.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -326,13 +299,10 @@
             this.grpProduct.BackColor = System.Drawing.Color.Transparent;
             this.grpProduct.Controls.Add(this.cmbOrderType);
             this.grpProduct.Controls.Add(this.txtGarmentName);
-            this.grpProduct.Controls.Add(this.txtGarmentCode);
             this.grpProduct.Controls.Add(this.label14);
-            this.grpProduct.Controls.Add(this.lblActiveStatus);
             this.grpProduct.Controls.Add(this.label13);
             this.grpProduct.Controls.Add(this.lblProductName);
             this.grpProduct.Controls.Add(this.label2);
-            this.grpProduct.Controls.Add(this.label3);
             this.grpProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpProduct.GlowAmount = 22;
             this.grpProduct.GlowColorDefault = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(179)))), ((int)(((byte)(205)))));
@@ -340,7 +310,7 @@
             this.grpProduct.GlowOn = true;
             this.grpProduct.Location = new System.Drawing.Point(0, 0);
             this.grpProduct.Name = "grpProduct";
-            this.grpProduct.Size = new System.Drawing.Size(728, 108);
+            this.grpProduct.Size = new System.Drawing.Size(735, 70);
             this.grpProduct.TabIndex = 287;
             // 
             // cmbOrderType
@@ -351,7 +321,7 @@
             this.cmbOrderType.Items.AddRange(new object[] {
             "Top",
             "Bottom"});
-            this.cmbOrderType.Location = new System.Drawing.Point(125, 64);
+            this.cmbOrderType.Location = new System.Drawing.Point(505, 17);
             this.cmbOrderType.MaxDropDownItems = 20;
             this.cmbOrderType.Name = "cmbOrderType";
             this.cmbOrderType.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
@@ -365,7 +335,7 @@
             // 
             // txtGarmentName
             // 
-            this.txtGarmentName.Location = new System.Drawing.Point(484, 13);
+            this.txtGarmentName.Location = new System.Drawing.Point(150, 17);
             this.txtGarmentName.Name = "txtGarmentName";
             this.txtGarmentName.Size = new System.Drawing.Size(206, 31);
             this.txtGarmentName.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -382,38 +352,19 @@
             this.txtGarmentName.TabIndex = 381;
             this.txtGarmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
-            // txtGarmentCode
-            // 
-            this.txtGarmentCode.Location = new System.Drawing.Point(125, 13);
-            this.txtGarmentCode.Name = "txtGarmentCode";
-            this.txtGarmentCode.Size = new System.Drawing.Size(206, 31);
-            this.txtGarmentCode.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.txtGarmentCode.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtGarmentCode.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGarmentCode.StateCommon.Border.Rounding = 10;
-            this.txtGarmentCode.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarmentCode.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtGarmentCode.StateNormal.Border.Rounding = 20;
-            this.txtGarmentCode.TabIndex = 380;
-            this.txtGarmentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarmentCode_KeyPress);
-            // 
             // kryptonHeaderGroup1
             // 
             this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(20, 246);
+            this.kryptonHeaderGroup1.Location = new System.Drawing.Point(13, 215);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
             this.kryptonHeaderGroup1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.groupBox1);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(734, 86);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(741, 86);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -440,7 +391,7 @@
             this.groupBox1.GlowOn = true;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 56);
+            this.groupBox1.Size = new System.Drawing.Size(733, 56);
             this.groupBox1.TabIndex = 287;
             // 
             // txtSearchByGarment
@@ -460,6 +411,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByGarment.StateNormal.Border.Rounding = 20;
             this.txtSearchByGarment.TabIndex = 382;
+            this.txtSearchByGarment.TextChanged += new System.EventHandler(this.txtSearchByProduct_TextChanged);
             this.txtSearchByGarment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // grpGridview
@@ -467,14 +419,14 @@
             this.grpGridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpGridview.Location = new System.Drawing.Point(21, 338);
+            this.grpGridview.Location = new System.Drawing.Point(14, 310);
             this.grpGridview.Name = "grpGridview";
             this.grpGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpGridview.Panel
             // 
             this.grpGridview.Panel.Controls.Add(this.dataGridView1);
-            this.grpGridview.Size = new System.Drawing.Size(735, 239);
+            this.grpGridview.Size = new System.Drawing.Size(742, 217);
             this.grpGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -499,7 +451,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(733, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 167);
             this.dataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
             this.dataGridView1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dataGridView1.TabIndex = 0;
@@ -515,7 +467,7 @@
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(779, 51);
+            this.kryptonPanel1.Size = new System.Drawing.Size(767, 51);
             this.kryptonPanel1.TabIndex = 371;
             // 
             // pictureBox1
@@ -535,7 +487,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(779, 590);
+            this.ClientSize = new System.Drawing.Size(767, 539);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpGridview);
             this.Controls.Add(this.kryptonHeaderGroup1);
@@ -586,12 +538,10 @@
 
         #endregion
         private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.Label lblActiveStatus;
         private System.Windows.Forms.RadioButton rdShowAll;
         private System.Windows.Forms.RadioButton rdSearchByProduct;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
@@ -607,7 +557,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpGridview;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dataGridView1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtGarmentName;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtGarmentCode;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtSearchByGarment;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;

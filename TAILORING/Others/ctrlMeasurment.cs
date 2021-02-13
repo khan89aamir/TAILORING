@@ -82,6 +82,11 @@ namespace TAILORING.Others
                         CoreApp.clsUtility.ShowInfoMessage("Please fill all the mandatory fields");
                         return null;
                     }
+                    else if (lstMendatoryColumn.Contains(curCol) && Convert.ToDecimal(ctr[0].Text.Trim()) < 8 && Convert.ToDecimal(ctr[0].Text.Trim()) > 50)
+                    {
+                        CoreApp.clsUtility.ShowInfoMessage("Please fill valid measurement");
+                        return null;
+                    }
                     else
                     {
                         dRow[i] = ctr[0].Text;
@@ -118,7 +123,7 @@ namespace TAILORING.Others
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 gGlowGroupBox panel = new gGlowBox.gGlowGroupBox();
-                
+
                 Label label = new Label();
 
                 //TextBox txt = new TextBox();

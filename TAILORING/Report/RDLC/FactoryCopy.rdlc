@@ -2532,7 +2532,7 @@
                               </Paragraphs>
                               <rd:DefaultName>ProductID</rd:DefaultName>
                               <Top>0.04167in</Top>
-                              <Left>4.18214in</Left>
+                              <Left>4.20175in</Left>
                               <Height>0.25in</Height>
                               <Width>1in</Width>
                               <ZIndex>10</ZIndex>
@@ -2838,6 +2838,22 @@
               </Border>
             </Style>
           </Rectangle>
+          <Image Name="Image15">
+            <Source>Database</Source>
+            <Value>=Parameters!parminvBarcode.Value</Value>
+            <MIMEType>image/jpeg</MIMEType>
+            <Sizing>Fit</Sizing>
+            <Top>1.53224in</Top>
+            <Left>0.06613in</Left>
+            <Height>0.32056in</Height>
+            <Width>2.33282in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
         </ReportItems>
         <Height>7.53in</Height>
         <Style />
@@ -2910,6 +2926,12 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ImagePath">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parminvBarcode">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>

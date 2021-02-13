@@ -115,6 +115,23 @@ namespace TAILORING.Report.Forms
             ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
 
 
+            Bitmap bmpBarCode = IMS_Client_2.Barcode.clsBarCodeUtility.GenerateBarCode(OrderNo);
+
+            string strBarCodeINvoiceNo = "";
+            using(MemoryStream ms1=new MemoryStream())
+            {
+                bmpBarCode.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] byteImage = ms1.ToArray();
+                 strBarCodeINvoiceNo = Convert.ToBase64String(byteImage); // Get Base64
+
+            }
+          
+          
+
+            ReportParameter param11 = new ReportParameter("parminvBarcode", strBarCodeINvoiceNo, true);
+
+      
+
             //ReportParameter parameterimg = new ReportParameter("ImagePath", ImageToBase64( @"C:\Test\MyImage.png"));
             //reportViewer1.LocalReport.SetParameters(parameterimg);
 
@@ -130,6 +147,7 @@ namespace TAILORING.Report.Forms
             reportViewer1.LocalReport.SetParameters(param8);
             reportViewer1.LocalReport.SetParameters(param9);
             reportViewer1.LocalReport.SetParameters(param10);
+            reportViewer1.LocalReport.SetParameters(param11);
 
 
             reportViewer2.LocalReport.DataSources.Clear();
@@ -144,6 +162,7 @@ namespace TAILORING.Report.Forms
             reportViewer2.LocalReport.SetParameters(param8);
             reportViewer2.LocalReport.SetParameters(param9);
             reportViewer2.LocalReport.SetParameters(param10);
+            reportViewer2.LocalReport.SetParameters(param11);
 
             reportViewer3.LocalReport.DataSources.Clear();
             // adding the parameter in the report dynamically
@@ -157,7 +176,7 @@ namespace TAILORING.Report.Forms
             reportViewer3.LocalReport.SetParameters(param8);
             reportViewer3.LocalReport.SetParameters(param9);
             reportViewer3.LocalReport.SetParameters(param10);
-
+            reportViewer3.LocalReport.SetParameters(param11);
 
             ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
             DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get("SPR_Get_MasterOrderDetails");

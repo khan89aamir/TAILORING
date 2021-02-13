@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup23;
+            ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup38;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.kryptonRibbonGroupTriple23 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
             this.kryptonRibbonGroupButton38 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
+            this.kryptonRibbonGroupTriple38 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple();
+            this.kryptonRibbonGroupButton34 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.userCreationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userCreationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -248,6 +251,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             kryptonRibbonGroup23 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
+            kryptonRibbonGroup38 = new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -280,6 +284,25 @@
             this.kryptonRibbonGroupButton38.ImageLarge = global::TAILORING.Properties.Resources.productmasterwhite;
             this.kryptonRibbonGroupButton38.TextLine1 = "Product Master";
             this.kryptonRibbonGroupButton38.Click += new System.EventHandler(this.productMasterToolStripMenuItem_Click);
+            // 
+            // kryptonRibbonGroup38
+            // 
+            kryptonRibbonGroup38.AllowCollapsed = false;
+            kryptonRibbonGroup38.DialogBoxLauncher = false;
+            kryptonRibbonGroup38.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupContainer[] {
+            this.kryptonRibbonGroupTriple38});
+            kryptonRibbonGroup38.TextLine1 = " ";
+            // 
+            // kryptonRibbonGroupTriple38
+            // 
+            this.kryptonRibbonGroupTriple38.Items.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupItem[] {
+            this.kryptonRibbonGroupButton34});
+            // 
+            // kryptonRibbonGroupButton34
+            // 
+            this.kryptonRibbonGroupButton34.ImageLarge = global::TAILORING.Properties.Resources.reportwhite;
+            this.kryptonRibbonGroupButton34.TextLine1 = "Monthly Report";
+            this.kryptonRibbonGroupButton34.Click += new System.EventHandler(this.kryptonRibbonGroupButton34_Click);
             // 
             // menuStrip1
             // 
@@ -1269,7 +1292,7 @@
             this.kryptonRibbonTab13,
             this.kryptonRibbonTab14,
             this.kryptonRibbonTab15});
-            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab16;
+            this.kryptonRibbon1.SelectedTab = this.kryptonRibbonTab12;
             this.kryptonRibbon1.ShowMinimizeButton = false;
             this.kryptonRibbon1.Size = new System.Drawing.Size(1289, 120);
             this.kryptonRibbon1.StateCommon.RibbonGeneral.ContextTextAlign = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -1572,7 +1595,8 @@
             this.kryptonRibbonTab12.Groups.AddRange(new ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup[] {
             this.kryptonRibbonGroup27,
             this.kryptonRibbonGroup28,
-            this.kryptonRibbonGroup29});
+            this.kryptonRibbonGroup29,
+            kryptonRibbonGroup38});
             this.kryptonRibbonTab12.Text = "Reports";
             // 
             // kryptonRibbonGroup27
@@ -2095,5 +2119,7 @@
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple37;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton33;
         private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup37;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupTriple kryptonRibbonGroupTriple38;
+        private ComponentFactory.Krypton.Ribbon.KryptonRibbonGroupButton kryptonRibbonGroupButton34;
     }
 }

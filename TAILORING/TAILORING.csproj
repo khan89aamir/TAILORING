@@ -363,6 +363,12 @@
     <Compile Include="Report\Forms\frmCustomerDetails.Designer.cs">
       <DependentUpon>frmCustomerDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Forms\frmMonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\frmMonthlyReport.Designer.cs">
+      <DependentUpon>frmMonthlyReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Forms\frmOrderDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -490,6 +496,9 @@
     <EmbeddedResource Include="Report\Forms\frmCustomerDetails.resx">
       <DependentUpon>frmCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\frmMonthlyReport.resx">
+      <DependentUpon>frmMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\frmOrderDetails.resx">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -497,6 +506,7 @@
       <DependentUpon>frmSKUDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RDLC\CustomerDetails.rdlc" />
+    <EmbeddedResource Include="Report\RDLC\MonthlyReport.rdlc" />
     <EmbeddedResource Include="Report\RDLC\OrderDetails.rdlc" />
     <EmbeddedResource Include="Report\RDLC\Chalan.rdlc" />
     <EmbeddedResource Include="Report\RDLC\CustomerCopy.rdlc" />

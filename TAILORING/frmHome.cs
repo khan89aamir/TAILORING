@@ -418,5 +418,11 @@ namespace TAILORING
             Order.frmOrderStatus frmOrderStatus = new Order.frmOrderStatus();
             frmOrderStatus.Show();
         }
+
+        private void kryptonRibbonGroupButton34_Click(object sender, EventArgs e)
+        {
+            Report.Forms.frmMonthlyReport frmMonthlyReport = new Report.Forms.frmMonthlyReport();
+            frmMonthlyReport.Show();
+        }
     }
 }

@@ -17,10 +17,9 @@ namespace TAILORING.Order
         {
             InitializeComponent();
         }
-        
+
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         clsUtility ObjUtil = new clsUtility();
-
 
         private void kryptonRadioButton4_CheckedChanged(object sender, EventArgs e)
         {
@@ -28,8 +27,8 @@ namespace TAILORING.Order
         }
         private void BindOrderStatus()
         {
-            DataTable dtOrderStatus = ObjDAL.ExecuteSelectStatement(" select * from " + clsUtility.DBName + ".dbo.tblOrderStatusMaster");
-            if (dtOrderStatus.Rows.Count > 0)
+            DataTable dtOrderStatus = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.tblOrderStatusMaster WITH(NOLOCK) ");
+            if (ObjUtil.ValidateTable(dtOrderStatus))
             {
                 cmbOrderStatus.DataSource = dtOrderStatus;
                 cmbOrderStatus.DisplayMember = "OrderStatus";
@@ -40,23 +39,32 @@ namespace TAILORING.Order
 
         private void SearchData()
         {
-            string strQ = " select OrderNo, SubOrderNo,GarmentName,StichType,FitTYpe,ServiceType,OrderStatus," +
+            string strQ = " SELECT OrderNo, SubOrderNo,GarmentName,StichType,FitTYpe,ServiceType,OrderStatus," +
                       " ReceivedDate,DeliveredDate,ReceivedBy,DeliveredBy from [dbo].[vw_OrderDetails_RDLC]";
 
             if (radOrderNo.Checked)
             {
-                strQ += " where OrderNo '" + txtCustomerOrderNo.Text + "'";
+                strQ += " where OrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
             else if (radSuborder.Checked)
             {
                 strQ += " where SubOrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
-            else if(radOrderStatus.Checked)
+            else if (radOrderStatus.Checked)
             {
                 strQ += " where OrderStatus ='" + cmbOrderStatus.Text + "'";
             }
 
-           dgvOrderDetails.DataSource=  ObjDAL.ExecuteSelectStatement(strQ);
+            DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
+            dgvOrderDetails.DataSource = dt;
+            if (ObjUtil.ValidateTable(dt))
+            {
+                grpCustomerGridview.ValuesSecondary.Description = "Total Records : " + dt.Rows.Count;
+            }
+            else
+            {
+                grpCustomerGridview.ValuesSecondary.Description = "Total Records : 0";
+            }
         }
 
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -74,19 +82,70 @@ namespace TAILORING.Order
             SearchData();
         }
 
-        private void cmbOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SearchData();
-        }
-
         private void txtCustomerOrderNo_TextChanged(object sender, EventArgs e)
         {
-            SearchData();
+            if (txtCustomerOrderNo.Text.Trim().Length > 0)
+            {
+                SearchData();
+            }
         }
 
         private void txtSubORderNo_TextChanged(object sender, EventArgs e)
         {
-            SearchData();
+            if (txtSubORderNo.Text.Trim().Length > 0)
+            {
+                SearchData();
+            }
+        }
+
+        private void radOrderStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radOrderStatus.Checked)
+            {
+                cmbOrderStatus.Enabled = true;
+                cmbOrderStatus.Focus();
+            }
+            else
+            {
+                cmbOrderStatus.SelectedIndex = -1;
+                cmbOrderStatus.Enabled = false;
+            }
+        }
+
+        private void radSuborder_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radSuborder.Checked)
+            {
+                txtSubORderNo.Enabled = true;
+                txtSubORderNo.Focus();
+            }
+            else
+            {
+                txtSubORderNo.Enabled = false;
+                txtSubORderNo.Clear();
+            }
+        }
+
+        private void radOrderNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radOrderNo.Checked)
+            {
+                txtCustomerOrderNo.Enabled = true;
+                txtCustomerOrderNo.Focus();
+            }
+            else
+            {
+                txtCustomerOrderNo.Enabled = false;
+                txtCustomerOrderNo.Clear();
+            }
+        }
+
+        private void cmbOrderStatus_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmbOrderStatus.SelectedValue != null)
+            {
+                SearchData();
+            }
         }
     }
 }

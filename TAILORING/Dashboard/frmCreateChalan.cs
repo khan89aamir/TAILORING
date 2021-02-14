@@ -35,8 +35,8 @@ namespace TAILORING.Dashboard
         private void LoadInProcess()
         {
             // for creating chalan , get only those records, which are in process or critical.
-            string strQ = "select SalesOrderID, OrderNo,OrderDate,OrderAmount,OrderQTY,TotalAmount,'View Details' as ViewDetails from " + clsUtility.DBName + ".dbo.tblSalesOrder where SalesOrderID in " +
-                          "(select SalesOrderID from " + clsUtility.DBName + ".dbo.tblOrderStatus where OrderStatus in (3, 2)) order by salesorderID desc";
+            string strQ = "SELECT SalesOrderID, OrderNo,OrderDate,OrderAmount,OrderQTY,TotalAmount,'View Details' AS ViewDetails FROM " + clsUtility.DBName + ".dbo.tblSalesOrder WHERE SalesOrderID IN " +
+                          "(SELECT SalesOrderID FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) WHERE OrderStatus in (3, 2)) ORDER BY salesorderID DESC";
 
             DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
             if (ObjUtil.ValidateTable(dt))
@@ -48,6 +48,7 @@ namespace TAILORING.Dashboard
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -78,38 +79,36 @@ namespace TAILORING.Dashboard
         public static List<string> lstSubOrderListlist = new List<string>();
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+
             dgvOrderDetails.EndEdit();
-   
+
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
                 if (dgvOrderDetails.Rows[i].Cells["colCheck"].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells["colCheck"].Value))
                 {
-
-                  DataTable dtSubOrderList=  ObjDAL.ExecuteSelectStatement("select SubOrderNo from " + clsUtility.DBName + ".dbo.vw_Chalan_Rdlc where SalesOrderID=" + dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
+                    DataTable dtSubOrderList = ObjDAL.ExecuteSelectStatement("select SubOrderNo from " + clsUtility.DBName + ".dbo.vw_Chalan_Rdlc where SalesOrderID=" + dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     for (int j = 0; j < dtSubOrderList.Rows.Count; j++)
                     {
                         lstSubOrderListlist.Add(dtSubOrderList.Rows[j][0].ToString());
                     }
-                   
                 }
             }
 
-
-            if (lstSubOrderListlist.Count==0)
+            if (lstSubOrderListlist.Count == 0)
             {
                 clsUtility.ShowInfoMessage("Please select at least one order for creating chalan.");
                 return;
             }
 
-            string strOrderList ="'"+string.Join<string>("','", lstSubOrderListlist)+"'";
+            string strOrderList = "'" + string.Join<string>("','", lstSubOrderListlist) + "'";
 
             Report.Forms.frmChalan frmChalan = new Report.Forms.frmChalan();
-           
+
             frmChalan.OrderList = strOrderList;
             frmChalan.Show();
             lstSubOrderListlist.Clear();
         }
+
         private bool ValidateRecive()
         {
             bool status = false;
@@ -141,25 +140,22 @@ namespace TAILORING.Dashboard
 
         private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex==7)
+            if (e.ColumnIndex == 7)
             {
-               
                 string orderNo = dgvOrderDetails.Rows[e.RowIndex].Cells["OrderNo"].Value.ToString();
 
                 frmChalanSub frmChalanSub = new frmChalanSub();
                 frmChalanSub.SalesOrderID = Convert.ToInt32(dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value);
-                frmChalanSub.lblOrderNo.Text ="Order No :"+ orderNo;
-                frmChalanSub.isInvoiceChk= Convert.ToBoolean(dgvOrderDetails.Rows[e.RowIndex].Cells["colCheck"].Value);
-            
+                frmChalanSub.lblOrderNo.Text = "Order No :" + orderNo;
+                frmChalanSub.isInvoiceChk = Convert.ToBoolean(dgvOrderDetails.Rows[e.RowIndex].Cells["colCheck"].Value);
+
                 frmChalanSub.ShowDialog();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-          
             this.Close();
-          
         }
     }
 }

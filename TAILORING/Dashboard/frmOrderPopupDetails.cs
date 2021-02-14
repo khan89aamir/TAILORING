@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CoreApp;
+
 namespace TAILORING.Dashboard
 {
     public partial class frmOrderPopupDetails : KryptonForm
     {
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
         clsUtility ObjUtil = new clsUtility();
+
         public frmOrderPopupDetails()
         {
             InitializeComponent();

@@ -41,7 +41,7 @@ namespace TAILORING.Order
             dgvOrderDetails.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             //Most time consumption enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
             dgvOrderDetails.RowHeadersVisible = false; // set it to false if not needed
-            
+
             LoadTailoringTheme();
             SetDataGridviewPaletteMode(dgvOrderDetails);
 
@@ -55,14 +55,14 @@ namespace TAILORING.Order
                 lblSuborderNo.Visible = true;
                 label1.Visible = true;
                 lblSuborderNo.Text = strSubOrderNo;
-             
+
                 // mateen cdoe, when the order form is opening from dashbaord.
                 string[] arr = strSubOrderNo.Replace("/", "@").Split('@');
                 lblOrderNo.Text = arr[2];
                 lblOrderNo.Visible = true;
                 label3.Visible = true;
 
-                SalesOrderID = ObjDAL.ExecuteScalarInt("select SalesOrderID from tblSalesOrderDetails where SubOrderNo='"+strSubOrderNo+"'");
+                SalesOrderID = ObjDAL.ExecuteScalarInt("SELECT SalesOrderID FROM " + clsUtility.DBName + ".dbo.tblSalesOrderDetails WITH(NOLOCK) WHERE SubOrderNo='" + strSubOrderNo + "'");
             }
 
             ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, SalesOrderID, clsConnection_DAL.ParamType.Input);
@@ -77,11 +77,12 @@ namespace TAILORING.Order
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
         }
-       public bool isFromDashboard = false;
+        public bool isFromDashboard = false;
 
         private void dgvOrderDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -102,37 +103,28 @@ namespace TAILORING.Order
                 MarkSubOrderNo();
                 dgvOrderDetails.ClearSelection();
             }
-          
+
         }
         private void MarkSubOrderNo()
         {
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
-                if (dgvOrderDetails.Rows[i].Cells["SubOrderNo"].Value.ToString()==strSubOrderNo)
+                if (dgvOrderDetails.Rows[i].Cells["SubOrderNo"].Value.ToString() == strSubOrderNo)
                 {
                     dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-
                 }
                 else
                 {
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.White;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.Black;
-
                 }
-
             }
-           
         }
 
         private void frmOrderDetails_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

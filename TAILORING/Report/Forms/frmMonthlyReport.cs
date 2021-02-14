@@ -20,11 +20,8 @@ namespace TAILORING.Report.Forms
             InitializeComponent();
         }
 
-    
-
         private void frmMonthlyReport_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
     }

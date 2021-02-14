@@ -731,7 +731,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>[Trail Date]</Value>
+                                  <Value>Trail Date</Value>
                                   <Style>
                                     <FontFamily>tIMES New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1014,7 +1014,7 @@
                                   <Value>=Fields!gTrailDate.Value</Value>
                                   <Style>
                                     <FontFamily>tIMES New Roman</FontFamily>
-                                    <Format>M/d/yyyy</Format>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1035,6 +1035,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1136,7 +1137,7 @@
             <Top>1.62375in</Top>
             <Left>0.06243in</Left>
             <Height>0.5in</Height>
-            <Width>8.05105in</Width>
+            <Width>8.05108in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>

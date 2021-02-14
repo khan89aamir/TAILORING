@@ -173,7 +173,6 @@ namespace TAILORING.Order
             this.label1.TabIndex = 365;
             this.label1.Text = "Sub Order No :";
             this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 

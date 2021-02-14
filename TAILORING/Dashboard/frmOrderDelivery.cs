@@ -19,8 +19,8 @@ namespace TAILORING.Dashboard
             InitializeComponent();
         }
 
-        CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
-        CoreApp.clsUtility ObjUtil = new CoreApp.clsUtility();
+        clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+        clsUtility ObjUtil = new clsUtility();
 
         private void SetDataGridviewPaletteMode(KryptonDataGridView dgv)
         {
@@ -36,7 +36,7 @@ namespace TAILORING.Dashboard
         {
             lblOrderNo.Text = OrderNo.ToString();
 
-            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) where OrderNo='" + OrderNo + "'");
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("SELECT SalesOrderID,CustomerID FROM  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) WHERE OrderNo='" + OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
@@ -44,7 +44,7 @@ namespace TAILORING.Dashboard
                 int _SalesOrderID = Convert.ToInt32(dtOrderDetails.Rows[0]["SalesOrderID"]);
 
                 // only show received order and deliverd order
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails where SalesOrderID=" + _SalesOrderID + " AND OrderStatusID in (1,4)");
+                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails WHERE SalesOrderID=" + _SalesOrderID + " AND OrderStatusID in (1,4)");
                 if (ObjUtil.ValidateTable(dt))
                 {
                     if (ObjUtil.ValidateTable(dt))
@@ -54,6 +54,7 @@ namespace TAILORING.Dashboard
                     }
                     else
                     {
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                         dgvOrderDetails.DataSource = null;
                     }
                 }
@@ -85,7 +86,7 @@ namespace TAILORING.Dashboard
 
             SetGridFont(dgvOrderDetails);
 
-            grpCustomerGridview.ValuesSecondary.Description = dgvOrderDetails.Rows.Count.ToString();
+            grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
@@ -152,10 +153,10 @@ namespace TAILORING.Dashboard
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
 
-                    int RecordCount = ObjDAL.ExecuteScalarInt("select count(1) from " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
+                    int RecordCount = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) WHERE SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
                     if (RecordCount > 0)
                     {
-                        // 1 - Order Devlivered.
+                        // 1 - Order Delivered.
                         ObjDAL.UpdateColumnData("OrderStatus", SqlDbType.Int, 1);
                         ObjDAL.UpdateColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.UpdateColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
@@ -164,7 +165,7 @@ namespace TAILORING.Dashboard
                     }
                     else
                     {
-                        // 1 - Order Devlivered.
+                        // 1 - Order Delivered.
                         ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 1);
                         ObjDAL.SetColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         ObjDAL.SetColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);

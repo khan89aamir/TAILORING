@@ -9,7 +9,6 @@ using System.Text;
 using System.Windows.Forms;
 using CoreApp;
 
-
 namespace TAILORING.Dashboard
 {
     public partial class frmChalanSub : KryptonForm
@@ -21,6 +20,9 @@ namespace TAILORING.Dashboard
             InitializeComponent();
         }
 
+        public int SalesOrderID = 0;
+        public bool isInvoiceChk = false;
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
@@ -31,17 +33,13 @@ namespace TAILORING.Dashboard
                     {
                         frmCreateChalan.lstSubOrderListlist.Add(dgvOrderDetails.Rows[i].Cells["SubOrderNo"].Value.ToString());
                     }
-                   
                 }
             }
             this.Close();
         }
 
-        public int SalesOrderID = 0;
-        public bool isInvoiceChk = false;
         private void frmChalanSub_Load(object sender, EventArgs e)
         {
-
             ObjDAL.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, SalesOrderID, clsConnection_DAL.ParamType.Input);
             DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".[dbo].[SPR_Get_OrderDetails]");
             if (ObjUtil.ValidateDataSet(ds))
@@ -52,19 +50,18 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.DataSource = dt;
                     grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
 
-
                     if (isInvoiceChk)
                     {
                         for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
                         {
                             dgvOrderDetails.Rows[i].Cells["colCheck"].Value = true;
                         }
-
                         dgvOrderDetails.Columns["colCheck"].ReadOnly = true;
                     }
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -79,7 +76,7 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
             dgvOrderDetails.Columns["SubOrderNo"].Width = 136;
-            
+
 
             dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
             dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitTypeName";

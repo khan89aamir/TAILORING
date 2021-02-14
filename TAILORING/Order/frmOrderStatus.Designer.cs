@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderStatus));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RadShowAll = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.radOrderStatus = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.radSuborder = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.radOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.txtSubORderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.cmbOrderStatus = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.txtCustomerOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtSubORderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.radOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.radSuborder = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.radOrderStatus = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.RadShowAll = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.groupBox1.SuspendLayout();
@@ -66,39 +66,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter :";
             // 
-            // cmbOrderStatus
+            // RadShowAll
             // 
-            this.cmbOrderStatus.DropDownWidth = 209;
-            this.cmbOrderStatus.Location = new System.Drawing.Point(794, 25);
-            this.cmbOrderStatus.Name = "cmbOrderStatus";
-            this.cmbOrderStatus.Size = new System.Drawing.Size(213, 27);
-            this.cmbOrderStatus.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cmbOrderStatus.StateCommon.ComboBox.Border.Rounding = 7;
-            this.cmbOrderStatus.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOrderStatus.TabIndex = 391;
-            this.cmbOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbOrderStatus_SelectedIndexChanged);
+            this.RadShowAll.Checked = true;
+            this.RadShowAll.Location = new System.Drawing.Point(679, 69);
+            this.RadShowAll.Name = "RadShowAll";
+            this.RadShowAll.Size = new System.Drawing.Size(82, 21);
+            this.RadShowAll.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.RadShowAll.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadShowAll.TabIndex = 396;
+            this.RadShowAll.Values.Text = "Show All";
+            this.RadShowAll.CheckedChanged += new System.EventHandler(this.kryptonRadioButton4_CheckedChanged);
             // 
-            // txtCustomerOrderNo
+            // radOrderStatus
             // 
-            this.txtCustomerOrderNo.Enabled = false;
-            this.txtCustomerOrderNo.Location = new System.Drawing.Point(96, 26);
-            this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
-            this.txtCustomerOrderNo.Size = new System.Drawing.Size(213, 31);
-            this.txtCustomerOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.txtCustomerOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
-            this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
-            this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
-            this.txtCustomerOrderNo.TabIndex = 386;
-            this.txtCustomerOrderNo.TextChanged += new System.EventHandler(this.txtCustomerOrderNo_TextChanged);
+            this.radOrderStatus.Location = new System.Drawing.Point(679, 31);
+            this.radOrderStatus.Name = "radOrderStatus";
+            this.radOrderStatus.Size = new System.Drawing.Size(109, 21);
+            this.radOrderStatus.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.radOrderStatus.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOrderStatus.TabIndex = 395;
+            this.radOrderStatus.Values.Text = "Order Status :";
+            this.radOrderStatus.CheckedChanged += new System.EventHandler(this.radOrderStatus_CheckedChanged);
+            // 
+            // radSuborder
+            // 
+            this.radSuborder.Location = new System.Drawing.Point(324, 31);
+            this.radSuborder.Name = "radSuborder";
+            this.radSuborder.Size = new System.Drawing.Size(118, 21);
+            this.radSuborder.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.radSuborder.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radSuborder.TabIndex = 394;
+            this.radSuborder.Values.Text = "Sub Order No :";
+            this.radSuborder.CheckedChanged += new System.EventHandler(this.radSuborder_CheckedChanged);
+            // 
+            // radOrderNo
+            // 
+            this.radOrderNo.Location = new System.Drawing.Point(6, 31);
+            this.radOrderNo.Name = "radOrderNo";
+            this.radOrderNo.Size = new System.Drawing.Size(90, 21);
+            this.radOrderNo.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.radOrderNo.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOrderNo.TabIndex = 393;
+            this.radOrderNo.Values.Text = "Order No :";
+            this.radOrderNo.CheckedChanged += new System.EventHandler(this.radOrderNo_CheckedChanged);
             // 
             // txtSubORderNo
             // 
@@ -120,47 +131,42 @@
             this.txtSubORderNo.TabIndex = 392;
             this.txtSubORderNo.TextChanged += new System.EventHandler(this.txtSubORderNo_TextChanged);
             // 
-            // radOrderNo
+            // cmbOrderStatus
             // 
-            this.radOrderNo.Location = new System.Drawing.Point(6, 31);
-            this.radOrderNo.Name = "radOrderNo";
-            this.radOrderNo.Size = new System.Drawing.Size(90, 21);
-            this.radOrderNo.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.radOrderNo.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOrderNo.TabIndex = 393;
-            this.radOrderNo.Values.Text = "Order No :";
+            this.cmbOrderStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrderStatus.DropDownWidth = 209;
+            this.cmbOrderStatus.Enabled = false;
+            this.cmbOrderStatus.Location = new System.Drawing.Point(794, 25);
+            this.cmbOrderStatus.Name = "cmbOrderStatus";
+            this.cmbOrderStatus.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.cmbOrderStatus.Size = new System.Drawing.Size(213, 27);
+            this.cmbOrderStatus.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbOrderStatus.StateCommon.ComboBox.Border.Rounding = 7;
+            this.cmbOrderStatus.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOrderStatus.TabIndex = 391;
+            this.cmbOrderStatus.SelectionChangeCommitted += new System.EventHandler(this.cmbOrderStatus_SelectionChangeCommitted);
             // 
-            // radSuborder
+            // txtCustomerOrderNo
             // 
-            this.radSuborder.Location = new System.Drawing.Point(324, 31);
-            this.radSuborder.Name = "radSuborder";
-            this.radSuborder.Size = new System.Drawing.Size(118, 21);
-            this.radSuborder.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.radSuborder.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radSuborder.TabIndex = 394;
-            this.radSuborder.Values.Text = "Sub Order No :";
-            // 
-            // radOrderStatus
-            // 
-            this.radOrderStatus.Location = new System.Drawing.Point(679, 31);
-            this.radOrderStatus.Name = "radOrderStatus";
-            this.radOrderStatus.Size = new System.Drawing.Size(109, 21);
-            this.radOrderStatus.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.radOrderStatus.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOrderStatus.TabIndex = 395;
-            this.radOrderStatus.Values.Text = "Order Status :";
-            // 
-            // RadShowAll
-            // 
-            this.RadShowAll.Checked = true;
-            this.RadShowAll.Location = new System.Drawing.Point(679, 70);
-            this.RadShowAll.Name = "RadShowAll";
-            this.RadShowAll.Size = new System.Drawing.Size(82, 21);
-            this.RadShowAll.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.RadShowAll.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadShowAll.TabIndex = 396;
-            this.RadShowAll.Values.Text = "Show All";
-            this.RadShowAll.CheckedChanged += new System.EventHandler(this.kryptonRadioButton4_CheckedChanged);
+            this.txtCustomerOrderNo.Enabled = false;
+            this.txtCustomerOrderNo.Location = new System.Drawing.Point(96, 26);
+            this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
+            this.txtCustomerOrderNo.Size = new System.Drawing.Size(213, 31);
+            this.txtCustomerOrderNo.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtCustomerOrderNo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
+            this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
+            this.txtCustomerOrderNo.TabIndex = 386;
+            this.txtCustomerOrderNo.TextChanged += new System.EventHandler(this.txtCustomerOrderNo_TextChanged);
             // 
             // grpCustomerGridview
             // 

@@ -375,7 +375,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>[Trail Date]</Value>
+                                                    <Value>Trail Date</Value>
                                                     <Style>
                                                       <FontFamily>tIMES New Roman</FontFamily>
                                                       <FontWeight>Bold</FontWeight>
@@ -714,6 +714,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -866,7 +867,6 @@
                             </Border>
                           </Style>
                         </Rectangle>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>

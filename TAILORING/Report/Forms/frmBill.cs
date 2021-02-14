@@ -76,7 +76,7 @@ namespace TAILORING.Report.Forms
             string strCompMobile = "";
             string strCompEmail = "";
 
-            DataTable dtCompany = ObjCon.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK)");
+            DataTable dtCompany = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
             if (ObjUtil.ValidateTable(dtCompany))
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
@@ -86,7 +86,7 @@ namespace TAILORING.Report.Forms
                 strCompEmail = dtCompany.Rows[0]["EmailID"].ToString();
             }
 
-            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] WITH(NOLOCK) where SalesOrderID=" + OrderID);
+            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] WITH(NOLOCK) WHERE SalesOrderID=" + OrderID);
             if (ObjUtil.ValidateTable(dtOrderMaster))
             {
                 Orderdate = dtOrderMaster.Rows[0]["OrderDate"].ToString();
@@ -94,7 +94,7 @@ namespace TAILORING.Report.Forms
                 CustomerID = dtOrderMaster.Rows[0]["CustomerID"].ToString();
             }
 
-            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("select * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) where CustomerID=" + CustomerID);
+            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) WHERE CustomerID=" + CustomerID);
             if (ObjUtil.ValidateTable(dtCustomer))
             {
                 strCustomerName = dtCustomer.Rows[0]["Name"].ToString();
@@ -118,19 +118,13 @@ namespace TAILORING.Report.Forms
             Bitmap bmpBarCode = IMS_Client_2.Barcode.clsBarCodeUtility.GenerateBarCode(OrderNo);
 
             string strBarCodeINvoiceNo = "";
-            using(MemoryStream ms1=new MemoryStream())
+            using (MemoryStream ms1 = new MemoryStream())
             {
                 bmpBarCode.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] byteImage = ms1.ToArray();
-                 strBarCodeINvoiceNo = Convert.ToBase64String(byteImage); // Get Base64
-
+                strBarCodeINvoiceNo = Convert.ToBase64String(byteImage); // Get Base64
             }
-          
-          
-
             ReportParameter param11 = new ReportParameter("parminvBarcode", strBarCodeINvoiceNo, true);
-
-      
 
             //ReportParameter parameterimg = new ReportParameter("ImagePath", ImageToBase64( @"C:\Test\MyImage.png"));
             //reportViewer1.LocalReport.SetParameters(parameterimg);
@@ -148,7 +142,6 @@ namespace TAILORING.Report.Forms
             reportViewer1.LocalReport.SetParameters(param9);
             reportViewer1.LocalReport.SetParameters(param10);
             reportViewer1.LocalReport.SetParameters(param11);
-
 
             reportViewer2.LocalReport.DataSources.Clear();
             // adding the parameter in the report dynamically
@@ -179,7 +172,7 @@ namespace TAILORING.Report.Forms
             reportViewer3.LocalReport.SetParameters(param11);
 
             ObjCon.SetStoreProcedureData("SalesOrderID", SqlDbType.Int, OrderID);
-            DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get("SPR_Get_MasterOrderDetails");
+            DataSet dataSet = ObjCon.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_MasterOrderDetails");
             if (ObjUtil.ValidateDataSet(dataSet))
             {
                 ReportDataSource rds = new ReportDataSource("dsItemDetails", dataSet.Tables[0]);
@@ -189,9 +182,9 @@ namespace TAILORING.Report.Forms
                 reportViewer3.LocalReport.DataSources.Add(rds);
             }
 
-            string strCalculation = "  select OrderAmount,(select SUM(t2.TrimAmount) from " + clsUtility.DBName + ".[dbo].[tblSalesOrderDetails] t2 " +
-                                   " where t2.SalesOrderID=" + OrderID + " ) as TrimAmount, (CGST+SGST) as Tax,t1.TotalAmount " +
-                                   " FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] t1 where t1.SalesOrderID=" + OrderID;
+            string strCalculation = "  SELECT OrderAmount,(SELECT SUM(t2.TrimAmount) FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrderDetails] t2 " +
+                                   " WHERE t2.SalesOrderID=" + OrderID + " ) as TrimAmount, (CGST+SGST) as Tax,t1.TotalAmount " +
+                                   " FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] t1 WHERE t1.SalesOrderID=" + OrderID;
 
             DataTable dtCalculation = ObjCon.ExecuteSelectStatement(strCalculation);
             if (ObjUtil.ValidateTable(dtCalculation))
@@ -258,27 +251,24 @@ namespace TAILORING.Report.Forms
                     }
                 }
             }
-
         }
+
         private string ImageToBase2_64(Image img)
         {
-          
-            
-                using (Image image = img)
+            using (Image image = img)
+            {
+                using (MemoryStream m = new MemoryStream())
                 {
-                    using (MemoryStream m = new MemoryStream())
-                    {
-                        image.Save(m, image.RawFormat);
-                        byte[] imageBytes = m.ToArray();
+                    image.Save(m, image.RawFormat);
+                    byte[] imageBytes = m.ToArray();
 
-                        // Convert byte[] to Base64 String
-                        string base64String = Convert.ToBase64String(imageBytes);
-                        return base64String;
-                    }
+                    // Convert byte[] to Base64 String
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    return base64String;
                 }
-            
-
+            }
         }
+
         private void InitMearumentStyleTable()
         {
             #region ProductDetails
@@ -334,18 +324,16 @@ namespace TAILORING.Report.Forms
             dtMeasurment.Columns.Add("s10");
             #endregion
 
-
             dtMeasurment.Columns.Add("barcode");
-            
+
             dtMeasurment.Columns.Add("bdimg1");
             dtMeasurment.Columns.Add("bdimg2");
             dtMeasurment.Columns.Add("bdimg3");
             dtMeasurment.Columns.Add("bdimg4");
             dtMeasurment.Columns.Add("bdimg5");
             dtMeasurment.Columns.Add("bdimg6");
-
-
         }
+
         private string GenerateSubOrderNo(string SKUNo, int QTYNo, int TotalQTY, string pOrderNo)
         {
             string str = SKUNo + "-" + QTYNo + "/" + TotalQTY + "/" + pOrderNo;
@@ -402,7 +390,7 @@ namespace TAILORING.Report.Forms
                 string bdimg4 = "";
                 string bdimg5 = "";
                 string bdimg6 = "";
-             
+
 
                 #endregion
 
@@ -454,7 +442,7 @@ namespace TAILORING.Report.Forms
                         {
                             DeliveryDate = Convert.ToDateTime(DeliveryDate).ToString("dd-MMMM-yyy");
                         }
-                        DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("select * from vw_Garment_Measurment_rdlc where  SalesOrderID=" + OrderID + " and GarmentID=" + GarmendID);
+                        DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("SELECT * FROM vw_Garment_Measurment_rdlc WHERE  SalesOrderID=" + OrderID + " AND GarmentID=" + GarmendID);
                         if (ObjUtil.ValidateTable(dtCustMeasument))
                         {
                             for (int m = 0; m < dtCustMeasument.Rows.Count; m++)
@@ -503,20 +491,20 @@ namespace TAILORING.Report.Forms
 
                         string subOrderNo = "NA";
 
-                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("select ImageName from vw_GarmentStyle_rdlc where GarmentID = " + GarmendID + " and QTY = " + CurQTY + " and SalesOrderID = " + OrderID);
+                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID);
                         if (ObjUtil.ValidateTable(dtStyles))
                         {
 
-                             s1 = "";
-                             s2 = "";
-                             s3 = "";
-                             s4 = "";
-                             s5 = "";
-                             s6 = "";
-                             s7 = "";
-                             s8 = "";
-                             s9 = "";
-                             s10 = "";
+                            s1 = "";
+                            s2 = "";
+                            s3 = "";
+                            s4 = "";
+                            s5 = "";
+                            s6 = "";
+                            s7 = "";
+                            s8 = "";
+                            s9 = "";
+                            s10 = "";
 
                             for (int s = 0; s < dtStyles.Rows.Count; s++)
                             {
@@ -550,27 +538,26 @@ namespace TAILORING.Report.Forms
 
                                         s7 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
-
                                 }
                             }
                         }
 
 
                         // Body Posture
-                        string strbodyPosture = "select bm.BodyPostureImage from " + clsUtility.DBName + ".dbo.tblCustomerBodyPosture cb  join " +
-                                                clsUtility.DBName + ".dbo.tblBodyPostureMapping bm on cb.BodyPostureMappingID = bm.BodyPostureMappingID" +
-                                                " where cb.SalesOrderID = "+OrderID+" and cb.GarmentID = "+GarmendID;
+                        string strbodyPosture = "SELECT bm.BodyPostureImage FROM " + clsUtility.DBName + ".dbo.tblCustomerBodyPosture cb  join " +
+                                                clsUtility.DBName + ".dbo.tblBodyPostureMapping bm ON cb.BodyPostureMappingID = bm.BodyPostureMappingID" +
+                                                " WHERE cb.SalesOrderID = " + OrderID + " AND cb.GarmentID = " + GarmendID;
 
-                        DataTable dtbodyPosture= ObjCon.ExecuteSelectStatement(strbodyPosture);
-                        if (dtbodyPosture.Rows.Count>0)
+                        DataTable dtbodyPosture = ObjCon.ExecuteSelectStatement(strbodyPosture);
+                        if (dtbodyPosture != null && dtbodyPosture.Rows.Count > 0)
                         {
                             for (int c = 0; c < dtbodyPosture.Rows.Count; c++)
                             {
-                               switch(c)
+                                switch (c)
                                 {
                                     case 0:
-                                       bdimg1= ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
-                                      break;
+                                        bdimg1 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        break;
                                     case 1:
                                         bdimg2 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
@@ -586,16 +573,13 @@ namespace TAILORING.Report.Forms
                                     case 5:
                                         bdimg6 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
-                               
                                 }
                             }
                         }
                         else
                         {
                             bdimg1 = ImageToBase2_64(Properties.Resources.nobody);
-
                         }
-
 
                         // add product ID as unique so that you can see record in list view for each QTY separately
                         inc = i;
@@ -613,16 +597,11 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
-
-
-
                         // add your 1st QTY into table
                         AddRowItem(inc.ToString(), Swatch, PU, Garment, Stitch, Service, Fit, TrailDate, DeliveryDate, mc1,
                                 mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mc10, mc1v, mc2v, mc3v, mc4v, mc5v, mc6v, mc7v, mc8v,
                                 mc9v, mc10v, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, subOrderNo, ImageToBase64(imgPath),
                                 bdimg1, bdimg2, bdimg3, bdimg4, bdimg5, bdimg6
-
-
                                 );
 
                         UpdateSubOrderNo(subOrderNo, SalesOrderDetailsID);
@@ -639,9 +618,9 @@ namespace TAILORING.Report.Forms
 
         private void UpdateSubOrderNo(string subOrderNo, string SalesOrderDetailsID)
         {
-            ObjCon.ExecuteNonQuery("update  " + clsUtility.DBName + ".dbo.[tblSalesOrderDetails] set SubOrderNo='" + subOrderNo + "' where SalesOrderDetailsID=" + SalesOrderDetailsID);
-
+            ObjCon.ExecuteNonQuery("UPDATE  " + clsUtility.DBName + ".dbo.[tblSalesOrderDetails] SET SubOrderNo='" + subOrderNo + "' where SalesOrderDetailsID=" + SalesOrderDetailsID);
         }
+
         private void InitiMeasrument()
         {
             InitMearumentStyleTable();
@@ -716,9 +695,6 @@ namespace TAILORING.Report.Forms
                                 string bdimg4,
                                 string bdimg5,
                                 string bdimg6
-                              
-
-
             )
         {
             DataRow dRow = dtMeasurment.NewRow();
@@ -771,12 +747,10 @@ namespace TAILORING.Report.Forms
             dRow["bdimg5"] = bdimg5;
             dRow["bdimg6"] = bdimg6;
 
-
-
-
             dtMeasurment.Rows.Add(dRow);
             dtMeasurment.AcceptChanges();
         }
+
         private void AddRow2(string c1, string c2, string c3, string c4)
         {
             DataRow dRow = dtStyle.NewRow();

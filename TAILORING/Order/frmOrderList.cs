@@ -133,10 +133,11 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -158,10 +159,11 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -183,10 +185,11 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -207,10 +210,11 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }
@@ -480,10 +484,11 @@ namespace TAILORING.Order
                 if (ObjUtil.ValidateTable(dt))
                 {
                     dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = dgvOrderDetails.Rows.Count.ToString();
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
                 }
                 else
                 {
+                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                     dgvOrderDetails.DataSource = null;
                 }
             }

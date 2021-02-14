@@ -19,11 +19,8 @@ namespace TAILORING.Report.Forms
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+
         public string OrderList;
         string strcomName = "";
         string parmGSTNo = "";
@@ -35,17 +32,16 @@ namespace TAILORING.Report.Forms
         string strCustomerAddress = "";
         string strCompMobile = "";
         string strCompEmail = "";
+
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
             BindOrderStatus();
-          
-
-
         }
+
         private void BindOrderStatus()
         {
-         DataTable dtOrderStatus=   ObjDAL.ExecuteSelectStatement(" select * from "+ clsUtility.DBName + ".dbo.tblOrderStatusMaster");
-            if (dtOrderStatus.Rows.Count>0)
+            DataTable dtOrderStatus = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.tblOrderStatusMaster WITH(NOLOCK) ");
+            if (dtOrderStatus != null && dtOrderStatus.Rows.Count > 0)
             {
                 cmbOrderStatus.DataSource = dtOrderStatus;
                 cmbOrderStatus.DisplayMember = "OrderStatus";
@@ -55,8 +51,8 @@ namespace TAILORING.Report.Forms
         }
         private void GenerateButton()
         {
-            DataTable dtCompany = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster");
-            if (dtCompany.Rows.Count > 0)
+            DataTable dtCompany = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
+            if (dtCompany != null && dtCompany.Rows.Count > 0)
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
                 parmGSTNo = dtCompany.Rows[0]["GST"].ToString();
@@ -67,38 +63,26 @@ namespace TAILORING.Report.Forms
 
                 // creating the parameter with the extact name as in the report.
                 ReportParameter param1 = new ReportParameter("parmStoreName", strcomName, true);
-
-
-
                 ReportParameter param6 = new ReportParameter("parmAddress", storeAddress, true);
-
                 ReportParameter param8 = new ReportParameter("parmGSTNo", parmGSTNo, true);
                 ReportParameter param9 = new ReportParameter("parmCompanyMobile", strCompMobile, true);
                 ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
                 ReportParameter param11 = new ReportParameter("parmDate", DateTime.Now.ToShortDateString(), true);
 
-
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from vw_OrderDetails_RDLC");
+                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM vw_OrderDetails_RDLC");
 
                 ReportDataSource rds2 = new ReportDataSource("dsOrderDetails", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);
                 reportViewer1.LocalReport.SetParameters(param1);
-
-
                 reportViewer1.LocalReport.SetParameters(param6);
-
                 reportViewer1.LocalReport.SetParameters(param8);
                 reportViewer1.LocalReport.SetParameters(param9);
                 reportViewer1.LocalReport.SetParameters(param10);
                 reportViewer1.LocalReport.SetParameters(param11);
-
-
-
                 reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 reportViewer1.ZoomMode = ZoomMode.Percent;
                 reportViewer1.ZoomPercent = 100;
                 this.reportViewer1.RefreshReport();
-
             }
         }
 

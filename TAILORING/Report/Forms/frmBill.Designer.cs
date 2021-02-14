@@ -67,7 +67,7 @@
             this.btnSave.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnSave.StateCommon.Border.Rounding = 5;
+            this.btnSave.StateCommon.Border.Rounding = 7;
             this.btnSave.TabIndex = 289;
             this.btnSave.Values.Image = global::TAILORING.Properties.Resources.printer;
             this.btnSave.Values.Text = "Print";

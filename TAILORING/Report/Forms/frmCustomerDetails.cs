@@ -32,7 +32,7 @@ namespace TAILORING.Report.Forms
         CoreApp.clsConnection_DAL ObjDAL = new CoreApp.clsConnection_DAL(true);
         private void frmCustomerDetails_Load(object sender, EventArgs e)
         {
-            DataTable dtCompany = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
+            DataTable dtCompany = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
             if (dtCompany != null && dtCompany.Rows.Count > 0)
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
@@ -48,7 +48,7 @@ namespace TAILORING.Report.Forms
                 ReportParameter param9 = new ReportParameter("parmCompanyMobile", strCompMobile, true);
                 ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.CustomerMaster WITH(NOLOCK)");
+                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CustomerMaster WITH(NOLOCK)");
 
                 ReportDataSource rds2 = new ReportDataSource("dsCustomer", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CoreApp;
+
 namespace TAILORING.Dashboard
 {
     public partial class frmOrderReceive : KryptonForm
@@ -27,7 +28,7 @@ namespace TAILORING.Dashboard
         {
             lblOrderNo.Text = OrderNo.ToString();
 
-            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("select SalesOrderID,CustomerID from  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) where OrderNo='" + OrderNo + "'");
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("SELECT SalesOrderID,CustomerID FROM  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) WHERE OrderNo='" + OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
@@ -36,7 +37,7 @@ namespace TAILORING.Dashboard
 
                 BindcustomerDetails(_CustID);
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("select * from " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails where SalesOrderID=" + _SalesOrderID);
+                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails WHERE SalesOrderID=" + _SalesOrderID);
                 if (ObjUtil.ValidateTable(dt))
                 {
                     if (ObjUtil.ValidateTable(dt))
@@ -46,6 +47,7 @@ namespace TAILORING.Dashboard
                     }
                     else
                     {
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
                         dgvOrderDetails.DataSource = null;
                     }
                 }
@@ -88,7 +90,7 @@ namespace TAILORING.Dashboard
 
             SetGridFont(dgvOrderDetails);
 
-            grpCustomerGridview.ValuesSecondary.Description = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
+            grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
 
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
@@ -137,10 +139,11 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
         private void BindcustomerDetails(int custID)
         {
-            DataTable dtCustomerDetails = ObjDAL.ExecuteSelectStatement("select Name,MobileNo from " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) where CustomerID=" + custID);
-            if (dtCustomerDetails.Rows.Count > 0)
+            DataTable dtCustomerDetails = ObjDAL.ExecuteSelectStatement("SELECT Name,MobileNo FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) WHERE CustomerID=" + custID);
+            if (ObjUtil.ValidateTable(dtCustomerDetails))
             {
                 lblCustomerName.Text = dtCustomerDetails.Rows[0]["Name"].ToString();
                 lblMobile.Text = dtCustomerDetails.Rows[0]["MobileNo"].ToString();
@@ -191,7 +194,7 @@ namespace TAILORING.Dashboard
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
 
-                    int RecordCount = ObjDAL.ExecuteScalarInt("select count(*) from " + clsUtility.DBName + ".dbo.tblOrderStatus where SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
+                    int RecordCount = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WHERE SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
                     if (RecordCount > 0)
                     {
                         // 4 - Order received.
@@ -234,26 +237,6 @@ namespace TAILORING.Dashboard
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dgvOrderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvOrderDetails_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-
-        }
-        
-        private void dgvOrderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvOrderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgvOrderDetails_CurrentCellDirtyStateChanged(object sender, EventArgs e)

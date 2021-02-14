@@ -695,17 +695,6 @@
   <data name="grpCustomerGridview.ValuesPrimary.Heading" xml:space="preserve">
     <value>List Of Order</value>
   </data>
-  <data name="grpCustomerGridview.ValuesPrimary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5QELDCYN1EmI3QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACnSURBVDhP
-        3ZOxCQJBFERN7EATswtsQDtQMDQQtAoNxVybESMLULCFLUDhGnGd54dlzkgwkRt4MDt/mWA/28k5J+E6
-        i6l4vk8hPBkzV6KgDl90E4uwDZExc9X/UXAQJ2MthuJoGZ5sYxnsKViJnTETfbG1DN8TzPzusiWP+Ahf
-        dBHzsA2RXcMW3SmoxNgYiK4YWYYnY+Z3Kwp+XmMLtvDtd56Ij++c0wsOvby12MXaJQAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <data name="grpCustomerGridview.ValuesSecondary.Heading" xml:space="preserve">
     <value>Total Records : 0</value>
   </data>

@@ -127,7 +127,7 @@ namespace TAILORING.Order
             dtOrderManagement.Columns.Add("Service");
             dtOrderManagement.Columns.Add("TrailDate", typeof(DateTime));
             dtOrderManagement.Columns.Add("DeliveryDate", typeof(DateTime));
-            dtOrderManagement.Columns.Add("TrimAmount");
+            dtOrderManagement.Columns.Add("TrimAmount",typeof(double));
             dtOrderManagement.Columns.Add("QTY", typeof(int));
             dtOrderManagement.Columns.Add("Rate", typeof(double));
             dtOrderManagement.Columns.Add("Total", typeof(double));
@@ -192,6 +192,7 @@ namespace TAILORING.Order
         {
             dtTempOrderDetails.Columns.Add("MasterGarmentID", typeof(int));
             dtTempOrderDetails.Columns.Add("GarmentID", typeof(int));
+            dtTempOrderDetails.Columns.Add("GarmentName");
             dtTempOrderDetails.Columns.Add("StichTypeID", typeof(int));
             dtTempOrderDetails.Columns.Add("FitTypeID", typeof(int));
             dtTempOrderDetails.Columns.Add("Service", typeof(int));
@@ -447,6 +448,7 @@ namespace TAILORING.Order
                                 DataRow dr = dtTempOrderDetails.NewRow();
                                 dr["MasterGarmentID"] = drData[0]["GarmentID"];
                                 dr["GarmentID"] = drData[0]["GarmentID"];
+                                dr["GarmentName"] = drData[0]["GarmentName"];
                                 dr["Service"] = drData[0]["ServiceID"];
                                 dr["TrailDate"] = drData[0]["TrailDate"];
                                 dr["DeliveryDate"] = drData[0]["DeliveryDate"];
@@ -500,6 +502,7 @@ namespace TAILORING.Order
                             DataRow dr = dtTempOrderDetails.NewRow();
                             dr["MasterGarmentID"] = pGarmentID;
                             dr["GarmentID"] = dtData.Rows[0]["GarmentID"];
+                            dr["GarmentName"] = dtData.Rows[0]["GarmentName"];
                             dr["Service"] = dr1[0]["ServiceID"];
                             dr["TrailDate"] = dr1[0]["TrailDate"];
                             dr["DeliveryDate"] = dr1[0]["DeliveryDate"];
@@ -547,16 +550,20 @@ namespace TAILORING.Order
 
         private void CalcTotalAmount()
         {
-            object total = 0;
-            double pCGST = 0, pSGST = 0, GrossAmt = 0;
+            object total = 0, trimamt = 0;
+            double pCGST = 0, pSGST = 0, GrossAmt = 0, pTotal = 0;
             try
             {
                 if (ObjUtil.ValidateTable(dtOrderManagement) && ObjUtil.ValidateTable((DataTable)dataGridView1.DataSource))
                 {
+                    trimamt = dtOrderManagement.Compute("SUM(TrimAmount)", string.Empty);
                     total = dtOrderManagement.Compute("SUM(Total)", string.Empty);
                 }
 
                 txtTailoringAmount.Text = total.ToString();
+                txtTrimAmount.Text = trimamt.ToString();
+
+                total = Convert.ToDouble(total) + Convert.ToDouble(trimamt);
                 pCGST = Convert.ToDouble(total) * CGST * 0.01;
                 pSGST = Convert.ToDouble(total) * SGST * 0.01;
 
@@ -566,7 +573,7 @@ namespace TAILORING.Order
                 GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
                 txtGrossAmt.Text = Math.Round(GrossAmt, 0).ToString();// Rounding off tailoring amount
             }
-            catch { }
+            catch(Exception ex) { }
         }
 
         private void btnMeasurement_Click(object sender, EventArgs e)
@@ -708,6 +715,7 @@ namespace TAILORING.Order
         private bool SavedSalesOrderDetails()
         {
             bool b = false;
+            dtOrderDetails.Clear();
             for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
@@ -782,6 +790,7 @@ namespace TAILORING.Order
 
         private void FillMeasurementData()
         {
+            dtMeasurement.Clear();
             DataTable dttempMeasure = dsMeasure.Tables[0];
             for (int i = 0; i < dttempMeasure.Rows.Count; i++)
             {
@@ -801,6 +810,7 @@ namespace TAILORING.Order
 
         private void FillStyleData()
         {
+            dtStyle.Clear();
             DataTable dttempStyle = dsMeasure.Tables[1];
             for (int i = 0; i < dttempStyle.Rows.Count; i++)
             {
@@ -821,6 +831,7 @@ namespace TAILORING.Order
 
         private void FillBodyPostureData()
         {
+            dtBodyPosture.Clear();
             DataTable dttempPosture = dsMeasure.Tables[2];
             for (int i = 0; i < dttempPosture.Rows.Count; i++)
             {
@@ -1112,14 +1123,14 @@ namespace TAILORING.Order
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "TrimAmount")
                 {
-                    int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
+                    //int QTY = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["QTY"].Value);
 
-                    double trimamt = dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value != DBNull.Value ? Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value) : 0;
+                    //double trimamt = dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value != DBNull.Value ? Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["TrimAmount"].Value) : 0;
 
-                    double Rate = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value);
-                    double Total = (QTY * Rate) + trimamt;
+                    //double Rate = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells["Rate"].Value);
+                    //double Total = (QTY * Rate) + trimamt;
 
-                    dataGridView1.Rows[e.RowIndex].Cells["Total"].Value = Math.Round(Total).ToString();
+                    //dataGridView1.Rows[e.RowIndex].Cells["Total"].Value = Math.Round(Total).ToString();
 
                     CalcTotalAmount();
                 }

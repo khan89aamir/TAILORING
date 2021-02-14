@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="dsReportData">
@@ -44,8 +44,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <ReportSections>
-    <ReportSection>
       <Body>
         <ReportItems>
           <Rectangle Name="Rectangle2">
@@ -714,8 +712,6 @@
         <BottomMargin>0.24in</BottomMargin>
         <Style />
       </Page>
-    </ReportSection>
-  </ReportSections>
   <ReportParameters>
     <ReportParameter Name="parmAddress">
       <DataType>String</DataType>
@@ -746,39 +742,6 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>3</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>parmAddress</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>parmStoreName</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>parmGSTNo</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>parmCompanyEmail</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
-          <ParameterName>parmCompanyMobile</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <EmbeddedImages>
     <EmbeddedImage Name="phonecall">
       <MIMEType>image/png</MIMEType>
@@ -797,3 +760,4 @@ pGfvNZGl+lATvpZHfC3Ev23CvKedAryD8SHQGfC75DujD2FpzE/ma5l8kV7XVsAbAvF4JEqrl0n2YfFw
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>45c29996-fc25-4070-8d0c-4b007b39182d</rd:ReportID>
 </Report>
+

@@ -806,7 +806,7 @@ namespace TAILORING.Order
                     }
                     if (drow[index - 1]["FitTypeID"] != DBNull.Value)
                     {
-                        cmbFitType.SelectedValue = drow[0]["FitTypeID"];
+                        cmbFitType.SelectedValue = drow[index - 1]["FitTypeID"];
                     }
                     else
                     {
@@ -1155,19 +1155,19 @@ namespace TAILORING.Order
                         }
                     }
                 }
-                else if (ObjUtil.ValidateTable(dtGarmentList))
+                if (ObjUtil.ValidateTable(dtTempOrderDetails))
                 {
                     b = false;
-                    for (int i = 0; i < dtGarmentList.Rows.Count; i++)
+                    for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++)//
                     {
-                        if (dtGarmentList.Rows[i]["StichTypeID"].ToString() == "")
+                        if (dtTempOrderDetails.Rows[i]["StichTypeID"].ToString() == "")
                         {
-                            clsUtility.ShowInfoMessage("Please Select Stich Type for " + dtGarmentList.Rows[i]["GarmentName"]);
+                            clsUtility.ShowInfoMessage("Please Select Stich Type for " + dtTempOrderDetails.Rows[i]["GarmentName"]);
                             return b;
                         }
-                        else if (dtGarmentList.Rows[i]["FitTypeID"].ToString() == "")
+                        else if (dtTempOrderDetails.Rows[i]["FitTypeID"].ToString() == "")
                         {
-                            clsUtility.ShowInfoMessage("Please Select Fit Type for " + dtGarmentList.Rows[i]["GarmentName"]);
+                            clsUtility.ShowInfoMessage("Please Select Fit Type for " + dtTempOrderDetails.Rows[i]["GarmentName"]);
                             return b;
                         }
                     }

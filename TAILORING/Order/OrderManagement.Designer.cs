@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
@@ -83,6 +83,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.dtpBookingDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
+            this.txtTrimAmount = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonHeaderGroup1.Panel)).BeginInit();
             this.kryptonHeaderGroup1.Panel.SuspendLayout();
@@ -260,7 +262,7 @@
             this.lblCGST.BackColor = System.Drawing.Color.Transparent;
             this.lblCGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCGST.ForeColor = System.Drawing.Color.White;
-            this.lblCGST.Location = new System.Drawing.Point(385, 612);
+            this.lblCGST.Location = new System.Drawing.Point(461, 612);
             this.lblCGST.Name = "lblCGST";
             this.lblCGST.Size = new System.Drawing.Size(49, 19);
             this.lblCGST.TabIndex = 353;
@@ -272,7 +274,7 @@
             this.lblSGST.BackColor = System.Drawing.Color.Transparent;
             this.lblSGST.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSGST.ForeColor = System.Drawing.Color.White;
-            this.lblSGST.Location = new System.Drawing.Point(593, 612);
+            this.lblSGST.Location = new System.Drawing.Point(669, 612);
             this.lblSGST.Name = "lblSGST";
             this.lblSGST.Size = new System.Drawing.Size(47, 19);
             this.lblSGST.TabIndex = 355;
@@ -531,8 +533,8 @@
             // GarmentID
             // 
             this.GarmentID.DataPropertyName = "GarmentID";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GarmentID.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GarmentID.DefaultCellStyle = dataGridViewCellStyle1;
             this.GarmentID.HeaderText = "GarmentID";
             this.GarmentID.Name = "GarmentID";
             this.GarmentID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -542,8 +544,8 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "GarmentCode";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.FillWeight = 100.2838F;
             this.Column1.HeaderText = "GarmentCode";
             this.Column1.Name = "Column1";
@@ -554,8 +556,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "GarmentName";
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FillWeight = 97.03809F;
             this.Column2.HeaderText = "GarmentName";
             this.Column2.Name = "Column2";
@@ -669,12 +671,12 @@
             // ColDelete1
             // 
             this.ColDelete1.DataPropertyName = "Delete1";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.ColDelete1.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColDelete1.HeaderText = "Delete1";
             this.ColDelete1.Name = "ColDelete1";
             this.ColDelete1.Text = "Delete1";
@@ -711,7 +713,7 @@
             // 
             // txtTailoringAmount
             // 
-            this.txtTailoringAmount.Location = new System.Drawing.Point(146, 605);
+            this.txtTailoringAmount.Location = new System.Drawing.Point(137, 605);
             this.txtTailoringAmount.Name = "txtTailoringAmount";
             this.txtTailoringAmount.ReadOnly = true;
             this.txtTailoringAmount.Size = new System.Drawing.Size(119, 31);
@@ -728,7 +730,7 @@
             // 
             // txtCGST
             // 
-            this.txtCGST.Location = new System.Drawing.Point(498, 605);
+            this.txtCGST.Location = new System.Drawing.Point(574, 605);
             this.txtCGST.Name = "txtCGST";
             this.txtCGST.ReadOnly = true;
             this.txtCGST.Size = new System.Drawing.Size(59, 31);
@@ -748,7 +750,7 @@
             // 
             // txtSGST
             // 
-            this.txtSGST.Location = new System.Drawing.Point(705, 605);
+            this.txtSGST.Location = new System.Drawing.Point(781, 605);
             this.txtSGST.Name = "txtSGST";
             this.txtSGST.ReadOnly = true;
             this.txtSGST.Size = new System.Drawing.Size(59, 31);
@@ -888,6 +890,38 @@
             this.dtpBookingDate.StateCommon.Border.Rounding = 10;
             this.dtpBookingDate.TabIndex = 389;
             // 
+            // txtTrimAmount
+            // 
+            this.txtTrimAmount.Location = new System.Drawing.Point(387, 605);
+            this.txtTrimAmount.Name = "txtTrimAmount";
+            this.txtTrimAmount.ReadOnly = true;
+            this.txtTrimAmount.Size = new System.Drawing.Size(59, 31);
+            this.txtTrimAmount.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtTrimAmount.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(154)))), ((int)(((byte)(166)))));
+            this.txtTrimAmount.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtTrimAmount.StateCommon.Border.Rounding = 10;
+            this.txtTrimAmount.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTrimAmount.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtTrimAmount.StateNormal.Border.Rounding = 20;
+            this.txtTrimAmount.TabIndex = 391;
+            this.txtTrimAmount.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(277, 612);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 19);
+            this.label3.TabIndex = 390;
+            this.label3.Text = "Trim Amount :";
+            // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -895,6 +929,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.txtTrimAmount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
@@ -1007,5 +1043,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn Photo;
         private System.Windows.Forms.DataGridViewButtonColumn ColDelete;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn ColDelete1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTrimAmount;
+        private System.Windows.Forms.Label label3;
     }
 }

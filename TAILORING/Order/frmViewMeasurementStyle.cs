@@ -250,6 +250,19 @@ namespace TAILORING.Order
 
                 GetDefaultSelectSKU();
 
+                //lstStyleMan.Clear();
+                //DataTable dtst = GetGarmentStyleData(Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]));
+                //if (ObjUtil.ValidateTable(dtst))
+                //{
+                //    for (int j = 0; j < dtst.Rows.Count; j++)
+                //    {
+                //        if (Convert.ToBoolean(dtst.Rows[j]["IsMandatory"]))
+                //        {
+                //            lstStyleMan.Add(Convert.ToInt32(dtst.Rows[j]["StyleID"]));
+                //        }
+                //    }
+                //}
+
                 int a = GetSelectedStyleImage(GarmentID, StyleID);
                 if (pic.Name == a.ToString())
                 {
@@ -489,8 +502,8 @@ namespace TAILORING.Order
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
 
-                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
-                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
+                    //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                    //btn.StateCommon.Content.ShortText.Color2 = Color.Black;
                 }
                 flowStyleName.Controls.Add(btn);
                 if (Convert.ToBoolean(dtStyle.Rows[i]["IsMandatory"]))
@@ -504,43 +517,33 @@ namespace TAILORING.Order
         private void btnStyleName_Click(object sender, EventArgs e)
         {
             ClearSyleNameSelection();
-
             KryptonButton btn = (KryptonButton)sender;
 
-            btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
+            {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
 
-            btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
+                btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            //if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
-            //{
-            //    //btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+            }
+            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(78, 148, 132))
+            {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                btn.StatePressed.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.StatePressed.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            //    btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
-            //    btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            //    btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
-            //    btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
-
-            //    btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
-            //    btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
-            //}
-            //else if (btn.StateCommon.Back.Color1 == Color.FromArgb(78, 148, 132))
-            //{
-            //    //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
-            //    btn.StatePressed.Back.Color1 = Color.FromArgb(17, 241, 41);
-            //    btn.StatePressed.Back.Color2 = Color.FromArgb(17, 241, 41);
-
-            //    btn.OverrideFocus.Back.Color1 = Color.FromArgb(17, 241, 41);
-            //    btn.OverrideFocus.Back.Color2 = Color.FromArgb(17, 241, 41);
-
-            //    btn.OverrideDefault.Back.Color1 = Color.FromArgb(17, 241, 41);
-            //    btn.OverrideDefault.Back.Color2 = Color.FromArgb(17, 241, 41);
-            //}
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+            }
 
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
@@ -631,7 +634,7 @@ namespace TAILORING.Order
         private void Pic_StyleImg_Click(object sender, EventArgs e)
         {
             ClearSyleImageSelection();
-
+            StyleCount = 0;
             PictureBox p = (PictureBox)sender;
             p.Parent.BackColor = Color.LightGray;
 
@@ -654,8 +657,12 @@ namespace TAILORING.Order
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
                 }
             }
+            GetStyleImageStatusChecked();
         }
 
         private void ClearSyleImageSelection()
@@ -664,6 +671,29 @@ namespace TAILORING.Order
             for (int i = 0; i < ctrl.Length; i++)
             {
                 ctrl[i].BackColor = Color.Transparent;
+            }
+        }
+
+        private void GetStyleImageStatusChecked()
+        {
+            StyleCount = 0;
+            int qty = 0;
+            qty = cmbStyleQTY.Text.Trim().Length == 0 ? 1 : Convert.ToInt32(cmbStyleQTY.Text);
+            DataRow[] dr = dtTempStyle.Select("GarmentID=" + GarmentID + " AND QTY=" + qty);
+            for (int i = 0; i < dr.Length; i++)
+            {
+                if (lstStyleMan.Contains(Convert.ToInt32(dr[i]["StyleID"])))
+                {
+                    StyleCount++;
+                }
+            }
+            if (lstStyleMan.Count > 0 && lstStyleMan.Count == StyleCount)
+            {
+                //ChangeMeasurementStyleStatus('S', GarmentID, "1");
+            }
+            else
+            {
+                //ChangeMeasurementStyleStatus('S', GarmentID, "0");
             }
         }
 
@@ -701,6 +731,11 @@ namespace TAILORING.Order
         {
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
+                Control ctr = flowStyleName.Controls[i];
+                if (ctr.GetType() == typeof(Label))
+                {
+                    continue;
+                }
                 KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
                 if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
                 {
@@ -1214,13 +1249,55 @@ namespace TAILORING.Order
                             }
                             else
                             {
-                                b = true;
+                                //b = true;
+                                b = false;
+                                DataTable dtStyleMan = new DataTable();
+                                dtStyleMan = GetGarmentStyleData(Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]));
+                                //b = true;
+                                int MandatoryCount = 0;
+                                List<string> lstMendatory = new List<string>();
+                                //DataRow[] dr = dtStyleMan.Select("StyleID=" + drow[k]["StyleID"] + " AND IsMandatory='True'");
+                                DataRow[] dr = dtStyleMan.Select("IsMandatory='True'");
+                                for (int k1 = 0; k1 < dr.Length; k1++)
+                                {
+                                    lstMendatory.Add(dr[k1]["StyleID"].ToString());
+                                }
+                                for (int k = 0; k < drow.Length; k++)
+                                {
+                                    if (lstMendatory.Contains(drow[k]["StyleID"].ToString()))
+                                    {
+                                        MandatoryCount++;
+                                        b = true;
+                                    }
+                                    else
+                                    {
+                                        b = false;
+                                    }
+                                }
+                                if (MandatoryCount != lstMendatory.Count)
+                                {
+                                    b = false;
+                                    clsUtility.ShowInfoMessage("Please Select All Mandatory Styles");
+                                    return b;
+                                }
                             }
                         }
                     }
                 }
             }
             return b;
+        }
+
+        private DataTable GetGarmentStyleData(int GarmentID)
+        {
+            DataTable dt = null;
+            ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, GarmentID, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GarmentStyle");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                dt = ds.Tables[0];
+            }
+            return dt;
         }
 
         private void SaveMeasurement()

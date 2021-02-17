@@ -456,7 +456,7 @@ namespace TAILORING.Order
                 btn.Cursor = Cursors.Hand;
                 btn.AutoSize = false;
                 btn.Click += btnStyleName_Click;
-                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 12.3f, FontStyle.Bold);
+                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 11.25f, FontStyle.Bold);
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 if (a > 0)
                 {
@@ -476,6 +476,9 @@ namespace TAILORING.Order
                 {
                     btn.StateCommon.Back.Color1 = Color.LightGray;
                     btn.StateCommon.Back.Color2 = Color.LightGray;
+
+                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
                 }
                 flowStyleName.Controls.Add(btn);
                 if (Convert.ToBoolean(dtStyle.Rows[i]["IsMandatory"]))
@@ -502,15 +505,30 @@ namespace TAILORING.Order
             ClearSyleNameSelection();
             KryptonButton btn = (KryptonButton)sender;
 
-            btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
+            if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))
+            {
+                //btn.StateCommon.Content.ShortText.Color1 = Color.White;//17, 241, 41
+                btn.StateCommon.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.StateCommon.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
 
-            btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
-            btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+            }
+            else if (btn.StateCommon.Back.Color1 == Color.FromArgb(78, 148, 132))
+            {
+                //0, 191, 255
+                btn.StatePressed.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.StatePressed.Back.Color2 = Color.FromArgb(0, 191, 255);
 
+                btn.OverrideFocus.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideFocus.Back.Color2 = Color.FromArgb(0, 191, 255);
+
+                btn.OverrideDefault.Back.Color1 = Color.FromArgb(0, 191, 255);
+                btn.OverrideDefault.Back.Color2 = Color.FromArgb(0, 191, 255);
+            }
             StyleID = Convert.ToInt32(btn.Name);
             GetGarmentStyleImages(GarmentID, StyleID);
         }
@@ -762,22 +780,21 @@ namespace TAILORING.Order
             for (int i = 0; i < flowStyleName.Controls.Count; i++)
             {
                 Control ctr = flowStyleName.Controls[i];
-                if (ctr.GetType() == typeof(Label))
+                if (ctr.GetType() == typeof(KryptonButton))
+                {
+                    KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
+                    if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
+                    {
+                        //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
+                        btn.StateCommon.Back.Color1 = Color.LightGray;
+                        btn.StateCommon.Back.Color2 = Color.LightGray;
+                    }
+                    //continue;
+                }
+                else
                 {
                     continue;
                 }
-                KryptonButton btn = (KryptonButton)flowStyleName.Controls[i];
-                if (btn.StateCommon.Back.Color1 != Color.FromArgb(78, 148, 132))// Dark Green
-                {
-                    //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
-                    btn.StateCommon.Back.Color1 = Color.LightGray;
-                    btn.StateCommon.Back.Color2 = Color.LightGray;
-                }
-                //if (flowStyleName.Controls[i].BackColor != Color.FromArgb(17, 241, 41))// Green
-                //{
-                //    //flowStyleName.Controls[i].BackColor = Color.FromArgb(0, 191, 255);
-                //    flowStyleName.Controls[i].BackColor = Color.LightGray;
-                //}
             }
         }
 

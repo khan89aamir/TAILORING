@@ -286,6 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowStyleName.AutoScroll = true;
             this.flowStyleName.BackColor = System.Drawing.Color.White;
+            this.flowStyleName.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.flowStyleName.Location = new System.Drawing.Point(727, 50);
             this.flowStyleName.Name = "flowStyleName";
             this.flowStyleName.Size = new System.Drawing.Size(228, 409);

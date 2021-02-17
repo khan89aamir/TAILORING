@@ -1285,7 +1285,7 @@ namespace TAILORING.Order
                 {
                     int SubGarmentID = Convert.ToInt32(drGarment[i]["GarmentID"]);
                     drGarment[i].Delete();
-                    drGarment[i].AcceptChanges();
+                    //drGarment[i].AcceptChanges();
                     dtOrder.AcceptChanges();
 
                     if (ObjUtil.ValidateDataSet(dsMeasure))
@@ -1297,7 +1297,7 @@ namespace TAILORING.Order
                             for (int j = 0; j < drMeasure.Length; j++)
                             {
                                 drMeasure[j].Delete();
-                                drMeasure[j].AcceptChanges();
+                                //drMeasure[j].AcceptChanges();
                             }
                             dtTempMeasure.AcceptChanges();
                         }
@@ -1310,7 +1310,7 @@ namespace TAILORING.Order
                                 for (int k = 0; k < drStyle.Length; k++)
                                 {
                                     drStyle[k].Delete();
-                                    drStyle[k].AcceptChanges();
+                                    //drStyle[k].AcceptChanges();
                                 }
                                 dtTempStyle.AcceptChanges();
                             }
@@ -1324,7 +1324,7 @@ namespace TAILORING.Order
                                 for (int k1 = 0; k1 < drBody.Length; k1++)
                                 {
                                     drBody[k1].Delete();
-                                    drBody[k1].AcceptChanges();
+                                    //drBody[k1].AcceptChanges();
                                 }
                                 dtTempBodyPosture.AcceptChanges();
                             }

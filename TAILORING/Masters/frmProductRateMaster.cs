@@ -346,7 +346,8 @@ namespace TAILORING.Masters
             }
             else
             {
-                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND GarmentRateID !=" + i + " AND OrderType=" + cmbService.SelectedIndex + " AND GarmentCode='" + txtGarmentCode.Text.Trim() + "'");
+                //a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentID=" + cmbGarmentName.SelectedValue + " AND GarmentRateID !=" + i + " AND OrderType=" + cmbService.SelectedIndex + " AND GarmentCode='" + txtGarmentCode.Text.Trim() + "'");
+                a = ObjDAL.CountRecords(clsUtility.DBName + ".dbo.tblProductRateMaster", "GarmentRateID !=" + i + " AND (GarmentID=" + cmbGarmentName.SelectedValue + " AND OrderType=" + cmbService.SelectedIndex + " OR GarmentCode='" + txtGarmentCode.Text.Trim() + "')");
             }
             if (a > 0)
             {

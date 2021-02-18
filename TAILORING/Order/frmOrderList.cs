@@ -431,6 +431,7 @@ namespace TAILORING.Order
                     Obj.pOrderID = pSalesOrderID;
                     Obj.OrderNo = pOrderNo;
                     Obj.ShowDialog();
+                    this.WindowState = FormWindowState.Minimized;
                 }
             }
         }

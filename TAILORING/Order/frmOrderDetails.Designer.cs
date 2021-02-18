@@ -72,7 +72,7 @@ namespace TAILORING.Order
             // grpCustomerGridview.Panel
             // 
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
-            this.grpCustomerGridview.Size = new System.Drawing.Size(1078, 305);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(1096, 305);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpCustomerGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -91,12 +91,14 @@ namespace TAILORING.Order
             // 
             this.dgvOrderDetails.AllowUserToAddRows = false;
             this.dgvOrderDetails.AllowUserToDeleteRows = false;
+            this.dgvOrderDetails.AllowUserToResizeColumns = false;
+            this.dgvOrderDetails.AllowUserToResizeRows = false;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(1076, 255);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1094, 255);
             this.dgvOrderDetails.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
             this.dgvOrderDetails.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvOrderDetails.TabIndex = 0;
@@ -115,7 +117,7 @@ namespace TAILORING.Order
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.kryptonPanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.HeaderSecondary;
-            this.kryptonPanel1.Size = new System.Drawing.Size(1099, 51);
+            this.kryptonPanel1.Size = new System.Drawing.Size(1114, 51);
             this.kryptonPanel1.TabIndex = 371;
             // 
             // lblOrderNo
@@ -191,7 +193,7 @@ namespace TAILORING.Order
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1099, 399);
+            this.ClientSize = new System.Drawing.Size(1114, 399);
             this.Controls.Add(this.kryptonPanel1);
             this.Controls.Add(this.grpCustomerGridview);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -59,7 +59,7 @@
             this.groupBox1.Controls.Add(this.txtCustomerOrderNo);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1, 1);
+            this.groupBox1.Location = new System.Drawing.Point(7, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1020, 97);
             this.groupBox1.TabIndex = 1;
@@ -172,14 +172,14 @@
             // 
             this.grpCustomerGridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpCustomerGridview.Location = new System.Drawing.Point(1, 104);
+            this.grpCustomerGridview.Location = new System.Drawing.Point(7, 104);
             this.grpCustomerGridview.Name = "grpCustomerGridview";
             this.grpCustomerGridview.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // grpCustomerGridview.Panel
             // 
             this.grpCustomerGridview.Panel.Controls.Add(this.dgvOrderDetails);
-            this.grpCustomerGridview.Size = new System.Drawing.Size(1020, 400);
+            this.grpCustomerGridview.Size = new System.Drawing.Size(1100, 400);
             this.grpCustomerGridview.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.StateCommon.Border.Color1 = System.Drawing.Color.White;
             this.grpCustomerGridview.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -204,7 +204,7 @@
             this.dgvOrderDetails.MultiSelect = false;
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.ReadOnly = true;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(1018, 350);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(1098, 350);
             this.dgvOrderDetails.StateCommon.Background.Color1 = System.Drawing.Color.Transparent;
             this.dgvOrderDetails.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvOrderDetails.TabIndex = 0;
@@ -215,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(1026, 516);
+            this.ClientSize = new System.Drawing.Size(1112, 516);
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -223,6 +223,10 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
             this.Text = "Order Status";
             this.Load += new System.EventHandler(this.frmOrderStatus_Load);
             this.groupBox1.ResumeLayout(false);

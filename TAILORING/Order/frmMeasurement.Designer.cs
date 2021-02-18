@@ -294,9 +294,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(429, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 348;
-            this.label1.Text = "Stich Type :";
+            this.label1.Text = "Stitch Type :";
             // 
             // cmbStichType
             // 

@@ -1280,6 +1280,8 @@ namespace TAILORING.Order
                                     clsUtility.ShowInfoMessage("Please Select All Mandatory Styles");
                                     return b;
                                 }
+                                else
+                                    b = true;
                             }
                         }
                     }
@@ -1488,6 +1490,11 @@ namespace TAILORING.Order
         private void frmViewMeasurementStyle_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ResetdtMeasurement()

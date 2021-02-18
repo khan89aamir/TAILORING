@@ -491,7 +491,7 @@ namespace TAILORING.Report.Forms
 
                         string subOrderNo = "NA";
 
-                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID);
+                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID+ "  ORDER BY ImageName");
                         if (ObjUtil.ValidateTable(dtStyles))
                         {
 
@@ -549,7 +549,7 @@ namespace TAILORING.Report.Forms
                                                 " WHERE cb.SalesOrderID = " + OrderID + " AND cb.GarmentID = " + GarmendID;
 
                         DataTable dtbodyPosture = ObjCon.ExecuteSelectStatement(strbodyPosture);
-                        if (dtbodyPosture != null && dtbodyPosture.Rows.Count > 0)
+                        if (ObjUtil.ValidateTable(dtbodyPosture))
                         {
                             for (int c = 0; c < dtbodyPosture.Rows.Count; c++)
                             {

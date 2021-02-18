@@ -396,6 +396,7 @@
             this.btnCancel.TabIndex = 360;
             this.btnCancel.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
             this.btnCancel.Values.Text = " Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // kryptonPanel1
             // 

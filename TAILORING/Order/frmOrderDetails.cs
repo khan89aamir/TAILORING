@@ -93,10 +93,10 @@ namespace TAILORING.Order
             dgvOrderDetails.Columns["SalesOrderID"].Visible = false;
             dgvOrderDetails.Columns["SalesOrderDetailsID"].Visible = false;
 
-            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
-            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitTypeName";
+            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "Stitch Type";
+            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "Fit Type";
 
-            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             if (isFromDashboard)
             {

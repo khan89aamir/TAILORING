@@ -39,31 +39,31 @@ namespace TAILORING.Order
 
         private void SearchData()
         {
-            string strQ = " SELECT OrderNo, SubOrderNo,GarmentName,StichType,FitTYpe,ServiceType,OrderStatus," +
-                      " ReceivedDate,DeliveredDate,ReceivedBy,DeliveredBy from [dbo].[vw_OrderDetails_RDLC]";
+            string strQ = " SELECT OrderNo, SubOrderNo,GarmentName,StichType [Stitch Type],FitType [Fit Type],ServiceType,OrderStatus," +
+                      " ReceivedDate,DeliveredDate,ReceivedBy,DeliveredBy FROM " + clsUtility.DBName + ".[dbo].[vw_OrderDetails_RDLC]";
 
             if (radOrderNo.Checked)
             {
-                strQ += " where OrderNo ='" + txtCustomerOrderNo.Text + "'";
+                strQ += " WHERE OrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
             else if (radSuborder.Checked)
             {
-                strQ += " where SubOrderNo ='" + txtCustomerOrderNo.Text + "'";
+                strQ += " WHERE SubOrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
             else if (radOrderStatus.Checked)
             {
-                strQ += " where OrderStatus ='" + cmbOrderStatus.Text + "'";
+                strQ += " WHERE OrderStatus ='" + cmbOrderStatus.Text + "'";
             }
 
             DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
             dgvOrderDetails.DataSource = dt;
             if (ObjUtil.ValidateTable(dt))
             {
-                grpCustomerGridview.ValuesSecondary.Description = "Total Records : " + dt.Rows.Count;
+                grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dt.Rows.Count;
             }
             else
             {
-                grpCustomerGridview.ValuesSecondary.Description = "Total Records : 0";
+                grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
             }
         }
 

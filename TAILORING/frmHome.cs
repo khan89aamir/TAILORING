@@ -32,16 +32,15 @@ namespace TAILORING
 
         private void otherArtsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)
-            //{
-            //    DB_backupRestore.cs.frmDatabaseMaintenance Obj = new DB_backupRestore.cs.frmDatabaseMaintenance();
-            //    Obj.IsNew = true;
-            //    Obj.ShowDialog();
-            //}
-            //else
-            //{
-            //    clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
-            //}
+            if (clsFormRights.HasFormRight(clsFormRights.Forms.frmDatabaseMaintenance) || clsUtility.IsAdmin)
+            {
+                DB_backupRestore.cs.frmDatabaseMaintenance Obj = new DB_backupRestore.cs.frmDatabaseMaintenance();
+                Obj.ShowDialog();
+            }
+            else
+            {
+                clsUtility.ShowInfoMessage("You have no rights to perform this task", clsUtility.strProjectTitle);
+            }
         }
 
         private void DisplayRegistrationInfo()
@@ -87,7 +86,7 @@ namespace TAILORING
                 clsUtility.LoginID = 0;
                 //clsUtility.IsAdmin = false;
                 clsUtility.IsAdmin = true;
-                clsUtility.strProjectTitle = "Smart Tailor Solution";
+                clsUtility.strProjectTitle = "Smart Tailoring Solution";
                 clsUtility._UserMessageType = clsUtility.MessageType.SparklePurple;
 
                 if (clsUtility.LoginID > 0)

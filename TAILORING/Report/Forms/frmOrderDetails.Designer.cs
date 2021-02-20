@@ -70,6 +70,7 @@
             // 
             // dtpToDate
             // 
+            this.dtpToDate.CalendarTodayDate = new System.DateTime(2021, 2, 20, 0, 0, 0, 0);
             this.dtpToDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpToDate.Location = new System.Drawing.Point(608, 31);
@@ -79,11 +80,13 @@
             this.dtpToDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpToDate.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpToDate.StateCommon.Border.Rounding = 7;
             this.dtpToDate.TabIndex = 393;
             // 
             // dtpFromDate
             // 
+            this.dtpFromDate.CalendarTodayDate = new System.DateTime(2021, 2, 20, 0, 0, 0, 0);
             this.dtpFromDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFromDate.Location = new System.Drawing.Point(467, 31);
@@ -93,6 +96,7 @@
             this.dtpFromDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpFromDate.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpFromDate.StateCommon.Border.Rounding = 7;
             this.dtpFromDate.TabIndex = 392;
             // 
@@ -107,6 +111,7 @@
             this.cmbOrderStatus.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cmbOrderStatus.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.cmbOrderStatus.StateCommon.ComboBox.Border.Rounding = 7;
             this.cmbOrderStatus.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrderStatus.TabIndex = 391;
@@ -131,8 +136,11 @@
             this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnAdd.StateCommon.Border.Rounding = 12;
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnAdd.TabIndex = 389;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Generate Report";
@@ -158,7 +166,6 @@
             // 
             // txtCustomerOrderNo
             // 
-            this.txtCustomerOrderNo.Enabled = false;
             this.txtCustomerOrderNo.Location = new System.Drawing.Point(112, 24);
             this.txtCustomerOrderNo.Name = "txtCustomerOrderNo";
             this.txtCustomerOrderNo.Size = new System.Drawing.Size(213, 31);
@@ -167,11 +174,13 @@
             this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
             this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerOrderNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
             this.txtCustomerOrderNo.TabIndex = 386;
             // 
@@ -227,6 +236,7 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 10;
             this.Text = "Order Details Report";
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);

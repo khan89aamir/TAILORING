@@ -20,6 +20,7 @@ namespace TAILORING.Report.Forms
         }
 
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+        clsUtility ObjUtil = new clsUtility();
 
         public string OrderList;
         string strcomName = "";
@@ -41,7 +42,7 @@ namespace TAILORING.Report.Forms
         private void BindOrderStatus()
         {
             DataTable dtOrderStatus = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.tblOrderStatusMaster WITH(NOLOCK) ");
-            if (dtOrderStatus != null && dtOrderStatus.Rows.Count > 0)
+            if (ObjUtil.ValidateTable(dtOrderStatus))
             {
                 cmbOrderStatus.DataSource = dtOrderStatus;
                 cmbOrderStatus.DisplayMember = "OrderStatus";
@@ -49,10 +50,11 @@ namespace TAILORING.Report.Forms
             }
             cmbOrderStatus.SelectedIndex = -1;
         }
+
         private void GenerateButton()
         {
             DataTable dtCompany = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
-            if (dtCompany != null && dtCompany.Rows.Count > 0)
+            if (ObjUtil.ValidateTable(dtCompany))
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
                 parmGSTNo = dtCompany.Rows[0]["GST"].ToString();
@@ -69,7 +71,9 @@ namespace TAILORING.Report.Forms
                 ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
                 ReportParameter param11 = new ReportParameter("parmDate", DateTime.Now.ToShortDateString(), true);
 
-                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM vw_OrderDetails_RDLC");
+                string strWhere = string.Empty;
+                strWhere = GetSearchInput();
+                DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM vw_OrderDetails_RDLC " + strWhere);
 
                 ReportDataSource rds2 = new ReportDataSource("dsOrderDetails", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds2);
@@ -84,6 +88,20 @@ namespace TAILORING.Report.Forms
                 reportViewer1.ZoomPercent = 100;
                 this.reportViewer1.RefreshReport();
             }
+        }
+
+        private string GetSearchInput()
+        {
+            string strWhere = "WHERE 1=1 ";
+            if (!ObjUtil.IsControlTextEmpty(txtCustomerOrderNo))
+            {
+                strWhere += "AND OrderNo='" + txtCustomerOrderNo.Text.Trim() + "' ";
+            }
+            if (!ObjUtil.IsControlTextEmpty(cmbOrderStatus))
+            {
+                strWhere += "AND OrderStatus='" + cmbOrderStatus.Text + "'";
+            }
+            return strWhere;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

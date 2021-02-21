@@ -35,21 +35,25 @@ namespace TAILORING.Dashboard
         private void LoadInProcess()
         {
             // for creating chalan , get only those records, which are in process or critical.
-            string strQ = "SELECT SalesOrderID, OrderNo,OrderDate,OrderAmount,OrderQTY,TotalAmount,'View Details' AS ViewDetails FROM " + clsUtility.DBName + ".dbo.tblSalesOrder WHERE SalesOrderID IN " +
-                          "(SELECT SalesOrderID FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) WHERE OrderStatus in (3, 2)) ORDER BY salesorderID DESC";
-
-            DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
-            if (ObjUtil.ValidateTable(dt))
+            //string strQ = "SELECT SalesOrderID, OrderNo,OrderDate,OrderAmount,OrderQTY,TotalAmount,'View Details' AS ViewDetails FROM " + clsUtility.DBName + ".dbo.tblSalesOrder WHERE SalesOrderID IN " +
+            //              "(SELECT SalesOrderID FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) WHERE OrderStatus in (3, 2)) ORDER BY salesorderID DESC";
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, "0", clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_OrderList_Chalan");
+            if (ObjUtil.ValidateDataSet(ds))
             {
+                DataTable dt = ds.Tables[0];
                 if (ObjUtil.ValidateTable(dt))
                 {
-                    dgvOrderDetails.DataSource = dt;
-                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
-                }
-                else
-                {
-                    grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
-                    dgvOrderDetails.DataSource = null;
+                    if (ObjUtil.ValidateTable(dt))
+                    {
+                        dgvOrderDetails.DataSource = dt;
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
+                    }
+                    else
+                    {
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
+                        dgvOrderDetails.DataSource = null;
+                    }
                 }
             }
         }
@@ -79,9 +83,7 @@ namespace TAILORING.Dashboard
         public static List<string> lstSubOrderListlist = new List<string>();
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             dgvOrderDetails.EndEdit();
-
             for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
             {
                 if (dgvOrderDetails.Rows[i].Cells["colCheck"].Value != DBNull.Value && Convert.ToBoolean(dgvOrderDetails.Rows[i].Cells["colCheck"].Value))
@@ -103,7 +105,6 @@ namespace TAILORING.Dashboard
             string strOrderList = "'" + string.Join<string>("','", lstSubOrderListlist) + "'";
 
             Report.Forms.frmChalan frmChalan = new Report.Forms.frmChalan();
-
             frmChalan.OrderList = strOrderList;
             frmChalan.Show();
             lstSubOrderListlist.Clear();
@@ -146,7 +147,7 @@ namespace TAILORING.Dashboard
 
                 frmChalanSub frmChalanSub = new frmChalanSub();
                 frmChalanSub.SalesOrderID = Convert.ToInt32(dgvOrderDetails.Rows[e.RowIndex].Cells["SalesOrderID"].Value);
-                frmChalanSub.lblOrderNo.Text = "Order No :" + orderNo;
+                frmChalanSub.lblOrderNo.Text = "Order No : " + orderNo;
                 frmChalanSub.isInvoiceChk = Convert.ToBoolean(dgvOrderDetails.Rows[e.RowIndex].Cells["colCheck"].Value);
 
                 frmChalanSub.ShowDialog();
@@ -156,6 +157,41 @@ namespace TAILORING.Dashboard
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SearchByOrderNo()
+        {
+            string pOrderNo = txtSearchByScanOrderNo.Text.Trim().Length == 0 ? "0" : txtSearchByScanOrderNo.Text.Trim();
+
+            ObjDAL.SetStoreProcedureData("OrderNo", SqlDbType.VarChar, pOrderNo, clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_OrderList_Chalan");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    if (ObjUtil.ValidateTable(dt))
+                    {
+                        dgvOrderDetails.DataSource = dt;
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
+                    }
+                    else
+                    {
+                        grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
+                        dgvOrderDetails.DataSource = null;
+                    }
+                }
+            }
+        }
+
+        private void txtSearchByScanOrderNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            SearchByOrderNo();
+        }
+
+        private void txtSearchByScanOrderNo_TextChanged(object sender, EventArgs e)
+        {
+            SearchByOrderNo();
         }
     }
 }

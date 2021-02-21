@@ -83,8 +83,8 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["QTY"].Visible = false;
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
-            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
-            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitType";
+            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "Stitch Type";
+            dgvOrderDetails.Columns["FitTypeName"].HeaderText = "Fit Type";
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
             dgvOrderDetails.Columns["OrderStatusID"].Visible = false;
 

@@ -71,6 +71,8 @@ namespace TAILORING.Report.Forms
                 ReportParameter param10 = new ReportParameter("parmCompanyEmail", strCompEmail, true);
                 ReportParameter param11 = new ReportParameter("parmDate", DateTime.Now.ToShortDateString(), true);
 
+                reportViewer1.LocalReport.DataSources.Clear();
+
                 string strWhere = string.Empty;
                 strWhere = GetSearchInput();
                 DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM vw_OrderDetails_RDLC " + strWhere);
@@ -101,10 +103,30 @@ namespace TAILORING.Report.Forms
             {
                 strWhere += "AND OrderStatus='" + cmbOrderStatus.Text + "'";
             }
+            if (dtpFromDate.Checked)
+            {
+                strWhere += "AND OrderDate BETWEEN '" + dtpFromDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpToDate.Value.ToString("yyyy-MM-dd") + "' ";
+            }
             return strWhere;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            GenerateButton();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtCustomerOrderNo.Clear();
+            cmbOrderStatus.SelectedIndex = -1;
+            dtpFromDate.Value = DateTime.Now;
+            dtpToDate.Value = DateTime.Now;
+
+            reportViewer1.Clear();
+            reportViewer1.RefreshReport();
+        }
+
+        private void txtCustomerOrderNo_KeyDown(object sender, KeyEventArgs e)
         {
             GenerateButton();
         }

@@ -34,13 +34,14 @@
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.cmbOrderStatus = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnGenerate = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCustomerOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnReset = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOrderStatus)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -50,11 +51,12 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.dtpToDate);
             this.groupBox1.Controls.Add(this.dtpFromDate);
             this.groupBox1.Controls.Add(this.cmbOrderStatus);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.btnGenerate);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCustomerOrderNo);
@@ -76,27 +78,27 @@
             this.dtpToDate.Location = new System.Drawing.Point(608, 31);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.dtpToDate.Size = new System.Drawing.Size(101, 25);
+            this.dtpToDate.Size = new System.Drawing.Size(114, 25);
             this.dtpToDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpToDate.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpToDate.StateCommon.Border.Rounding = 7;
             this.dtpToDate.TabIndex = 393;
             // 
             // dtpFromDate
             // 
             this.dtpFromDate.CalendarTodayDate = new System.DateTime(2021, 2, 20, 0, 0, 0, 0);
+            this.dtpFromDate.Checked = false;
             this.dtpFromDate.Font = new System.Drawing.Font("Times New Roman", 11.25F);
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFromDate.Location = new System.Drawing.Point(467, 31);
+            this.dtpFromDate.Location = new System.Drawing.Point(454, 31);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.dtpFromDate.Size = new System.Drawing.Size(101, 25);
+            this.dtpFromDate.ShowCheckBox = true;
+            this.dtpFromDate.Size = new System.Drawing.Size(114, 25);
             this.dtpFromDate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpFromDate.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.dtpFromDate.StateCommon.Border.Rounding = 7;
             this.dtpFromDate.TabIndex = 392;
             // 
@@ -111,7 +113,6 @@
             this.cmbOrderStatus.StateCommon.ComboBox.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.cmbOrderStatus.StateCommon.ComboBox.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.cmbOrderStatus.StateCommon.ComboBox.Border.Rounding = 7;
             this.cmbOrderStatus.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrderStatus.TabIndex = 391;
@@ -125,35 +126,32 @@
             this.label4.TabIndex = 390;
             this.label4.Text = "Order Status :";
             // 
-            // btnAdd
+            // btnGenerate
             // 
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(734, 29);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnAdd.Size = new System.Drawing.Size(165, 34);
-            this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnGenerate.AutoSize = true;
+            this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerate.Location = new System.Drawing.Point(734, 29);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnGenerate.Size = new System.Drawing.Size(165, 34);
+            this.btnGenerate.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnAdd.StateCommon.Border.Rounding = 12;
-            this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
-            this.btnAdd.TabIndex = 389;
-            this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
-            this.btnAdd.Values.Text = "Generate Report";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnGenerate.StateCommon.Border.Rounding = 12;
+            this.btnGenerate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.TabIndex = 389;
+            this.btnGenerate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
+            this.btnGenerate.Values.Text = "Generate Report";
+            this.btnGenerate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(412, 36);
+            this.label3.Location = new System.Drawing.Point(365, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 388;
-            this.label3.Text = "Date  :";
+            this.label3.Text = "From Date  :";
             // 
             // label2
             // 
@@ -174,15 +172,14 @@
             this.txtCustomerOrderNo.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerOrderNo.StateCommon.Border.Rounding = 10;
             this.txtCustomerOrderNo.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerOrderNo.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCustomerOrderNo.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txtCustomerOrderNo.StateNormal.Border.Rounding = 20;
             this.txtCustomerOrderNo.TabIndex = 386;
+            this.txtCustomerOrderNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerOrderNo_KeyDown);
             // 
             // label1
             // 
@@ -221,6 +218,24 @@
             this.reportViewer1.Size = new System.Drawing.Size(908, 396);
             this.reportViewer1.TabIndex = 0;
             // 
+            // btnReset
+            // 
+            this.btnReset.AutoSize = true;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Location = new System.Drawing.Point(734, 72);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnReset.Size = new System.Drawing.Size(165, 34);
+            this.btnReset.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnReset.StateCommon.Border.Rounding = 12;
+            this.btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.TabIndex = 394;
+            this.btnReset.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
+            this.btnReset.Values.Text = "Reset Report";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frmOrderDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,7 +251,6 @@
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 10;
             this.Text = "Order Details Report";
             this.Load += new System.EventHandler(this.frmOrderDetails_Load);
@@ -255,12 +269,13 @@
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerOrderNo;
         private System.Windows.Forms.Label label1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnGenerate;
         private System.Windows.Forms.GroupBox groupBox2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Label label4;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cmbOrderStatus;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpToDate;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFromDate;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnReset;
     }
 }

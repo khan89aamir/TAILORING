@@ -134,6 +134,8 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtSearchByScanOrderNo.StateNormal.Border.Rounding = 20;
             this.txtSearchByScanOrderNo.TabIndex = 381;
+            this.txtSearchByScanOrderNo.TextChanged += new System.EventHandler(this.txtSearchByScanOrderNo_TextChanged);
+            this.txtSearchByScanOrderNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchByScanOrderNo_KeyDown);
             // 
             // btnCancel
             // 

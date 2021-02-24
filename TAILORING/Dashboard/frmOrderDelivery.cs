@@ -36,12 +36,16 @@ namespace TAILORING.Dashboard
         {
             lblOrderNo.Text = OrderNo.ToString();
 
-            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("SELECT SalesOrderID,CustomerID FROM  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) WHERE OrderNo='" + OrderNo + "'");
+            //DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("SELECT SalesOrderID,CustomerID FROM  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) WHERE OrderNo='" + OrderNo + "'");
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("EXEC [dbo].[SPR_Get_OrderList] 0,NULL,NULL,'"+ OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
                 int _CustID = Convert.ToInt32(dtOrderDetails.Rows[0]["CustomerID"]);
                 int _SalesOrderID = Convert.ToInt32(dtOrderDetails.Rows[0]["SalesOrderID"]);
+
+                lblCustomerName.Text = dtOrderDetails.Rows[0]["Name"].ToString();
+                lblMobile.Text = dtOrderDetails.Rows[0]["MobileNo"].ToString();
 
                 // only show received order and deliverd order
                 DataTable dt = ObjDAL.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.vw_GetOrderStatusDetails WHERE SalesOrderID=" + _SalesOrderID + " AND OrderStatusID in (1,4)");
@@ -79,7 +83,7 @@ namespace TAILORING.Dashboard
             dgvOrderDetails.Columns["QTY"].Visible = false;
             dgvOrderDetails.Columns["GarmentID"].Visible = false;
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
-            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StichType";
+            dgvOrderDetails.Columns["StichTypeName"].HeaderText = "StitchType";
             dgvOrderDetails.Columns["FitTypeName"].HeaderText = "FitType";
             dgvOrderDetails.Columns["TrimAmount"].Visible = false;
             dgvOrderDetails.Columns["OrderStatusID"].Visible = false;

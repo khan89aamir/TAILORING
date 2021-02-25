@@ -450,13 +450,13 @@ namespace TAILORING.Order
                 btn.StateCommon.Content.ShortText.Color2 = Color.Black;
 
                 btn.AutoSize = false;
-                btn.Size = new Size(187, 45);
+                btn.Size = new Size(180, 42);//187,45
                 btn.Name = dtStyle.Rows[i]["StyleID"].ToString();
                 btn.Text = dtStyle.Rows[i]["StyleName"].ToString();
                 btn.Cursor = Cursors.Hand;
                 btn.AutoSize = false;
                 btn.Click += btnStyleName_Click;
-                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 11.25f, FontStyle.Bold);
+                btn.StateCommon.Content.ShortText.Font = new Font("Times New Roman", 10.25f, FontStyle.Bold);
                 int a = GetSelectedStyleImage(GarmentID, Convert.ToInt32(btn.Name));
                 if (a > 0)
                 {
@@ -601,10 +601,15 @@ namespace TAILORING.Order
                 flowStyleImage.Controls.Clear();
                 for (int i = 0; i < dtStyleImages.Rows.Count; i++)
                 {
-                    Panel panel = new Panel();
+                    gGlowBox.gGlowBox glow = new gGlowBox.gGlowBox();
+                    glow.Name= "pnl";
+                    glow.Cursor = Cursors.Hand;
+
+                    //Panel panel = new Panel();
+                    //panel.Name = "pnl";
                     PictureBox pic = new PictureBox();
                     //Label lbl = new Label();
-                    panel.Name = "pnl";
+                    
 
                     //lbl.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
                     //lbl.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
@@ -612,10 +617,13 @@ namespace TAILORING.Order
                     //lbl.BackColor = Color.Transparent;
                     //lbl.Location = new Point(pic.Location.X + 17, pic.Location.Y + 80);
                     //lbl.Font = new Font("Times New Roman", 9, FontStyle.Bold);
+                    glow.AutoSize = false;
+                    glow.Size = new Size(195, 185); //195, 185
+                    //panel.Size = new Size(glow.Width - 5, glow.Height - 13);//175, 160
+                    //panel.Cursor = Cursors.Hand;
+                    //panel.BackColor = Color.Red;
 
-                    panel.Size = new Size(175, 160);
-                    panel.Cursor = Cursors.Hand;
-
+                    //glow.BackColor = Color.Green;
                     pic.SizeMode = PictureBoxSizeMode.Zoom;
                     if (System.IO.File.Exists(dtStyleImages.Rows[i]["ImagePath"].ToString()))
                     {
@@ -627,14 +635,17 @@ namespace TAILORING.Order
                         pic.Image = Properties.Resources.NoImage;
                     }
                     pic.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
-                    pic.Size = new Size(panel.Width - 5, panel.Height - 5);
+                    pic.Size = new Size(glow.Width - 10, glow.Height - 10);//5,5
                     pic.Click += Pic_Click;
                     pic.BorderStyle = BorderStyle.None;
-
-                    panel.Controls.Add(pic);
+                    
+                    //panel.Controls.Add(pic);
+                    glow.Controls.Add(pic);
                     //panel.Controls.Add(lbl);
 
-                    flowStyleImage.Controls.Add(panel);
+                    //glow.Controls.Add(panel);
+                    //flowStyleImage.Controls.Add(panel);
+                    flowStyleImage.Controls.Add(glow);
 
                     int a = GetSelectedStyleImage(GarmentID, StyleID);
                     if (pic.Name == a.ToString())

@@ -38,7 +38,7 @@ namespace TAILORING.Order
 
         //ImageList imageList = new ImageList();
 
-        int GarmentID = 0, StyleID = 0;
+        int GarmentID = 0, MasterGarmentID = 0, StyleID = 0;
         public int CustomerID = 0;
 
         int StyleCount = 0;
@@ -90,6 +90,8 @@ namespace TAILORING.Order
                     pic.Image = Properties.Resources.NoImage;
                 }
                 pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
+                pic.Tag = dtGarmentList.Rows[i]["MasterGarmentID"].ToString();
+
                 pic.Size = new Size(panel.Size.Width - 10, panel.Size.Height - 20);
                 pic.Click += Pic_GarmentList_Click;
                 pic.BorderStyle = BorderStyle.None;
@@ -100,6 +102,7 @@ namespace TAILORING.Order
 
                 if (i == 0)
                 {
+                    MasterGarmentID = Convert.ToInt32(pic.Tag);
                     GetDefaultSelectSKU();
                 }
 
@@ -134,6 +137,8 @@ namespace TAILORING.Order
             {
                 lblSKUName.Text = "SKU Selected : " + drow[0]["GarmentName"];
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+                //MasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
+                MasterGarmentID = Convert.ToInt32(p.Tag);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
                 CopyCommonMeasurement();
@@ -213,6 +218,7 @@ namespace TAILORING.Order
                 }
             }
             GarmentID = 0;
+            MasterGarmentID = 0;
         }
 
         private void CopyMeasurement_LastOrder(DataTable dtMeasure)
@@ -602,14 +608,14 @@ namespace TAILORING.Order
                 for (int i = 0; i < dtStyleImages.Rows.Count; i++)
                 {
                     gGlowBox.gGlowBox glow = new gGlowBox.gGlowBox();
-                    glow.Name= "pnl";
+                    glow.Name = "pnl";
                     glow.Cursor = Cursors.Hand;
 
                     //Panel panel = new Panel();
                     //panel.Name = "pnl";
                     PictureBox pic = new PictureBox();
                     //Label lbl = new Label();
-                    
+
 
                     //lbl.Name = dtStyleImages.Rows[i]["StyleImageID"].ToString();
                     //lbl.Text = dtStyleImages.Rows[i]["ImageName"].ToString();
@@ -638,7 +644,7 @@ namespace TAILORING.Order
                     pic.Size = new Size(glow.Width - 10, glow.Height - 10);//5,5
                     pic.Click += Pic_Click;
                     pic.BorderStyle = BorderStyle.None;
-                    
+
                     //panel.Controls.Add(pic);
                     glow.Controls.Add(pic);
                     //panel.Controls.Add(lbl);
@@ -891,7 +897,8 @@ namespace TAILORING.Order
             {
                 int index = 0;
                 index = Convert.ToInt32(cmbStyleQTY.Text);
-                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 if (drow.Length > 0 && index <= drow.Length)
                 {
                     if (drow[index - 1]["StichTypeID"] != DBNull.Value)
@@ -919,29 +926,6 @@ namespace TAILORING.Order
             }
         }
 
-        private void SKUList_MouseClick(object sender, MouseEventArgs e)
-        {
-            //SaveddtMeasurement(); // Auto Saved Garment Measurement value
-
-            //lblSKUName.Text = SKUList.SelectedItems[0].Text.ToString();
-            //DataRow[] drow = dtGarmentList.Select("GarmentName='" + SKUList.SelectedItems[0].Text + "'");
-            //if (drow.Length > 0)
-            //{
-            //    flowStyleImage.Controls.Clear();
-            //    GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
-            //    int QTY = Convert.ToInt32(drow[0]["QTY"]);
-
-            //    ctrlMeasurment1.ProductCount = 1;
-            //    GetGarmentMasterMeasurement(GarmentID);// Garment Measurement
-
-            //    GetGarmentStyle(GarmentID);// Garment Style
-            //    AddStyleQTY(QTY);
-            //    checkBox1.Enabled = false;
-
-            //    GetStichFitType();
-            //}
-        }
-
         private void AddStyleQTY(int QTY)
         {
             cmbStyleQTY.Items.Clear();
@@ -963,6 +947,7 @@ namespace TAILORING.Order
                 if (drow.Length > 0)
                 {
                     GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+                    MasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
                     int QTY = Convert.ToInt32(drow[0]["QTY"]);
 
                     ctrlMeasurment1.ProductCount = 1;
@@ -984,7 +969,8 @@ namespace TAILORING.Order
 
         private void GetGarmentSelectionStatus()
         {
-            DataRow[] dr = dtGarmentList.Select("GarmentID=" + GarmentID);
+            DataRow[] dr = dtGarmentList.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
+            //DataRow[] dr = dtGarmentList.Select("GarmentID=" + GarmentID);
             if (dr.Length > 0)
             {
                 if (dr[0]["Measurement"].ToString() == "1")
@@ -1020,6 +1006,7 @@ namespace TAILORING.Order
         {
             if (ObjUtil.ValidateTable(dtTempMeasurement))
             {
+                //DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 DataRow[] dr = dtTempMeasurement.Select("GarmentID=" + GarmentID);
                 if (dr.Length > 0)
                 {
@@ -1036,6 +1023,7 @@ namespace TAILORING.Order
         {
             SaveMeasurement();
         }
+
         private void SaveMeasurement()
         {
             DataSet ds = ctrlMeasurment1.GetMeasurement();
@@ -1161,7 +1149,7 @@ namespace TAILORING.Order
             if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
                 int pqty = Convert.ToInt32(cmbStyleQTY.Text);
-                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 if (drow.Length > 0 && pqty <= drow.Length)
                 {
                     drow[pqty - 1]["StichTypeID"] = cmbStichType.SelectedValue;
@@ -1175,7 +1163,7 @@ namespace TAILORING.Order
             if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
                 int pqty = Convert.ToInt32(cmbStyleQTY.Text);
-                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 if (drow.Length > 0 && pqty <= drow.Length)
                 {
                     drow[pqty - 1]["FitTypeID"] = cmbFitType.SelectedValue;
@@ -1194,20 +1182,21 @@ namespace TAILORING.Order
             {
                 SaveMeasurement();
                 DataTable dt = dtTempMeasurement.DefaultView.ToTable(true, "GarmentID");
-                if (dt.Rows.Count != dtGarmentList.Rows.Count)
+                DataTable dt1 = dtGarmentList.DefaultView.ToTable(true, "GarmentID");
+                if (dt.Rows.Count != dt1.Rows.Count)
                 {
                     clsUtility.ShowInfoMessage("Please Fill All Garments Measurement..");
                     return b;
                 }
                 else if (ObjUtil.IsControlTextEmpty(cmbStichType))
                 {
-                    clsUtility.ShowInfoMessage("Please Select StichType..");
+                    clsUtility.ShowInfoMessage("Please Select Stitch Type..");
                     cmbStichType.Focus();
                     return b;
                 }
                 else if (ObjUtil.IsControlTextEmpty(cmbFitType))
                 {
-                    clsUtility.ShowInfoMessage("Please Select FitType..");
+                    clsUtility.ShowInfoMessage("Please Select Fit Type..");
                     cmbFitType.Focus();
                     return b;
                 }
@@ -1275,7 +1264,7 @@ namespace TAILORING.Order
                     {
                         if (dtTempOrderDetails.Rows[i]["StichTypeID"].ToString() == "")
                         {
-                            clsUtility.ShowInfoMessage("Please Select Stich Type for " + dtTempOrderDetails.Rows[i]["GarmentName"]);
+                            clsUtility.ShowInfoMessage("Please Select Stitch Type for " + dtTempOrderDetails.Rows[i]["GarmentName"]);
                             return b;
                         }
                         else if (dtTempOrderDetails.Rows[i]["FitTypeID"].ToString() == "")
@@ -1400,18 +1389,19 @@ namespace TAILORING.Order
                     {
                         Panel panel = new Panel();
                         PictureBox pic = new PictureBox();
-                        Label lbl = new Label();
+                        //Label lbl = new Label();
                         panel.Name = "pnl";
                         panel.BorderStyle = BorderStyle.None;
 
-                        lbl.Name = dr[j]["BodyPostureMappingID"].ToString();
-                        lbl.Text = dr[j]["BodyPostureName"].ToString();
-                        lbl.AutoSize = true;
-                        lbl.BackColor = Color.Transparent;
-                        lbl.Location = new Point(pic.Location.X + 22, pic.Location.Y + 85);
-                        lbl.Font = new Font("Times New Roman", 11.4f, FontStyle.Bold);
+                        //lbl.Name = dr[j]["BodyPostureMappingID"].ToString();
+                        //lbl.Text = dr[j]["BodyPostureName"].ToString();
+                        //lbl.AutoSize = true;
+                        //lbl.BackColor = Color.Transparent;
+                        //lbl.Location = new Point(pic.Location.X + 22, pic.Location.Y + 85);
+                        //lbl.Font = new Font("Times New Roman", 11.4f, FontStyle.Bold);
 
-                        panel.Size = new Size(180, 145);
+                        panel.Size = new Size(155, 145);
+                        //panel.Size = new Size(180, 145);
                         panel.Cursor = Cursors.Hand;
 
                         pic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1426,7 +1416,8 @@ namespace TAILORING.Order
                             pic.Image = Properties.Resources.NoImage;
                         }
                         pic.Name = dr[j]["BodyPostureMappingID"].ToString();
-                        pic.Size = new Size(panel.Width - 30, panel.Height - 10);
+                        pic.Size = new Size(panel.Size.Width - 0, panel.Size.Height - 10);
+                        //pic.Size = new Size(panel.Width - 30, panel.Height - 10);
                         pic.Location = new Point(pic.Location.X, pic.Location.Y + 5);
                         pic.BorderStyle = BorderStyle.None;
 

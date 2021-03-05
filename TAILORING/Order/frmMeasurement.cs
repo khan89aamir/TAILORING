@@ -700,11 +700,12 @@ namespace TAILORING.Order
         private void ChangeMeasurementStyleStatus(char ps, int garmentid, string valve)
         {
             DataRow[] dr = dtGarmentList.Select("GarmentID=" + garmentid);
-            if (dr.Length > 0)
+            //if (dr.Length > 0)
+            for (int i = 0; i < dr.Length; i++)
             {
                 if (ps == 'S')
                 {
-                    dr[0]["Style"] = valve;
+                    dr[i]["Style"] = valve;
                     if (valve == "1")
                         btnStyle.Image = Properties.Resources.StyleCheck;
                     else
@@ -712,7 +713,7 @@ namespace TAILORING.Order
                 }
                 else if (ps == 'M')
                 {
-                    dr[0]["Measurement"] = valve;
+                    dr[i]["Measurement"] = valve;
                     if (valve == "1")
                         btnMeasurment.Image = Properties.Resources.measurcheck;
                     else
@@ -720,7 +721,7 @@ namespace TAILORING.Order
                 }
                 else if (ps == 'B')
                 {
-                    dr[0]["Posture"] = valve;
+                    dr[i]["Posture"] = valve;
                     if (valve == "1")
                         btnBodyPosture.Image = Properties.Resources.bodyCheck;
                     else

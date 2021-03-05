@@ -716,6 +716,8 @@ namespace TAILORING.Order
         {
             bool b = false;
             dtOrderDetails.Clear();
+            dtTempOrderDetails.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC";
+            dtTempOrderDetails = dtTempOrderDetails.DefaultView.ToTable();
             for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();

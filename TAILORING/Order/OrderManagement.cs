@@ -208,6 +208,7 @@ namespace TAILORING.Order
         private void InitMeasurementTable()
         {
             dtMeasurement.Columns.Add("SalesOrderID");
+            dtMeasurement.Columns.Add("MasterGarmentID", typeof(int));
             dtMeasurement.Columns.Add("GarmentID");
             dtMeasurement.Columns.Add("MeasurementID");
             dtMeasurement.Columns.Add("MeasurementValue", typeof(double));
@@ -219,6 +220,7 @@ namespace TAILORING.Order
         private void InitStyleTable()
         {
             dtStyle.Columns.Add("SalesOrderID");
+            dtStyle.Columns.Add("MasterGarmentID", typeof(int));
             dtStyle.Columns.Add("GarmentID");
             dtStyle.Columns.Add("StyleID");
             dtStyle.Columns.Add("QTY");
@@ -231,6 +233,7 @@ namespace TAILORING.Order
         private void InitBodyPostureTable()
         {
             dtBodyPosture.Columns.Add("SalesOrderID");
+            dtBodyPosture.Columns.Add("MasterGarmentID", typeof(int));
             dtBodyPosture.Columns.Add("GarmentID");
             dtBodyPosture.Columns.Add("BodyPostureID");
             dtBodyPosture.Columns.Add("BodyPostureMappingID");
@@ -716,7 +719,7 @@ namespace TAILORING.Order
         {
             bool b = false;
             dtOrderDetails.Clear();
-            dtTempOrderDetails.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC";
+            dtTempOrderDetails.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC"; // Dont Comment or removed
             dtTempOrderDetails = dtTempOrderDetails.DefaultView.ToTable();
             for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
@@ -800,6 +803,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtMeasurement.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempMeasure.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
                 drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
                 drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];
@@ -820,6 +824,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtStyle.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempStyle.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempStyle.Rows[i]["GarmentID"];
                 drow["StyleID"] = dttempStyle.Rows[i]["StyleID"];
                 drow["QTY"] = dttempStyle.Rows[i]["QTY"];
@@ -841,6 +846,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtBodyPosture.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempPosture.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempPosture.Rows[i]["GarmentID"];
                 drow["BodyPostureID"] = dttempPosture.Rows[i]["BodyPostureID"];
                 drow["BodyPostureMappingID"] = dttempPosture.Rows[i]["BodyPostureMappingID"];

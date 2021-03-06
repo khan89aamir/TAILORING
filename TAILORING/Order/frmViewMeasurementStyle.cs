@@ -43,7 +43,7 @@ namespace TAILORING.Order
         public bool IsEdit = false;
         public int pOrderID = 0;
         public string OrderNo = "NA";
-        int GarmentID = 0, StyleID = 0;
+        int GarmentID = 0, MasterGarmentID = 0, StyleID = 0;
         int OrderStatus = 0;
 
         int StyleCount = 0;
@@ -210,6 +210,8 @@ namespace TAILORING.Order
         private void AddGarments()
         {
             flowGarmentList.Controls.Clear();
+            dtGarmentList.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC";
+            dtGarmentList = dtGarmentList.DefaultView.ToTable();
             for (int i = 0; i < dtGarmentList.Rows.Count; i++)
             {
                 //Panel panel = new Panel();
@@ -240,6 +242,8 @@ namespace TAILORING.Order
                     pic.Image = Properties.Resources.NoImage;
                 }
                 pic.Name = dtGarmentList.Rows[i]["GarmentID"].ToString();
+                pic.Tag = dtGarmentList.Rows[i]["MasterGarmentID"].ToString();
+
                 pic.Size = new Size(panel.Size.Width - 10, panel.Size.Height - 20);
                 pic.Click += Pic_GarmentList_Click;
                 pic.BorderStyle = BorderStyle.None;
@@ -248,7 +252,11 @@ namespace TAILORING.Order
                 panel.Controls.Add(lbl);
                 flowGarmentList.Controls.Add(panel);
 
-                GetDefaultSelectSKU();
+                if (i == 0)
+                {
+                    MasterGarmentID = Convert.ToInt32(pic.Tag);
+                    GetDefaultSelectSKU();
+                }
 
                 //lstStyleMan.Clear();
                 //DataTable dtst = GetGarmentStyleData(Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]));
@@ -293,6 +301,7 @@ namespace TAILORING.Order
             {
                 lblSKUName.Text = "SKU Selected : " + drow[0]["GarmentName"];
                 GarmentID = Convert.ToInt32(drow[0]["GarmentID"]);
+                MasterGarmentID = Convert.ToInt32(p.Tag);
                 int QTY = Convert.ToInt32(drow[0]["QTY"]);
                 OrderStatus = Convert.ToInt32(drow[0]["OrderStatus"]);
 
@@ -357,7 +366,7 @@ namespace TAILORING.Order
                     }
                     dtTempMeasurement.AcceptChanges();
 
-                    ChangeMeasurementStyleStatus('M', GarmentID);
+                    ChangeMeasurementStyleStatus('M', GarmentID,"1");
                 }
             }
         }
@@ -1100,18 +1109,19 @@ namespace TAILORING.Order
                     {
                         Panel panel = new Panel();
                         PictureBox pic = new PictureBox();
-                        Label lbl = new Label();
+                        //Label lbl = new Label();
                         panel.Name = "pnl";
                         panel.BorderStyle = BorderStyle.None;
 
-                        lbl.Name = dr[j]["BodyPostureMappingID"].ToString();
-                        lbl.Text = dr[j]["BodyPostureName"].ToString();
-                        lbl.AutoSize = true;
-                        lbl.BackColor = Color.Transparent;
-                        lbl.Location = new Point(pic.Location.X + 22, pic.Location.Y + 85);
-                        lbl.Font = new Font("Times New Roman", 11.4f, FontStyle.Bold);
+                        //lbl.Name = dr[j]["BodyPostureMappingID"].ToString();
+                        //lbl.Text = dr[j]["BodyPostureName"].ToString();
+                        //lbl.AutoSize = true;
+                        //lbl.BackColor = Color.Transparent;
+                        //lbl.Location = new Point(pic.Location.X + 22, pic.Location.Y + 85);
+                        //lbl.Font = new Font("Times New Roman", 11.4f, FontStyle.Bold);
 
-                        panel.Size = new Size(180, 145);
+                        panel.Size = new Size(155, 145);
+                        //panel.Size = new Size(180, 145);
                         panel.Cursor = Cursors.Hand;
 
                         pic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1126,7 +1136,8 @@ namespace TAILORING.Order
                             pic.Image = Properties.Resources.NoImage;
                         }
                         pic.Name = dr[j]["BodyPostureMappingID"].ToString();
-                        pic.Size = new Size(panel.Width - 30, panel.Height - 10);
+                        pic.Size = new Size(panel.Size.Width - 0, panel.Size.Height - 10);
+                        //pic.Size = new Size(panel.Width - 30, panel.Height - 10);
                         pic.Location = new Point(pic.Location.X, pic.Location.Y + 5);
                         pic.BorderStyle = BorderStyle.None;
 
@@ -1332,7 +1343,7 @@ namespace TAILORING.Order
                     dtTempMeasurement.AcceptChanges();
 
                     //CopyCommonMeasurement();
-                    ChangeMeasurementStyleStatus('M', GarmentID);
+                    ChangeMeasurementStyleStatus('M', GarmentID,"1");
                 }
                 else
                 {
@@ -1396,25 +1407,36 @@ namespace TAILORING.Order
             }
         }
 
-        private void ChangeMeasurementStyleStatus(char ps, int garmentid)
+        private void ChangeMeasurementStyleStatus(char ps, int garmentid, string valve)
         {
             DataRow[] dr = dtGarmentList.Select("GarmentID=" + garmentid);
-            if (dr.Length > 0)
+            //if (dr.Length > 0)
+            for (int i = 0; i < dr.Length; i++)
             {
                 if (ps == 'S')
                 {
-                    //dr[0]["Style"] = Done;
-                    btnStyle.Image = Properties.Resources.StyleCheck;
+                    dr[i]["Style"] = valve;
+                    if (valve == "1")
+                        btnStyle.Image = Properties.Resources.StyleCheck;
+                    else
+                        btnStyle.Image = Properties.Resources.picStyle;
                 }
-                else
+                else if (ps == 'M')
                 {
                     //dr[0]["Measurement"] = Done;
                     btnMeasurment.Image = Properties.Resources.measurcheck;
                 }
+                else if (ps == 'B')
+                {
+                    dr[i]["Posture"] = valve;
+                    if (valve == "1")
+                        btnBodyPosture.Image = Properties.Resources.bodyCheck;
+                    else
+                        btnBodyPosture.Image = Properties.Resources.picBodyPosture;
+                }
+                dtGarmentList.AcceptChanges();
             }
-            dtGarmentList.AcceptChanges();
         }
-
         private void cmbStichType_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //if (ObjUtil.ValidateTable(dtGarmentList))
@@ -1430,7 +1452,8 @@ namespace TAILORING.Order
             if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
                 int pqty = Convert.ToInt32(cmbStyleQTY.Text);
-                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 if (drow.Length > 0 && pqty <= drow.Length)
                 {
                     drow[pqty - 1]["StichTypeID"] = cmbStichType.SelectedValue;
@@ -1454,7 +1477,8 @@ namespace TAILORING.Order
             if (ObjUtil.ValidateTable(dtTempOrderDetails))
             {
                 int pqty = Convert.ToInt32(cmbStyleQTY.Text);
-                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID);
+                DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + GarmentID + " AND MasterGarmentID=" + MasterGarmentID);
                 if (drow.Length > 0 && pqty <= drow.Length)
                 {
                     drow[pqty - 1]["FitTypeID"] = cmbFitType.SelectedValue;
@@ -1488,7 +1512,7 @@ namespace TAILORING.Order
                     drow["QTY"] = cmbStyleQTY.Text;
                     dtTempStyle.Rows.Add(drow);
                 }
-                ChangeMeasurementStyleStatus('S', GarmentID);
+                ChangeMeasurementStyleStatus('S', GarmentID,"1");
             }
             else
             {

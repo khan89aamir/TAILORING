@@ -721,6 +721,10 @@ namespace TAILORING.Order
             dtOrderDetails.Clear();
             dtTempOrderDetails.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC"; // Dont Comment or removed
             dtTempOrderDetails = dtTempOrderDetails.DefaultView.ToTable();
+
+            dtOrderManagement.DefaultView.Sort = "GarmentID ASC"; // Dont Comment or removed
+            dtOrderManagement = dtOrderManagement.DefaultView.ToTable();
+
             for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
@@ -1146,13 +1150,14 @@ namespace TAILORING.Order
                 {
                     int pMasterGarmentID = 0;
                     int pGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+                    pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
                     int SrNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SrNo"].Value);
 
-                    DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
-                    if (drow.Length > 0)
-                    {
-                        pMasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
-                    }
+                    //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
+                    //if (drow.Length > 0)
+                    //{
+                    //    pMasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
+                    //}
                     DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
                     if (pGarmentID != pMasterGarmentID)
                     {
@@ -1171,14 +1176,17 @@ namespace TAILORING.Order
                     }
                     else
                     {
-                        dr[SrNo - 1]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                        //dr[SrNo - 1]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                        dr[0]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
                         if (dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
                         {
-                            dr[SrNo - 1]["StichTypeID"] = 1;//Trail
+                            //dr[SrNo - 1]["StichTypeID"] = 1;//Trail
+                            dr[0]["StichTypeID"] = 1;//Trail
                         }
                         else
                         {
-                            dr[SrNo - 1]["StichTypeID"] = 2;//Finish
+                            //dr[SrNo - 1]["StichTypeID"] = 2;//Finish
+                            dr[0]["StichTypeID"] = 2;//Finish
                         }
                     }
                     dtTempOrderDetails.AcceptChanges();

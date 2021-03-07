@@ -184,6 +184,7 @@ namespace TAILORING.Order
                     if (ObjUtil.ValidateTable(dt))
                     {
                         GarmentID = Convert.ToInt32(dtGarmentList.Rows[i]["GarmentID"]);
+                        MasterGarmentID = Convert.ToInt32(dtGarmentList.Rows[i]["MasterGarmentID"]);
                         //GetStichFitType();
                         if (Convert.ToInt32(dt.Rows[0]["SalesOrderID"]) == 0)
                         {

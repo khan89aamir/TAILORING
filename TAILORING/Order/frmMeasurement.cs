@@ -176,6 +176,7 @@ namespace TAILORING.Order
             {
                 ObjDAL.SetStoreProcedureData("CustomerID", SqlDbType.Int, CustomerID, clsConnection_DAL.ParamType.Input);
                 ObjDAL.SetStoreProcedureData("GarmentID", SqlDbType.Int, dtGarmentList.Rows[i]["GarmentID"], clsConnection_DAL.ParamType.Input);
+                ObjDAL.SetStoreProcedureData("MasterGarmentID", SqlDbType.Int, dtGarmentList.Rows[i]["MasterGarmentID"], clsConnection_DAL.ParamType.Input);
                 DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_GarmentMeasurementStyle_CopyOrder");
                 if (ObjUtil.ValidateDataSet(ds))
                 {

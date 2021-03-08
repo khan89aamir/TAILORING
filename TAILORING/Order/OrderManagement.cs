@@ -127,7 +127,7 @@ namespace TAILORING.Order
             dtOrderManagement.Columns.Add("Service");
             dtOrderManagement.Columns.Add("TrailDate", typeof(DateTime));
             dtOrderManagement.Columns.Add("DeliveryDate", typeof(DateTime));
-            dtOrderManagement.Columns.Add("TrimAmount",typeof(double));
+            dtOrderManagement.Columns.Add("TrimAmount", typeof(double));
             dtOrderManagement.Columns.Add("QTY", typeof(int));
             dtOrderManagement.Columns.Add("Rate", typeof(double));
             dtOrderManagement.Columns.Add("Total", typeof(double));
@@ -576,7 +576,7 @@ namespace TAILORING.Order
                 GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
                 txtGrossAmt.Text = Math.Round(GrossAmt, 0).ToString();// Rounding off tailoring amount
             }
-            catch(Exception ex) { }
+            catch (Exception ex) { }
         }
 
         private void btnMeasurement_Click(object sender, EventArgs e)
@@ -1148,17 +1148,19 @@ namespace TAILORING.Order
                 }
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "TrailDate")
                 {
-                    int pMasterGarmentID = 0;
-                    int pGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+                    int pMasterGarmentID = 0, pGarmentID = 0;
+
                     pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+                    //pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
                     int SrNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SrNo"].Value);
 
                     //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
-                    //if (drow.Length > 0)
-                    //{
-                    //    pMasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
-                    //}
                     DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
+                    if (dr.Length > 0)
+                    {
+                        pGarmentID = Convert.ToInt32(dr[0]["GarmentID"]);
+                    }
+                    //DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
                     if (pGarmentID != pMasterGarmentID)
                     {
                         for (int i = 0; i < dr.Length; i++)

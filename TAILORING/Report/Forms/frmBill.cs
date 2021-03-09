@@ -32,6 +32,7 @@ namespace TAILORING.Report.Forms
 
         string imgName = "";
         string strBase64 = "";
+        string strImgPath = "";
         int inc = 0;
         private void frmBill_Load(object sender, EventArgs e)
         {
@@ -39,7 +40,6 @@ namespace TAILORING.Report.Forms
             {
                 Directory.CreateDirectory(Application.StartupPath + "//BarCodeImg");
             }
-
             // OrderID = "1";
             LoadTailoringTheme();
             LoadData();
@@ -76,7 +76,9 @@ namespace TAILORING.Report.Forms
             string strCompMobile = "";
             string strCompEmail = "";
 
-            DataTable dtCompany = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
+            strImgPath = ObjCon.ExecuteScalar("SELECT [ImagePath]+'\\' FROM " + clsUtility.DBName + ".dbo.tblSoftwareSetting WITH(NOLOCK)").ToString();//  Saved Default Garment Image Path
+
+            DataTable dtCompany = ObjCon.ExecuteSelectStatement("SELECT CompanyName,GST,Address,MobileNo,EmailID FROM " + clsUtility.DBName + ".dbo.CompanyMaster WITH(NOLOCK) WHERE ISNULL(IsDefault,1)=1");
             if (ObjUtil.ValidateTable(dtCompany))
             {
                 strcomName = dtCompany.Rows[0]["CompanyName"].ToString();
@@ -86,7 +88,7 @@ namespace TAILORING.Report.Forms
                 strCompEmail = dtCompany.Rows[0]["EmailID"].ToString();
             }
 
-            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] WITH(NOLOCK) WHERE SalesOrderID=" + OrderID);
+            DataTable dtOrderMaster = ObjCon.ExecuteSelectStatement("SELECT OrderDate,OrderNo,CustomerID FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] WITH(NOLOCK) WHERE SalesOrderID=" + OrderID);
             if (ObjUtil.ValidateTable(dtOrderMaster))
             {
                 Orderdate = dtOrderMaster.Rows[0]["OrderDate"].ToString();
@@ -94,7 +96,7 @@ namespace TAILORING.Report.Forms
                 CustomerID = dtOrderMaster.Rows[0]["CustomerID"].ToString();
             }
 
-            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) WHERE CustomerID=" + CustomerID);
+            DataTable dtCustomer = ObjCon.ExecuteSelectStatement("SELECT Name,MobileNo,Address FROM " + clsUtility.DBName + ".[dbo].[CustomerMaster] WITH(NOLOCK) WHERE CustomerID=" + CustomerID);
             if (ObjUtil.ValidateTable(dtCustomer))
             {
                 strCustomerName = dtCustomer.Rows[0]["Name"].ToString();
@@ -182,9 +184,7 @@ namespace TAILORING.Report.Forms
                 reportViewer3.LocalReport.DataSources.Add(rds);
             }
 
-            string strCalculation = "  SELECT OrderAmount,(SELECT SUM(t2.TrimAmount) FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrderDetails] t2 " +
-                                   " WHERE t2.SalesOrderID=" + OrderID + " ) as TrimAmount, (CGST+SGST) as Tax,t1.TotalAmount " +
-                                   " FROM " + clsUtility.DBName + ".[dbo].[tblSalesOrder] t1 WHERE t1.SalesOrderID=" + OrderID;
+            string strCalculation = "EXEC " + clsUtility.DBName + ".[dbo].SPR_Get_Invoice_Calculation " + OrderID;
 
             DataTable dtCalculation = ObjCon.ExecuteSelectStatement(strCalculation);
             if (ObjUtil.ValidateTable(dtCalculation))
@@ -491,7 +491,7 @@ namespace TAILORING.Report.Forms
 
                         string subOrderNo = "NA";
 
-                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID+ "  ORDER BY ImageName");
+                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID + "  ORDER BY ImageName");
                         if (ObjUtil.ValidateTable(dtStyles))
                         {
 
@@ -511,32 +511,32 @@ namespace TAILORING.Report.Forms
                                 switch (s)
                                 {
                                     case 0:
-
-                                        s1 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        
+                                        s1 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 1:
 
-                                        s2 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s2 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 2:
 
-                                        s3 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s3 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 3:
 
-                                        s4 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s4 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 4:
 
-                                        s5 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s5 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 5:
 
-                                        s6 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s6 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 6:
 
-                                        s7 = ImageToBase64(@"C:\Tailoring Images\" + dtStyles.Rows[s]["ImageName"].ToString());
+                                        s7 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                 }
                             }
@@ -559,28 +559,28 @@ namespace TAILORING.Report.Forms
                         DataTable dtbodyPosture = ObjCon.ExecuteSelectStatement(strbodyPosture);
                         if (ObjUtil.ValidateTable(dtbodyPosture))
                         {
-                           
+
                             for (int c = 0; c < dtbodyPosture.Rows.Count; c++)
                             {
                                 switch (c)
                                 {
                                     case 0:
-                                        bdimg1 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg1 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                     case 1:
-                                        bdimg2 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg2 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                     case 2:
-                                        bdimg3 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg3 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                     case 3:
-                                        bdimg4 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg4 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                     case 4:
-                                        bdimg5 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg5 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                     case 5:
-                                        bdimg6 = ImageToBase64(@"C:\Tailoring Images\" + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
+                                        bdimg6 = ImageToBase64(strImgPath + dtbodyPosture.Rows[c]["BodyPostureImage"].ToString());
                                         break;
                                 }
                             }

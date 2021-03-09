@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CoreApp;
 using System.IO;
 using ComponentFactory.Krypton.Toolkit;
+using OfficeOpenXml;
 
 namespace TAILORING.Report.Forms
 {
@@ -19,73 +20,91 @@ namespace TAILORING.Report.Forms
         {
             InitializeComponent();
         }
-        DataTable dtMonthlyReort = new DataTable();
+
+        clsUtility ObjUtil = new clsUtility();
+        clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
+
         private void frmMonthlyReport_Load(object sender, EventArgs e)
         {
-          
+
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void Generate_Report()
         {
-            dtMonthlyReort.Columns.Add("OrderNo");
-            dtMonthlyReort.Columns.Add("Shirt");
-            dtMonthlyReort.Columns.Add("Trouser");
-            dtMonthlyReort.Columns.Add("TwoPCSuit");
-            dtMonthlyReort.Columns.Add("ThreePCSuit");
-            dtMonthlyReort.Columns.Add("Blazer");
-            dtMonthlyReort.Columns.Add("Kurta");
-            dtMonthlyReort.Columns.Add("Shirt_Urgetn");
-
-
-            AddRows("INV-1", "2", "0", "0", "0", "0", "1", "0");
-            AddRows("INV-2", "1", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-3", "0", "0", "1", "0", "0", "1", "0");
-            AddRows("INV-4", "0", "1", "0", "0", "0", "0", "0");
-            AddRows("INV-5", "0", "0", "2", "0", "0", "1", "0");
-            AddRows("INV-6", "0", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-1", "0", "1", "0", "0", "0", "0", "0");
-            AddRows("INV-7", "1", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-8", "1", "0", "0", "0", "0", "1", "0");
-            AddRows("INV-9", "0", "1", "0", "0", "0", "0", "0");
-            AddRows("INV-10", "0", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-11", "0", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-12", "0", "0", "0", "0", "0", "1", "0");
-            AddRows("INV-13", "1", "1", "0", "0", "0", "0", "0");
-            AddRows("INV-14", "1", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-15", "2", "0", "0", "0", "0", "0", "0");
-            AddRows("INV-16", "0", "0", "0", "0", "0", "0", "0");
-            AddRows(" ", " ", " ", " ", " ", " ", " ", " ");
-            AddRows("Total", " 8", "3", "1", "0", "0", "5", "0");
-
-
-
-            ReportDataSource rds2 = new ReportDataSource("dsMonthly", dtMonthlyReort);
-            reportViewer1.LocalReport.DataSources.Add(rds2);
-          
-            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            reportViewer1.ZoomMode = ZoomMode.Percent;
-            reportViewer1.ZoomPercent = 100;
-            this.reportViewer1.RefreshReport();
-
-
+            ObjDAL.SetStoreProcedureData("MonthDate", SqlDbType.Date, dtpFromDate1.Value.ToString("yyyy-MM-dd"), clsConnection_DAL.ParamType.Input);
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_MOM_Sales_Report");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                }
+            }
         }
-        private void AddRows(string OrderNo, string Shirt, string Trouser, string TowPC, string ThreePC, string Blazer, string Kurta, string shirtU)
+
+        private void btnGenerate_Click(object sender, EventArgs e)
         {
-
-             DataRow dRow= dtMonthlyReort.NewRow();
-            dRow["OrderNo"] = OrderNo;
-            dRow["Shirt"] = Shirt;
-            dRow["Trouser"] = Trouser;
-            dRow["TwoPCSuit"] = TowPC;
-            dRow["OrderNo"] = OrderNo;
-            dRow["ThreePCSuit"] = ThreePC;
-            dRow["Blazer"] = Blazer;
-            dRow["Kurta"] = Kurta;
-            dRow["Shirt_Urgetn"] = shirtU;
-
-            dtMonthlyReort.Rows.Add(dRow);
-
+            Generate_Report();
         }
-            
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ObjUtil.SetRowNumber(dataGridView1);
+            dataGridView1.Columns["SalesOrderID"].Visible = false;
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grpGridview.ValuesSecondary.Heading = "Total Records : " + dataGridView1.Rows.Count;
+        }
+
+        private void ExportXLSX()
+        {
+            try
+            {
+                DataTable dt = (DataTable)dataGridView1.DataSource;
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    if (!Directory.Exists(System.Environment.CurrentDirectory + "\\Download"))
+                    {
+                        Directory.CreateDirectory(System.Environment.CurrentDirectory + "\\Download");
+                    }
+                    string strFileName = "Monthly Report_" + dtpFromDate1.Value.ToString("MMM-yyyy") + ".xlsx";
+                    FileStream stream = new FileStream(System.Environment.CurrentDirectory + "\\Download\\" + strFileName, FileMode.Create, FileAccess.ReadWrite);
+
+                    using (ExcelPackage excelPackage = new ExcelPackage(stream))
+                    {
+                        ExcelWorkbook myWorkbook = excelPackage.Workbook;
+                        ExcelWorksheet myWorksheet = myWorkbook.Worksheets.Add("Sheet1");
+
+                        myWorksheet.Cells.LoadFromDataTable(dt, true);
+                        myWorksheet.DeleteColumn(1); // Delete SalesOrderID Column
+                        myWorksheet.InsertRow(1, 1); // Insert Row to append below TEXT.
+                        myWorksheet.Cells.LoadFromText("MONTH OF " + dtpFromDate1.Value.ToString("MMM yyyy"));
+                        //myWorksheet.InsertRow(1, 1);
+
+                        excelPackage.Save();
+                        stream.Flush();
+                        stream.Close();
+
+                        clsUtility.ShowInfoMessage("Monthly Report Exported..");
+                        System.Diagnostics.Process.Start(System.Environment.CurrentDirectory + "\\Download");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsUtility.ShowErrorMessage(ex.Message);
+            }
+        }
+
+        private void btnDownloadXLSX_Click(object sender, EventArgs e)
+        {
+            ExportXLSX();
+        }
     }
 }

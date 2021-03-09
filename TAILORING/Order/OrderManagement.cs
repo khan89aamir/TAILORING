@@ -127,7 +127,7 @@ namespace TAILORING.Order
             dtOrderManagement.Columns.Add("Service");
             dtOrderManagement.Columns.Add("TrailDate", typeof(DateTime));
             dtOrderManagement.Columns.Add("DeliveryDate", typeof(DateTime));
-            dtOrderManagement.Columns.Add("TrimAmount",typeof(double));
+            dtOrderManagement.Columns.Add("TrimAmount", typeof(double));
             dtOrderManagement.Columns.Add("QTY", typeof(int));
             dtOrderManagement.Columns.Add("Rate", typeof(double));
             dtOrderManagement.Columns.Add("Total", typeof(double));
@@ -208,6 +208,7 @@ namespace TAILORING.Order
         private void InitMeasurementTable()
         {
             dtMeasurement.Columns.Add("SalesOrderID");
+            dtMeasurement.Columns.Add("MasterGarmentID", typeof(int));
             dtMeasurement.Columns.Add("GarmentID");
             dtMeasurement.Columns.Add("MeasurementID");
             dtMeasurement.Columns.Add("MeasurementValue", typeof(double));
@@ -219,6 +220,7 @@ namespace TAILORING.Order
         private void InitStyleTable()
         {
             dtStyle.Columns.Add("SalesOrderID");
+            dtStyle.Columns.Add("MasterGarmentID", typeof(int));
             dtStyle.Columns.Add("GarmentID");
             dtStyle.Columns.Add("StyleID");
             dtStyle.Columns.Add("QTY");
@@ -231,6 +233,7 @@ namespace TAILORING.Order
         private void InitBodyPostureTable()
         {
             dtBodyPosture.Columns.Add("SalesOrderID");
+            dtBodyPosture.Columns.Add("MasterGarmentID", typeof(int));
             dtBodyPosture.Columns.Add("GarmentID");
             dtBodyPosture.Columns.Add("BodyPostureID");
             dtBodyPosture.Columns.Add("BodyPostureMappingID");
@@ -573,7 +576,7 @@ namespace TAILORING.Order
                 GrossAmt = Convert.ToDouble(total) + pCGST + pSGST;
                 txtGrossAmt.Text = Math.Round(GrossAmt, 0).ToString();// Rounding off tailoring amount
             }
-            catch(Exception ex) { }
+            catch (Exception ex) { }
         }
 
         private void btnMeasurement_Click(object sender, EventArgs e)
@@ -716,6 +719,12 @@ namespace TAILORING.Order
         {
             bool b = false;
             dtOrderDetails.Clear();
+            dtTempOrderDetails.DefaultView.Sort = "MasterGarmentID ASC,GarmentID ASC"; // Dont Comment or removed
+            dtTempOrderDetails = dtTempOrderDetails.DefaultView.ToTable();
+
+            dtOrderManagement.DefaultView.Sort = "GarmentID ASC"; // Dont Comment or removed
+            dtOrderManagement = dtOrderManagement.DefaultView.ToTable();
+
             for (int i = 0; i < dtTempOrderDetails.Rows.Count; i++) //Sales Details
             {
                 DataRow drow = dtOrderDetails.NewRow();
@@ -798,6 +807,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtMeasurement.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempMeasure.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempMeasure.Rows[i]["GarmentID"];
                 drow["MeasurementID"] = dttempMeasure.Rows[i]["MeasurementID"];
                 drow["MeasurementValue"] = dttempMeasure.Rows[i]["MeasurementValue"];
@@ -818,6 +828,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtStyle.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempStyle.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempStyle.Rows[i]["GarmentID"];
                 drow["StyleID"] = dttempStyle.Rows[i]["StyleID"];
                 drow["QTY"] = dttempStyle.Rows[i]["QTY"];
@@ -839,6 +850,7 @@ namespace TAILORING.Order
 
                 DataRow drow = dtBodyPosture.NewRow();
                 drow["SalesOrderID"] = OrderID;
+                drow["MasterGarmentID"] = dttempPosture.Rows[i]["MasterGarmentID"];
                 drow["GarmentID"] = dttempPosture.Rows[i]["GarmentID"];
                 drow["BodyPostureID"] = dttempPosture.Rows[i]["BodyPostureID"];
                 drow["BodyPostureMappingID"] = dttempPosture.Rows[i]["BodyPostureMappingID"];
@@ -1136,16 +1148,19 @@ namespace TAILORING.Order
                 }
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "TrailDate")
                 {
-                    int pMasterGarmentID = 0;
-                    int pGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+                    int pMasterGarmentID = 0, pGarmentID = 0;
+
+                    pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
+                    //pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
                     int SrNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SrNo"].Value);
 
-                    DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
-                    if (drow.Length > 0)
-                    {
-                        pMasterGarmentID = Convert.ToInt32(drow[0]["MasterGarmentID"]);
-                    }
+                    //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);
                     DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
+                    if (dr.Length > 0)
+                    {
+                        pGarmentID = Convert.ToInt32(dr[0]["GarmentID"]);
+                    }
+                    //DataRow[] dr = dtTempOrderDetails.Select("MasterGarmentID=" + pMasterGarmentID);
                     if (pGarmentID != pMasterGarmentID)
                     {
                         for (int i = 0; i < dr.Length; i++)
@@ -1163,14 +1178,17 @@ namespace TAILORING.Order
                     }
                     else
                     {
-                        dr[SrNo - 1]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                        //dr[SrNo - 1]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
+                        dr[0]["TrailDate"] = dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value;
                         if (dataGridView1.Rows[e.RowIndex].Cells["TrailDate"].Value != DBNull.Value)
                         {
-                            dr[SrNo - 1]["StichTypeID"] = 1;//Trail
+                            //dr[SrNo - 1]["StichTypeID"] = 1;//Trail
+                            dr[0]["StichTypeID"] = 1;//Trail
                         }
                         else
                         {
-                            dr[SrNo - 1]["StichTypeID"] = 2;//Finish
+                            //dr[SrNo - 1]["StichTypeID"] = 2;//Finish
+                            dr[0]["StichTypeID"] = 2;//Finish
                         }
                     }
                     dtTempOrderDetails.AcceptChanges();

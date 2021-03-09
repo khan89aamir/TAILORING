@@ -206,11 +206,11 @@
             // cmbStyleQTY
             // 
             this.cmbStyleQTY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStyleQTY.DropDownWidth = 70;
+            this.cmbStyleQTY.DropDownWidth = 51;
             this.cmbStyleQTY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStyleQTY.ForeColor = System.Drawing.Color.Black;
             this.cmbStyleQTY.FormattingEnabled = true;
-            this.cmbStyleQTY.Location = new System.Drawing.Point(150, 9);
+            this.cmbStyleQTY.Location = new System.Drawing.Point(145, 9);
             this.cmbStyleQTY.MaxDropDownItems = 9;
             this.cmbStyleQTY.Name = "cmbStyleQTY";
             this.cmbStyleQTY.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
@@ -323,8 +323,7 @@
             // 
             // grpKrytonHeader
             // 
-            this.grpKrytonHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpKrytonHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpKrytonHeader.HeaderVisibleSecondary = false;
             this.grpKrytonHeader.Location = new System.Drawing.Point(3, 3);
             this.grpKrytonHeader.Name = "grpKrytonHeader";
@@ -333,7 +332,7 @@
             // grpKrytonHeader.Panel
             // 
             this.grpKrytonHeader.Panel.Controls.Add(this.grpMeasurement);
-            this.grpKrytonHeader.Size = new System.Drawing.Size(970, 533);
+            this.grpKrytonHeader.Size = new System.Drawing.Size(970, 525);
             this.grpKrytonHeader.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpKrytonHeader.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -357,13 +356,12 @@
             this.grpMeasurement.GlowOn = true;
             this.grpMeasurement.Location = new System.Drawing.Point(0, 0);
             this.grpMeasurement.Name = "grpMeasurement";
-            this.grpMeasurement.Size = new System.Drawing.Size(962, 503);
+            this.grpMeasurement.Size = new System.Drawing.Size(962, 495);
             this.grpMeasurement.TabIndex = 287;
             // 
             // kryptonHeaderGroup1
             // 
-            this.kryptonHeaderGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonHeaderGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonHeaderGroup1.HeaderVisibleSecondary = false;
             this.kryptonHeaderGroup1.Location = new System.Drawing.Point(3, 3);
             this.kryptonHeaderGroup1.Name = "kryptonHeaderGroup1";
@@ -372,7 +370,7 @@
             // kryptonHeaderGroup1.Panel
             // 
             this.kryptonHeaderGroup1.Panel.Controls.Add(this.grpStyle);
-            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(970, 533);
+            this.kryptonHeaderGroup1.Size = new System.Drawing.Size(970, 525);
             this.kryptonHeaderGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -407,7 +405,7 @@
             this.grpStyle.GlowOn = true;
             this.grpStyle.Location = new System.Drawing.Point(0, 0);
             this.grpStyle.Name = "grpStyle";
-            this.grpStyle.Size = new System.Drawing.Size(962, 503);
+            this.grpStyle.Size = new System.Drawing.Size(962, 495);
             this.grpStyle.TabIndex = 287;
             // 
             // flowStyleImage
@@ -419,7 +417,7 @@
             this.flowStyleImage.BackColor = System.Drawing.Color.White;
             this.flowStyleImage.Location = new System.Drawing.Point(6, 43);
             this.flowStyleImage.Name = "flowStyleImage";
-            this.flowStyleImage.Size = new System.Drawing.Size(730, 457);
+            this.flowStyleImage.Size = new System.Drawing.Size(719, 446);
             this.flowStyleImage.TabIndex = 340;
             // 
             // flowStyleName
@@ -429,23 +427,23 @@
             this.flowStyleName.AutoScroll = true;
             this.flowStyleName.BackColor = System.Drawing.Color.White;
             this.flowStyleName.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowStyleName.Location = new System.Drawing.Point(742, 43);
+            this.flowStyleName.Location = new System.Drawing.Point(731, 43);
             this.flowStyleName.Name = "flowStyleName";
-            this.flowStyleName.Size = new System.Drawing.Size(217, 457);
+            this.flowStyleName.Size = new System.Drawing.Size(228, 446);
             this.flowStyleName.TabIndex = 341;
             // 
             // kryptonHeaderGroup2
             // 
             this.kryptonHeaderGroup2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonHeaderGroup2.HeaderVisibleSecondary = false;
-            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(963, 41);
+            this.kryptonHeaderGroup2.Location = new System.Drawing.Point(963, 40);
             this.kryptonHeaderGroup2.Name = "kryptonHeaderGroup2";
             this.kryptonHeaderGroup2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             // 
             // kryptonHeaderGroup2.Panel
             // 
             this.kryptonHeaderGroup2.Panel.Controls.Add(this.grpSKUList);
-            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 676);
+            this.kryptonHeaderGroup2.Size = new System.Drawing.Size(249, 671);
             this.kryptonHeaderGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
             this.kryptonHeaderGroup2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -470,7 +468,7 @@
             this.grpSKUList.GlowOn = true;
             this.grpSKUList.Location = new System.Drawing.Point(0, 0);
             this.grpSKUList.Name = "grpSKUList";
-            this.grpSKUList.Size = new System.Drawing.Size(241, 646);
+            this.grpSKUList.Size = new System.Drawing.Size(241, 641);
             this.grpSKUList.TabIndex = 287;
             // 
             // flowGarmentList
@@ -482,7 +480,7 @@
             this.flowGarmentList.ForeColor = System.Drawing.SystemColors.ControlText;
             this.flowGarmentList.Location = new System.Drawing.Point(0, 0);
             this.flowGarmentList.Name = "flowGarmentList";
-            this.flowGarmentList.Size = new System.Drawing.Size(241, 646);
+            this.flowGarmentList.Size = new System.Drawing.Size(241, 641);
             this.flowGarmentList.TabIndex = 341;
             // 
             // kryptonHeaderGroup3
@@ -530,14 +528,13 @@
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonPanel1.Controls.Add(this.btnCancel);
             this.kryptonPanel1.Controls.Add(this.pictureBox1);
             this.kryptonPanel1.Controls.Add(this.label12);
             this.kryptonPanel1.Controls.Add(this.btnSave);
             this.kryptonPanel1.Controls.Add(this.btnMeasureSave);
             this.kryptonPanel1.Controls.Add(this.lblSKUName);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
@@ -582,10 +579,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-11, 159);
+            this.tabControl1.Location = new System.Drawing.Point(-10, 154);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 558);
+            this.tabControl1.Size = new System.Drawing.Size(984, 557);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 373;
             // 
             // tabPage3
@@ -594,7 +592,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(976, 532);
+            this.tabPage3.Size = new System.Drawing.Size(976, 531);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -610,7 +608,7 @@
             // kryptonHeaderGroup4.Panel
             // 
             this.kryptonHeaderGroup4.Panel.Controls.Add(this.gGlowGroupBox1);
-            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(970, 526);
+            this.kryptonHeaderGroup4.Size = new System.Drawing.Size(970, 525);
             this.kryptonHeaderGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonHeaderGroup4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -635,7 +633,7 @@
             this.gGlowGroupBox1.GlowOn = true;
             this.gGlowGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.gGlowGroupBox1.Name = "gGlowGroupBox1";
-            this.gGlowGroupBox1.Size = new System.Drawing.Size(962, 496);
+            this.gGlowGroupBox1.Size = new System.Drawing.Size(962, 495);
             this.gGlowGroupBox1.TabIndex = 287;
             // 
             // flowLayoutPanel1
@@ -645,7 +643,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(962, 496);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(962, 495);
             this.flowLayoutPanel1.TabIndex = 318;
             // 
             // tabPage1
@@ -654,7 +652,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(976, 532);
+            this.tabPage1.Size = new System.Drawing.Size(976, 531);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -665,7 +663,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 532);
+            this.tabPage2.Size = new System.Drawing.Size(976, 531);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -674,9 +672,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(0, 159);
+            this.panel1.Location = new System.Drawing.Point(-10, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 26);
+            this.panel1.Size = new System.Drawing.Size(976, 26);
             this.panel1.TabIndex = 382;
             // 
             // picStyle
@@ -684,9 +682,9 @@
             this.picStyle.BackColor = System.Drawing.Color.Transparent;
             this.picStyle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picStyle.Image = ((System.Drawing.Image)(resources.GetObject("picStyle.Image")));
-            this.picStyle.Location = new System.Drawing.Point(790, 105);
+            this.picStyle.Location = new System.Drawing.Point(790, 109);
             this.picStyle.Name = "picStyle";
-            this.picStyle.Size = new System.Drawing.Size(40, 57);
+            this.picStyle.Size = new System.Drawing.Size(40, 50);
             this.picStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picStyle.TabIndex = 381;
             this.picStyle.TabStop = false;
@@ -697,9 +695,9 @@
             this.picMeasure.BackColor = System.Drawing.Color.Transparent;
             this.picMeasure.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMeasure.Image = ((System.Drawing.Image)(resources.GetObject("picMeasure.Image")));
-            this.picMeasure.Location = new System.Drawing.Point(487, 105);
+            this.picMeasure.Location = new System.Drawing.Point(487, 109);
             this.picMeasure.Name = "picMeasure";
-            this.picMeasure.Size = new System.Drawing.Size(40, 57);
+            this.picMeasure.Size = new System.Drawing.Size(40, 50);
             this.picMeasure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMeasure.TabIndex = 380;
             this.picMeasure.TabStop = false;
@@ -710,9 +708,9 @@
             this.picBody.BackColor = System.Drawing.Color.Transparent;
             this.picBody.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBody.Image = ((System.Drawing.Image)(resources.GetObject("picBody.Image")));
-            this.picBody.Location = new System.Drawing.Point(173, 105);
+            this.picBody.Location = new System.Drawing.Point(173, 109);
             this.picBody.Name = "picBody";
-            this.picBody.Size = new System.Drawing.Size(40, 57);
+            this.picBody.Size = new System.Drawing.Size(40, 50);
             this.picBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBody.TabIndex = 379;
             this.picBody.TabStop = false;
@@ -723,7 +721,7 @@
             this.btnStyle.BackColor = System.Drawing.Color.Transparent;
             this.btnStyle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStyle.Image = global::TAILORING.Properties.Resources.picStyle;
-            this.btnStyle.Location = new System.Drawing.Point(672, 45);
+            this.btnStyle.Location = new System.Drawing.Point(672, 48);
             this.btnStyle.Name = "btnStyle";
             this.btnStyle.Size = new System.Drawing.Size(246, 83);
             this.btnStyle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -736,7 +734,7 @@
             this.btnMeasurment.BackColor = System.Drawing.Color.Transparent;
             this.btnMeasurment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMeasurment.Image = global::TAILORING.Properties.Resources.picmeasurment;
-            this.btnMeasurment.Location = new System.Drawing.Point(369, 45);
+            this.btnMeasurment.Location = new System.Drawing.Point(369, 48);
             this.btnMeasurment.Name = "btnMeasurment";
             this.btnMeasurment.Size = new System.Drawing.Size(246, 83);
             this.btnMeasurment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -749,7 +747,7 @@
             this.btnBodyPosture.BackColor = System.Drawing.Color.Transparent;
             this.btnBodyPosture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBodyPosture.Image = global::TAILORING.Properties.Resources.picBodyPosture;
-            this.btnBodyPosture.Location = new System.Drawing.Point(66, 45);
+            this.btnBodyPosture.Location = new System.Drawing.Point(66, 48);
             this.btnBodyPosture.Name = "btnBodyPosture";
             this.btnBodyPosture.Size = new System.Drawing.Size(246, 83);
             this.btnBodyPosture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -767,7 +765,7 @@
             this.ctrlMeasurment1.Location = new System.Drawing.Point(0, 0);
             this.ctrlMeasurment1.Name = "ctrlMeasurment1";
             this.ctrlMeasurment1.ProductCount = 0;
-            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 503);
+            this.ctrlMeasurment1.Size = new System.Drawing.Size(962, 495);
             this.ctrlMeasurment1.TabIndex = 0;
             // 
             // frmMeasurement

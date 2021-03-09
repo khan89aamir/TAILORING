@@ -99,6 +99,11 @@ namespace TAILORING.Dashboard
                 lblTodayDelivery.Text = strTotayDelivery;
                 lblCriticalOrder.Text = strCriticalOrder;
 
+
+                pnlTodayDeliery.Controls.Clear();
+                pnlCricitialOrder.Controls.Clear();
+                pnlInprocessOrder.Controls.Clear();
+
                 // in process order
                 for (int i = 0; i < dsDashbaordData.Tables[1].Rows.Count; i++)
                 {
@@ -445,6 +450,11 @@ namespace TAILORING.Dashboard
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            BindDasbhoardData();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             BindDasbhoardData();
         }

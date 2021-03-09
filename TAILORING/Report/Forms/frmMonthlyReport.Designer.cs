@@ -32,9 +32,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFromDate1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpFromDate1 = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.OrderDetails.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TAILORING.Report.RDLC.MonthlyReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 21);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(908, 457);
@@ -79,6 +79,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Filter :";
             // 
+            // dtpFromDate1
+            // 
+            this.dtpFromDate1.CustomFormat = "dd-MMM-yyyy";
+            this.dtpFromDate1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.dtpFromDate1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate1.Location = new System.Drawing.Point(72, 26);
+            this.dtpFromDate1.Name = "dtpFromDate1";
+            this.dtpFromDate1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.dtpFromDate1.ShowUpDown = true;
+            this.dtpFromDate1.Size = new System.Drawing.Size(116, 27);
+            this.dtpFromDate1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.dtpFromDate1.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.dtpFromDate1.StateCommon.Border.Rounding = 7;
+            this.dtpFromDate1.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFromDate1.TabIndex = 390;
+            // 
             // btnAdd
             // 
             this.btnAdd.AutoSize = true;
@@ -90,11 +108,15 @@
             this.btnAdd.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnAdd.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.btnAdd.StateCommon.Border.Rounding = 12;
             this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.StateCommon.Content.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.btnAdd.StateCommon.Content.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.btnAdd.TabIndex = 389;
             this.btnAdd.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
             this.btnAdd.Values.Text = "Generate Report";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label3
             // 
@@ -104,24 +126,6 @@
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 388;
             this.label3.Text = "Date  :";
-            // 
-            // dtpFromDate1
-            // 
-            this.dtpFromDate1.CustomFormat = "dd-MMM-yyyy";
-            this.dtpFromDate1.Enabled = false;
-            this.dtpFromDate1.Font = new System.Drawing.Font("Times New Roman", 11.25F);
-            this.dtpFromDate1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromDate1.Location = new System.Drawing.Point(72, 26);
-            this.dtpFromDate1.Name = "dtpFromDate1";
-            this.dtpFromDate1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.dtpFromDate1.ShowUpDown = true;
-            this.dtpFromDate1.Size = new System.Drawing.Size(116, 27);
-            this.dtpFromDate1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.dtpFromDate1.StateCommon.Border.Rounding = 7;
-            this.dtpFromDate1.StateCommon.Content.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFromDate1.TabIndex = 390;
             // 
             // frmMonthlyReport
             // 

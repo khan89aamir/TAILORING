@@ -544,6 +544,14 @@ namespace TAILORING.Report.Forms
 
 
                         // Body Posture
+                        bdimg1 = "";
+                        bdimg2 = "";
+                        bdimg3 = "";
+                        bdimg4 = "";
+                        bdimg5 = "";
+                        bdimg6 = "";
+
+
                         string strbodyPosture = "SELECT bm.BodyPostureImage FROM " + clsUtility.DBName + ".dbo.tblCustomerBodyPosture cb  join " +
                                                 clsUtility.DBName + ".dbo.tblBodyPostureMapping bm ON cb.BodyPostureMappingID = bm.BodyPostureMappingID" +
                                                 " WHERE cb.SalesOrderID = " + OrderID + " AND cb.GarmentID = " + GarmendID;
@@ -551,12 +559,7 @@ namespace TAILORING.Report.Forms
                         DataTable dtbodyPosture = ObjCon.ExecuteSelectStatement(strbodyPosture);
                         if (ObjUtil.ValidateTable(dtbodyPosture))
                         {
-                            bdimg1 = "";
-                            bdimg2 = "";
-                            bdimg3 = "";
-                            bdimg4 = "";
-                            bdimg5 = "";
-                            bdimg6 = "";
+                           
                             for (int c = 0; c < dtbodyPosture.Rows.Count; c++)
                             {
                                 switch (c)

@@ -162,8 +162,8 @@ namespace TAILORING.Dashboard
                     {
                         // 1 - Order Delivered.
                         ObjDAL.UpdateColumnData("OrderStatus", SqlDbType.Int, 1);
-                        ObjDAL.UpdateColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                        ObjDAL.UpdateColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
+                        ObjDAL.UpdateColumnData("DeliveredDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        ObjDAL.UpdateColumnData("DeliveredBy", SqlDbType.Int, clsUtility.LoginID);
 
                         ObjDAL.UpdateData(clsUtility.DBName + ".dbo.tblOrderStatus", "SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
                     }
@@ -171,8 +171,8 @@ namespace TAILORING.Dashboard
                     {
                         // 1 - Order Delivered.
                         ObjDAL.SetColumnData("OrderStatus", SqlDbType.Int, 1);
-                        ObjDAL.SetColumnData("ReceivedDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                        ObjDAL.SetColumnData("ReceivedBy", SqlDbType.Int, clsUtility.LoginID);
+                        ObjDAL.SetColumnData("DeliveredDate", SqlDbType.DateTime, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        ObjDAL.SetColumnData("DeliveredBy", SqlDbType.Int, clsUtility.LoginID);
 
                         ObjDAL.InsertData(clsUtility.DBName + ".dbo.tblOrderStatus", false);
                     }

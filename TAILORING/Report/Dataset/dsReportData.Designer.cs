@@ -3791,7 +3791,17 @@ namespace TAILORING.Report.Dataset {
             
             private global::System.Data.DataColumn columnShirt;
             
-            private global::System.Data.DataColumn columnDataColumn1;
+            private global::System.Data.DataColumn columnTrouser;
+            
+            private global::System.Data.DataColumn columnTwoPCSuit;
+            
+            private global::System.Data.DataColumn columnThreePCSuit;
+            
+            private global::System.Data.DataColumn columnBlazer;
+            
+            private global::System.Data.DataColumn columnKurta;
+            
+            private global::System.Data.DataColumn columnShirt_Urgetn;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3844,9 +3854,49 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DataColumn1Column {
+            public global::System.Data.DataColumn TrouserColumn {
                 get {
-                    return this.columnDataColumn1;
+                    return this.columnTrouser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TwoPCSuitColumn {
+                get {
+                    return this.columnTwoPCSuit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ThreePCSuitColumn {
+                get {
+                    return this.columnThreePCSuit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BlazerColumn {
+                get {
+                    return this.columnBlazer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn KurtaColumn {
+                get {
+                    return this.columnKurta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Shirt_UrgetnColumn {
+                get {
+                    return this.columnShirt_Urgetn;
                 }
             }
             
@@ -3887,12 +3937,17 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtMonthlyReportRow AdddtMonthlyReportRow(string OrderNo, string Shirt, string DataColumn1) {
+            public dtMonthlyReportRow AdddtMonthlyReportRow(string OrderNo, string Shirt, string Trouser, string TwoPCSuit, string ThreePCSuit, string Blazer, string Kurta, string Shirt_Urgetn) {
                 dtMonthlyReportRow rowdtMonthlyReportRow = ((dtMonthlyReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderNo,
                         Shirt,
-                        DataColumn1};
+                        Trouser,
+                        TwoPCSuit,
+                        ThreePCSuit,
+                        Blazer,
+                        Kurta,
+                        Shirt_Urgetn};
                 rowdtMonthlyReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtMonthlyReportRow);
                 return rowdtMonthlyReportRow;
@@ -3917,7 +3972,12 @@ namespace TAILORING.Report.Dataset {
             internal void InitVars() {
                 this.columnOrderNo = base.Columns["OrderNo"];
                 this.columnShirt = base.Columns["Shirt"];
-                this.columnDataColumn1 = base.Columns["DataColumn1"];
+                this.columnTrouser = base.Columns["Trouser"];
+                this.columnTwoPCSuit = base.Columns["TwoPCSuit"];
+                this.columnThreePCSuit = base.Columns["ThreePCSuit"];
+                this.columnBlazer = base.Columns["Blazer"];
+                this.columnKurta = base.Columns["Kurta"];
+                this.columnShirt_Urgetn = base.Columns["Shirt_Urgetn"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3927,8 +3987,23 @@ namespace TAILORING.Report.Dataset {
                 base.Columns.Add(this.columnOrderNo);
                 this.columnShirt = new global::System.Data.DataColumn("Shirt", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShirt);
-                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn1);
+                this.columnTrouser = new global::System.Data.DataColumn("Trouser", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTrouser);
+                this.columnTwoPCSuit = new global::System.Data.DataColumn("TwoPCSuit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTwoPCSuit);
+                this.columnThreePCSuit = new global::System.Data.DataColumn("ThreePCSuit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThreePCSuit);
+                this.columnBlazer = new global::System.Data.DataColumn("Blazer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlazer);
+                this.columnKurta = new global::System.Data.DataColumn("Kurta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKurta);
+                this.columnShirt_Urgetn = new global::System.Data.DataColumn("Shirt_Urgetn", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShirt_Urgetn);
+                this.columnTwoPCSuit.Caption = "DataColumn1";
+                this.columnThreePCSuit.Caption = "DataColumn1";
+                this.columnBlazer.Caption = "DataColumn1";
+                this.columnKurta.Caption = "DataColumn1";
+                this.columnShirt_Urgetn.Caption = "DataColumn1";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6827,17 +6902,97 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DataColumn1 {
+            public string Trouser {
                 get {
                     try {
-                        return ((string)(this[this.tabledtMonthlyReport.DataColumn1Column]));
+                        return ((string)(this[this.tabledtMonthlyReport.TrouserColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DataColumn1\' in table \'dtMonthlyReport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Trouser\' in table \'dtMonthlyReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtMonthlyReport.DataColumn1Column] = value;
+                    this[this.tabledtMonthlyReport.TrouserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TwoPCSuit {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMonthlyReport.TwoPCSuitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TwoPCSuit\' in table \'dtMonthlyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMonthlyReport.TwoPCSuitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ThreePCSuit {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMonthlyReport.ThreePCSuitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThreePCSuit\' in table \'dtMonthlyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMonthlyReport.ThreePCSuitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Blazer {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMonthlyReport.BlazerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Blazer\' in table \'dtMonthlyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMonthlyReport.BlazerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Kurta {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMonthlyReport.KurtaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kurta\' in table \'dtMonthlyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMonthlyReport.KurtaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Shirt_Urgetn {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtMonthlyReport.Shirt_UrgetnColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Shirt_Urgetn\' in table \'dtMonthlyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtMonthlyReport.Shirt_UrgetnColumn] = value;
                 }
             }
             
@@ -6867,14 +7022,74 @@ namespace TAILORING.Report.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDataColumn1Null() {
-                return this.IsNull(this.tabledtMonthlyReport.DataColumn1Column);
+            public bool IsTrouserNull() {
+                return this.IsNull(this.tabledtMonthlyReport.TrouserColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDataColumn1Null() {
-                this[this.tabledtMonthlyReport.DataColumn1Column] = global::System.Convert.DBNull;
+            public void SetTrouserNull() {
+                this[this.tabledtMonthlyReport.TrouserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTwoPCSuitNull() {
+                return this.IsNull(this.tabledtMonthlyReport.TwoPCSuitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTwoPCSuitNull() {
+                this[this.tabledtMonthlyReport.TwoPCSuitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsThreePCSuitNull() {
+                return this.IsNull(this.tabledtMonthlyReport.ThreePCSuitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetThreePCSuitNull() {
+                this[this.tabledtMonthlyReport.ThreePCSuitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBlazerNull() {
+                return this.IsNull(this.tabledtMonthlyReport.BlazerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBlazerNull() {
+                this[this.tabledtMonthlyReport.BlazerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsKurtaNull() {
+                return this.IsNull(this.tabledtMonthlyReport.KurtaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetKurtaNull() {
+                this[this.tabledtMonthlyReport.KurtaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsShirt_UrgetnNull() {
+                return this.IsNull(this.tabledtMonthlyReport.Shirt_UrgetnColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetShirt_UrgetnNull() {
+                this[this.tabledtMonthlyReport.Shirt_UrgetnColumn] = global::System.Convert.DBNull;
             }
         }
         

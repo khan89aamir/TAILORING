@@ -21,19 +21,19 @@ namespace TAILORING.Settings
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
-        DataTable dtSetting = new DataTable();
+        DataTable dtSystemSetting = new DataTable();
         int pSoftwareSettingID = 0;
 
         private void LoadSettingsData()
         {
-            dtSetting = ObjDAL.ExecuteSelectStatement("SELECT TOP 1 SoftwareSettingID,ImagePath,GenericImagePath,CopyOrderMonth FROM " + clsUtility.DBName + ".dbo.tblSoftwareSetting");
+            dtSystemSetting = ObjDAL.ExecuteSelectStatement("SELECT TOP 1 SoftwareSettingID,ImagePath,GenericImagePath,CopyOrderMonth FROM " + clsUtility.DBName + ".dbo.tblSoftwareSetting WITH(NOLOCK)");
 
-            if (ObjUtil.ValidateTable(dtSetting))
+            if (ObjUtil.ValidateTable(dtSystemSetting))
             {
-                pSoftwareSettingID = Convert.ToInt32(dtSetting.Rows[0]["SoftwareSettingID"]);
-                txtImagePath.Text = dtSetting.Rows[0]["ImagePath"].ToString();
-                txtGenericImage.Text = dtSetting.Rows[0]["GenericImagePath"].ToString();
-                numericUpDown1.Value = Convert.ToDecimal(dtSetting.Rows[0]["CopyOrderMonth"]);
+                pSoftwareSettingID = Convert.ToInt32(dtSystemSetting.Rows[0]["SoftwareSettingID"]);
+                txtImagePath.Text = dtSystemSetting.Rows[0]["ImagePath"].ToString();
+                txtGenericImage.Text = dtSystemSetting.Rows[0]["GenericImagePath"].ToString();
+                numericUpDown1.Value = Convert.ToDecimal(dtSystemSetting.Rows[0]["CopyOrderMonth"]);
             }
             else
             {
@@ -41,9 +41,31 @@ namespace TAILORING.Settings
             }
         }
 
+        private void LoadMobileSettings()
+        {
+            DataSet ds = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_Get_MobileActivation");
+            if (ObjUtil.ValidateDataSet(ds))
+            {
+                DataTable dt = ds.Tables[0];
+                if (ObjUtil.ValidateTable(dt))
+                {
+                    dgvCustomerMaster.DataSource = dt;
+                }
+                else
+                {
+                    dgvCustomerMaster.DataSource = null;
+                }
+            }
+            else
+            {
+                dgvCustomerMaster.DataSource = null;
+            }
+        }
+
         private void frmSettings_Load(object sender, EventArgs e)
         {
             LoadSettingsData();
+            LoadMobileSettings();
             txtImagePath.SelectionStart = txtImagePath.MaxLength;
         }
 
@@ -71,7 +93,7 @@ namespace TAILORING.Settings
         {
             if (ValidateData())
             {
-                if (ObjUtil.ValidateTable(dtSetting))
+                if (ObjUtil.ValidateTable(dtSystemSetting))
                 {
                     UpdateSettings();
                 }
@@ -146,6 +168,17 @@ namespace TAILORING.Settings
             {
                 txtGenericImage.Text = fld.SelectedPath;
             }
+        }
+
+        private void dgvCustomerMaster_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ObjUtil.SetRowNumber(dgvCustomerMaster);
+            // ObjUtil.SetDataGridProperty(dgvCustomerMaster, DataGridViewAutoSizeColumnsMode.Fill);
+            dgvCustomerMaster.Columns["Id"].Visible = false;
+
+            dgvCustomerMaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCustomerMaster.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            kryptonHeaderGroup1.ValuesSecondary.Heading = "Total Records : " + dgvCustomerMaster.Rows.Count;
         }
     }
 }

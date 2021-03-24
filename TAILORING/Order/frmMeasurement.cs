@@ -308,7 +308,7 @@ namespace TAILORING.Order
             BindStichType();
             BindFitType();
 
-            if (!ObjUtil.ValidateDataSet(dsMeasure))
+            if (!ObjUtil.ValidateDataSet(dsMeasure)) // if no previous data found then load blank local dt into dataset
             {
                 dsMeasure.Tables.Add(dtTempMeasurement);
                 dsMeasure.Tables[0].TableName = "Measurement";
@@ -325,7 +325,7 @@ namespace TAILORING.Order
 
                 //CopyGarmentDetails_LastOrder();
             }
-            else
+            else   // if previous data found then load data from dataset to local dt
             {
                 dtTempMeasurement = dsMeasure.Tables[0];
                 dtTempStyle = dsMeasure.Tables[1];

@@ -458,5 +458,13 @@ namespace TAILORING.Dashboard
         {
             BindDasbhoardData();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            frmAlteration frmAlteration = new frmAlteration();
+            frmAlteration.OrderNo = txtAlteration.Text;
+            frmAlteration.Show();
+
+        }
     }
 }

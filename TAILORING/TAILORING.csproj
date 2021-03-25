@@ -184,6 +184,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="clsForm.cs" />
+    <Compile Include="Dashboard\frmAlteration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmAlteration.Designer.cs">
+      <DependentUpon>frmAlteration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\frmChalanSub.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Barcode\uRectangle.resx">
       <DependentUpon>uRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmAlteration.resx">
+      <DependentUpon>frmAlteration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\frmChalanSub.resx">
       <DependentUpon>frmChalanSub.cs</DependentUpon>

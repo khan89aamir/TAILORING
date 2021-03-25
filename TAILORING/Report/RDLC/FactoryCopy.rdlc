@@ -338,7 +338,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.54736in</Top>
+            <Top>1.42236in</Top>
             <Left>6.18452in</Left>
             <Height>0.25in</Height>
             <Width>1.22917in</Width>
@@ -371,7 +371,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>parmMobile</rd:DefaultName>
-            <Top>1.54736in</Top>
+            <Top>1.42236in</Top>
             <Left>7.43105in</Left>
             <Height>0.25in</Height>
             <Width>1.03821in</Width>
@@ -891,7 +891,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>1.10334in</Top>
             <Left>0.06613in</Left>
-            <Height>0.4289in</Height>
+            <Height>0.31432in</Height>
             <Width>8.40291in</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -940,7 +940,7 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>1.89447in</Top>
+            <Top>1.76947in</Top>
             <Left>0.02446in</Left>
             <Height>0.29681in</Height>
             <Width>8.39307in</Width>
@@ -961,7 +961,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>4.47793in</Height>
+                  <Height>4.41543in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -2733,7 +2733,7 @@
                               <rd:DefaultName>Textbox10</rd:DefaultName>
                               <Top>4.01736in</Top>
                               <Left>1.07284in</Left>
-                              <Height>0.43057in</Height>
+                              <Height>0.32557in</Height>
                               <Width>7.15892in</Width>
                               <ZIndex>19</ZIndex>
                               <Style>
@@ -2746,6 +2746,19 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
+                            <Line Name="Line2">
+                              <Top>4.39849in</Top>
+                              <Left>0.09in</Left>
+                              <Height>0in</Height>
+                              <Width>8.34215in</Width>
+                              <ZIndex>20</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                  <Width>1.25pt</Width>
+                                </Border>
+                              </Style>
+                            </Line>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -2777,8 +2790,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsMeasurment</DataSetName>
-            <Top>2.18623in</Top>
-            <Height>4.47793in</Height>
+            <Top>2.06123in</Top>
+            <Height>4.41543in</Height>
             <Width>8.43215in</Width>
             <ZIndex>6</ZIndex>
             <Style>
@@ -2894,7 +2907,7 @@
             <Value>=Parameters!parminvBarcode.Value</Value>
             <MIMEType>image/jpeg</MIMEType>
             <Sizing>Fit</Sizing>
-            <Top>1.53224in</Top>
+            <Top>1.40724in</Top>
             <Left>0.06613in</Left>
             <Height>0.32056in</Height>
             <Width>2.33282in</Width>
@@ -2905,19 +2918,6 @@
               </Border>
             </Style>
           </Image>
-          <Line Name="Line2">
-            <Top>6.66416in</Top>
-            <Left>0.05769in</Left>
-            <Height>0in</Height>
-            <Width>8.35059in</Width>
-            <ZIndex>10</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>1.25pt</Width>
-              </Border>
-            </Style>
-          </Line>
         </ReportItems>
         <Height>7.53in</Height>
         <Style />

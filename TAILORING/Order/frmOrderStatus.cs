@@ -39,20 +39,24 @@ namespace TAILORING.Order
 
         private void SearchData()
         {
-            string strQ = " SELECT OrderNo, SubOrderNo,GarmentName,StichType [Stitch Type],FitType [Fit Type],ServiceType,OrderStatus," +
-                      " ReceivedDate,DeliveredDate,ReceivedBy,DeliveredBy FROM " + clsUtility.DBName + ".[dbo].[vw_OrderDetails_RDLC]";
+            string strQ = " SELECT OrderNo, SubOrderNo,GarmentName,StichType [Stitch Type],FitType [Fit Type],ServiceType,OrderStatus,gTrailDate [TrailDate]," +
+                      " ReceivedDate,DeliveredDate,ReceivedBy,DeliveredBy FROM " + clsUtility.DBName + ".[dbo].[vw_OrderDetails_RDLC] ";
 
             if (radOrderNo.Checked)
             {
-                strQ += " WHERE OrderNo ='" + txtCustomerOrderNo.Text + "'";
+                strQ += "WHERE OrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
             else if (radSuborder.Checked)
             {
-                strQ += " WHERE SubOrderNo ='" + txtCustomerOrderNo.Text + "'";
+                strQ += "WHERE SubOrderNo ='" + txtCustomerOrderNo.Text + "'";
             }
             else if (radOrderStatus.Checked)
             {
-                strQ += " WHERE OrderStatus ='" + cmbOrderStatus.Text + "'";
+                strQ += "WHERE OrderStatus ='" + cmbOrderStatus.Text + "'";
+            }
+            else if (checkBox1.Checked)
+            {
+                strQ += "WHERE gTrailDate!='' ";
             }
 
             DataTable dt = ObjDAL.ExecuteSelectStatement(strQ);
@@ -146,6 +150,11 @@ namespace TAILORING.Order
             {
                 SearchData();
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            SearchData();
         }
     }
 }

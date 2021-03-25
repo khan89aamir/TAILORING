@@ -308,7 +308,7 @@ namespace TAILORING.Order
             BindStichType();
             BindFitType();
 
-            if (!ObjUtil.ValidateDataSet(dsMeasure))
+            if (!ObjUtil.ValidateDataSet(dsMeasure)) // if no previous data found then load blank local dt into dataset
             {
                 dsMeasure.Tables.Add(dtTempMeasurement);
                 dsMeasure.Tables[0].TableName = "Measurement";
@@ -325,7 +325,7 @@ namespace TAILORING.Order
 
                 //CopyGarmentDetails_LastOrder();
             }
-            else
+            else   // if previous data found then load data from dataset to local dt
             {
                 dtTempMeasurement = dsMeasure.Tables[0];
                 dtTempStyle = dsMeasure.Tables[1];
@@ -838,23 +838,26 @@ namespace TAILORING.Order
             Control[] ctr = flowStyleName.Controls.Find(StyleID.ToString(), false);
             for (int i = 0; i < ctr.Length; i++)
             {
-                KryptonButton btn = (KryptonButton)ctr[i];
-                if (p.Parent.BackColor != Color.Transparent)
+                if (ctr[i].GetType() == typeof(KryptonButton))
                 {
-                    //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
-                    btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
-                    btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
+                    KryptonButton btn = (KryptonButton)ctr[i];
+                    if (p.Parent.BackColor != Color.Transparent)
+                    {
+                        //ctr[i].BackColor = Color.FromArgb(17, 241, 41);
+                        btn.StateCommon.Back.Color1 = Color.FromArgb(78, 148, 132);
+                        btn.StateCommon.Back.Color2 = Color.FromArgb(78, 148, 132);
 
-                    btn.StateCommon.Content.ShortText.Color1 = Color.White;
-                    btn.StateCommon.Content.ShortText.Color2 = Color.White;
-                }
-                else
-                {
-                    btn.StateCommon.Back.Color1 = Color.LightGray;
-                    btn.StateCommon.Back.Color2 = Color.LightGray;
+                        btn.StateCommon.Content.ShortText.Color1 = Color.White;
+                        btn.StateCommon.Content.ShortText.Color2 = Color.White;
+                    }
+                    else
+                    {
+                        btn.StateCommon.Back.Color1 = Color.LightGray;
+                        btn.StateCommon.Back.Color2 = Color.LightGray;
 
-                    btn.StateCommon.Content.ShortText.Color1 = Color.Black;
-                    btn.StateCommon.Content.ShortText.Color2 = Color.Black;
+                        btn.StateCommon.Content.ShortText.Color1 = Color.Black;
+                        btn.StateCommon.Content.ShortText.Color2 = Color.Black;
+                    }
                 }
             }
             GetStyleImageStatusChecked();

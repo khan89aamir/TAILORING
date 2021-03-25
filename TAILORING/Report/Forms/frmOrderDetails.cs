@@ -107,6 +107,10 @@ namespace TAILORING.Report.Forms
             {
                 strWhere += "AND OrderDate BETWEEN '" + dtpFromDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpToDate.Value.ToString("yyyy-MM-dd") + "' ";
             }
+            if (checkBox1.Checked)
+            {
+                strWhere += "AND gTrailDate!='' ";
+            }
             return strWhere;
         }
 
@@ -119,9 +123,13 @@ namespace TAILORING.Report.Forms
         {
             txtCustomerOrderNo.Clear();
             cmbOrderStatus.SelectedIndex = -1;
+            checkBox1.Checked = false;
+
             dtpFromDate.Value = DateTime.Now;
+            dtpFromDate.Checked = false;
             dtpToDate.Value = DateTime.Now;
 
+            reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.Clear();
             reportViewer1.RefreshReport();
         }

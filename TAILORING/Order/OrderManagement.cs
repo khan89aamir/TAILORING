@@ -105,8 +105,6 @@ namespace TAILORING.Order
                 FillGarmentData(); // Load unique Garment Data
 
                 InitOrderManagement();
-                //dtDefaultOrderManagement = (DataTable)dataGridView1.DataSource;
-                //dtOrderManagement = (DataTable)dataGridView1.DataSource;
 
                 dtpDeliveryDate.MinDate = dtDeliveryDate;
                 dtpTrailDate.MinDate = dtTrailDate;
@@ -140,7 +138,6 @@ namespace TAILORING.Order
             dtOrderManagement.AcceptChanges();
 
             //dataGridView1.DataSource = dtOrderManagement;
-
         }
 
         private void InitItemTable()
@@ -310,6 +307,7 @@ namespace TAILORING.Order
             }
             return dtGarmentRate;
         }
+
         private void cmbGarmentName_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (cmbGarmentName.SelectedValue != null)
@@ -317,9 +315,7 @@ namespace TAILORING.Order
                 DataRow[] drow = dtGarment.Select("GarmentID=" + cmbGarmentName.SelectedValue);
                 if (drow.Length > 0)
                 {
-                    //txtRate.Text = drow[0]["Rate"].ToString();
                     GarmentName = drow[0]["GarmentName"].ToString();
-                    //GarmentCode = drow[0]["GarmentCode"].ToString();
                     strPhoto = drow[0]["Photo"].ToString();
 
                     DataTable dt = GetProductRate(Convert.ToInt32(cmbGarmentName.SelectedValue), 0);// 0 ->Normal OrderType
@@ -715,7 +711,7 @@ namespace TAILORING.Order
             return Invoice + InvID;
         }
 
-        private bool SavedSalesOrderDetails()
+        private bool SavedSalesOrderDetails()   
         {
             bool b = false;
             dtOrderDetails.Clear();
@@ -1151,7 +1147,6 @@ namespace TAILORING.Order
                     int pMasterGarmentID = 0, pGarmentID = 0;
 
                     pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
-                    //pMasterGarmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["GarmentID"].Value);
                     int SrNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["SrNo"].Value);
 
                     //DataRow[] drow = dtTempOrderDetails.Select("GarmentID=" + pGarmentID);

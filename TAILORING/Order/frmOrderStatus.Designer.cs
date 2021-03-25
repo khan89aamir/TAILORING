@@ -39,6 +39,7 @@
             this.txtCustomerOrderNo = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.grpCustomerGridview = new ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup();
             this.dgvOrderDetails = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.checkBox1 = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOrderStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpCustomerGridview)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.RadShowAll);
             this.groupBox1.Controls.Add(this.radOrderStatus);
             this.groupBox1.Controls.Add(this.radSuborder);
@@ -210,6 +212,20 @@
             this.dgvOrderDetails.TabIndex = 0;
             this.dgvOrderDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvOrderDetails_DataBindingComplete);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.Location = new System.Drawing.Point(324, 69);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.checkBox1.Size = new System.Drawing.Size(103, 21);
+            this.checkBox1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.checkBox1.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.checkBox1.TabIndex = 397;
+            this.checkBox1.Values.Text = "Is Trail Date";
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frmOrderStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +269,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerOrderNo;
         private ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup grpCustomerGridview;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvOrderDetails;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox checkBox1;
     }
 }

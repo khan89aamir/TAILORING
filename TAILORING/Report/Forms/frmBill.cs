@@ -420,7 +420,6 @@ namespace TAILORING.Report.Forms
                         else
                         {
                             CurQTY = 1;
-
                         }
                         // set the garment ID to last one
                         LastGarmentID = Convert.ToInt32(GarmendID);
@@ -442,7 +441,7 @@ namespace TAILORING.Report.Forms
                         {
                             DeliveryDate = Convert.ToDateTime(DeliveryDate).ToString("dd-MMMM-yyy");
                         }
-                        DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("SELECT * FROM vw_Garment_Measurment_rdlc WHERE  SalesOrderID=" + OrderID + " AND GarmentID=" + GarmendID);
+                        DataTable dtCustMeasument = ObjCon.ExecuteSelectStatement("SELECT * FROM " + clsUtility.DBName + ".dbo.vw_Garment_Measurment_rdlc WHERE  SalesOrderID=" + OrderID + " AND GarmentID=" + GarmendID);
                         if (ObjUtil.ValidateTable(dtCustMeasument))
                         {
                             for (int m = 0; m < dtCustMeasument.Rows.Count; m++)
@@ -488,10 +487,9 @@ namespace TAILORING.Report.Forms
                                 }
                             }
                         }
-
                         string subOrderNo = "NA";
 
-                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName from vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID + "  ORDER BY ImageName");
+                        DataTable dtStyles = ObjCon.ExecuteSelectStatement("SELECT ImageName FROM " + clsUtility.DBName + ".dbo.vw_GarmentStyle_rdlc WHERE GarmentID = " + GarmendID + " AND QTY = " + CurQTY + " AND SalesOrderID = " + OrderID + "  ORDER BY ImageName");
                         if (ObjUtil.ValidateTable(dtStyles))
                         {
 
@@ -511,7 +509,7 @@ namespace TAILORING.Report.Forms
                                 switch (s)
                                 {
                                     case 0:
-                                        
+
                                         s1 = ImageToBase64(strImgPath + dtStyles.Rows[s]["ImageName"].ToString());
                                         break;
                                     case 1:
@@ -542,7 +540,6 @@ namespace TAILORING.Report.Forms
                             }
                         }
 
-
                         // Body Posture
                         bdimg1 = "";
                         bdimg2 = "";
@@ -550,7 +547,6 @@ namespace TAILORING.Report.Forms
                         bdimg4 = "";
                         bdimg5 = "";
                         bdimg6 = "";
-
 
                         string strbodyPosture = "SELECT bm.BodyPostureImage FROM " + clsUtility.DBName + ".dbo.tblCustomerBodyPosture cb  join " +
                                                 clsUtility.DBName + ".dbo.tblBodyPostureMapping bm ON cb.BodyPostureMappingID = bm.BodyPostureMappingID" +
@@ -636,6 +632,7 @@ namespace TAILORING.Report.Forms
 
             GenerateMeasument_Style_Record();
 
+            #region Commented Hardcoded images name
             //AddRowItem("1", "Swatch", "12", "Shirt", "ST", "Regular", "Slim Fit", "02-01-2021", "07-01-2020", "Length", "Cuff", "Hip", "Chest", "Shoulder", "Neck", "Shoulder", "NA", "NA", "NA", "12.3", "23.43", "25.33", "32.55", "32.11", "12.55", "17.3", "0", "0", "0",
             //            ImageToBase64(@"C:\Tailoring Images\Bandgalan1.png"),
             //            ImageToBase64(@"C:\Tailoring Images\BP Kaaj Button.png"),
@@ -655,6 +652,7 @@ namespace TAILORING.Report.Forms
             //ImageToBase64(@"C:\Tailoring Images\Long Belt.png"),
             // ImageToBase64(@"C:\Tailoring Images\Picture3.png"),
             //   ImageToBase64(@"C:\Tailoring Images\Turn up.png"), "NA", "NA", "NA", "NA", "NA", "NA");
+            #endregion
         }
 
         private void AddRowItem(string ProductID,

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderDetails));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.dtpToDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpFromDate = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.cmbOrderStatus = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -41,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnReset = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.checkBox1 = new ComponentFactory.Krypton.Toolkit.KryptonCheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbOrderStatus)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Controls.Add(this.dtpToDate);
             this.groupBox1.Controls.Add(this.dtpFromDate);
@@ -69,6 +71,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Filter :";
+            // 
+            // btnReset
+            // 
+            this.btnReset.AutoSize = true;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Location = new System.Drawing.Point(734, 72);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.btnReset.Size = new System.Drawing.Size(165, 34);
+            this.btnReset.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnReset.StateCommon.Border.Rounding = 12;
+            this.btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.TabIndex = 394;
+            this.btnReset.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
+            this.btnReset.Values.Text = "Reset Report";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dtpToDate
             // 
@@ -140,7 +160,7 @@
             this.btnGenerate.StateCommon.Border.Rounding = 12;
             this.btnGenerate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.TabIndex = 389;
-            this.btnGenerate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Values.Image")));
+            this.btnGenerate.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerate.Values.Image")));
             this.btnGenerate.Values.Text = "Generate Report";
             this.btnGenerate.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -218,23 +238,18 @@
             this.reportViewer1.Size = new System.Drawing.Size(908, 396);
             this.reportViewer1.TabIndex = 0;
             // 
-            // btnReset
+            // checkBox1
             // 
-            this.btnReset.AutoSize = true;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Location = new System.Drawing.Point(734, 72);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
-            this.btnReset.Size = new System.Drawing.Size(165, 34);
-            this.btnReset.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnReset.StateCommon.Border.Rounding = 12;
-            this.btnReset.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.TabIndex = 394;
-            this.btnReset.Values.Image = global::TAILORING.Properties.Resources.btnCancel_Values_Image;
-            this.btnReset.Values.Text = "Reset Report";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
+            this.checkBox1.Location = new System.Drawing.Point(368, 78);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
+            this.checkBox1.Size = new System.Drawing.Size(103, 21);
+            this.checkBox1.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.checkBox1.StateCommon.ShortText.Font = new System.Drawing.Font("Times New Roman", 11.25F);
+            this.checkBox1.TabIndex = 395;
+            this.checkBox1.Values.Text = "Is Trail Date";
             // 
             // frmOrderDetails
             // 
@@ -244,6 +259,7 @@
             this.ClientSize = new System.Drawing.Size(932, 579);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frmOrderDetails";
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.ShowIcon = false;
@@ -277,5 +293,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpToDate;
         private ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker dtpFromDate;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnReset;
+        private ComponentFactory.Krypton.Toolkit.KryptonCheckBox checkBox1;
     }
 }

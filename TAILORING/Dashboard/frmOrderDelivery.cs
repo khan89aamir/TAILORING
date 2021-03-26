@@ -37,7 +37,7 @@ namespace TAILORING.Dashboard
             lblOrderNo.Text = OrderNo.ToString();
 
             //DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("SELECT SalesOrderID,CustomerID FROM  " + clsUtility.DBName + ".[dbo].tblSalesOrder WITH(NOLOCK) WHERE OrderNo='" + OrderNo + "'");
-            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("EXEC [dbo].[SPR_Get_OrderList] 0,NULL,NULL,'"+ OrderNo + "'");
+            DataTable dtOrderDetails = ObjDAL.ExecuteSelectStatement("EXEC [dbo].[SPR_Get_OrderList] 0,NULL,NULL,'" + OrderNo + "'");
 
             if (ObjUtil.ValidateTable(dtOrderDetails))
             {
@@ -91,7 +91,7 @@ namespace TAILORING.Dashboard
             SetGridFont(dgvOrderDetails);
 
             grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
-
+            bool IschkAll = true;
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
                 if (i != 0)
@@ -108,16 +108,22 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 122, 179);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
                     dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = true;
+                    IschkAll = false;
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Received")
                 {
                     dgvOrderDetails.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Green; ;
+                    dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Green;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
                     dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = false;
+                    IschkAll = true;
                 }
             }
+            chkAll.Enabled = IschkAll;
+            ObjUtil.SetRowNumber(dgvOrderDetails);
+            dgvOrderDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private bool ValidateRecive()
         {
@@ -180,6 +186,33 @@ namespace TAILORING.Dashboard
             }
             clsUtility.ShowInfoMessage("Selected Garments has been Delivered.");
             LoadOrderReceive();
+        }
+
+        private void chkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAll.Checked)
+            {
+                for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
+                {
+                    if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Received")
+                    {
+                        dgvOrderDetails.Rows[i].Cells[0].Value = true;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
+                {
+                    dgvOrderDetails.Rows[i].Cells[0].Value = false;
+                }
+            }
+            dgvOrderDetails.EndEdit();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -26,6 +26,7 @@ namespace TAILORING.Dashboard
         //        return handleParam;
         //    }
         //}
+
         clsUtility ObjUtil = new clsUtility();
         clsConnection_DAL ObjDAL = new clsConnection_DAL(true);
 
@@ -57,48 +58,46 @@ namespace TAILORING.Dashboard
             btn.Click += Btn_Click;
             btn.Width = 200;
             btn.Height = 28;
-            if (CardName=="InProcess")
+            if (CardName == "InProcess")
             {
                 pnlInprocessOrder.Controls.Add(btn);
             }
             else if (CardName == "Critical")
             {
                 pnlCricitialOrder.Controls.Add(btn);
-
             }
             else if (CardName == "Today")
             {
                 pnlTodayDeliery.Controls.Add(btn);
-
             }
-
         }
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            KryptonButton btn = (KryptonButton)(sender);
+            bool b = ObjUtil.IsAlreadyOpen(typeof(Order.frmOrderDetails));
+            if (!b)
+            {
+                KryptonButton btn = (KryptonButton)(sender);
 
-            Order.frmOrderDetails frmOrderDetails = new Order.frmOrderDetails();
-            frmOrderDetails.isFromDashboard = true;
-            frmOrderDetails.strSubOrderNo= btn.Tag.ToString();
-            frmOrderDetails.Show();
-
+                Order.frmOrderDetails frmOrderDetails = new Order.frmOrderDetails();
+                frmOrderDetails.isFromDashboard = true;
+                frmOrderDetails.strSubOrderNo = btn.Tag.ToString();
+                frmOrderDetails.Show();
+            }
         }
 
         private void BindDasbhoardData()
         {
-          DataSet dsDashbaordData=  ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName+".dbo.SPR_GetDashboardData");
-            if (dsDashbaordData.Tables.Count>0)
+            DataSet dsDashbaordData = ObjDAL.ExecuteStoreProcedure_Get(clsUtility.DBName + ".dbo.SPR_GetDashboardData");
+            if (ObjUtil.ValidateDataSet(dsDashbaordData))
             {
-
                 string strInProcess = dsDashbaordData.Tables[0].Rows[0]["In_Process"].ToString();
                 string strTotayDelivery = dsDashbaordData.Tables[0].Rows[0]["TodaysDelivery"].ToString();
                 string strCriticalOrder = dsDashbaordData.Tables[0].Rows[0]["Critical"].ToString();
-                 
-                lblInProgress.Text = strInProcess;
+
+                lblInProcess.Text = strInProcess;
                 lblTodayDelivery.Text = strTotayDelivery;
                 lblCriticalOrder.Text = strCriticalOrder;
-
 
                 pnlTodayDeliery.Controls.Clear();
                 pnlCricitialOrder.Controls.Clear();
@@ -107,7 +106,6 @@ namespace TAILORING.Dashboard
                 // in process order
                 for (int i = 0; i < dsDashbaordData.Tables[1].Rows.Count; i++)
                 {
-                   
                     GenerateKryptonButtons(dsDashbaordData.Tables[1].Rows[i]["SubOrderNo"].ToString(), "InProcess");
                 }
                 // Critical order
@@ -123,7 +121,7 @@ namespace TAILORING.Dashboard
                 }
             }
         }
-      
+
         private void SearchByCustomerName()
         {
             ObjDAL.SetStoreProcedureData("Name", SqlDbType.NVarChar, txtSearchByCustomerName.Text, clsConnection_DAL.ParamType.Input);
@@ -317,12 +315,12 @@ namespace TAILORING.Dashboard
             //KryptonTextBox txt = (KryptonTextBox)sender;
             //if (e.KeyChar != 13)
             //{
-                e.Handled = ObjUtil.IsString(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
-                    txtSearchByCustomerName.Focus();
-                }
+            e.Handled = ObjUtil.IsString(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Only Charactors...", clsUtility.strProjectTitle);
+                txtSearchByCustomerName.Focus();
+            }
             //}
         }
 
@@ -331,29 +329,32 @@ namespace TAILORING.Dashboard
             //KryptonTextBox txt = (KryptonTextBox)sender;
             //if (e.KeyChar != 13)
             //{
-                e.Handled = ObjUtil.IsNumeric(e);
-                if (e.Handled)
-                {
-                    clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
-                    txtSearchByCustomerMobileNo.Focus();
-                }
+            e.Handled = ObjUtil.IsNumeric(e);
+            if (e.Handled)
+            {
+                clsUtility.ShowInfoMessage("Enter Only Number...", clsUtility.strProjectTitle);
+                txtSearchByCustomerMobileNo.Focus();
+            }
             //}
         }
 
         private void picSearchOrderReceive_Click(object sender, EventArgs e)
         {
-            if (txtOrderReceive.Text.Trim().Length == 0)
+            if (ObjUtil.IsControlTextEmpty(txtOrderReceive))
             {
                 clsUtility.ShowInfoMessage("Please Enter Order No to receive.");
+                txtOrderReceive.Focus();
             }
             else
             {
-                frmOrderReceive frmOrderReceive = new frmOrderReceive();
-                frmOrderReceive.OrderNo = txtOrderReceive.Text;
-                frmOrderReceive.Show();
-
+                bool b = ObjUtil.IsAlreadyOpen(typeof(frmOrderReceive));
+                if (!b)
+                {
+                    frmOrderReceive frmOrderReceive = new frmOrderReceive();
+                    frmOrderReceive.OrderNo = txtOrderReceive.Text;
+                    frmOrderReceive.Show();
+                }
             }
-
         }
 
         private void frmDashboardUpdate_KeyDown(object sender, KeyEventArgs e)
@@ -371,6 +372,18 @@ namespace TAILORING.Dashboard
                 else if (txtSearchByOrderNo.Text.Trim().Length > 0)
                 {
                     picSearchByOrderNo_Click(sender, e);
+                }
+                else if (txtOrderReceive.Text.Trim().Length > 0)
+                {
+                    picSearchOrderReceive_Click(sender, e);
+                }
+                else if (txtOrderDelivery.Text.Trim().Length > 0)
+                {
+                    picSearchOrderDelivery_Click(sender, e);
+                }
+                else if (txtAlteration.Text.Trim().Length > 0)
+                {
+                    picSearchAlteration_Click(sender, e);
                 }
             }
         }
@@ -415,28 +428,35 @@ namespace TAILORING.Dashboard
 
         private void btnCreateChalan_Click(object sender, EventArgs e)
         {
-            frmCreateChalan frmCreate = new frmCreateChalan();
-            frmCreate.Show();
+            bool b = ObjUtil.IsAlreadyOpen(typeof(frmCreateChalan));
+            if (!b)
+            {
+                frmCreateChalan frmCreate = new frmCreateChalan();
+                frmCreate.Show();
+            }
         }
 
         private void picSearchOrderDelivery_Click(object sender, EventArgs e)
         {
-            if (txtOrderDelivery.Text.Trim().Length == 0)
+            if (ObjUtil.IsControlTextEmpty(txtOrderDelivery))
             {
-                clsUtility.ShowInfoMessage("Please Enter Order No to Deliver.");
+                clsUtility.ShowInfoMessage("Please Enter Order No. to Deliver.");
+                txtOrderDelivery.Focus();
             }
             else
             {
-                frmOrderDelivery frmOrderDelivery = new frmOrderDelivery();
-                frmOrderDelivery.OrderNo = txtOrderDelivery.Text;
-                frmOrderDelivery.Show();
-
+                bool b = ObjUtil.IsAlreadyOpen(typeof(frmOrderDelivery));
+                if (!b)
+                {
+                    frmOrderDelivery frmOrderDelivery = new frmOrderDelivery();
+                    frmOrderDelivery.OrderNo = txtOrderDelivery.Text;
+                    frmOrderDelivery.Show();
+                }
             }
         }
 
         private void frmDashboardUpdate_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
             GC.Collect();
         }
 
@@ -459,12 +479,23 @@ namespace TAILORING.Dashboard
             BindDasbhoardData();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void picSearchAlteration_Click(object sender, EventArgs e)
         {
-            frmAlteration frmAlteration = new frmAlteration();
-            frmAlteration.OrderNo = txtAlteration.Text;
-            frmAlteration.Show();
-
+            if (ObjUtil.IsControlTextEmpty(txtAlteration))
+            {
+                clsUtility.ShowInfoMessage("Please Enter Order No. for Alteration.");
+                txtAlteration.Focus();
+            }
+            else
+            {
+                bool b = ObjUtil.IsAlreadyOpen(typeof(frmAlteration));
+                if (!b)
+                {
+                    frmAlteration frmAlteration = new frmAlteration();
+                    frmAlteration.OrderNo = txtAlteration.Text;
+                    frmAlteration.Show();
+                }
+            }
         }
     }
 }

@@ -91,7 +91,7 @@ namespace TAILORING.Dashboard
             SetGridFont(dgvOrderDetails);
 
             grpCustomerGridview.ValuesSecondary.Heading = "Total Records : " + dgvOrderDetails.Rows.Count.ToString();
-
+            bool IschkAll = true;
             for (int i = 0; i < dgvOrderDetails.Columns.Count; i++)
             {
                 if (i != 0)
@@ -108,6 +108,7 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Green; ;
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
                     dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = true;
+                    IschkAll = false;
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Delivered")
                 {
@@ -116,6 +117,7 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 122, 179);
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
                     dgvOrderDetails.Rows[i].Cells["colCheck"].ReadOnly = true;
+                    IschkAll = false;
                 }
                 else if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "In Process")
                 {
@@ -132,7 +134,7 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].DefaultCellStyle.SelectionForeColor = Color.White;
                 }
             }
-
+            chkAll.Enabled = IschkAll;
             ObjUtil.SetRowNumber(dgvOrderDetails);
             //ObjUtil.SetDataGridProperty(dgvOrderDetails, DataGridViewAutoSizeColumnsMode.Fill);
 
@@ -156,7 +158,10 @@ namespace TAILORING.Dashboard
             {
                 for (int i = 0; i < dgvOrderDetails.Rows.Count; i++)
                 {
-                    dgvOrderDetails.Rows[i].Cells[0].Value = true;
+                    if (dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "In Process" || dgvOrderDetails.Rows[i].Cells["OrderStatus"].Value.ToString() == "Critical")
+                    {
+                        dgvOrderDetails.Rows[i].Cells[0].Value = true;
+                    }
                 }
             }
             else
@@ -166,7 +171,6 @@ namespace TAILORING.Dashboard
                     dgvOrderDetails.Rows[i].Cells[0].Value = false;
                 }
             }
-
             dgvOrderDetails.EndEdit();
         }
 
@@ -194,7 +198,7 @@ namespace TAILORING.Dashboard
                     int SalesID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderID"].Value);
                     int SalesOrderDetailsID = Convert.ToInt32(dgvOrderDetails.Rows[i].Cells["SalesOrderDetailsID"].Value);
 
-                    int RecordCount = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WHERE SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
+                    int RecordCount = ObjDAL.ExecuteScalarInt("SELECT COUNT(1) FROM " + clsUtility.DBName + ".dbo.tblOrderStatus WITH(NOLOCK) WHERE SalesOrderID=" + SalesID + " AND SalesOrderDetailsID=" + SalesOrderDetailsID);
                     if (RecordCount > 0)
                     {
                         // 4 - Order received.

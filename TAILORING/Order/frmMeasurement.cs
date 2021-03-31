@@ -106,7 +106,7 @@ namespace TAILORING.Order
                     GetDefaultSelectSKU();
                 }
 
-                int a = GetSelectedStyleImage(GarmentID, StyleID);
+                int a = GetSelectedStyleImage(GarmentID, StyleID); // Getting selection of style image
                 if (pic.Name == a.ToString())
                 {
                     pic.Parent.BackColor = Color.LightGray;
@@ -335,15 +335,15 @@ namespace TAILORING.Order
             {
                 if (!dtGarmentList.Columns.Contains("Measurement"))
                 {
-                    dtGarmentList.Columns.Add("Measurement", typeof(string));
-                    dtGarmentList.Columns.Add("Style", typeof(string));
-                    dtGarmentList.Columns.Add("Posture", typeof(string));
+                    dtGarmentList.Columns.Add("Measurement", typeof(string)); // Adding Measurement column for maintaining status whether its entered or not for particulor garment
+                    dtGarmentList.Columns.Add("Style", typeof(string)); // Adding Style column for maintaining status whether its selected or not for particulor garment
+                    dtGarmentList.Columns.Add("Posture", typeof(string)); // Adding Posture column for maintaining status whether its selected or not for particulor garment
                 }
                 dataGridView1.DataSource = dtGarmentList;
 
                 CopyGarmentDetails_LastOrder();
 
-                AddGarments();
+                AddGarments(); // Adding garments into panel for user selection
             }
             else
             {

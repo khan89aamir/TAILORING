@@ -95,9 +95,9 @@
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label12.Location = new System.Drawing.Point(60, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(122, 22);
+            this.label12.Size = new System.Drawing.Size(74, 22);
             this.label12.TabIndex = 82;
-            this.label12.Text = "Order Details";
+            this.label12.Text = "Challan";
             // 
             // grpCustomerGridview
             // 
@@ -120,7 +120,7 @@
             this.grpCustomerGridview.StateCommon.HeaderPrimary.Content.ShortText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCustomerGridview.StateCommon.HeaderSecondary.Back.Color1 = System.Drawing.Color.Transparent;
             this.grpCustomerGridview.TabIndex = 387;
-            this.grpCustomerGridview.ValuesPrimary.Heading = "Order Details";
+            this.grpCustomerGridview.ValuesPrimary.Heading = "Challan";
             this.grpCustomerGridview.ValuesPrimary.Image = global::TAILORING.Properties.Resources.Gridview_ValuesPrimary_Image;
             this.grpCustomerGridview.ValuesSecondary.Heading = "Total Records : 0";
             // 
@@ -162,7 +162,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(862, 416);
+            this.btnCancel.Location = new System.Drawing.Point(862, 420);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -180,7 +180,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(769, 416);
+            this.btnAdd.Location = new System.Drawing.Point(769, 420);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnAdd.Size = new System.Drawing.Size(87, 34);
@@ -199,7 +199,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(948, 456);
+            this.ClientSize = new System.Drawing.Size(948, 461);
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -210,7 +210,11 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Order Details";
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Border.Rounding = 10;
+            this.Text = "Challan";
             this.Load += new System.EventHandler(this.frmChalanSub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);

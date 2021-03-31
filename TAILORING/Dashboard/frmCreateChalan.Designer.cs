@@ -141,7 +141,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(868, 464);
+            this.btnCancel.Location = new System.Drawing.Point(868, 466);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnCancel.Size = new System.Drawing.Size(78, 34);
@@ -159,7 +159,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(729, 464);
+            this.btnAdd.Location = new System.Drawing.Point(729, 466);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple;
             this.btnAdd.Size = new System.Drawing.Size(127, 34);
@@ -252,7 +252,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(114)))));
-            this.ClientSize = new System.Drawing.Size(954, 498);
+            this.ClientSize = new System.Drawing.Size(954, 501);
             this.Controls.Add(this.grpCustomerGridview);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
